@@ -102,7 +102,7 @@ void idMoveable::Spawn( void ) {
 		clipModelName = spawnArgs.GetString( "model" );		// use the visual model
 	}
 
-	if ( !collisionModelManager->TrmFromModel( clipModelName, trm ) ) {
+	if ( !collisionModelManager->ModelFromTrm(CM_WORLD_MAP, clipModelName, trm, NULL) ) {
 		gameLocal.Error( "idMoveable '%s': cannot load collision model %s", name.c_str(), clipModelName.c_str() );
 		return;
 	}

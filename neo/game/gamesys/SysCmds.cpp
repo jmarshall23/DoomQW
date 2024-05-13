@@ -1304,6 +1304,7 @@ Cmd_CollisionModelInfo_f
 ==================
 */
 static void Cmd_CollisionModelInfo_f( const idCmdArgs &args ) {
+#if 0
 	const char *value;
 
 	if ( !gameLocal.CheatsOk() ) {
@@ -1322,6 +1323,7 @@ static void Cmd_CollisionModelInfo_f( const idCmdArgs &args ) {
 	} else {
 		collisionModelManager->ModelInfo( atoi(value) );
 	}
+#endif
 }
 
 /*

@@ -167,7 +167,7 @@ void idSecurityCamera::Spawn( void ) {
 		str = spawnArgs.GetString( "model" );		// use the visual model
 	}
 
-	if ( !collisionModelManager->TrmFromModel( str, trm ) ) {
+	if ( !collisionModelManager->ModelFromTrm(CM_WORLD_MAP, str, trm, NULL ) ) {
 		gameLocal.Error( "idSecurityCamera '%s': cannot load collision model %s", name.c_str(), str.c_str() );
 		return;
 	}

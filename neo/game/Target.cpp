@@ -689,7 +689,7 @@ void idTarget_SetModel::Spawn( void ) {
 		// precache the render model
 		renderModelManager->FindModel( model );
 		// precache .cm files only
-		collisionModelManager->LoadModel( model, true );
+		collisionModelManager->LoadModel(CM_WORLD_MAP, model, true );
 	}
 }
 

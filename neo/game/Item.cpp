@@ -932,7 +932,7 @@ void idMoveableItem::Spawn( void ) {
 	}
 
 	// load the trace model
-	if ( !collisionModelManager->TrmFromModel( clipModelName, trm ) ) {
+	if ( !collisionModelManager->ModelFromTrm(CM_WORLD_MAP, clipModelName, trm, NULL) ) {
 		gameLocal.Error( "idMoveableItem '%s': cannot load collision model %s", name.c_str(), clipModelName.c_str() );
 		return;
 	}
