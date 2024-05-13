@@ -14,9 +14,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idLib", "idlib.vcxproj", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CurlLib", "curllib.vcxproj", "{F46F5D4E-C1D4-4ADE-9FAA-5F0CE3AA07F1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TypeInfo", "typeinfo.vcxproj", "{6EA6406F-3E65-47D9-8246-D6660A81606F}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DoomDLL", "doomdll.vcxproj", "{49BEC5C6-B964-417A-851E-808886B57420}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Doom3", "doomdll.vcxproj", "{49BEC5C6-B964-417A-851E-808886B57420}"
+	ProjectSection(ProjectDependencies) = postProject
+		{49BEC5C6-B964-417A-851E-808886B57430} = {49BEC5C6-B964-417A-851E-808886B57430}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MayaImport", "MayaImport.vcxproj", "{49BEC5C6-B964-417A-851E-808886B574F1}"
 EndProject
@@ -73,20 +74,6 @@ Global
 		{F46F5D4E-C1D4-4ADE-9FAA-5F0CE3AA07F1}.Dedicated Release|Win32.Build.0 = Release|Win32
 		{F46F5D4E-C1D4-4ADE-9FAA-5F0CE3AA07F1}.Release|Win32.ActiveCfg = Release|Win32
 		{F46F5D4E-C1D4-4ADE-9FAA-5F0CE3AA07F1}.Release|Win32.Build.0 = Release|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Debug with inlines and memory log|Win32.ActiveCfg = Debug with inlines and memory log|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Debug with inlines and memory log|Win32.Build.0 = Debug with inlines and memory log|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Debug with inlines|Win32.ActiveCfg = Debug with inlines|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Debug with inlines|Win32.Build.0 = Debug with inlines|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Debug|Win32.ActiveCfg = Debug|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Debug|Win32.Build.0 = Debug|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Dedicated Debug with inlines|Win32.ActiveCfg = Dedicated Debug with inlines|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Dedicated Debug with inlines|Win32.Build.0 = Dedicated Debug with inlines|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Dedicated Debug|Win32.ActiveCfg = Dedicated Debug|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Dedicated Debug|Win32.Build.0 = Dedicated Debug|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Dedicated Release|Win32.ActiveCfg = Dedicated Release|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Dedicated Release|Win32.Build.0 = Dedicated Release|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Release|Win32.ActiveCfg = Release|Win32
-		{6EA6406F-3E65-47D9-8246-D6660A81606F}.Release|Win32.Build.0 = Release|Win32
 		{49BEC5C6-B964-417A-851E-808886B57420}.Debug with inlines and memory log|Win32.ActiveCfg = Debug with inlines and memory log|Win32
 		{49BEC5C6-B964-417A-851E-808886B57420}.Debug with inlines and memory log|Win32.Build.0 = Debug with inlines and memory log|Win32
 		{49BEC5C6-B964-417A-851E-808886B57420}.Debug with inlines|Win32.ActiveCfg = Debug with inlines|Win32
@@ -116,8 +103,10 @@ Global
 		{49BEC5C6-B964-417A-851E-808886B57430} = {1E2B3940-65F8-4D8F-9EEE-85E94EBBC6DF}
 		{49BEC5C6-B964-417A-851E-808886B57400} = {347D107C-D787-4408-A60D-86FA45997F9B}
 		{F46F5D4E-C1D4-4ADE-9FAA-5F0CE3AA07F1} = {347D107C-D787-4408-A60D-86FA45997F9B}
-		{6EA6406F-3E65-47D9-8246-D6660A81606F} = {003B01AB-152D-45C8-BF45-E5A035042D7F}
 		{49BEC5C6-B964-417A-851E-808886B57420} = {003B01AB-152D-45C8-BF45-E5A035042D7F}
 		{49BEC5C6-B964-417A-851E-808886B574F1} = {1E2B3940-65F8-4D8F-9EEE-85E94EBBC6DF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC277A54-1C4B-4B48-8794-9C3549D856C1}
 	EndGlobalSection
 EndGlobal

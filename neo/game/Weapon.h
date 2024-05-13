@@ -159,7 +159,6 @@ private:
 	idScriptBool			WEAPON_RELOAD;
 	idScriptBool			WEAPON_NETRELOAD;
 	idScriptBool			WEAPON_NETENDRELOAD;
-	idScriptBool			WEAPON_NETFIRING;
 	idScriptBool			WEAPON_RAISEWEAPON;
 	idScriptBool			WEAPON_LOWERWEAPON;
 	weaponStatus_t			status;
