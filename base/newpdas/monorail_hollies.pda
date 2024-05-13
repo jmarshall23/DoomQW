@@ -1,0 +1,60 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda monorail_hollies {
+	name         "Charles Hollies"
+	fullname     "Charles L. Hollies"
+	icon         "guis/assets/pda/hollies"
+	id           "5437-98"
+	post         "Monorail"
+	title        "EAP Director General"
+	security     ""
+	pda_email    "monorail_hollies_email_1"
+	pda_email    "monorail_hollies_email_2"
+	pda_email    "monorail_hollies_email_3"
+	pda_audio    "monorail_hollies_audio_1"
+}
+
+email monorail_hollies_email_1 {
+	date		"10-11-2145"
+	to		"Charles Hollies"
+	from		"Yon Brady"
+	subject	"Site 2 Closure"
+	text {
+"Mr. Hollies,\n\n"
+"I would like to report that the main tunnel passage to Site 2 has been sealed. I will transfer the door codes to the archaeological division today.\n"
+"For all practical purposes that dig site is now closed for good.\n\n"
+"Thank You,\nYon Brady"
+	}
+}
+
+email monorail_hollies_email_2 {
+	date		"10-13-2145"
+	to		"Charles Hollies"
+	from		"Yon Brady"
+	subject	"Remaining Ammunition"
+	text {
+"Mr. Hollies,\n\n"
+"As you requested I've placed all remaining ammunition from the security team stationed at Site 2 in storage cabinet 054 with door code: 142.\n\n"
+"Thank You,\nYon Brady"
+	}
+}
+email monorail_hollies_email_3 {
+	date		"10-27-2145"
+	to		"Charles Hollies"
+	from		"Phil Wilson"
+	subject	"Artifact Inventory Tracking"
+	text {
+"Charlie Hollies,\n\n"
+"We've received a few artifacts from Site 2, without proper discovery and time-date information on them.  It is very difficult processing all these pieces when we don't know where or when they were uncovered. Please check your records and send the requested information back to me for artifacts 34-x91, 21-x23, and 86-y12.\n\n"
+"Phil Wilson\n"
+"Delta Research Team"
+	}
+}
+
+audio monorail_hollies_audio_1 {
+	name		"EAP Policy Modification :: Site 2"
+	info		"Made by: Charles Hollies\nDate: 09-05-2145\nOpen for Amendment: Yes\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_monorail_hollies_1"
+}
+

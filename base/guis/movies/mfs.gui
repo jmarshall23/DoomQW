@@ -1,0 +1,82 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	windowDef Bg
+	{
+		rect	10,10,618,456
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,1
+		visible	1
+	}
+	windowDef Movie
+	{
+		rect	31, 24, 577, 428
+		background	"pdas/video/mfs"
+		matcolor	1, 1, 1, 1
+		visible	1
+
+		onTrigger {
+			resetCinematics ;
+			resetTime "Anim" "0" ;
+		}
+
+	}
+	windowDef RoqFile1
+	{
+		rect	31, 24, 577, 428
+		visible	1
+		background	"guis/assets/marscity/uac"
+		matcolor	1,1,1,1
+	}
+	windowDef Anim
+	{
+		rect	0,0,0,0
+		notime	1
+
+		onTime 0 {
+			transition "RoqFile1::matcolor" "1 1 1 1" "1 1 1 0" "500" ;
+		}
+
+		onTime 85500 {
+			transition "RoqFile1::matcolor" "1 1 1 0" "1 1 1 1" "500" ;
+		}
+
+	}
+	windowDef Mask
+	{
+		rect	25 ,20 ,-590 ,440
+		visible	1
+		background	"guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.25
+	}
+	windowDef Outershadow
+	{
+		rect	24,19,-591,440
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	22,20,-596,440
+		background	"gui/addhighlight"
+		matcolor	0.05,0.1,0.1,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	25 ,20 ,-590 ,440
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	2
+	}
+	windowDef Reflect
+	{
+		rect	30,19,580,448
+		matcolor	1 ,1 ,1 ,0.1
+		visible	1
+		background	"gui/reflect1"
+	}
+}

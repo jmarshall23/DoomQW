@@ -1,0 +1,48 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda recycling1_sadowayj {
+	name         "Nick Sadowayj"
+	fullname     "Nick Sadowayj"
+	icon         "guis/assets/pda/sadowayj"
+	id           "4223-18"
+	post         "Recycling Sector 1"
+	title        "HAZMAT Specialist"
+	security     ""
+	pda_email    "recycling1_sadowayj_email_1"
+	pda_email    "recycling1_sadowayj_email_2"
+	pda_audio    "recycling1_sadowayj_audio_1"
+}
+
+email recycling1_sadowayj_email_1 {
+	date		"11-02-2145"
+	to		"Nicholas Sadowayj"
+	from		"Henry Varela"
+	subject	"Pump Malfunction"
+	text {
+"Nicholas,\n\n"
+"I've redirected control for the main pump to the flow service terminal located on the maintenance platform above this area. If the main pump should crack or malfunction and cause a spill the only way to shut it down would be from there. Entry into the pump room would just be too dangerous. If you have any questions please see me.\n\n"
+"Thank You,\nHenry"
+
+	}
+}
+
+email recycling1_sadowayj_email_2 {
+	date		"11-10-2145"
+	to		"Nicholas Sadowayj"
+	from		"Scott Johnson"
+	subject		"Locked Armaments"
+	text {
+"Mr. Sadowayj,\n\n"
+"I fear that the rumors I've been hearing might actually be true. The other day someone from my team was cleaning up a toxic spill in Delta and they said they actually saw some sort of creature down there, he didn't know what it was but it really scared him and got us thinking.\n"
+"We can't be too careful; I've locked some ammunition and combat armor in the cabinet by the monorail airlock door here in Sector 2. If you ever need to get in it the code is: 483\n\n"
+"-Scott"
+	}
+}
+
+audio recycling1_sadowayj_audio_1 {
+	name		"HAZMAT Response"
+	info		"Made by: Nicholas Sadowayj\nDate: 10-01-2145\nOpen for Amendment: Yes\nSet for Archive: No"
+	preview	"sound/vo/video/novideo"
+	audio		"audiolog_recycling1_sadowayj_1"
+}
+

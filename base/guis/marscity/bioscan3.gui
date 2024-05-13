@@ -1,0 +1,1278 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	visible	1
+	float	"trigone"	0
+
+	onTrigger {
+		if ("trigone" == 1) { 
+			resetTime "ScanClip" "0" ;	
+		} else {
+			set "trigone" "1" ;
+			resetTime "BgClip1" "0" ;
+		}
+	}
+
+	windowDef Bg3
+	{
+		rect	0,0,640,480
+		background	"guis/assets/common/bg"
+		visible	0
+		matcolor	1,1,1,1
+	}
+	windowDef Bg
+	{
+		rect	106,166,434,145
+		background	"guis/assets/common/bg"
+		visible	1
+		matcolor	0,0.05,0.1,1
+	}
+	windowDef MapGrid
+	{
+		rect	108,164,428,146
+		visible	0
+		background	"gui/grid2"
+		matcolor	1,1,1,0.1
+		matscalex	7
+		matscaley	3
+	}
+	windowDef ScanClip
+	{
+		rect	108,167,430,142
+		visible	1
+		notime	1
+
+		onTime 0 {
+			set "Skull1::visible" "1" ;
+			set "Skull2::visible" "1" ;
+			resetTime "Fill1" "0" ;	
+			transition "Text1::forecolor" "1 1 1 1" "1 1 1 0" "500" ;
+			resetTime "TextScrollClip" "0" ;
+			resetTime "TextBrainStart" "0" ;
+		}
+
+		onTime 250 {
+			transition "ScanFront::matcolor" "1 1 1 0" "1 1 1 1" "250" ;
+			transition "ScanningClip::rect" "275 310 257 6" "275 278 257 38" "1000" "0" "0.8" ;
+		}
+
+		onTime 500 {
+			transition "ScanFront::rect" "0 -388 430 602" "0 80 430 602" "3000" "0" "0.2" ;
+			transition "MapGrid1::rect" "0 -800 428 1000" "0 -500 428 1000" "3000" "0.2" "0.2" ;
+			transition "BgScroll::rect" "125 213 399 202" "101 138 435 202" "1000" "0.2" "0" ;
+			set "BgScroll::visible" "1" ;
+		}
+
+		onTime 1000 {
+			resetTime "FlashBox1" "0" ;
+			resetTime "FlashText1" "0" ;
+		}
+
+		onTime 2300 {
+			resetTime "FlashBox2" "0" ;
+			resetTime "FlashText2" "0" ;
+		}
+
+		onTime 1200 {
+			resetTime "FlashBox3" "0" ;
+			resetTime "FlashText3" "0" ;
+		}
+
+		onTime 1800 {
+			resetTime "FlashBox4" "0" ;
+			resetTime "FlashText4" "0" ;
+		}
+
+		onTime 1500 {
+			transition "BgScroll::rect" "101 138 435 202" "125 62 399 202" "1200" "0" "0.4" ;
+		}
+
+		onTime 2250 {
+			transition "ScanFront::matcolor" "1 1 1 1" "1 1 1 0" "1000" ;
+		}
+
+		onTime 2700 {	
+			transition "ScanTopClip::rect" "0 140 430 1" "0 0 430 142" "1500" "0" "0.8" ;
+		}
+
+		onTime 3200 {	
+			transition "ScanTop::matcolor" "1 1 1 0" "1 1 1 0.9" "1500" "0" "0.8" ;
+		}
+
+		onTime 3000 {
+			transition "BgScroll::rect" "125 62 399 202" "101 138 435 202" "500" "0.4" "0" ;
+		}
+
+		onTime 3500 {
+			transition "BgScroll::rect" "101 138 435 202" "125 213 399 202" "500" "0" "0.4" ;
+		}
+
+		onTime 3800 {
+			resetTIme "BrainBox" "0" ;
+		}
+
+		onTime 4000 {
+			set "BgScroll::visible" "0" ;
+			set "Skull1::visible" "1" ;
+			set "Skull2::visible" "1" ;
+		}
+
+		onTime 5750 {
+			transition "ScanTop::matcolor" "1 1 1 0.9" "1 1 1 0" "500" ;
+			set "BgScroll::rect" "125 62 399 202" ;
+		}
+
+		onTime 6000 {
+			transition "ScanFront::matcolor" "1 1 1 0" "1 1 1 1" "1000" ;
+			transition "ScanFront::rect" "0 80 430 602" "0 -400 430 602" "2500" "0.2" "0.2" ;
+			transition "MapGrid1::rect" "0 -500 428 1000" "0 -750 428 1000" "2500" "0.2" "0.2" ;
+			set "BgScroll::visible" "1" ;
+			transition "BgScroll::rect" "125 62 399 202" "101 138 435 202" "1250" "0.2" "0" ;
+		}
+
+		onTime 7250 {
+			transition "BgScroll::rect" "101 138 435 202" "125 213 399 202" "1250" "0" "0.4" ;
+		}
+
+		onTime 8500 {
+			transition "ScanFront::matcolor" "1 1 1 1" "1 1 1 0" "1000" ;
+			set "Skull1::visible" "0" ;
+			set "Skull2::visible" "0" ;
+			set "BgScroll::visible" "0" ;
+		}
+
+		onTime 9000 {
+			transition "ScanningClip::rect" "275 278 257 38" "275 310 257 6" "400" "0" "0.8" ;
+			transition "Text3::forecolor" "1 1 1 0" "1 1 1 1" "500" ;
+			transition "BgClip1::rect" "69 137 509 0" "69 137 509 111" "1000" "0" "0.9" ;
+			transition "BgClip2::rect" "69 350 509 0" "69 241 509 109" "1000" "0" "0.9" ;
+			transition "BgBlackBottom::rect" "0 -109 509 -109" "0 0 509 -109" "1000" "0" "0.9" ;
+			set "Fill1::visible" "0" ;
+			set "Fill2::visible" "0" ;
+			set "Fill3::visible" "0" ;
+			set "Fill4::visible" "0" ;
+			set "Fill5::visible" "0" ;
+			set "Fill6::visible" "0" ;
+			set "Fill7::visible" "0" ;
+			set "Fill8::visible" "0" ;
+		}
+
+		onTime 9800 {
+			transition "text3::rect" "112 215 419 72" "112 175 419 72" "600" "0.2" "0.8" ;
+		}
+
+		onTime 10000 {
+			resetTime "text32" "0" ;
+		}
+
+		onTime 15000 {
+			transition "Text3::forecolor" "1 1 1 1" "1 1 1 0" "500" ;
+			transition "Text32::forecolor" "1 1 1 1" "1 1 1 0" "500" ;
+			transition "Text2::forecolor" "1 1 1 0" "1 1 1 1" "500" ;
+		}
+
+		windowDef MapGrid1
+		{
+			rect	0,-800,428,1000
+			visible	1
+			background	"gui/grid2"
+			matcolor	1,1,1,0.1
+			matscalex	7
+			matscaley	21
+		}
+		windowDef ScanFront
+		{
+			rect	0,-388,430,602
+			background	"guis/assets/medical/playerscanfront"
+			visible	1
+			matcolor	1,1,1,0
+		}
+		windowDef ScanTopClip
+		{
+			rect	0,0,430,1
+			visible	1
+			notime	0
+			windowDef ScanTop
+			{
+				rect	-8,-5,440,-207
+				background	"guis/assets/medical/playerscantop"
+				visible	1
+				matcolor	1,1,1,0
+			}
+		}
+	}
+	windowDef Scanlines
+	{
+		rect	106,159,-435,156
+		matcolor	0.1,0.1,0.1,0.1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	0.8
+	}
+	windowDef Text1
+	{
+		rect	112,212,423,72
+		text	"#str_03512"
+		font	"fonts/micro"
+		textscale	0.75
+		forecolor	1,1,1,1
+		visible	1
+		textalign	1
+	}
+	windowDef bgScroll
+	{
+		rect	125, 213, 399, 202
+		visible	0
+		background	"guis/assets/comm/scrollbig"
+		matcolor	0.2, 0.8, 1, pdscaleTable [ time * 0.0005 ] / 3
+	}
+	windowDef ScanningClip
+	{
+		rect	275,309,257,7
+		visible	1
+		windowDef ButtonPad
+		{
+			rect	0,3,269,54
+			visible	1
+			background	"guis/assets/teleporter/button1"
+			matcolor	0.6,0,0,0.4
+
+			onTime 0 {
+				transition "matcolor" "0.6 0 0 0.8" "0.6 0 0 0.4" "800" ; 
+			}
+
+			onTime 800 {
+				transition "matcolor" "0.6 0 0 0.4" "0.6 0 0 0.8" "200" ; 
+			}
+
+			onTime 1000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef ButtonPadLine
+		{
+			rect	0,2,269,54
+			visible	1
+			background	"guis/assets/teleporter/button2"
+			matcolor	0.7,0,0,1
+		}
+		windowDef Text21
+		{
+			rect	35,-1,185,41
+			text	"#str_00073"
+			font	"fonts/micro"
+			textscale	0.48
+			forecolor	1,1,1,1
+			visible	1
+			textalign	1
+		}
+		windowDef Spin3Top1
+		{
+			rect	15,10,28,18
+			visible	1
+			background	"gui/thermal/spin"
+			matcolor	1,0,0,0.5
+
+			onTime 0 {
+				transition "Spin3Top1::matcolor" "1 0.2 0.2 0.5" "1 1 1 0.5" "500" ;
+			}
+
+			onTime 1000 {
+				transition "Spin3Top1::matcolor" "1 1 1 0.5" "1 0.2 0.2 0.5" "500" ;
+			}
+
+			onTime 1500 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Spin3Top
+		{
+			rect	214,10,28,18
+			visible	1
+			background	"gui/thermal/spin"
+			matcolor	1,0,0,0.5
+
+			onTime 0 {
+				transition "Spin3Top::matcolor" "1 0.2 0.2 0.5" "1 1 1 0.5" "500" ;
+			}
+
+			onTime 1000 {
+				transition "Spin3Top::matcolor" "1 1 1 0.5" "1 0.2 0.2 0.5" "500" ;
+			}
+
+			onTime 1500 {
+				resetTime "0" ;
+			}
+
+		}
+	}
+	windowDef Bg1Parent
+	{
+		rect	77, 53, 492, 370
+		visible	1
+		windowDef Bg1
+		{
+			rect	0, 0, 492, 370
+			background	"guis/assets/medical/alphatest.tga"
+			visible	1
+			matcolor	1, 1, 1, 1
+		}
+	}
+	windowDef Skull1
+	{
+		rect	320,331,115,84
+		background	"guis/assets/medical/skscan1"
+		visible	0
+		matcolor	1,1,1,1
+
+		onTime 0 {
+			set "Skull2::background" "guis/assets/medical/skscan2b" ;
+			transition "Skull2::matcolor" "1 1 1 0" "1 1 1 1" "250" ;
+		}
+
+		onTime 250 {
+			set "Skull1::background" "guis/assets/medical/skscan2" ;
+			transition "Skull2::matcolor" "1 1 1 1" "1 1 1 0" "250" ;
+		}
+
+		onTime 500 {
+			set "Skull2::background" "guis/assets/medical/skscan3b" ;
+			transition "Skull2::matcolor" "1 1 1 0" "1 1 1 1" "250" ;
+		}
+
+		onTime 750 {
+			set "Skull1::background" "guis/assets/medical/skscan3" ;
+			transition "Skull2::matcolor" "1 1 1 1" "1 1 1 0" "250" ;
+		}
+
+		onTime 1000 {
+			set "Skull2::background" "guis/assets/medical/skscan4b" ;
+			transition "Skull2::matcolor" "1 1 1 0" "1 1 1 1" "250" ;
+		}
+
+		onTime 1250 {
+			set "Skull1::background" "guis/assets/medical/skscan4" ;
+			transition "Skull2::matcolor" "1 1 1 1" "1 1 1 0" "250" ;
+		}
+
+		onTime 1500 {
+			set "Skull2::background" "guis/assets/medical/skscan5b" ;
+			transition "Skull2::matcolor" "1 1 1 0" "1 1 1 1" "250" ;
+		}
+
+		onTime 1750 {
+			set "Skull1::background" "guis/assets/medical/skscan5" ;
+			transition "Skull2::matcolor" "1 1 1 1" "1 1 1 0" "250" ;
+		}
+
+		onTime 2000 {
+			set "Skull2::background" "guis/assets/medical/skscan6b" ;
+			transition "Skull2::matcolor" "1 1 1 0" "1 1 1 1" "250" ;
+		}
+
+		onTime 2250 {
+			set "Skull1::background" "guis/assets/medical/skscan6" ;
+			transition "Skull2::matcolor" "1 1 1 1" "1 1 1 0" "250" ;
+		}
+
+		onTime 2500 {
+			set "Skull2::background" "guis/assets/medical/skscan7b" ;
+			transition "Skull2::matcolor" "1 1 1 0" "1 1 1 1" "250" ;
+		}
+
+		onTime 2750 {
+			set "Skull1::background" "guis/assets/medical/skscan7" ;
+			transition "Skull2::matcolor" "1 1 1 1" "1 1 1 0" "250" ;
+		}
+
+		onTime 3000 {
+			set "Skull2::background" "guis/assets/medical/skscan1b" ;
+			transition "Skull2::matcolor" "1 1 1 0" "1 1 1 1" "250" ;
+		}
+
+		onTime 3250 {
+			set "Skull1::background" "guis/assets/medical/skscan1" ;
+			transition "Skull2::matcolor" "1 1 1 1" "1 1 1 0" "250" ;
+		}
+
+		onTime 3500 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Skull2
+	{
+		rect	320,331,115,84
+		background	"guis/assets/medical/skscan2b"
+		visible	0
+		matcolor	1,1,1,0
+	}
+	windowDef Fill1
+	{
+		rect	326,336,21,15
+		background	"guis/assets/kiosk/titlefill"
+		visible	1
+		matcolor	0.9, 1, 1, 0
+		notime	1
+
+		onTime 0 {
+			transition "Fill1::matcolor" "1 0.6 0 1" "1 0.6 0 0" "500" ;
+			transition "Fill5::matcolor" "1 0.6 0 0" "1 0.6 0 1" "500" ;
+		}
+
+		onTime 250 {
+			transition "Fill2::matcolor" "1 0.6 0 1" "1 0.6 0 0" "500" ;
+			transition "Fill6::matcolor" "1 0.6 0 0" "1 0.6 0 1" "500" ;
+		}
+
+		onTime 500 {
+			transition "Fill3::matcolor" "1 0.6 0 1" "1 0.6 0 0" "500" ;
+			transition "Fill7::matcolor" "1 0.6 0 0" "1 0.6 0 1" "500" ;
+		}
+
+		onTime 750 {
+			transition "Fill4::matcolor" "1 0.6 0 1" "1 0.6 0 0" "500" ;
+			transition "Fill8::matcolor" "1 0.6 0 0" "1 0.6 0 1" "500" ;
+		}
+
+		onTime 1000 {
+			transition "Fill5::matcolor" "1 0.6 0 1" "1 0.6 0 0" "500" ;
+			transition "Fill1::matcolor" "1 0.6 0 0" "1 0.6 0 1" "500" ;
+		}
+
+		onTime 1250 {
+			transition "Fill6::matcolor" "1 0.6 0 1" "1 0.6 0 0" "500" ;
+			transition "Fill2::matcolor" "1 0.6 0 0" "1 0.6 0 1" "500" ;
+		}
+
+		onTime 1500 {
+			transition "Fill7::matcolor" "1 0.6 0 1" "1 0.6 0 0" "500" ;
+			transition "Fill3::matcolor" "1 0.6 0 0" "1 0.6 0 1" "500" ;
+		}
+
+		onTime 1750 {
+			transition "Fill8::matcolor" "1 0.6 0 1" "1 0.6 0 0" "500" ;
+			transition "Fill4::matcolor" "1 0.6 0 0" "1 0.6 0 1" "500" ;
+		}
+
+		onTime 2000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Fill2
+	{
+		rect	344,336,21,15
+		background	"guis/assets/kiosk/titlefill"
+		visible	1
+		matcolor	0.9, 1, 1, 0
+	}
+	windowDef Fill3
+	{
+		rect	360,336,21,15
+		background	"guis/assets/kiosk/titlefill"
+		visible	1
+		matcolor	0.9, 1, 1, 0
+	}
+	windowDef Fill4
+	{
+		rect	377,336,21,15
+		background	"guis/assets/kiosk/titlefill"
+		visible	1
+		matcolor	0.9, 1, 1, 0
+	}
+	windowDef Fill5
+	{
+		rect	395,336,21,15
+		background	"guis/assets/kiosk/titlefill"
+		visible	1
+		matcolor	0.9, 1, 1, 0
+	}
+	windowDef Fill6
+	{
+		rect	412,336,21,15
+		background	"guis/assets/kiosk/titlefill"
+		visible	1
+		matcolor	0.9, 1, 1, 0
+	}
+	windowDef Fill7
+	{
+		rect	429,336,21,15
+		background	"guis/assets/kiosk/titlefill"
+		visible	1
+		matcolor	0.9, 1, 1, 0
+	}
+	windowDef Fill8
+	{
+		rect	446,336,21,15
+		background	"guis/assets/kiosk/titlefill"
+		visible	1
+		matcolor	0.9, 1, 1, 0
+	}
+	windowDef Text31
+	{
+		rect	127,81,419,72
+		text	"#str_03592"
+		font	"fonts/micro"
+		textscale	0.46
+		forecolor	1,1,1,1
+		visible	1
+		textalign	1
+	}
+	windowDef TextScrollClip
+	{
+		rect	319,318,166,1
+		visible	1
+		notime	1
+
+		onTime 0 {
+			transition "TextScrollParent::rect" "0 0 337 21" "-190 0 337 21" "4500" "0" "0.8" ;
+			transition "rect" "319 318 166 1" "319 318 166 21" "400" ;
+		}
+
+		onTime 4500 {
+			transition "TextScrollParent::rect" "-190 0 337 21" "0 0 337 21" "4500" "0.8" "0" ;
+		}
+
+		onTime 8600 {
+			transition "rect" "319 318 166 21" "319 318 166 1" "400" ;
+		}
+
+		windowDef TextScrollParent
+		{
+			rect	00,0,337,21
+			visible	1
+			windowDef TextScroll1
+			{
+				rect	0,0,35,21
+				visible	1
+				forecolor	1,1,1,0.25
+				text	"275"
+				textscale	0.25
+			}
+			windowDef TextScroll2
+			{
+				rect	50,0,35,21
+				visible	1
+				forecolor	1,1,1,0.25
+				text	"141"
+				textscale	0.25
+			}
+			windowDef TextScroll3
+			{
+				rect	100,0,35,21
+				visible	1
+				forecolor	1,1,1,0.25
+				text	"643"
+				textscale	0.25
+			}
+			windowDef TextScroll4
+			{
+				rect	150,0,35,21
+				visible	1
+				forecolor	1,1,1,0.25
+				text	"152"
+				textscale	0.25
+			}
+			windowDef TextScroll5
+			{
+				rect	200,0,35,21
+				visible	1
+				forecolor	1,1,1,0.5
+				text	"892"
+				textscale	0.25
+			}
+			windowDef TextScroll6
+			{
+				rect	250,0,35,21
+				visible	1
+				forecolor	1,1,1,0.25
+				text	"227"
+				textscale	0.25
+			}
+			windowDef TextScroll7
+			{
+				rect	300,0,35,21
+				visible	1
+				forecolor	1,1,1,0.25
+				text	"460"
+				textscale	0.25
+			}
+		}
+	}
+	windowDef BrainBox
+	{
+		rect	278,194,104,0
+		visible	1
+		notime	1
+
+		onTime 0 {
+			transition "BrainLine::rect" "274 185 111 102" "284 195 91 82" "250" ;
+			transition "BrainLine::matcolor" "0.2 0.6 0.8 0" "0.2 0.6 0.8 0.4" "250" ;
+			resetTime "TextBrain1" "0" ;
+		}
+
+		onTime 250 {
+			set "BrainLine::visible" "0" ;
+		}
+
+		onTime 300 {
+			set "BrainLine::visible" "1" ;
+			transition "BrainLine::matcolor" "0.2 0.6 0.8 0.4" "0.2 0.6 0.8 0" "500" ;
+			transition "BrainBox::rect" "278 194 104 0" "278 194 104 84" "500" ;
+		}
+
+		onTime 800 {
+			resetTime "TextBrain" "0" ;
+			resetTime "TextBrain2" "0" ;
+			transition "Brain11::matcolor" "1 1 1 0" "1 1 1 0.5" "400" ;
+			transition "Brain21::matcolor" "1 1 1 0" "1 1 1 0.5" "400" ;
+		}
+
+		onTime 2100 {
+			transition "Brain1::matcolor" "1 1 1 0.5" "1 1 1 0" "400" ;
+			transition "Brain2::matcolor" "1 1 1 0.5" "1 1 1 0" "400" ;
+			//	transition "BrainLine::matcolor" "0.2 0.6 0.8 0.4" "0.2 0.6 0.8 0" "400" ;
+		}
+
+		windowDef Brain1
+		{
+			rect	0,0,52,84
+			background	"guis/assets/medical/brain"
+			visible	1
+			matcolor	1,1,1,0.5
+		}
+		windowDef Brain2
+		{
+			rect	52,0,-52,84
+			background	"guis/assets/medical/brain"
+			visible	1
+			matcolor	1,1,1,0.5
+		}
+	}
+	windowDef BrainLine
+	{
+		rect	274,185,111,102
+		visible	1
+		background	"guis/assets/teleporter/button2"
+		matcolor	0.7,0,0,0
+	}
+	windowDef TextBrain
+	{
+		rect	377,197,136,79
+		visible	1
+		forecolor	1,1,1,0.749
+		text	" "
+		textscale	0.2
+		notime	1
+
+		onTime 0 {
+			set "text" "#str_03514" ;
+		}
+
+		onTime 50 {
+			set "text" "#str_03515" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_03516" ;
+		}
+
+		onTime 150 {
+			set "text" "#str_03517" ;
+		}
+
+		onTime 200 {
+			set "text" "#str_03518" ;
+		}
+
+		onTime 250 {
+			set "text" "#str_03519" ;
+		}
+
+		onTime 350 {
+			set "text" "#str_03520" ;
+		}
+
+		onTime 400 {
+			set "text" "#str_03521" ;
+		}
+
+		onTime 450 {
+			set "text" "#str_03522" ;
+		}
+
+		onTime 500 {
+			set "text" "#str_03523" ;
+		}
+
+		onTime 550 {
+			set "text" "#str_03524" ;
+		}
+
+		onTime 600 {
+			set "text" "#str_03525" ;
+		}
+
+		onTime 650 {
+			set "text" "#str_03526" ;
+		}
+
+		onTime 700 {
+			set "text" "#str_03527" ;
+		}
+
+		onTime 800 {
+			set "text" "#str_03528" ;
+		}
+
+		onTime 850 {
+			set "text" "#str_03529" ;
+		}
+
+		onTime 900 {
+			set "text" "#str_03530" ;
+		}
+
+		onTime 950 {
+			set "text" "#str_03531" ;
+		}
+
+		onTime 1000 {
+			set "text" "#str_03532" ;
+		}
+
+		onTime 1050 {
+			set "text" "#str_03533" ;
+		}
+
+		onTime 1100 {
+			set "text" "#str_03534" ;
+		}
+
+		onTime 1200 {
+			transition "forecolor" "1 1 1 0.75" "1 1 1 0" "500" ;
+		}
+
+	}
+	windowDef TextBrain1
+	{
+		rect	151,197,131,79
+		visible	1
+		forecolor	1,1,1,0.745
+		text	" "
+		textscale	0.2
+		textalign	2
+		notime	1
+
+		onTime 0 {
+			set "text" "#str_03535" ;
+		}
+
+		onTime 50 {
+			set "text" "#str_03536" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_03537" ;
+		}
+
+		onTime 150 {
+			set "text" "#str_03538" ;
+		}
+
+		onTime 250 {
+			set "text" "#str_03539" ;
+		}
+
+		onTime 300 {
+			set "text" "#str_03540" ;
+		}
+
+		onTime 350 {
+			set "text" "#str_03541" ;
+		}
+
+		onTime 400 {
+			set "text" "#str_03542" ;
+		}
+
+		onTime 450 {
+			set "text" "#str_03543" ;
+		}
+
+		onTime 1450 {
+			transition "forecolor" "1 1 1 0.75" "1 1 1 0" "500" ;
+		}
+
+	}
+	windowDef Brain11
+	{
+		rect	163,118,33,51
+		background	"guis/assets/medical/brain"
+		visible	1
+		matcolor	1,1,1,0
+	}
+	windowDef Brain21
+	{
+		rect	196,118,-33,51
+		background	"guis/assets/medical/brain"
+		visible	1
+		matcolor	1,1,1,0
+	}
+	windowDef TextBrain2
+	{
+		rect	223,123,242,37
+		visible	1
+		forecolor	1,1,1,0.749
+		text	" "
+		textscale	0.2
+		notime	1
+
+		onTime 0 {
+			set "text" "#str_03514" ;
+		}
+
+		onTime 50 {
+			set "text" "#str_03515" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_03516" ;
+		}
+
+		onTime 150 {
+			set "text" "#str_03517" ;
+		}
+
+		onTime 200 {
+			set "text" "#str_03518" ;
+		}
+
+		onTime 250 {
+			set "text" "#str_03519" ;
+		}
+
+		onTime 300 {
+			set "text" "#str_03544" ;
+		}
+
+		onTime 350 {
+			set "text" "#str_03545" ;
+		}
+
+		onTime 400 {
+			set "text" "#str_03546" ;
+		}
+
+		onTime 450 {
+			set "text" "#str_03547" ;
+		}
+
+		onTime 500 {
+			set "text" "#str_03548" ;
+		}
+
+		onTime 550 {
+			set "text" "#str_03549" ;
+		}
+
+		onTime 600 {
+			set "text" "#str_03550" ;
+		}
+
+		onTime 650 {
+			set "text" "#str_03551" ;
+		}
+
+		onTime 700 {
+			set "text" "#str_03552" ;
+		}
+
+		onTime 800 {
+			set "text" "#str_03553" ;
+		}
+
+		onTime 850 {
+			set "text" "#str_03554" ;
+		}
+
+		onTime 900 {
+			set "text" "#str_03555" ;
+		}
+
+		onTime 950 {
+			set "text" "#str_03556" ;
+		}
+
+		onTime 1000 {
+			set "text" "#str_03557" ;
+		}
+
+		onTime 1050 {
+			set "text" "#str_03558" ;
+		}
+
+		onTime 1100 {
+			set "text" "#str_03559" ;
+		}
+
+		onTime 2500 {
+			transition "forecolor" "1 1 1 0.75" "1 1 1 0" "500" ;
+			transition "Brain21::matcolor" "1 1 1 1" "1 1 1 0" "400" ;
+			transition "Brain11::matcolor" "1 1 1 1" "1 1 1 0" "400" ;
+		}
+
+	}
+	windowDef TextBrainStart
+	{
+		rect	186,123,281,37
+		visible	1
+		forecolor	1,1,1,0.749
+		text	" "
+		textscale	0.2
+		notime	1
+
+		onTime 0 {
+			set "text" "#str_03560" ;
+		}
+
+		onTime 50 {
+			set "text" "#str_03561" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_03562" ;
+		}
+
+		onTime 150 {
+			set "text" "#str_03563" ;
+		}
+
+		onTime 250 {
+			set "text" "#str_03564" ;
+		}
+
+		onTime 300 {
+			set "text" "#str_03565" ;
+		}
+
+		onTime 350 {
+			set "text" "#str_03566" ;
+		}
+
+		onTime 400 {
+			set "text" "#str_03567" ;
+		}
+
+		onTime 450 {
+			set "text" "#str_03568" ;
+		}
+
+		onTime 500 {
+			set "text" "#str_03569" ;
+		}
+
+		onTime 550 {
+			set "text" "#str_03570" ;
+		}
+
+		onTime 2600 {
+			set "text" "#str_03571" ;
+		}
+
+		onTime 2650 {
+			set "text" "#str_03572" ;
+		}
+
+		onTime 2700 {
+			set "text" "#str_03573" ;
+		}
+
+		onTime 2750 {
+			set "text" "#str_03574" ;
+		}
+
+		onTime 3000 {
+			set "text" "#str_03575" ;
+		}
+
+		onTime 3050 {
+			set "text" "#str_03576" ;
+		}
+
+		onTime 3100 {
+			set "text" "#str_03577" ;
+		}
+
+		onTime 3150 {
+			set "text" "#str_03578" ;
+		}
+
+		onTime 3200 {
+			set "text" "#str_03579" ;
+		}
+
+		onTime 3250 {
+			set "text" "#str_03580" ;
+		}
+
+		onTime 3800 {
+			transition "forecolor" "1 1 1 0.75" "1 1 1 0" "500" ;
+		}
+
+	}
+	windowDef BgClip1
+	{
+		rect	69,137,509,111
+		visible	1
+		notime	1
+
+		onTime 0 {
+			transition "Text2::forecolor" "1 1 1 1" "1 1 1 0" "500" ;
+			transition "Text1::forecolor" "1 1 1 0" "1 1 1 1" "500" ;
+			transition "BgClip1::rect" "69 137 509 111" "69 137 509 0" "1000" "0" "0.9" ;
+			transition "BgClip2::rect" "69 241 509 109" "69 350 509 0" "1000" "0" "0.9" ;
+			transition "BgBlackBottom::rect" "0 0 509 -109" "0 -109 509 -109" "1000" "0" "0.9" ;
+		}
+
+		windowDef BgBlackTop
+		{
+			rect	0,0,509,111
+			background	"guis/assets/medical/alphamask"
+			visible	1
+			matcolor	0,0,0,1
+		}
+	}
+	windowDef BgClip2
+	{
+		rect	69,241,509,109
+		visible	1
+		windowDef BgBlackBottom
+		{
+			rect	0,0,509,-109
+			background	"guis/assets/medical/alphamask"
+			visible	1
+			matcolor	0,0,0,1
+		}
+	}
+	windowDef Text32
+	{
+		rect	112,217,419,0
+		text	"#str_03581"
+		font	"fonts/micro"
+		textscale	0.4
+		forecolor	1,1,1,0
+		visible	1
+		textalign	1
+		notime	1
+
+		onTime 0 {
+			transition "forecolor" "1 1 1 0" "1 1 1 0.6" "250" ;
+			transition "rect" "112 215 419 0" "112 217 419 87" "400" ;
+		}
+
+	}
+	windowDef Text3
+	{
+		rect	112,215,419,72
+		text	"#str_03403"
+		font	"fonts/micro"
+		textscale	0.6
+		forecolor	1,1,1,0
+		visible	1
+		textalign	1
+	}
+	windowDef Text2
+	{
+		rect	112,193,423,91
+		text	"#str_03582"
+		font	"fonts/micro"
+		textscale	0.7
+		forecolor	1,1,1,1
+		visible	1
+		textalign	1
+	}
+	windowDef Bglow
+	{
+		rect	94,60,462,338
+		background	"guis/assets/cpuserver/bglow2.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, pdmgflick[ time * 0.0005 ] / 5
+	}
+	windowDef FlashBox1
+	{
+		rect	284,180,15,11
+		visible	1
+		background	"guis/assets/teleporter/button1"
+		matcolor	1,0,0,0
+		notime	1
+
+		onTime 0 {
+			transition "matcolor" "1 0 0 0.5" "1 0 0 0" "250" ;
+		}
+
+	}
+	windowDef FlashText1
+	{
+		rect	299,176,74,18
+		visible	1
+		forecolor	1,1,1,0.749
+		text	" "
+		textscale	0.2
+		notime	1
+
+		onTime 0 {
+			set "text" "#str_03583" ;
+		}
+
+		onTime 50 {
+			set "text" "#str_03584" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_03585" ;
+		}
+
+		onTime 150 {
+			set "text" "#str_03586" ;
+		}
+
+		onTime 500 {
+			set "text" " " ;
+		}
+
+	}
+	windowDef FlashBox2
+	{
+		rect	309,232,15,11
+		visible	1
+		background	"guis/assets/teleporter/button1"
+		matcolor	1,0,0,0
+		notime	1
+
+		onTime 0 {
+			transition "matcolor" "1 0 0 0.5" "1 0 0 0" "250" ;
+		}
+
+	}
+	windowDef FlashText2
+	{
+		rect	324,228,74,18
+		visible	1
+		forecolor	1,1,1,0.749
+		text	" "
+		textscale	0.2
+		notime	1
+
+		onTime 0 {
+			set "text" "#str_03583" ;
+		}
+
+		onTime 50 {
+			set "text" "#str_03584" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_03585" ;
+		}
+
+		onTime 150 {
+			set "text" "#str_03586" ;
+		}
+
+		onTime 500 {
+			set "text" " " ;
+		}
+
+	}
+	windowDef FlashBox3
+	{
+		rect	357,241,15,11
+		visible	1
+		background	"guis/assets/teleporter/button1"
+		matcolor	1,0,0,0
+		notime	1
+
+		onTime 0 {
+			transition "matcolor" "1 0 0 0.5" "1 0 0 0" "250" ;
+		}
+
+	}
+	windowDef FlashText3
+	{
+		rect	372,237,74,18
+		visible	1
+		forecolor	1,1,1,0.749
+		text	" "
+		textscale	0.2
+		notime	1
+
+		onTime 0 {
+			set "text" "#str_03583" ;
+		}
+
+		onTime 50 {
+			set "text" "#str_03584" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_03585" ;
+		}
+
+		onTime 150 {
+			set "text" "#str_03586" ;
+		}
+
+		onTime 500 {
+			set "text" " " ;
+		}
+
+	}
+	windowDef FlashBox4
+	{
+		rect	280,224,15,11
+		visible	1
+		background	"guis/assets/teleporter/button1"
+		matcolor	1,0,0,0
+		notime	1
+
+		onTime 0 {
+			transition "matcolor" "1 0 0 0.5" "1 0 0 0" "250" ;
+		}
+
+	}
+	windowDef FlashText4
+	{
+		rect	295,220,74,18
+		visible	1
+		forecolor	1,1,1,0.749
+		text	" "
+		textscale	0.2
+		notime	1
+
+		onTime 0 {
+			set "text" "#str_03583" ;
+		}
+
+		onTime 50 {
+			set "text" "#str_03584" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_03585" ;
+		}
+
+		onTime 150 {
+			set "text" "#str_03586" ;
+		}
+
+		onTime 500 {
+			set "text" " " ;
+		}
+
+	}
+}

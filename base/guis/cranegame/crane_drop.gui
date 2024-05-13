@@ -1,0 +1,98 @@
+windowDef Desktop
+{
+	comment	"gui_parm1 value 1 transitions from blue to red state, set back to value 0 to transition to default color."
+	rect	0 ,0 ,640 ,480
+	backcolor	0 ,0 ,0 ,0
+	visible	1
+	float	"transition"	1
+
+	onEvent {
+		if ("gui::gui_parm1" == 1) {
+			if ("transition" == 1) { 
+				set "transition" "0" ;
+				transition "Background2::matcolor" "1 1 1 0" "1 1 1 1" "500" ;
+				transition "Outerglowbar::matcolor" "0.7 0.9 1 1" "1 0.7 0.7 1" "500" ;
+			}
+		}
+		if ("gui::gui_parm1" == 0) {
+			if ("transition" == 0) { 
+				set "transition" "1" ;
+				transition "Background2::matcolor" "1 1 1 1" "1 1 1 0" "500" ;
+				transition "Outerglowbar::matcolor" "1 0.7 0.7 1" "0.7 0.9 1 1" "500" ;
+			}
+		}
+	}
+
+	windowDef Background
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"guis/assets/crane/small4"
+		matcolor	1, 1, 1, 1
+	}
+	windowDef Background2
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"guis/assets/crane/small4r"
+		matcolor	1, 1, 1, 0
+	}
+	windowDef Text3
+	{
+		rect	20, -2, 500, 40
+		text	"#str_00971"
+		textscale	0.75
+		textalign	0
+		forecolor	1, 1, 1, 0.2
+	}
+	windowDef Outerglow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 5
+		visible	0
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	17 ,20 ,-610 ,440
+		background	"gui/addhighlight"
+		matcolor	0.1 ,0.5 ,0.5 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,-640,480
+		matcolor	1,1,1,1
+		background	"gui/test/gui_scanlines"
+		visible	1
+		matscaley	0.5
+	}
+	windowDef OuterGlowBar
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"gui/outerglowbar"
+		matcolor	0.7 ,0.9 ,1 ,1
+		visible	0
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,-640 ,480
+		matcolor	1, 1, 1 ,0.6
+		visible	1
+		background	"guis/assets/common/dirt1"
+	}
+	windowDef Reflect
+	{
+		rect	10 ,0 ,620 ,470
+		matcolor	1 ,1 ,1 ,0.2
+		visible	1
+		background	"gui/reflect1"
+	}
+}

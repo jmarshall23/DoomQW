@@ -1,0 +1,7 @@
+skin skins/models/chars/sarge/cigarhand {
+	models/characters/sarge2/cigar textures/common/nodraw
+}
+
+skin skins/models/chars/sarge/cigarmouth {
+	models/characters/sarge2/cigar2 textures/common/nodraw
+}

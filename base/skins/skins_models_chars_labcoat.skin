@@ -1,0 +1,85 @@
+skin skins/models/chars/labcoat/labcoat1 {
+	models/characters/scientist/head01/scihead01 textures/common/nodraw
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head06/head06 textures/common/nodraw
+	models/characters/common/leftgreen textures/common/nodraw
+	models/characters/common/rightgreen textures/common/nodraw
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+	models/characters/common/leftbrown2 textures/common/nodraw
+	models/characters/common/rightbrown2 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth textures/common/nodraw
+	models/characters/sarge2/teeth/teeth2 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth3 textures/common/nodraw
+	models/characters/scientist/head02/glasses2 textures/common/nodraw
+	models/characters/scientist/head02/glasses2_fx textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+}
+
+skin skins/models/chars/labcoat/labcoat2 {
+	models/characters/scientist/head04/head04 textures/common/nodraw
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head06/head06 textures/common/nodraw
+	models/characters/common/leftblue textures/common/nodraw
+	models/characters/common/rightblue textures/common/nodraw
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+	models/characters/common/leftbrown2 textures/common/nodraw
+	models/characters/common/rightbrown2 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth2 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth3 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+}
+
+skin skins/models/chars/labcoat/labcoat2nochair {
+	models/characters/scientist/head04/head04 textures/common/nodraw
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head06/head06 textures/common/nodraw
+	models/characters/common/leftblue textures/common/nodraw
+	models/characters/common/rightblue textures/common/nodraw
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+	models/characters/common/leftbrown2 textures/common/nodraw
+	models/characters/common/rightbrown2 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth2 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth3 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/mapobjects/base/chairs/chair2_d textures/common/nodraw
+}
+
+skin skins/models/chars/labcoat/labcoat2nochair2 {
+	models/characters/scientist/head04/head04 textures/common/nodraw
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head06/head06 textures/common/nodraw
+	models/characters/common/leftblue textures/common/nodraw
+	models/characters/common/rightblue textures/common/nodraw
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+	models/characters/common/leftbrown2 textures/common/nodraw
+	models/characters/common/rightbrown2 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth2 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth3 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+}
+
+skin skins/models/chars/labcoat/labcoat3nochair {
+	models/mapobjects/base/chairs/chair2_d textures/common/nodraw
+}
+
+skin skins/models/chars/labcoat/labcoat4 {
+	models/characters/scientist/head01/scihead01 textures/common/nodraw
+	models/characters/scientist/head06/head06 textures/common/nodraw
+	models/characters/scientist/head04/head04 textures/common/nodraw
+
+	models/characters/common/leftgreen textures/common/nodraw
+	models/characters/common/rightgreen textures/common/nodraw
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+	models/characters/common/leftblue textures/common/nodraw
+	models/characters/common/rightblue textures/common/nodraw
+
+	models/characters/sarge2/teeth/teeth textures/common/nodraw
+	models/characters/sarge2/teeth/teeth2 textures/common/nodraw
+	models/characters/scientist/head02/glasses2 textures/common/nodraw
+	models/characters/scientist/head02/glasses2_fx textures/common/nodraw
+}

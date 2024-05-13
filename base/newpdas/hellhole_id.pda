@@ -1,0 +1,340 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda hellhole_id {
+	name         "id Software"
+	fullname     "id Software"
+	icon         "guis/assets/pda/bio1"
+	id           "2004-08"
+	post         "Texas, USA"
+	title        "Game Designers"
+	security     "All Access"
+	pda_email    "id_1"
+	pda_email    "id_2"
+	pda_email    "id_3"
+	pda_email    "id_4"
+	pda_email    "id_5"
+	pda_email    "id_6"
+	pda_email    "id_7"
+	pda_email    "id_8"
+	pda_email    "id_9"
+	pda_email    "id_10"
+	pda_email    "id_11"
+	pda_email    "id_12"
+	pda_email    "id_13"
+	pda_email    "id_14"
+	pda_email    "id_15"
+	pda_email    "id_16"
+	pda_email    "id_17"
+	pda_email    "id_18"
+	pda_email    "id_19"
+	pda_email    "id_20"
+	pda_email    "id_21"
+	pda_email    "id_22"
+	pda_email    "id_23"
+	pda_email    "id_24"
+	pda_email    "id_25"
+		}
+
+email id_1 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Adrian Carmack"
+	subject	"Thanks"
+	text {
+"Adrian Carmack\nArtist, Co-Owner"
+	}
+}
+
+email id_2 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"John Carmack"
+	subject	"Thank You"
+	text {
+"Thank You.\n"
+"John Carmack\nProgrammer, Co-Owner"
+	}
+}
+email id_3 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Kevin Cloud"
+	subject	"Thank You"
+	text {
+"I would like to thank our fans for playing Doom 3.\n"
+"Kevin Cloud\nArtist, Co-Owner"
+	}
+}
+email id_4 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Todd Hollenshead"
+	subject	"It's DONE bay-bee!"
+	text {
+"Wow.  We're finally done!\n\n"
+"I would like to thank Tara for her patience with the long hours and all of the travel and for always being there when I got home, regardless of the hour.  Thanks to Tuffy, Champ, Barney, Boo, Tazzy, Charm, Ally, Annie, Nadeema, Firefox, Amira, Shahira, Misty and Hope (in our memories) for taking care of Tara when I wasn't there.  Thanks to my family for all of the support and encouragement over the years.\n\n"
+"Thanks to the entire team here at id for all of the hard work that was put in to make DOOM 3 the game we set out to make from the start.  And on behalf of the entire team at id, thanks to everyone at Activision for their work in assisting us and supporting the DOOM 3 development.\n\n"
+"And, of course, thanks to the fans, who make all of the effort worth it in the end.  See you guys at QuakeCon and on the DOOM 3 servers, where I'll be happy to spoon feed you some rockets courtesy of 'Toddh'!\n\n"
+"Todd Hollenshead\nCEO, Co-Owner"
+
+	}
+}
+
+
+email id_5 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Tim Willits"
+	subject	"Thanks Everyone!!"
+	text {
+"I would like to thank all of our fans for playing Doom 3. We sure had a great time making it.\n\n"
+"I would also like to give a special thanks to my wife Stephanie and children Richard and Destinee for putting up with me being gone long hours during crunch-time.\n\n"
+"Tim Willits\nLead Designer, Co-Owner"
+	}
+}
+email id_6 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Christian Antkow"
+	subject	"Special Thanks"
+	text {
+"Gloria: 'Thanks for putting up with the long hours we work.'\n\n"
+"My Family : 'Thank you for all your love and support over the years in helping me settle here'\n\n"
+"Bryan Watkins and the entire team at Danetracks : 'Thanks for going above and beyond the call of duty for us'\n\nThe Owners at id : 'Thank you for your continued support and guidance throughout the years'\n\n"
+
+	}
+}
+
+email id_7 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Timothee Besset"
+	subject	"Thanks.."
+	text {
+"To my wonderful wife Christine for 'putting up with me' through the years\n"
+"To my parents - Mom, you played that far to read this??\n"
+"To my friends having to deal with my computer addiction.\n"
+"And a big BLEH! to the #qeradiant regulars\n\n"
+
+"Thanks to Id fans everywhere .. special mention to Mac/Linux players and European gamers.\n\n"
+
+"It's been a wild ride .. I look forward to the future.\n\n"
+
+"TTimo\n"
+"Paris, France"
+	}
+}
+
+email id_8 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Mal Blackwell"
+	subject	"DONE! WOOOO!"
+	text {
+"Well we are finally done, it's been a long road getting here and let me tell you 4 years on a game is a looooooong time!\n"
+"To do a game like this, with the amount of people we have working on the team, it really says a lot about the talent and commitment of everyone at id.  I would like to thank everyone at id for making the times at the office fun and rewarding (and we have been at the office a lot!)  I would also like to thank my Wife Erin and my daughter Marlee for holding down the fort while I have been away and not giving me to much trouble about not being home so much.  And last, but not least I would like to thank the fans.  You guys (and girls) that plop your 50 down for this game.  We worked really hard on it and I hope you enjoyed it!\n\n"
+"Mal Blackwell\nDesigner"
+	}
+}
+email id_9 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Andy Chang"
+	subject	"Dirt"
+	text {
+"Player,\n\n"
+
+"Well, here we are at the end of the game.  You've been persistent and skillful or you've found some cheat codes somewhere.  Either way, thanks for making it this far.  In fact, I'm so grateful that I think you deserve a little something extra. Here are some highly classified secrets and trivia about the art team.\n\n"
+"Kenneth Scott: Can navigate a Japanese bookseller's website faster than most Japanese people can.\n"
+"Seneca Menard: Will never eat at a restaurant where orange lycra hotpants are part of the staff's uniform.\n"
+"Fred Nilsson: Can recite uncensored lines from an animated movie he worked on.\n"
+"Pat Duffy: Was once invited to a movie starlet's hotel room but didn't go.\n"
+"Patrick Thomas: Cannot stifle laughter.\n"
+"James Houska: Has escaped death from lightning multiple times.\n"
+"Eric Webb: Tried to impress a girl by saying he liked a terrible song.\n"
+"Adrian Carmack: Likes soup but doesn't seem to like crackers.\n"
+"Kevin Cloud: Only eats from a blender.\n\n"
+
+"Thanks to my family, friends, and you.\n\n"
+
+"out,\n"
+"Andy Chang\n"
+"Mesquite, TX, USA, Earth"
+	}
+}
+email id_10 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Jim Dose"
+	subject	"Thanks"
+	text {
+		"Hello!  I hope you enjoyed playing the game.\n\nI'd like to thank the owners of id for making such a great place to work, everyone who works at id for being so good at what they do, and my family for being patient with me while I was busy working on the game, especially my Mom, who died of cancer last year.\n\nSee you around in the Delta Labs!\n\nJim"
+	}
+}
+email id_11 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Pat Duffy"
+	subject	"I see you found the brick..."
+	text {
+"I hope you are enjoying all the hard work we put into Doom 3, it's been a blast creating it. You are the reason we can keep building great games and we appreciate your support.\n\nA quick thanks to my wife Christina for her endless dedication in caring for our newborn during my late hours. Joshua, you sure gave crunchtime a little extra kick ;)\n\nEnjoy the rest of the game!\n\npatd"
+	}
+}
+email id_12 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Robert Duffy"
+	subject	"Martian Buddy Dot Com"
+	text {
+"Thanks to friends and family for the support.\nI hope everyone enjoys playing it as much as we enjoyed making it.\nSpecial Thanks to Austen and Camryn :-)\n\nIn the game of the year polls please remember Super Turbo Turkey Puncher 3.\nrobert..."
+	}
+}
+email id_13 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Matt Hooper"
+	subject	"Thank You"
+	text {
+"Thanks to my wife Tanya, and my kids Gabriel, Aaron, and Ariel.\n\n"
+"Matt Hooper\nDesigner"
+	}
+}
+email id_14 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"James Houska"
+	subject	"Thanks"
+	text {
+"I would like to thank my wife for her love & support during this extremely difficult time.\n\n"
+"James Houska\nAnimator"
+	}
+}
+email id_15 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Donna Jackson"
+	subject	"Thanks Everyone"
+	text {
+"To all our fans,\n"
+"Thank you for being the best fans around, I always enjoy meeting you when I can.\n\n"
+"Donna Jackson\nid Mom"
+	}
+}
+email id_16 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Jerry Keehan"
+	subject	"Many thanks!"
+	text {
+"Took your sweet time gettin' here Marine!... =)\n\n"
+"First and foremost, a sincere thanks to you for playing Doom 3!  I know it's been a few years in the making and trust that you're thoroughly enjoying the dedication and hard work that has gone into this title.\n""*******\n""Huge thanks to the owners at id - for making me a part of their family.  It's truly an honor to be working with some of the most talented people in the game industry.\n""*******\n""Lastly, and in no way least, thanks to my wife - Tina.  Thank you for your patience,love, and understanding over the years, you truly are the best!\n""*******\n\n""Alright, enough mush, now get back to your objective - seal that hell hole marine! Oh yeah, and remember, just bring yourself back, do not get hurt - Out!\n\n"
+"J. Keehan\n"
+"Designer"
+	}
+}
+email id_17 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Seneca Menard"
+	subject	"Thank You"
+	text {
+"Seneca Menard\nArtist"
+	}
+}
+email id_18 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Fredrik Nilsson"
+	subject	"Thanks"
+	text {
+"Wow,  You are really far into the game if you're reading this.  Hope you're enjoying it so far.... Turn around.. Quick. =) \n\n"
+"I would like to say thanks to my friends and family: Lars, Ingegard, Sofie, Chris, Andrew, Anneli, Tom, Denise, TJ.\n"
+"Also to all my friends and family in Sweden.\n" "I miss you all..\n\n"
+"To SMR:    ...\n\n"
+"Empire(III): Thanks for all the late night Deathmatching.....  Fun stuff...  Better get those shotgun skills back up to par.  No railgun for you!   2ez....\n\n" 
+"To my co-workers: We have an amazing crew of people working here, you should all be proud of what we've achieved..  Thanks for keeping that smile on my face..   =)\n\n"
+"To the owners of id:  You guys have built quite an amazing place here... I've learned a whole bunch about game design from the best of the best...\n\n"
+"And of course to you the player: Thanks for all your support and for being patient while we've worked so hard on this for you all\n\n" 
+"Thanks... \n\n"
+"Fredrik"
+	}
+}
+email id_19 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Steve Rescoe"
+	subject	"Thank You"
+	text {
+"Steve Rescoe\nDesigner"
+	}
+}
+email id_20 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Kenneth Scott"
+	subject	"Mixom.co.jp order has shipped"
+	text {
+"A big mushy thanks to the rest of my brothers in arms for delivering a blockbuster game and being good company while doing it. I'm proud as hell to see this on the shelves and I'm looking forward to making more great games with you fools.  :)\n\n"
+"-Kenneth\n\n"
+"ps - I love you Peach!"
+	}
+}
+email id_21 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Marty Stratton"
+	subject	"SUSPECTED SPAM: B1G TH4NK5"
+	text {
+"If you've played this far, I certainly hope you've enjoyed DOOM 3 (or at least enjoyed the quick devmap and noclip ride to look at this secret).  It was a pleasure to be a part of the team that created it.  Even after 4 years of seeing it in development, I'm still in awe of the detail, complexity, and creativity packed into every square inch of the game.\n\n"
+
+"To my wife Gen, and my kids, Andy and Alexa - thank you for being you - your support is unbelievable.  You three are simply the greatest! And, to the rest of my family, 32 years of thanks, respect, and appreciation.\n\n"
+
+"Enjoy the rest of the game.  See you at QuakeCon.\n\n"
+
+"Ship it!\n"
+"Marty"
+	}
+}
+email id_22 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Patrick Thomas"
+	subject	"Thanks"
+	text {
+"Patrick Thomas\nArtist"
+	}
+}
+email id_23 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"JMP van Waveren"
+	subject	"Did you find the MrE behind DOOM 3 ?"
+	text {
+		"Thanks to me and my beloved twin who unfortunately had to be stripped for spare parts.\n\n"
+		"MrElusive,\nProgrammer"
+	}
+}
+email id_24 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"Eric Webb"
+	subject	"Special Thanks"
+	text {
+		"Thanks to Andy and Fred for telling me what I needed to hear, and making me realize what I needed to do. Thanks Mom and Dad for understanding why I haven't visited in months.\n\n"
+		"Most of all, I have to thank my 'bagel-chick' Emmy! Thank you for all those nights I came home late and you were there waiting. Thank you for your love and inspiration. Thank you for being a better girlfriend than I could ever ask for!\n\n"
+		"-eric"
+
+	}
+}
+email id_25 {
+	date		"11-16-2145"
+	to		"Doom Player"
+	from		"The Interns"
+	subject	"Did somebody say free food?"
+	text {
+		"We'd like to thank Miss Donna first and foremost for taking such good care of us.  We'd like to thank the awesome guys at id for not firing us (yet), and the Guildhall at SMU for getting us here in the first place.\n\n"
+		"Brian would like to thank his friends and family for always believing in him.  He would like to give special thanks to Kim, Jon, Lucas, Blake and all the guys in Team Reaction.  I wouldn't be here without you all.\n\n"
+		"Kevin would like to thank his brother Matt\n\n"
+		"- Brian Harris & Kevin Dobler"
+	}
+}

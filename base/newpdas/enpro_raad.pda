@@ -1,0 +1,59 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda enpro_raad {
+	name         "Paul Raad"
+	fullname     "Paul E. Raad"
+	icon         "guis/assets/pda/raad"
+	id           "3126-66"
+	post         "EnPro"
+	title        "Chief Technical Officer"
+	security     ""
+	pda_email    "enpro_raad_email_1"
+	pda_email    "enpro_raad_email_2"
+	pda_audio    "enpro_raad_audio_1"
+	pda_audio    "enpro_raad_audio_2"
+}
+
+email enpro_raad_email_1 {
+	date		"11-10-2145"
+	to		"Paul Raad"
+	from		"martianbuddy.com"
+	subject	"The New Taboo!"
+	text {
+"New Clone Porn movies posted daily!  Is this the new taboo?  Come and see what everyone is talking about.  See gorgeous identical clones in action.\n\n"
+
+"Only 15 credits per month!\n\n"
+	}
+}
+
+email enpro_raad_email_2 {
+	date		"11-12-2145"
+	to		"Paul Raad"
+	from		"Social Committee"
+	subject	"Ice Cream Social "
+	text {
+"All Staff,\n\n"
+"As a reminder, tomorrow is our Ice Cream Social in the Mars City Kitchen.  We will have the typical flavors of vanilla, chocolate, strawberry, blueberry... and a few surprises.\n\n"
+
+"I really hope you'll be at this event.  The Social Committee is working hard to find fun things for us to do on our meager budget.  It is a real downer when people don't show up.\n\n"
+
+"I mean, c'mon... only 7 of you came to our pizza social last month.  If you've got better ideas for the Social Committee, please forward them along.\n\n"
+
+"We hope to see you tomorrow!\n\n"
+	}
+}
+
+audio enpro_raad_audio_1 {
+	name		"Cooling Rods Replacement"
+	info		"Made by: Paul Raad\nDate: 11-1-2145\nOpen for Amendment: No\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_enpro_raad_1"
+}
+
+audio enpro_raad_audio_2 {
+	name		"Sentry Problems"
+	info		"Made by: Paul Raad\nDate: 11-03-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_enpro_raad_2"
+}
+

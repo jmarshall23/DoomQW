@@ -1,0 +1,100 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef bloodSmear11
+	{
+		rect	-131,302,-487,-310
+		visible	1
+		background	"guis/assets/common/blood2"
+		matcolor	0.6 ,0.6 ,0.3 ,0.4
+	}
+	windowDef unnamed1
+	{
+		rect	5,5,630,470
+		visible	1
+		windowDef glassCrack1111
+		{
+			rect	-357,-114,-1004,-691
+			visible	1
+			background	"guis/assets/common/glasscrack2reflect2"
+			matcolor	1 ,1,1,0.05
+		}
+		windowDef glassCrack12
+		{
+			rect	-355,-111,-1004,-691
+			visible	1
+			background	"guis/assets/common/glasscrack2"
+			matcolor	0,0,0,0.6
+		}
+		windowDef glassCrack1
+		{
+			rect	-357,-114,-1004,-691
+			visible	1
+			background	"guis/assets/common/glasscrack2"
+			matcolor	1 ,1,1,0.6
+		}
+		windowDef glassCrack11
+		{
+			rect	-357,-114,-1004,-691
+			visible	1
+			background	"guis/assets/common/glasscrack2"
+			matcolor	1 ,1,1,0.1
+		}
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Dirt
+	{
+		rect	0,0,640,480
+		matcolor	1, 1, 1 ,0.6
+		visible	1
+		background	"guis/assets/common/dirt3"
+	}
+	windowDef GlassScratch1
+	{
+		rect	-189,-134,839,-624
+		background	"guis/assets/common/scratch1d"
+		visible	1
+		matcolor	0,0,0,0.7
+	}
+	windowDef GlassScratch
+	{
+		rect	-189,-137,839,-624
+		background	"gui/common/scratch1d"
+		visible	1
+		matcolor	1,1,1,1
+	}
+	windowDef bloodSmear2
+	{
+		rect	-220,206,449,325
+		visible	1
+		background	"guis/assets/common/blood2"
+		matcolor	0 ,0 ,0 ,0.3
+	}
+	windowDef bloodSmear1
+	{
+		rect	-218,203,449,325
+		visible	1
+		background	"guis/assets/common/blood2"
+		matcolor	0.5 ,0.6 ,0.4 ,0.85
+	}
+	windowDef bloodSmear21
+	{
+		rect	16,72,449,325
+		visible	1
+		background	"guis/assets/common/blood2"
+		matcolor	0 ,0 ,0 ,0.3
+	}
+	windowDef bloodSmear3
+	{
+		rect	-416,75,449,325
+		visible	1
+		background	"guis/assets/common/blood2"
+		matcolor	0.5 ,0.6 ,0.4 ,0.85
+	}
+}

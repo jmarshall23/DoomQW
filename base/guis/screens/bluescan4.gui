@@ -1,0 +1,292 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef BgBlack1
+	{
+		rect	-13,-9,668,497
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+	windowDef BackgroundParent
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef Bg11
+		{
+			rect	0,0,320,240
+			visible	1
+			background	"guis/assets/common/framebgfill2"
+			matcolor	0.07,0.09,0.11,1
+		}
+		windowDef Bg21
+		{
+			rect	320,0,-320,240
+			visible	1
+			background	"guis/assets/common/framebgfill2"
+			matcolor	0.07,0.09,0.11,1
+		}
+		windowDef Bg31
+		{
+			rect	0,240,320,-240
+			visible	1
+			background	"guis/assets/common/framebgfill2"
+			matcolor	0.07,0.09,0.11,1
+		}
+		windowDef Bg41
+		{
+			rect	320,240,-320,-240
+			visible	1
+			background	"guis/assets/common/framebgfill2"
+			matcolor	0.07,0.09,0.11,1
+		}
+	}
+	windowDef MarsStatClip
+	{
+		rect	17,102,524,329
+		visible	1
+		windowDef MarsClip3
+		{
+			rect	203,180,168,131
+			visible	1
+			windowDef Mars11
+			{
+				rect	-173,-183,331,316
+				background	"guis/assets/cpuserver/mars2a.tga"
+				visible	1
+				matcolor	0.8, 0.9, 1, 0.85
+			}
+		}
+		windowDef Circle1Spin
+		{
+			rect	-14,61,436,193
+			visible	1
+			background	"gui/health/circle2"
+			matcolor	0.698,0.898,1,1
+		}
+		windowDef BlackCircleClip
+		{
+			rect	10,34,188,203
+			visible	1
+			backcolor	0.07,0.09,0.11,1
+		}
+		windowDef MarsClip2
+		{
+			rect	30,180,173,131
+			visible	1
+			windowDef Mars1
+			{
+				rect	-1,-183,331,316
+				background	"guis/assets/cpuserver/mars2a.tga"
+				visible	1
+				matcolor	0.8, 0.9, 1, 0.85
+			}
+		}
+		windowDef Bar1Top1
+		{
+			rect	39,82,160,13
+			visible	1
+			shear	0,-0.35
+			windowDef Bar1Top
+			{
+				rect	-47,0,208,13
+				visible	1
+				background	"gui/health/line2"
+				matcolor	0.7,0.9,1,0.9
+				shear	0,-0.35
+				matscalex	0.98
+			}
+		}
+		windowDef Bar1Btm
+		{
+			rect	-9,221,-212,13
+			visible	1
+			background	"gui/health/line2"
+			matcolor	0.7,0.9,1,0.9
+			shear	0,-0.35
+			matscalex	1.05
+		}
+		windowDef MapGrid11
+		{
+			rect	10,61,377,217
+			visible	1
+			background	"gui/grid2"
+			matcolor	1,1,1,0.1
+			matscalex	6.03
+			matscaley	5.03
+			shear	0,-0.35
+		}
+		windowDef MarsClip1
+		{
+			rect	30,-4,331,184
+			visible	1
+			windowDef Mars
+			{
+				rect	0,0,331,316
+				background	"guis/assets/cpuserver/mars2a.tga"
+				visible	1
+				matcolor	0.8, 0.9, 1, 0.85
+			}
+		}
+	}
+	windowDef CircFrameClip
+	{
+		rect	16,85,608,357
+		visible	1
+		windowDef CircFrameBtm1
+		{
+			rect	214,6,-399,150
+			visible	1
+			background	"guis/assets/caverns/cranebox"
+			matcolor	0.5,0.6,0.65,0.15
+		}
+		windowDef CircFrameBtm
+		{
+			rect	214,202,-399,-150
+			visible	1
+			background	"guis/assets/caverns/cranebox"
+			matcolor	0.5,0.6,0.65,0.15
+		}
+	}
+	windowDef MapParent
+	{
+		rect	357,38,268,432
+		visible	1
+		windowDef BgBlack
+		{
+			rect	31,61,251,326
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite4"
+			matcolor	0,0,0,0.7
+		}
+		windowDef MapBg1
+		{
+			rect	30,66,242,23
+			visible	0
+			background	"guis/assets/teleporter/grid3a"
+			matcolor	1,1,1,0.25
+		}
+		windowDef MapBG2
+		{
+			rect	30,89,242,-273
+			visible	0
+			background	"guis/assets/teleporter/grid4a"
+			matcolor	1,1,1,0.25
+		}
+		windowDef MapBG3
+		{
+			rect	30,362,242,-23
+			visible	0
+			background	"guis/assets/teleporter/grid3a"
+			matcolor	1,1,1,0.25
+		}
+		windowDef TextContent
+		{
+			rect	48,86,217,285
+			text	"#str_03984"
+			textscale	0.34
+			forecolor	1,1,1,0.80000007
+			visible	1
+		}
+	}
+	windowDef CornerTL
+	{
+		rect	9,10,63,-61
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.8, 1, 1, 0.2
+	}
+	windowDef CornerTR
+	{
+		rect	567,10,-63,-61
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.8, 1, 1, 0.2
+	}
+	windowDef CornerBL
+	{
+		rect	9,409,63,61
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.8, 1, 1, 0.2
+	}
+	windowDef CornerBR
+	{
+		rect	567,409,-63,61
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.8, 1, 1, 0.2
+	}
+	windowDef TextTitle
+	{
+		rect	52,26,531,33
+		text	"#str_03985"
+		textscale	0.5
+		textalign	1
+		forecolor	0.8,1,1,0.3
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef TextTitle1
+	{
+		rect	29,52,581,33
+		text	"#str_03986"
+		textscale	0.43
+		textalign	1
+		forecolor	1,1,1,0.498
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef TextBottom
+	{
+		rect	29,430,581,29
+		text	"#str_03987"
+		textscale	0.25
+		textalign	1
+		forecolor	0,0,0,0.7
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef Outerglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 6
+		visible	1
+	}
+	windowDef Reflect
+	{
+		rect	5,-13,630,498
+		matcolor	1 ,1 ,1 ,0.15
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Static
+	{
+		rect	-9,-9,660,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 8
+	}
+	windowDef Addhighlight
+	{
+		rect	10,10,-620,460
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.4 ,1
+		visible	1
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.7, 0.8, 0.2
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+}

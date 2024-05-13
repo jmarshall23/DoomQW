@@ -1,0 +1,94 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.5, 1, 0.9, 0.8
+
+	windowDef BgParent {
+		rect 20, 20, 600, 440
+
+		windowDef Bg {
+			rect 0, 0, 1200, 460
+			background	"guis/assets/cpuserver/map.tga"
+			visible 1
+			matcolor 1, 1, 1, 1
+		}
+
+	}
+
+	windowDef Circ1 {
+		rect 283, 210, 27, 20
+		background	"guis/assets/common/circle16.tga"
+		visible 1
+		matcolor 1, 0.9, 0.7, 1
+	}
+
+	windowDef Circ2 {
+		rect 270, 200, 54, 40
+		background	"guis/assets/common/circle16.tga"
+		visible 1
+		matcolor 1, 0.9, 0.7, 1
+
+		onTime 0 {
+			transition "rect" "283 210 27 20" "255 185 84 70" "800" "0.4" "0.6" ;
+			transition "matcolor" "1 0.9 0.7 1" "1 0.9 0.7 0" "800" ;
+		}
+		onTime 1500 {
+			resetTime "0" ;
+		}
+	}
+
+	windowDef TextHem {
+		rect		100, 405, 500, 250
+		text		"#str_01745"
+		shadow		1
+		textscale	0.7
+		textalign	2
+		forecolor	1, 0.7, 0.3, 1
+		font		"fonts/micro"
+	}
+
+	windowDef Bglow {
+		rect 0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible 1
+		matcolor 1, 0.7, 0, 0.2
+	}
+
+	windowDef Addhighlight {
+	//light to trans overlay
+		rect	10 ,10 ,-620 ,440 
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.4 ,1 
+		visible	1
+	}
+
+	windowDef Static {
+	//static overlay
+		rect	-10 ,-10 ,660 ,500 
+		visible	1
+		background "gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 5
+	}
+
+	windowDef scanpulse
+	{
+		rect	0,0,640,480
+		visible 1
+
+		windowDef scanpulseClamped
+		{
+			rect	0,0,640,3000
+			matcolor	1,1,1,0.03
+			background	"gui/test/gui_scanpulse2"
+			visible	1
+		}
+	}
+
+	windowDef Reflect {
+		rect		5 ,0 ,630 ,470 
+		matcolor	1 ,1 ,1 ,0.15 
+		visible		1
+		background	"gui/reflect1"
+	}
+}

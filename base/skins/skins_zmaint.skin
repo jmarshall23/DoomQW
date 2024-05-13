@@ -1,0 +1,80 @@
+skin skins/zmaint/blownchest {
+	models/monsters/zombie/zombie01/ztorso01 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zhead01 textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead03 textures/common/nodraw
+	models/monsters/zombie/zombie01/zjaw01 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zrarms02 textures/common/nodraw
+	models/monsters/zombie/zombie01/zlarms02 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zrarms03 textures/common/nodraw
+	models/monsters/zombie/zombie01/zlarms03 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zrarms04 textures/common/nodraw
+	models/monsters/zombie/zombie01/zlarms04 textures/common/nodraw
+}
+
+skin skins/zmaint/blownface {
+	models/monsters/zombie/zombie01/ztorso02 textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead01 textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead02 textures/common/nodraw
+	models/monsters/zombie/zombie01/zjaw01 textures/common/nodraw
+	models/monsters/zombie/zombie01/zrarms02 textures/common/nodraw
+	models/monsters/zombie/zombie01/zlarms02 textures/common/nodraw
+	models/monsters/zombie/zombie01/zrarms03 textures/common/nodraw
+	models/monsters/zombie/zombie01/zlarms03 textures/common/nodraw
+	models/monsters/zombie/zombie01/zrarms04 textures/common/nodraw
+	models/monsters/zombie/zombie01/zlarms04 textures/common/nodraw
+}
+
+skin skins/zmaint/blownlarm {
+	models/monsters/zombie/zombie01/ztorso02 textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead01 textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead03 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zjaw01 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zlarms01 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zrarms02 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zrarms03 textures/common/nodraw
+	models/monsters/zombie/zombie01/zlarms03 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zrarms04 textures/common/nodraw
+}
+
+skin skins/zmaint/blownrarm {
+	models/monsters/zombie/zombie01/ztorso02 textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead01 textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead03 textures/common/nodraw
+	models/monsters/zombie/zombie01/zjaw01 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zrarms01 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zlarms02 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zrarms03 textures/common/nodraw
+	models/monsters/zombie/zombie01/zlarms03 textures/common/nodraw
+
+	models/monsters/zombie/zombie01/zlarms04 textures/common/nodraw
+}
+
+skin skins/zmaint/pistol {
+	models/weapons/machinegun/machinegun textures/common/nodraw
+	models/characters/sarge2/helmet textures/common/nodraw
+}
+
+skin skins/zmaint/regular {
+	models/monsters/zombie/zombie01/ztorso02 textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead01 textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead03 textures/common/nodraw
+	models/monsters/zombie/zombie01/zjaw01 textures/common/nodraw
+	models/monsters/zombie/zombie01/zrarms02 textures/common/nodraw
+	models/monsters/zombie/zombie01/zlarms02 textures/common/nodraw
+	models/monsters/zombie/zombie01/zrarms03 textures/common/nodraw
+	models/monsters/zombie/zombie01/zlarms03 textures/common/nodraw
+	models/monsters/zombie/zombie01/zrarms04 textures/common/nodraw
+	models/monsters/zombie/zombie01/zlarms04 textures/common/nodraw
+}

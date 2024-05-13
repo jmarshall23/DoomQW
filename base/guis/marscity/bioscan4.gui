@@ -1,0 +1,256 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	visible	1
+	float	"trigone"	0
+
+	onTrigger {
+		if ("trigone" == 1) { 
+			resetTime "SecondRun" "0" ;	
+		} else {
+			set "trigone" "1" ;
+			resetTime "FirstRun" "0" ;
+		}
+	}
+
+	windowDef Bg1Parent
+	{
+		rect	77, 53, 492, 370
+		visible	1
+		windowDef Bg1
+		{
+			rect	0, 0, 492, 370
+			background	"guis/assets/medical/alphatest.tga"
+			visible	1
+			matcolor	1, 1, 1, 1
+		}
+	}
+	windowDef Bg21
+	{
+		rect	69,135,509,111
+		background	"guis/assets/medical/alphamask"
+		visible	1
+		matcolor	0,0,0,1
+	}
+	windowDef Bg211
+	{
+		rect	69,243,509,-109
+		background	"guis/assets/medical/alphamask"
+		visible	1
+		matcolor	0,0,0,1
+	}
+	windowDef Text31
+	{
+		rect	127,81,419,72
+		text	"#str_03593"
+		font	"fonts/micro"
+		textscale	0.46
+		forecolor	1,1,1,1
+		visible	1
+		textalign	1
+	}
+	windowDef TextReady1
+	{
+		rect	173,123,301,27
+		visible	1
+		forecolor	1,1,1,0
+		text	"#str_03588"
+		textscale	0.4
+		notime	1
+		font	"fonts/micro"
+		textalign	1
+	}
+	windowDef TextReady2
+	{
+		rect	173,321,301,39
+		visible	1
+		forecolor	1,1,1,0
+		text	"#str_03512"
+		textscale	0.5
+		notime	1
+		font	"fonts/micro"
+		textalign	1
+	}
+	windowDef TextParameters
+	{
+		rect	140,154,179,25
+		visible	1
+		forecolor	1,1,1,0
+		text	"#str_03589"
+		textscale	0.3
+		notime	1
+	}
+	windowDef ButtonBG3
+	{
+		rect	139,302,372,-20
+		visible	1
+		background	"guis/assets/teleporter/grid1"
+		matcolor	1,1,1,0
+	}
+	windowDef ButtonBG2
+	{
+		rect	139,194,372,-108
+		visible	1
+		background	"guis/assets/teleporter/grid2"
+		matcolor	1,1,1,0
+	}
+	windowDef ButtonBG1
+	{
+		rect	139,174,372,20
+		visible	1
+		background	"guis/assets/teleporter/grid1"
+		matcolor	1,1,1,0
+	}
+	windowDef TextStat1
+	{
+		rect	151,177,74,138
+		visible	1
+		forecolor	0,1,0.4,0
+		text	"#str_03412"
+		textscale	0.27
+		notime	1
+	}
+	windowDef TextStat2
+	{
+		rect	233,177,74,138
+		visible	1
+		forecolor	0,1,0.4,0
+		text	"#str_03413"
+		textscale	0.27
+		notime	1
+	}
+	windowDef TextStat3
+	{
+		rect	308,177,94,138
+		visible	1
+		forecolor	0,1,0.4,0
+		text	"#str_03414"
+		textscale	0.27
+		notime	1
+	}
+	windowDef TextStat4
+	{
+		rect	412,177,94,138
+		visible	1
+		forecolor	0,1,0.4,0
+		text	"#str_03415"
+		textscale	0.27
+		notime	1
+	}
+	windowDef Text3
+	{
+		rect	112,172,423,135
+		text	"#str_03594"
+		font	"fonts/micro"
+		textscale	0.7
+		forecolor	1,0,0,0
+		visible	1
+		textalign	1
+	}
+	windowDef Text2
+	{
+		rect	112,193,423,91
+		text	"#str_03582"
+		font	"fonts/micro"
+		textscale	0.7
+		forecolor	1,1,1,1
+		visible	1
+		textalign	1
+	}
+	windowDef Bglow
+	{
+		rect	73,53,508,368
+		background	"guis/assets/cpuserver/bglow2.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, pdmgflick[ time * 0.0005 ] / 5
+	}
+	windowDef FirstRun
+	{
+		rect	0,0,0,0
+		visible	0
+		notime	1
+
+		onTime 0 {
+			transition "Text2::forecolor" "1 1 1 1" "1 1 1 0" "250" ;
+			transition "TextReady1::forecolor" "1 1 1 0" "1 1 1 0.75" "500" ;	
+		}
+
+		onTime 250 {
+			transition "ButtonBG1::matcolor" "1 1 1 0" "1 1 1 0.4" "500" ;
+			transition "ButtonBG2::matcolor" "1 1 1 0" "1 1 1 0.4" "500" ;
+			transition "ButtonBG3::matcolor" "1 1 1 0" "1 1 1 0.4" "500" ;			
+		}
+
+		onTime 500 {
+			transition "textparameters::forecolor" "1 1 1 1" "1 1 1 0.5" "500" ;
+		}
+
+		onTime 550 {
+			transition "textstat1::forecolor" "1 1 1 1" "0.4 0.9 1 0.8" "300" ;
+			transition "textstat1::rect" "151 177 74 0" "151 177 74 138" "300" "0" "1" ;
+		}
+
+		onTime 600 {
+			transition "textstat2::forecolor" "1 1 1 1" "0.4 0.9 1 0.8" "300" ;
+			transition "textstat2::rect" "233 177 74 0" "233 177 74 138" "300" "0" "1" ;
+		}
+
+		onTime 650 {
+			transition "textstat3::forecolor" "1 1 1 1" "0.4 0.9 1 0.8" "300" ;
+			transition "textstat3::rect" "308 177 74 0" "308 177 94 145" "300" "0" "1" ;
+		}
+
+		onTime 700 {
+			transition "textstat4::forecolor" "1 1 1 1" "0.4 0.9 1 0.8" "300" ;
+			transition "textstat4::rect" "412 177 74 0" "412 177 94 145" "300" "0" "1" ;
+		}
+
+		onTime 1200 {
+			transition "TextReady2::forecolor" "1 1 1 0" "1 1 1 1" "300" ;	
+		}
+
+	}
+	windowDef SecondRun
+	{
+		rect	0,0,0,0
+		visible	0
+		notime	1
+
+		onTime 0 {
+			set "TextReady2::text" "#str_00073" ;
+			transition "ButtonBG1::matcolor" "1 1 1 0.4" "1 1 1 0" "500" ;
+			transition "ButtonBG2::matcolor" "1 1 1 0.4" "1 1 1 0" "500" ;
+			transition "ButtonBG3::matcolor" "1 1 1 0.4" "1 1 1 0" "500" ;
+			transition "textstat1::forecolor" "0.4 0.9 1 0.8" "0 1 0.4 0" "500" ;
+			transition "textstat2::forecolor" "0.4 0.9 1 0.8" "0 1 0.4 0" "500" ;
+			transition "textstat3::forecolor" "0.4 0.9 1 0.8" "0 1 0.4 0" "500" ;
+			transition "textstat4::forecolor" "0.4 0.9 1 0.8" "0 1 0.4 0" "500" ;
+			transition "textparameters::forecolor" "1 1 1 0.5" "1 1 1 0" "500" ;
+		}
+
+		onTime 250 {
+			transition "text3::forecolor" "1 1 1 1" "1 0 0 0.5" "500" ;
+		}
+
+		onTime 9000 {
+			set "TextReady2::text" "#str_03403" ;
+		}
+
+		onTime 9800 {
+			set "text3::text" "#str_03591" ;
+			transition "text3::forecolor" "1 1 1 1" "1 1 1 0.5" "500" ;
+			transition "TextReady1::forecolor" "1 1 1 0.75" "1 1 1 0" "500" ;
+		}
+
+		onTime 15000 {
+			transition "ButtonBG1::matcolor" "1 1 1 0.4" "1 1 1 0" "500" ;
+			transition "ButtonBG2::matcolor" "1 1 1 0.4" "1 1 1 0" "500" ;
+			transition "ButtonBG3::matcolor" "1 1 1 0.4" "1 1 1 0" "500" ;
+			transition "text3::forecolor" "1 1 1 0.5" "1 1 1 0" "500" ;
+			transition "Text2::forecolor" "1 1 1 0" "1 1 1 1" "500" ;
+			transition "TextReady2::forecolor" "1 1 1 0.75" "1 1 1 0" "500" ;
+		}
+
+	}
+}

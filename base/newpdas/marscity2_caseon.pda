@@ -1,0 +1,67 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda marscity2_caseon {
+	name         "Mark Caseon"
+	fullname     "Marcus T. Caseon"
+	icon         "guis/assets/pda/caseon"
+	id           "1394-39"
+	post         "Mars City"
+	title        "Doctor"
+	security     ""
+	pda_email    "marscity2_caseon_email_1"
+	pda_email    "marscity2_caseon_email_2"
+	pda_audio    "marscity2_caseon_audio_1"
+	pda_audio    "marscity2_caseon_audio_2"
+	//pda_video    "marscity2_caseon_video_1"
+}
+
+email marscity2_caseon_email_1 {
+	date		"11-09-2145"
+	to		"Mark Caseon"
+	from		"Jordan Kenedy"
+	subject	"RE: Patient Attack"
+	text {
+"Mark,\nThank you for sending me the audio report.  I wish the news was better.\n\n"
+
+"I will coordinate with our colleagues here on Earth to find additional staff and resources to assist.  Given the situation there, it isn't going to be easy.  You may be on your own for a while.\n\n"
+
+"My advice to you, continue to document everything you can, attempt to find the root of the problem, and for goodness sakes, stash weapons and medical supplies for yourself in case things get worse.  I'm glad to hear you've already taken some precautions by locking some supplies in that cabinet.  I hope it is enough.  I appreciate you including the code in your report and will keep it secure.\n\n"
+	}
+}
+
+email marscity2_caseon_email_2 {
+	date		"11-15-2145"
+	to		"Mark Caseon"
+	from		"Sarah Holsten"
+	subject	"Leaving?"
+	text {
+"Mark,\n\n"
+"I hear that you're leaving Mars.  I'm happy that you'll be able to spend more time with your family, but I am very worried about the deteriorating situation here.  We're short staffed already.  Your departure will be a big loss.\n\n"
+
+"Speaking of which, I've noticed that Zach in Operations has been behaving more and more erratically.  Since talking with you I'm not sure if I'm being overly sensitive, or if he has caught the bug going around.  I swear he tried to bite me today.\n\n"
+
+"In your absence is there anything I should do?\n\n-Sarah"
+	}
+}
+
+audio marscity2_caseon_audio_1 {
+	name		"High Incidence of Psychological Reports"
+	info		"Made by: Mark Caseon\nDate: 10-30-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_marscity2_caseon_1"
+}
+
+audio marscity2_caseon_audio_2 {
+	name		"Patient Attack"
+	info		"Made by: Mark Caseon\nDate: 11-02-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_marscity2_caseon_2"
+}
+
+//video marscity2_caseon_video_1 {
+//	name		"Caseon Video"
+//	preview 	"sound/vo/video/novideo"
+//	audio		"audiolog_marscity2_caseon_2"
+//	info		"Made by: Brian\nDate: 3/11/45\nInfo: Test Video\n"
+//	video		"video/idlogo"
+//}

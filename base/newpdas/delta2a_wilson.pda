@@ -1,0 +1,35 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta2a_wilson {
+	name         "Phil Wilson"
+	fullname     "Phil W. Wilson"
+	icon         "guis/assets/pda/wilson"
+	id           "5151-27"
+	post         "Delta Labs, Level 2"
+	title        "Medical Technician"
+	security     ""
+	pda_email    "delta2a_wilson_email_1"
+	pda_audio    "delta2a_wilson_audio_1"
+}
+
+email delta2a_wilson_email_1 {
+	date		"10-24-2145"
+	to			"Phil Wilson"
+	from		"Dr. Peter Raleigh"
+	subject		"Patient work load"
+	text {
+"Phil,\n\n"
+"I am going to need you to help me next week with my work.  I've got so many files and reports to enter into the computer that I don't have time to actually see my patients.\nI will box up some of my paper work and send it over to you, if you could enter the reports into the computer that would surely help me.\n\n"
+"Thank You,\nDr. Peter Raleigh\n"
+
+	}
+}
+
+
+audio delta2a_wilson_audio_1 {
+	name		"Volunteers"
+	info		"Made by: Phil Wilson\nDate: 10-20-2145\nOpen for Amendment: Yes\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta2a_wilson_1"
+}
+

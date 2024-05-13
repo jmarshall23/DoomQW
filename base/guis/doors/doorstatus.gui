@@ -1,0 +1,149 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480 
+	backcolor	0 ,0 ,0 ,0 
+	visible		1
+	float info	0
+
+	onEvent {
+		if ("gui::gui_parm4" == 1) {
+			set "Background::matcolor" "1 0.1 0.1 1" ;
+			set "Overlay::matcolor" "1 0.2 0.2 0.5" ;
+		}
+		if ("gui::gui_parm4" == 2) {
+			set "Background::matcolor" "0.1 0.3 1 1" ;
+			set "Overlay::matcolor" "0.3 0.5 1 0.5" ;
+		}
+		if ("gui::gui_parm4" == 3) {
+			set "Background::matcolor" "0.1 1 0.3 1" ;
+			set "Overlay::matcolor" "0.3 1 0.5 0.5" ;
+		}
+		if ("gui::gui_parm4" == 4) {
+			set "Background::matcolor" "0.1 1 1 1" ;
+			set "Overlay::matcolor" "0.3 1 1 0.5" ;
+		}
+		if ("gui::gui_parm4" == 5) {
+			set "Background::matcolor" "1 1 0.4 1" ;
+			set "Overlay::matcolor" "1 1 0.2 0.5" ;
+		}
+		if ("gui::gui_parm4" == 6) {
+			set "Background::matcolor" "1 0.4 0.2 1" ;
+			set "Overlay::matcolor" "1 0.7 0 0.6" ;
+		}
+	}
+
+	windowDef Background {
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background	"guis/assets/keypad/under_bridge_gray"
+		matcolor	1, 1, 1, 1
+	}
+
+	windowDef Overlay {
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background	"guis/assets/keypad/over_bridge"
+		matcolor	1, 1, 1, 0.5
+	}
+
+	windowDef ParmText {
+		rect	50, 75, 540, 300
+		text		"gui::gui_parm5"
+		
+		textscale	0.7
+		forecolor	1, 1, 1, 0.4
+	}
+
+	windowDef InfoWin {
+	//	rect	50, 60, 540, 300
+		rect	450, 350, 150, 74
+		background	"guis/assets/elevator/highlight"
+		matcolor	0, 0, 0, 0
+		visible		0 
+		zorder		1
+
+		onAction {
+			resetTime "InfoDown" "0" ;
+			set "desktop::info" "0" ;
+		}
+	}
+
+	windowDef InfoText {
+		rect		450, 350, 150, 74
+		text		"#str_01223"
+		
+		textscale	0.5
+		forecolor	1, 1, 1, 0.4
+		visible		0		
+	}
+
+	windowDef InfoUp {
+		notime	1
+
+		onTime 0 {
+			set "InfoWin::visible" "1" ;
+			transition "InfoWin::rect" "450 350 150 74" "50 60 540 300" "200" ;
+			transition "InfoWin::matcolor" "0 0 0 0" "0 0 0 0.8" "200" ;
+		}
+		onTime 250 {
+			set "InfoText::rect" "70 90 520 300" ;
+			set "InfoText::visible" "1" ;
+		}
+	}
+
+	windowDef InfoDown {
+		notime	1
+
+		onTime 0 {
+			set "InfoText::rect" "450 350 150 74" ;
+			set "InfoText::visible" "0" ;
+			transition "InfoWin::rect" "50 60 540 300" "450 350 150 74" "200" ;
+			transition "InfoWin::matcolor" "0 0 0 0.8" "0 0 0 0" "200" ;
+		}
+		onTime 200 {
+			set "InfoWin::visible" "0" ;
+		}
+	}
+
+	windowDef InfoButton {
+		rect	450, 350, 150, 74
+		background	"guis/assets/elevator/highlight"
+		matcolor	1, 1, 1, 0.1
+
+		text		"#str_00370"
+		
+		textscale	1
+		textalign	1
+		forecolor	1, 1, 1, 0.4
+		cursor		1
+		textaligny	10
+
+		visible		1 
+
+		onMouseEnter {
+			transition	"matcolor" "1 1 1 0.1" "1 1 1 0.3" "200" ; 
+		} 		
+		onMouseExit {
+			transition	"matcolor" "1 1 1 0.3" "1 1 1 0.1" "200" ; 
+		} 
+		onAction {
+			transition	"matcolor" "1 1 1 0.5" "1 1 1 0.3" "300" ;
+			if ("desktop::info" == 0) { 
+				resetTime "InfoUp" "0" ;
+				set "desktop::info" "1" ;
+			} else { 
+				resetTime "InfoDown" "0" ;
+				set "desktop::info" "0" ;
+
+			} 
+		} 
+	}
+
+	windowDef Text3 {
+		rect		40, 18, 500, 40
+		text		"#str_01224"
+		
+		textscale	0.74
+		textalign	1
+		forecolor	1, 1, 1, 0.2
+	}
+}

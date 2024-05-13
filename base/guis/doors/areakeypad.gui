@@ -1,0 +1,1281 @@
+windowDef Desktop
+{
+	comment	"gui_parms 1-3 are the access code. gui_parm4 is the area name"
+	rect	0 ,0 ,640 ,480
+	backcolor	0 ,0 ,0 ,1
+	visible	1
+	float	"unlocked"	0
+	float	"num1"	0
+	float	"num2"	0
+	float	"num3"	0
+	float	"count"	0
+	float	"keypad"	0
+
+	onTrigger {
+		if ("Desktop::unlocked" == 0) { 
+			set	"cmd" "activate ; play guisounds_action" ;
+			resetTime "Unlock" "0" ;
+			set "Desktop::unlocked" "1" ;
+			set "desktop::count" "0";
+			set "desktop::num1" "0";
+			set "desktop::num2" "0";
+			set "desktop::num3" "0";
+		}
+	}
+
+	onActivate {
+		set	"ActivateWin::noactivate" "0" ; 
+		set	"DeactivateWin::noactivate" "1" ; 
+	}
+
+	onDeactivate {
+		set	"ActivateWin::noactivate" "1" ; 
+		set	"DeactivateWin::noactivate" "0" ; 
+	}
+
+	windowDef CirClip
+	{
+		rect	5,5,630,470
+		visible	1
+		windowDef Circle2
+		{
+			rect	-394,-474,1420,1420
+			visible	1
+			background	"gui/spintest4"
+			matcolor	0.5, 0, 0, 0.7
+		}
+		windowDef Circle3
+		{
+			rect	-294,-374,-1220,1220
+			visible	1
+			background	"gui/spintest3"
+			matcolor	0.5, 0, 0, 0.3
+		}
+		windowDef CircleG0
+		{
+			rect	-394,-474,1420,1420
+			visible	0
+			background	"gui/spintest4"
+			matcolor	0.2, 0.8, 0.6, 0.6
+		}
+		windowDef CircleG1
+		{
+			rect	-294,-374,1220,1220
+			visible	0
+			background	"gui/spintest3"
+			matcolor	0.2, 0.8, 0.6, 0.2
+		}
+	}
+	windowDef CircCropBlack1
+	{
+		rect	-8,5,660,73
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+	windowDef CircCropBlack2
+	{
+		rect	-5,404,660,71
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+	windowDef Logo1
+	{
+		rect	20 ,20 ,600 ,440
+		visible	1
+		background	"guis/assets/common/mlogo"
+		matcolor	0.4, 0, 0, 0.6
+	}
+	windowDef Logo2
+	{
+		rect	194,82,249,163
+		visible	1
+		background	"guis/assets/common/mlogo"
+		matcolor	1, 0.8, 0.8, 0.6
+	}
+	windowDef Square1
+	{
+		rect	315, 235, 10, 10
+		visible	1
+		background	"guis/assets/keypad/square"
+		matcolor	1, 1, 1, 0
+	}
+	windowDef Square2
+	{
+		rect	315, 235, 10, 10
+		visible	1
+		background	"guis/assets/keypad/square"
+		matcolor	1, 1, 1, 0
+	}
+	windowDef Square3
+	{
+		rect	315, 235, 10, 10
+		visible	1
+		background	"guis/assets/keypad/square"
+		matcolor	1, 1, 1, 0
+	}
+	windowDef Access
+	{
+		rect	0 ,0 ,640 ,480
+		visible	0
+		background	"guis/assets/keypad/access"
+		matcolor	1, 0, 0, 1
+	}
+	windowDef Overlay1
+	{
+		rect	0 ,0 ,640 ,480
+		visible	0
+		background	"gui/pdadoor/overlay"
+		matcolor	1 ,1 ,1 ,1
+	}
+	windowDef Background
+	{
+		rect	0 ,0 ,640 ,480
+		visible	0
+		background	"guis/assets/doors/pdabg"
+		matcolor	1, 0.1, 0.05, 0.5
+	}
+	windowDef BackgroundFlash
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"guis/assets/doors/pdabg"
+		matcolor	1, 1, 1, 0
+	}
+	windowDef Background2
+	{
+		rect	50 ,246 ,540 ,50
+		visible	1
+		background	"guis/assets/doors/pdabg3"
+		matcolor	1, 0.7, 0.4, 0.5
+	}
+	windowDef Background2a
+	{
+		rect	50 ,246 ,540 ,50
+		visible	0
+		background	"guis/assets/doors/pdabg3"
+		matcolor	1, 0.7, 0.4, 0.5
+
+		onTime 0 {
+			transition "matcolor" "1 1 1 0.7" "1 0.7 0.4 0.7" "300" ; 
+		}
+
+		onTime 300 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Text1
+	{
+		rect	0,314,640,100
+		text	"gui::gui_parm4"
+		textscale	1
+		textalign	1
+		forecolor	1, 1, 1, 0.8
+		visible	1
+	}
+	windowDef Text2
+	{
+		rect	0, 362, 640, 100
+		text	"#str_01207"
+		textscale	0.96
+		textalign	1
+		forecolor	1, 0.1, 0.1, 0.9
+		visible	0
+	}
+	windowDef Text7
+	{
+		rect	80, 245, 480, 90
+		text	"#str_00023"
+		textscale	0.8
+		textalign	1
+		forecolor	1, 1, 1, 0
+	}
+	windowDef Text3
+	{
+		rect	39,174,556,196
+		text	"#str_01208"
+		textscale	0.8
+		textalign	1
+		forecolor	1, 1, 1, 0.6
+		visible	1
+		textaligny	72
+
+		onMouseEnter {
+			set "background2::visible" "0" ;
+			set "background2a::visible" "1" ;
+			transition "forecolor" "1 1 1 1" "1 1 1 0.8" "300" ;
+		}
+
+		onMouseExit {
+			set "background2::visible" "1" ;
+			set "background2a::visible" "0" ;
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0.6" "200" ;
+		}
+
+		onAction {
+			set "background2::visible" "1" ;
+			set "background2a::visible" "0" ;
+			set "cmd" "play guisounds_click" ;
+			resetTime "KeypadUp" "0" ;
+			set "background2a::visible" "0" ;
+			set "noevents" "1" ;
+			set "desktop::keypad" "1" ;
+		}
+
+	}
+	windowDef StatusArea
+	{
+		rect	0,0,640,87
+		visible	1
+		windowDef SourceText
+		{
+			rect	9,16,621,53
+			visible	1
+			forecolor	1,1,1,0.6
+			text	"#str_03445"
+			textscale	0.63
+			font	"fonts/micro"
+			textalign	1
+		}
+		windowDef bar1Left
+		{
+			rect	6,5,-32,26
+			visible	1
+			background	"guis/assets/common/titlebar_corner"
+			matcolor	0.8, 0.6, 0.5, 0.3
+		}
+		windowDef bar1Mid
+		{
+			rect	38,5,560,26
+			visible	1
+			background	"guis/assets/common/titlebar_mid"
+			matcolor	0.8, 0.6, 0.5, 0.3
+		}
+		windowDef bar1Right
+		{
+			rect	598,5,37,26
+			visible	1
+			background	"guis/assets/common/titlebar_corner"
+			matcolor	0.8, 0.6, 0.5, 0.3
+		}
+		windowDef bar2Left
+		{
+			rect	6,49,-32,-26
+			visible	1
+			background	"guis/assets/common/titlebar_corner"
+			matcolor	0.8, 0.6, 0.5, 0.3
+		}
+		windowDef bar2Mid
+		{
+			rect	38,49,561,26
+			visible	1
+			background	"guis/assets/common/titlebar_mid"
+			matcolor	0.8, 0.6, 0.5, 0.3
+		}
+		windowDef bar2Right
+		{
+			rect	599,49,37,-26
+			visible	1
+			background	"guis/assets/common/titlebar_corner"
+			matcolor	0.8, 0.6, 0.5, 0.3
+		}
+	}
+	windowDef KeypadParent
+	{
+		rect	0 ,0 ,640 ,480
+		visible	0
+		windowDef Numpad
+		{
+			rect	0 ,0 ,640 ,480
+			visible	1
+			background	"guis/assets/keypad/numpad"
+			matcolor	1, 1, 1, 0.4
+		}
+		windowDef NumpadOverlay
+		{
+			rect	0 ,0 ,640 ,480
+			visible	1
+			background	"guis/assets/keypad/numpad_overlay"
+			matcolor	1, 1, 1, 0.4
+		}
+		windowDef Status
+		{
+			text	"#str_01209"
+			rect	144 ,70 ,350 ,64
+			forecolor	1 ,0 ,0 ,0.7
+			visible	1
+			textscale	1.2
+			textalign	1
+		}
+		windowDef Click1
+		{
+			rect	140, 90, 15, 10
+			visible	0
+			backcolor	0.2, 0.5, 0.5, 0.6
+			bordersize	3
+			bordercolor	0.2, 0.5, 0.5, 0.3
+		}
+		windowDef Click2
+		{
+			rect	140, 105, 15, 10
+			visible	0
+			backcolor	0.2, 0.5, 0.5, 0.6
+			bordersize	3
+			bordercolor	0.2, 0.5, 0.5, 0.3
+		}
+		windowDef Click3
+		{
+			rect	140, 120, 15, 10
+			visible	0
+			backcolor	0.2, 0.5, 0.5, 0.6
+			bordersize	3
+			bordercolor	0.2, 0.5, 0.5, 0.3
+		}
+		windowDef One
+		{
+			rect	146 ,153 ,110 ,80
+			text	"1"
+			textscale	1
+			textalign	1
+			textaligny	10
+			bordersize	4
+			forecolor	1, 1, 1, 0.8
+			bordercolor	0, 0, 0 ,0
+			backcolor	0 ,0 ,0 ,0
+			cursor	1
+
+			onMouseEnter {
+				set	"bordercolor" ".4 .57 .65 1" ; 
+				set	"backcolor" "0 0 0 0.4" ; 
+			}
+
+			onMouseExit {
+				set	"bordercolor" "0 0 0 0" ; 
+				set	"backcolor" "0 0 0 0" ; 
+			}
+
+			onAction {
+				
+				set	"cmd" "play guisounds_click" ;
+				if ("desktop::count" < 3) {
+					if ("desktop::count" == 2) {
+						set "desktop::num3" "1";
+						set "desktop::count" "3";
+						set "click3::visible" "1" ;
+						resetTime "Clickfade" "0" ;
+					}
+					if ("desktop::count" == 1) {
+						set "desktop::num2" "1";
+						set "desktop::count" "2";
+						set "click2::visible" "1" ;
+					} 
+					if ("desktop::count" == 0) {
+						set "desktop::num1" "1";
+						set "desktop::count" "1";
+						set "click1::visible" "1" ;
+					}
+				} else {
+					set "desktop::count" "0";
+				}
+				
+				EvalRegs;
+				if ("gui::gui_parm1" == "desktop::num1" && "gui::gui_parm2" == "desktop::num2" && "gui::gui_parm3" == "desktop::num3") {
+					if ("Desktop::unlocked" == 0) { 
+						set	"cmd" "activate ; play guisounds_action" ;
+						resetTime "Unlock" "0" ;
+						set "Desktop::unlocked" "1" ;
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					} else {
+						set	"cmd" "activate; play guisounds_error" ;
+						resetTime "Lock" "0" ; 
+						set "Desktop::unlocked" "0" ; 
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					}
+				}
+			}
+
+		}
+		windowDef Two
+		{
+			rect	264 ,153 ,110 ,80
+			text	"2"
+			textscale	1
+			textalign	1
+			textaligny	10
+			bordersize	4
+			forecolor	1, 1, 1, 0.8
+			bordercolor	0, 0, 0 ,0
+			backcolor	0 ,0 ,0 ,0
+			cursor	1
+
+			onMouseEnter {
+				set	"bordercolor" ".4 .57 .65 1" ; 
+				set	"backcolor" "0 0 0 0.4" ; 
+			}
+
+			onMouseExit {
+				set	"bordercolor" "0 0 0 0" ; 
+				set	"backcolor" "0 0 0 0" ; 
+			}
+
+			onAction {
+				set	"cmd" "play guisounds_click" ;
+				
+				if ("desktop::count" < 3) {
+					if ("desktop::count" == 2) {
+						set "desktop::num3" "2";
+						set "desktop::count" "3";
+						set "click3::visible" "1" ;
+						resetTime "Clickfade" "0" ;
+					}
+					if ("desktop::count" == 1) {
+						set "desktop::num2" "2";
+						set "desktop::count" "2";
+						set "click2::visible" "1" ;
+					} 
+					if ("desktop::count" == 0) {
+						set "desktop::num1" "2";
+						set "desktop::count" "1";
+						set "click1::visible" "1" ;
+					}
+				} else {
+					set "desktop::count" "0";
+				}
+				
+				EvalRegs;
+				if ("gui::gui_parm1" == "desktop::num1" && "gui::gui_parm2" == "desktop::num2" && "gui::gui_parm3" == "desktop::num3") {
+					if ("Desktop::unlocked" == 0) { 
+						set	"cmd" "activate ; play guisounds_action" ;
+						resetTime "Unlock" "0" ;
+						set "Desktop::unlocked" "1" ;
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					} else {
+						set	"cmd" "activate; play guisounds_error" ;
+						resetTime "Lock" "0" ; 
+						set "Desktop::unlocked" "0" ; 
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					}
+				}
+			}
+
+		}
+		windowDef Three
+		{
+			rect	383 ,153 ,110 ,80
+			text	"3"
+			textscale	1
+			textalign	1
+			textaligny	10
+			bordersize	4
+			forecolor	1, 1, 1, 0.8
+			bordercolor	0, 0, 0 ,0
+			backcolor	0 ,0 ,0 ,0
+			cursor	1
+
+			onMouseEnter {
+				set	"bordercolor" ".4 .57 .65 1" ; 
+				set	"backcolor" "0 0 0 0.4" ; 
+			}
+
+			onMouseExit {
+				set	"bordercolor" "0 0 0 0" ; 
+				set	"backcolor" "0 0 0 0" ; 
+			}
+
+			onAction {
+				set	"cmd" "play guisounds_click" ;
+				
+				if ("desktop::count" < 3) {
+					if ("desktop::count" == 2) {
+						set "desktop::num3" "3";
+						set "desktop::count" "3";
+						set "click3::visible" "1" ;
+						resetTime "Clickfade" "0" ;
+					}
+					if ("desktop::count" == 1) {
+						set "desktop::num2" "3";
+						set "desktop::count" "2";
+						set "click2::visible" "1" ;
+					} 
+					if ("desktop::count" == 0) {
+						set "desktop::num1" "3";
+						set "desktop::count" "1";
+						set "click1::visible" "1" ;
+					}
+				} else {
+					set "desktop::count" "0";
+				}
+				EvalRegs;
+				if ("gui::gui_parm1" == "desktop::num1" && "gui::gui_parm2" == "desktop::num2" && "gui::gui_parm3" == "desktop::num3") {
+					if ("Desktop::unlocked" == 0) { 
+						set	"cmd" "activate ; play guisounds_action" ;
+						resetTime "Unlock" "0" ;
+						set "Desktop::unlocked" "1" ;
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					} else {
+						set	"cmd" "activate; play guisounds_error" ;
+						resetTime "Lock" "0" ; 
+						set "Desktop::unlocked" "0" ; 
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					}
+				}
+			}
+
+		}
+		windowDef Four
+		{
+			rect	146 ,240 ,110 ,80
+			text	"4"
+			textscale	1
+			textalign	1
+			textaligny	10
+			bordersize	4
+			forecolor	1, 1, 1, 0.8
+			bordercolor	0, 0, 0 ,0
+			backcolor	0 ,0 ,0 ,0
+			cursor	1
+
+			onMouseEnter {
+				set	"bordercolor" ".4 .57 .65 1" ; 
+				set	"backcolor" "0 0 0 0.4" ; 
+			}
+
+			onMouseExit {
+				set	"bordercolor" "0 0 0 0" ; 
+				set	"backcolor" "0 0 0 0" ; 
+			}
+
+			onAction {
+				
+				set	"cmd" "play guisounds_click" ;
+				if ("desktop::count" < 3) {
+					if ("desktop::count" == 2) {
+						set "desktop::num3" "4";
+						set "desktop::count" "3";
+						set "click3::visible" "1" ;
+						resetTime "Clickfade" "0" ;
+					}
+					if ("desktop::count" == 1) {
+						set "desktop::num2" "4";
+						set "desktop::count" "2";
+						set "click2::visible" "1" ;
+					} 
+					if ("desktop::count" == 0) {
+						set "desktop::num1" "4";
+						set "desktop::count" "1";
+						set "click1::visible" "1" ;
+					}
+				} else {
+					set "desktop::count" "0";
+				}
+				
+				EvalRegs;
+				if ("gui::gui_parm1" == "desktop::num1" && "gui::gui_parm2" == "desktop::num2" && "gui::gui_parm3" == "desktop::num3") {
+					if ("Desktop::unlocked" == 0) { 
+						set	"cmd" "activate ; play guisounds_action" ;
+						resetTime "Unlock" "0" ;
+						set "Desktop::unlocked" "1" ;
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					} else {
+						set	"cmd" "activate; play guisounds_error" ;
+						resetTime "Lock" "0" ; 
+						set "Desktop::unlocked" "0" ; 
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					}
+				}
+			}
+
+		}
+		windowDef Five
+		{
+			rect	264 ,240 ,110 ,80
+			text	"5"
+			textscale	1
+			textalign	1
+			textaligny	10
+			bordersize	4
+			forecolor	1, 1, 1, 0.8
+			bordercolor	0, 0, 0 ,0
+			backcolor	0 ,0 ,0 ,0
+			cursor	1
+
+			onMouseEnter {
+				set	"bordercolor" ".4 .57 .65 1" ; 
+				set	"backcolor" "0 0 0 0.4" ; 
+			}
+
+			onMouseExit {
+				set	"bordercolor" "0 0 0 0" ; 
+				set	"backcolor" "0 0 0 0" ; 
+			}
+
+			onAction {
+				
+				set	"cmd" "play guisounds_click" ;
+				if ("desktop::count" < 3) {
+					if ("desktop::count" == 2) {
+						set "desktop::num3" "5";
+						set "desktop::count" "3";
+						set "click3::visible" "1" ;
+						resetTime "Clickfade" "0" ;
+					}
+					if ("desktop::count" == 1) {
+						set "desktop::num2" "5";
+						set "desktop::count" "2";
+						set "click2::visible" "1" ;
+					} 
+					if ("desktop::count" == 0) {
+						set "desktop::num1" "5";
+						set "desktop::count" "1";
+						set "click1::visible" "1" ;
+					}
+				} else {
+					set "desktop::count" "0";
+				}
+				
+				EvalRegs;
+				if ("gui::gui_parm1" == "desktop::num1" && "gui::gui_parm2" == "desktop::num2" && "gui::gui_parm3" == "desktop::num3") {
+					if ("Desktop::unlocked" == 0) { 
+						set	"cmd" "activate ; play guisounds_action" ;
+						resetTime "Unlock" "0" ;
+						set "Desktop::unlocked" "1" ;
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					} else {
+						set	"cmd" "activate; play guisounds_error" ;
+						resetTime "Lock" "0" ; 
+						set "Desktop::unlocked" "0" ; 
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					}
+				}
+			}
+
+		}
+		windowDef Six
+		{
+			rect	383 ,240 ,110 ,80
+			text	"6"
+			textscale	1
+			textalign	1
+			textaligny	10
+			bordersize	4
+			forecolor	1, 1, 1, 0.8
+			bordercolor	0, 0, 0 ,0
+			backcolor	0 ,0 ,0 ,0
+			cursor	1
+
+			onMouseEnter {
+				set	"bordercolor" ".4 .57 .65 1" ; 
+				set	"backcolor" "0 0 0 0.4" ; 
+			}
+
+			onMouseExit {
+				set	"bordercolor" "0 0 0 0" ; 
+				set	"backcolor" "0 0 0 0" ; 
+			}
+
+			onAction {
+				
+				set	"cmd" "play guisounds_click" ;
+				if ("desktop::count" < 3) {
+					if ("desktop::count" == 2) {
+						set "desktop::num3" "6";
+						set "desktop::count" "3";
+						set "click3::visible" "1" ;
+						resetTime "Clickfade" "0" ;
+					}
+					if ("desktop::count" == 1) {
+						set "desktop::num2" "6";
+						set "desktop::count" "2";
+						set "click2::visible" "1" ;
+					} 
+					if ("desktop::count" == 0) {
+						set "desktop::num1" "6";
+						set "desktop::count" "1";
+						set "click1::visible" "1" ;
+					}
+				} else {
+					set "desktop::count" "0";
+				}
+				
+				EvalRegs;
+				if ("gui::gui_parm1" == "desktop::num1" && "gui::gui_parm2" == "desktop::num2" && "gui::gui_parm3" == "desktop::num3") {
+					if ("Desktop::unlocked" == 0) { 
+						set	"cmd" "activate ; play guisounds_action" ;
+						resetTime "Unlock" "0" ;
+						set "Desktop::unlocked" "1" ;
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					} else {
+						set	"cmd" "activate; play guisounds_error" ;
+						resetTime "Lock" "0" ; 
+						set "Desktop::unlocked" "0" ; 
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					}
+				}
+			}
+
+		}
+		windowDef Seven
+		{
+			rect	146 ,325 ,110 ,80
+			text	"7"
+			textscale	1
+			textalign	1
+			textaligny	10
+			bordersize	4
+			forecolor	1, 1, 1, 0.8
+			bordercolor	0, 0, 0 ,0
+			backcolor	0 ,0 ,0 ,0
+			cursor	1
+
+			onMouseEnter {
+				set	"bordercolor" ".4 .57 .65 1" ; 
+				set	"backcolor" "0 0 0 0.4" ; 
+			}
+
+			onMouseExit {
+				set	"bordercolor" "0 0 0 0" ; 
+				set	"backcolor" "0 0 0 0" ; 
+			}
+
+			onAction {
+				
+				set	"cmd" "play guisounds_click" ;
+				if ("desktop::count" < 3) {
+					if ("desktop::count" == 2) {
+						set "desktop::num3" "7";
+						set "desktop::count" "3";
+						set "click3::visible" "1" ;
+						resetTime "Clickfade" "0" ;
+					}
+					if ("desktop::count" == 1) {
+						set "desktop::num2" "7";
+						set "desktop::count" "2";
+						set "click2::visible" "1" ;
+					} 
+					if ("desktop::count" == 0) {
+						set "desktop::num1" "7";
+						set "desktop::count" "1";
+						set "click1::visible" "1" ;
+					}
+				} else {
+					set "desktop::count" "0";
+				}
+				
+				EvalRegs;
+				if ("gui::gui_parm1" == "desktop::num1" && "gui::gui_parm2" == "desktop::num2" && "gui::gui_parm3" == "desktop::num3") {
+					if ("Desktop::unlocked" == 0) { 
+						set	"cmd" "activate ; play guisounds_action" ;
+						resetTime "Unlock" "0" ;
+						set "Desktop::unlocked" "1" ;
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					} else {
+						set	"cmd" "activate; play guisounds_error" ;
+						resetTime "Lock" "0" ; 
+						set "Desktop::unlocked" "0" ; 
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					}
+				}
+			}
+
+		}
+		windowDef Eight
+		{
+			rect	264 ,325 ,110 ,80
+			text	"8"
+			textscale	1
+			textalign	1
+			textaligny	10
+			bordersize	4
+			forecolor	1, 1, 1, 0.8
+			bordercolor	0, 0, 0 ,0
+			backcolor	0 ,0 ,0 ,0
+			cursor	1
+
+			onMouseEnter {
+				set	"bordercolor" ".4 .57 .65 1" ; 
+				set	"backcolor" "0 0 0 0.4" ; 
+			}
+
+			onMouseExit {
+				set	"bordercolor" "0 0 0 0" ; 
+				set	"backcolor" "0 0 0 0" ; 
+			}
+
+			onAction {
+				
+				set	"cmd" "play guisounds_click" ;
+				if ("desktop::count" < 3) {
+					if ("desktop::count" == 2) {
+						set "desktop::num3" "8";
+						set "desktop::count" "3";
+						set "click3::visible" "1" ;
+						resetTime "Clickfade" "0" ;
+					}
+					if ("desktop::count" == 1) {
+						set "desktop::num2" "8";
+						set "desktop::count" "2";
+						set "click2::visible" "1" ;
+					} 
+					if ("desktop::count" == 0) {
+						set "desktop::num1" "8";
+						set "desktop::count" "1";
+						set "click1::visible" "1" ;
+					}
+				} else {
+					set "desktop::count" "0";
+				}
+				
+				EvalRegs;
+				if ("gui::gui_parm1" == "desktop::num1" && "gui::gui_parm2" == "desktop::num2" && "gui::gui_parm3" == "desktop::num3") {
+					if ("Desktop::unlocked" == 0) { 
+						set	"cmd" "activate ; play guisounds_action" ;
+						resetTime "Unlock" "0" ;
+						set "Desktop::unlocked" "1" ;
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					} else {
+						set	"cmd" "activate; play guisounds_error" ;
+						resetTime "Lock" "0" ; 
+						set "Desktop::unlocked" "0" ; 
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					}
+				}
+			}
+
+		}
+		windowDef Nine
+		{
+			rect	383 ,325 ,110 ,80
+			text	"9"
+			textscale	1
+			textalign	1
+			textaligny	10
+			bordersize	4
+			forecolor	1, 1, 1, 0.8
+			bordercolor	0, 0, 0 ,0
+			backcolor	0 ,0 ,0 ,0
+			cursor	1
+
+			onMouseEnter {
+				set	"bordercolor" ".4 .57 .65 1" ; 
+				set	"backcolor" "0 0 0 0.4" ; 
+			}
+
+			onMouseExit {
+				set	"bordercolor" "0 0 0 0" ; 
+				set	"backcolor" "0 0 0 0" ; 
+			}
+
+			onAction {
+				
+				set	"cmd" "play guisounds_click" ;
+				if ("desktop::count" < 3) {
+					if ("desktop::count" == 2) {
+						set "desktop::num3" "9";
+						set "desktop::count" "3";
+						set "click3::visible" "1" ;
+						resetTime "Clickfade" "0" ;
+					}
+					if ("desktop::count" == 1) {
+						set "desktop::num2" "9";
+						set "desktop::count" "2";
+						set "click2::visible" "1" ;
+					} 
+					if ("desktop::count" == 0) {
+						set "desktop::num1" "9";
+						set "desktop::count" "1";
+						set "click1::visible" "1" ;
+					}
+				} else {
+					set "desktop::count" "0";
+				}
+				
+				EvalRegs;
+				if ("gui::gui_parm1" == "desktop::num1" && "gui::gui_parm2" == "desktop::num2" && "gui::gui_parm3" == "desktop::num3") {
+					if ("Desktop::unlocked" == 0) { 
+						set	"cmd" "activate ; play guisounds_action" ;
+						resetTime "Unlock" "0" ;
+						set "Desktop::unlocked" "1" ;
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					} else {
+						set	"cmd" "activate; play guisounds_error" ;
+						resetTime "Lock" "0" ; 
+						set "Desktop::unlocked" "0" ; 
+						set "desktop::count" "0";
+						set "desktop::num1" "0";
+						set "desktop::num2" "0";
+						set "desktop::num3" "0";
+					}
+				}
+			}
+
+		}
+	}
+	windowDef Flash
+	{
+		rect	0,0,0,0
+		visible	1
+		backcolor	1, 1, 1, 0
+	}
+	windowDef Reflect
+	{
+		rect	0 ,-10 ,-640 ,480
+		matcolor	1 ,1 ,1 ,0.12
+		visible	1
+		background	"gui/reflect1"
+		noevents	1
+	}
+	windowDef KeypadUp
+	{
+		notime	1
+
+		onTime 0 {
+			transition "Background2::matcolor" "1 0.7 0.4 0.5" "1 0.7 0.4 0" "200" ;
+			transition "Text1::forecolor" "1 1 1 0.8" "1 1 1 0" "200" ;
+			transition "Logo2::matcolor" "1 0.8 0.8 0.6" "1 0.8 0.8 0" "200" ;
+			transition "Text2::forecolor" "1 0.1 0.1 0.9" "1 0.1 0.1 0" "200" ;
+			transition "Text3::forecolor" "1 1 1 0.6" "1 1 1 0" "200" ;
+		}
+
+		onTime 100 {
+			transition "Square2::rect" "315 235 10 10" "100 80 440 320" "300" "0.4" "0.4" ;
+			transition "Square2::matcolor" "1 1 1 0" "1 1 1 0.3" "300" ;
+		}
+
+		onTime 200 {
+			transition "Square1::rect" "315 235 10 10" "80 60 480 360" "300" "0.4" "0.4" ;
+			transition "Square1::matcolor" "1 1 1 0" "1 1 1 0.3" "300" ;
+		}
+
+		onTime 400 {
+			transition "Square3::matcolor" "1 1 1 0.3" "1 1 1 0.2" "200" ;
+			transition "Square2::matcolor" "1 1 1 0.3" "1 1 1 0.2" "200" ;
+			transition "Square1::matcolor" "1 1 1 0.3" "1 1 1 0.2" "200" ;
+			transition "Flash::backcolor" "1 1 1 0.3" "1 1 1 0" "300" ;
+			set "Flash::rect" "80 60 480 360"  ;
+			set "KeypadParent::visible" "1" ;
+		}
+
+		onTime 700 {
+			set "Flash::rect" "0 0 0 0"  ;
+		}
+
+	}
+	windowDef Unlock
+	{
+		matcolor	0, 0, 0, 0
+		notime	1
+		visible	1
+
+		onTime 0 {
+			transition "Logo1::matcolor" "0.4 0 0 0.6" "0.1 0.5 0.4 0.5" "400" ;
+			transition"Background::matcolor" "1 0.1 0.05 0" "0.4 1 0.8 0.5" "400" ; 
+			transition "outerglowbar::matcolor" "1 0.5 0.5 1" "0.8 1 1 1" "400" ;
+			transition "Access::matcolor" "1 0 0 1" "0.2 1 0.5 1" "400" ;
+			
+			transition "StatusText::forecolor" "1 0.01 0.01 0.7" "1 0.01 0.01 0" "500" ;
+			transition "StatusBar3Mid1::rect" "53 27 135 52" "53 27 87 52" "500" "0.4" "0.5" ;
+			transition "StatusBar3Mid2::rect" "452 27 135 52" "499 27 88 52" "500" "0.4" "0.5" ;
+			transition "StatusBar3Mid1::matcolor" "1 0.2 0 0.3" "0.6 0.9 0.7 0.3" "500" ;
+			transition "StatusBar3Mid2::matcolor" "1 0.2 0 0.3" "0.6 0.9 0.7 0.3" "500" ;
+			transition "StatusBar3Left::matcolor" "1 0.2 0 0.3" "0.6 0.9 0.7 0.3" "500" ;
+			transition "StatusBar3Right::matcolor" "1 0.2 0 0.3" "0.6 0.9 0.7 0.3" "500" ;
+			
+			transition "Bar1Right::matcolor" "0.8 0.6 0.5 0.3" "0.6 0.8 0.85 0.3" "500" ;
+			transition "bar1Mid::matcolor" "0.8 0.6 0.5 0.3" "0.6 0.8 0.85 0.3" "500" ;
+			transition "bar1Left::matcolor" "0.8 0.6 0.5 0.3" "0.6 0.8 0.85 0.3" "500" ;			
+			transition "bar2Right::matcolor" "0.8 0.6 0.5 0.3" "0.6 0.8 0.85 0.3" "500" ;
+			transition "bar2Mid::matcolor" "0.8 0.6 0.5 0.3" "0.6 0.8 0.85 0.3" "500" ;
+			transition "bar2Left::matcolor" "0.8 0.6 0.5 0.3" "0.6 0.8 0.85 0.3" "500" ;
+			
+			transition "Logo1::matcolor" "0.4 0.1 0.1 0.6" "0.1 0.5 0.4 0.3" "500" ;
+			transition "logo2::matcolor" "1 0.8 0.8 0.6" "0.8 1 0.8 0.6" "500" ;	
+		}
+
+		onTime 500 {
+			transition "Square3::matcolor" "1 1 1 0.2" "1 1 1 0" "300" ;
+			transition "Square2::matcolor" "1 1 1 0.2" "1 1 1 0" "300" ;
+			transition "Square1::matcolor" "1 1 1 0.2" "1 1 1 0" "300" ;
+			transition "Flash::backcolor" "1 1 1 0.3" "1 1 1 0" "300" ;
+			transition "Flash::rect" "80 60 480 360" "315 235 10 10" "300" "0.4" "0.4" ;
+			set "KeypadParent::visible" "0" ;
+			transition "Square3::rect" "120 100 400 280" "315 235 10 10" "300" "0.4" "0.4" ;
+			transition "Square2::rect" "100 80 440 320" "315 235 10 10" "300" "0.4" "0.4" ;
+			transition "Square1::rect" "80 60 480 360" "315 235 10 10" "300" "0.4" "0.4" ;
+		}
+
+		onTime 200 {
+			set "Circle1::visible" "0" ;
+			set "CircleG1::visible" "1" ;
+		}
+
+		onTime 350 {
+			transition "Statusbar2Left::matcolor" "1 1 1 0.5" "0.6 0.8 0.85 0.3" "400" ;
+			transition "Statusbar2Mid::matcolor" "1 1 1 0.5" "0.6 0.8 0.85 0.3" "400" ;
+			transition "Statusbar2Right::matcolor" "1 1 1 0.5" "0.6 0.8 0.85 0.3" "400" ;
+		}
+
+		onTime 400 {
+			set "Circle2::visible" "0" ;
+			set "CircleG0::visible" "1" ;
+			set "Text2::text" "#str_00005" ;
+			
+			set "StatusText::text" "#str_00023" ;
+			transition "StatusText::forecolor" "1 1 1 0.8" "0.6 1 0.8 0.6" "400" ;
+		}
+
+		onTime 800 {
+			transition "Text2::forecolor" "0.6 1 0.8 0" "0.6 1 0.8 0.9" "400" ;
+		}
+
+		onTime 1000 {
+			transition "background2::matcolor" "1 1 1 0.5" "0.4 1 0.8 0.5" "400" ;
+			transition "logo2::matcolor" "0.8 1 0.8 0" "0.8 1 0.8 0.6" "400" ;
+			transition "Text7::forecolor" "1 1 1 0" "1 1 1 0.6" "500" ;
+			transition "Text1::forecolor" "1 1 1 0" "1 1 1 0.8" "200" ;
+		}
+
+	}
+	windowDef Clickfade
+	{
+		matcolor	0, 0, 0, 0
+		notime	1
+
+		onTime 0 {
+			transition "Click1::forecolor" "0.2 0.5 0.5 0.6" "0.2 0.5 0.5 0" "100" ;
+			transition "Click2::forecolor" "0.2 0.5 0.5 0.6" "0.2 0.5 0.5 0" "100" ;
+			transition "Click3::forecolor" "0.2 0.5 0.5 0.6" "0.2 0.5 0.5 0" "100" ;
+		}
+
+		onTime 100 {
+			set "Click1::visible" "0" ;
+			set "Click2::visible" "0" ;
+			set "Click3::visible" "0" ;
+			set "Click1::forecolor" "1 1 1 1" ;
+			set "Click2::forecolor" "1 1 1 1" ;
+			set "Click3::forecolor" "1 1 1 1" ;
+			set "desktop::count" "0";
+			set "desktop::num1" "0";
+			set "desktop::num2" "0";
+			set "desktop::num3" "0";
+		}
+
+	}
+	windowDef ActivateWin
+	{
+		noactivate	1
+		notime	1
+
+		onActivate {
+			resetTime "ActivateWin" "0" ; 
+		}
+
+		onTime 0 {
+			transition	"Backgroundflash::matcolor" "1 1 1 0.3" "1 0.1 0.05 0" "400" ; 
+		}
+
+	}
+	windowDef DeActivateWin
+	{
+		noactivate	1
+		notime	1
+
+		onDeactivate {
+			resetTime "DeActivateWin" "0" ; 
+		}
+
+		onTime 200 {
+			
+			if ("Desktop::keypad" == 1) { 
+				if ("Desktop::unlocked" == 0) { 
+					if ("Desktop::count" == 0) { 
+						transition "Square3::matcolor" "1 1 1 0.2" "1 1 1 0" "300" ;
+						transition "Square2::matcolor" "1 1 1 0.2" "1 1 1 0" "300" ;
+						transition "Square1::matcolor" "1 1 1 0.2" "1 1 1 0" "300" ;
+						transition "Flash::backcolor" "1 1 1 0.3" "1 1 1 0" "300" ;
+						transition "Flash::rect" "80 60 480 360" "315 235 10 10" "300" "0.4" "0.4" ;
+						set "KeypadParent::visible" "0" ;
+						transition "Square3::rect" "120 100 400 280" "315 235 10 10" "300" "0.4" "0.4" ;
+						transition "Square2::rect" "100 80 440 320" "315 235 10 10" "300" "0.4" "0.4" ;
+						transition "Square1::rect" "80 60 480 360" "315 235 10 10" "300" "0.4" "0.4" ;
+						transition "Background2::matcolor" "1 0.7 0.4 0" "1 0.7 0.4 0.5" "200" ;
+						transition "Text1::forecolor" "1 1 1 0" "1 1 1 0.8" "200" ;
+						transition "Logo2::matcolor" "1 0.8 0.8 0" "1 0.8 0.8 0.6" "200" ;
+						transition "Text2::forecolor" "1 0.1 0.1 0" "1 0.1 0.1 0.9" "200" ;
+						transition "Text3::forecolor" "1 1 1 0" "1 1 1 0.6" "200" ;
+						set "Text3::noevents" "0" ;
+						set "desktop::keypad" "0" ;
+					}
+				}
+			}
+		}
+
+	}
+	windowDef Static
+	{
+		rect	-10 ,-10 ,-660 ,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 8
+	}
+	windowDef Outerglow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 10
+		visible	1
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.5 ,0.4 ,0.15 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,-640,480
+		matcolor	1,1,1,1
+		background	"gui/test/gui_scanlines"
+		visible	1
+		matscaley	1.5
+	}
+	windowDef OuterGlowBar
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"gui/outerglowbar"
+		matcolor	1 ,0.5 ,0.5,1
+		visible	0
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,-640 ,480
+		matcolor	1, 1, 1 ,0.3
+		visible	1
+		background	"guis/assets/common/dirt3"
+		noevents	1
+	}
+	windowDef StatusBar
+	{
+		rect	0,374,640,120
+		visible	1
+		windowDef Statusbar2Mid
+		{
+			rect	58,66,522,40
+			visible	1
+			background	"guis/assets/common/titlebar_mid"
+			matcolor	0.8, 0.6, 0.5, 0.3
+		}
+		windowDef Statusbar2Right
+		{
+			rect	580,66,57,-40
+			visible	1
+			background	"guis/assets/common/titlebar_corner"
+			matcolor	0.8, 0.6, 0.5, 0.3
+		}
+		windowDef Statusbar2Left
+		{
+			rect	1,66,-57,-40
+			visible	1
+			background	"guis/assets/common/titlebar_corner"
+			matcolor	0.8, 0.6, 0.5, 0.3
+		}
+		windowDef StatusText
+		{
+			rect	1,16,638,100
+			text	"#str_00017"
+			textscale	1
+			textalign	1
+			forecolor	1,0.01,0.01,0.7
+			visible	1
+			font	"fonts/micro"
+		}
+		windowDef Statusbar3Right
+		{
+			rect	587,27,-48,52
+			visible	1
+			background	"guis/assets/common/titlebar_edge"
+			matcolor	1, 0.2, 0,0.3
+		}
+		windowDef Statusbar3Mid2
+		{
+			rect	452,27,135,52
+			visible	1
+			background	"guis/assets/common/titlebar_mid"
+			matcolor	1, 0.2, 0,0.3
+		}
+		windowDef Statusbar3Left
+		{
+			rect	5,27,48,52
+			visible	1
+			background	"guis/assets/common/titlebar_edge"
+			matcolor	1, 0.2, 0,0.3
+		}
+		windowDef Statusbar3Mid1
+		{
+			rect	53,27,135,52
+			visible	1
+			background	"guis/assets/common/titlebar_mid"
+			matcolor	1, 0.2, 0,0.3
+		}
+	}
+}

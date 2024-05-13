@@ -1,0 +1,25 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda mcunderground_ryan {
+	name         "Mark Ryan"
+	fullname     "Mark B. Ryan"
+	icon         "guis/assets/pda/icon_mryan"
+	id           "9368-41"
+	post         "Mars City Underground"
+	title        "Security Officer"
+	security     ""
+	pda_email    "mcunderground_ryan_email_1"
+}
+
+email mcunderground_ryan_email_1 {
+	date		"11-15-2145"
+	to			"Mark Ryan"
+	from		"T. Brooks"
+	subject		"Got a new guy on the way"
+	text {
+	"Hey Mark,\n"
+	"We had a new marine just come through the security checkpoint.  He's gonna check out the old comm building for that missing scientist.  Can you make sure he doesn't get lost... last thing we need is another missing person.\n\n"
+	"Thanks Bro\n"
+	"-Brooks"
+	}
+}

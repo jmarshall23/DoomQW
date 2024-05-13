@@ -1,0 +1,72 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda cpu_bates {
+	name         "Tony Bates"
+	fullname     "Tony F. Bates"
+	icon         "guis/assets/pda/bates"
+	id           "1733-86"
+	post         "Central Processing"
+	title        "Mars Security, IT Division"
+	security     ""
+	pda_email    "cpu_bates_email_1"
+	pda_email    "cpu_bates_email_2"
+	pda_email    "cpu_bates_email_3"
+	pda_audio    "cpu_bates_audio_1"
+	pda_audio    "cpu_bates_audio_2"
+}
+
+
+email cpu_bates_email_1 {
+	date		"10-22-2145"
+	to		"Tony Bates"
+	from		"Brian Franko"
+	subject	"Security Concerns"
+	text {
+"Mr. Bates,\n\n"
+"I am concerned about the lax security measures that you have implemented in Lab A. I have received numerous reports now, about your team-members flagrantly disregarding security procedures, and posting the daily security codes on the data-boards.\n"
+
+"With corporate bringing by so many investors lately, you need to stay more vigilant in maintaining security in the lab. The last thing we need is more people wandering around, unsupervised, with all the odd goings-on lately.\n\n"
+
+"Thank you"
+
+	}
+}
+
+email cpu_bates_email_2 {
+	date		"11-04-2145"
+	to		"Tony Bates"
+	from		"Martian Buddy"
+	subject	"Increase your Pen1s size!"
+	text {
+"Tired of being a loser with the ladies?  Want a more exciting and fulfilling love life?  Vist us at martianbuddy.com and find out how!\n\n"
+"Your Martian Buddy!\n"
+	}
+}
+
+
+email cpu_bates_email_3 {
+	date		"11-08-2145"
+	to		"Tony Bates"
+	from		"Edward Sorrenson"
+	subject	"Your Test Results"
+	text {
+"Tony,\n\n"
+"I've had a chance to run the formulas you provided us. The results have been uploaded to your mailbox.\n\nPlease pay particular note to page 12, section F, part 2. The left side of the graph is showing unusual spikes over the last 3 weeks, which can only be explained by unauthorized access to the EnPro power grid.\n\nIt's not possible to attain the figures you have shown, without exceeding power limits for your areas.\n\nThis should probably be reported to Dr. Betruger at once."
+	}
+}
+
+
+audio cpu_bates_audio_1 {
+	name		"Lab A Security Door"
+	info		"Made by: Tony Bates\nDate: 09-25-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_cpu_bates_1"
+}
+
+audio cpu_bates_audio_2 {
+	name		"Network Security Breach"
+	info		"Made by: Tony Bates\nDate: 10-15-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_cpu_bates_2"
+}
+

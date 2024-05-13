@@ -1,0 +1,953 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	backcolor	0 ,0 ,0 ,1
+
+	onTrigger {
+		resetTime "Anim" "0" ; 
+	}
+
+	windowDef ParentClip
+	{
+		rect	5,5,630,470
+		visible	1
+		windowDef TestSpin
+		{
+			rect	-5,-5,320,240
+			visible	1
+			windowDef BgCirc1
+			{
+				rect	14,16,147,105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc2
+			{
+				rect	160,16,-147,105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc3
+			{
+				rect	14,120,147,-105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc4
+			{
+				rect	160,120,-147,-105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef Bg1
+			{
+				rect	0,0,160,120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg2
+			{
+				rect	160,0,-160,120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg3
+			{
+				rect	0,120,160,-120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg4
+			{
+				rect	160,120,-160,-120
+				matcolor	1 ,0.60 ,0 ,0.3
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Arrow1
+			{
+				rect	138,21,45,100
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/varrow"
+			}
+			windowDef Arrow2
+			{
+				rect	19,103,142,35
+				matcolor	1 ,0.60 ,0 ,1
+				visible	0
+				background	"gui/airlock/harrow"
+			}
+			windowDef Arrow3
+			{
+				rect	161,103,142,35
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/harrow"
+			}
+			windowDef Arrow4
+			{
+				rect	138,121,45,100
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/varrow"
+			}
+			windowDef BgCirc5
+			{
+				rect	14,16,147,105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc6
+			{
+				rect	160,16,-147,105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc7
+			{
+				rect	14,120,147,-105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc8
+			{
+				rect	160,120,-147,-105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+		}
+		windowDef TestSpin1
+		{
+			rect	315,-5,320,240
+			visible	1
+			windowDef BgCirc11
+			{
+				rect	14,16,147,105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc21
+			{
+				rect	160,16,-147,105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc31
+			{
+				rect	14,120,147,-105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc41
+			{
+				rect	160,120,-147,-105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef Bg11
+			{
+				rect	0,0,160,120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg21
+			{
+				rect	160,0,-160,120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg31
+			{
+				rect	0,120,160,-120
+				matcolor	1 ,0.60 ,0 ,0.3
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg41
+			{
+				rect	160,120,-160,-120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Arrow11
+			{
+				rect	138,21,45,-100
+				matcolor	1 ,0.60 ,0 ,1
+				visible	0
+				background	"gui/airlock/varrow"
+			}
+			windowDef Arrow21
+			{
+				rect	19,103,142,35
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/harrow"
+			}
+			windowDef Arrow31
+			{
+				rect	161,103,142,35
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/harrow"
+			}
+			windowDef Arrow41
+			{
+				rect	138,121,45,-100
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/varrow"
+			}
+			windowDef BgCirc51
+			{
+				rect	14,16,147,105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc61
+			{
+				rect	160,16,-147,105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc71
+			{
+				rect	14,120,147,-105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc81
+			{
+				rect	160,120,-147,-105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+		}
+		windowDef TestSpin2
+		{
+			rect	-5,235,320,240
+			visible	1
+			windowDef BgCirc12
+			{
+				rect	14,16,147,105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc22
+			{
+				rect	160,16,-147,105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc32
+			{
+				rect	14,120,147,-105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc42
+			{
+				rect	160,120,-147,-105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef Bg12
+			{
+				rect	0,0,160,120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg22
+			{
+				rect	160,0,-160,120
+				matcolor	1 ,0.60 ,0 ,0.3
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg32
+			{
+				rect	0,120,160,-120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg42
+			{
+				rect	160,120,-160,-120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Arrow12
+			{
+				rect	138,21,45,100
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/varrow"
+			}
+			windowDef Arrow22
+			{
+				rect	19,103,142,35
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/harrow"
+			}
+			windowDef Arrow32
+			{
+				rect	161,103,142,35
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/harrow"
+			}
+			windowDef Arrow42
+			{
+				rect	138,121,45,100
+				matcolor	1 ,0.60 ,0 ,1
+				visible	0
+				background	"gui/airlock/varrow"
+			}
+			windowDef BgCirc52
+			{
+				rect	14,16,147,105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc62
+			{
+				rect	160,16,-147,105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc72
+			{
+				rect	14,120,147,-105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc82
+			{
+				rect	160,120,-147,-105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+		}
+		windowDef TestSpin3
+		{
+			rect	315,235,320,240
+			visible	1
+			windowDef BgCirc13
+			{
+				rect	14,16,147,105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc23
+			{
+				rect	160,16,-147,105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc33
+			{
+				rect	14,120,147,-105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef BgCirc43
+			{
+				rect	160,120,-147,-105
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"guis/assets/airlock/circle_white2"
+			}
+			windowDef Bg13
+			{
+				rect	0,0,160,120
+				matcolor	1 ,0.60 ,0 ,0.3
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg23
+			{
+				rect	160,0,-160,120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg33
+			{
+				rect	0,120,160,-120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Bg43
+			{
+				rect	160,120,-160,-120
+				matcolor	1 ,0.60 ,0 ,0.6
+				visible	1
+				background	"guis/assets/airlock/bg_white"
+			}
+			windowDef Arrow13
+			{
+				rect	138,21,45,-100
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/varrow"
+			}
+			windowDef Arrow23
+			{
+				rect	19,103,142,35
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/harrow"
+			}
+			windowDef Arrow33
+			{
+				rect	161,103,142,35
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/harrow"
+			}
+			windowDef Arrow43
+			{
+				rect	138,121,45,-100
+				matcolor	1 ,0.60 ,0 ,1
+				visible	1
+				background	"gui/airlock/varrow"
+			}
+			windowDef BgCirc53
+			{
+				rect	14,16,147,105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc63
+			{
+				rect	160,16,-147,105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc73
+			{
+				rect	14,120,147,-105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+			windowDef BgCirc83
+			{
+				rect	160,120,-147,-105
+				matcolor	1 ,0.4 ,0 ,1
+				visible	1
+				background	"gui/airlock/circle_white3"
+			}
+		}
+		windowDef Border1
+		{
+			rect	28,23,385,11
+			matcolor	1 ,0.80 ,0.3 ,0.6
+			visible	1
+			background	"gui/line/horizwarn"
+		}
+		windowDef Border2
+		{
+			rect	0,0,15,470
+			matcolor	1 ,0.80 ,0.3 ,0.6
+			visible	0
+			background	"gui/line/vertwarn"
+		}
+		windowDef Border3
+		{
+			rect	615,0,15,470
+			matcolor	1 ,0.80 ,0.3 ,0.6
+			visible	0
+			background	"gui/line/vertwarn"
+		}
+		windowDef Border4
+		{
+			rect	25,169,392,11
+			matcolor	1 ,0.80 ,0.3 ,0.6
+			visible	1
+			background	"gui/line/horizwarn"
+		}
+	}
+	windowDef Contents31
+	{
+		rect	-22,19,474,249
+		visible	1
+		windowDef Contentsbg31
+		{
+			rect	38,5,421,170
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite3"
+			matcolor	0,0,0,0.6
+		}
+		windowDef Contentscorner121
+		{
+			rect	46,5,78,-25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	1,0.8,0.4,0.5
+		}
+		windowDef Contentscorner221
+		{
+			rect	372,5,-78,-25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	1,0.8,0.4,0.5
+		}
+		windowDef Contentscorner321
+		{
+			rect	46,146,78,25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	1,0.8,0.4,0.5
+		}
+		windowDef Contentscorner421
+		{
+			rect	372,146,-78,25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	1,0.8,0.4,0.5
+		}
+		windowDef ContentsBottom21
+		{
+			rect	124,145,248,28
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	1,0.8,0.4,0.5
+		}
+		windowDef ContentsRight11
+		{
+			rect	372,30,-78,-116
+			visible	1
+			background	"guis/assets/common/1pxborder_vert"
+			matcolor	1,0.8,0.4,0.5
+		}
+		windowDef ContentsLeft11
+		{
+			rect	46,30,78,-116
+			visible	1
+			background	"guis/assets/common/1pxborder_vert"
+			matcolor	1,0.8,0.4,0.5
+		}
+		windowDef ContentsTop21
+		{
+			rect	124,3,248,-28
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	1,0.8,0.4,0.5
+		}
+		windowDef Text3141
+		{
+			rect	59,13,380,29
+			text	"#str_03668"
+			font	"fonts/micro"
+			textscale	0.44
+			forecolor	1 ,0.80 ,0.40 ,0.6
+			visible	1
+		}
+		windowDef TextReport1
+		{
+			rect	58,37,276,123
+			text	"#str_03669"
+			font	"fonts/bank"
+			textscale	0.35
+			forecolor	1,1,1,0.729
+			visible	1
+		}
+	}
+	windowDef Buttons
+	{
+		rect	313,59,108,123
+		visible	1
+
+		onTime 0 {
+			transition "BigButton42::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton34::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;	
+		}
+
+		onTime 150 {
+			transition "BigButton11::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton2::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 200 {
+			transition "BigButton3::matcolor" "1 0.4 0.3 0.5" "1 0.4 0.3 0.3" "100" ;
+			transition "BigButton13::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 400 {
+			transition "BigButton24::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton42::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 520 {
+			transition "BigButton32::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton12::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 700 {
+			transition "BigButton44::matcolor" "1 0.4 0.3 0.5" "1 0.4 0.3 0.3" "100" ;
+			transition "BigButton32::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 750 {
+			transition "BigButton22::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton33::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 950 {
+			transition "BigButton14::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton4::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 1070 {
+			transition "BigButton1::matcolor" "1 0.4 0.3 0.5" "1 0.4 0.3 0.3" "100" ;
+			transition "BigButton31::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 1200 {
+			transition "BigButton23::matcolor" "1 0.4 0.3 0.5" "1 0.4 0.3 0.3" "100" ;
+			transition "BigButton41::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 1420 {
+			transition "BigButton21::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton42::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 2020 {
+			transition "BigButton43::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton11::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 2050 {
+			transition "BigButton34::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton3::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 2150 {
+			transition "BigButton2::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton24::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 2200 {
+			transition "BigButton13::matcolor" "1 0.4 0.3 0.5" "1 0.4 0.3 0.3" "100" ;
+			transition "BigButton32::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 2400 {
+			transition "BigButton42::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton44::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 2520 {
+			transition "BigButton12::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton22::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 2700 {
+			transition "BigButton32::matcolor" "1 0.4 0.3 0.5" "1 0.4 0.3 0.3" "100" ;
+			transition "BigButton14::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 2750 {
+			transition "BigButton33::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton1::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 2950 {
+			transition "BigButton4::matcolor" "1 1 1 0.5" "1 1 1 0.3" "100" ;
+			transition "BigButton23::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 3070 {
+			transition "BigButton31::matcolor" "1 0.4 0.3 0.5" "1 0.4 0.3 0.3" "100" ;
+			transition "BigButton21::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 3200 {
+			transition "BigButton41::matcolor" "1 0.4 0.3 0.5" "1 0.4 0.3 0.3" "100" ;
+			transition "BigButton43::matcolor" "1 1 1 0.5" "0.5 0.4 0.2 0.3" "100" ;
+		}
+
+		onTime 3300 {
+			resetTime "0" ;
+		}
+
+		windowDef BigButton1
+		{
+			rect	4,3,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton2
+		{
+			rect	38,3,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton3
+		{
+			rect	70,3,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton4
+		{
+			rect	4,46,31,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton11
+		{
+			rect	37,46,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton21
+		{
+			rect	71,46,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton31
+		{
+			rect	4,91,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton41
+		{
+			rect	37,91,31,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton12
+		{
+			rect	71,91,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton22
+		{
+			rect	303,3,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton32
+		{
+			rect	4,25,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton42
+		{
+			rect	37,25,31,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton13
+		{
+			rect	70,25,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton23
+		{
+			rect	4,68,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton33
+		{
+			rect	37,68,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton43
+		{
+			rect	70,68,31,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton14
+		{
+			rect	204,25,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton24
+		{
+			rect	237,25,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton34
+		{
+			rect	270,25,30,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+		windowDef BigButton44
+		{
+			rect	302,25,31,19
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	1,0.7,0.3,0.6
+		}
+	}
+	windowDef Glow
+	{
+		rect	0 ,0 ,-640 ,480
+		matcolor	0.40 ,0.20 ,0 ,1
+		visible	0
+		background	"gui/glow"
+		noevents	1
+	}
+	windowDef Outerglow
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 2.8
+		visible	0
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.5 ,0.35 ,0.1 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,640,480
+		matcolor	1,1,1,1
+		background	"gui/test/gui_scanlines"
+		visible	1
+		matscaley	2
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,640 ,480
+		matcolor	1, 1, 1 ,0.6
+		visible	1
+		background	"guis/assets/common/dirt1"
+		noevents	1
+	}
+	windowDef Dirt1
+	{
+		rect	0,0,-640,480
+		matcolor	1, 1, 1 ,1
+		visible	1
+		background	"guis/assets/common/dirt4"
+		noevents	1
+	}
+	windowDef Outershadow1
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+
+		onTime 0 {
+			transition "matcolor" "0.4 0.8 1 0.1" "0.4 0.8 1 0.09" "75" ;
+		}
+
+		onTime 75 {
+			transition "matcolor" "0.4 0.8 1 0.09" "0.4 0.8 1 0.1" "75" ;
+		}
+
+		onTime 150 {
+			transition "matcolor" "0.4 0.8 1 0.1" "0.4 0.8 1 0.09" "75" ;
+		}
+
+		onTime 220 {
+			transition "matcolor" "0.4 0.8 1 0.09" "0.4 0.8 1 0.1" "75" ;
+		}
+
+		onTime 300 {
+			transition "matcolor" "0.4 0.8 1 0.1" "0.4 0.8 1 0.08" "75" ;
+		}
+
+		onTime 375 {
+			transition "matcolor" "0.4 0.8 1 0.08" "0.4 0.8 1 0.1" "75" ;
+		}
+
+		onTime 450 {
+			resetTime "0" ;
+		}
+
+	}
+}

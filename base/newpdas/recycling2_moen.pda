@@ -1,0 +1,41 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda recycling2_moen {
+	name         "Jeffery Moen"
+	fullname     "Jeffery R. Moen"
+	icon         "guis/assets/pda/bio1"
+	id           "8492-13"
+	post         "Recycling Sector 2"
+	title        "Pump Specialist"
+	security     ""
+	pda_email    "recycling1_moen_email_1"
+	pda_email    "recycling1_moen_email_2"
+		}
+
+email recycling1_moen_email_1 {
+	date		"11-04-2145"
+	to		"Jeff Moen"
+	from		"Henry Varela"
+	subject		"Pump Malfunction"
+	text {
+"Jeff,\n"
+"The main waste processing unit here in Sector 1 is running at a higher pressure level than it was rated for. I'm very concerned about the stability of the whole system. One fault or stress fracture in any of the lines could cause doom for the whole mechanism. This processing system here was never designed to process that much waste but they keep shipping it to us.\n"
+"We urgently need a new pump here before this one fails.\n\n"
+"Thank You,\nHenry"
+
+	}
+}
+
+email recycling1_moen_email_2 {
+	date		"11-09-2145"
+	to		"Jeff Moen"
+	from		"Gregg Brandenburg"
+	subject		"Toxic Waste Storage"
+	text {
+"Mr. Moen,\n\n"
+"It is very important that you remember to store toxic waste barrels in their proper location.  Having volatile substances so close to where people work is very dangerous, especially around doorways and narrow passages.  If one of those barrels exploded it could cause a lot of damage and someone might be seriously hurt, or worse - killed!  Please address this problem immediately!\n\n"  
+
+"Brandenburg"
+
+	}
+}

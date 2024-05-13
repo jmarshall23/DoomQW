@@ -1,0 +1,384 @@
+windowDef Desktop
+{
+	comment	"gui_parm2 value is reported to the gui from the script.\nIf the value = 90 it will not allow clicking of the script button and will instead return a message saying cran is in the default position.\nonclick when the value does not = 90 will run the script defined in gui_parm6"
+	rect	0 ,0 ,640 ,480
+
+	onEvent {
+		if ("gui::gui_parm2" == 0) { 
+			set "CraneText2::text" "#str_00358" ;
+		} else { 
+			set "CraneText2::text" "#str_00359" ;
+		}
+	}
+
+	onTrigger {
+		set "Broken::visible" "1" ;
+		set "TriggerButton::noevents" "1" ;
+		set "TriggerButton2::noevents" "1" ;
+	}
+
+	windowDef BGClip
+	{
+		rect	2,0,634,480
+		visible	1
+		windowDef Over
+		{
+			rect	0,0,888,480
+			matcolor	1 ,1 ,1 ,0.8
+			visible	1
+			background	"guis/assets/dataplug/bg3"
+		}
+	}
+	windowDef GreenBoxUp
+	{
+		rect	37,82,569,307
+		visible	0
+		windowDef GBCornerTL
+		{
+			rect	0,0,-16,-16
+			background	"guis/assets/caverns/boxc"
+			matcolor	1, 1, 1, 0.7
+			visible	1
+		}
+		windowDef GBCornerTR
+		{
+			rect	550,0,16,-16
+			background	"guis/assets/caverns/boxc"
+			matcolor	1, 1, 1, 0.7
+			visible	1
+		}
+		windowDef GBCornerBL
+		{
+			rect	0,252,-16,16
+			background	"guis/assets/caverns/boxc"
+			matcolor	1, 1, 1, 0.7
+			visible	1
+		}
+		windowDef GBCornerBR
+		{
+			rect	550,252,16,16
+			background	"guis/assets/caverns/boxc"
+			matcolor	1, 1, 1, 0.7
+			visible	1
+		}
+		windowDef GBSideT
+		{
+			rect	16,0,534,-16
+			background	"guis/assets/caverns/boxh"
+			matcolor	1, 1, 1, 0.7
+			visible	1
+		}
+		windowDef GBSideB
+		{
+			rect	16,252,534,16
+			background	"guis/assets/caverns/boxh"
+			matcolor	1, 1, 1, 0.7
+			visible	1
+		}
+		windowDef GBSideL
+		{
+			rect	0,16,-16,236
+			background	"guis/assets/caverns/boxv"
+			matcolor	1, 1, 1, 0.7
+			visible	1
+		}
+		windowDef GBSideR
+		{
+			rect	550,16,16,236
+			background	"guis/assets/caverns/boxv"
+			matcolor	1, 1, 1, 0.7
+			visible	1
+		}
+		windowDef GBBgFill
+		{
+			rect	16,16,534,236
+			backcolor	0.68, 0.75, 0.53, 0.7
+			visible	1
+		}
+	}
+	windowDef Bar1
+	{
+		rect	38,82,568,37
+		matcolor	0.02 ,0.45 ,0.43 ,1
+		visible	1
+		background	"guis/assets/dataplug/bar"
+	}
+	windowDef Bar2
+	{
+		rect	38,313,568,-37
+		matcolor	0.02 ,0.45 ,0.43 ,1
+		visible	1
+		background	"guis/assets/dataplug/bar"
+	}
+	windowDef TitleText
+	{
+		rect	15,11,606,58
+		forecolor	1,1,1,0.7
+		text	"#str_00360"
+		textscale	0.85
+		textalign	1
+		visible	1
+		font	"fonts/micro"
+	}
+	windowDef CraneText1
+	{
+		rect	20,355,600,77
+		text	"#str_00361"
+		textscale	0.85
+		textalign	1
+		forecolor	0.02 ,0.45 ,0.43 ,1
+		visible	1
+		font	"fonts/micro"
+	}
+	windowDef CraneText2
+	{
+		rect	20,400,600,77
+		text	"#str_00358"
+		textscale	0.9
+		textalign	1
+		forecolor	0.8,1,1,0.4
+		visible	1
+		font	"fonts/micro"
+	}
+	windowDef TriggerButton
+	{
+		rect	50,75,540,300
+		text	"#str_00362"
+		textscale	1.4
+		textalign	1
+		forecolor	1, 1, 1, 0.45
+		cursor	1
+		textaligny	30
+		visible	1
+		notime	1
+
+		onAction {
+			if ("gui::gui_parm2" == 15) { 
+				set	"cmd"	"play guisounds_error" ; 
+				resetTime "0" ;
+			} else { 
+				set	"cmd"	"play guisounds_click" ; 
+				runScript	"gui::gui_parm6" ;
+				resetTime "TriggerButton2" "0" ;
+				set "noevents" "1" ;		
+			}
+		}
+
+		onTime 0 {
+			transition "forecolor" "1 1 1 0.45" "1 1 1 0" "400" ;
+		}
+
+		onTime 400 {
+			set "text" "#str_00363" ;
+			transition "forecolor" "1 1 1 0" "1 1 1 0.45" "400" ;
+		}
+
+		onTime 2000 {
+			transition "forecolor" "1 1 1 0.45" "1 1 1 0" "400" ;
+		}
+
+		onTime 2400 {
+			set "text" "#str_00362" ;
+			transition "forecolor" "1 1 1 0" "1 1 1 0.45" "400" ;
+		}
+
+	}
+	windowDef TriggerButton2
+	{
+		rect	50,75,540,300
+		text	"#str_00364"
+		textscale	1.4
+		textalign	1
+		forecolor	1, 1, 1, 0
+		textaligny	30
+		visible	1
+		notime	1
+
+		onTime 0 {
+			transition "TriggerButton::forecolor" "1 1 1 0.45" "1 1 1 0" "400" ;
+			transition "forecolor" "0 0 0 0" "1 1 1 0.35" "400" ;
+		}
+
+		onTime 400 {
+			set "forecolor" "1 1 1 0.45" ;
+		}
+
+		onTime 500 {
+			if ("gui::gui_parm2" == 0) { 
+				transition "forecolor" "1 1 1 0.35" "0 0 0 0" "400" ;
+				transition "TriggerButton::forecolor" "1 1 1 0" "1 1 1 0.45" "400" ;
+				set "TriggerButton::noevents" "0" ;
+			} else {
+				resetTime "400" ;
+			}
+		}
+
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef Addhighlight
+	{
+		rect	0,0,-640,480
+		background	"gui/addhighlight"
+		matcolor	0.1 ,0.3 ,0.3 ,1
+		visible	1
+	}
+	windowDef Broken
+	{
+		rect	0,0,640,480
+		visible	0
+		windowDef Dirt11
+		{
+			rect	0,0,-640,480
+			matcolor	1, 1, 1 ,1
+			visible	1
+			background	"guis/assets/common/dirt4"
+			noevents	1
+		}
+		windowDef BG11
+		{
+			rect	5,5,630,471
+			visible	1
+			background	"guis/assets/common/bg"
+			matcolor	0.25,0,0,0.5
+		}
+		windowDef Addhighlight1
+		{
+			rect	0,0,-640,480
+			background	"gui/addhighlight"
+			matcolor	1 ,0 ,0,1
+			visible	1
+		}
+		windowDef Text111
+		{
+			rect	9,121,622,350
+			forecolor	1,0,0,1
+			text	"#str_03855"
+			textscale	1.45
+			visible	1
+			textalign	1
+			font	"fonts/micro"
+
+			onTime 0 {
+				transition "forecolor" "1 0 0 1" "1 0 0 0" "600" ;
+				transition "Addhighlight2::matcolor" "1 0 0 1" "0 0 0 0" "600" ;
+				transition "Addhighlight1::matcolor" "1 0 0 1" "0 0 0 0" "600" ;
+			}
+
+			onTime 600 {
+				transition "forecolor" "1 0 0 0" "1 0 0 1" "200" ;
+				transition "Addhighlight2::matcolor" "0 0 0 0" "1 0 0 1" "200" ;
+				transition "Addhighlight1::matcolor" "0 0 0 0" "1 0 0 1" "200" ;	
+			}
+
+			onTime 800 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bglow1
+		{
+			rect	0,0,640,480
+			background	"guis/assets/cpuserver/bglow.tga"
+			visible	1
+			matcolor	1, 0.2, 0, 0.1
+		}
+		windowDef Flicker11
+		{
+			rect	0,0,640,-480
+			background	"guis/assets/cpuserver/bg.tga"
+			matcolor	0.6, 0.9, 1, 0.1
+			visible	1
+
+			onTime 0 {
+				transition "matcolor" "0.6 0.9 1 0.1" "0.6 0.9 1 0" "400" ;
+			}
+
+			onTime 800 {
+				transition "matcolor" "0.6 0.9 1 0" "0.6 0.9 1 0.3" "700" ;
+			}
+
+			onTime 1500 {
+				transition "matcolor" "0.6 0.9 1 0.3" "0.6 0.9 1 0" "300" ;
+			}
+
+			onTime 2000 {
+				transition "matcolor" "0.6 0.9 1 0" "0.6 0.9 1 0.1" "300" ;
+			}
+
+			onTime 3500 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Flicker2
+		{
+			rect	0,0,-640,480
+			visible	1
+			background	"gui/testmat"
+			matcolor	1, 1, 1, 0.1
+		}
+		windowDef Addhighlight2
+		{
+			rect	0,0,640,-480
+			background	"gui/addhighlight"
+			matcolor	1 ,0 ,0 ,1
+			visible	1
+		}
+		windowDef Background6
+		{
+			rect	0,0,-640,480
+			visible	1
+			background	"gui/bloodtest2"
+			matcolor	0.5, 0.2, 0.2, 0.2
+
+			onTime 0 {
+				transition "matcolor" "0.6 0.6 0.6 0.15" "0.4 0.4 0.4 0.2" "500" ;
+			}
+
+			onTime 700 {
+				transition "matcolor" "0.4 0.4 0.4 0.2" "0.6 0.6 0.6 0.15" "500" ;
+			}
+
+			onTime 2000 {
+				resetTime "0" ;
+			}
+
+		}
+	}
+	windowDef Static1
+	{
+		rect	-9,-9,660,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 8
+	}
+	windowDef Outershadow1
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,-640,480
+		matcolor	1,1,1,1
+		background	"gui/test/gui_scanlines"
+		visible	1
+		matscaley	1.5
+	}
+	windowDef Dirt
+	{
+		rect	0,0,-640,480
+		matcolor	1, 1, 1 ,1
+		visible	1
+		background	"guis/assets/common/dirt1"
+		noevents	1
+	}
+}

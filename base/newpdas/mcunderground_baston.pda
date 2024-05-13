@@ -1,0 +1,47 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda mcunderground_baston {
+	name         "Grant Baston"
+	fullname     "Grant F. Baston"
+	icon         "guis/assets/pda/icon_baston"
+	id           "2781-61"
+	post         "Mars City Underground"
+	title        "Services Supervisor"
+	security     ""
+	pda_email    "mcunderground_baston_email_1"
+	pda_email    "mcunderground_baston_email_2"
+	pda_audio    "mcunderground_baston_audio_1"
+}
+
+email mcunderground_baston_email_1 {
+	date		"11-13-2145"
+	to			"Grant Baston"
+	from		"T. Brooks"
+	subject		"You're not gonna believe this :)"
+	text {
+		"You will not believe this... actually you probably will.  The late night security detail couldn't figure out how to open the security cabinets from the security office?!?!  I spent the next morning walking them through the steps in the security panels.  They didn't realize that you could open both cabinets from the one security panel.  Where do they find these people?\n\n"
+		"-Brooks"
+	}
+}
+
+email mcunderground_baston_email_2 {
+	date		"11-14-2145"
+	to			"Grant Baston"
+	from		"UAC Security"
+	subject		"UPDATED SECURITY CODE"
+	text {
+		"Unit Supervisor,\n\n"
+		"November Security Update for your area, UNDERGROUND MAINTENANCE, has been completed.\n"
+		"Please update the security cabinet code in the Energy Stabilization Unit to 531.\n\n"
+		"Thanks,\n"
+		"UAC Security"
+	}
+}
+
+audio mcunderground_baston_audio_1 {
+	name		"Unexplainable Things"
+	info		"Made by: Grant Baston\nDate: 10-19-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_mcunderground_baston_1"
+}
+

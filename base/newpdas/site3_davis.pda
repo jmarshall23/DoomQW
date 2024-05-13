@@ -1,0 +1,73 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda site3_davis {
+	name         "Richard Davis"
+	fullname     "Richard S. Davis, Ph.D"
+	icon         "guis/assets/pda/davis"
+	id           "5181-98"
+	post         "Site 3"
+	title        "Archaeologist"
+	security     ""
+	pda_email    "site3_davis_email_1"
+	pda_email    "site3_davis_email_2"
+	pda_email    "site3_davis_email_3"
+	pda_audio    "site3_davis_audio_1"
+}
+
+email site3_davis_email_1 {
+	date		"08-10-2145"
+	to		"Richard Davis"
+	from		"Malcolm Betruger"
+	subject	"Discovery in the Ruins"
+	text {
+"Mr. Davis,\n\n"
+"I received word of your discovery.  Very impressive start, but I am not yet convinced.  Do not lose sight of the bigger picture.  We still have a lot of work to do before any of these findings will be ready for distribution or publication.  Analysis must continue on the remaining artifacts.\n\n"
+"Your audio reports in the future need to be more analytical and less emotional.  It is important that we all maintain our professionalism and do not become biased or too attached to our work.  I do not want to remind you of this again.\n\n"
+"Continue to forward me your findings, and I will help you manage the reports so as not to give Corporate the wrong impression.\n\n"
+"Malcolm Betruger"
+	}
+}
+
+email site3_davis_email_2 {
+	date		"10-16-2145"
+	to		"Richard Davis"
+	from		"Lowell Foshay"
+	subject	"Ruins safety concerns"
+	text {
+"Hey Dick,\n\n"
+
+"The structural integrity of the Ruins is deteriorating.  Our initial rock form and in-ground analyses prior to deep ground exploration inferred no immediate dangers.  In fact, the Ruins structure itself was determined to be very sound.\n\n"
+"As you already know, expansive underground digs of this nature are an engineering nightmare.  The heightened pressure to open up the primary dig site was a dangerous oversight.  Just recently, one of our engineers, Peter, got crushed by a falling brick - yup those huge stones lining the entire wall and ceiling of the Ruins!\n\n"
+"Some of the guys are mumbling about the walls being alive or something, but you and I know it's just the horizontal stretching of the regional tectonic stresses.  Heh, stones... alive... spoooooky. I think we all need a long vacation.\n\n"
+"Anyway, watch your step and don't forget to look up once in a while.\n\n"
+
+"Foshinator out!"
+
+
+	}
+}
+
+email site3_davis_email_3 {
+	date		"11-10-2145"
+	to		"Richard Davis"
+	from		"Pierce Rogers"
+	subject	"Tablets are key"
+	text {
+"Richard,\n\n"
+"I thank you for your industrious support of the work being conducted here. I've been compiling your data along with mine and have made some startling new discoveries. I firmly believe your work with the tablets are the key to solving the mysterious relationship between the Soul Cube, the Ancients, and us.\n\n"
+"I am sending word to the Executive Council for an immediate increase of our research budget. I have a strange feeling that we must find the answer soon or... no, I dare not say it just yet.\n\n"
+"I will contact you post-haste with any news regarding our funding.\n\n"
+
+"Pierce"
+
+	}
+}
+
+
+audio site3_davis_audio_1 {
+	name		"Discovery in the Ruins"
+	info		"Made by: Richard Davis\nDate: 08-08-2145\nOpen for Amendment: Yes\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_site3_davis_1"
+}
+

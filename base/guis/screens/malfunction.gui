@@ -1,0 +1,175 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480 
+	backcolor	0 ,0 ,0 ,0
+	nocursor	1
+
+	windowDef Background3 {
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background	"guis/assets/keypad/under_bridge_gray"
+		matcolor	1, 0.5, 0.5, 0.4
+
+		onTime 0 {
+			set "rect" "5 6 625 468" ;
+		}
+		onTime 50 {
+			set "rect" "5 15 626 465" ;
+		}
+		onTime 100 {
+			set "rect" "5 5 626 470" ;
+			resetTime "0" ;
+		}
+	
+	}
+	windowDef Static {
+	//static overlay
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background "gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ]
+	}
+	windowDef bgScroll {
+		rect	7 ,5 ,626 ,470 
+		visible	1
+		background	"gui/scroll2"
+		matColor	1, 1, 1, 0.4
+	}
+
+	windowDef Warp2 {
+		rect	7,5,626,-470
+		matcolor	0.5, 0.5, 0.5, 0.1
+		background	"gui/warp/static"
+		visible	1
+	}
+
+windowDef BgRoll1 {
+	rect	0 ,0 ,640 ,480 
+
+	windowDef Background1 {
+		rect	5 ,5 ,626 ,470 
+		visible	1
+		background	"guis/assets/keypad/under_bridge_gray2"
+		matcolor	1, 0.1, 0.1, 0.4
+
+		onTime 0 {
+			set "rect" "5 5 630 470" ;
+			transition "matcolor" "0.6 0.9 0.9 0.4" "0.6 0.9 0.9 0" "400" ;
+		}
+		onTime 1000 {
+			set "rect" "5 30 670 420" ;
+			transition "matcolor" "0.6 0.9 0.9 0" "0.6 0.9 0.9 0.4" "250" ;
+		}
+		onTime 1250 {
+			resetTime "0" ;
+		}
+	
+	}
+	windowDef Overlay1 {
+		rect	5 ,5 ,626 ,470 
+		visible	1
+		background	"guis/assets/keypad/over_bridge"
+		matcolor	0.6, 0.8, 0.9, pdmgflick[ time * 0.0005 ] / 1.5 //pdscaleTable[ time * 0.005 ] / 4
+
+		onTime 0 {
+			set "background" "guis/assets/keypad/over_bridged" ;
+		}
+		onTime 50 {
+			set "background" "guis/assets/keypad/over_bridge" ;
+		}
+		onTime 350 {
+			set "background" "guis/assets/keypad/over_bridged" ;
+		}
+		onTime 500 {
+			set "background" "guis/assets/keypad/over_bridge" ;
+		}
+		onTime 600 {
+			resetTime "0" ;
+		}
+	}
+}
+
+windowDef BgRoll2 {
+	rect	0 ,480 ,640 ,480 
+
+	onTime 0 {
+		transition "BgRoll1::rect" "0 0 640 480" "0 -480 640 480" "3000" ;
+		transition "BgRoll2::rect" "0 480 640 480" "0 -0 640 480" "3000" ;
+	}
+	onTime 3000 {
+		resetTime "0" ;
+	}
+
+	windowDef Background2 {
+		rect	5 ,5 ,626 ,470 
+		visible	1
+		background	"guis/assets/keypad/under_bridge_gray2"
+		matcolor	1, 0.1, 0.1, 0.4
+
+		onTime 0 {
+			set "rect" "5 5 630 470" ;
+			transition "matcolor" "0.6 0.9 0.9 0.4" "0.6 0.9 0.9 0" "400" ;
+		}
+		onTime 1000 {
+			set "rect" "5 30 670 420" ;
+			transition "matcolor" "0.6 0.9 0.9 0" "0.6 0.9 0.9 0.4" "250" ;
+		}
+		onTime 1250 {
+			resetTime "0" ;
+		}
+	
+	}
+	windowDef Overlay2 {
+		rect	5 ,5 ,626 ,470 
+		visible	1
+		background	"guis/assets/keypad/over_bridge"
+		matcolor	0.6, 0.8, 0.9, pdmgflick[ time * 0.0005 ] / 1.5 //pdscaleTable[ time * 0.005 ] / 4
+
+		onTime 0 {
+			set "background" "guis/assets/keypad/over_bridged" ;
+		}
+		onTime 50 {
+			set "background" "guis/assets/keypad/over_bridge" ;
+		}
+		onTime 350 {
+			set "background" "guis/assets/keypad/over_bridged" ;
+		}
+		onTime 500 {
+			set "background" "guis/assets/keypad/over_bridge" ;
+		}
+		onTime 600 {
+			resetTime "0" ;
+		}
+	}
+}
+	windowDef Warp {
+		rect	7,5,626,470
+		matcolor	1,1,1,0.1
+		background	"gui/warp/static"
+		visible	1
+	}
+
+	windowDef Outershadow {
+		rect	0 ,0 ,640 ,480 
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1 
+		visible	1
+	}
+	windowDef Addhighlight {
+		rect	0 ,0 ,640 ,480 
+		background	"gui/addhighlight"
+		matcolor	0.3 ,0.8 ,0.8 ,1 
+		visible	1
+	}
+	windowDef Dirt {
+		rect	0 ,0 ,-640 ,-480 
+		matcolor	1, 1, 1 ,0.5
+		visible	1
+		background	"guis/assets/common/dirt2"
+	}
+	windowDef Dirt2 {
+		rect	0 ,0 ,640 ,480 
+		matcolor	1, 1, 1 ,0.5
+		visible	1
+		background	"guis/assets/common/dirt2"
+	}
+}

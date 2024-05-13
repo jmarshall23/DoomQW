@@ -1,0 +1,44 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda alphalabs4_kaczynski {
+	name         "Larry Kaczynski"
+	fullname     "Larry Kaczynski"
+	icon         "guis/assets/pda/kaczynski"
+	id           "3492-40"
+	post         "Alpha Labs, Sector 4"
+	title        "Chief Researcher"
+	security     ""
+	pda_email    "alphalabs4_kaczynski_email_1"
+	pda_email    "alphalabs4_kaczynski_email_2"
+
+}
+
+email alphalabs4_kaczynski_email_1 {
+	date		"11-1-2145"
+	to			"Larry Kaczynski"
+	from		"David Carter"
+	subject		"Chamber Calibration"
+	text {
+"Dr. Kaczynski,\n\n"
+"I checked the chamber calibration as you requested, and at first found everything to be within acceptable limits.  As I was leaving the chamber though, I started to hear a low whispering sound that seemed to be eminating from the main coupler.  Though when I stooped down for a closer look the sound stopped.  This happened every time I was leaving the chamber.  You may want to check into this matter yourself as I can't seem to pinpoint the source of the sound.  As far as everything else is concerned, it all seems to check out.  All graphs are running at 2.4 or higher so I don't foresee any other problems.\n\n"
+"David Carter\n"
+	}
+}
+
+email alphalabs4_kaczynski_email_2 {
+	date		"11-9-2145"
+	to		"Larry Kaczynski"
+	from		"John Okonkwo"
+	subject	"Hello"
+	text {
+	
+"Good Day\n\n"
+"I am DR.John Okonkwo. Civil Servant in the Ministry of Health. I know this proposal will come to you as a surprise because we have not met before either physically or through correspondence. I got your contact from our chamber of commerce here in Nigeria and have no doubt in your ability to handle this proposal involving huge sum of money. My father Chief Isama OKONKWO. (Now Late) was the Royal Head of my community, ELEME (an oil rich town) in Nigeria. My community produces 5.8% of the total crude oil production in Nigeria and 0.5% of the Dollar value of each barrel is paid to my father as royalty by the Federal Government. My father was also the Chairman of ISAMA Special Oil Trust Fund. In his position as the Royal head and Chairman of the Oil Trust Fund, he made some money which he left for me as the only heir to inherit.\n\n"
+"The money is Eighteen Million, Five Hundred Thousand US Dollars(US$18.5). This Money originated from the accumulated royalties between 1976-1998 . Due to poor banking system in Nigeria and political instability as a result of past Military rules (1985-1999) , he deposited this Money in a Strong Room/"VAULTS" with an open beneficiary in a security company pending when he would finish arrangement to transfer it abroad . He was planning this when he died late last year of Heart Attack.\n\n"
+"Just before my father died he called my attention to the money and charged me to look for a foreigner who would assist me in the transfer/investment of the funds abroad. So l would be very grateful if you could accept to help me achieve this great objective. I promise to give you 25% of the total funds transferred to your vital bank account as compensation for your assistance. Five percent (5%)has been set aside to take care of all expenses we may incur during the transaction. To indicate your interest, contact me urgently and confidentially for more information and the roles you will play in this business.\n\n"
+"All the legal Documents concerning this Money will be sent to you as soon as we agreed together. Please I will appreciate that you send your telephone/fax numbers to enable me contact you immediately for discussions.\n\n"
+"Yours faithfully,\n\n"
+"John Okonkwo\n"
+
+	}
+}

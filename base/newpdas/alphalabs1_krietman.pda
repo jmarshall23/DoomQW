@@ -1,0 +1,25 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda alphalabs1_krietman {
+	name         "George Krietman"
+	fullname     "George Krietman"
+	icon         "guis/assets/pda/krietman"
+	id           "6903-50"
+	post         "Alpha Labs, Sector 1"
+	title        "Research Assistant"
+	security     ""W:\Doom\base\newpdas\alphalabs1_Lipsitz.pda
+	pda_email    "alphalabs1_krietman_email_1"
+}
+
+email alphalabs1_krietman_email_1 {
+	date		"11-13-2145"
+	to			"Dr. George Krietman"
+	from		"Dr. Pat Harvey"
+	subject		"Lost PDA"
+	text {
+"George\n\n"
+"I seem to have misplaced my PDA with my security clearance.  I was adjusting the oxygen intake on the Hydrocon the other day and recall using it at that time but I can't seem to remember where the heck I put that thing.  If you see it around while on your shift could you put it someplace safe for me?\n"
+"Thank you,\n\n"
+"Dr. Harvey\n"
+	}
+}

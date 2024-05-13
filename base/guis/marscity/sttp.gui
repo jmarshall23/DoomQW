@@ -1,0 +1,930 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 0.8
+	float "pause" 0
+	notime 1
+
+	onActivate {
+		resetTime "0" ;
+	}
+
+	onTime 0 {
+		if ("pause" == 0) { 
+			set "cmd" "play guisounds_sttpVo" ;
+			set "pause" "1" ;
+		}
+	}
+	onTime 2000 {
+		set "pause" "0" ;
+	}
+	
+	windowDef Bg
+	{
+		rect	10,22,623,460
+		background	"guis/assets/sttp/bg"
+		visible	1
+		matcolor	1,1,1,1
+		notime	1
+	}
+	windowDef Turbo1
+	{
+		rect	20,431,91,44
+		background	"guis/assets/sttp/turbo"
+		visible	1
+		matcolor	1,1,1,0.9
+		notime	1
+	}
+	windowDef Turbo2
+	{
+		rect	530,431,-91,44
+		background	"guis/assets/sttp/turbo"
+		visible	1
+		matcolor	1,1,1,0.9
+		notime	1
+	}
+	windowDef BgBlack
+	{
+		rect	-12,-5,668,114
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.6
+	}
+	windowDef BgBlack1
+	{
+		rect	-18,422,676,68
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.6
+	}
+
+	windowDef Text314
+	{
+		rect	0,351,640,29
+		text	"#str_03709"
+		font	"fonts/micro"
+		textscale	0.4
+		forecolor	1,1,1,0.749
+		visible	0
+		textalign	1
+	}
+	windowDef Text3141
+	{
+		rect	0,371,640,29
+		text	"#str_03710"
+		font	"fonts/micro"
+		textscale	0.4
+		forecolor	1,1,1,0.349
+		visible	0
+		textalign	1
+	}
+	windowDef Reflect
+	{
+		rect	-2,-13,648,489
+		matcolor	1 ,0.8 ,0.7 ,0.15
+		visible	1
+		background	"gui/reflect2"
+	}
+	windowDef MapBg1
+	{
+		rect	8,24,334,22
+		visible	1
+		background	"guis/assets/teleporter/grid3a"
+		matcolor	1,1,1,0.5
+	}
+	windowDef MapBG2
+	{
+		rect	8,46,334,-32
+		visible	1
+		background	"guis/assets/teleporter/grid4a"
+		matcolor	1,1,1,0.5
+	}
+	windowDef MapBG3
+	{
+		rect	8,78,334,-22
+		visible	1
+		background	"guis/assets/teleporter/grid3a"
+		matcolor	1,1,1,0.5
+	}
+	windowDef ScoreTitle
+	{
+		rect	88,32,241,26
+		visible	1
+		forecolor	1,1,1,1
+		text	"#str_03711"
+		textscale	0.31
+		font	"fonts/micro"
+	}
+	windowDef ScoreText
+	{
+		rect	87,54,241,35
+		visible	1
+		forecolor	1,1,1,0.8
+		text	"gui::score"
+		textscale	0.47
+		font	"fonts/micro"
+	}
+	windowDef Bglow11
+	{
+		rect	345,13,283,103
+		background	"guis/assets/sttp/logolinea"
+		visible	1
+		matcolor	1,1,1,1
+
+		onTime 0 {
+			transition "matcolor" "1 0 0 1" "1 1 0 1" "250" ;
+			transition "MapBG1::matcolor" "1 0 0 0.7" "1 1 0 0.7" "250" ;
+			transition "MapBG2::matcolor" "1 0 0 0.7" "1 1 0 0.7" "250" ;
+			transition "MapBG3::matcolor" "1 0 0 0.7" "1 1 0 0.7" "250" ;
+			transition "Turbo1::matcolor" "1 0 0 0.5" "1 1 0 0.5" "250" ;
+			transition "Turbo2::matcolor" "1 0 0 0.5" "1 1 0 0.5" "250" ;
+		}
+
+		onTime 250 {
+			transition "matcolor" "1 1 0 1" "0 1 0 1" "250" ;
+			transition "MapBG1::matcolor" "1 1 0 0.7" "0 1 0 0.7" "250" ;
+			transition "MapBG2::matcolor" "1 1 0 0.7" "0 1 0 0.7" "250" ;
+			transition "MapBG3::matcolor" "1 1 0 0.7" "0 1 0 0.7" "250" ;
+			transition "Turbo1::matcolor" "1 1 0 0.5" "0 1 0 0.5" "250" ;
+			transition "Turbo2::matcolor" "1 1 0 0.5" "0 1 0 0.5" "250" ;
+		}
+
+		onTime 500 {
+			transition "matcolor" "0 1 0 1" "0 0 1 1" "250" ;
+			transition "MapBG1::matcolor" "0 1 0 0.7" "0 0 1 0.7" "250" ;
+			transition "MapBG2::matcolor" "0 1 0 0.7" "0 0 1 0.7" "250" ;
+			transition "MapBG3::matcolor" "0 1 0 0.7" "0 0 1 0.7" "250" ;
+			transition "Turbo1::matcolor" "0 1 0 0.5" "0 0 1 0.5" "250" ;
+			transition "Turbo2::matcolor" "0 1 0 0.5" "0 0 1 0.5" "250" ;
+		}
+
+		onTime 750 {
+			transition "matcolor" "0 0 1 1" "1 0 1 1" "250" ;
+			transition "MapBG1::matcolor" "0 0 1 0.7" "1 0 1 0.7" "250" ;
+			transition "MapBG2::matcolor" "0 0 1 0.7" "1 0 1 0.7" "250" ;
+			transition "MapBG3::matcolor" "0 0 1 0.7" "1 0 1 0.7" "250" ;
+			transition "Turbo1::matcolor" "0 0 1 0.5" "1 0 1 0.5" "250" ;
+			transition "Turbo2::matcolor" "0 0 1 0.5" "1 0 1 0.5" "250" ;
+		}
+
+		onTime 1000 {
+			transition "matcolor" "1 0 1 1" "1 0 0 1" "250" ;
+			transition "MapBG1::matcolor" "1 0 1 0.7" "1 0 0 0.7" "250" ;
+			transition "MapBG2::matcolor" "1 0 1 0.7" "1 0 0 0.7" "250" ;
+			transition "MapBG3::matcolor" "1 0 1 0.7" "1 0 0 0.7" "250" ;
+			transition "Turbo1::matcolor" "1 0 1 0.5" "1 0 0 0.5" "250" ;
+			transition "Turbo2::matcolor" "1 0 1 0.5" "1 0 0 0.5" "250" ;
+		}
+
+		onTime 1250 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Bglow1
+	{
+		rect	345,13,283,103
+		background	"guis/assets/sttp/logoa"
+		visible	1
+		matcolor	1,1,1,1
+	}
+	windowDef ButtonPad
+	{
+		rect	65,249,505,96
+		visible	0
+		background	"guis/assets/teleporter/button1"
+		matcolor	0.6,0,0,0.4
+
+		onTime 0 {
+			transition "matcolor" "0.6 0 0 1" "0.6 0 0 0.4" "800" ; 
+		}
+
+		onTime 800 {
+			transition "matcolor" "0.6 0 0 0.4" "0.6 0 0 1" "200" ; 
+		}
+
+		onTime 1000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef TextButton
+	{
+		rect	89,257,465,86
+		text	"#str_03712"
+		font	"fonts/bank"
+		textscale	1
+		forecolor	1,1,1,0.8
+		visible	0
+		textalign	1
+	}
+	windowDef ButtonPadLine
+	{
+		rect	65,248,505,96
+		visible	0
+		background	"guis/assets/teleporter/button2"
+		matcolor	0.7,0,0,0.2
+	}
+	windowDef Head
+	{
+		rect	20,32,59,57
+		background	"guis/assets/sttp/head1"
+		visible	1
+		matcolor	1,1,1,0.8
+
+		onTime 0 {
+			set "background" "guis/assets/sttp/head1" ;
+		}
+
+		onTime 1000 {
+			set "background" "guis/assets/sttp/head2" ;
+		}
+
+		onTime 2000 {
+			set "background" "guis/assets/sttp/head1" ;
+		}
+
+		onTime 3000 {
+			set "background" "guis/assets/sttp/head3" ;
+		}
+
+		onTime 4000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Head1
+	{
+		rect	20,32,59,57
+		background	"guis/assets/sttp/head4"
+		visible	0
+		matcolor	1,1,1,0.8
+	}
+	windowDef Feather1
+	{
+		rect	286,142,50,35
+		background	"guis/assets/sttp/feather1"
+		visible	0
+		matcolor	1,1,1,1
+		notime	1
+	}
+	windowDef Feather2
+	{
+		rect	228,155,72,35
+		background	"guis/assets/sttp/feather2"
+		visible	0
+		matcolor	1,1,1,1
+		notime	1
+	}
+	windowDef TurkShadow
+	{
+		rect	166,134,323,243
+		background	"guis/assets/sttp/turkey2a"
+		visible	1
+		matcolor	0,0,0,0.7
+	}
+	windowDef NewTurk
+	{
+		rect	163,-200,323,243
+		background	"guis/assets/sttp/turkey2a"
+		visible	0
+		matcolor	1,1,1,1
+	}
+	windowDef Turk
+	{
+		rect	163,129,323,243
+		background	"guis/assets/sttp/turkey2a"
+		visible	1
+		matcolor	1,1,1,1
+
+		onTime 0 {
+			transition "rect" "163 129 323 243" "163 131 323 241" "50" ;
+			transition "TurkShadow::rect" "166 134 323 243" "166 136 323 241" "50" ;
+			transition "TurkEye1::rect" "219 62 41 30" "219 61 41 30" "50" ;
+			transition "TurkEye2::rect" "219 62 41 30" "219 61 41 30" "50" ;
+		}
+
+		onTime 50 {
+			transition "rect" "163 131 323 241" "163 129 323 243" "50" ;
+			transition "TurkShadow::rect" "166 136 323 241" "166 134 323 243" "50" ;
+			transition "TurkEye1::rect" "219 61 41 30" "219 62 41 30" "50" ;
+			transition "TurkEye2::rect" "219 61 41 30" "219 62 41 30" "50" ;
+		}
+
+		onTime 100 {
+			transition "rect" "163 129 323 243" "163 128 323 243" "50" ;
+			transition "TurkShadow::rect" "166 134 323 243" "166 133 323 243" "50" ;
+		}
+
+		onTime 150 {
+			transition "rect" "163 128 323 243" "163 129 323 243" "50" ;
+			transition "TurkShadow::rect" "166 133 323 243" "166 134 323 243" "50" ;
+		}
+
+		onTime 3000 {
+			resetTime "0" ;
+		}
+
+		windowDef TurkEye1
+		{
+			rect	219,62,41,30
+			background	"guis/assets/sttp/turkeylooka"
+			visible	1
+			matcolor	1,1,1,1
+
+			onTime 0 {
+				set "visible" "1" ;
+			}
+
+			onTime 1000 {
+				set "visible" "0" ;
+			}
+
+			onTime 4000 {
+				set "visible" "1" ;
+			}
+
+			onTime 5100 {
+				set "visible" "0" ;
+			}
+
+			onTime 5500 {
+				set "visible" "1" ;
+			}
+
+			onTime 6000 {
+				set "visible" "0" ;
+			}
+
+			onTime 8500 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef TurkEye2
+		{
+			rect	219,62,41,30
+			background	"guis/assets/sttp/turkeyblinka"
+			visible	1
+			matcolor	1,1,1,1
+
+			onTime 0 {
+				set "visible" "1" ;
+			}
+
+			onTime 100 {
+				set "visible" "0" ;
+			}
+
+			onTime 5000 {
+				set "visible" "1" ;
+			}
+
+			onTime 5100 {
+				set "visible" "0" ;
+			}
+
+			onTime 10000 {
+				set "visible" "1" ;
+			}
+
+			onTime 10100 {
+				set "visible" "0" ;
+			}
+
+			onTime 12000 {
+				set "visible" "1" ;
+			}
+
+			onTime 12100 {
+				set "visible" "0" ;
+			}
+
+			onTime 16000 {
+				resetTime "0" ;
+			}
+
+		}
+	}
+	windowDef Turk1Shadow
+	{
+		rect	167,129,323,243
+		background	"guis/assets/sttp/turkey3a"
+		visible	0
+		matcolor	0,0,0,0.7
+	}
+	windowDef TurkGib
+	{
+		rect	163,125,323,243
+		background	"guis/assets/sttp/gib9"
+		visible	0
+		matcolor	1,1,1,0.9
+	}
+	windowDef Turk1
+	{
+		rect	163,125,323,243
+		background	"guis/assets/sttp/turkey3a"
+		visible	0
+		matcolor	1,1,1,1
+		notime	1
+
+		onTime 0 {
+			set "background" "guis/assets/sttp/turkey3a" ;
+			set "Turk1Shadow::background" "guis/assets/sttp/turkey3a" ;
+		}
+
+		onTime 40 {
+			set "background" "guis/assets/sttp/gib1" ;
+			set "Turk1Shadow::background" "guis/assets/sttp/gib1" ;
+			//	set "Turk1Shadow::visible" "0" ;
+			set "feather1::rect" "286 142 50 35" ;
+			set "feather2::rect" "228 155 72 35" ;			
+		}
+
+		onTime 80 {
+			set "background" "guis/assets/sttp/gib2" ;
+			set "Turk1Shadow::background" "guis/assets/sttp/gib2" ;
+			set "feather1::visible" "1" ;
+			set "feather2::visible" "1" ;
+		}
+
+		onTime 120 {
+			set "background" "guis/assets/sttp/gib3" ;
+			set "Turk1Shadow::background" "guis/assets/sttp/gib3" ;
+		}
+
+		onTime 160 {
+			set "background" "guis/assets/sttp/gib4" ;
+			set "Turk1Shadow::background" "guis/assets/sttp/gib4" ;
+			transition "feather1::rect" "286 142 50 35" "286 251 50 35" "1400" "0.8" "0.2" ;
+			
+		}
+
+		onTime 200 {
+			set "background" "guis/assets/sttp/gib5" ;
+			set "Turk1Shadow::background" "guis/assets/sttp/gib5" ;
+			transition "feather2::rect" "228 155 72 35" "228 232 72 35" "1400" "0.8" "0.2" ;			
+		}
+
+		onTime 240 {
+			set "background" "guis/assets/sttp/gib6" ;
+			set "Turk1Shadow::background" "guis/assets/sttp/gib6" ;
+		}
+
+		onTime 280 {
+			set "background" "guis/assets/sttp/gib7" ;
+			set "Turk1Shadow::background" "guis/assets/sttp/gib7" ;
+		}
+
+		onTime 320 {
+			set "background" "guis/assets/sttp/gib8" ;
+			set "Turk1Shadow::background" "guis/assets/sttp/gib8" ;
+			set "TurkGib::matcolor" "1 1 1 1" ;			
+		}
+
+		onTime 360 {
+			set "visible" "0" ;
+			set "TurkGib::visible" "1" ;
+			set "Turk1Shadow::background" "guis/assets/sttp/gib9" ;
+			set "NewTurk::rect" "163 -200 323 241" ;
+		}
+
+		onTime 500 {
+			set "head::visible" "1" ;
+			set "head1::visible" "0" ;
+		}
+
+		onTime 800 {
+			set "NewTurk::visible" "1" ;
+			set "background" "guis/assets/sttp/turkey3a" ;
+			transition "NewTurk::rect" "163 -200 323 241" "163 133 323 243" "600" "1" "0" ;
+			
+			set "TurkShadow::matcolor" "0 0 0 0" ;
+			
+			
+		}
+
+		onTime 1200 {
+			transition "Turk1Shadow::matcolor" "0 0 0 0.7" "0 0 0 0" "400" ;
+			transition "TurkGib::matcolor" "1 1 1 1" "1 1 1 0" "400" ;			
+		}
+
+		onTime 1400 {
+			//	set "cmd" "play guisounds_sttpTurkey2" ;		
+			transition "NewTurk::rect" "163 133 323 243" "163 136 323 240" "50" ;
+			set "TurkShadow::visible" "1" ;
+			transition "TurkShadow::matcolor" "0 0 0 0" "0 0 0 0.7" "250" ;
+			
+			
+		}
+
+		onTime 1450 {
+			
+			transition "NewTurk::rect" "163 136 323 240" "163 130 323 243" "100" "0" "1" ;
+		}
+
+		onTime 1550 {
+			transition "NewTurk::rect" "163 130 323 243" "163 133 323 243" "100" "1" "0" ;
+			//	transition "TurkGib::matcolor" "1 1 1 1" "1 1 1 0" "1000" ;
+			set "Turk1Shadow::visible" "0" ;
+			set "feather1::visible" "0" ;
+			set "feather2::visible" "0" ;
+		}
+
+		onTime 1650 {
+			transition "Turk1Shadow::matcolor" "0 0 0 0" "0 0 0 0.7" "250" ;
+			set "Turk1Shadow::background" "guis/assets/sttp/turkey3a" ;
+			set "Turk::visible" "1" ;
+			set "NewTurk::visible" "0" ;
+			set "Button::noevents" "0" ;
+		}
+
+	}
+	windowDef ScoreText1
+	{
+		rect	200,143,70,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+10"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "200 143 70 33" "200 138 70 33" "500" ;
+		}
+
+	}
+	windowDef ScoreText1a
+	{
+		rect	200,143,70,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+25"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "200 143 70 33" "200 138 70 33" "500" ;
+		}
+
+	}
+	windowDef ScoreText2
+	{
+		rect	210,163,70,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+10"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "210 163 70 33" "210 158 70 33" "500" ;
+		}
+
+	}
+	windowDef ScoreText2a
+	{
+		rect	210,163,70,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+25"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "210 163 70 33" "210 158 70 33" "500" ;
+		}
+
+	}
+	windowDef ScoreText3
+	{
+		rect	220,184,70,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+10"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "220 184 70 33" "220 179 70 33" "500" ;
+		}
+
+	}
+	windowDef ScoreText3a
+	{
+		rect	220,184,70,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+25"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "220 184 70 33" "220 179 70 33" "500" ;
+		}
+
+	}
+	windowDef ScoreText4
+	{
+		rect	230,207,70,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+10"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "230 207 70 33" "230 202 70 33" "500" ;
+		}
+
+	}
+	windowDef ScoreText4a
+	{
+		rect	230,207,70,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+25"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "230 207 70 33" "230 202 70 33" "500" ;
+		}
+
+	}
+	windowDef ScoreText5
+	{
+		rect	240,228,70,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+10"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "240 228 70 33" "240 223 70 33" "500" ;
+		}
+
+	}
+	windowDef ScoreText5a
+	{
+		rect	240,228,70,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+25"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "240 228 70 33" "240 223 70 33" "500" ;
+		}
+
+	}
+	windowDef ScoreText6
+	{
+		rect	220,169,94,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+100"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "220 169 94 33" "220 164 94 33" "500" ;
+		}
+
+	}
+	windowDef ScoreText6a
+	{
+		rect	220,169,94,33
+		visible	1
+		forecolor	1,1,1,0
+		text	"+250"
+		textscale	0.47
+		font	"fonts/micro"
+		notime	1
+
+		onTime 250 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "1000" ;
+			transition "rect" "220 169 94 33" "220 164 94 33" "500" ;
+		}
+
+	}
+	windowDef Fist
+	{
+		rect	54,224,532,202
+		background	"guis/assets/sttp/fist1"
+		visible	1
+		matcolor	1,1,1,1
+		notime	1
+	}
+	windowDef ScoreUpper {
+		rect 0,0,0,0
+		notime 1
+		
+		onTime 0 {
+			set "button::score" "1" ;
+		}
+		onTime 370 {
+			set "button::score" "0" ;
+		}
+		
+	}
+	windowDef Button
+	{
+		rect	0,0,640,480
+		visible	1
+		notime	1
+		float	"count"	0
+		float "score" 0
+
+		onAction {
+			
+			resetTime "0" ;
+			if ("count" == 5) { 
+				set "count" "6" ;
+				if ("score" == 1) { 
+					set "cmd" "TurkeyScore 250" ;	
+					resetTime "ScoreText6a" "0" ;
+				} else {
+					set "cmd" "TurkeyScore 100" ;
+					resetTime "ScoreText6" "0" ;
+				}
+				resetTime "ScoreUpper" "0" ;
+				set "score" "0" ;
+				set "cmd" "play guisounds_sttpTurkSqish" ;
+				transition "ScoreText::forecolor" "1 1 0.8 1" "1 1 1 0.8" "250" ;
+			}
+			if ("count" == 4) { 
+				set "count" "5" ;
+				if ("score" == 1) { 
+					set "cmd" "TurkeyScore 25" ;	
+					resetTime "ScoreText5a" "0" ;
+					set "cmd" "play guisounds_sttpPunch1" ;
+				} else {
+					set "cmd" "TurkeyScore 10" ;
+					resetTime "ScoreText5" "0" ;
+					set "cmd" "play guisounds_sttpPunch2" ;
+				}
+				resetTime "ScoreUpper" "0" ;
+				set "score" "0" ;
+				transition "ScoreText::forecolor" "1 1 0.8 1" "1 1 1 0.8" "250" ;
+			}
+			if ("count" == 3) { 
+				set "count" "4" ;
+				if ("score" == 1) { 
+					set "cmd" "TurkeyScore 25" ;	
+					resetTime "ScoreText4a" "0" ;
+					set "cmd" "play guisounds_sttpPunch1" ;
+				} else {
+					set "cmd" "TurkeyScore 10" ;
+					resetTime "ScoreText4" "0" ;
+					set "cmd" "play guisounds_sttpPunch2" ;
+				}
+				resetTime "ScoreUpper" "0" ;
+				set "score" "0" ;
+				transition "ScoreText::forecolor" "1 1 0.8 1" "1 1 1 0.8" "250" ;
+			}
+			if ("count" == 2) { 
+				set "count" "3" ;
+				if ("score" == 1) { 
+					set "cmd" "TurkeyScore 25" ;	
+					resetTime "ScoreText3a" "0" ;
+					set "cmd" "play guisounds_sttpPunch1" ;
+				} else {
+					set "cmd" "TurkeyScore 10" ;
+					resetTime "ScoreText3" "0" ;
+					set "cmd" "play guisounds_sttpPunch2" ;
+				}
+				resetTime "ScoreUpper" "0" ;
+				set "score" "0" ;
+				transition "ScoreText::forecolor" "1 1 0.8 1" "1 1 1 0.8" "250" ;
+			}
+			if ("count" == 1) { 
+				set "count" "2" ;
+				if ("score" == 1) { 
+					set "cmd" "TurkeyScore 25" ;	
+					resetTime "ScoreText2a" "0" ;
+					set "cmd" "play guisounds_sttpPunch1" ;
+				} else {
+					set "cmd" "TurkeyScore 10" ;
+					resetTime "ScoreText2" "0" ;
+					set "cmd" "play guisounds_sttpPunch2" ;
+				}
+				resetTime "ScoreUpper" "0" ;
+				set "score" "0" ;
+				transition "ScoreText::forecolor" "1 1 0.8 1" "1 1 1 0.8" "250" ;
+			}
+			if ("count" == 0) { 
+				set "count" "1" ;
+				if ("score" == 1) { 
+					set "cmd" "TurkeyScore 25" ;	
+					resetTime "ScoreText1a" "0" ;
+					set "cmd" "play guisounds_sttpPunch1" ;
+				} else {
+					set "cmd" "TurkeyScore 10" ;
+					resetTime "ScoreText1" "0" ;
+					set "cmd" "play guisounds_sttpPunch2" ;
+				}
+				resetTime "ScoreUpper" "0" ;
+				set "score" "0" ;
+				transition "ScoreText::forecolor" "1 1 0.8 1" "1 1 1 0.8" "250" ;
+			}
+		}
+
+		onTime 0 {
+			set "noevents" "1" ;
+		}
+
+		onTime 40 {
+			set "Fist::background" "guis/assets/sttp/fist3" ;
+		}
+
+		onTime 80 {
+			set "Fist::background" "guis/assets/sttp/fist4" ;
+		}
+
+		onTime 120 {
+			set "Fist::background" "guis/assets/sttp/fist5" ;
+			set "Turk::visible" "0" ;
+			set "Turk1::visible" "1" ;
+			set "TurkShadow::visible" "0" ;
+			set "Turk1Shadow::visible" "1" ;			
+			if ("count" == 6) { 
+				resetTime "Turk1" "0" ;
+				set "head::visible" "0" ;
+				set "head1::visible" "1" ;
+			}
+		}
+
+		onTime 160 {
+			set "Fist::background" "guis/assets/sttp/fist4" ;
+		}
+
+		onTime 200 {
+			set "Fist::background" "guis/assets/sttp/fist3" ;
+		}
+
+		onTime 240 {
+			set "Fist::background" "guis/assets/sttp/fist1" ;
+		}
+
+		onTime 300 {
+			
+			if ("count" != 6) {
+				set "noevents" "0" ;	
+				set "Turk::visible" "1" ;
+				set "Turk1::visible" "0" ;
+				set "TurkShadow::visible" "1" ;
+				set "Turk1Shadow::visible" "0" ;				
+			} else {
+				set "count" "0" ;
+			}
+		}
+
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, -640, 480
+		background	"guis/assets/cpuserver/bglow2.tga"
+		visible	1
+		matcolor	0.8, 0.6, 0.4, 0.1
+	}
+	windowDef Static1
+	{
+		rect	0,0,-640,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 10
+	}
+	windowDef Addhighlight
+	{
+		rect	7,11,-625,461
+		background	"gui/addhighlight"
+		matcolor	0.2 ,0.4 ,0.4,1
+		visible	1
+	}
+}

@@ -1,0 +1,14 @@
+skin skins/uacmarine/machinegun {
+	models/weapons/pistol/pistol textures/common/nodraw
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/characters/sarge2/teeth/teeth textures/common/nodraw
+	models/monsters/zombie/zombie01/eyes/brown textures/common/nodraw
+	models/weapons/mflash/f_machinegun textures/common/nodraw
+}
+
+skin skins/uacmarine/pistol {
+	models/weapons/machinegun/machinegun textures/common/nodraw
+	models/characters/sarge2/helmet textures/common/nodraw
+}
+

@@ -1,0 +1,201 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef BgBlack
+	{
+		rect	-15,-8,668,496
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0.12,0.18,0.2
+	}
+	windowDef Bg1
+	{
+		rect	0,0,640,480
+		visible	1
+		background	"guis/assets/generic/bgcircle"
+		matcolor	0.15,0.25,0.3,0.5
+	}
+	windowDef SphereBG
+	{
+		rect	74,115,327,247
+		visible	1
+		background	"guis/assets/generic/spherecolor"
+		matcolor	1,1,0.8,0.5
+	}
+	windowDef SphereSpin
+	{
+		rect	76,118,325,245
+		visible	1
+		background	"gui/generic/addsphere"
+		matcolor	0.3,0.3,0.3,1
+	}
+	windowDef DataSpin1
+	{
+		rect	312,341,157,113
+		visible	1
+		background	"gui/dataspin"
+		matcolor	1,1,1,0.5
+	}
+	windowDef OrangeArrow
+	{
+		rect	411,226,34,25
+		visible	1
+		background	"guis/assets/generic/pointer"
+		matcolor	1,0.4,0,1
+
+		onTime 0 {
+			transition "matcolor" "1 0.4 0 1" "1 0.4 0 0" "500" ;
+		}
+
+		onTime 500 {
+			transition "matcolor" "1 0.4 0 0" "1 0.4 0 1" "500" ;
+		}
+
+		onTime 1000 {
+			resetTIme "0" ;
+		}
+
+	}
+	windowDef Title
+	{
+		rect	45,12,413,66
+		visible	1
+		forecolor	1,1,1,0.5
+		text	"#str_03466"
+		textscale	1.1
+		font	"fonts/micro"
+	}
+	windowDef TextAnim
+	{
+		rect	290,79,156,44
+		visible	1
+		text	"12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6"
+		forecolor	1,1,1,0.4
+		textscale	0.7
+
+		onTime 600 {
+			set "text" "12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6" ;
+		}
+
+		onTime 550 {
+			set "text" "1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1" ;
+		}
+
+		onTime 500 {
+			set "text" "18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71" ;
+		}
+
+		onTime 450 {
+			set "text" "12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2" ;
+		}
+
+		onTime 400 {
+			set "text" "8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8" ;
+		}
+
+		onTime 350 {
+			set "text" "7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82" ;
+		}
+
+		onTime 300 {
+			set "text" "0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69" ;
+		}
+
+		onTime 250 {
+			set "text" "0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29" ;
+		}
+
+		onTime 200 {
+			set "text" "1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3" ;
+		}
+
+		onTime 150 {
+			set "text" "20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56" ;
+		}
+
+		onTime 100 {
+			set "text" "18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2" ;
+		}
+
+		onTime 50 {
+			set "text" "19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1" ;
+		}
+
+		onTime 0 {
+			set "text" "14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9" ;
+		}
+
+		onTime 650 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef TextCoolant
+	{
+		rect	52,362,260,84
+		visible	1
+		text	"#str_03467"
+		forecolor	1,1,1,0.6
+		textscale	0.7
+		textalign	2
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef Reflect1
+	{
+		rect	10,0,620,470
+		matcolor	1 ,1 ,1 ,0.2
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Dirt2
+	{
+		rect	0,0,-640,480
+		matcolor	1, 1, 1 ,0.3
+		visible	1
+		background	"guis/assets/common/dirt3"
+		noevents	1
+	}
+	windowDef Dirt1
+	{
+		rect	0,0,-640,480
+		matcolor	1, 1, 1 ,1
+		visible	1
+		background	"guis/assets/common/dirt4"
+		noevents	1
+	}
+	windowDef Scanlines1
+	{
+		rect	0,0,-640,480
+		matcolor	0.15,0.15,0.15,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	2
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Outerglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outerglow"
+		matcolor	0.4,1 ,1 , pdflick [ time * .0025 ] / 5
+		visible	1
+	}
+	windowDef Outershadow1
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+}

@@ -1,0 +1,77 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda alphalabs2_chin {
+	name         "Andrew Chin"
+	fullname     "Andrew Chin"
+	icon         "guis/assets/pda/chin"
+	id           "1198-31"
+	post         "Alpha Labs, Sector 2"
+	title        "Research Team Leader"
+	security     ""
+	pda_email    "alphalabs2_chin_email_1"
+	pda_email    "alphalabs2_chin_email_2"
+	pda_email    "alphalabs2_chin_email_3"
+	pda_email    "alphalabs2_chin_email_4"
+	pda_audio    "alphalabs2_chin_audio_1"
+}
+
+email alphalabs2_chin_email_3 {
+	date		"11-08-2145"
+	to			"Dr. Andrew Chin"
+	from		"Erik Reeves"
+	subject		"The E-Rock Has Landed"
+	text {
+"Andy,\n\n"
+"Just got in.  That ride sucked.  I flew in with the new systems analyst, Jaime Mendoza.  He was always getting into it with these two security goons, Jim Daly and Mark Walters.  They would argue for hours (and sometimes days) about ANY topic.  A month and a half in that sardine can will make anyone bug out after a while.\n\n"
+"Anwyay, let's get some lunch.  I need some real food!\n\n"  
+"-Erik"
+	}
+}
+
+email alphalabs2_chin_email_4 {
+	date		"11-12-2145"
+	to			"Dr. Andrew Chin"
+	from		"Brian Wellington"
+	subject		"Storage cabinet 038"
+	text {
+"Mr. Chin,\n"
+"The repairs to storage cabinet 038 have been completed.  The door is no longer stuck and we pulled the dent from the side.  It would be a good idea in the future to remember your cabinet codes instead of trying to force it open with a wrench.  Just for your records the new code for cabinet #038 is 409, might be a good idea to write it down.\n\n"
+"Maintenance"
+
+	}
+}
+
+email alphalabs2_chin_email_2 {
+	date		"10-12-2145"
+	to			"Andrew Chin"
+	from		"Walter Connors"
+	subject		"8 sided die"
+	text {
+"Dear Chin,\n\n"
+"I am writing in regard to the 8 sided die you borrowed from me.  If you are not going to invite me to the game, then I would like my 8 sided die back.  It has been 2 weeks and I am very irritated.\n\n"
+"Walter Connors"
+
+	}
+}
+
+email alphalabs2_chin_email_1 {
+	date		"10-11-2145"
+	to		"Andrew Chin"
+	from		"martianbuddy.com"
+	subject	"Play Uanet's DracoWyzard now!"
+
+	text {
+"On-Line Gamer,\n\n"
+"The quest for the Chalice of Sanguine Drak begins now!  The evil Vloxomire has cast a dark cloud of evil across the lands of Nozgath .  Who will rise above and challenge his legion of Wyldwulves and Berserkotrolls?\n\n"
+"Raise your scimitars aloft and strike back! Join Uanet's hottest RPG DracoWyzard today for only 29 credits per month!\n\n"
+
+	}
+}
+
+audio alphalabs2_chin_audio_1 {
+	name		"Treatment of Research Team"
+	info		"Made by: Andrew Chin\nDate: 09-14-2145\nOpen for Amendment: No\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_alphalabs2_chin_1"
+}
+

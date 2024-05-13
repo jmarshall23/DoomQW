@@ -1,0 +1,6 @@
+skin zcc_dropgun {
+	models/weapons/chaingun/w_chaingun textures/common/nodraw
+	models/weapons/chaingun/band textures/common/nodraw
+	models/weapons/chaingun/chaingun_mflash textures/common/nodraw
+	models/weapons/chaingun/chaingun_mflash2 textures/common/nodraw
+}

@@ -1,0 +1,4 @@
+skin skins/models/mapobjects/doors/hazdoor1/gui_door {
+	textures/gui/remap1 "guisurfs/hazard1:1"
+	textures/gui/remap2 "guisurfs/hazard1:1"
+}

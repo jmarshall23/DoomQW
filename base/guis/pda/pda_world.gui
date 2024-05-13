@@ -1,0 +1,381 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef PDABG
+	{
+		rect	0, 0, 640, 480
+		matcolor	1, 0.1, 0.15, 1
+		backcolor	0.15, 0.025, 0.025, 1
+		background	"guis/assets/pda/glowup60_256"
+		visible	1
+	}
+	windowDef PDABGLogo
+	{
+		rect	-341,-139,982,681
+		matcolor	1, 1, 1, 0.1
+		background	"guis/assets/pda/uac_large"
+		visible	1
+	}
+	windowDef grid
+	{
+		rect	0,0,640,480
+		visible	1
+		background	"gui/hud/grid2"
+		matcolor	0.8,1,1,0.05
+		matscalex	0.89
+		matscaley	0.8
+	}
+	windowDef DDUserBox1b
+	{
+		rect	27,108,605,263
+		visible	0
+		windowDef DDUB1bTL
+		{
+			rect	77,-3,-37,134
+			matcolor	0.2,0.6,1,0.8
+			background	"gui/pda/2_c"
+			visible	1
+		}
+		windowDef DDUB1bT
+		{
+			rect	114,-3,354,134
+			matcolor	0.2,0.6,1,0.8
+			background	"gui/pda/2_tb"
+			visible	1
+		}
+		windowDef DDUB1bTR
+		{
+			rect	468,-3,37,134
+			matcolor	0.2,0.6,1,0.8
+			background	"gui/pda/2_c"
+			visible	1
+		}
+		windowDef DDUB1bBL
+		{
+			rect	77,130,-37,-134
+			matcolor	0.2,0.6,1,0.8
+			background	"gui/pda/2_c"
+			visible	1
+		}
+		windowDef DDUB1bB
+		{
+			rect	114,130,354,-134
+			matcolor	0.2,0.6,1,0.8
+			background	"gui/pda/2_tb"
+			visible	1
+		}
+		windowDef DDUB1bBR
+		{
+			rect	468,130,37,-134
+			matcolor	0.2,0.6,1,0.8
+			background	"gui/pda/2_c"
+			visible	1
+		}
+	}
+	windowDef MainBoxParent
+	{
+		rect	0,313,637,227
+		visible	0
+		windowDef DDUB1aBL
+		{
+			rect	-1,47,199,-22
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_bl"
+			visible	1
+		}
+		windowDef DDUB1aTL
+		{
+			rect	-1,69,199,-88
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_tl"
+			visible	1
+		}
+		windowDef DDUB1aT
+		{
+			rect	198,46,248,88
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_t"
+			visible	1
+		}
+		windowDef DDUB1aB
+		{
+			rect	198,134,248,22
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_b"
+			visible	1
+		}
+		windowDef DDUB1aBR
+		{
+			rect	446,70,-199,-88
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_tlalt"
+			visible	1
+		}
+		windowDef DDUB1aTR
+		{
+			rect	446,48,-199,-22
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_bl"
+			visible	1
+		}
+		windowDef DDUIDBG
+		{
+			rect	203,44,379,115
+			background	"gui/pda/pd/userid2"
+			matcolor	1, 0.1, 0, 1
+			visible	0
+		}
+		windowDef DDUIDBgBio
+		{
+			rect	60,46,189,115
+			background	"guis/assets/pda/bioframe"
+			matcolor	1, 0.1, 0, 1
+			visible	0
+		}
+		windowDef DDUIDPrint
+		{
+			rect	60,46,189,115
+			background	"guis/assets/pda/id1"
+			matcolor	1, 0.1, 0, 1
+			visible	0
+		}
+		windowDef DDUIDTextName
+		{
+			rect	225,47,150,20
+			text	"#str_02513"
+			font	"fonts/bank"
+			textscale	0.25
+			forecolor	1, 0, 0, 0.4
+			visible	0
+		}
+		windowDef DDUIDTextIdnum
+		{
+			rect	241,70,150,20
+			text	"#str_02514"
+			font	"fonts/bank"
+			textscale	0.25
+			forecolor	1, 0, 0, 0.4
+			visible	0
+		}
+		windowDef DDUIDTextPost
+		{
+			rect	256,94,150,20
+			text	"#str_02515"
+			font	"fonts/bank"
+			textscale	0.25
+			forecolor	1, 0, 0, 0.4
+			visible	0
+		}
+		windowDef DDUIDTextTitle
+		{
+			rect	272,117,150,20
+			text	"#str_02517"
+			font	"fonts/bank"
+			textscale	0.25
+			forecolor	1, 0, 0, 0.4
+			visible	0
+		}
+		windowDef DDUIDTextSecurity
+		{
+			rect	289,140,150,20
+			text	"#str_02519"
+			font	"fonts/bank"
+			textscale	0.25
+			forecolor	1, 0, 0, 0.4
+			visible	0
+		}
+		windowDef DDUIDTextBio
+		{
+			rect	69,42,150,20
+			text	"#str_02511"
+			font	"fonts/bank"
+			textscale	0.25
+			forecolor	1, 0, 0, 0.5
+			visible	0
+		}
+	}
+	windowDef MainBoxParent1
+	{
+		rect	-1,-33,637,227
+		visible	0
+		windowDef DDUB1aBL1
+		{
+			rect	0,134,199,22
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_bl"
+			visible	1
+		}
+		windowDef DDUB1aTL1
+		{
+			rect	0,46,199,88
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_tl"
+			visible	1
+		}
+		windowDef DDUB1aT1
+		{
+			rect	198,46,248,88
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_t"
+			visible	1
+		}
+		windowDef DDUB1aB1
+		{
+			rect	198,134,248,22
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_b"
+			visible	1
+		}
+		windowDef DDUB1aBR1
+		{
+			rect	446,46,-199,88
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_tlalt"
+			visible	1
+		}
+		windowDef DDUB1aTR1
+		{
+			rect	446,134,-199,22
+			matcolor	1, 0.1, 0.1, 0.7
+			background	"gui/pda/1_bl"
+			visible	1
+		}
+	}
+	windowDef PwordBG1
+	{
+		rect	5,25,630,75
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite3"
+		matcolor	1,0,0,0.2
+	}
+	windowDef PwordBG11
+	{
+		rect	5,381,630,75
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite3"
+		matcolor	1,0,0,0.2
+	}
+	windowDef Bglow1
+	{
+		rect	13,383,610,71
+		background	"guis/assets/cpuserver/bglow2"
+		visible	1
+		matcolor	1, 0, 0, 0.35
+	}
+	windowDef OpenTitle
+	{
+		rect	-114,375,634,71
+		visible	0
+		forecolor	1,0,0,0.8
+		text	"#str_01199"
+		textscale	1
+		textalign	1
+		font	"fonts/micro"
+		forceaspectwidth	400
+
+		onTime 0 {
+			transition "forecolor" "1 0 0 1" "1 0 0 0.2" "1000" ;
+			transition "BGlow1::matcolor" "1 0.2 0.2 0.35" "1 0 0 0.15" "1000" ;
+			transition "PwordBG11::matcolor" "1 0 0 0.2" "1 0 0 0.1" "1000" ;
+		}
+
+		onTime 500 {
+			transition "BGlow11::matcolor" "1 0 0 0.15" "1 0.2 0.2 0.35" "100" ;
+			transition "PwordBG1::matcolor" "1 0 0 0.1" "1 0 0 0.2" "100" ;
+		}
+
+		onTime 600 {
+			transition "BGlow11::matcolor" "1 0.2 0.2 0.35" "1 0 0 0.15" "1000" ;
+			transition "PwordBG1::matcolor" "1 0 0 0.2" "1 0 0 0.1" "1000" ;
+		}
+
+		onTime 1000 {
+			transition "forecolor" "1 0 0 0.2" "1 0 0 1" "100" ;
+			transition "BGlow1::matcolor" "1 0 0 0.15" "1 0.2 0.2 0.35" "100" ;
+			transition "PwordBG11::matcolor" "1 0 0 0.1" "1 0 0 0.2" "100" ;
+		}
+
+		onTime 1100 {
+			resetTIme "0" ;
+		}
+
+		windowDef TextDetailComplex
+		{
+			visible	1
+			rect	0,0,0,0
+		}
+	}
+	windowDef Logo2Parent
+	{
+		rect	2,148,640,185
+		visible	1
+		windowDef Logo2a
+		{
+			rect	110,-34,210,270
+			background	"guis/assets/cpuserver/uaclogohalf"
+			visible	1
+			matcolor	0.6, 0.85, 1, 1
+
+			onTime 0 {
+				transition "rect" "110 -35 210 270" "315 -35 5 270" "800" "0.8" "0.2" ;
+			}
+
+			onTime 800 {
+				transition "rect" "320 -35 -5 270" "320 -35 -210 270" "800" "0.2" "0.8" ;
+			}
+
+			onTime 1650 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Logo1
+		{
+			rect	106,-34,430,270
+			background	"guis/assets/cpuserver/uaclogotext"
+			visible	1
+			matcolor	0.6, 0.85, 1, 1
+		}
+		windowDef Logo2b
+		{
+			rect	320,-34,-210,270
+			background	"guis/assets/cpuserver/uaclogohalf"
+			visible	1
+			matcolor	0.6, 0.85, 1, 1
+
+			onTime 0 {
+				transition "rect" "320 -35 -210 270" "320 -35 -5 270" "800" "0.8" "0.2" ;
+			}
+
+			onTime 800 {
+				transition "rect" "315 -35 5 270" "110 -35 210 270" "800" "0.2" "0.8" ;
+			}
+
+			onTime 1650 {
+				resetTime "0" ;
+			}
+
+		}
+	}
+	windowDef Bglow
+	{
+		rect	75,87,491,297
+		background	"guis/assets/cpuserver/bglow2"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.3
+	}
+	windowDef Overlay1
+	{
+		rect	-1,0,-643,481
+		matcolor	0.05, 0.25, 0.35, 1
+		background	"gui/outerglowbar"
+		visible	1
+	}
+	windowDef Bglow11
+	{
+		rect	13,30,610,71
+		background	"guis/assets/cpuserver/bglow2"
+		visible	1
+		matcolor	1, 0, 0, 0.35
+	}
+}

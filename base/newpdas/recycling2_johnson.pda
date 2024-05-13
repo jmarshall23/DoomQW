@@ -1,0 +1,32 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda recycling2_johnson {
+	name         "Scott Johnson"
+	fullname     "Scott P. Johnson"
+	icon         "guis/assets/pda/bio1"
+	id           "4211-12"
+	post         "Recycling Sector 2"
+	title        "Plant Manager"
+	security     ""
+	pda_email    "recycling1_johnson_email_1"
+
+	}
+
+email recycling1_johnson_email_1 {
+	date		"11-11-2145"
+	to		"Scott Johnson"
+	from		"Nicholas Sadowayj"
+	subject		"RE: Locked Armaments"
+	text {
+"Scott,\n"
+"That is an excellent idea, we can't be too careful around here...\n\n"
+"----Original Message----\n"
+"Sent: 11-10-2145\n"
+"To: Nicolas Sadowayj\n\n"
+"Mr. Sadowayj,\n\n"
+"I fear that the rumors I've been hearing might actually be true. The other day someone from my team was cleaning up a toxic spill in Delta and they said they actually saw some sort of creature down there, he didn't know what it was but it really scared him and got us thinking.\n"
+"We can't be too careful; I've locked some ammunition and combat armor in the cabinet by the monorail airlock door here in Sector 2. If you ever need to get in it the code is: 483\n\n"
+"-Scott"
+
+	}
+}

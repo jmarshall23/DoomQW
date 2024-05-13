@@ -1,0 +1,24 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta4_Gilbert {
+	name         "Jack Gilbert"
+	fullname     "Jack Gilbert"
+	icon         "guis/assets/pda/gilbert"
+	id           "5619-89"
+	post         "Delta Main Portal"
+	title        "Security Specialist"
+	security     ""
+	pda_email    "delta4_gilbert_email_1"
+	}
+
+email delta4_gilbert_email_1 {
+	date		"11-05-2145"
+	to		"Jack Gilbert"
+	from		"Paul Downing"
+	subject	"Ammunition Cabinet"
+	text {
+"Jack,\n\n"
+"Just a little reminder, they changed the security clearances again today.  The new code for locker 104 is 5-7-9, though I doubt you will need to use it.\n\n"
+"Paul.\n"
+	}
+}

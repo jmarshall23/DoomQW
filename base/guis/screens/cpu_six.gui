@@ -1,0 +1,67 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 0.8
+
+	windowDef Over {
+		rect	0 ,0 ,640 ,480 
+		matcolor	1 ,1 ,1 ,pdflick [ time * 0.005 ] 
+		visible	0
+		background	"guis/assets/small/psibg"
+	}
+
+	windowDef Bglow {
+		rect 0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible 1
+		matcolor 0.4, 0.8, 1, 0.1
+	}
+
+	windowDef BgParent {
+		rect 20, 10, 600, 300
+
+		windowDef Bg {
+			rect 0, 0, 600, 460
+			background	"guis/assets/cpuserver/bg2.tga"
+			visible 1
+			matcolor 0.4, 0.8, 1, 1
+		}
+	}
+	windowDef BgParent1 {
+		rect 20, 170, 600, 300
+
+		windowDef Bg1 {
+			rect 0, -140, 600, -460
+			background	"guis/assets/cpuserver/bg2.tga"
+			visible 1
+			matcolor 0.4, 0.8, 1, 0.7
+		}
+	}
+
+	windowDef Text1 {
+		rect	50 ,70 ,-240 ,360 
+		matcolor	1 ,1 ,1 ,1 
+		visible	1
+		background	"gui/textscroll"
+	//	matscalex	1
+		matscaley	1.2
+	}
+
+	windowDef Text2 {
+		rect	350 ,70 ,-240 ,360 
+		matcolor	1 ,1 ,1 ,1 
+		visible	1
+		background	"gui/textscroll"
+	//	matscalex	1
+	//	matscaley	0.5
+	}
+
+	windowDef Reflect {
+		rect		10 ,5 ,620 ,470 
+		matcolor	1 ,1 ,1 ,0.2 
+		visible		1
+		background	"gui/reflect1"
+	}
+
+}

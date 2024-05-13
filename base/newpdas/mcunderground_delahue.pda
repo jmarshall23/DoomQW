@@ -1,0 +1,61 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda mcunderground_delahue {
+	name         "Frank Delahue"
+	fullname     "Frank A. Delahue"
+	icon         "guis/assets/pda/icon_fdelahue"
+	id           "8397-68"
+	post         "Mars City Underground"
+	title        "Engineering Manager"
+	security     "Engineering"
+	pda_email    "mcunderground_delahue_email_1"
+	pda_email    "mcunderground_delahue_email_2"
+	pda_audio    "mcunderground_delahue_audio_1"
+	pda_audio    "mcunderground_delahue_audio_2"
+}
+
+email mcunderground_delahue_email_2 {
+	date		"11-14-2145"
+	to			"Frank Delahue"
+	from		"UAC Security"
+	subject		"RE: Request Security"
+	text {
+		"UAC Employee,\n\n"
+		"We have received your complaint and will consider your request.  Safety is important to us and will do everything to insure security throughout the UAC.\n\n"
+		"Sincerly,\n"
+		"UAC Security\n"
+		"----Original Message----\n"
+		"Sent: 11-12-2145\n"
+		"To: UAC Security\n\n"
+		"I'm becoming increasingly concerned for the safety of myself and my co-workers down here in Underground.  We've had guys getting stuck outside of the airlock that leads to the old comm building and there seems to be a build up of tension over the past few weeks.  I've seen friendly co-workers change...\n\n"
+		"I formally request additional security as well as an investigation as to what's causing all the angst.\n"
+		"-Frank Delahue"
+	}
+}
+
+email mcunderground_delahue_email_1 {
+	date		"11-13-2145"
+	to		"Frank Delahue"
+	from		"Brian Mora"
+	subject	"Party in the Delta Labs"
+	text {
+	"Yo Frank,\n"
+	"Don't forget that we're starting the party early this time... 8:15.\n\n"
+	"--BMora--"
+	}
+}
+
+audio mcunderground_delahue_audio_1 {
+	name		"Power Demands"
+	info		"Made by: Frank Delahue\nDate: 10-18-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_mcunderground_delahue_1"
+}
+
+audio mcunderground_delahue_audio_2 {
+	name		"Fire Blast Precautions"
+	info		"Made by: Frank Delahue\nDate: 10-24-2145\nOpen for Amendment: No\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_mcunderground_delahue_2"
+}
+

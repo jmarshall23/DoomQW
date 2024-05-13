@@ -1,0 +1,67 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda alphalabs2_connors {
+	name         "Walter Connors"
+	fullname     "Walter I. Connors"
+	icon         "guis/assets/pda/connors"
+	id           "3710-66"
+	post         "Alpha Labs, Sector 2"
+	title        "Research Technician"
+	security     ""
+	pda_email    "alphalabs2_connors_email_1"
+	pda_email    "alphalabs2_connors_email_2"
+	pda_email    "alphalabs2_connors_email_3"
+	pda_audio    "alphalabs2_connors_audio_1"
+}
+
+email alphalabs2_connors_email_1 
+{
+	date		"10-12-2145"
+	to		"Walter Connors"
+	from		"Walter Connors"
+	subject	"Collection"
+	text
+	{
+"Note to self:\n"	
+"Need to remember to get my eight-sided die back from Chin.  Should never have lent it to him in the first place.  He never invited me to play.  He is not my friend.\n"
+	}
+}
+
+email alphalabs2_connors_email_2
+{
+	date		"10-16-2145"
+	to		"Walter Connors"
+	from		"Walter Connors"
+	subject	"Note to self"
+	text
+	{
+"Note to self:\n"	
+"Need to remember my code for cabinet #039 - 102\n"
+
+	}
+}
+
+email alphalabs2_connors_email_3 
+{
+	date		"11-02-2145"
+	to		"Walter Connors"
+	from		"Derek Wayland"
+	subject	"MFS Compressor Numbers"
+	text 
+	{	
+"Walter,\n\n"
+"I wanted to personally thank you for your latest modification proposal for the dilation matrix.  The boys here at CPU have crunched your numbers and after some deliberation we've agreed that this is the most fantastically bogus theory that we've ever seen.\n\n"
+"If you are remotely interested in not getting your gnome-loving dragon-slaying power-leveling ass fired, I'd suggest you lay off the role-playing and learn some basic math.\n\n"
+"Good luck on your next review :)\n"
+"-Derek"
+	}
+}
+
+audio alphalabs2_connors_audio_1 
+{
+	name		"The Success with the MFS Compressor"
+	info		"Made by: Walter Connors\nDate: 10-14-2145\nOpen for Amendment: Yes\nSet for Archive: No"
+	preview	"sound/vo/video/novideo"
+	audio		"audiolog_alphalabs2_connors_1"
+}
+

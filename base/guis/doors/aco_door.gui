@@ -1,0 +1,495 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	backcolor	0, 0, 0, 1
+	matcolor	0, 0, 0, 1
+	background	"guis/assets/common/bg"
+	comment	"gui will fire a trigger if the specified card is in the inventory. card check is on gui_parm7 (add gui_parm7 with the card's inv_name as the value)\n\ngui_parm5 value 1 will set the  gui to the malfunctioning state. "
+
+	onEvent {
+		if ("gui::gui_parm5" == 1) {
+			if ("parm" == 0) {
+				set "parm" "1" ;
+				resetTime "Shizzle" "0" ;
+			}
+		}
+	}
+
+	windowDef BackgroundParent
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		windowDef BgParent
+		{
+			rect	7 ,7 ,626 ,466
+			visible	1
+			windowDef Bg
+			{
+				rect	-50, 30, 740, 480
+				background	"guis/assets/cpuserver/bg3"
+				matcolor	0.8, 1, 1, 0
+			}
+			windowDef Stars
+			{
+				rect	-200, 0, 1024, 1024
+				background	"gui/mainmenu/star"
+				matcolor	0.7 ,0.7 ,0.7 ,0
+				matscaley	1.5
+				matscalex	1.5
+				noevents	1
+			}
+			windowDef Stars1
+			{
+				rect	0, 0, 640, 480
+				matcolor	1,1,1,1
+				background	"gui/mainmenu/star1"
+				visible	1
+				matscaley	1.5
+				matscalex	1.5
+				noevents	1
+			}
+			windowDef Stars2
+			{
+				rect	0, 0, 640, 480
+				matcolor	1,1,1,1
+				background	"gui/mainmenu/star3"
+				visible	1
+				matscaley	1.5
+				matscalex	1.5
+				noevents	1
+			}
+			windowDef Stars3
+			{
+				rect	0, 0, -640, -480
+				matcolor	1,1,1,1
+				background	"gui/mainmenu/star1"
+				visible	1
+				matscaley	1.2
+				matscalex	1.2
+				noevents	1
+			}
+			windowDef Stars4
+			{
+				rect	0, 0, -640, -480
+				matcolor	1,1,1,1
+				background	"gui/mainmenu/star3"
+				visible	1
+				matscaley	1.5
+				matscalex	1.5
+				noevents	1
+			}
+		}
+		windowDef Bglow
+		{
+			rect	0, 0, 640, 480
+			background	"guis/assets/cpuserver/bglow.tga"
+			visible	1
+			matcolor	1, 0.4, 0, 0.1
+		}
+		windowDef Addbox
+		{
+			rect	5 ,5 ,630 ,470
+			background	"gui/grid2"
+			matcolor	1 ,1 ,1 ,0.05
+			matscaley	7
+			matscalex	7
+			visible	0
+		}
+		windowDef Addhighlight1
+		{
+			rect	0 ,0 ,-640 ,280
+			background	"gui/addhighlight"
+			matcolor	0.4 ,0.4 ,0.3 ,1
+			visible	1
+		}
+		windowDef Addhighlight2
+		{
+			rect	0 ,200 ,640 ,-280
+			background	"gui/addhighlight"
+			matcolor	1 ,0.6 ,0.4 ,1
+			visible	1
+		}
+		windowDef Bg1
+		{
+			rect	5 ,5 ,630 ,235
+			visible	1
+			background	"guis/assets/doors/adminbg"
+			matcolor	1, 0.2, 0.1, 1
+		}
+		windowDef Bg3
+		{
+			rect	5 ,240 ,630 ,-235
+			visible	1
+			background	"guis/assets/doors/adminbg"
+			matcolor	1, 0.2, 0.1, 1
+		}
+		windowDef Logo1
+		{
+			rect	75,50,520,380
+			visible	1
+			background	"guis/assets/common/mlogo"
+			matcolor	1, 1, 1, 0.1
+		}
+		windowDef Logo2
+		{
+			rect	179,71,311,214
+			visible	1
+			background	"guis/assets/common/mlogo"
+			matcolor	0.8, 1, 0.8, 0
+		}
+		windowDef TitleText1
+		{
+			rect	35,-5,601,54
+			text	"#str_00019"
+			font	"fonts/bank"
+			textscale	0.8
+			textalign	1
+			forecolor	1, 1, 1, 0.6
+			visible	1
+		}
+		windowDef TitleText2
+		{
+			rect	35,422,601,50
+			text	"#str_01207"
+			font	"fonts/bank"
+			textscale	0.8
+			textalign	1
+			forecolor	1, 1, 1, 0.6
+			visible	1
+		}
+		windowDef Text4
+		{
+			rect	49,287,579,123
+			text	"#str_03440"
+			font	"fonts/bank"
+			textscale	0.85
+			forecolor	1,1,1,0.3
+			visible	1
+			textalign	1
+		}
+		windowDef AccessDenied1
+		{
+			rect	48,192,577,38
+			visible	1
+			forecolor	1,1,1,0
+			text	"#str_03441"
+			textscale	0.5
+			textalign	1
+			font	"fonts/micro"
+			noTime	1
+		}
+		windowDef AccessDenied
+		{
+			rect	48,132,577,82
+			visible	1
+			forecolor	1,0,0,0
+			text	"#str_03442"
+			textscale	1
+			textalign	1
+			font	"fonts/micro"
+			noTime	1
+
+			onTime 0 {
+				transition "forecolor" "1 0 0 0" "1 0 0 0.7" "500" ;
+			}
+
+			onTime 1000 {
+				transition "AccessDenied1::forecolor" "1 1 1 0" "1 1 1 0.5" "500" ;
+			}
+
+			onTime 3000 {
+				transition "forecolor" "1 0 0 0.7" "1 0 0 0" "500" ;
+				transition "AccessDenied1::forecolor" "1 1 1 0.5" "1 1 1 0" "500" ;
+			}
+
+			onTime 3500 {
+				transition "TextTitle2::forecolor" "1 1 1 0" "1 1 1 0.6" "500" ;
+				transition "btn2_top::matcolor" "1 0.2 0 0" "1 0.2 0 0.5" "500" ;
+				transition "btn2_corner1::matcolor" "1 0.2 0 0" "1 0.2 0 0.5" "500" ;
+				transition "btn2_corner2::matcolor" "1 0.2 0 0" "1 0.2 0 0.5" "500" ;
+				transition "btn2_bottom::matcolor" "1 0.2 0 0" "1 0.2 0 0.5" "500" ;
+				transition "btn2_corner3::matcolor" "1 0.2 0 0" "1 0.2 0 0.5" "500" ;
+				transition "btn2_corner4::matcolor" "1 0.2 0 0" "1 0.2 0 0.5" "500" ;
+				transition "btn2_fill::backcolor" "1 0.2 0 0" "1 0.2 0 0.232" "500" ;
+				transition "btn2_right::matcolor" "1 0.2 0 0" "1 0.2 0 0.5" "500" ;
+				transition "btn2_left::matcolor" "1 0.2 0 0" "1 0.2 0 0.5" "500" ;
+				transition "TextTitle2::forecolor" "1 1 1 0" "1 1 1 0.5" "500" ;	
+			}
+
+			onTime 4000 {
+				set "TextTitle2::noevents" "0" ;
+			}
+
+		}
+		windowDef Btn2
+		{
+			rect	30,44,615,245
+			visible	1
+			windowDef btn2_Top
+			{
+				rect	108,15,397,-30
+				visible	1
+				background	"guis/assets/common/btn_2pxborder_horiz"
+				matcolor	1,0.2,0,0.5
+			}
+			windowDef btn2_corner1
+			{
+				rect	26,17,82,-30
+				visible	1
+				background	"guis/assets/common/btn_2pxborder_cornersm"
+				matcolor	1,0.2,0,0.5
+			}
+			windowDef btn2_corner2
+			{
+				rect	505,17,-82,-30
+				visible	1
+				background	"guis/assets/common/btn_2pxborder_cornersm"
+				matcolor	1,0.2,0,0.5
+			}
+			windowDef btn2_Bottom
+			{
+				rect	108,201,397,30
+				visible	1
+				background	"guis/assets/common/btn_2pxborder_horiz"
+				matcolor	1,0.2,0,0.5
+			}
+			windowDef btn2_corner3
+			{
+				rect	26,199,82,30
+				visible	1
+				background	"guis/assets/common/btn_2pxborder_cornersm"
+				matcolor	1,0.2,0,0.5
+			}
+			windowDef btn2_corner4
+			{
+				rect	505,199,-82,30
+				visible	1
+				background	"guis/assets/common/btn_2pxborder_cornersm"
+				matcolor	1,0.2,0,0.5
+			}
+			windowDef btn2_Fill
+			{
+				rect	108,45,397,156
+				visible	1
+				backcolor	1,0.2,0,0.232
+			}
+			windowDef btn2_Right
+			{
+				rect	505,47,-82,-152
+				visible	1
+				background	"guis/assets/common/btn_2pxborder_vert"
+				matcolor	1,0.2,0,0.5
+			}
+			windowDef btn2_Left
+			{
+				rect	26,47,82,-152
+				visible	1
+				background	"guis/assets/common/btn_2pxborder_vert"
+				matcolor	1,0.2,0,0.5
+			}
+			windowDef TextTitle2
+			{
+				rect	46,31,520,184
+				visible	1
+				text	"#str_03443"
+				forecolor	1,1,1,0.6
+				textscale	1
+				font	"fonts/micro"
+				textalign	1
+				noTime	1
+
+				onMouseEnter {
+					transition "forecolor" "1 1 1 1" "1 1 1 0.8" "300" ;
+					
+					transition "btn2_top::matcolor" "1 0.2 0 0.5" "1 0.2 0 0.7" "300" ;
+					transition "btn2_corner1::matcolor" "1 0.2 0 0.5" "1 0.2 0 0.7" "300" ;
+					transition "btn2_corner2::matcolor" "1 0.2 0 0.5" "1 0.2 0 0.7" "300" ;
+					transition "btn2_bottom::matcolor" "1 0.2 0 0.5" "1 0.2 0 0.7" "300" ;
+					transition "btn2_corner3::matcolor" "1 0.2 0 0.5" "1 0.2 0 0.7" "300" ;
+					transition "btn2_corner4::matcolor" "1 0.2 0 0.5" "1 0.2 0 0.7" "300" ;
+					transition "btn2_fill::backcolor" "1 0.2 0 0.232" "1 0.2 0 0.32" "300" ;
+					transition "btn2_right::matcolor" "1 0.2 0 0.5" "1 0.2 0 0.7" "300" ;
+					transition "btn2_left::matcolor" "1 0.2 0 0.5" "1 0.2 0 0.7" "300" ;
+					transition "TextTitle2::forecolor" "1 1 1 0.5" "1 1 1 0.7" "300" ;
+				}
+
+				onMouseExit {
+					transition "forecolor" "1 1 1 0.8" "1 1 1 0.6" "200" ;
+					
+					transition "btn2_top::matcolor" "1 0.2 0 0.7" "1 0.2 0 0.5" "300" ;
+					transition "btn2_corner1::matcolor" "1 0.2 0 0.7" "1 0.2 0 0.5" "300" ;
+					transition "btn2_corner2::matcolor" "1 0.2 0 0.7" "1 0.2 0 0.5" "300" ;
+					transition "btn2_bottom::matcolor" "1 0.2 0 0.7" "1 0.2 0 0.5" "300" ;
+					transition "btn2_corner3::matcolor" "1 0.2 0 0.7" "1 0.2 0 0.5" "300" ;
+					transition "btn2_corner4::matcolor" "1 0.2 0 0.7" "1 0.2 0 0.5" "300" ;
+					transition "btn2_fill::backcolor" "1 0.2 0 0.32" "1 0.2 0 0.232" "300" ;
+					transition "btn2_right::matcolor" "1 0.2 0 0.7" "1 0.2 0 0.5" "300" ;
+					transition "btn2_left::matcolor" "1 0.2 0 0.7" "1 0.2 0 0.5" "300" ;
+					transition "TextTitle2::forecolor" "1 1 1 0.7" "1 1 1 0.5" "300" ;
+				}
+
+				onAction {
+					if ("gui::*gui_parm7" == 1) {
+						set "cmd" "activate ; play guisounds_click" ;
+						resetTime "Green" "0" ;
+					} else {
+						set "cmd" "play guisounds_error" ;
+						resetTime "AccessDenied" "0" ;
+					}
+					
+					set "noevents" "1" ;
+					transition "btn2_top::matcolor" "1 0.2 0 0.7" "1 0.2 0 0" "300" ;
+					transition "btn2_corner1::matcolor" "1 0.2 0 0.7" "1 0.2 0 0" "300" ;
+					transition "btn2_corner2::matcolor" "1 0.2 0 0.7" "1 0.2 0 0" "300" ;
+					transition "btn2_bottom::matcolor" "1 0.2 0 0.7" "1 0.2 0 0" "300" ;
+					transition "btn2_corner3::matcolor" "1 0.2 0 0.7" "1 0.2 0 0" "300" ;
+					transition "btn2_corner4::matcolor" "1 0.2 0 0.7" "1 0.2 0 0" "300" ;
+					transition "btn2_fill::backcolor" "1 0.2 0 0.32" "1 0.2 0 0" "300" ;
+					transition "btn2_right::matcolor" "1 0.2 0 0.7" "1 0.2 0 0" "300" ;
+					transition "btn2_left::matcolor" "1 0.2 0 0.7" "1 0.2 0 0" "300" ;
+					transition "TextTitle2::forecolor" "1 1 1 0.7" "1 1 1 0" "300" ;
+				}
+
+			}
+		}
+	}
+	windowDef Static
+	{
+		rect	-10 ,-10 ,-660 ,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 12
+	}
+	windowDef Outerglow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 6
+		visible	1
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.5 ,0.2 ,0.15 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,-640,480
+		matcolor	0.1,0.1,0.1,0.1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	1.5
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,-640 ,480
+		matcolor	1, 1, 1 ,0.5
+		visible	1
+		background	"guis/assets/common/dirt1"
+		noevents	1
+	}
+	windowDef Reflect
+	{
+		rect	0 ,-10 ,-640 ,480
+		matcolor	1 ,1 ,1 ,0.1
+		visible	1
+		background	"gui/reflect1"
+		noevents	1
+	}
+	windowDef Blackfade
+	{
+		rect	0 ,0 ,640 ,480
+		visible	0
+		backcolor	0, 0, 0, 0.5
+
+		onTime 0 {
+			transition "backcolor" "0 0 0 0.4" "0 0 0 0.2" "200" ;
+		}
+
+		onTime 200 {
+			transition "backcolor" "0 0 0 0.2" "0 0 0 0.4" "200" ;
+		}
+
+		onTime 400 {
+			transition "backcolor" "0 0 0 0.4" "0 0 0 0.2" "300" ;
+		}
+
+		onTime 700 {
+			transition "backcolor" "0 0 0 0.1" "0 0 0 0.5" "200" ;
+		}
+
+		onTime 900 {
+			transition "backcolor" "0 0 0 0.5" "0 0 0 0.3" "200" ;
+		}
+
+		onTime 1100 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Green
+	{
+		rect	0,0,0,0
+		visible	0
+		noTime	1
+
+		onTime 0 {
+			transition "logo1::matcolor" "1 1 1 0.1" "0.1 0.5 0.4 0.3" "500" ;
+			transition "text4::forecolor" "1 1 1 0.3" "0.8 1 0.9 0.35" "500" ;
+			transition "logo2::matcolor" "0.6 1 0.8 0" "0.6 1 0.8 0.6" "500" ;
+			transition "Bglow::matcolor" "1 0.4 0 0.1" "0.4 0.8 1 0.1" "500" ;
+			transition "Addhighlight1::matcolor" "1 0.6 0.4 1" "0.3 0.4 0.4 1" "500" ;
+			transition "Addhighlight2::matcolor" "1 0.6 0.4 1" "0.3 0.4 0.4 1" "500" ;
+			transition "Bg1::matcolor" "1 0.2 0.1 1" "0.3 0.8 0.65 1" "500" ;
+			transition "Bg3::matcolor" "1 0.2 0.1 1" "0.3 0.8 0.65 1" "500" ;
+			transition "Addhighlight::matcolor" "0.5 0.2 0.15 1" "0.15 0.4 0.5 1" "500" ;
+			set "TitleText1::text" "#str_03444" ;
+			set "TitleText2::text" "#str_03178" ;
+		}
+
+	}
+	windowDef Shizzle
+	{
+		noTime	1
+
+		onTime 0 {
+			set	"Static::matcolor" "1 1 1 0.2" ;
+			set	"Blackfade::visible" "1" ;
+			set	"BackgroundParent::rect" "-2 -2 640 480" ; 
+		}
+
+		onTime 50 {
+			set	"BackgroundParent::rect" "0 0 640 480" ; 
+		}
+
+		onTime 350 {
+			set	"BackgroundParent::rect" "4 3 640 480" ; 
+		}
+
+		onTime 500 {
+			set	"BackgroundParent::rect" "0 0 640 480" ; 
+		}
+
+		onTime 750 {
+			set	"BackgroundParent::rect" "-2 -1 640 480" ; 
+		}
+
+		onTime 800 {
+			set	"BackgroundParent::rect" "0 0 640 480" ; 
+		}
+
+		onTime 1000 {
+			resetTime "0" ;
+		}
+
+	}
+}

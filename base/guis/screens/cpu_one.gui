@@ -1,0 +1,183 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 0.8
+
+	windowDef Bglow {
+		rect 0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible 1
+		matcolor 0.4, 0.8, 1, 0.1
+	}
+
+	windowDef spike2 {
+		visible		1
+		rect		71, 360, 530, 80
+		background	"gui/spikes2"
+		matcolor	1 ,1 ,1 ,1 
+
+	}
+
+	windowDef Bg {
+		rect 20, 10, 600, 460
+		background	"guis/assets/cpuserver/bg2.tga"
+		visible 1
+		matcolor 0.4, 0.8, 1, 1
+	}
+
+	windowDef Win1 {
+		rect 300, 178, 260, 120
+		invertrect	1
+
+		windowDef Win1Sub {
+			rect 0, 0, 260, 120
+			background	"guis/assets/cpuserver/win1.tga"
+			visible 	1
+			matcolor 	0.4, 0.8, 1, 1
+		//	invertrect	1
+		}
+	}
+
+	windowDef Win2 {
+		rect 300, 268, 260, 120
+		invertrect	1
+
+		windowDef Win2Sub {
+			rect 0, 0, 260, 120
+			background	"guis/assets/cpuserver/win1.tga"
+			visible 	1
+			matcolor 	0.4, 0.8, 1, 1
+		//	invertrect	1
+		}
+	}
+
+	windowDef Win3 {
+		rect 300, 360, 260, 120
+		invertrect	1
+
+		windowDef Win3Sub {
+			rect 0, 0, 260, 120
+			background	"guis/assets/cpuserver/win1.tga"
+			visible 	1
+			matcolor 	0.4, 0.8, 1, 1
+		//	invertrect	1
+		}
+	}
+
+	windowDef Win4 {
+		rect 580, 175, 260, 115
+		invertrect	1
+
+		windowDef Win4Sub {
+			rect 0, 0, 260, 115
+			background	"guis/assets/cpuserver/win2.tga"
+			visible 	1
+			matcolor 	0.4, 0.8, 1, 1
+		//	invertrect	1
+		}
+	}
+
+	windowDef Win5 {
+		rect 580, 265, 260, 115
+		invertrect	1
+
+		windowDef Win5Sub {
+			rect 0, 0, 260, 115
+			background	"guis/assets/cpuserver/win2.tga"
+			visible 	1
+			matcolor 	0.4, 0.8, 1, 1
+		//	invertrect	1
+		}
+	}
+
+	windowDef Win6 {
+		rect 580, 359, 260, 115
+		invertrect	1
+
+		windowDef Win6Sub {
+			rect 0, 0, 260, 115
+			background	"guis/assets/cpuserver/win2.tga"
+			visible 	1
+			matcolor 	0.4, 0.8, 1, 1
+		//	invertrect	1
+		}
+	}
+
+	windowDef bgScroll {
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background	"gui/scroll3"
+		matColor	1, 1,  1, flickertable [ time * 5 ] / 6 
+	}
+
+
+	windowDef Reflect {
+		rect		10 ,5 ,620 ,470 
+		matcolor	1 ,1 ,1 ,0.2 
+		visible		1
+		background	"gui/reflect1"
+	}
+
+	windowDef Anim {
+
+		onTime 0 {
+			transition	"Win1Sub::matcolor" "0.4 0.8 1 1" "0.4 0.8 1 0" "400" ;
+		}
+		onTime 400 {
+			transition	"Win2Sub::matcolor" "0.4 0.8 1 1" "0.4 0.8 1 0" "400" ;
+		}
+		onTime 2000 {
+			transition	"Win2Sub::matcolor" "0.4 0.8 1 0" "0.4 0.8 1 1" "400" ;
+
+		}
+		onTime 2400 {
+			transition	"Win1Sub::matcolor" "0.4 0.8 1 0" "0.4 0.8 1 1" "400" ;
+		}
+		onTime 4400 {
+			transition	"Win4Sub::matcolor" "0.4 0.8 1 1" "0.4 0.8 1 0" "400" ;
+		}
+		onTime 6000 {
+			transition	"Win4Sub::matcolor" "0.4 0.8 1 0" "0.4 0.8 1 1" "400" ;
+		}
+		onTime 8000 {
+			set	"Win1sub::background" "guis/assets/cpuserver/win1a.tga" ;
+			set	"Win1sub::matcolor" "0.5 0.9 1 1" ;
+		}
+		onTime 8200 {
+			set	"Win2sub::background" "guis/assets/cpuserver/win1a.tga" ;
+			set	"Win2sub::matcolor" "0.5 0.9 1 1" ;
+		}
+		onTime 8400 {
+			set	"Win3sub::background" "guis/assets/cpuserver/win1a.tga" ;
+			set	"Win3sub::matcolor" "0.5 0.9 1 1" ;
+		}
+		onTime 9400 {
+			transition	"Win4Sub::matcolor" "0.4 0.8 1 1" "0.4 0.8 1 0" "400" ;
+		}
+		onTime 9800 {
+			transition	"Win5Sub::matcolor" "0.4 0.8 1 1" "0.4 0.8 1 0" "400" ;
+		}
+		onTime 10800 {
+			transition	"Win5Sub::matcolor" "0.4 0.8 1 0" "0.4 0.8 1 1" "400" ;
+		}
+		onTime 11300 {
+			transition	"Win4Sub::matcolor" "0.4 0.8 1 0" "0.4 0.8 1 1" "400" ;
+		}
+		onTime 13000 {
+			set	"Win3sub::background" "guis/assets/cpuserver/win1.tga" ;
+			set	"Win3sub::matcolor" "0.4 0.8 1 1" ;
+		}
+		onTime 13200 {
+			set	"Win2sub::background" "guis/assets/cpuserver/win1.tga" ;
+			set	"Win2sub::matcolor" "0.4 0.8 1 1" ;
+		}
+		onTime 13400 {
+			set	"Win1sub::background" "guis/assets/cpuserver/win1.tga" ;
+			set	"Win1sub::matcolor" "0.4 0.8 1 1" ;
+		}
+		onTime 15500 {
+			resetTime "0" ;
+		}
+	}
+}

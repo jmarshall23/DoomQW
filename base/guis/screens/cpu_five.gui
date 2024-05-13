@@ -1,0 +1,218 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 0.8
+
+	windowDef Bglow {
+		rect 0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible 1
+		matcolor 0.4, 0.8, 1, 0.1
+	}
+
+	windowDef BgParent {
+		rect 20, 10, 600, 300
+
+		windowDef Bg {
+			rect 0, 0, 600, 460
+			background	"guis/assets/cpuserver/bg2.tga"
+			visible 1
+			matcolor 0.4, 0.8, 1, 1
+		}
+	}
+
+	windowDef Circ1 {
+		rect 30, 90, 430, -180
+		background	"guis/assets/cpuserver/halfcirc.tga"
+		matcolor 0.4, 0.8, 1, flickertable [ time * .0005 ] / 2
+
+		onTime 0 {
+			transition "rect" "30 90 430 -180" "30 230 430 -40" "1000" "0.4" "0.4" ;
+		}
+		onTime 3000 {
+		//	transition "rect" "30 270 430 10" "30 270 430 180" "500" ;
+			transition "rect" "30 230 430 -40" "30 90 430 -180" "1000" "0.4" "0.4" ;
+		}
+		onTime 6000 {
+			resetTime "0" ;
+		}
+
+	}
+
+	windowDef Circ3 {
+	//	rect 30, 90 430, 360
+		rect 245, 90, -215, 360
+		background	"guis/assets/cpuserver/halfcirc2.tga"
+		matcolor 0.4, 0.8, 1, flickertable [ time * .0005 ] / 2
+
+		onTime 0 {
+			transition "rect" "245 90 -215 360" "245 90 -55 360" "1000" "0.4" "0.4" ;
+		}
+		onTime 3000 {
+			transition "rect" "245 90 -55 360" "245 90 -215 360" "1000" "0.4" "0.4" ;
+		}
+		onTime 6000 {
+			resetTime "0" ;
+		}
+
+	}
+
+	windowDef Mars {
+		rect 150, 190, 190, 158
+		background	"guis/assets/cpuserver/mars.tga"
+		matcolor 	1, 1, 1, 0.8
+	}
+
+	windowDef Circ2 {
+		rect 30, 270, 430, 180
+		background	"guis/assets/cpuserver/halfcirc.tga"
+		matcolor 0.4, 0.8, 1, flickertable [ time * .0005 ] / 2
+
+		onTime 0 {
+			transition "rect" "30 270 430 180" "30 270 430 40" "1000" "0.4" "0.4" ;
+		}
+		onTime 3000 {
+		//	transition "rect" "30 270 430 -10" "30 90 430 -180" "500" ;
+			transition "rect" "30 270 430 40" "30 270 430 180" "1000" "0.4" "0.4" ;
+		}
+		onTime 6000 {
+			resetTime "0" ;
+		}
+	}
+
+	windowDef Circ4 {
+	//	rect 30, 90 430, 360
+		rect 30, 90, 215, 360
+		background	"guis/assets/cpuserver/halfcirc2.tga"
+		matcolor 0.4, 0.8, 1, flickertable [ time * .0005 ] / 2
+
+
+		onTime 0 {
+			transition "rect" "30 90 215 360" "190 90 55 360" "1000" "0.4" "0.4" ;
+		}
+		onTime 200 {
+			set "Win1::visible" "0" ;
+			set "Win2::visible" "0" ;
+			set "Win3::visible" "0" ;
+			set "Win4::visible" "0" ;
+			set "Win5::visible" "0" ;
+		}
+		onTime 1000 {
+			set "Win1::visible" "1" ;
+		}
+		onTime 1100 {
+			set "Win2::visible" "1" ;
+		}
+		onTime 1200 {
+			set "Win3::visible" "1" ;
+		}
+		onTime 1300 {
+			set "Win4::visible" "1" ;
+		}
+		onTime 1400 {
+			set "Win5::visible" "1" ;
+		}
+		onTime 3000 {
+			transition "rect" "190 90 55 360" "30 90 215 360" "1000" "0.4" "0.4" ;
+		}
+		onTime 3200 {
+			set "Win1::visible" "0" ;
+			set "Win2::visible" "0" ;
+			set "Win3::visible" "0" ;
+			set "Win4::visible" "0" ;
+			set "Win5::visible" "0" ;
+		}
+		onTime 4000 {
+			set "Win1::visible" "1" ;
+		}
+		onTime 4100 {
+			set "Win2::visible" "1" ;
+		}
+		onTime 4200 {
+			set "Win3::visible" "1" ;
+		}
+		onTime 4300 {
+			set "Win4::visible" "1" ;
+		}
+		onTime 4400 {
+			set "Win5::visible" "1" ;
+		}
+		onTime 6000 {
+			resetTime "0" ;
+		}
+	}
+
+	windowDef Grid {
+		rect 10, 10, 620, 460
+		background	"guis/assets/cpuserver/grid.tga"
+		visible 1
+		matcolor 1, 0.7, 1, 0.4
+		matscalex 1.2
+		matscaley 1
+	}
+
+	windowDef Win1 {
+		rect 250, 100, 100, 45
+		background	"guis/assets/cpuserver/win1.tga"
+		visible 	1
+		matcolor 	0.6, 1, 0.9, 0.9
+	}
+
+	windowDef Win2 {
+		rect 350, 230, 100, 45
+		background	"guis/assets/cpuserver/win1.tga"
+		visible 	1
+		matcolor 	0.6, 1, 0.9, 0.9
+	}
+
+	windowDef Win3 {
+		rect 200, 350, 100, 45
+		background	"guis/assets/cpuserver/win1.tga"
+		visible 	1
+		matcolor 	0.6, 1, 0.9, 0.9
+	}
+
+	windowDef Win4 {
+		rect 20, 260, 100, 45
+		background	"guis/assets/cpuserver/win1.tga"
+		visible 	1
+		matcolor 	0.6, 1, 0.9, 0.9
+	}
+
+	windowDef Win5 {
+		rect 70, 220, 100, 45
+		background	"guis/assets/cpuserver/win1.tga"
+		visible 	1
+		matcolor 	0.6, 1, 0.9, 0.9
+	}
+
+	windowDef Pop3 {
+		rect 470, 70, 140, 380
+		background	"guis/assets/cpuserver/pop3.tga"
+		visible 	1
+		matcolor 	0.4, 0.8, 1, 0.8
+	}
+
+	windowDef bgScroll {
+		rect	20 ,15 ,600 ,450 
+		visible	1
+		background	"gui/scrollbig"
+		matColor	1, 1,  1, flickertable [ time * 5 ] / 20 
+	}
+
+	windowDef bgScroll2 {
+		rect	20 ,240 ,600 ,150 
+		visible	1
+		background	"gui/scroll2"
+		matColor	1, 1,  1, 0.1
+	}
+
+	windowDef Reflect {
+		rect		10 ,5 ,620 ,470 
+		matcolor	1 ,1 ,1 ,0.2 
+		visible		1
+		background	"gui/reflect1"
+	}
+
+}

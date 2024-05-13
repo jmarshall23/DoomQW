@@ -1,0 +1,93 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	nocursor	1
+	menugui	1
+	backcolor	0,0,0,1
+	windowDef UacText1Parent
+	{
+		rect	0, 211, 640, 150
+		visible	1
+		windowDef UacText1
+		{
+			rect	170, 0, 300, 30
+			visible	1
+			text	""
+			font	"fonts/micro"
+			textscale	0.4
+			textalign	1
+			forecolor	0.2, 0.6, 0.7, 0
+		}
+		windowDef FlareBox
+		{
+			rect	290,6,48,21
+			background	"gui/mainmenu/textflare"
+			matcolor	0.4 ,0.6, 0.6, 0
+			visible	1
+		}
+	}
+	windowDef Anim
+	{
+		rect	0,0,0,0
+
+		onTime 0 {
+			set "UacText1::text" "L" ;
+			transition "FlareBox::matcolor" "0.4 0.6 0.6 0" "0.4 0.6 0.6 0.5" "200" ;
+			transition "UacText1::forecolor" "0.2 0.6 0.7 0" "0.2 0.6 0.7 1" "200" ;
+		}
+
+		onTime 50 {
+			set "UacText1::text" "#str_03469" ;
+			set "FlareBox::rect" "304 6 54 21" ;
+		}
+
+		onTime 100 {
+			set "UacText1::text" "#str_03470" ;
+			set "FlareBox::rect" "313 6 54 21" ;
+		}
+
+		onTime 150 {
+			set "UacText1::text" "#str_03343" ;
+			set "FlareBox::rect" "322 6 54 21" ;
+			
+		}
+
+		onTime 200 {
+			set "UacText1::text" "#str_03471" ;
+			set "FlareBox::rect" "329 6 54 21" ;
+		}
+
+		onTime 250 {
+			set "UacText1::text" "#str_03472" ;
+			set "FlareBox::rect" "334 6 54 21" ;
+		}
+
+		onTime 300 {
+			set "UacText1::text" "#str_00408" ;
+			set "FlareBox::rect" "344 6 54 21" ;
+			transition "FlareBox::matcolor" "0.4 0.6 0.6 0.5" "0 0 0 0" "200" ;
+			transition "UacText1::forecolor" "1 1 1 1" "0.2 0.6 0.7 1" "200" ;
+			transition "LoadingLine::matcolor" "1 1 1 0" "1 1 1 0.8" "600" ;
+		}
+
+	}
+	windowDef LoadingFillClip
+	{
+		rect	232,238,( "gui::map_loading" * 175 ),16
+		visible	1
+		windowDef LoadingFill
+		{
+			rect	0,0,256,16
+			visible	1
+			background	"guis/assets/splash/load"
+			matcolor	1,1,1,0.8
+		}
+	}
+	windowDef LoadingLine
+	{
+		rect	232,238,256,16
+		visible	1
+		background	"guis/assets/splash/loadborder"
+		matcolor	1,1,1,0
+	}
+}

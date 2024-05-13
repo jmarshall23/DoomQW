@@ -1,0 +1,90 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda monorail_cullen {
+	name         "Karl Cullen"
+	fullname     "Karl P. Cullen"
+	icon         "guis/assets/pda/cullen"
+	id           "6167-07"
+	post         "Monorail"
+	title        "Security Personnel"
+	security     "Delta Security"
+	pda_email    "monorail_cullen_email_1"
+	pda_email    "monorail_cullen_email_2"
+	pda_email    "monorail_cullen_email_3"
+	pda_email    "monorail_cullen_email_4"
+	pda_email    "monorail_cullen_email_5"
+}
+
+email monorail_cullen_email_1 {
+	date		"10-06-2145"
+	to		"Karl Cullen"
+	from		"Security Authority"
+	subject	"New Automated Defense System"
+	text {
+"Mr. Cullen,\n\n"
+"Please inform your team that an automated security turret gun will be installed at the main entrance to Delta. This is due to the increased sensitive nature of the experiments and the security problems we've recently had.\n"
+"Please ensure that your team members have correct security clearance and are in the IFF database. We don't want a repeat of the problems we had when the guns were installed at Marine Command.\n\n"
+"Thank You,\n"
+"Central Security Authority"
+	}
+}
+
+email monorail_cullen_email_2 {
+	date		"10-12-2145"
+	to		"Karl Cullen"
+	from		"Chris Baughman"
+	subject	"RE: Turret Shutdown Codes"
+	text {
+"Thanks, I freaking hate loaded guns with an automatic IFF.\n\n"
+"----Original Message----\n"
+"Sent: 11-11-2145\n"
+"To: All Security Personnel\n\n"
+"Guys,\n"
+"I've encoded the shutdown sequence for the turret gun into my PDA, you can use it at the security terminal near the metal detectors if there are any problems with the gun.\n"
+"I would rather have it off-line then killing anyone....\n\n"
+"Thanks,\nKarl"
+
+	}
+}
+
+email monorail_cullen_email_3 {
+	date		"11-02-2145"
+	to		"Karl Cullen"
+	from		"Lee Pommeroy"
+	subject	"Extra Medical Supplies"
+	text {
+"Karl,\n\n"
+"As the medical supervisor in this section I feel it's my obligation to be proactive in regards to safety especially now that we have a turret gun in a heavy traffic area. As a precaution I've stocked medical supplies in the storage cabinets adjacent to the security office. Both cabinet codes are 364. I hope we never need them.\n\n"
+"Lee Pommeroy\n"
+"Medical Supervisor"
+	}
+
+}
+
+email monorail_cullen_email_4 {
+	date		"11-04-2145"
+	to		"Karl Cullen"
+	from		"Sam Harding"
+	subject	"Mounting brackets fixed"
+	text {
+"Karl,\n"
+"I fixed the mounting brackets this morning; it was those damn Mixom bolts again.  I really wish the UAC would find a better sub-contractor.\n\n"
+"Thanks,\nSam"
+	}
+
+}
+
+email monorail_cullen_email_5 {
+	date		"11-09-2145"
+	to		"Karl Cullen"
+	from		"Mathew Gaiser"
+	subject	"Additional Security Needed"
+	text {
+"Mr. Cullen,\n\n"
+"We are going to be transporting a large specimen from Delta.  Normally we would not be using the Monorail, but we need to get it to Phobos Lab and this is our only option.\n\n"
+"The specimen will be sedated, however given both the importance and the hazardous nature of it, we feel it is prudent to have an enhanced security presence.  You and your men should be prepared with full armor and plasma guns.  However, lethal force should be only used as a last resort.  Bringing this thing alive through the teleporter cost seven men their lives and it would be a shame to waste that effort.\n\n"
+"Also, as you know there are plenty of rumors about our specimens.  I do not want this to get out of control.  Information about this transport must be kept to only those that need to know what is in the container.\n\n"
+"Thank you for your cooperation in this."
+	}
+}
+

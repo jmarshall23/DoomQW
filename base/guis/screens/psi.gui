@@ -1,0 +1,139 @@
+windowDef Desktop {
+	rect	0 ,0 ,640 ,480 
+	nocursor	1
+
+
+	windowDef Over {
+		rect	0 ,0 ,640 ,480 
+		matcolor	1 ,1 ,1 ,pdflick [ time * 0.005 ] 
+		visible	1
+		background	"guis/assets/small/psibg"
+	}
+
+	windowDef Win1 {
+	//	rect 590, 155, 260, 120
+	//	invertrect	1
+		rect 330, 35, 260, 120
+
+		windowDef Win1Sub {
+			rect 0, 0, 260, 120
+			background	"guis/assets/cpuserver/win1.tga"
+			visible 	1
+			matcolor 	0.7, 1, 0.4, 0.3
+
+		}
+	}
+
+	windowDef Win2 {
+	//	rect 590, 250, 260, 120
+	//	invertrect	1
+		rect 330, 130, 260, 120
+
+		windowDef Win2Sub {
+			rect 0, 0, 260, 120
+			background	"guis/assets/cpuserver/win1.tga"
+			visible 	1
+			matcolor 	0.7, 1, 0.4, 0.3
+
+		}
+	}
+
+
+	windowDef Scroll1 {
+		rect	50 ,60 ,300 ,-170
+		matcolor	0.5 ,1 ,1 ,1 
+		visible	1
+		background	"gui/sm2/scroll2"
+	}
+
+	windowDef Scroll2 {
+		rect	180 ,60 ,300 ,-170
+		matcolor	0.5 ,1 ,1 ,1 
+		visible	1
+		background	"gui/sm2/scroll2"
+	}
+
+	windowDef Psi {
+		rect		85, 303, 480, 150
+		text		"#str_01787"
+		
+		textscale	1.4
+		textalign	0
+		forecolor	0.9, 0.8, 0.2, 0.3
+	}
+
+	windowDef PsiNum {
+		rect		60, 268, 480, 150
+		text		"428"
+		
+		textscale	2.3
+		textalign	2
+		forecolor	1, 0.95, 0.8, pdflick [ time * 0.005 ] / 1.5
+
+		onTime 0 {
+			set "text" "428" ;
+		}
+		onTime 11000 {
+			set "text" "429" ;
+		}
+		onTime 11500 {
+			set "text" "428" ;
+		}
+		onTime 11700 {
+			set "text" "429" ;
+		}
+		onTime 16000 {
+			resetTime "0" ;
+		}
+	}
+
+	windowDef bgScroll {
+		rect	20 ,15 ,600 ,450 
+		visible	1
+		background	"gui/scrollbig"
+		matColor	1, 1,  1, flickertable [ time * 5 ] / 20 
+	}
+
+	windowDef bgScroll2 {
+		rect	20 ,240 ,600 ,150 
+		visible	1
+		background	"gui/scroll2"
+		matColor	1, 1,  1, 0.1
+	}
+
+	windowDef Reflect {
+		rect		40 ,20 ,550 ,470 
+		matcolor	1 ,1 ,1 ,0.1 
+		visible		1
+		background	"gui/reflect1"
+		noevents	1
+	}
+
+	windowDef Dirt {
+		rect	0 ,0 ,640 ,480 
+		matcolor	1 ,1 ,1 ,0.45
+		visible	1
+		background	"guis/assets/common/smear4"
+	}
+
+	windowDef Anim {
+
+		onTime 0 {
+			transition	"Win1::rect" "330 35 260 120" "330 35 0 120" "500" ;
+		}
+		onTime 600 {
+			transition	"Win2::rect" "330 130 260 120" "330 130 0 120" "500" ;
+		}
+		onTime 2000 {
+			transition	"Win2::rect" "330 130 260 0" "330 130 260 120" "500" ;
+
+		}
+		onTime 2600 {
+			transition	"Win1::rect" "330 35 260 0" "330 35 260 120" "500" ;
+		}
+		onTime 8000 {
+			resetTime "0" ;
+		}
+	}
+
+}

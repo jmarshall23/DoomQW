@@ -1,0 +1,96 @@
+skin skins/models/chars/security/dface {
+	models/monsters/zsecurity/zsechead3 models/monsters/zsecurity/dzsechead3
+	models/monsters/zsecurity/zsechead2 textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/righttbrown textures/common/nodraw
+
+	models/weapons/pistol/w_pistol.tga textures/common/nodraw
+	models/characters/common/teeth2.tga textures/common/nodraw
+}
+
+skin skins/models/chars/security/face1 {
+	models/monsters/zsecurity/zsechead2 textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/monsters/zsecurity/zsechead3.tga textures/common/nodraw
+	models/weapons/pistol/w_pistol.tga textures/common/nodraw
+	models/monsters/zsecurity/marsec.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs2.tga textures/common/nodraw
+	models/monsters/hellknight/tongue.tga textures/common/nodraw
+	models/characters/common/rightblue.tga textures/common/nodraw
+	models/characters/common/leftblue.tga textures/common/nodraw
+	models/characters/common/teeth2.tga textures/common/nodraw
+}
+
+skin skins/models/chars/security/face1nhelmet {
+	models/monsters/zsecurity/zsechead3 textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/weapons/pistol/w_pistol.tga textures/common/nodraw
+	models/characters/common/teeth2.tga textures/common/nodraw
+	models/characters/common/teeth.tga textures/common/nodraw
+	models/monsters/zsecurity/marsec.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs2.tga textures/common/nodraw
+
+	models/characters/common/leftblue.tga textures/common/nodraw
+	models/characters/common/rightblue.tga textures/common/nodraw
+
+	models/monsters/hellknight/tongue.tga textures/common/nodraw
+}
+
+skin skins/models/chars/security/face2 {
+	models/monsters/zsecurity/zsechead2 textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/characters/common/teeth.tga textures/common/nodraw
+
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+
+	models/weapons/pistol/w_pistol.tga textures/common/nodraw
+}
+
+skin skins/models/chars/security/face2blood {
+	models/monsters/zsecurity/zsechead3 models/monsters/zsecurity/dzsechead3
+	models/monsters/zsecurity/zsechead2 textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+
+	models/weapons/pistol/w_pistol.tga textures/common/nodraw
+	models/characters/sarge2/teeth/teeth2.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs2.tga models/monsters/zsecurity/zsgogs2bloody.tga
+}
+
+skin skins/models/chars/security/helmet {
+	models/monsters/zsecurity/zsechead3.tga textures/common/nodraw
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+	models/monsters/hellknight/tongue.tga textures/common/nodraw
+	models/monsters/zsecurity/marsec.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs2.tga textures/common/nodraw
+	models/characters/common/rightblue.tga textures/common/nodraw
+	models/characters/common/leftblue.tga textures/common/nodraw
+	models/characters/sarge2/teeth/teeth3.tga textures/common/nodraw
+	models/characters/sarge2/teeth/teeth2.tga textures/common/nodraw
+}
+
+skin skins/models/chars/security/zface {
+
+}

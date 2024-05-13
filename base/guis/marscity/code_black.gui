@@ -1,0 +1,394 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	background	"guis/assets/common/bg_rc.tga"
+	matcolor	0,0,0,1
+	visible	1
+	windowDef BgParent1
+	{
+		rect	7,7,626,466
+		visible	1
+		windowDef Stars
+		{
+			rect	-206,-6,1024,1024
+			background	"gui/mainmenu/star"
+			matcolor	0.5,0.5,0.5,0.3
+			matscaley	2
+			matscalex	2
+			noevents	1
+			visible	1
+		}
+		windowDef Stars1
+		{
+			rect	-6,-6,640,480
+			matcolor	1,1,1,1
+			background	"gui/mainmenu/star1"
+			visible	1
+			matscaley	0.8
+			matscalex	0.8
+			noevents	1
+		}
+		windowDef Stars3
+		{
+			rect	-6,-6,-640,-480
+			matcolor	1,1,1,1
+			background	"gui/mainmenu/star1"
+			visible	1
+			matscaley	1.2
+			matscalex	1.2
+			noevents	1
+		}
+	}
+	windowDef Addhighlight2
+	{
+		rect	0,200,640,-280
+		background	"gui/addhighlight"
+		matcolor	0.4 ,0.5 ,0.5 ,1
+		visible	1
+	}
+	windowDef Under21
+	{
+		rect	14,417,617,51
+		matcolor	1 ,1 ,1 ,0.8
+		visible	1
+		background	"gui/sm3/scroll2"
+		matscalex	4
+	}
+	windowDef BgBlack1
+	{
+		rect	-12,413,668,63
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0.2,0.28,0.9
+	}
+	windowDef Under2
+	{
+		rect	7,11,626,65
+		matcolor	1 ,1 ,1 ,0.8
+		visible	1
+		background	"gui/sm3/scroll2"
+		matscalex	4
+	}
+	windowDef BgBlack
+	{
+		rect	-19,5,678,80
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0.2,0.28,0.9
+	}
+	windowDef BgParent
+	{
+		rect	0,3,640,473
+		visible	1
+		windowDef TextTitle1
+		{
+			rect	381,2,99,40
+			visible	0
+			text	"#str_00039"
+			forecolor	1,1,1,1
+			textscale	0.6
+			font	"fonts/micro"
+		}
+		windowDef TextTitle2
+		{
+			rect	103,41,563,33
+			visible	1
+			text	"#str_03613"
+			forecolor	1,1,1,0.5
+			textscale	0.4
+			font	"fonts/micro"
+		}
+		windowDef TitleBarBG1
+		{
+			rect	-1,-42,31,148
+			visible	1
+			background	"guis/assets/archives/titlecap"
+			matcolor	1,1,1,0.6
+		}
+		windowDef TitleBarBG2
+		{
+			rect	30,-42,40,148
+			visible	1
+			background	"guis/assets/archives/titleBar"
+			matcolor	1,1,1,0.6
+			matscalex	0.5
+		}
+		windowDef TitleBarBG3
+		{
+			rect	70,-42,31,148
+			visible	1
+			background	"guis/assets/archives/titleBox"
+			matcolor	1,1,1,0.6
+		}
+		windowDef TitleBarBG4
+		{
+			rect	101,-42,509,148
+			visible	1
+			background	"guis/assets/archives/titleBar"
+			matcolor	1,1,1,0.6
+			matscalex	5
+		}
+		windowDef TitleBarBG5
+		{
+			rect	610,-42,-31,148
+			visible	1
+			background	"guis/assets/archives/titlecap"
+			matcolor	1,1,1,0.6
+		}
+		windowDef Logo
+		{
+			rect	14,15,61,54
+			background	"gui/addlogo"
+			matcolor	0.6 ,0.6 ,0.6 ,1
+			visible	1
+		}
+		windowDef TitleBarBG11
+		{
+			rect	-1,371,31,120
+			visible	1
+			background	"guis/assets/archives/titlecap"
+			matcolor	1,1,1,0.4
+		}
+		windowDef TitleBarBG41
+		{
+			rect	30,371,579,120
+			visible	1
+			background	"guis/assets/archives/titleBar"
+			matcolor	1,1,1,0.4
+			matscalex	5
+		}
+		windowDef TitleBarBG51
+		{
+			rect	609,371,-31,120
+			visible	1
+			background	"guis/assets/archives/titlecap"
+			matcolor	1,1,1,0.4
+		}
+		windowDef Contentscorner112
+		{
+			rect	27,87,88,-34
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef Contentscorner312
+		{
+			rect	27,368,88,34
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef ContentsBottom12
+		{
+			rect	115,370,518,34
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef ContentsLeft12
+		{
+			rect	27,121,88,247
+			visible	1
+			background	"guis/assets/common/1pxborder_vert"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef ContentsTop12
+		{
+			rect	115,85,518,-34
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	0.6,0.8,1,0.5
+		}
+	}
+	windowDef BtnParent
+	{
+		rect	0,413,639,64
+		visible	1
+		windowDef BtnLeftEnd
+		{
+			rect	8,-4,-59,59
+			visible	1
+			background	"guis/assets/archives/btnend"
+			matcolor	1,1,1,0.25
+		}
+		windowDef BtnLeftIn1
+		{
+			rect	8,-4,-59,59
+			visible	1
+			background	"guis/assets/archives/btnin"
+			matcolor	1,1,1,0.25
+		}
+		windowDef BtnLeftIn2
+		{
+			rect	277,-4,59,59
+			visible	1
+			background	"guis/assets/archives/btnin"
+			matcolor	1,1,1,0.25
+		}
+		windowDef BtnLeftMid
+		{
+			rect	67,-4,210,59
+			visible	1
+			background	"guis/assets/archives/btnmid"
+			matcolor	1,1,1,0.25
+		}
+		windowDef BtnRightEnd
+		{
+			rect	575,-4,59,59
+			visible	1
+			background	"guis/assets/archives/btnend"
+			matcolor	1,0.6,0.1,0.6
+		}
+		windowDef BtnRightIn
+		{
+			rect	575,-4,59,59
+			visible	1
+			background	"guis/assets/archives/btnin"
+			matcolor	1,0.6,0.1,0.6
+		}
+		windowDef BtnRightMid
+		{
+			rect	368,-4,207,59
+			visible	1
+			background	"guis/assets/archives/btnmid"
+			matcolor	1,0.6,0.1,0.6
+		}
+		windowDef BtnRightOut
+		{
+			rect	338,-4,30,59
+			visible	1
+			background	"guis/assets/archives/btnout"
+			matcolor	1,0.6,0.1,0.6
+		}
+		windowDef BtnRightSpacer1
+		{
+			rect	294,-4,59,59
+			visible	1
+			background	"guis/assets/archives/btnspacer"
+			matcolor	1,0.6,0.1,0.6
+		}
+		windowDef BtnRightSpacer2
+		{
+			rect	313,-4,59,59
+			visible	1
+			background	"guis/assets/archives/btnspacer"
+			matcolor	1,0.6,0.1,0.6
+		}
+		windowDef TextDownload
+		{
+			rect	363,8,247,40
+			visible	1
+			text	"#str_03113"
+			forecolor	1,1,1,0.6
+			textscale	0.58
+			font	"fonts/micro"
+		}
+		windowDef Click
+		{
+			rect	9,0,622,100
+			visible	1
+			notime	1
+
+			onAction {
+				set "cmd" "activate ; play guisounds_click" ;
+				resetTime "0" ;
+				set "noevents" "1" ;
+			}
+
+			onTime 0 {
+				transition "BtnLeftIn2::rect" "277 -5 59 59" "67 -5 59 59" "500" "0" "0.4" ;
+				transition "BtnLeftMid::rect" "67 -5 210 59" "67 -5 0 59" "500" "0" "0.4" ;
+				
+				transition "BtnRightMid::rect" "368 -5 207 59" "74 -5 501 59" "500" "0" "0.4" ;
+				transition "BtnRightOut::rect" "338 -5 30 59" "44 -5 30 59" "500" "0" "0.4" ;
+				transition "BtnRightSpacer1::rect" "294 -5 59 59" "0 -5 59 59" "500" "0" "0.4" ;
+				transition "BtnRightSpacer2::rect" "313 -5 59 59" "19 -5 59 59" "500" "0" "0.4" ;
+				
+				transition "TextDownload::rect" "364 6 247 40" "64 6 547 40" "500" "0" "0.4" ;
+				
+				transition "TextDownload::forecolor" "1 1 1 1" "1 1 1 0" "500" ;
+			}
+
+			onTime 300 {
+				transition "BtnLeftEnd::matcolor" "1 1 1 0.25" "1 1 1 0" "200" ;
+				transition "BtnLeftIn1::matcolor" "1 1 1 0.25" "1 1 1 0" "200" ;
+				transition "BtnLeftIn2::matcolor" "1 1 1 0.25" "1 1 1 0" "200" ;
+				transition "BtnLeftMid::matcolor" "1 1 1 0.25" "1 1 1 0" "200" ;
+				
+				transition "BtnRightEnd::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+				transition "BtnRightIn::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+				transition "BtnRightMid::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+				transition "BtnRightOut::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+				transition "BtnRightSpacer1::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+				transition "BtnRightSpacer2::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+			}
+
+			onTime 500 {
+				set "TextDownload::text" "#str_03116" ;
+				transition "TextDownload::forecolor" "1 1 1 1" "1 1 1 0.5" "500" ;
+			}
+
+		}
+	}
+	windowDef TextTitle
+	{
+		rect	102,11,552,40
+		visible	1
+		text	"#str_03614"
+		forecolor	1,1,1,1
+		textscale	0.55
+		font	"fonts/micro"
+	}
+	windowDef ContentText
+	{
+		rect	63,113,524,273
+		visible	1
+		forecolor	1,1,1,0.89803928
+		text	"#str_03615"
+		textscale	0.64999998
+		font	"fonts/an"
+	}
+	windowDef Bglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef scanlinesAlt1
+	{
+		rect	0,0,-640,480
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		matscaley	2
+		visible	1
+	}
+	windowDef Outershadow1
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Static1
+	{
+		rect	0,0,-640,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 15
+	}
+	windowDef Reflect
+	{
+		rect	0,-7,-646,470
+		matcolor	1 ,1 ,1 ,0.15
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Addhighlight1
+	{
+		rect	0,7,-640,480
+		background	"gui/addhighlight"
+		matcolor	0.4 ,0.6 ,0.6 ,1
+		visible	1
+	}
+}

@@ -1,0 +1,47 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta2a_cinders {
+	name         "Frank Cinders"
+	fullname     "Frank A. Cinders"
+	icon         "guis/assets/pda/cinders"
+	id           "9602-84"
+	post         "Delta Labs, Level 2"
+	title        "Private First Class"
+	security     ""
+	pda_email    "delta2a_cinders_email_1"
+	pda_email    "delta2a_cinders_email_2"
+	pda_audio    "delta2a_cinders_audio_1"
+}
+
+email delta2a_cinders_email_2 {
+	date		"11-15-2145"
+	to			"Frank Cinders"
+	from		"Guy Harollson"
+	subject		"your lunch"
+	text {
+"Hey Frank,\n\n"
+"You left your lunch on my desk, again.  I put it in the storage cabinet, number 112.  The combination is 5-3-8.  Try to remember to pick it up, last time you forgot it was in there for a week, and that stuff stunk to high heaven.  What the hell you got in there? ;)\n\n"
+"Guy"
+	}
+}
+
+email delta2a_cinders_email_1 {
+	date		"10-28-2145"
+	to			"Frank Cinders"
+	from		"martianbuddy.com"
+	subject		"Baklava bake oven on sale now!"
+	text {
+"Tired of the same old , same old when it comes to snacking?  Store bought treats getting you down?  Then you need the NEW Martian Buddy Li'l Baklava oven!  You heard right BAKLAVA!  how many times have you said MMMMBoy! I could really go for some scrumptious Baklava right now?  Well now its quick and easy anytime!  come to www.martianbuddy.com for more info on the NEW Martian Buddy Li'l Baklava oven, and hundreds of other great products!\n\n"
+"Remember, Martian Buddy is Your Buddy!\n\n"
+"www.martianbuddy.com"
+
+	}
+}
+
+audio delta2a_cinders_audio_1 {
+	name		"Status Report"
+	info		"Made by: Frank Cinders\nDate: 10-15-2145\nOpen for Amendment: No\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta2a_cinders_1"
+}
+

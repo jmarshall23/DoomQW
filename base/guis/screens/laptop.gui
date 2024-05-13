@@ -1,0 +1,117 @@
+windowDef Desktop {
+	comment "gui_parm1 sets the computer user's name"
+	rect		0 ,0 ,640 ,480 
+	matcolor	0 ,0 ,0 ,0.1
+	background	"guis/assets/common/bg"
+
+	windowDef Logo2Parent {
+		rect 0, 80, 640, 185
+
+	windowDef Logo2a {
+		rect 215, 0, 105, 270
+		background	"guis/assets/cpuserver/uaclogohalf"
+		visible 1
+		matcolor 0.6, 1, 1, 1
+
+		onTime 0 {
+			transition "rect" "195 -35 125 270" "315 -35 5 270" "800" "0.8" "0.2" ;
+		}
+		onTime 800 {
+			transition "rect" "320 -35 -5 270" "320 -35 -125 270" "800" "0.2" "0.8" ;
+		}
+		onTime 1650 {
+			resetTime "0" ;
+		}
+	}
+
+	windowDef Logo1 {
+		rect 195, -35, 250, 270
+		background	"guis/assets/cpuserver/uaclogotext"
+		visible 1
+		matcolor 0.6, 1, 1, 1
+	}
+
+	windowDef Logo2b {
+		rect 320, 0, -105, 270
+		background	"guis/assets/cpuserver/uaclogohalf"
+		visible 1
+		matcolor 0.6, 1, 1, 1
+
+		onTime 0 {
+			transition "rect" "320 -35 -125 270" "320 -35 -5 270" "800" "0.8" "0.2" ;
+		}
+		onTime 800 {
+			transition "rect" "315 -35 5 270" "195 -35 125 270" "800" "0.2" "0.8" ;
+		}
+		onTime 1650 {
+			resetTime "0" ;
+		}
+	}
+	}
+
+	windowDef TextArea1 {
+		rect 0, 300, 640, 40
+		text "#str_01753"
+		textscale 1.1
+		font "fonts/bank"
+		textalign 1
+		forecolor 0.6, 1, 1, 1
+	}
+
+	windowDef TextArea2 {
+		rect 0, 370, 640, 40
+		text "gui::gui_parm1"
+		textscale 1
+		font "fonts/bank"
+		textalign 1
+		forecolor 1, 1, 1, 0.6
+	}
+
+	windowDef Static {
+		rect	-10 ,-10 ,660 ,500 
+		visible	1
+		background "gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 6
+	}
+
+	windowDef Mask {
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background "guis/assets/common/mask"
+		matcolor	1, 1, 1, 1
+	}
+	windowDef Addhighlight1 {
+		rect	0 ,0 ,-640 ,480 
+		background	"gui/addhighlight"
+		matcolor	0.6 ,0.8 ,0.8 ,1 
+		visible	1
+	}
+	windowDef Addhighlight2 {
+		rect	0 ,200 ,640 ,-280 
+		background	"gui/addhighlight"
+		matcolor	0.8 ,1 ,1 ,1 
+		visible	1
+	}
+	windowDef Scanlines {
+	//scrolling raster lines
+		rect	0,0,640,480
+		matcolor	0.15,0.15,0.15,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley 1.5
+
+	}
+	windowDef Outershadow {
+		rect	0 ,0 ,640 ,480 
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1 
+		visible	1
+	}
+	windowDef Dirt {
+		rect	0 ,0 ,640 ,480 
+		matcolor	1, 1, 1 ,0.5
+		visible	1
+		background	"guis/assets/common/dirt1"
+	}
+
+}

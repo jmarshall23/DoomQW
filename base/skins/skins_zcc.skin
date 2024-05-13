@@ -1,0 +1,4 @@
+skin skins/zcc/muzzle_flash {
+	monsters/zombie/commando/cgun_mflash1 textures/common/nodraw
+	monsters/zombie/commando/cgun_mflash2 textures/common/nodraw
+}

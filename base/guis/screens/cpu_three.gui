@@ -1,0 +1,132 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 0.8
+	windowDef Bglow
+	{
+		rect	0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef BGClip
+	{
+		rect	0,0,619,469
+		visible	1
+		windowDef Bg
+		{
+			rect	20,10,600,460
+			background	"guis/assets/cpuserver/bg2.tga"
+			visible	1
+			matcolor	0.4, 0.8, 1, 1
+		}
+	}
+	windowDef Text1
+	{
+		rect	20, 120, 600, 200
+		text	"#str_01747"
+		textscale	2
+		textalign	1
+		forecolor	1, 0.2, 0.2, 1
+		visible	1
+		nowrap	1
+	}
+	windowDef Text2
+	{
+		rect	30, 350, 600, 100
+		text	"#str_01255"
+		textscale	2
+		textalign	1
+		forecolor	1, 0.2, 0.2, 1
+		visible	1
+		nowrap	1
+	}
+	windowDef bgScroll
+	{
+		rect	15 ,20 ,610 ,440
+		visible	1
+		background	"gui/scroll2"
+		matcolor	1, 1,  1, flickertable [ time * 5 ] / 2
+	}
+	windowDef Static
+	{
+		rect	10 ,5 ,620 ,470
+		matcolor	1 ,1 ,1 ,0.4
+		visible	1
+		background	"gui/static"
+	}
+	windowDef Reflect
+	{
+		rect	10 ,5 ,620 ,470
+		matcolor	1 ,1 ,1 ,0.2
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Anim
+	{
+
+		onTime 0 {
+			set		"bg::rect" "40 50 600 460" ;
+			set		"Text1::rect" "40 140 600 200" ;
+			set		"Text2::rect" "50 370 600 100" ;
+		}
+
+		onTime 100 {
+			set		"bg::visible" "0" ;
+			set		"Text1::visible" "0" ;
+			set		"Text2::visible" "0" ;
+		}
+
+		onTime 150 {
+			set		"bg::visible" "1" ;
+			set		"Text1::visible" "1" ;
+			set		"Text2::visible" "1" ;
+		}
+
+		onTime 200 {
+			set		"bg::rect" "20 10 600 460" ;
+			set		"Text1::rect" "20 120 600 200" ;
+			set		"Text2::rect" "30 350 600 100" ;
+			transition	"bg::matcolor" "0.4 0.8 1 1" "0.4 0.8 1 0" "1000" ;
+			transition	"Text1::forecolor" "1 0.2 0.2 1" "1 0.2 0.2 0" "600" ;
+			transition	"Text2::forecolor" "1 0.2 0.2 1" "1 0.2 0.2 0" "600" ;
+		}
+
+		onTime 1200 {
+			transition	"bg::matcolor" "0.4 0.8 1 0" "0.4 0.8 1 1" "1000" ;
+			transition	"Text1::forecolor" "1 0.2 0.2 0" "1 0.2 0.2 1" "600" ;
+			transition	"Text2::forecolor" "1 0.2 0.2 0" "1 0.2 0.2 1" "600" ;
+		}
+
+		onTime 1600 {
+			set		"bg::visible" "0" ;
+			set		"Text1::visible" "0" ;
+			set		"Text2::visible" "0" ;
+		}
+
+		onTime 1700 {
+			set		"bg::visible" "1" ;
+			set		"Text1::visible" "1" ;
+			set		"Text2::visible" "1" ;
+		}
+
+		onTime 1800 {
+			set		"bg::rect" "0 50 600 380" ;
+			set		"Text1::rect" "0 80 600 100" ;
+			set		"Text2::rect" "0 280 600 100" ;
+		}
+
+		onTime 1900 {
+			set		"bg::rect" "20 10 600 460" ;
+			set		"Text1::rect" "20 120 600 200" ;
+			set		"Text2::rect" "30 350 600 100" ;
+		}
+
+		onTime 2200 {
+			resetTime "0" ;
+		}
+
+	}
+}

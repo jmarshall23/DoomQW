@@ -1,0 +1,387 @@
+windowDef Desktop
+{
+	comment	"gui_parm1 is the location name."
+	rect	0 ,0 ,640 ,480
+	backcolor	0, 0, 0, 0.7
+
+	windowDef BgBlack
+	{
+		rect	-2,0,646,481
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+	windowDef CircleCrop
+	{
+		rect	5,79,630,339
+		visible	1
+
+		windowDef CircleG0
+		{
+			rect	-89,-248,820,820
+			visible	1
+			background	"gui/spin1"
+			matcolor	0.2, 0.8, 0.6, 0.2
+		}
+		windowDef CircleG1
+		{
+			rect	-49,-208,740,740
+			visible	1
+			background	"gui/spin2"
+			matcolor	0.2, 0.8, 0.6, 0.2
+		}
+		windowDef CircleG2
+		{
+			rect	0,-168,640,640
+			visible	1
+			background	"gui/spin3"
+			matcolor	0.2, 0.8, 0.6, 0.2
+		}
+		windowDef CircleG3
+		{
+			rect	30,-133,580,580
+			visible	1
+			background	"gui/spin4"
+			matcolor	0.2, 0.8, 0.6, 0.2
+		}
+		windowDef CircleG4
+		{
+			rect	65,-93,510,510
+			visible	1
+			background	"gui/spin5"
+			matcolor	0.2, 0.8, 0.6, 0.2
+		}
+		windowDef CircleG5
+		{
+			rect	100,-58,440,440
+			visible	1
+			background	"gui/spin6"
+			matcolor	0.2, 0.8, 0.6, 0.2
+		}
+		windowDef CircleG6
+		{
+			rect	130,-28,380,380
+			visible	1
+			background	"gui/spin7"
+			matcolor	0.2, 0.8, 0.6, 0.2
+		}
+		windowDef CircleG7
+		{
+			rect	150,-8,340,340
+			visible	1
+			background	"gui/spin8"
+			matcolor	0.2, 0.8, 0.6, 0.2
+		}
+	}
+	windowDef CircCropBlack1
+	{
+		rect	-9,5,660,82
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+	windowDef CircCropBlack2
+	{
+		rect	-8,403,660,71
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+
+		windowDef Background2
+		{
+			rect	37,248,567,106
+			visible	1
+			background	"guis/assets/doors/pdabg3alt"
+			matcolor	0.95, 1, 0.95, 0.6
+		}
+		windowDef Text1
+		{
+			rect	40,130,560,100
+			text	"gui::gui_parm1"
+			textscale	1.3
+			textalign	1
+			forecolor	1,1,1,0.698
+		//	font "fonts/bank"
+			visible	1
+		}
+		windowDef Text12
+		{
+			rect	54,270,526,90
+			text	"#str_00005"
+			textscale	0.85
+			forecolor	1,1,1,0.7
+			visible	1
+			textalign	1
+			font	"fonts/micro"
+		}
+		windowDef StatusArea
+		{
+			rect	211,3,421,87
+			visible	1
+			windowDef SourceText
+			{
+				rect	9,15,410,53
+				visible	1
+				forecolor	1,1,1,0.6
+				text	"#str_00014"
+				textscale	0.78
+				font	"fonts/micro"
+				textalign	1
+			}
+			windowDef bar1Left
+			{
+				rect	6,5,32,26
+				visible	1
+				background	"guis/assets/common/titlebar_edge"
+				matcolor	0.6, 0.8, 0.85, 0.3
+			}
+			windowDef bar1Mid
+			{
+				rect	38,5,347,26
+				visible	1
+				background	"guis/assets/common/titlebar_mid"
+				matcolor	0.6, 0.8, 0.85, 0.3
+			}
+			windowDef bar1Right
+			{
+				rect	385,5,37,26
+				visible	1
+				background	"guis/assets/common/titlebar_corner"
+				matcolor	0.6, 0.8, 0.85, 0.3
+			}
+			windowDef bar2Left
+			{
+				rect	6,56,32,26
+				visible	1
+				background	"guis/assets/common/titlebar_edge"
+				matcolor	0.6, 0.8, 0.85, 0.3
+			}
+			windowDef bar2Mid
+			{
+				rect	38,56,348,26
+				visible	1
+				background	"guis/assets/common/titlebar_mid"
+				matcolor	0.6, 0.8, 0.85, 0.3
+			}
+			windowDef bar2Right
+			{
+				rect	386,56,37,-26
+				visible	1
+				background	"guis/assets/common/titlebar_corner"
+				matcolor	0.6, 0.8, 0.85, 0.3
+			}
+		}
+		windowDef TopBox
+		{
+			rect	-41,-1,274,96
+			visible	1
+			windowDef Keypadbg
+			{
+				rect	47,8,223,86
+				visible	1
+				background	"guis/assets/cpuserver/bgWhite"
+				matcolor	0,0,0,0.9
+			}
+			windowDef TBTop
+			{
+				rect	132,3,53,-30
+				visible	1
+				background	"guis/assets/common/1pxborder_horiz"
+				matcolor	1,1,1,0.8
+			}
+			windowDef TBcorner1
+			{
+				rect	50,5,82,-30
+				visible	1
+				background	"guis/assets/common/1pxborder_cornersm"
+				matcolor	1,1,1,0.8
+			}
+			windowDef TBcorner2
+			{
+				rect	185,5,-82,-30
+				visible	1
+				background	"guis/assets/common/1pxborder_cornersm"
+				matcolor	1,1,1,0.8
+			}
+			windowDef TBcorner3
+			{
+				rect	50,61,82,30
+				visible	1
+				background	"guis/assets/common/1pxborder_cornersm"
+				matcolor	1,1,1,0.8
+			}
+			windowDef TBcorner4
+			{
+				rect	185,61,-82,30
+				visible	1
+				background	"guis/assets/common/1pxborder_cornersm"
+				matcolor	1,1,1,0.8
+			}
+			windowDef TBBottom
+			{
+				rect	132,63,53,30
+				visible	1
+				background	"guis/assets/common/1pxborder_horiz"
+				matcolor	1,1,1,0.8
+			}
+			windowDef TBRight
+			{
+				rect	185,35,-82,-26
+				visible	1
+				background	"guis/assets/common/1pxborder_vert"
+				matcolor	1,1,1,0.8
+			}
+			windowDef TBLeft
+			{
+				rect	50,35,82,-26
+				visible	1
+				background	"guis/assets/common/1pxborder_vert"
+				matcolor	1,1,1,0.8
+			}
+			windowDef IDTypeText
+			{
+				rect	65,-5,183,81
+				text	"#str_01199"
+				font	"fonts/micro"
+				textscale	1.2
+				forecolor	1,1,1,0.6
+				visible	1
+				textalign	1
+			}
+			windowDef IDCheckText
+			{
+				rect	73,56,184,26
+				text	"#str_01200"
+				font	"fonts/micro"
+				textscale	0.42
+				forecolor	1,0.698,0.298,0.6
+				visible	1
+			}
+		}
+		windowDef StatusBar
+		{
+			rect	0,373,640,120
+			visible	1
+			windowDef Statusbar2Mid
+			{
+				rect	58,66,522,40
+				visible	1
+				background	"guis/assets/common/titlebar_mid"
+				matcolor	0.6, 0.8, 0.85, 0.3
+			}
+			windowDef Statusbar2Right
+			{
+				rect	580,66,57,-40
+				visible	1
+				background	"guis/assets/common/titlebar_corner"
+				matcolor	0.6, 0.8, 0.85, 0.3
+			}
+			windowDef Statusbar2Left
+			{
+				rect	1,66,-57,-40
+				visible	1
+				background	"guis/assets/common/titlebar_corner"
+				matcolor	0.6, 0.8, 0.85, 0.3
+			}
+			windowDef StatusText
+			{
+				rect	1,16,638,100
+				text	"#str_00023"
+				textscale	1
+				textalign	1
+				forecolor	0.6,1,0.8,0.6
+				visible	1
+				font	"fonts/micro"
+			}
+			windowDef Statusbar3Right
+			{
+				rect	587,27,-48,52
+				visible	1
+				background	"guis/assets/common/titlebar_edge"
+				matcolor	0.6,0.9,0.7,0.3
+			}
+			windowDef Statusbar3Mid2
+			{
+				rect	499,27,88,52
+				visible	1
+				background	"guis/assets/common/titlebar_mid"
+				matcolor	0.6,0.9,0.7,0.3
+			}
+			windowDef Statusbar3Left
+			{
+				rect	5,27,48,52
+				visible	1
+				background	"guis/assets/common/titlebar_edge"
+				matcolor	0.6,0.9,0.7,0.3
+			}
+			windowDef Statusbar3Mid1
+			{
+				rect	53,27,87,52
+				visible	1
+				background	"guis/assets/common/titlebar_mid"
+				matcolor	0.6,0.9,0.7,0.3
+			}
+		}
+
+	windowDef Static
+	{
+		rect	-10 ,-10 ,-660 ,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 8
+	}
+	windowDef Outerglow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 6
+		visible	1
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.5 ,0.4 ,0.15 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,-640,480
+		matcolor	1,1,1,1
+		background	"gui/test/gui_scanlines"
+		visible	1
+		matscaley	1.5
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,-640 ,480
+		matcolor	1, 1, 1 ,0.3
+		visible	1
+		background	"guis/assets/common/dirt3"
+		noevents	1
+	}
+	windowDef Reflect
+	{
+		rect	0 ,-10 ,-640 ,480
+		matcolor	1 ,1 ,1 ,0.05
+		visible	1
+		background	"gui/reflect1"
+		noevents	1
+	}
+	windowDef Blank
+	{
+		rect	0 ,0 ,1 ,1
+
+		onAction {
+			set "cmd" "play guisounds_click" ;
+		}
+	}	
+}

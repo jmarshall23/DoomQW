@@ -1,0 +1,297 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef BgBlack1
+	{
+		rect	-13,-9,668,497
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+	windowDef BackgroundParent
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef Bg1
+		{
+			rect	0,0,320,240
+			visible	1
+			background	"guis/assets/common/framebgline"
+			matcolor	1,1,1,1
+		}
+		windowDef Bg2
+		{
+			rect	320,0,-320,240
+			visible	1
+			background	"guis/assets/common/framebgline"
+			matcolor	1,1,1,1
+		}
+		windowDef Bg3
+		{
+			rect	0,240,320,-240
+			visible	1
+			background	"guis/assets/common/framebgline"
+			matcolor	1,1,1,1
+		}
+		windowDef Bg4
+		{
+			rect	320,240,-320,-240
+			visible	1
+			background	"guis/assets/common/framebgline"
+			matcolor	1,1,1,1
+		}
+		windowDef Bg11
+		{
+			rect	0,0,320,240
+			visible	1
+			background	"guis/assets/common/framebgfill"
+			matcolor	0.07,0.09,0.11,1
+		}
+		windowDef Bg21
+		{
+			rect	320,0,-320,240
+			visible	1
+			background	"guis/assets/common/framebgfill"
+			matcolor	0.07,0.09,0.11,1
+		}
+		windowDef Bg31
+		{
+			rect	0,240,320,-240
+			visible	1
+			background	"guis/assets/common/framebgfill"
+			matcolor	0.07,0.09,0.11,1
+		}
+		windowDef Bg41
+		{
+			rect	320,240,-320,-240
+			visible	1
+			background	"guis/assets/common/framebgfill"
+			matcolor	0.07,0.09,0.11,1
+		}
+	}
+	windowDef BgBlack
+	{
+		rect	41,90,556,340
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+	windowDef Stars
+	{
+		rect	59,101,521,319
+		background	"gui/mainmenu/star"
+		matcolor	1,1,1,1
+		matscalex	1.5
+		visible	1
+	}
+	windowDef Mars
+	{
+		rect	50,96,331,316
+		background	"guis/assets/cpuserver/mars2a.tga"
+		visible	1
+		matcolor	1, 1, 1, 1
+	}
+	windowDef MapParent
+	{
+		rect	4,24,631,432
+		visible	1
+		windowDef MapGrid1
+		{
+			rect	53,75,525,322
+			visible	1
+			background	"gui/grid2"
+			matcolor	1,1,1,0.1
+			matscalex	7
+			matscaley	5
+		}
+		windowDef MapBg1
+		{
+			rect	47,71,536,25
+			visible	1
+			background	"guis/assets/teleporter/grid3"
+			matcolor	1,1,1,0.4
+		}
+		windowDef MapBG2
+		{
+			rect	47,96,536,-281
+			visible	1
+			background	"guis/assets/teleporter/grid4"
+			matcolor	1,1,1,0.4
+		}
+		windowDef MapBG3
+		{
+			rect	47,377,536,-25
+			visible	1
+			background	"guis/assets/teleporter/grid3"
+			matcolor	1,1,1,0.4
+		}
+	}
+	windowDef CornerTL
+	{
+		rect	5,5,63,-62
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.5, 1, 1, 0.4
+	}
+	windowDef CornerTR
+	{
+		rect	572,5,-63,-62
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.5, 1, 1, 0.4
+	}
+	windowDef CornerBL
+	{
+		rect	5,413,63,62
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.5, 1, 1, 0.4
+	}
+	windowDef CornerBR
+	{
+		rect	572,413,-63,62
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.5, 1, 1, 0.4
+	}
+	windowDef Win1
+	{
+		rect	376,129,84,39
+		background	"guis/assets/cpuserver/win1.tga"
+		visible	1
+		matcolor	0.7,0.9,1,0.7
+	}
+	windowDef Win11
+	{
+		rect	376,257,84,39
+		background	"guis/assets/cpuserver/win1.tga"
+		visible	1
+		matcolor	0.7,0.9,1,0.7
+	}
+	windowDef TextContent11
+	{
+		rect	395,294,183,96
+		text	"#str_03980"
+		textscale	0.3
+		forecolor	1,1,1,0.7
+		visible	1
+	}
+	windowDef TextContent1
+	{
+		rect	395,163,183,96
+		text	"#str_03981"
+		textscale	0.3
+		forecolor	1,1,1,0.7
+		visible	1
+	}
+	windowDef TextHem
+	{
+		rect	52,32,531,33
+		text	"#str_03982"
+		textscale	0.44
+		textalign	1
+		forecolor	0.8,1,1,0.3
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef TextHem1
+	{
+		rect	29,56,581,33
+		text	"#str_03983"
+		textscale	0.34
+		textalign	1
+		forecolor	1,1,1,0.498
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef Outerglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 6
+		visible	1
+	}
+	windowDef Reflect
+	{
+		rect	5,0,630,470
+		matcolor	1 ,1 ,1 ,0.15
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Static
+	{
+		rect	-9,-9,660,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 8
+	}
+	windowDef Addhighlight
+	{
+		rect	10,10,-620,440
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.4 ,1
+		visible	1
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow2.tga"
+		visible	1
+		matcolor	0.4, 0.7, 0.8, 0.2
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Circ1
+	{
+		rect	283,245,27,20
+		background	"guis/assets/common/circle16.tga"
+		visible	1
+		matcolor	1, 0.9, 0.7, 1
+	}
+	windowDef Circ2
+	{
+		rect	269,235,54,40
+		background	"guis/assets/common/circle16.tga"
+		visible	1
+		matcolor	1, 0.9, 0.7, 1
+
+		onTime 0 {
+			transition "rect" "283 245 27 20" "255 220 84 70" "800" "0.4" "0.6" ;
+			transition "matcolor" "1 0.9 0.7 1" "1 0.9 0.7 0" "800" ;
+		}
+
+		onTime 1500 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Circ3
+	{
+		rect	150,140,27,20
+		background	"guis/assets/common/circle16.tga"
+		visible	1
+		matcolor	1, 0.9, 0.7, 1
+	}
+	windowDef Circ4
+	{
+		rect	150,140,27,20
+		background	"guis/assets/common/circle16.tga"
+		visible	1
+		matcolor	1, 0.9, 0.7, 1
+
+		onTime 0 {
+			transition "rect" "150 140 27 20" "122 115 84 70" "800" "0.4" "0.6" ;
+			transition "matcolor" "1 0.9 0.7 1" "1 0.9 0.7 0" "800" ;
+		}
+
+		onTime 1500 {
+			resetTime "0" ;
+		}
+
+	}
+}

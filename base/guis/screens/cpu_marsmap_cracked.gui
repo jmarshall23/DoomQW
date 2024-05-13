@@ -1,0 +1,191 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.5, 1, 0.9, 0.8
+	windowDef DesktopClip
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef BgParent
+		{
+			rect	20,20,600,440
+			visible	1
+			windowDef Bg
+			{
+				rect	0, 0, 1200, 460
+				background	"guis/assets/cpuserver/map.tga"
+				visible	1
+				matcolor	1, 1, 1, 1
+			}
+		}
+		windowDef Circ1
+		{
+			rect	283,210,27,20
+			background	"guis/assets/common/circle16.tga"
+			visible	1
+			matcolor	1, 0.9, 0.7, 1
+		}
+		windowDef Circ2
+		{
+			rect	270,200,54,40
+			background	"guis/assets/common/circle16.tga"
+			visible	1
+			matcolor	1, 0.9, 0.7, 1
+
+			onTime 0 {
+				transition "rect" "283 210 27 20" "255 185 84 70" "800" "0.4" "0.6" ;
+				transition "matcolor" "1 0.9 0.7 1" "1 0.9 0.7 0" "800" ;
+			}
+
+			onTime 1500 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef TextHem
+		{
+			rect	100,405,500,250
+			text	"#str_01745"
+			shadow	1
+			textscale	0.7
+			textalign	2
+			forecolor	1, 0.7, 0.3, 1
+			font	"fonts/micro"
+			visible	1
+		}
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	1, 0.7, 0, 0.2
+	}
+	windowDef Addhighlight
+	{
+		rect	10 ,10 ,-620 ,440
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.4 ,1
+		visible	1
+	}
+	windowDef Static
+	{
+		rect	-10 ,-10 ,660 ,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdscaleTable[ time * 0.0001 ] / 5
+	}
+	windowDef scanpulse
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef scanpulseClamped
+		{
+			rect	0,0,640,3000
+			matcolor	1,1,1,0.03
+			background	"gui/test/gui_scanpulse2"
+			visible	1
+		}
+	}
+	windowDef Reflect
+	{
+		rect	5 ,0 ,630 ,470
+		matcolor	1 ,1 ,1 ,0.15
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef unnamed1
+	{
+		rect	5,1,636,474
+		visible	1
+		windowDef Dirt1
+		{
+			rect	-6,-535,1610,1013
+			matcolor	1, 1, 1 ,0.4
+			visible	1
+			background	"guis/assets/common/dirt3"
+		}
+		windowDef Dirt11
+		{
+			rect	-15,-534,-1610,-1013
+			matcolor	1, 1, 1 ,1
+			visible	1
+			background	"guis/assets/common/dirt2"
+		}
+		windowDef Dirt111
+		{
+			rect	-19,-534,-1610,-1013
+			matcolor	1, 1, 1 ,1
+			visible	1
+			background	"guis/assets/common/dirt2"
+
+			onTime 0 {
+				transition "matcolor" "1 1 1 0.8" "1 1 1 0" "500" ;
+			}
+
+			onTime 500 {
+				transition "matcolor" "1 1 1 0" "1 1 1 0.8" "500" ;
+			}
+
+			onTime 1000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef glassCrack11
+		{
+			rect	-313,91,639,-467
+			visible	1
+			background	"guis/assets/common/glasscrack2a"
+			matcolor	0,0,0,0.4
+		}
+		windowDef glassCrack111
+		{
+			rect	-314,90,639,-467
+			visible	1
+			background	"guis/assets/common/glasscrack2a"
+			matcolor	1 ,0.8,0.7,0.85
+		}
+		windowDef glassCrack1111
+		{
+			rect	-313,89,639,-467
+			visible	1
+			background	"guis/assets/common/glasscrack2reflect2"
+			matcolor	1 ,0.8,0.6,0.15
+		}
+		windowDef Dirt
+		{
+			rect	-19,-117,749,597
+			matcolor	1, 1, 1 ,1
+			visible	1
+			background	"guis/assets/common/dirt3"
+		}
+		windowDef glassCrack1112
+		{
+			rect	-123,387,303,239
+			visible	1
+			background	"guis/assets/common/glasscrack"
+			matcolor	1 ,0.95,0.9,0.6
+		}
+	}
+	windowDef Twitch
+	{
+		rect	0,0,0,0
+		visible	1
+
+		onTime 0 {
+			set "desktopClip::rect" "1 0 638 480" ;	
+		}
+
+		onTime 50 {
+			set "desktopClip::rect" "0 0 640 480" ;
+		}
+
+		onTime 100 {
+			resetTime "0" ;
+		}
+
+	}
+}

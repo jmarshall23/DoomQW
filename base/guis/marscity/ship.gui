@@ -1,0 +1,1100 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 0.8
+	visible	1
+	float	"listnum"	1
+
+	onEvent {
+		if ("gui::gui_parm1" == 1) { 
+			set "TextList1::visible" "0" ;
+			set "TextList1D::visible" "1" ;
+			set "TextHighlight1::text" "#str_03679" ;
+		}
+		if ("gui::gui_parm3" == 1) { 
+			set "TextList3::visible" "0" ;
+			set "TextList3D::visible" "1" ;
+			set "TextHighlight3::text" "#str_03679" ;
+		}
+		if ("gui::gui_parm4" == 1) { 
+			set "TextList4::visible" "0" ;
+			set "TextList4D::visible" "1" ;
+			set "TextHighlight4::text" "#str_03679" ;
+		}				
+	}
+
+	windowDef BG11
+	{
+		rect	5,5,630,471
+		visible	0
+		background	"guis/assets/common/bg"
+		matcolor	0.15,0.25,0.3,0.5
+	}
+	windowDef PDABG1
+	{
+		rect	5,5,630,471
+		matcolor	0.7, 1, 1, 0.5
+		background	"guis/assets/pda/glowup60_256"
+		visible	0
+	}
+	windowDef Text311
+	{
+		rect	92,29,557,48
+		text	"#str_03595"
+		font	"fonts/micro"
+		textscale	0.5
+		forecolor	1,1,1,1
+		visible	1
+	}
+	windowDef Text312
+	{
+		rect	91,57,555,29
+		text	"#str_03680"
+		font	"fonts/micro"
+		textscale	0.35
+		forecolor	1,1,1,0.5
+		visible	1
+	}
+	windowDef Bg23
+	{
+		rect	369,104,238,70
+		background	"guis/assets/marscity/map.tga"
+		visible	1
+		matcolor	1, 1, 1, 0.7
+	}
+	windowDef TitleBarBG1
+	{
+		rect	50,-18,31,133
+		visible	1
+		background	"guis/assets/archives/titlecap"
+		matcolor	1,1,1,0.7
+	}
+	windowDef TitleBarBG4
+	{
+		rect	81,-18,515,133
+		visible	1
+		background	"guis/assets/archives/titleBar"
+		matcolor	1,1,1,0.7
+		matscalex	5
+	}
+	windowDef TitleBarBG5
+	{
+		rect	596,-18,-31,133
+		visible	1
+		background	"guis/assets/archives/titlecap"
+		matcolor	1,1,1,0.7
+	}
+	windowDef LogoShadow
+	{
+		rect	9,18,89,90
+		background	"guis/assets/cpuserver/uaclogo2"
+		matcolor	0,0,0,0.5
+		visible	1
+	}
+	windowDef Logo
+	{
+		rect	25,25,57,65
+		background	"gui/addlogo"
+		matcolor	1,1,1,1
+		visible	1
+	}
+	windowDef Contents11
+	{
+		rect	-24,93,689,385
+		visible	1
+		windowDef Contentsbg12
+		{
+			rect	27,7,629,331
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite3"
+			matcolor	0,0.3,0.4,0.15
+		}
+		windowDef Contentscorner112
+		{
+			rect	41,6,88,-34
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef Contentscorner212
+		{
+			rect	559,6,-88,-34
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef Contentscorner312
+		{
+			rect	41,340,88,34
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef Contentscorner412
+		{
+			rect	559,340,-88,34
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef ContentsBottom12
+		{
+			rect	129,342,430,34
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef ContentsRight12
+		{
+			rect	559,40,-88,300
+			visible	1
+			background	"guis/assets/common/1pxborder_vert"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef ContentsLeft12
+		{
+			rect	41,40,88,300
+			visible	1
+			background	"guis/assets/common/1pxborder_vert"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef ContentsTop12
+		{
+			rect	129,4,430,-34
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	0.6,0.8,1,0.5
+		}
+	}
+	windowDef unnamed
+	{
+		rect	4,406,639,74
+		visible	1
+		windowDef Tickline1
+		{
+			rect	179,33,180,13
+			background	"gui/marscity/tickline"
+			visible	1
+			matcolor	1, 0.6, 0, 0.3
+			matscalex	0.5
+		}
+		windowDef CountdownBox1
+		{
+			rect	346,14,261,33
+			background	"guis/assets/marscity/countdown"
+			visible	1
+			matcolor	1, 0.6, 0, 0.25
+		}
+		windowDef TimeScroller
+		{
+			rect	350,22,8,16
+			visible	1
+			backcolor	1,0.6,0,0.25
+			matcolor	1,0.6,0,0.5
+			background	"guis/assets/marscity/boxline"
+		}
+		windowDef TextKPS1
+		{
+			rect	369,11,49,21
+			text	"#str_03681"
+			textscale	0.31
+			forecolor	1,0.6,0,0.4
+			font	"fonts/micro"
+			visible	1
+			textalign	2
+		}
+		windowDef TextKPS2
+		{
+			rect	370,24,49,21
+			text	"0.00"
+			textscale	0.31
+			forecolor	1,0.6,0,0.4
+			font	"fonts/micro"
+			visible	1
+			textalign	2
+			notime	1
+		}
+		windowDef TextTime
+		{
+			rect	443,11,157,34
+			text	"00:00:00"
+			textscale	0.5
+			forecolor	0,0,0,0.8
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef Text31422
+		{
+			rect	26,16,238,72
+			text	"#str_03682"
+			font	"fonts/micro"
+			textscale	0.5
+			forecolor	1,0.6,0,0.4
+			visible	1
+		}
+		windowDef Text314221
+		{
+			rect	28,7,238,63
+			text	"#str_03683"
+			font	"fonts/micro"
+			textscale	0.31
+			forecolor	1,1,1,0.3
+			visible	1
+		}
+	}
+	windowDef MapGrid
+	{
+		rect	24,103,593,358
+		visible	1
+		background	"gui/grid2"
+		matcolor	1,1,1,0.07
+		matscalex	12
+		matscaley	6
+	}
+	windowDef ButtonAreaBoxTop1
+	{
+		rect	366,169,241,22
+		visible	1
+		background	"guis/assets/teleporter/grid1"
+		matcolor	0.4,0.4,0.4,0.8
+	}
+	windowDef ButtonAreaBoxMid1
+	{
+		rect	366,191,241,-78
+		visible	1
+		background	"guis/assets/teleporter/grid2"
+		matcolor	0.4,0.4,0.4,0.8
+	}
+	windowDef ButtonAreaBoxBtm1
+	{
+		rect	366,269,241,-22
+		visible	1
+		background	"guis/assets/teleporter/grid1"
+		matcolor	0.4,0.4,0.4,0.8
+	}
+	windowDef Text3142
+	{
+		rect	369,99,238,74
+		text	"#str_03684"
+		font	"fonts/micro"
+		textscale	0.5
+		forecolor	0.6,1,1,0.75
+		visible	1
+	}
+	windowDef Text31411
+	{
+		rect	33,138,420,33
+		text	"#str_03685"
+		font	"fonts/micro"
+		textscale	0.45
+		forecolor	0.6,1,1,0.35
+		visible	1
+	}
+	windowDef Text31421
+	{
+		rect	33,107,574,74
+		text	"#str_03686"
+		font	"fonts/micro"
+		textscale	0.5
+		forecolor	0.6,1,1,0.75
+		visible	1
+	}
+	windowDef TextClipper1
+	{
+		rect	370,173,236,118
+		visible	1
+		windowDef TextList1
+		{
+			rect	7,6,226,28
+			text	"#str_03602"
+			font	"fonts/an"
+			textscale	0.33
+			forecolor	1,1,1,0.8
+			visible	1
+		}
+		windowDef TextList2
+		{
+			rect	7,33,226,47
+			text	"#str_03603"
+			font	"fonts/an"
+			textscale	0.33
+			forecolor	1,1,1,0.8
+			visible	1
+		}
+		windowDef TextList3
+		{
+			rect	7,59,226,31
+			text	"#str_03604"
+			font	"fonts/an"
+			textscale	0.33
+			forecolor	1,1,1,0.8
+			visible	1
+		}
+		windowDef TextList4
+		{
+			rect	7,87,226,28
+			text	"#str_03605"
+			font	"fonts/an"
+			textscale	0.33
+			forecolor	1,1,1,0.8
+			visible	1
+		}
+		windowDef TextList1D
+		{
+			rect	7,6,226,28
+			text	"#str_03606"
+			font	"fonts/an"
+			textscale	0.33
+			forecolor	1,1,1,0.5
+			visible	0
+		}
+		windowDef TextList3D
+		{
+			rect	7,59,226,28
+			text	"#str_03606"
+			font	"fonts/an"
+			textscale	0.33
+			forecolor	1,1,1,0.5
+			visible	0
+		}
+		windowDef TextList4D
+		{
+			rect	7,87,226,28
+			text	"#str_03606"
+			font	"fonts/an"
+			textscale	0.33
+			forecolor	1,1,1,0.5
+			visible	0
+		}
+	}
+	windowDef TextClipper2
+	{
+		rect	370,173,236,118
+		visible	0
+		windowDef TextList11
+		{
+			rect	7,6,226,28
+			text	"#str_03687"
+			font	"fonts/an"
+			textscale	0.33
+			forecolor	1,1,1,0.8
+			visible	1
+		}
+		windowDef TextList21
+		{
+			rect	7,33,226,47
+			text	"#str_03688"
+			font	"fonts/an"
+			textscale	0.33
+			forecolor	1,1,1,0.8
+			visible	1
+		}
+		windowDef TextList31
+		{
+			rect	7,59,226,31
+			text	"#str_03689"
+			font	"fonts/an"
+			textscale	0.33
+			forecolor	1,1,1,0.8
+			visible	1
+		}
+		windowDef TextList41
+		{
+			rect	7,87,226,28
+			text	"#str_03690"
+			font	"fonts/an"
+			textscale	0.33
+			forecolor	1,1,1,0.8
+			visible	1
+		}
+	}
+	windowDef ListBG1
+	{
+		rect	363,179,247,24
+		visible	1
+		background	"guis/assets/teleporter/button1"
+		matcolor	0.7,0.9,1,0.15
+
+		onAction {
+			set "cmd" "play guisounds_click3" ;
+			transition "matcolor" "0.7 0.9 1 0.25" "0.7 0.9 1 0.15" "250" ;
+			set "desktop::listnum" "1" ;
+			set "ListBG2::matcolor"  "0.7 0.9 1 0" ;
+			set "ListBG3::matcolor"  "0.7 0.9 1 0" ;
+			set "ListBG4::matcolor"  "0.7 0.9 1 0" ;
+			
+			set "TextHighlight1::visible"  "1" ;
+			set "TextHighlight2::visible"  "0" ;
+			set "TextHighlight3::visible"  "0" ;
+			set "TextHighlight4::visible"  "0" ;
+			set "TextHighlight11::visible"  "1" ;
+			set "TextHighlight21::visible"  "0" ;
+			set "TextHighlight31::visible"  "0" ;
+			set "TextHighlight41::visible"  "0" ;			
+		}
+
+	}
+	windowDef ListBG2
+	{
+		rect	363,205,247,24
+		visible	1
+		background	"guis/assets/teleporter/button1"
+		matcolor	0.7,0.9,1,0
+
+		onAction {
+			set "cmd" "play guisounds_click3" ;
+			transition "matcolor" "0.7 0.9 1 0.25" "0.7 0.9 1 0.15" "250" ;
+			set "desktop::listnum" "2" ;
+			set "ListBG1::matcolor"  "0.7 0.9 1 0" ;
+			set "ListBG3::matcolor"  "0.7 0.9 1 0" ;
+			set "ListBG4::matcolor"  "0.7 0.9 1 0" ;
+			
+			set "TextHighlight1::visible"  "0" ;
+			set "TextHighlight2::visible"  "1" ;
+			set "TextHighlight3::visible"  "0" ;
+			set "TextHighlight4::visible"  "0" ;
+			set "TextHighlight11::visible"  "0" ;
+			set "TextHighlight21::visible"  "1" ;
+			set "TextHighlight31::visible"  "0" ;
+			set "TextHighlight41::visible"  "0" ;				
+		}
+
+	}
+	windowDef ListBG3
+	{
+		rect	363,232,247,24
+		visible	1
+		background	"guis/assets/teleporter/button1"
+		matcolor	0.7,0.9,1,0
+
+		onAction {
+			set "cmd" "play guisounds_click3" ;
+			transition "matcolor" "0.7 0.9 1 0.25" "0.7 0.9 1 0.15" "250" ;
+			set "desktop::listnum" "3" ;
+			set "ListBG2::matcolor"  "0.7 0.9 1 0" ;
+			set "ListBG1::matcolor"  "0.7 0.9 1 0" ;
+			set "ListBG4::matcolor"  "0.7 0.9 1 0" ;
+			
+			set "TextHighlight1::visible"  "0" ;
+			set "TextHighlight2::visible"  "0" ;
+			set "TextHighlight3::visible"  "1" ;
+			set "TextHighlight4::visible"  "0" ;
+			set "TextHighlight11::visible"  "0" ;
+			set "TextHighlight21::visible"  "0" ;
+			set "TextHighlight31::visible"  "1" ;
+			set "TextHighlight41::visible"  "0" ;				
+		}
+
+	}
+	windowDef ListBG4
+	{
+		rect	363,260,247,24
+		visible	1
+		background	"guis/assets/teleporter/button1"
+		matcolor	0.7,0.9,1,0
+
+		onAction {
+			set "cmd" "play guisounds_click3" ;
+			transition "matcolor" "0.7 0.9 1 0.25" "0.7 0.9 1 0.15" "250" ;
+			set "desktop::listnum" "4" ;
+			set "ListBG2::matcolor"  "0.7 0.9 1 0" ;
+			set "ListBG3::matcolor"  "0.7 0.9 1 0" ;
+			set "ListBG1::matcolor"  "0.7 0.9 1 0" ;
+			
+			set "TextHighlight1::visible"  "0" ;
+			set "TextHighlight2::visible"  "0" ;
+			set "TextHighlight3::visible"  "0" ;
+			set "TextHighlight4::visible"  "1" ;
+			set "TextHighlight11::visible"  "0" ;
+			set "TextHighlight21::visible"  "0" ;
+			set "TextHighlight31::visible"  "0" ;
+			set "TextHighlight41::visible"  "1" ;				
+		}
+
+	}
+	windowDef HighlightParent
+	{
+		rect	154,285,474,191
+		visible	1
+		windowDef HighlightBG
+		{
+			rect	207,0,254,126
+			visible	0
+			background	"guis/assets/cpuserver/bgWhite2"
+			matcolor	0,0,0,0.8
+		}
+		windowDef Highlight1
+		{
+			rect	212,6,242,22
+			visible	1
+			background	"guis/assets/teleporter/grid1"
+			matcolor	0.4,0.4,0.4,0.4
+		}
+		windowDef Highlight2
+		{
+			rect	212,28,242,-77
+			visible	1
+			background	"guis/assets/teleporter/grid2"
+			matcolor	0.4,0.4,0.4,0.4
+		}
+		windowDef Highlight3
+		{
+			rect	212,105,242,-22
+			visible	1
+			background	"guis/assets/teleporter/grid1"
+			matcolor	0.4,0.4,0.4,0.4
+		}
+		windowDef TextHighlight1
+		{
+			rect	221,13,228,172
+			text	"#str_03691"
+			font	"fonts/an"
+			textscale	0.32
+			forecolor	1,1,1,0.80000007
+			visible	1
+		}
+		windowDef TextHighlight2
+		{
+			rect	221,13,228,172
+			text	"#str_03692"
+			font	"fonts/an"
+			textscale	0.32
+			forecolor	1,1,1,0.80000007
+			visible	0
+		}
+		windowDef TextHighlight3
+		{
+			rect	221,13,228,172
+			text	"#str_03693"
+			font	"fonts/an"
+			textscale	0.32
+			forecolor	1,1,1,0.80000007
+			visible	0
+		}
+		windowDef TextHighlight4
+		{
+			rect	221,13,228,172
+			text	"#str_03694"
+			font	"fonts/an"
+			textscale	0.32
+			forecolor	1,1,1,0.80000007
+			visible	0
+		}
+		windowDef TextHighlight11
+		{
+			rect	221,13,228,172
+			text	"#str_03695"
+			font	"fonts/an"
+			textscale	0.31999999
+			forecolor	1,1,1,0
+			visible	1
+		}
+		windowDef TextHighlight21
+		{
+			rect	221,13,228,172
+			text	"#str_03696"
+			font	"fonts/an"
+			textscale	0.31999999
+			forecolor	1,1,1,0
+			visible	0
+		}
+		windowDef TextHighlight31
+		{
+			rect	221,13,228,172
+			text	"#str_03697"
+			font	"fonts/an"
+			textscale	0.31999999
+			forecolor	1,1,1,0
+			visible	0
+		}
+		windowDef TextHighlight41
+		{
+			rect	221,13,228,172
+			text	"#str_03698"
+			font	"fonts/an"
+			textscale	0.31999999
+			forecolor	1,1,1,0
+			visible	0
+		}
+	}
+	windowDef ShipScan
+	{
+		rect	35,173,324,237
+		visible	1
+		background	"guis/assets/marscity/shipscan"
+		matcolor	1,1,1,1
+	}
+	windowDef TextTitleList1
+	{
+		rect	39,376,177,31
+		text	"#str_03699"
+		font	"fonts/micro"
+		textscale	0.4
+		forecolor	1,1,1,0.6
+		visible	1
+	}
+	windowDef ShipScanClip
+	{
+		rect	35,173,324,237
+		visible	1
+
+		onTime 0 {
+			transition "ShipScan1::rect" "-70 -57 469 596" "-70 -300 469 596" "8000" "0.5" "0.5" ;
+			transition "bgScroll::rect" "0 -210 324 388" "0 59 324 388" "8000" "0.5" "0.5" ;
+			
+			transition "MapGrid1::rect" "-28 0 383 500" "-28 -150 383 500" "8000" "0.5" "0.5" ;
+		}
+
+		onTime 8000 {
+			transition "ShipScan1::rect" "-70 -300 469 596" "-70 -57 469 596" "8000" "0.5" "0.5" ;
+			transition "bgScroll::rect" "0 59 324 388" "0 -210 324 388" "8000" "0.5" "0.5" ;
+			
+			transition "MapGrid1::rect" "-28 -150 383 500" "-28 0 383 500" "8000" "0.5" "0.5" ;
+		}
+
+		onTime 16000 {
+			resetTime "0" ;
+		}
+
+		windowDef ShipScan1
+		{
+			rect	-70,-57,469,569
+			visible	1
+			background	"guis/assets/marscity/shipscan3"
+			matcolor	1,1,1,1
+
+			onTime 1000 {
+				resetTime "FlashBox1" "0" ;
+				resetTime "FlashText1" "0" ;
+			}
+
+			onTime 700 {
+				resetTime "FlashBox2" "0" ;
+				resetTime "FlashText2" "0" ;
+			}
+
+			onTime 1200 {
+				resetTime "FlashBox3" "0" ;
+				resetTime "FlashText3" "0" ;
+			}
+
+			onTime 1800 {
+				resetTime "FlashBox4" "0" ;
+				resetTime "FlashText4" "0" ;
+			}
+
+			onTime 2000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef bgScroll
+		{
+			rect	1,-210,323,388
+			visible	1
+			background	"guis/assets/comm/scrollbig"
+			matcolor	1, 0.6, 0.2, pdflick2 [ time * 0.005 ] / 3
+		}
+		windowDef TextTitleList11
+		{
+			rect	4,203,184,31
+			text	"#str_03410"
+			font	"fonts/micro"
+			textscale	0.4
+			forecolor	1,1,1,0.6
+			visible	1
+
+			onTime 0 {
+				transition "forecolor" "1 1 1 1" "1 1 1 0.2" "1000" ;
+			}
+
+			onTime 1000 {
+				transition "forecolor" "1 1 1 0.2" "1 1 1 1" "250" ;
+			}
+
+			onTime 1250 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef FlashBox1
+		{
+			rect	94,74,15,11
+			visible	1
+			background	"guis/assets/teleporter/button1"
+			matcolor	1,0,0,0
+			notime	1
+
+			onTime 0 {
+				transition "matcolor" "1 0 0 0.5" "1 0 0 0" "250" ;
+			}
+
+		}
+		windowDef FlashText1
+		{
+			rect	109,70,74,18
+			visible	1
+			forecolor	1,1,1,0.749
+			text	" "
+			textscale	0.2
+			notime	1
+
+			onTime 0 {
+				set "text" "#str_03700" ;
+			}
+
+			onTime 50 {
+				set "text" "#str_00506" ;
+			}
+
+			onTime 100 {
+				set "text" "#str_03701" ;
+			}
+
+			onTime 150 {
+				set "text" "#str_00073" ;
+			}
+
+			onTime 500 {
+				set "text" " " ;
+			}
+
+		}
+		windowDef FlashBox2
+		{
+			rect	119,126,15,11
+			visible	1
+			background	"guis/assets/teleporter/button1"
+			matcolor	1,0,0,0
+			notime	1
+
+			onTime 0 {
+				transition "matcolor" "1 0 0 0.5" "1 0 0 0" "250" ;
+			}
+
+		}
+		windowDef FlashText2
+		{
+			rect	134,122,74,18
+			visible	1
+			forecolor	1,1,1,0.749
+			text	" "
+			textscale	0.2
+			notime	1
+
+			onTime 0 {
+				set "text" "#str_03700" ;
+			}
+
+			onTime 50 {
+				set "text" "#str_00506" ;
+			}
+
+			onTime 100 {
+				set "text" "#str_03701" ;
+			}
+
+			onTime 150 {
+				set "text" "#str_00073" ;
+			}
+
+			onTime 500 {
+				set "text" " " ;
+			}
+
+		}
+		windowDef FlashBox3
+		{
+			rect	167,135,15,11
+			visible	1
+			background	"guis/assets/teleporter/button1"
+			matcolor	1,0,0,0
+			notime	1
+
+			onTime 0 {
+				transition "matcolor" "1 0 0 0.5" "1 0 0 0" "250" ;
+			}
+
+		}
+		windowDef FlashText3
+		{
+			rect	182,131,74,18
+			visible	1
+			forecolor	1,1,1,0.749
+			text	" "
+			textscale	0.2
+			notime	1
+
+			onTime 0 {
+				set "text" "#str_03700" ;
+			}
+
+			onTime 50 {
+				set "text" "#str_00506" ;
+			}
+
+			onTime 100 {
+				set "text" "#str_03701" ;
+			}
+
+			onTime 150 {
+				set "text" "#str_00073" ;
+			}
+
+			onTime 500 {
+				set "text" " " ;
+			}
+
+		}
+		windowDef FlashBox4
+		{
+			rect	139,181,15,11
+			visible	1
+			background	"guis/assets/teleporter/button1"
+			matcolor	1,0,0,0
+			notime	1
+
+			onTime 0 {
+				transition "matcolor" "1 0 0 0.5" "1 0 0 0" "250" ;
+			}
+
+		}
+		windowDef FlashText4
+		{
+			rect	154,177,74,18
+			visible	1
+			forecolor	1,1,1,0.749
+			text	" "
+			textscale	0.2
+			notime	1
+
+			onTime 0 {
+				set "text" "#str_03700" ;
+			}
+
+			onTime 50 {
+				set "text" "#str_00506" ;
+			}
+
+			onTime 100 {
+				set "text" "#str_03701" ;
+			}
+
+			onTime 150 {
+				set "text" "#str_00073" ;
+			}
+
+			onTime 500 {
+				set "text" " " ;
+			}
+
+		}
+		windowDef MapGrid1
+		{
+			rect	-28,0,383,500
+			visible	1
+			background	"gui/grid2"
+			matcolor	1,1,1,0.07
+			matscalex	7
+			matscaley	6
+		}
+	}
+	windowDef ButtonAreaBoxTop11
+	{
+		rect	31,169,333,22
+		visible	1
+		background	"guis/assets/teleporter/grid3"
+		matcolor	0.4,0.4,0.4,0.8
+	}
+	windowDef ButtonAreaBoxMid11
+	{
+		rect	31,191,333,-200
+		visible	1
+		background	"guis/assets/teleporter/grid4"
+		matcolor	0.4,0.4,0.4,0.8
+	}
+	windowDef ButtonAreaBoxBtm11
+	{
+		rect	31,391,333,-22
+		visible	1
+		background	"guis/assets/teleporter/grid3"
+		matcolor	0.4,0.4,0.4,0.8
+	}
+	windowDef ShipScanButton
+	{
+		rect	35,173,324,237
+		visible	1
+		float	"scanvis"	0
+
+		onAction {
+			set "cmd" "play guisounds_click3" ;
+			if ("scanvis" == 0) {
+				set "ShipScanClip::visible" "0" ;
+				set "scanvis" "1" ;
+				transition "backcolor" "1 1 1 0.2" "1 1 1 0" "400" ;
+			} else {
+				set "ShipScanClip::visible" "1" ;
+				set "scanvis" "0" ;
+				transition "backcolor" "1 1 1 0.2" "1 1 1 0" "400" ;
+			}		
+		}
+
+	}
+	windowDef SubButtons
+	{
+		rect	344,124,261,61
+		visible	1
+		windowDef SubBG1
+		{
+			rect	24,10,105,34
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite3"
+			matcolor	0.7,0.9,1,0.25
+		}
+		windowDef SubBG2
+		{
+			rect	131,10,131,34
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite3"
+			matcolor	1,0.6,0,0.5
+		}
+		windowDef SubText1
+		{
+			rect	28,8,98,37
+			text	"#str_03702"
+			font	"fonts/micro"
+			textscale	0.31
+			forecolor	1,1,1,0.7
+			visible	1
+			textalign	1
+			textaligny	7
+			float	"mouseon"	0
+
+			onMouseEnter {
+				transition "SubBG1::matcolor" "0.7 0.9 1 0.25" "0.7 0.9 1 0.5" "250" ;
+				set "mouseon" "1" ;
+			}
+
+			onMouseExit {
+				if ("mouseon" == 1) { 
+					transition "SubBG1::matcolor" "0.7 0.9 1 0.5" "0.7 0.9 1 0.25" "250" ;
+					set "mouseon" "0" ;
+				}
+				
+			}
+
+			onAction {
+				set "cmd" "play guisounds_click3" ;
+				set "noevents" "1" ;
+				set "subtext2::noevents" "0" ;
+				set "textclipper1::visible" "0" ;
+				set "textclipper2::visible" "1" ;
+				set "mouseon" "0" ;
+				transition "SubBG1::matcolor" "0.7 0.9 1 1" "1 0.6 0 0.5" "250" ;
+				set "SubBg2::matcolor" "0.7 0.9 1 0.25" ;
+				
+				set "Texthighlight1::forecolor" "1 1 1 0" ;
+				set "Texthighlight2::forecolor" "1 1 1 0" ;
+				set "Texthighlight3::forecolor" "1 1 1 0" ;
+				set "Texthighlight4::forecolor" "1 1 1 0" ;
+				set "Texthighlight11::forecolor" "1 1 1 0.8" ;
+				set "Texthighlight21::forecolor" "1 1 1 0.8" ;
+				set "Texthighlight31::forecolor" "1 1 1 0.8" ;
+				set "Texthighlight41::forecolor" "1 1 1 0.8" ;
+				
+			}
+
+		}
+		windowDef SubText2
+		{
+			rect	135,8,121,37
+			text	"#str_03703"
+			font	"fonts/micro"
+			textscale	0.31
+			forecolor	1,1,1,0.7
+			visible	1
+			textalign	1
+			textaligny	7
+			noevents	1
+			float	"mouseon"	0
+
+			onMouseEnter {
+				transition "SubBG2::matcolor" "0.7 0.9 1 0.25" "0.7 0.9 1 0.5" "250" ;
+				set "mouseon" "1" ;
+			}
+
+			onMouseExit {
+				if ("mouseon" == 1) { 
+					transition "SubBG2::matcolor" "0.7 0.9 1 0.5" "0.7 0.9 1 0.25" "250" ;
+					set "mouseon" "0" ;
+				}
+				
+			}
+
+			onAction {
+				set "cmd" "play guisounds_click3" ;
+				set "noevents" "1" ;
+				set "subtext1::noevents" "0" ;
+				set "textclipper2::visible" "0" ;
+				set "textclipper1::visible" "1" ;
+				set "mouseon" "0" ;
+				transition "SubBG2::matcolor" "0.7 0.9 1 1" "1 0.6 0 0.5" "250" ;
+				set "SubBg1::matcolor" "0.7 0.9 1 0.25" ;
+				
+				set "Texthighlight1::forecolor" "1 1 1 0.8" ;
+				set "Texthighlight2::forecolor" "1 1 1 0.8" ;
+				set "Texthighlight3::forecolor" "1 1 1 0.8" ;
+				set "Texthighlight4::forecolor" "1 1 1 0.8" ;
+				set "Texthighlight11::forecolor" "1 1 1 0" ;
+				set "Texthighlight21::forecolor" "1 1 1 0" ;
+				set "Texthighlight31::forecolor" "1 1 1 0" ;
+				set "Texthighlight41::forecolor" "1 1 1 0" ;
+				
+			}
+
+		}
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, -640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.6, 0.9, 1, 0.1
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	10,10,-620,440
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.4 ,1
+		visible	1
+	}
+	windowDef Reflect1
+	{
+		rect	5,-8,-630,501
+		matcolor	1 ,1 ,1 ,0.1
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Outerglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outerglow"
+		matcolor	0.6,1,1 , pdflick [ time * .0015 ] / 4
+		visible	0
+	}
+	windowDef Outershadow1
+	{
+		rect	-35,0,-749,506
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+}

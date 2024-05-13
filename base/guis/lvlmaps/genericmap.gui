@@ -1,0 +1,182 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef PDABG
+	{
+		rect	0, 0, 640, 480
+		matcolor	1, 1, 1, 0.35
+		backcolor	0, 0.02, 0.02, 1
+		background	"guis/assets/pda/glowup60_256"
+		visible	1
+	}
+	windowDef PDABGLogo
+	{
+		rect	-265,-93,860,624
+		matcolor	1, 1, 1, 0.05
+		background	"guis/assets/pda/uac_large"
+		visible	1
+	}
+	windowDef BGBorder
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef TopBorderFill
+		{
+			rect	0,0,640,225
+			visible	1
+			backcolor	0.8,1,1,0.2
+		}
+		windowDef TopBorder1
+		{
+			rect	0,225,377,64
+			visible	1
+			background	"guis/assets/pda/bordertop1"
+			matcolor	0.8,1,1,0.5
+		}
+		windowDef TopBorder2
+		{
+			rect	377,225,32,64
+			visible	1
+			background	"guis/assets/pda/bordertop2"
+			matcolor	0.8,1,1,0.5
+		}
+		windowDef TopBorder3
+		{
+			rect	409,225,231,64
+			visible	1
+			background	"guis/assets/pda/bordertop3"
+			matcolor	0.8,1,1,0.5
+		}
+		windowDef BtmBorderFill
+		{
+			rect	0,373,640,108
+			visible	1
+			backcolor	0.8,1,1,0.2
+		}
+		windowDef BtmBorder1
+		{
+			rect	0,309,217,64
+			visible	1
+			background	"guis/assets/pda/borderbtm1"
+			matcolor	0.8,1,1,0.5
+		}
+		windowDef BtmBorder2
+		{
+			rect	217,309,32,64
+			visible	1
+			background	"guis/assets/pda/borderbtm2"
+			matcolor	0.8,1,1,0.5
+		}
+		windowDef BtmBorder3
+		{
+			rect	249,309,391,64
+			visible	1
+			background	"guis/assets/pda/borderbtm3"
+			matcolor	0.8,1,1,0.5
+		}
+		windowDef BorderFill1
+		{
+			rect	-11,240,105,7
+			visible	1
+			backcolor	0.8,1,1,0.1
+			shear	0,1
+		}
+		windowDef BorderFill2
+		{
+			rect	97,240,289,10
+			visible	1
+			backcolor	0.8,1,1,0.1
+			shear	0,1
+		}
+		windowDef BorderFIll3
+		{
+			rect	106,252,291,7
+			visible	1
+			backcolor	0.8,1,1,0.1
+			shear	0,1
+		}
+		windowDef BorderFill4
+		{
+			rect	347,320,296,5
+			visible	1
+			backcolor	0.8,1,1,0.1
+			shear	0,1
+		}
+		windowDef CenterFill
+		{
+			rect	0,261,640,57
+			visible	1
+			backcolor	0.8,1,1,0.15
+		}
+	}
+	windowDef CircClip
+	{
+		rect	77,107,532,326
+		visible	1
+		windowDef Circ1
+		{
+			rect	56,48,362,262
+			visible	1
+			background	"gui/spincircfull2"
+			matcolor	1,1,1,0.1
+		}
+		windowDef Circ2
+		{
+			rect	88,79,300,-199
+			visible	1
+			background	"gui/spincircfull2"
+			matcolor	1,1,1,0.2
+		}
+		windowDef Circ3
+		{
+			rect	109,101,255,-153
+			visible	1
+			background	"gui/spincircfull1"
+			matcolor	1,1,1,0.3
+		}
+		windowDef Circ4
+		{
+			rect	137,117,202,120
+			visible	1
+			background	"gui/spincircfull1"
+			matcolor	1,1,1,0.4
+		}
+	}
+	windowDef Overlay1
+	{
+		rect	-2,-1,-643,481
+		matcolor	0.3, 0.4, 0.4, 1
+		background	"gui/outerglowbar"
+		visible	1
+	}
+	windowDef Overlay2
+	{
+		rect	0, 0, -640, -480
+		matcolor	0.05, 0.05, 0.05, 1
+		background	"gui/newpda/highlight"
+		visible	1
+	}
+	windowDef grid
+	{
+		rect	0,0,640,480
+		visible	1
+		background	"gui/hud/grid2"
+		matcolor	0.8,1,1,0.05
+		matscalex	0.89
+		matscaley	0.8
+	}
+	windowDef OpenTitle
+	{
+		rect	-127,253,634,63
+		visible	1
+		forecolor	1,1,1,1
+		text	"#str_01436"
+		textscale	1
+		textalign	1
+		font	"fonts/micro"
+		forceaspectwidth	400
+		windowDef TextDetailComplex
+		{
+		}
+	}
+}

@@ -1,0 +1,56 @@
+
+pda admin_moses {
+	name		"Jonathan Moses"
+	fullname	"Jonathan A. Moses"
+	icon		"gui/pda/bio1"
+	id		"2463-21"
+	post		"Administration"		// for the personal pda this is ignored and current location is used instead
+	title		"Asset Coordinator"	// this is used for title or rank ( for the player )
+	security	""				
+	pda_email	"admin_moses_email_1"
+	pda_email	"admin_moses_email_2"
+	pda_email	"admin_moses_email_3"
+
+	}
+
+
+email admin_moses_email_1 {
+	date		"10-09-2145"
+	to		"Jonathan Moses"
+	from		"martianbuddy.com"
+	subject	"Free Stuff!!"
+	text {
+"Mr. Moses,\n\n"
+"Congratulations, You have been selected to receive one of our free promotional storage cabinets loaded with useful things that we think you'll need. To access your new storage cabinet visit us on-line.\n\n"
+"Martian Buddy\n---and remember: You're always a winner with Martian Buddy!"
+	}
+}
+
+email admin_moses_email_2 {
+	date		"11-07-2145"
+	to		"Jonathan Moses"
+	from		"Jim Bowier"
+	subject	"Storage Cabinet"
+	text {
+"Mr. Moses,\n\n"
+"We've recently received your storage cabinet from Martian Buddy, where would you like us to put it?\n\n"
+"Thank You,\nJim Bowier\nShipping Authority"
+	}
+}
+
+email admin_moses_email_3 {
+	date		"11-08-2145"
+	to		"Jonathan Moses"
+	from		"Jim Bowier"
+	subject	"RE: Storage Cabinet"
+	text {
+"Mr. Moses,\n"
+"Thank you for the quick reply, we will have it delivered to your office by the end of the week.\n\n"
+"----Original Message----\n"
+"Sent: 11-07-2145\n"
+"To: Jim Bowier\n"
+"Excellent, I can't believe it showed up so soon. Please have someone deliver it to my office in the North Hallway of Administration. I can't wait to see what they've sent me.\n\n"
+"-Jonathan"
+
+	}
+}

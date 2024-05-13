@@ -1,0 +1,38 @@
+skin skins/models/chars/suit/suit1 {
+	models/characters/scientist/head03/head03 textures/common/nodraw
+	models/characters/common/leftblue textures/common/nodraw
+	models/characters/common/rightblue textures/common/nodraw
+	models/characters/sarge2/teeth/teeth textures/common/nodraw
+	models/characters/common/leftgreen textures/common/nodraw
+	models/characters/common/rightgreen textures/common/nodraw
+	models/characters/scientist/head01/scihead01 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth3 textures/common/nodraw
+	models/characters/scientist/head02/glasses2 textures/common/nodraw
+	models/characters/scientist/head02/glasses2_fx textures/common/nodraw
+}
+
+skin skins/models/chars/suit/suit2 {
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+	models/characters/sarge2/teeth/teeth2 textures/common/nodraw
+	models/characters/common/leftgreen textures/common/nodraw
+	models/characters/common/rightgreen textures/common/nodraw
+	models/characters/scientist/head01/scihead01 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth3 textures/common/nodraw
+	models/characters/scientist/head02/glasses2 textures/common/nodraw
+	models/characters/scientist/head02/glasses2_fx textures/common/nodraw
+}
+
+skin skins/models/chars/suit/suit3 {
+	models/characters/scientist/head03/head03 textures/common/nodraw
+	models/characters/common/leftblue textures/common/nodraw
+	models/characters/common/rightblue textures/common/nodraw
+	models/characters/sarge2/teeth/teeth textures/common/nodraw
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+	models/characters/sarge2/teeth/teeth2 textures/common/nodraw
+}

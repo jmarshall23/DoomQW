@@ -1,0 +1,576 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef PDABG
+	{
+		rect	0, 0, 640, 480
+		matcolor	1, 1, 1, 0.35
+		backcolor	0, 0.02, 0.02, 1
+		background	"guis/assets/pda/glowup60_256"
+		visible	1
+	}
+	windowDef PDABGLogo
+	{
+		rect	-265,-93,860,624
+		matcolor	1, 1, 1, 0.05
+		background	"guis/assets/pda/uac_large"
+		visible	1
+	}
+	windowDef BGBorder
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef TopBorder1
+		{
+			rect	0,0,377,64
+			visible	1
+			background	"guis/assets/pda/bordertop1"
+			matcolor	1,1,1,0.5
+		}
+		windowDef TopBorder2
+		{
+			rect	377,0,50,64
+			visible	1
+			background	"guis/assets/pda/bordertop2"
+			matcolor	1,1,1,0.5
+		}
+		windowDef TopBorder3
+		{
+			rect	427,0,213,64
+			visible	1
+			background	"guis/assets/pda/bordertop3"
+			matcolor	1,1,1,0.5
+		}
+		windowDef BtmBorder1
+		{
+			rect	0,416,217,64
+			visible	1
+			background	"guis/assets/pda/borderbtm1"
+			matcolor	1,1,1,0.5
+		}
+		windowDef BtmBorder2
+		{
+			rect	217,416,50,64
+			visible	1
+			background	"guis/assets/pda/borderbtm2"
+			matcolor	1,1,1,0.5
+		}
+		windowDef BtmBorder3
+		{
+			rect	267,416,373,64
+			visible	1
+			background	"guis/assets/pda/borderbtm3"
+			matcolor	1,1,1,0.5
+		}
+	}
+	windowDef grid
+	{
+		rect	0,0,640,480
+		visible	1
+		background	"gui/hud/grid2"
+		matcolor	0.8,1,1,0.05
+		matscalex	0.89
+		matscaley	0.8
+	}
+	windowDef MainBoxParent
+	{
+		rect	-1,9,637,227
+		visible	1
+		windowDef DDUB1aBL
+		{
+			rect	14,149,189,31
+			matcolor	0.7, 1, 1, 1
+			background	"gui/pda/1_bl"
+			visible	1
+		}
+		windowDef DDUB1aTL
+		{
+			rect	14,25,189,124
+			matcolor	0.7, 1, 1, 1
+			background	"gui/pda/1_tl"
+			visible	1
+		}
+		windowDef DDUB1aT
+		{
+			rect	203,25,236,124
+			matcolor	0.7, 1, 1, 1
+			background	"gui/pda/1_t"
+			visible	1
+		}
+		windowDef DDUB1aB
+		{
+			rect	203,149,236,31
+			matcolor	0.7, 1, 1, 1
+			background	"gui/pda/1_b"
+			visible	1
+		}
+		windowDef DDUB1aBR
+		{
+			rect	439,58,-189,-124
+			matcolor	0.7, 1, 1, 1
+			background	"gui/pda/1_tlalt"
+			visible	1
+		}
+		windowDef DDUB1aTR
+		{
+			rect	439,27,-189,-31
+			matcolor	0.7, 1, 1, 1
+			background	"gui/pda/1_bl"
+			visible	1
+		}
+	}
+	windowDef DDUIDBG
+	{
+		rect	202,53,379,115
+		background	"gui/pda/pd/userid2"
+		matcolor	1, 1, 1, 1
+		visible	1
+	}
+	windowDef DDUIDBgBio
+	{
+		rect	59,55,189,115
+		background	"guis/assets/pda/bioframe"
+		matcolor	1, 1, 1, 1
+		visible	1
+	}
+	windowDef DDUIDPrint
+	{
+		rect	59,55,189,115
+		background	"guis/assets/pda/id1"
+		matcolor	1, 1, 1, 1
+		visible	1
+	}
+	windowDef DDUIDTextName
+	{
+		rect	224,56,150,20
+		text	"#str_02513"
+		font	"fonts/bank"
+		textscale	0.25
+		forecolor	1, 1, 1, 0.4
+		visible	1
+	}
+	windowDef DDUIDTextIdnum
+	{
+		rect	240,79,150,20
+		text	"#str_02514"
+		font	"fonts/bank"
+		textscale	0.25
+		forecolor	1, 1, 1, 0.4
+		visible	1
+	}
+	windowDef DDUIDTextPost
+	{
+		rect	255,103,150,20
+		text	"#str_02515"
+		font	"fonts/bank"
+		textscale	0.25
+		forecolor	1, 1, 1, 0.4
+		visible	1
+	}
+	windowDef DDUIDTextTitle
+	{
+		rect	271,126,150,20
+		text	"#str_02517"
+		font	"fonts/bank"
+		textscale	0.25
+		forecolor	1, 1, 1, 0.4
+		visible	1
+	}
+	windowDef DDUIDTextSecurity
+	{
+		rect	288,149,150,20
+		text	"#str_02519"
+		font	"fonts/bank"
+		textscale	0.25
+		forecolor	1, 1, 1, 0.4
+		visible	1
+	}
+	windowDef DDUIDTextBio
+	{
+		rect	68,51,150,20
+		text	"#str_02511"
+		font	"fonts/bank"
+		textscale	0.25
+		forecolor	1, 1, 1, 0.5
+		visible	1
+	}
+	windowDef DDUserBox1b
+	{
+		rect	25,175,605,263
+		visible	1
+		windowDef DDUB1bTL
+		{
+			rect	15,0,-37,128
+			matcolor	1, 1, 1, 0.5
+			background	"gui/pda/2_c"
+			visible	1
+		}
+		windowDef DDUB1bT
+		{
+			rect	52,0,486,128
+			matcolor	1, 1, 1, 0.5
+			background	"gui/pda/2_tb"
+			visible	1
+		}
+		windowDef DDUB1bTR
+		{
+			rect	538,0,37,128
+			matcolor	1, 1, 1, 0.5
+			background	"gui/pda/2_c"
+			visible	1
+		}
+		windowDef DDUB1bBL
+		{
+			rect	15,128,-37,-128
+			matcolor	1, 1, 1, 0.5
+			background	"gui/pda/2_c"
+			visible	1
+		}
+		windowDef DDUB1bB
+		{
+			rect	52,128,486,-128
+			matcolor	1, 1, 1, 0.5
+			background	"gui/pda/2_tb"
+			visible	1
+		}
+		windowDef DDUB1bBR
+		{
+			rect	538,128,37,-128
+			matcolor	1, 1, 1, 0.5
+			background	"gui/pda/2_c"
+			visible	1
+		}
+	}
+	windowDef Text2
+	{
+		rect	256,244,207,157
+		text	"#str_00608"
+		textscale	0.4
+		forecolor	0.8,0.898,1,0.498
+		visible	1
+
+		onTime 0 {
+			set "text" "#str_00609" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_00610" ;
+		}
+
+		onTime 200 {
+			set "text" "#str_00611" ;
+		}
+
+		onTime 300 {
+			set "text" "#str_00612" ;
+		}
+
+		onTime 400 {
+			set "text" "#str_00613" ;
+		}
+
+		onTime 500 {
+			set "text" "#str_00614" ;
+		}
+
+		onTime 600 {
+			set "text" "#str_00614" ;
+		}
+
+		onTime 700 {
+			set "text" "#str_00615" ;
+		}
+
+		onTime 800 {
+			set "text" "#str_00616" ;
+		}
+
+		onTime 900 {
+			set "text" "#str_00617" ;
+		}
+
+		onTime 1000 {
+			set "text" "#str_00618" ;
+		}
+
+		onTime 1100 {
+			set "text" "#str_00619" ;
+		}
+
+		onTime 1200 {
+			set "text" "#str_00620" ;
+		}
+
+		onTime 1600 {
+			set "text" "#str_00621" ;
+		}
+
+		onTime 1700 {
+			set "text" "#str_00622" ;
+		}
+
+		onTime 1800 {
+			set "text" "#str_00623" ;
+		}
+
+		onTime 1900 {
+			set "text" "#str_00624" ;
+		}
+
+		onTime 2000 {
+			set "text" "#str_00625" ;
+		}
+
+		onTime 2100 {
+			set "text" " " ;
+		}
+
+		onTime 2300 {
+			set "text" "#str_00626" ;
+		}
+
+		onTime 3600 {
+			set "text" " " ;
+		}
+
+		onTime 3900 {
+			set "text" "#str_00627" ;
+		}
+
+		onTime 4200 {
+			set "text" " " ;
+		}
+
+		onTime 4500 {
+			set "text" "#str_00627" ;
+		}
+
+		onTime 4800 {
+			set "text" " " ;
+		}
+
+		onTime 5100 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Text1
+	{
+		rect	74,243,233,158
+		text	" "
+		textscale	0.4
+		textalign	0
+		forecolor	0.6, 0.9, 0.85, 0.5
+		visible	1
+
+		onTime 0 {
+			set "text" " \n" ;
+		}
+
+		onTime 50 {
+			set "text" "#str_00480" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_00481" ;
+		}
+
+		onTime 150 {
+			set "text" "#str_00482" ;
+		}
+
+		onTime 200 {
+			set "text" "#str_00483" ;
+		}
+
+		onTime 250 {
+			set "text" "#str_00484" ;
+		}
+
+		onTime 350 {
+			set "text" "#str_00485" ;
+		}
+
+		onTime 400 {
+			set "text" "#str_00486" ;
+		}
+
+		onTime 450 {
+			set "text" "#str_00487" ;
+		}
+
+		onTime 500 {
+			set "text" "#str_00488" ;
+		}
+
+		onTime 600 {
+			set "text" "#str_00489" ;
+		}
+
+		onTime 650 {
+			set "text" "#str_00490" ;
+		}
+
+		onTime 700 {
+			set "text" "#str_00491" ;
+		}
+
+		onTime 800 {
+			set "text" "#str_00492" ;
+		}
+
+		onTime 850 {
+			set "text" "#str_00493" ;
+		}
+
+		onTime 950 {
+			set "text" "#str_00494" ;
+		}
+
+		onTime 1000 {
+			set "text" "#str_00495" ;
+		}
+
+		onTime 1050 {
+			set "text" "#str_00496" ;
+		}
+
+		onTime 1100 {
+			set "text" "#str_00497" ;
+		}
+
+		onTime 1200 {
+			set "text" "#str_00498" ;
+		}
+
+		onTime 1250 {
+			set "text" "#str_00499" ;
+		}
+
+		onTime 1300 {
+			set "text" "#str_00500" ;
+		}
+
+		onTime 1350 {
+			set "text" "#str_00501" ;
+		}
+
+		onTime 4000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef TextWorkTitle
+	{
+		rect	66,199,509,36
+		visible	1
+		forecolor	0.6,0.95,1,0.8
+		text	"#str_01791"
+		textscale	0.5
+		font	"fonts/micro"
+	}
+	windowDef Text3Clamp
+	{
+		rect	458,204,124,198
+		visible	1
+
+		onTime 0 {
+			transition "Text31::rect" "0 232 124 235" "0 0 124 235" "1000" ;
+		}
+
+		onTime 1000 {
+			transition "Text31::rect" "0 0 124 235" "0 -235 124 235" "1000" ;
+			transition "Text32::rect" "0 232 124 235" "0 0 124 235" "1000" ;
+		}
+
+		onTime 2000 {
+			transition "Text32::rect" "0 0 124 235" "0 -235 124 235" "1000" ;
+			resetTime "0" ;
+		}
+
+		windowDef Text31
+		{
+			rect	0,232,124,235
+			text	"#str_00605"
+			textscale	0.25
+			forecolor	1,1,1,0.5
+			visible	1
+			notime	1
+		}
+		windowDef Text32
+		{
+			rect	0,232,124,235
+			text	"#str_00606"
+			textscale	0.25
+			forecolor	1,1,1,0.5
+			visible	1
+			notime	1
+		}
+	}
+	windowDef TextName
+	{
+		rect	224,46,215,20
+		text	"#str_03946"
+		font	"fonts/bank"
+		textscale	0.25
+		forecolor	1, 1, 1, 0.4
+		visible	1
+	}
+	windowDef TextID
+	{
+		rect	239,70,215,20
+		text	"#str_03947"
+		font	"fonts/bank"
+		textscale	0.25
+		forecolor	1, 1, 1, 0.4
+		visible	1
+	}
+	windowDef TextPost
+	{
+		rect	254,93,215,20
+		text	"#str_03948"
+		font	"fonts/bank"
+		textscale	0.25
+		forecolor	1, 1, 1, 0.4
+		visible	1
+	}
+	windowDef TextTitle
+	{
+		rect	271,117,215,20
+		text	"#str_03949"
+		font	"fonts/bank"
+		textscale	0.25
+		forecolor	1, 1, 1, 0.4
+		visible	1
+	}
+	windowDef TextSec
+	{
+		rect	287,140,215,20
+		text	"#str_01981"
+		font	"fonts/bank"
+		textscale	0.25
+		forecolor	1, 1, 1, 0.4
+		visible	1
+	}
+	windowDef Reflect
+	{
+		rect	3,-24,633,509
+		matcolor	1 ,1 ,1 ,0.15
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Bglow
+	{
+		rect	0,-110,640,591
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef Overlay1
+	{
+		rect	-2,-1,-643,481
+		matcolor	0.3, 0.4, 0.4, 1
+		background	"gui/outerglowbar"
+		visible	1
+	}
+}

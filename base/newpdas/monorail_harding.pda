@@ -1,0 +1,68 @@
+// No audio files in the personal PDA.  No video in other pdas
+// found at start of map
+
+pda monorail_harding {
+	name         "Sam Harding"
+	fullname     "Samuel J. Harding"
+	icon         "guis/assets/pda/harding"
+	id           "6107-37"
+	post         "Monorail"
+	title        "Engineer"
+	security     ""
+	pda_email    "monorail_harding_email_1"
+	pda_email    "monorail_harding_email_2"
+	pda_email 	 "monorail_harding_email_3"
+	pda_audio    "monorail_harding_audio_1"
+}
+
+email monorail_harding_email_1 {
+	date		"10-23-2145"
+	to		"Sam Harding"
+	from		"James Torbin"
+	subject	"Door Repair"
+	text {
+"Sam,\n"
+"I completed the repairs on door A32 today it should open more smoothly.\n\n"
+"On a separate note, did you see those artifacts that the science team recently shipped into the Delta Complex?  I don't know what they were but I certainly don't like them being transported outside of the cargo crates, it just creeps me out seeing them, knowing that we are working above some sort of alien ruins.  Just the thought of what might be lurking in those caves gives me shivers.\n"
+"I don't know, maybe I'm just over-reacting....\n\n"
+"Jim"
+	}
+}
+
+email monorail_harding_email_2 {
+	date		"11-03-2145"
+	to		"Sam Harding"
+	from		"Karl Cullen"
+	subject	"Turret Gun Mounting Brackets"
+	text {
+"Harding,\n\n"
+"I need you to check the mounting brackets on the turret gun here in security, they seem to be rattling when the turret moves.\n\n"
+"Karl" 
+	}
+}
+
+email monorail_harding_email_3 {
+	date		"11-05-2145"
+	to		"Sam Harding"
+	from		"Karl Cullen"
+	subject	"RE: Turret Gun Mounting Brackets"
+	text {
+"Thank you for repairing that so quickly.\n\n"
+"----Original Message----\n"
+"Sent: 11-04-2145\n"
+"To: Karl Cullen\n\n"
+"Karl,\n"
+"I fixed the mounting brackets this morning; it was those damn Mixom bolts again.  I really wish the UAC would find a better sub-contractor.\n\n"
+"Thanks,\nSam"
+
+	}
+}
+
+
+audio monorail_harding_audio_1 {
+	name		"Magnetic Lock Repairs"
+	info		"Made by: Sam Harding\nDate: 04-05-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview	"sound/vo/video/novideo"
+	audio		"audiolog_monorail_harding_1"
+}
+

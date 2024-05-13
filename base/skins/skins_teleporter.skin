@@ -1,0 +1,14 @@
+skin skins/teleporter/full {
+
+}
+
+skin skins/teleporter/nobs {
+	models/mapobjects/teleporter/zot1 textures/common/nodraw
+}
+
+skin skins/teleporter/none {
+	models/mapobjects/teleporter/nob1 textures/common/nodraw
+	models/mapobjects/teleporter/zot1 textures/common/nodraw
+	models/mapobjects/teleporter/redflare textures/common/nodraw
+}
+

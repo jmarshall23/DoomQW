@@ -1,0 +1,40 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda cpuboss_tooloose {
+	name         "Steve Tooloose"
+	fullname     "Steve H. Tooloose"
+	icon         "guis/assets/pda/bates"
+	id           "1736-16"
+	post         "Central Processing"
+	title        "C.P. Controller"
+	security     "Central Processing"
+	pda_email    "cpu_tooloose_email_1"
+	pda_email    "cpu_tooloose_email_2"
+	
+	}
+
+email cpu_tooloose_email_1 {
+	date		"11-04-2145"
+	to		"Steve Tooloose"
+	from		"Henry Bielefeldt"
+	subject	"Storage Problem on Server"
+	text {
+"Steve,\n\n"
+"I've been noticing a steady degradation in filesystem performance on server A12. Could you please head up to the third floor and look into the problem? I'm working on matter transference problems for the guys in Delta, and all my data is stored on that server.\n"
+"If we have backups from last night, could you please restore them to server A17 if it's not in use? I can patch into that server to continue my work.\n\n"
+"Thanks,\nHenry"
+	}
+}
+
+email cpu_tooloose_email_2 {
+	date		"11-14-2145"
+	to		"Steve Tooloose"
+	from		"Brian Franko"
+	subject	"BFG Info Video"
+	text {
+"Steve,\n\n"
+"Corporate needs the new BFG video I placed in your office uploaded to the server and placed on our internal web site. Don't forget to convert it to a .uacmov so it'll play on all terminals.\n\n"
+"Fire me an email when it's up, I can't wait to see it.\n\n"
+"-Brian"
+	}
+}

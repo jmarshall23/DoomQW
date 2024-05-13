@@ -1,0 +1,76 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda alphalabs3_lamia {
+	name         "Mark Lamia"
+	fullname     "Mark B. Lamia"
+	icon         "guis/assets/pda/lamia"
+	id           "2452-76"
+	post         "Alpha Labs, Sector 3"
+	title        "Operations Coordinator"
+	security     ""
+	pda_email    "alphalabs3_lamia_email_1"
+	pda_email    "alphalabs3_lamia_email_2"
+	pda_email    "alphalabs3_lamia_email_3"
+	pda_email    "alphalabs3_lamia_email_4"
+	pda_audio    "alphalabs3_lamia_audio_1"
+}
+
+email alphalabs3_lamia_email_1 {
+	date		"10-28-2145"
+	to		"Mark Lamia"
+	from		"George Poota"
+	subject	"Won't be in today"
+	text {
+"Mr Lamia,\n\n"
+"I am not feeling very well today.  I don't think I will be able to come in to work today.  Could you get someone to cover my shift?\n\n"
+"Thank you,\n"
+"George Poota"
+	}
+}
+email alphalabs3_lamia_email_2 {
+	date		"10-31-2145"
+	to		"Mark Lamia"
+	from		"Graham Fuchs"
+	subject	"Storage lockers"
+	text {
+"Mr. Lamia,\n\n"
+"What is the code to the storage lockers here?  I know you told me a few days ago, but I can't remember.  None of my usual codes work.\n\n"
+
+"By the way, I believe I'm going to be late with my Q4 Analysis.  I had a late start this morning due to that party in Mars City.  I should have known better than to drink that much during the week.\n\n"
+"Graham Fuchs"
+	}
+}
+email alphalabs3_lamia_email_3 {
+	date		"11-02-2145"
+	to			"Mark Lamia"
+	from		"George Poota"
+	subject		"Doctor appointment"
+	text {
+"Mr. Lamia,\n\n"
+"I am feeling under the weather again today, and have an appointment with the base physician this afternoon and won't be able to make my shift.  Could you find someone to cover for me?\n\n"
+"Thank you,\n"
+"George Poota"
+	}
+}
+email alphalabs3_lamia_email_4 {
+	date		"11-12-2145"
+	to		"Mark Lamia"
+	from		"Dusty Welch"
+	subject	"Crates moved"
+	text {
+"Mr. Lamia,\n\n"
+
+"I just want to tell you again how happy I am to be working here on Mars in your department.  I don't usually go on like this, but I'm just so excited by this opportunity.  My last employer didn't appreciate my skills the way you do.\n\n"
+
+"I've taken the crates from your office to your quarters as you requested and I organized your closet to your specifications.  I'd like to add that you have excellent taste in music.\n\n"
+
+"Once again, please let me know if there is anything I can do to better serve the UAC.\n\n"
+	}
+}
+audio alphalabs3_lamia_audio_1 {
+	name		"Incompetent Employees"
+	info		"Made by: Mark Lamia\nDate: 11-01-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_alphalabs3_lamia_1"
+}
+

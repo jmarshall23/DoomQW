@@ -1,0 +1,48 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta3_cerano {
+	name         "Frank Cerano"
+	fullname     "Frank Z. Cerano, Ph.D"
+	icon         "guis/assets/pda/cerano"
+	id           "2001-78"
+	post         "Delta Labs, Level 3"
+	title        "Doctor"
+	security     ""
+	pda_email    "delta3_cerano_email_1"
+	pda_email    "delta3_cerano_email_2"
+	pda_audio    "delta3_cerano_audio_1"
+}
+
+email delta3_cerano_email_1 
+{
+	date		"10-23-2145"
+	to		"Frank Cerano"
+	from		"Delta Control"
+	subject	"Immediate medical attention"
+	text 
+	{
+"Dr. Cerano,\n\n"
+"Recently, Delta science team members have reported serious cases of irrational behavior and insomnia.  They believe these issues are directly linked to the recent teleportation experiments.  Please report to Delta Level 3, ASAP, and assist with medical needs.\n\n"
+"Thank You\n"
+	}
+}
+
+email delta3_cerano_email_2 {
+	date		"11-02-2145"
+	to		"Frank Cerano"
+	from		"Delta Control"
+	subject	"Assistance Request"
+	text {
+"Dr Cerano,\n\n"
+"We currently cannot process your request for additional medical personnel in Delta level 3.  As you are aware, the medical staff has experienced serious HR shortages within the past two weeks and cannot take on the additional workload.  There are surplus medical kits located in storage room D3-1, across from the lower terminal offices.  The code to storage cabinet #317 is 841.\n\n"
+"Delta Control\n"
+	}
+}
+
+audio delta3_cerano_audio_1 {
+	name		"Personal Audio Log"
+	info		"Made by: Frank Cerano\nDate: 09-19-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta3_cerano_1"
+}
+

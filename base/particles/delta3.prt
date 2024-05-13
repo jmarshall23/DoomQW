@@ -1,0 +1,47 @@
+
+particle delta3_deconfx_red
+{
+	{
+		count				40
+		material			textures/particles/fbeam
+		time				1.900
+		cycles			0.000
+		bunching			1.000
+		distribution		rect 0.000 0.000 0.000 
+		direction			cone 0.000 
+		orientation			view 
+		speed				0.000 
+		size				0.000  to 66.500
+		aspect			1.000 
+		fadeIn			0.000
+		fadeOut			0.650
+		color 			0.190 0.000 0.000 1.000
+		fadeColor 			0.000 0.000 0.000 0.000
+		offset 			0.000 0.000 -10.000
+		gravity 			-40.000
+	}
+}
+
+particle delta3_deconfx_colorable
+{
+	{
+		count				40
+		material			textures/particles/fbeam
+		time				1.900
+		cycles			0.000
+		bunching			1.000
+		distribution		rect 0.000 0.000 0.000 
+		direction			cone 0.000 
+		orientation			view 
+		speed				0.000 
+		size				0.000  to 66.500
+		aspect			1.000 
+		fadeIn			0.000
+		fadeOut			0.650
+		color 			1.000 1.000 1.000 1.000
+		fadeColor 			0.000 0.000 0.000 0.000
+		offset 			0.000 0.000 -10.000
+		gravity 			-40.000
+		entityColor			1
+	}
+}

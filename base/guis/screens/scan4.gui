@@ -1,0 +1,620 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6,0.898,1,1
+	visible	1
+	definevec4	"$flicker"	0.45,0.6,0.6,pdscaleTable[time*0.00025]
+	windowDef TextTeam
+	{
+		rect	29,18,591,46
+		visible	1
+		text	"#str_01796"
+		forecolor	1,1,1,0.3
+		textscale	0.5
+		font	"fonts/micro"
+		textalign	1
+	}
+	windowDef BgImage
+	{
+		rect	5,5,630,470
+		visible	1
+		background	"guis/assets/common/infobg1"
+		matcolor	1, 1, 1, 1
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+
+		onTime 0 {
+			transition "matcolor" "0.4 0.8 1 0.1" "0.4 0.8 1 0.09" "75" ;
+		}
+
+		onTime 75 {
+			transition "matcolor" "0.4 0.8 1 0.09" "0.4 0.8 1 0.1" "75" ;
+		}
+
+		onTime 150 {
+			transition "matcolor" "0.4 0.8 1 0.1" "0.4 0.8 1 0.09" "75" ;
+		}
+
+		onTime 220 {
+			transition "matcolor" "0.4 0.8 1 0.09" "0.4 0.8 1 0.1" "75" ;
+		}
+
+		onTime 300 {
+			transition "matcolor" "0.4 0.8 1 0.1" "0.4 0.8 1 0.08" "75" ;
+		}
+
+		onTime 375 {
+			transition "matcolor" "0.4 0.8 1 0.08" "0.4 0.8 1 0.1" "75" ;
+		}
+
+		onTime 450 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef TextBase
+	{
+		rect	21,420,485,44
+		visible	1
+		text	"#str_01797"
+		forecolor	0.2,0.27,0.34,0.8
+		textscale	0.53
+		font	"fonts/micro"
+	}
+	windowDef TextUAC
+	{
+		rect	541,416,80,38
+		visible	1
+		text	"#str_00039"
+		forecolor	1, 1, 1, 0.3
+		textscale	0.5
+		font	"fonts/micro"
+	}
+	windowDef SectionMain
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef TextUser
+		{
+			rect	26,341,591,32
+			visible	1
+			text	"#str_01798"
+			forecolor	1,0.694,0.294,0.745
+			textscale	0.5
+			font	"fonts/micro"
+			textalign	1
+		}
+		windowDef TextLogout
+		{
+			rect	28,371,587,30
+			visible	1
+			text	"#str_01799"
+			forecolor	pdinout[ time * 0.001 ],pdinout[ time * 0.001 ],pdinout[ time * 0.001 ],0.5
+			textscale	0.4
+			font	"fonts/micro"
+			textalign	1
+		}
+	}
+	windowDef MapBg11
+	{
+		rect	95,59,464,20
+		visible	1
+		background	"guis/assets/teleporter/grid1"
+		matcolor	1,1,1,0.7
+	}
+	windowDef MapBG12
+	{
+		rect	95,79,464,-246
+		visible	1
+		background	"guis/assets/teleporter/grid2"
+		matcolor	1,1,1,0.7
+	}
+	windowDef MapBG13
+	{
+		rect	95,325,464,-20
+		visible	1
+		background	"guis/assets/teleporter/grid1"
+		matcolor	1,1,1,0.7
+	}
+	windowDef BarPARENT
+	{
+		rect	102,-41,449,474
+		visible	1
+		windowDef Bar1
+		{
+			rect	-29,0,640,480
+			visible	1
+			background	"gui/bar"
+			matcolor	1, 1, 1, 0.2
+
+			onTime 0 {
+				transition "rect" "0 0 640 480" "0 240 640 0" "600" ;
+			}
+
+			onTime 600 {
+				transition "rect" "0 240 640 0" "0 0 640 -480" "600" ;
+			}
+
+			onTime 1200 {
+				transition "rect" "0 0 640 -480" "0 240 640 0" "600" ;
+			}
+
+			onTime 1800 {
+				transition "rect" "0 240 640 0" "0 0 640 480" "600" ;
+			}
+
+			onTime 2400 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bar2
+		{
+			rect	-29,40,640,400
+			visible	1
+			background	"gui/bar"
+			matcolor	1, 1, 1, 0.3
+
+			onTime 0 {
+				transition "rect" "0 40 640 400" "0 240 640 0" "150" ;
+			}
+
+			onTime 150 {
+				transition "rect" "0 240 640 0" "0 40 640 -400" "150" ;
+			}
+
+			onTime 300 {
+				transition "rect" "0 40 640 -400" "0 240 640 0" "150" ;
+			}
+
+			onTime 450 {
+				transition "rect" "0 240 640 0" "0 40 640 400" "150" ;
+			}
+
+			onTime 600 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bar3
+		{
+			rect	-29,80,640,320
+			visible	1
+			background	"gui/bar"
+			matcolor	1, 1, 1, 0.4
+
+			onTime 0 {
+				transition "rect" "0 80 640 320" "0 240 640 0" "300" ;
+			}
+
+			onTime 300 {
+				transition "rect" "0 240 640 0" "0 80 640 -320" "300" ;
+			}
+
+			onTime 600 {
+				transition "rect" "0 80 640 -320" "0 240 640 0" "300" ;
+			}
+
+			onTime 900 {
+				transition "rect" "0 240 640 0" "0 80 640 320" "300" ;
+			}
+
+			onTime 1200 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bar4
+		{
+			rect	-29,120,640,240
+			visible	1
+			background	"gui/bar"
+			matcolor	1, 1, 1, 0.3
+
+			onTime 0 {
+				transition "rect" "0 120 640 240" "0 240 640 0" "150" ;
+			}
+
+			onTime 150 {
+				transition "rect" "0 240 640 0" "0 120 640 -240" "150" ;
+			}
+
+			onTime 300 {
+				transition "rect" "0 120 640 -240" "0 240 640 0" "150" ;
+			}
+
+			onTime 450 {
+				transition "rect" "0 240 640 0" "0 120 640 240" "150" ;
+			}
+
+			onTime 600 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bar5
+		{
+			rect	-29,160,640,160
+			visible	1
+			background	"gui/bar"
+			matcolor	1, 1, 1, 0.2
+
+			onTime 0 {
+				transition "rect" "0 160 640 160" "0 240 640 0" "600" ;
+			}
+
+			onTime 600 {
+				transition "rect" "0 240 640 0" "0 160 640 -160" "600" ;
+			}
+
+			onTime 1200 {
+				transition "rect" "0 160 640 -160" "0 240 640 0" "600" ;
+			}
+
+			onTime 1800 {
+				transition "rect" "0 240 640 0" "0 160 640 160" "600" ;
+			}
+
+			onTime 2400 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bar6
+		{
+			rect	-29,160,640,160
+			visible	1
+			background	"gui/bar2"
+			matcolor	0.3, 0.8, 0.9, 0.2
+
+			onTime 0 {
+				transition "rect" "0 160 640 160" "0 240 640 0" "100" ;
+			}
+
+			onTime 100 {
+				transition "rect" "0 240 640 0" "0 160 640 -160" "100" ;
+			}
+
+			onTime 200 {
+				transition "rect" "0 160 640 -160" "0 240 640 0" "100" ;
+			}
+
+			onTime 300 {
+				transition "rect" "0 240 640 0" "0 160 640 160" "100" ;
+			}
+
+			onTime 400 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bar7
+		{
+			rect	-29,170,640,150
+			visible	1
+			background	"gui/bar2"
+			matcolor	0.3, 0.8, 0.9, 0.2
+
+			onTime 0 {
+				transition "rect" "0 170 640 150" "0 240 640 0" "100" ;
+			}
+
+			onTime 100 {
+				transition "rect" "0 240 640 0" "0 170 640 -150" "100" ;
+			}
+
+			onTime 200 {
+				transition "rect" "0 170 640 -150" "0 240 640 0" "100" ;
+			}
+
+			onTime 300 {
+				transition "rect" "0 240 640 0" "0 170 640 150" "100" ;
+			}
+
+			onTime 400 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bar8
+		{
+			rect	-29,180,640,140
+			visible	1
+			background	"gui/bar2"
+			matcolor	0.3, 0.8, 0.9, 0.2
+
+			onTime 0 {
+				transition "rect" "0 180 640 140" "0 240 640 0" "100" ;
+			}
+
+			onTime 100 {
+				transition "rect" "0 240 640 0" "0 180 640 -140" "100" ;
+			}
+
+			onTime 200 {
+				transition "rect" "0 180 640 -140" "0 240 640 0" "100" ;
+			}
+
+			onTime 300 {
+				transition "rect" "0 240 640 0" "0 180 640 140" "100" ;
+			}
+
+			onTime 400 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bar9
+		{
+			rect	-29,190,640,130
+			visible	1
+			background	"gui/bar2"
+			matcolor	0.3, 0.8, 0.9, 0.2
+
+			onTime 0 {
+				transition "rect" "0 190 640 130" "0 240 640 0" "100" ;
+			}
+
+			onTime 100 {
+				transition "rect" "0 240 640 0" "0 190 640 -130" "100" ;
+			}
+
+			onTime 200 {
+				transition "rect" "0 190 640 -130" "0 240 640 0" "100" ;
+			}
+
+			onTime 300 {
+				transition "rect" "0 240 640 0" "0 190 640 130" "100" ;
+			}
+
+			onTime 400 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bar10
+		{
+			rect	-29,200,640,120
+			visible	1
+			background	"gui/bar2"
+			matcolor	0.3, 0.8, 0.9, 0.2
+
+			onTime 0 {
+				transition "rect" "0 200 640 120" "0 240 640 0" "100" ;
+			}
+
+			onTime 100 {
+				transition "rect" "0 240 640 0" "0 200 640 -120" "100" ;
+			}
+
+			onTime 200 {
+				transition "rect" "0 200 640 -120" "0 240 640 0" "100" ;
+			}
+
+			onTime 300 {
+				transition "rect" "0 240 640 0" "0 200 640 120" "100" ;
+			}
+
+			onTime 400 {
+				resetTime "0" ;
+			}
+
+		}
+	}
+	windowDef Grid
+	{
+		rect	104,66,446,272
+		visible	1
+		background	"gui/grid2"
+		matcolor	1,1,1,0.2
+		matscalex	10
+		matscaley	6
+		windowDef bigballglow
+		{
+			rect	-200,-56,860,408
+			visible	1
+			background	"gui/thermal/glow"
+			matcolor	0.18,0.18,0.2,1
+		}
+	}
+	windowDef TextIn
+	{
+		rect	56,57,28,26
+		visible	1
+		text	"#str_01800"
+		forecolor	1,1,1,0.25
+		textscale	0.33
+		font	"fonts/micro"
+	}
+	windowDef TextNum1
+	{
+		rect	28,82,58,309
+		visible	1
+		text	"12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6"
+		forecolor	1,1,1,0.25
+		textscale	0.33
+		font	"fonts/micro"
+		textalign	2
+
+		onTime 600 {
+			set "text" "12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6" ;
+		}
+
+		onTime 550 {
+			set "text" "1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1" ;
+		}
+
+		onTime 500 {
+			set "text" "18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71" ;
+		}
+
+		onTime 450 {
+			set "text" "12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2" ;
+		}
+
+		onTime 400 {
+			set "text" "8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8" ;
+		}
+
+		onTime 350 {
+			set "text" "7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82" ;
+		}
+
+		onTime 300 {
+			set "text" "0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69" ;
+		}
+
+		onTime 250 {
+			set "text" "0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29" ;
+		}
+
+		onTime 200 {
+			set "text" "1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3" ;
+		}
+
+		onTime 150 {
+			set "text" "20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56" ;
+		}
+
+		onTime 100 {
+			set "text" "18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2" ;
+		}
+
+		onTime 50 {
+			set "text" "19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1" ;
+		}
+
+		onTime 0 {
+			set "text" "14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9" ;
+		}
+
+		onTime 650 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef TextOut
+	{
+		rect	573,57,50,22
+		visible	1
+		text	"#str_01801"
+		forecolor	1,1,1,0.25
+		textscale	0.33
+		font	"fonts/micro"
+	}
+	windowDef TextNum2
+	{
+		rect	572,82,58,309
+		visible	1
+		text	"14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9"
+		forecolor	1,1,1,0.25
+		textscale	0.33
+		font	"fonts/micro"
+
+		onTime 0 {
+			set "text" "19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1" ;
+		}
+
+		onTime 50 {
+			set "text" "14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9" ;
+		}
+
+		onTime 100 {
+			set "text" "12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6" ;
+		}
+
+		onTime 150 {
+			set "text" "1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1" ;
+		}
+
+		onTime 200 {
+			set "text" "18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71" ;
+		}
+
+		onTime 250 {
+			set "text" "12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2" ;
+		}
+
+		onTime 300 {
+			set "text" "8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8" ;
+		}
+
+		onTime 350 {
+			set "text" "7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82" ;
+		}
+
+		onTime 400 {
+			set "text" "0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69" ;
+		}
+
+		onTime 450 {
+			set "text" "0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29" ;
+		}
+
+		onTime 500 {
+			set "text" "1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3" ;
+		}
+
+		onTime 550 {
+			set "text" "20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56" ;
+		}
+
+		onTime 600 {
+			set "text" "18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2" ;
+		}
+
+		onTime 650 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Outerglow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdfade [ time * .0025 ] / 4.8
+		visible	1
+	}
+	windowDef Static
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 10
+	}
+	windowDef Mask
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.2
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.1 ,0.4 ,0.4 ,1
+		visible	1
+	}
+	windowDef scanlinesAlt
+	{
+		rect	0,0,640,480
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		matscaley	2
+		visible	1
+	}
+}

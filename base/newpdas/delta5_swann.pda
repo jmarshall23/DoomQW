@@ -1,0 +1,84 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta5_swann {
+	name         "Elliot Swann"
+	fullname     "Elliot Swann"
+	icon         "guis/assets/pda/swann"
+	id           "7992-13"
+	post         "UAC Corporate"
+	title        "Counselor"
+	security     "CPU Complex"
+	pda_email    "delta5_swann_email_1"
+	pda_email    "delta5_swann_email_2"
+	pda_email    "delta5_swann_email_3"
+	pda_audio    "delta5_swann_audio_1"
+	pda_audio    "delta5_swann_audio_2"
+}
+
+email delta5_swann_email_1 {
+	date		"09-23-2145"
+	to			"Elliot Swann"
+	from		"UAC Board"
+	subject		"Mars Research Post"
+	text {
+"Dear Counselor Swann,\n\n"
+
+"The Board has unanimously approved a resolution for a full operations review of the Mars Research Facility.  You've been designated as our official representative in this matter and we suggest full preparation begin today.\n\n"
+  
+"We expect a complete appraisal of all research developments. Both current and future directions must be brought inline with the Board's expectations.  We must be able to control Dr. Betruger.  His extra-dimensional research is a potential risk to the teleportation experimentation, which we can not afford.  The Board considers teleportation the UAC's single most important scientific endeavor and is not willing to jeopardize it's dominance in this area of research.\n\n"
+
+"Anticipate a formal briefing and itinerary in the next few days.\n\n"
+"Sincerely,\n"
+"UAC Board Chairman"
+	}
+}
+
+
+email delta5_swann_email_2 {
+	date		"10-02-2145"
+	to			"Elliot Swann"
+	from		"Liz McNeil"
+	subject		"Looking forward to your arrival"
+	text {
+"Counselor Swann,\n\n"
+
+"I was pleased to hear of the Board's decision to have you investigate the current state of the UAC on Mars.  I've become more and more worried about Dr. Betruger's research direction and my hope is that this intervention will bring much needed changes.  I've also learned that I've been reassigned by Dr. Betruger to a post back on Earth.  Although this is disappointing I do fear for my own safety and sanity if I were to stay here.\n\n"
+
+"I hope your intervention won't be too late. I look forward to meeting with you back on Earth once your visit is concluded.\n\n"
+
+"Sincerely,\n"
+"Elizabeth McNeil"
+	}
+}
+
+email delta5_swann_email_3 {
+	date		"10-03-2145"
+	to			"Elliot Swann"
+	from		"Malcolm Betruger"
+	subject		"UAC Board Review"
+	text {
+"Counselor Swann,\n\n"
+
+"I've been extremely patient with the Board to date, but the decision for a full operations review is hard for me to stomach.\n\n"
+"There is no need for you to come to Mars and there is no need for this review.  All I need is more money and more time.  The research being conducted here will change mankind in ways no one can imagine.  Our research is beginning to yield amazing results which I cannot allow to be compromised.\n\n"
+"Don't waste your time coming here, Swann.  You will only get in my way and impede the outstanding work we're doing here.\n\n"
+
+"Sincerely,\n"
+"Malcolm Betruger"
+	}
+}
+
+audio delta5_swann_audio_1 {
+	name		"Heading to Communications Facility"
+	info		"Made by: Elliot Swann\nDate: 11-15-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta5_swann_1"
+}
+
+audio delta5_swann_audio_2 {
+	name		"Heading to the Caverns"
+	info		"Made by: Elliot Swann\nDate: 11-16-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta5_swann_2"
+}
+

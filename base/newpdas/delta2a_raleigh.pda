@@ -1,0 +1,56 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta2a_raleigh {
+	name         "Peter Raleigh"
+	fullname     "Peter N. Raleigh"
+	icon         "guis/assets/pda/raleigh"
+	id           "2334-55"
+	post         "Delta Labs, Level 2"
+	title        "Medical Supervisor"
+	security     ""
+	pda_email    "delta2a_raleigh_email_1"
+	pda_email    "delta2a_raleigh_email_2"
+	pda_audio    "delta2a_raleigh_audio_1"
+	pda_audio    "delta2a_raleigh_audio_2"
+}
+
+email delta2a_raleigh_email_1 {
+	date		"11-09-2145"
+	to			"Peter Raleigh"
+	from		"Ben Peterson"
+	subject		"Anti psychotics shipment in today"
+	text {
+"Dr Raleigh,\n\n"
+"Just a reminder to let you know your order of anti psychotics have arrived from pharmaceuticals.  There are quite a few large boxes here, and we are a bit short-handed at the moment.  If you could have someone from your department come and retrieve these packages it would be much appreciated.\n\n"
+"Ben Peterson\n"
+"UAC Supply Coordinator"
+	}
+}
+
+email delta2a_raleigh_email_2 {
+	date		"11-12-2145"
+	to			"Peter Raleigh"
+	from		"Phil Wilson"
+	subject		"Overburdened"
+	text {
+"Dr Raleigh,\n\n"
+"We are filling up the available infirmary beds faster then we can get patients released.  I don't see myself releasing any at all actually.  I am gravely concerned about where we expect to put more men if the current trend in testing isn't relaxed before we can determine the cause of this psychosis.\n\n"
+"Sincerely,\n"
+"Medical Technician Phil Wilson"
+	}
+}
+
+audio delta2a_raleigh_audio_1 {
+	name		"Observation of Science Personnel"
+	info		"Made by: Peter Raleigh\nDate: 10-29-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta2a_raleigh_1"
+}
+
+audio delta2a_raleigh_audio_2 {
+	name		"Death of Steve Jenson"
+	info		"Made by: Peter Raleigh\nDate: 11-01-2145\nOpen for Amendment: No\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta2a_raleigh_2"
+}
+

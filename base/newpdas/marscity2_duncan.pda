@@ -1,0 +1,50 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda marscity2_duncan {
+	name         "Duncan Mathews"
+	fullname     "Duncan A. Mathews"
+	icon         "guis/assets/pda/icon_duncan"
+	id           "6917-38"
+	post         "Mars City"
+	title        "Systems Analyst"
+	security     "Analyst Office"
+	pda_email    "marscity2_duncan_email_1"
+	pda_email    "marscity2_duncan_email_2"
+}
+
+email marscity2_duncan_email_1 {
+	date		"11-14-2145"
+	to		"Duncan Mathews"
+	from		"Ray Gerhardt"
+	subject	"Farewell for now"
+	text {
+"If you've received this e-mail, you are someone I worked with while here on Mars and have made an impression on my life.  I want you to know I'm leaving Mars and UAC to pursue other opportunities after one last assignment tomorrow in Delta Labs.\n\n"
+
+"I will miss you terribly and will think of you often.  I'm sure the friendships I've made here will last the rest of my life and I will be sure to keep in touch.  As soon as I have a new address I will forward it along.\n\n"
+
+"I hope you will join me in the Mars City kitchen for a drink tomorrow evening.  My shuttle leaves first thing on 11/16 and I'd hate to miss my last chance to see you... until next time.\n\nRay Gerhardt"
+	}
+}
+
+email marscity2_duncan_email_2 {
+	date		"11-15-2145"
+	to		"Duncan Mathews"
+	from		"UAC Security"
+	subject	"RE: Equipment request"
+	text {
+"We understand the pressures and concerns of civilians in Mars City.  I want to assure you that there is nothing to worry about.  We in UAC Security have everything under control.\n\n"
+
+"I've left the armor you requested on your desk.  I hope this helps you sleep a bit easier.  We will not be able to fulfill your request for a plasma gun at this time.  I would like to take this opportunity to remind you that civilians are not allowed the possession of weapons.  If you ask again, I will have no choice but to report you to UAC HR.\n\n"
+
+"If you do happen to find equipment, it is your duty to return it to UAC Security immediately.\n\n"
+"Sincerely,\n"
+		"UAC Security\n"
+		"----Original Message----\n"
+		"Sent: 11-15-2145\n"
+		"To: UAC Security\n\n"
+
+"Please requisition to my department armor and one plasma gun with ammo.  With all that has been happening around here, I don't feel safe.  I haven't been able to sleep and it has been difficult to work.\n\n"
+
+"If it would be easier, I could always just help myself to some of the armor I've seen security leave carelessly around the base."
+	}
+}

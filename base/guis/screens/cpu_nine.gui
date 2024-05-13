@@ -1,0 +1,287 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 0.8
+
+	windowDef BgParent {
+		rect 20, 10, 600, 300
+
+		windowDef Bg {
+			rect 0, 0, 600, 460
+			background	"guis/assets/cpuserver/bg2.tga"
+			visible 1
+			matcolor 0.4, 0.8, 1, 1
+		}
+	}
+
+	windowDef BgParent1 {
+		rect 20, 170, 600, 300
+
+		windowDef Bg1 {
+			rect 0, -140, 600, -460
+			background	"guis/assets/cpuserver/bg2.tga"
+			visible 1
+			matcolor 0.4, 0.8, 1, 0.7
+		}
+	}
+
+	windowDef BgParent2 {
+		rect 45, 73, 550, 350
+
+		windowDef Bg2 {
+			rect 0, 0, 900, 350
+			background	"guis/assets/cpuserver/map.tga"
+			visible 1
+			matcolor 0.6, 1, 1, 1
+		}
+
+		windowDef Bg3 {
+			rect 770, 0, 900, 350
+			background	"guis/assets/cpuserver/map.tga"
+			visible 1
+			matcolor 0.6, 1, 1, 1
+		}
+
+		onTime 0 {
+			transition "Bg2::rect" "0 0 900 350" "-770 0 900 350" "25000" ; // "0.2" "0.8" ;
+			transition "Bg3::rect" "770 0 900 350" "0 0 900 350" "25000" ; // "0.2" "0.8" ;
+		}
+		onTime 25000 {
+			resetTime "0" ;
+		}
+	}
+
+
+	windowDef Bglow {
+		rect 0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible 1
+		matcolor 0.4, 0.8, 1, 0.15
+	}
+
+	windowDef Grid {
+		rect 10, 10, 620, 460
+		background	"guis/assets/cpuserver/grid.tga"
+		visible 1
+		matcolor 1, 1, 1, 0.1
+	}
+
+////////////////
+
+	windowDef vertLine {
+		rect	168 ,30 ,3 ,404 
+		bordersize	0
+		background	"guis/assets/dot"
+		matcolor	1 ,0.8 ,0.5 ,0.6 
+		visible	1
+	}
+
+	windowDef horizLine {
+		rect	11 ,144 ,618 ,5 
+		bordersize	0
+		background	"guis/assets/dot"
+		matcolor	1 ,0.8 ,0.5 ,0.5
+		visible	1
+	}
+
+	windowDef flashBox {
+		rect	431 ,93 ,24 ,35 
+		visible	1
+		bordersize	2
+		bordercolor	0.77 ,0.88 ,0.61 ,0
+	}
+//
+	windowDef Master {
+
+		onTime 0 {
+			resetTime "Anim1" "0" ;
+		}
+		onTime 2000 {
+			resetTime "Anim2" "0" ;
+		}
+		onTime 4000 {
+			resetTime "Anim3" "0" ;
+		}
+		onTime 6000 {
+			resetTime "Anim4" "0" ;
+		}
+		onTime 8000 {
+			resetTime "0" ;
+		}
+	}
+
+	windowDef Anim1 {
+		notime 1
+
+		onTime 0 {
+			transition	"vertline::rect" "168 27 4 407" "442 27 4 407" "500" ;  
+			transition	"horizline::rect" "11 144 618 5" "11 110 618 5" "500" ;
+			set 		"flashbox::rect" "431 93 24 35" ; 
+			set 		"pop1::rect" "431 93 24 35" ; 
+		}
+		onTime 500 {
+			set 	"flashbox::bordercolor" "0.77 0.88 0.61 0.2" ;
+			transition "pop4::matcolor" "0.4 0.8 1 1" "0.4 0.8 1 0" "200" ;
+		}
+		onTime 550 {
+			set	"flashbox::visible" "0" ; 
+		} 
+		onTime 600 {
+			set	"flashbox::visible" "1" ; 
+		} 
+		onTime 650 {
+			set	"flashbox::visible" "0" ; 
+		} 
+		onTime 700 {
+			set	"flashbox::visible" "1" ;
+		} 
+		onTime 1000 {
+			transition	"FlashBox::bordercolor" "0.77 0.88 0.61 0.2" "0.77 0.88 0.61 0" "200" ;
+			transition "pop1::rect" "431 93 24 35" "330 90 160 100" "200" ;
+			transition "pop1::matcolor" "0.4 0.8 1 0" "0.4 0.8 1 1" "200" ;
+		}
+	}
+
+	windowDef Anim2 {
+		notime 1
+
+		onTime 0 {
+			transition	"vertline::rect" "442 27 4 407" "392 27 4 407" "500" ;  
+			transition	"horizline::rect" "11 110 618 5" "11 340 618 4" "500" ;
+			set 		"flashbox::rect" "382 318 24 35" ;
+			set 		"pop2::rect" "382 318 24 35" ;
+		}
+		onTime 500 {
+			set 	"flashbox::bordercolor" "0.77 0.88 0.61 0.2" ;
+			transition "pop1::matcolor" "0.4 0.8 1 1" "0.4 0.8 1 0" "200" ;
+		}
+		onTime 550 {
+			set	"flashbox::visible" "0" ; 
+		} 
+		onTime 600 {
+			set	"flashbox::visible" "1" ; 
+		} 
+		onTime 650 {
+			set	"flashbox::visible" "0" ; 
+		} 
+		onTime 700 {
+			set	"flashbox::visible" "1" ;
+		} 
+		onTime 1000 {
+			transition	"FlashBox::bordercolor" "0.77 0.88 0.61 0.2" "0.77 0.88 0.61 0" "200" ;
+			transition "pop2::rect" "382 318 24 35" "340 280 160 100" "200" ;
+			transition "pop2::matcolor" "0.4 0.8 1 0" "0.4 0.8 1 1" "200" ;
+		}
+	}
+
+	windowDef Anim3 {
+		notime 1
+
+		onTime 0 {
+			transition	"vertline::rect" "392 27 4 407" "92 27 4 407" "500" ;  
+			transition	"horizline::rect" "11 340 618 5" "11 370 618 5" "500" ;
+			set 		"flashbox::rect" "81 354 24 35" ;
+			set 		"pop3::rect" "81 354 24 35" ;
+		}
+		onTime 500 {
+			set 	"flashbox::bordercolor" "0.77 0.88 0.61 0.2" ;
+			transition "pop2::matcolor" "0.4 0.8 1 1" "0.4 0.8 1 0" "200" ;
+		}
+		onTime 550 {
+			set	"flashbox::visible" "0" ; 
+		} 
+		onTime 600 {
+			set	"flashbox::visible" "1" ; 
+		} 
+		onTime 650 {
+			set	"flashbox::visible" "0" ; 
+		} 
+		onTime 700 {
+			set	"flashbox::visible" "1" ;
+		} 
+		onTime 1000 {
+			transition	"FlashBox::bordercolor" "0.77 0.88 0.61 0.2" "0.77 0.88 0.61 0" "200" ;
+			transition "pop3::rect" "81 354 24 35" "60 300 160 100" "200" ;
+			transition "pop3::matcolor" "0.4 0.8 1 0" "0.4 0.8 1 1" "200" ;
+		}
+	}
+
+	windowDef Anim4 {
+		notime 1
+
+		onTime 0 {
+			transition	"vertline::rect" "92 27 4 407" "168 27 4 407" "500" ;  
+			transition	"horizline::rect" "11 370 618 5" "11 145 618 5" "500" ;
+			set 		"flashbox::rect" "156 127 24 35" ; 
+			set 		"pop4::rect" "156 127 24 35" ; 
+		}
+		onTime 500 {
+			set 	"flashbox::bordercolor" "0.77 0.88 0.61 0.2" ;
+			transition "pop3::matcolor" "0.4 0.8 1 1" "0.4 0.8 1 0" "200" ;
+		}
+		onTime 550 {
+			set	"flashbox::visible" "0" ; 
+		} 
+		onTime 600 {
+			set	"flashbox::visible" "1" ; 
+		} 
+		onTime 650 {
+			set	"flashbox::visible" "0" ; 
+		} 
+		onTime 700 {
+			set	"flashbox::visible" "1" ;
+		} 
+		onTime 1000 {
+			transition	"FlashBox::bordercolor" "0.77 0.88 0.61 0.2" "0.77 0.88 0.61 0" "200" ;
+			transition "pop4::rect" "156 127 24 35" "120 110 160 100" "200" ;
+			transition "pop4::matcolor" "0.4 0.8 1 0" "0.4 0.8 1 1" "200" ;
+		}
+	}
+
+
+////////////////
+
+	windowDef Pop4 {
+		rect 120, 110, 160, 100
+		background	"guis/assets/cpuserver/pop1.tga"
+		visible 	1
+		matcolor 	0.4, 0.8, 1, 0
+	}
+
+	windowDef Pop1 {
+		rect 360, 80, 160, 100
+		background	"guis/assets/cpuserver/pop1.tga"
+		visible 	1
+		matcolor 	0.4, 0.8, 1, 0
+	}
+
+	windowDef Pop2 {
+		rect 340, 280, 160, 100
+		background	"guis/assets/cpuserver/pop1.tga"
+		visible 	1
+		matcolor 	0.4, 0.8, 1, 0
+	}
+
+	windowDef Pop3 {
+		rect 60, 300, 160, 100
+		background	"guis/assets/cpuserver/pop1.tga"
+		visible 	1
+		matcolor 	0.4, 0.8, 1, 0
+	}
+
+	windowDef bgScroll {
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background	"gui/scroll3"
+		matColor	1, 1,  1, flickertable [ time * 5 ] / 6 
+	}
+
+	windowDef Reflect {
+		rect		10 ,5 ,620 ,470 
+		matcolor	1 ,1 ,1 ,0.2 
+		visible		1
+		background	"gui/reflect1"
+	}
+
+}

@@ -1,0 +1,56 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda comm1_blake {
+	name         "Seamus Blake"
+	fullname     "Seamus J. Blake"
+	icon         "guis/assets/pda/icon_sblake"
+	id           "6805-14"
+	post         "Communications"
+	title        "Technician"
+	security     "Communications Engineering"
+	pda_email    "comm1_blake_email_1"
+	pda_email    "comm1_blake_email_2"
+	pda_audio    "comm1_blake_audio_1"
+}
+
+email comm1_blake_email_1 {
+	date		"10-10-2145"
+	to		"Seamus Blake"
+	from		"Crater Music"
+	subject	"Your receipt # 9318691220"
+	
+	text {
+	"Order Number: M8909848\n"
+	"Receipt Date:  10/10/2145\n"
+	"Order Total:    $269.83\n"
+	"Billed To:       Universal Credit\n\n"
+	"Crater Classic Music thanks you for your order\n\n"
+	"Those who purchased your selection (Champagne Tomiko by The ZSecs)\n"
+	"also purchased:\n"
+	"The Head On My Tongue - Hellish Dragons\n"
+	"20th Century Classics - Various Artists\n\n"
+	"Please retain for your records\n\n"
+	"The entire Crater team thanks you"
+	}
+}
+
+email comm1_blake_email_2 {
+	date		"10-11-2145"
+	to			"Seamus Blake"
+	from		"Karl Roper"
+	subject		"Question??"
+	text {
+	"Hey Seamus...\n\n"
+	"What the hell is up with the Sentry Bots that are stationed in Engineering.  I thought you told me this was a better place to work than Admin.  Why do you get to hang around the Main Communications room while I'm stuck down here?\n\n"
+	"later,\n"
+	"-Karl"
+	}
+}
+
+audio comm1_blake_audio_1 {
+	name		"Module Replacement"
+	info		"Made by: Seamus Blake\nDate: 10-16-2145\nOpen for Amendment: Yes\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_comm1_blake_1"
+}
+

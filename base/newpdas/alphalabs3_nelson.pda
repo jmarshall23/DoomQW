@@ -1,0 +1,50 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda alphalabs3_nelson {
+	name         "Henry Nelson"
+	fullname     "Henry Q. Nelson"
+	icon         "guis/assets/pda/nelson"
+	id           "7977-87"
+	post         "Alpha Labs, Sector 4"
+	title        "Plant Manager"
+	security     ""
+	pda_email    "alphalabs3_nelson_email_1"
+	pda_email    "alphalabs3_nelson_email_2"
+	pda_audio    "alphalabs3_nelson_audio_1"
+}
+
+email alphalabs3_nelson_email_1 {
+	date		"10-24-2145"
+	to		"Henry Nelson"
+	from		"Jeff Dickens"
+	subject	"Strange Voices"
+	text {
+"Henry,\n\n"
+"I haven't slept in three days and can't concentrate on work.  Ever since Hal's 'accident' everyone's been pretty freaked out.  I really thought the guys saying they heard voices were full of shit, but lately I've been hearing them too.  I don't know how UAC expects us to work like this.\n\n"
+"J."
+	}
+}
+
+
+email alphalabs3_nelson_email_2 {
+	date		"11-13-2145"
+	to			"Henry Nelson"
+	from		"Greg O'Brian"
+	subject		"Missing tools"
+	text {
+"Henry,\n\n"
+"The tools in storage cabinet 064 were missing again today.  I'm going to change the combination to 651 this afternoon.  Please do me a favor and don't tell Seneca the new combination.  I believe he's the one taking my tools all the time...the guy thinks he's a real riot.\n\n"
+"Thanks,\n"
+"Greg"
+	}
+}
+
+
+
+audio alphalabs3_nelson_audio_1 {
+	name		"Strange Voices..."
+	info		"Made by: Henry Nelson\nDate: 10-24-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_alphalabs3_nelson_1"
+}
+

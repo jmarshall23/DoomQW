@@ -1,0 +1,30 @@
+MD5Version 10
+commandline "anim models/mapobjects/mc_underground/platform.mb -dest models/md5/environments/mcuplatform.md5anim -game Doom -prefix PLAT_ -keep girders -range 1 1"
+
+numFrames 1
+numJoints 5
+frameRate 24
+numAnimatedComponents 0
+
+hierarchy {
+	"origin"	-1 0 0	//
+	"chaintop"	0 0 0	// origin
+	"chainmid"	1 0 0	// chaintop
+	"pyramidtop"	2 0 0	// chainmid
+	"girders"	3 0 0	// pyramidtop
+}
+
+bounds {
+	( -83.9706420898 -106.9850463867 -192.0603637695 ) ( 97.9861221313 136.0542907715 -0.0182947032 )
+}
+
+baseframe {
+	( 0 0 0 ) ( -0.7071067691 0 0 )
+	( 0 0 0 ) ( 0.7071067691 0 0.7071067691 )
+	( 0 27.3269767761 0 ) ( 0 0.7071067691 0 )
+	( -0 30.8881721497 -0 ) ( 0 0 0 )
+	( -0 120.2005310059 -0 ) ( 0 0 0 )
+}
+
+frame 0 {
+}

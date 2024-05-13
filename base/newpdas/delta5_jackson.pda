@@ -1,0 +1,42 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta5_jackson {
+	name         "Bruce Jackson"
+	fullname     "Bruce L. Jackson"
+	icon         "guis/assets/pda/lee"
+	id           "3447-70"
+	post         "CPU Complex"
+	title        "Security Guard"
+	security     ""
+	pda_email    "delta5_jackson_email_1"
+	pda_email    "delta5_jackson_email_2"
+	}
+
+email delta5_jackson_email_1 {
+	date		"11-04-2145"
+	to		"Bruce Jackson"
+	from		"martianbuddy.com"
+	subject	"Drowning in Debt?"
+	text {
+"Lost all your money?\nJob not paying you enough?\nWoman took all your credits?\n\n"
+"**DON'T WORRY**\n\n"
+"Martian Buddy has got you covered.\n\n"
+"You can earn extra credits every week by helping us in our direct marketing campaign. \nAll you need to do is send out emails from the comfort of your own computer and rake in the credits - it's that easy.\n\n"
+"Contact Martian Buddy for more details."
+	}
+}
+
+email delta5_jackson_email_2 {
+	date		"11-14-2145"
+	to		"Bruce Jackson"
+	from		"Michael Abrams"
+	subject	"Security Assignment"
+	text {
+"Bruce,\n\n"
+"You have been reassigned to the CPU complex effective immediately. We've had numerous reports of computer break-ins and security breaches there in the last few weeks.\n\n"
+"I've placed a rocket launcher in the cabinet near the security checkpoint. The door code is 571. I know a rocket launcher might seem excessive but people tend to listen when you point it at them.\n\n"
+"Be careful over there and remember to report anything odd immediately.\n\n"
+"Michael Abrams"
+
+	}
+}

@@ -1,0 +1,327 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	backcolor	0, 0, 0, 1
+	matcolor	0, 0, 0, 1
+	background	"guis/assets/common/bg"
+	windowDef BgParent
+	{
+		rect	7 ,7 ,626 ,466
+		visible	1
+		windowDef Bg
+		{
+			rect	-50, 30, 740, 480
+			background	"guis/assets/cpuserver/bg3"
+			matcolor	0.8, 1, 1, 0
+			visible	1
+		}
+		windowDef Stars
+		{
+			rect	-200, 0, 1024, 1024
+			background	"gui/mainmenu/star"
+			matcolor	0.7 ,0.7 ,0.7 ,0
+			matscaley	0.5
+			matscalex	0.5
+			noevents	1
+			visible	1
+		}
+		windowDef Stars1
+		{
+			rect	0, 0, 640, 480
+			matcolor	1,1,1,1
+			background	"gui/mainmenu/star1"
+			visible	1
+			matscaley	0.8
+			matscalex	0.8
+			noevents	1
+		}
+		windowDef Stars2
+		{
+			rect	0, 0, 640, 480
+			matcolor	1,1,1,1
+			background	"gui/mainmenu/star3"
+			visible	1
+			matscaley	1.2
+			matscalex	1.2
+			noevents	1
+		}
+		windowDef Stars3
+		{
+			rect	0, 0, -640, -480
+			matcolor	1,1,1,1
+			background	"gui/mainmenu/star1"
+			visible	1
+			matscaley	1.2
+			matscalex	1.2
+			noevents	1
+		}
+		windowDef Stars4
+		{
+			rect	0, 0, -640, -480
+			matcolor	1,1,1,1
+			background	"gui/mainmenu/star3"
+			visible	1
+			matscaley	1.2
+			matscalex	1.2
+			noevents	1
+		}
+	}
+	windowDef MarsClip
+	{
+		rect	17,45,612,389
+		visible	1
+		windowDef MarsHighlight
+		{
+			rect	-163,92,938,678
+			matcolor	1,1,1,1
+			background	"guis/assets/mainmenu/marshighlight"
+			noevents	1
+			visible	1
+		}
+	}
+	windowDef Addbox
+	{
+		rect	5 ,5 ,630 ,470
+		background	"gui/grid2"
+		matcolor	1 ,1 ,1 ,0.05
+		matscaley	7
+		matscalex	7
+		visible	1
+	}
+	windowDef Addhighlight1
+	{
+		rect	0 ,0 ,-640 ,280
+		background	"gui/addhighlight"
+		matcolor	0.3 ,0.4 ,0.4 ,1
+		visible	1
+	}
+	windowDef Addhighlight2
+	{
+		rect	0 ,200 ,640 ,-280
+		background	"gui/addhighlight"
+		matcolor	0.8 ,1 ,1 ,1
+		visible	0
+	}
+	windowDef BGClipLeft
+	{
+		rect	6,0,314,480
+		visible	1
+		windowDef Bg1
+		{
+			rect	-20,5,630,235
+			visible	1
+			background	"guis/assets/doors/adminbg"
+			matcolor	0.6, 0.85, 1, 1
+		}
+		windowDef Bg3
+		{
+			rect	-20,240,630,-235
+			visible	1
+			background	"guis/assets/doors/adminbg"
+			matcolor	0.6, 0.85, 1, 1
+		}
+	}
+	windowDef BGClipRight
+	{
+		rect	320,0,314,480
+		visible	1
+		windowDef Bg11
+		{
+			rect	-295,5,-630,235
+			visible	1
+			background	"guis/assets/doors/adminbg"
+			matcolor	0.6, 0.85, 1, 1
+		}
+		windowDef Bg31
+		{
+			rect	-295,240,-630,-235
+			visible	1
+			background	"guis/assets/doors/adminbg"
+			matcolor	0.6, 0.85, 1, 1
+		}
+	}
+	windowDef Logo1
+	{
+		rect	120,103,404,261
+		visible	1
+		background	"guis/assets/common/mlogo"
+		matcolor	1, 1, 1, 0.3
+	}
+	windowDef FlightBG
+	{
+		rect	10,55,627,378
+		visible	1
+		background	"guis/assets/marscity/flight"
+		matcolor	0.8,0.9,1,0.75
+	}
+	windowDef TextParent
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef Arrivals
+		{
+			rect	131,73,469,46
+			text	"#str_03640"
+			font	"fonts/micro"
+			textscale	0.61
+			forecolor	0.5,0.9,1,0.7
+			visible	1
+		}
+		windowDef Departures
+		{
+			rect	131,283,469,47
+			text	"#str_03641"
+			font	"fonts/micro"
+			textscale	0.61
+			forecolor	1,0.9,0.4,0.7
+			visible	1
+		}
+		windowDef ArrivalDetail1
+		{
+			rect	68,119,522,67
+			text	"#str_03642"
+			font	"fonts/micro"
+			textscale	0.42
+			forecolor	1,0.69803923,0.29803923,0.7
+			visible	1
+			textalign	1
+		}
+		windowDef ArrivalDetail2
+		{
+			rect	68,140,522,32
+			text	"#str_03643"
+			font	"fonts/micro"
+			textscale	0.42
+			forecolor	1,0.69803923,0.29803923,0.7
+			visible	1
+			textalign	1
+		}
+		windowDef DepartureDetail1
+		{
+			rect	68,327,522,67
+			text	"#str_03644"
+			font	"fonts/micro"
+			textscale	0.42
+			forecolor	1,0.69803923,0.29803923,0.7
+			visible	1
+			textalign	1
+		}
+		windowDef DepartureDetail2
+		{
+			rect	267,349,323,32
+			text	"#str_03645"
+			font	"fonts/micro"
+			textscale	0.41999999
+			forecolor	0.7,0.89803928,1,0.5
+			visible	1
+		}
+		windowDef DepartureDetail3
+		{
+			rect	267,368,323,32
+			text	"#str_03646"
+			font	"fonts/micro"
+			textscale	0.41999999
+			forecolor	0.7,0.89803928,1,0.5
+			visible	1
+		}
+		windowDef ArrivalTime1
+		{
+			rect	63,181,523,32
+			text	"#str_03647"
+			font	"fonts/micro"
+			textscale	0.41999999
+			forecolor	0.80000007,0.89803928,1,0.5
+			visible	1
+		}
+		windowDef ArrivalTime2
+		{
+			rect	67,203,523,32
+			text	"#str_03648"
+			font	"fonts/micro"
+			textscale	0.41999999
+			forecolor	0.80000007,0.89803928,1,0.5
+			visible	1
+		}
+		windowDef ArrivalTime3
+		{
+			rect	63,225,523,32
+			text	"#str_03649"
+			font	"fonts/micro"
+			textscale	0.41999999
+			forecolor	0.80000007,0.89803928,1,0.5
+			visible	1
+		}
+		windowDef ArrivalTime4
+		{
+			rect	63,247,523,32
+			text	"#str_03650"
+			font	"fonts/micro"
+			textscale	0.41999999
+			forecolor	0.80000007,0.89803928,1,0.5
+			visible	1
+		}
+	}
+	windowDef TitleText1
+	{
+		rect	0,-1,640,55
+		text	"#str_03651"
+		font	"fonts/micro"
+		textscale	0.7
+		textalign	1
+		forecolor	0.8,1,1,0.8
+		visible	1
+	}
+	windowDef TitleText2
+	{
+		rect	0,427,650,50
+		text	"#str_03242"
+		font	"fonts/micro"
+		textscale	0.7
+		textalign	1
+		forecolor	0.8,1,1,0.8
+		visible	1
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef Static
+	{
+		rect	-10 ,-10 ,-660 ,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 15
+	}
+	windowDef Outerglow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 6
+		visible	1
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.5 ,1
+		visible	1
+	}
+	windowDef Dirt
+	{
+		rect	0,0,-640,-480
+		matcolor	1, 1, 1 ,0.2
+		visible	1
+		background	"guis/assets/common/dirt2"
+		noevents	1
+	}
+}

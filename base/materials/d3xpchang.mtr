@@ -1,0 +1,54 @@
+models/mapobjects/exgen/d3xp_genexplode
+{
+         noselfshadow
+
+	renderbump  -size 512 512 -aa 2  models/mapobjects/exgen/d3xp_genexplode_local.tga models/mapobjects/exgen/d3xp_genexplode_hi.lwo
+        diffusemap	models/mapobjects/exgen/d3xp_genexplode_d.tga
+        bumpmap 	addnormals (models/mapobjects/exgen/d3xp_genexplode_local.tga, heightmap (models/mapobjects/exgen/d3xp_genexplode_bmp.tga, 3) )
+        specularmap	models/mapobjects/exgen/d3xp_genexplode_s.tga
+}
+
+models/mapobjects/exgen/d3xp_genduocase
+{
+         noselfshadow
+
+	renderbump  -size 512 512 -aa 2  models/mapobjects/exgen/d3xp_genduocase_local.tga models/mapobjects/exgen/d3xp_genduocase_hi.lwo
+        diffusemap	models/mapobjects/exgen/d3xp_genduocase_d.tga
+        bumpmap 	addnormals (models/mapobjects/exgen/d3xp_genduocase_local.tga, heightmap (models/mapobjects/exgen/d3xp_genduocase_bmp.tga, 3) )
+        specularmap	models/mapobjects/exgen/d3xp_genduocase_s.tga
+}
+
+models/mapobjects/exgen/d3xp_genunocase
+{
+         noselfshadow
+
+	renderbump  -size 512 512 -aa 2  models/mapobjects/exgen/d3xp_genunocase_local.tga models/mapobjects/exgen/d3xp_genunocase_hi.lwo
+        diffusemap	models/mapobjects/exgen/d3xp_genunocase_d.tga
+        bumpmap 	addnormals (models/mapobjects/exgen/d3xp_genunocase_local.tga, heightmap (models/mapobjects/exgen/d3xp_genunocase_bmp.tga, 3) )
+        specularmap	models/mapobjects/exgen/d3xp_genunocase_s.tga
+}
+
+models/mapobjects/exgen/d3xp_gencelhandle
+{
+         noselfshadow
+
+	renderbump  -size 512 512 -aa 2  models/mapobjects/exgen/d3xp_gencelhandle_local.tga models/mapobjects/exgen/d3xp_gencelhandle_hi.lwo
+        diffusemap	models/mapobjects/exgen/d3xp_gencelhandle_d.tga
+        bumpmap 	addnormals (models/mapobjects/exgen/d3xp_gencelhandle_local.tga, heightmap (models/mapobjects/exgen/d3xp_gencelhandle_bmp.tga, 3) )
+        specularmap	models/mapobjects/exgen/d3xp_gencelhandle_s.tga
+}
+
+models/mapobjects/exgen/d3xp_pcell
+{
+         noselfshadow
+
+	renderbump  -size 512 512 -aa 2  models/mapobjects/exgen/d3xp_pcell_local.tga models/mapobjects/exgen/d3xp_pcell_hi.lwo
+        diffusemap	models/mapobjects/exgen/d3xp_pcell_d.tga
+        bumpmap 	models/mapobjects/exgen/d3xp_pcell_local.tga
+	{
+		blend 	add
+		map	models/mapobjects/exgen/d3xp_pcell_add.tga
+		colored
+		}
+        specularmap	models/mapobjects/exgen/d3xp_pcell_s.tga
+}

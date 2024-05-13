@@ -1,0 +1,49 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda alphalabs1_smith {
+	name         "Jack Smith"
+	fullname     "Jack T. Smith"
+	icon         "guis/assets/pda/smith"
+	id           "1538-49"
+	post         "Alpha Labs, Sector 1"
+	title        "Benefits Analyst"
+	security     ""
+	pda_email    "alphalabs1_smith_email_1"
+	pda_email    "alphalabs1_smith_email_2"
+	pda_audio    "alphalabs1_smith_audio_1"
+}
+
+email alphalabs1_smith_email_1 {
+	date		"11-11-2145"
+	to		"Jack Smith"
+	from		"Brian Jenkins"
+	subject	"New Safety Protocols"
+	text {
+"Mr. Smith,\n\n"
+"In light of the recent increase of work-related accidents in the Alpha Labs, we feel it is necessary to implement a buddy system when routine maintenance is being performed on some of the heavier equipment. We feel this should cut down on some of the claims being filed in your department. Please get back to me if you have any other ideas on how to keep Alpha Labs as safe as it can be.\n\n"
+"Thank You,\n"
+"Brian Jenkins\nSafety Coordinator"
+	}
+}
+
+email alphalabs1_smith_email_2 {
+	date		"11-13-2145"
+	to		"Jack Smith"
+	from		"Ari Braden"
+	subject	"Buddy system?!"
+	text {
+"Jack-\n"
+"Please tell me UAC Corporate is kidding.  How the hell is a buddy system going to do anything with accident claims except double them?  Tell me how a buddy system would have prevented Joe 'TorsoBoy' Moss from having his arms and legs hacked off by the Albuquerck Capacitator? Maybe his buddy would have heard the thing growl and engage without power or a CRF module?  Maybe his buddy's hair would have burst into flames instead and saved us the trouble of needing to run and find water to put him out.\n\n"
+
+"Next thing they'll do is try to fix the problem by having us fill out more MAR forms or reforecast our ODF.\n\n"
+
+	}
+}
+
+audio alphalabs1_smith_audio_1 {
+	name		"HR Accident Report"
+	info		"Made by: Jack Smith\nDate: 10-24-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_alphalabs1_smith_1"
+}
+

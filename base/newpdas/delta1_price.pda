@@ -1,0 +1,63 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta1_price {
+	name         "Robert Price"
+	fullname     "Robert M. Price"
+	icon         "guis/assets/pda/icon_rprice"
+	id           "5438-71"
+	post         "Delta Labs, Level 1"
+	title        "Operational Director"
+	security     ""
+	pda_email    "delta1_price_email_1"
+	pda_email    "delta1_price_email_2"
+	pda_audio    "delta1_price_audio_1"
+	pda_audio    "delta1_price_audio_2"
+}
+
+email delta1_price_email_1 {
+	date		"11-13-2145"
+	to			"Robert Price"
+	from		"Price@kpjNET"
+	subject		"Did you get it?!!"
+	text {
+		"Hey Rob... it's me again :)  why haven't you written me back yet?  I sent all your old books and shit to you via the UAC... Did you get them? It sure is nice to get all that crap out of the living area.  Donated a lot of other stuff to some charity place too.  In six months when you come back you'll see the difference.\n\n"
+		"Anyway, PLEASE!! write back soon... I'm lonely down here.\n\n"
+		"See Ya,\n"
+		"Tanya"
+	}
+}
+
+email delta1_price_email_2 {
+	date		"11-14-2145"
+	to			"Robert Price"
+	from		"Ryan S."
+	subject		"RE: You guys experiencing this?"
+	text {
+		"Robert,\n\n"
+		"I know exactly what you're talking about, although not nearly as frequently as what you're describing.  I'll follow up with you on this after I do a little investigating but it certainly is weird.\n\n"
+		"-Ryan\n\n"
+		"----Original Message----\n"
+		"Sent: 11-13-2145\n"
+		"To: Ryan S.\n\n"
+		"Hi Ryan,\n"
+		"Are you guys getting strange sounds coming through walls and floors?  We've been getting this all over the place the last couple of days.  I think it's worse in the lower levels of Delta but we can't pinpoint what the origin is.\n\n"
+		"Anyway, I'm just checking in with others around the UAC.\n\n"
+		"Thanks,\n"
+		"-Robert"
+	}
+}
+
+audio delta1_price_audio_1 {
+	name		"Engineer Placement"
+	info		"Made by: Robert Price\nDate: 10-12-2145\nOpen for Amendment: Yes\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta1_price_1"
+}
+
+audio delta1_price_audio_2 {
+	name		"Disciplinary Action Report"
+	info		"Made by: Robert Price\nDate: 10-13-2145\nOpen for Amendment: No\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta1_price_2"
+}
+

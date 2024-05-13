@@ -1,0 +1,60 @@
+// NO audio files in the personal pda and subsequently no video files in other pdas
+// all vidoes are downloaded to your personal pda and individual pdas can contain
+// audio logs
+
+pda admin_dorweiler {
+	name		"Alan Dorweiler"
+	fullname	"Alan E. Dorweiler"
+	icon		"gui/pda/bio1"
+	id		"8321-14"
+	post		"Administration Complex"				// for the personal pda this is ignored and current location is used instead
+	title		"Controller Spec."					// this is used for title or rank ( for the player )
+	security	""				// only set this if it contains a new security clearance.. as far as the pda and hud goes this is informational only
+	pda_email	"admin_dorweiler_email_1"
+	pda_email	"admin_dorweiler_email_2"
+	pda_email	"admin_dorweiler_email_3"
+	}
+
+
+email admin_dorweiler_email_1 {
+	date		"11-12-2145"
+	to		"Alan Dorweiler"
+	from		"Ethan Peterson"
+	subject	"Armaments in the cabinet"
+	text {
+"Alan,\n"
+"Per our earlier conversation I've stocked the storage cabinet in your area with some ammunition and security armor. The door code is 586. I don't know what's going on around here but we can't be too careful. I hope to God we never have to use that stuff.\n\n"
+"If I hear anything else I'll email you.\n"
+"Ethan"
+	}
+}
+
+email admin_dorweiler_email_2 {
+	date		"11-14-2145"
+	to		"Alan Dorweiler"
+	from		"Ethan Peterson"
+	subject	"UAC Corporate"
+	text {
+"Alan,\n"
+
+"I heard that UAC Corporate is sending someone up here to check on Betruger. His name is Elliot Swann, I don't know who he is but John said he's a real ball buster. He said that he always travels with a bodyguard. This can't be a good situation. I hope this Swann guy doesn't shut us down. We are so close to solving the stability problems and the transfer errors are exceptionally low now.\n\n"
+"I'll keep you posted if anything goes down.\n"
+
+"Ethan"
+	}
+}
+
+email admin_dorweiler_email_3 {
+	date		"11-14-2145"
+	to		"Alan Dorweiler"
+	from		"martianbuddy.com"
+	subject	"Lightspeed Pharmacy"
+	text {
+"Mr. Dorweiler,\n\n"
+"Online Pharmacy - No Doctor visit needed.\n\n"
+"We believe that ordering medication should be as simple as ordering anything else on the Net. We can ship drugs anywhere in the galaxy....\n"
+"Embargos, Banned Pharmaceuticals, NO PROBLEM!!\n\n"
+"Goto: www.martianbuddy.com for my details."
+
+	}
+}

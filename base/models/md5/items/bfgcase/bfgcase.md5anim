@@ -1,0 +1,32 @@
+MD5Version 10
+commandline "anim models/characters/male_npc/makecasemesh.mb -dest models/md5/items/bfgcase/bfgcase.md5anim -game Doom -prefix CASE_ -keep ATTACHER -rename ATTACHER origin -clearorigin"
+
+numFrames 2
+numJoints 4
+frameRate 24
+numAnimatedComponents 0
+
+hierarchy {
+	"origin"	-1 0 0	//
+	"casehandle"	0 0 0	// origin
+	"casebody"	1 0 0	// casehandle
+	"casetop"	2 0 0	// casebody
+}
+
+bounds {
+	( -14.905538559 -5.9164056778 2.6459941864 ) ( 16.4826202393 5.1797337532 24.4379959106 )
+	( -14.905538559 -5.9164056778 2.6459941864 ) ( 16.4826202393 5.1797337532 24.4379959106 )
+}
+
+baseframe {
+	( 0 0 0 ) ( 0 0 0 )
+	( 0.7885411382 -0.1733729094 6.5606355667 ) ( -0.0000000421 -0.000000003 0.000000002 )
+	( 0 0 0 ) ( 0 0 0 )
+	( -0.0000000286 1.5617594719 17.8794822693 ) ( 0 0 0 )
+}
+
+frame 0 {
+}
+
+frame 1 {
+}

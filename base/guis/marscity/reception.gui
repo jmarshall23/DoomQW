@@ -1,0 +1,438 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 0.8
+	visible	1
+	windowDef BG11
+	{
+		rect	5,5,630,471
+		visible	1
+		background	"guis/assets/common/bg"
+		matcolor	0.15,0.25,0.3,0.5
+	}
+	windowDef PDABG1
+	{
+		rect	5,5,630,471
+		matcolor	0.7, 1, 1, 0.5
+		background	"guis/assets/pda/glowup60_256"
+		visible	1
+	}
+	windowDef Text311
+	{
+		rect	92,29,557,48
+		text	"#str_03670"
+		font	"fonts/micro"
+		textscale	0.5
+		forecolor	1,1,1,1
+		visible	1
+	}
+	windowDef Text312
+	{
+		rect	91,57,555,29
+		text	"#str_03671"
+		font	"fonts/micro"
+		textscale	0.35
+		forecolor	1,1,1,0.5
+		visible	1
+	}
+	windowDef Contents1
+	{
+		rect	264,367,358,62
+		visible	0
+		windowDef Contentsbg1
+		{
+			rect	32,6,327,47
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite3"
+			matcolor	0.2,0.6,0.6,0.2
+		}
+		windowDef Contentscorner11
+		{
+			rect	38,5,78,-25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef Contentscorner21
+		{
+			rect	278,5,-78,-25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef Contentscorner31
+		{
+			rect	38,30,78,25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef Contentscorner41
+		{
+			rect	278,30,-78,25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef ContentsBottom1
+		{
+			rect	116,33,162,23
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef ContentsTop1
+		{
+			rect	116,4,162,-23
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef TextProfile1
+		{
+			rect	52,5,302,29
+			text	"#str_03597"
+			font	"fonts/micro"
+			textscale	0.4
+			forecolor	1,1,1,0.75
+			visible	1
+		}
+		windowDef TextProcessed1
+		{
+			rect	52,23,289,29
+			text	"#str_03598"
+			font	"fonts/micro"
+			textscale	0.4
+			forecolor	1,1,1,0.35
+			visible	1
+		}
+	}
+	windowDef Contents2
+	{
+		rect	264,315,358,62
+		visible	0
+		windowDef Contentsbg11
+		{
+			rect	32,6,327,47
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite3"
+			matcolor	0.2,0.6,0.6,0.2
+		}
+		windowDef Contentscorner111
+		{
+			rect	38,5,78,-25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef Contentscorner211
+		{
+			rect	278,5,-78,-25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef Contentscorner311
+		{
+			rect	38,30,78,25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef Contentscorner411
+		{
+			rect	278,30,-78,25
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef ContentsBottom11
+		{
+			rect	116,33,162,23
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef ContentsTop11
+		{
+			rect	116,4,162,-23
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	0.6,1,1,0.5
+		}
+		windowDef TextProfile11
+		{
+			rect	52,5,302,29
+			text	"#str_03599"
+			font	"fonts/micro"
+			textscale	0.4
+			forecolor	1,1,1,0.75
+			visible	1
+		}
+		windowDef TextProcessed11
+		{
+			rect	52,23,289,29
+			text	"#str_03598"
+			font	"fonts/micro"
+			textscale	0.4
+			forecolor	1,1,1,0.35
+			visible	1
+		}
+	}
+	windowDef TitleBarBG1
+	{
+		rect	50,-18,31,133
+		visible	1
+		background	"guis/assets/archives/titlecap"
+		matcolor	1,1,1,0.7
+	}
+	windowDef TitleBarBG4
+	{
+		rect	81,-18,515,133
+		visible	1
+		background	"guis/assets/archives/titleBar"
+		matcolor	1,1,1,0.7
+		matscalex	5
+	}
+	windowDef TitleBarBG5
+	{
+		rect	596,-18,-31,133
+		visible	1
+		background	"guis/assets/archives/titlecap"
+		matcolor	1,1,1,0.7
+	}
+	windowDef LogoShadow
+	{
+		rect	9,18,89,90
+		background	"guis/assets/cpuserver/uaclogo2"
+		matcolor	0,0,0,0.5
+		visible	1
+	}
+	windowDef Logo
+	{
+		rect	18,25,69,65
+		background	"gui/addlogo"
+		matcolor	1,1,1,1
+		visible	1
+	}
+	windowDef Contents11
+	{
+		rect	-24,93,689,385
+		visible	1
+		windowDef Contentsbg12
+		{
+			rect	27,7,629,331
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite3"
+			matcolor	0,0.3,0.4,0.15
+		}
+		windowDef Contentscorner112
+		{
+			rect	41,6,88,-34
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef Contentscorner212
+		{
+			rect	559,6,-88,-34
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef Contentscorner312
+		{
+			rect	41,340,88,34
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef Contentscorner412
+		{
+			rect	559,340,-88,34
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef ContentsBottom12
+		{
+			rect	129,342,430,34
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef ContentsRight12
+		{
+			rect	559,40,-88,300
+			visible	1
+			background	"guis/assets/common/1pxborder_vert"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef ContentsLeft12
+		{
+			rect	41,40,88,300
+			visible	1
+			background	"guis/assets/common/1pxborder_vert"
+			matcolor	0.6,0.8,1,0.5
+		}
+		windowDef ContentsTop12
+		{
+			rect	129,4,430,-34
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	0.6,0.8,1,0.5
+		}
+	}
+	windowDef ButtonAreaBoxTop1
+	{
+		rect	30,174,577,32
+		visible	1
+		background	"guis/assets/teleporter/grid1"
+		matcolor	1,1,1,0.5
+	}
+	windowDef ButtonAreaBoxMid1
+	{
+		rect	30,206,577,-193
+		visible	1
+		background	"guis/assets/teleporter/grid2"
+		matcolor	1,1,1,0.5
+	}
+	windowDef ButtonAreaBoxBtm1
+	{
+		rect	30,399,577,-32
+		visible	1
+		background	"guis/assets/teleporter/grid1"
+		matcolor	1,1,1,0.5
+	}
+	windowDef Text3142
+	{
+		rect	33,103,574,43
+		text	"#str_03672"
+		font	"fonts/micro"
+		textscale	0.6
+		forecolor	0.6,1,1,0.75
+		visible	1
+	}
+	windowDef Text31411
+	{
+		rect	33,138,420,33
+		text	"#str_03673"
+		font	"fonts/micro"
+		textscale	0.45
+		forecolor	0.6,1,1,0.35
+		visible	1
+	}
+	windowDef TextBio1
+	{
+		rect	46,174,544,253
+		text	"#str_03674"
+		font	"fonts/bank"
+		textscale	0.7
+		forecolor	1,1,1,0.80000007
+		visible	1
+	}
+	windowDef TitleText12
+	{
+		rect	551,378,44,54
+		visible	1
+		forecolor	1,1,1,0.7
+		text	"|"
+		textscale	0.8
+
+		onTime 0 {
+			transition "forecolor" "1 1 1 0" "1 1 1 0.7" "100" ;
+		}
+
+		onTime 200 {
+			transition "forecolor" "1 1 1 0.7" "1 1 1 0" "100" ;
+		}
+
+		onTime 400 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef SubButtons
+	{
+		rect	289,413,335,65
+		visible	1
+		windowDef SubBG1
+		{
+			rect	6,11,155,39
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite3"
+			matcolor	0.7,0.9,1,0.25
+		}
+		windowDef SubBG2
+		{
+			rect	163,11,155,39
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite3"
+			matcolor	0.7,0.9,1,0.25
+		}
+		windowDef SubText1
+		{
+			rect	9,14,150,34
+			text	"#str_03667"
+			font	"fonts/micro"
+			textscale	0.4
+			forecolor	1,1,1,0.7
+			visible	1
+			textalign	1
+		}
+		windowDef SubText2
+		{
+			rect	166,14,150,34
+			text	"#str_00124"
+			font	"fonts/micro"
+			textscale	0.4
+			forecolor	1,1,1,0.7
+			visible	1
+			textalign	1
+		}
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.6, 0.9, 1, 0.1
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	10,10,-620,440
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.4 ,1
+		visible	1
+	}
+	windowDef Reflect1
+	{
+		rect	5,-8,630,501
+		matcolor	1 ,1 ,1 ,0.1
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Outerglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outerglow"
+		matcolor	0.6,1,1 , pdflick [ time * .0015 ] / 4
+		visible	0
+	}
+	windowDef Outershadow1
+	{
+		rect	-36,0,-749,506
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+}

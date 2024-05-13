@@ -1,0 +1,72 @@
+MD5Version 10
+commandline "anim models/characters/Heads/HEAD04_SURGEON/death.mb -dest models/md5/characters/npcs/heads/h4death.md5anim -game Doom -prefix H4_ -keep headcontrol neckcontrol loneckcontrol Leyeaim Reyeaim -parent Head headcontrol -parent Reyeaim Head -parent Leyeaim Head -parent headcontrol neckcontrol -parent neckcontrol loneckcontrol -parent Neck neckcontrol -parent Jaw Head -parent mouth12 Head -parent mouth1 Head -parent mouth2 Head -parent mouth3 Head -parent mouth4 Jaw -parent mouth5 Jaw -parent mouth6 Jaw -parent mouth7 Jaw -parent mouth8 Jaw -parent mouth9 Head -parent mouth10 Head -parent mouth11 Head -parent tongue1 Jaw -parent Lcheek Head -parent Rcheek Head -parent Rnostril Head -parent Lnostril Head -parent Lsmile Head -parent Rsmile Head -parent Rcheek Head -parent Lcheek Head -parent Lsneer Head -parent Rsneer Head -parent Lbrow1 Head -parent Lbrow2 Head -parent Lbrow3 Head -parent Rbrow1 Head -parent Rbrow2 Head -parent Rbrow3 Head -parent Ruplid Head -parent Rlolid Head -parent Luplid Head -parent Llolid Head -rotate 90"
+
+numFrames 2
+numJoints 24
+frameRate 24
+numAnimatedComponents 0
+
+hierarchy {
+	"origin"	-1 0 0	//
+	"loneckcontrol"	0 0 0	// origin
+	"Loneck"	1 0 0	// loneckcontrol
+	"neckcontrol"	1 0 0	// loneckcontrol
+	"Neck"	3 0 0	// neckcontrol
+	"headcontrol"	3 0 0	// neckcontrol
+	"Head"	5 0 0	// headcontrol
+	"Jaw"	6 0 0	// Head
+	"Lbrow1"	6 0 0	// Head
+	"Lbrow2"	6 0 0	// Head
+	"Lbrow3"	6 0 0	// Head
+	"Leyeaim"	6 0 0	// Head
+	"Lfteye_Focus"	11 0 0	// Leyeaim
+	"Llolid"	6 0 0	// Head
+	"Lsmile"	6 0 0	// Head
+	"Luplid"	6 0 0	// Head
+	"Rbrow1"	6 0 0	// Head
+	"Rbrow2"	6 0 0	// Head
+	"Rbrow3"	6 0 0	// Head
+	"Rcheek"	6 0 0	// Head
+	"Reyeaim"	6 0 0	// Head
+	"Rteye_Focus"	20 0 0	// Reyeaim
+	"Rlolid"	6 0 0	// Head
+	"Ruplid"	6 0 0	// Head
+}
+
+bounds {
+	( -0.8773083091 -3.8421497345 2.3810389042 ) ( 20.0040817261 3.8421497345 15.8802757263 )
+	( -0.8773083091 -3.8421497345 2.3810389042 ) ( 20.0040817261 3.8421497345 15.8802757263 )
+}
+
+baseframe {
+	( 0 0 0 ) ( -0.4999999702 -0.5000000596 -0.5000000596 )
+	( 0 6.1157722473 1.4427882433 ) ( 0 0 0 )
+	( 0 0 0 ) ( -0.6069879532 -0.3627197444 -0.6069879532 )
+	( 0 0 0 ) ( 0 0 0 )
+	( 0 0 0 ) ( -0.6069879532 -0.3627197444 -0.6069879532 )
+	( 0 3.2236862183 1.7341176271 ) ( 0 0 0 )
+	( -0 1.345413208 -1.0396351814 ) ( 0.6845471263 -0.1771869808 0.6845471263 )
+	( 3.78160429 0.352876097 0 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 4.7731485367 -3.4461257458 0.6185831428 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 4.4259939194 -3.3689749241 1.3996932507 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 3.6444997787 -2.9663109779 2.3382430077 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 12.073964119 -6.7456989288 1.3034797907 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 0 0 0 ) ( 0 0 0 )
+	( 4.4452991486 -2.3183562756 1.4132430553 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 5.4737443924 -0.2176600695 1.8538128138 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 4.5785417557 -2.306448698 1.4143134356 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 4.6952834129 -3.5984430313 -0.6692169905 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 4.4375844002 -3.3714010715 -1.4796131849 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 3.4101583958 -2.848815918 -2.4594247341 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 4.5087237358 -0.5989473462 -2.5097332001 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 12.0739631653 -6.7456989288 -1.3324166536 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 0 0 0 ) ( 0 0 0 )
+	( 4.4564976692 -2.3358690739 -1.3915944099 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+	( 4.5811834335 -2.3593924046 -1.3861994743 ) ( -0.6845471263 0.1771869808 -0.6845471263 )
+}
+
+frame 0 {
+}
+
+frame 1 {
+}

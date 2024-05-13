@@ -1,0 +1,61 @@
+skin skins/zsec/zsec_machinegun_helmet {
+	models/weapons/pistol/w_pistol.tga textures/common/nodraw
+	models/weapons/shotgun/w_shotgun.tga textures/common/nodraw
+	models/monsters/zsecurity/zsechead.tga textures/common/nodraw
+	models/monsters/zsecurity/marsec.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs2damage.tga textures/common/nodraw
+	models/monsters/zsecurity/zsheild.tga textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass.tga textures/common/nodraw
+	models/monsters/zsecurity/zsecfist_right textures/common/nodraw
+	models/monsters/zsecurity/zsecfist_left textures/common/nodraw
+	models/monsters/zsecurity/zsechead4.tga textures/common/nodraw
+}
+
+skin skins/zsec/zsec_machinegun_zombie_face {
+	models/weapons/pistol/w_pistol.tga textures/common/nodraw
+	models/weapons/shotgun/w_shotgun.tga textures/common/nodraw
+	models/monsters/zsecurity/zsechead2.tga textures/common/nodraw
+	models/monsters/zsecurity/zsheild.tga textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass.tga textures/common/nodraw
+	models/monsters/zsecurity/zsecfist_right textures/common/nodraw
+	models/monsters/zsecurity/zsecfist_left textures/common/nodraw
+	models/monsters/zsecurity/zsechead4.tga textures/common/nodraw
+}
+
+skin skins/zsec/zsec_pistol {
+	models/weapons/shotgun/w_shotgun.tga textures/common/nodraw
+	models/weapons/machinegun/w_machinegun.tga textures/common/nodraw
+	models/monsters/zsecurity/zsechead2.tga textures/common/nodraw
+	models/monsters/zsecurity/zsheild.tga textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass.tga textures/common/nodraw
+	models/monsters/zsecurity/zsechand_right textures/common/nodraw
+	models/monsters/zsecurity/zsecfist_left textures/common/nodraw
+	models/monsters/zsecurity/zsechead.tga textures/common/nodraw
+	models/monsters/zsecurity/marsec.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs2damage.tga textures/common/nodraw
+}
+
+skin skins/zsec/zsec_pistol_shield {
+	models/weapons/shotgun/w_shotgun.tga textures/common/nodraw
+	models/weapons/machinegun/w_machinegun.tga textures/common/nodraw
+	models/monsters/zsecurity/zsechead.tga textures/common/nodraw
+	models/monsters/zsecurity/marsec.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs.tga textures/common/nodraw
+	models/monsters/zsecurity/zsgogs2damage.tga textures/common/nodraw
+	models/monsters/zsecurity/zsechand_right textures/common/nodraw
+	models/monsters/zsecurity/zsechand_left textures/common/nodraw
+	models/monsters/zsecurity/zsechead4.tga textures/common/nodraw
+}
+
+skin skins/zsec/zsec_shotgun {
+	models/weapons/pistol/w_pistol.tga textures/common/nodraw
+	models/weapons/machinegun/w_machinegun.tga textures/common/nodraw
+	models/monsters/zsecurity/zsechead2.tga textures/common/nodraw
+	models/monsters/zsecurity/zsheild.tga textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass.tga textures/common/nodraw
+	models/monsters/zsecurity/zsechand_right textures/common/nodraw
+	models/monsters/zsecurity/zsecfist_left textures/common/nodraw
+	models/monsters/zsecurity/zsechead4.tga textures/common/nodraw
+}

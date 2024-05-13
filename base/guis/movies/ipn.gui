@@ -1,0 +1,417 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	visible	1
+	float "trigcount" 0
+	windowDef Bg
+	{
+		rect	10,10,618,456
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,1
+		visible	1
+	}
+	windowDef Movie
+	{
+		rect	31, 24, 577, 428
+		background	"video/video_ipn_news"
+		matcolor	1, 1, 1, 1
+		visible	1
+
+		onTrigger {
+			resetCinematics ;
+			if ("desktop::trigcount" == 2) { 
+				set "desktop::trigcount" "3" ;
+			//debug	set "Outershadow1::text" "3" ;
+			}
+			if ("desktop::trigcount" == 1) { 
+				resetTime "AnimDown" "0" ;
+				set "desktop::trigcount" "2" ;
+			//debug	set "Outershadow1::text" "2" ;
+			}
+			if ("desktop::trigcount" == 0) { 
+				resetTime "Anim" "0" ;
+				set "desktop::trigcount" "1" ;
+			//debug	set "Outershadow1::text" "1" ;
+			}
+		}
+
+	}
+	windowDef Logos
+	{
+		rect	311,18,302,175
+		visible	1
+		windowDef Bg3
+		{
+			rect	9,6,294,158
+			background	"guis/assets/cpuserver/bgWhite4"
+			matcolor	0.1,0.1,0,0
+			visible	1
+		}
+		windowDef UAC
+		{
+			rect	27,15,262,137
+			background	"guis/assets/marscity/news_uac"
+			matcolor	1,1,1,0
+			visible	0
+		}
+		windowDef Biomech
+		{
+			rect	21,17,262,137
+			background	"guis/assets/marscity/news_biomech"
+			matcolor	1,1,1,0
+			visible	0
+		}
+		windowDef Amun
+		{
+			rect	21,17,262,137
+			background	"guis/assets/marscity/news_amun"
+			matcolor	1,1,1,0
+			visible	0
+		}
+		windowDef Medridi
+		{
+			rect	25,16,262,137
+			background	"guis/assets/marscity/news_medridi"
+			matcolor	1,1,1,0
+			visible	0
+		}
+		windowDef Europa
+		{
+			rect	11,17,262,137
+			background	"guis/assets/marscity/news_europa"
+			matcolor	1,1,1,0
+			visible	0
+		}
+		windowDef MixMox
+		{
+			rect	21,15,262,137
+			background	"guis/assets/marscity/news_mixmox"
+			matcolor	1,1,1,0
+			visible	0
+		}
+		windowDef Senate
+		{
+			rect	18,17,262,137
+			background	"guis/assets/marscity/news_senate"
+			matcolor	1,1,1,0
+			visible	0
+		}
+		windowDef Groetre
+		{
+			rect	21,17,262,137
+			background	"guis/assets/marscity/news_Groetre"
+			matcolor	1,1,1,0
+			visible	0
+		}
+	}
+	windowDef Mask
+	{
+		rect	25 ,20 ,-590 ,440
+		visible	1
+		background	"guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.25
+	}
+	windowDef Addhighlight1
+	{
+		rect	28,22,-586,174
+		background	"gui/addhighlight"
+		matcolor	0.4 ,0.8 ,0.9 ,1
+		visible	1
+	}
+	windowDef Bg1
+	{
+		rect	10,356,618,103
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+		visible	1
+	}
+	windowDef NewsScrollClip
+	{
+		rect	44,413,363,38
+		visible	1
+
+		onTime 0 {
+			transition "NewsScroll::rect" "0 0 6420 38" "-6420 0 6420 38" "120000" ;
+			transition "NewsScroll1::rect" "6420 0 6276 38" "0 0 6420 38" "120000" ;	
+		}
+
+		onTime 120000 {
+			resetTime "0" ;
+		}
+
+		windowDef NewsScroll
+		{
+			rect	0,0,6420,38
+			visible	1
+			forecolor	1,1,1,0
+			text	"#str_03870"
+			textscale	0.40000001
+		}
+		windowDef NewsScroll1
+		{
+			rect	6276,0,6420,38
+			visible	1
+			forecolor	1,1,1,0
+			text	"#str_03870"
+			textscale	0.40000001
+		}
+	}
+	windowDef StockScroll
+	{
+		rect	41,378,591,38
+		visible	1
+		forecolor	1,0.6,0,0
+		text	"#str_03871"
+		textscale	0.43
+	}
+	windowDef Addhighlight2
+	{
+		rect	28,217,586,-241
+		background	"gui/addhighlight"
+		matcolor	0.2 ,0.4 ,0.5 ,1
+		visible	1
+	}
+	windowDef Bg2
+	{
+		rect	31, 24, 577, 428
+		background	"guis/assets/pda/glowup60_256"
+		matcolor	0.2,0.65,1,1
+		visible	1
+	}
+	windowDef Text
+	{
+		rect	122,311,395,61
+		visible	1
+		forecolor	0.6,0.8,1,0
+		text	"#str_03872"
+		textscale	0.55
+		font	"fonts/micro"
+	}
+	windowDef Ipn
+	{
+		rect	96,119,455,252
+		background	"guis/assets/marscity/ipn"
+		matcolor	1,1,1,0.8
+		visible	1
+	}
+	windowDef Static
+	{
+		rect	24,19,-591,440
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdflick[ time * 0.001 ] / 14
+	}
+	windowDef Outershadow
+	{
+		rect	24,19,-591,440
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	22,20,-596,440
+		background	"gui/addhighlight"
+		matcolor	0.05,0.1,0.1,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	25 ,20 ,-590 ,440
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	2
+	}
+	windowDef Reflect
+	{
+		rect	30,19,542,446
+		matcolor	1 ,1 ,1 ,0.08
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Anim
+	{
+		rect	0,0,100,100
+		visible	0
+		notime	1
+
+		onTime 4200 {
+			transition "text::forecolor" "0.6 0.8 1 0" "0.6 0.8 1 0.8" "300" ;
+		}
+
+		onTime 5500 {
+			transition "Bg2::matcolor" "0.2 0.65 1 1" "0.2 0.65 1 0" "1000" ;
+			transition "Ipn::rect" "96 119 455 252" "209 350 220 126" "600" "0.4" "0" ;
+			transition "text::forecolor" "0.6 0.8 1 0.8" "0.6 0.8 1 0" "300" ;
+		}
+
+		onTime 6100 {
+			transition "Ipn::rect"  "209 350 220 126" "395 350 220 126" "600" "0" "0.6" ;
+			transition "StockScroll::forecolor" "1 0.6 0 0" "1 0.6 0 0.7" "500" ;
+			transition "NewsScroll::forecolor" "1 1 1 0" "1 1 1 0.7" "500" ;
+			transition "NewsScroll1::forecolor" "1 1 1 0" "1 1 1 0.7" "500" ;
+		}
+
+		onTime 5800 {
+			transition "Bg3::matcolor" "0.1 0.1 0 0" "0.1 0.1 0 0.5" "500" ;
+		}
+
+		onTime 6300 {
+			set "UAC::visible" "1" ;
+			transition "Uac::matcolor" "1 1 1 0" "1 1 1 0.8" "500" ;
+		}
+
+		onTime 22000 {
+			transition "Uac::matcolor" "1 1 1 0.8" "1 1 1 0" "500" ;
+		}
+
+		onTime 22500 {
+			set "UAC::visible" "0" ;
+		}
+
+		onTime 22900 {
+			set "Biomech::visible" "1" ;
+			transition "Biomech::matcolor" "1 1 1 0" "1 1 1 0.8" "500" ;
+		}
+
+		onTime 33300 {
+			transition "Biomech::matcolor" "1 1 1 0.8" "1 1 1 0" "500" ;
+		}
+
+		onTime 33800 {
+			set "Biomech::visible" "0" ;
+		}
+
+		onTime 35700 {
+			set "Amun::visible" "1" ;
+			transition "Amun::matcolor" "1 1 1 0" "1 1 1 0.8" "500" ;
+		}
+
+		onTime 51600 {
+			transition "Amun::matcolor" "1 1 1 0.8" "1 1 1 0" "500" ;
+		}
+
+		onTime 52100 {
+			set "Amun::visible" "0" ;
+		}
+
+		onTime 52600 {
+			set "Medridi::visible" "1" ;
+			transition "Medridi::matcolor" "1 1 1 0" "1 1 1 0.8" "500" ;
+		}
+
+		onTime 78000 {
+			transition "Medridi::matcolor" "1 1 1 0.8" "1 1 1 0" "500" ;
+		}
+
+		onTime 78500 {
+			set "Medridi::visible" "0" ;
+		}
+
+		onTime 79000 {
+			set "Europa::visible" "1" ;
+			transition "Europa::matcolor" "1 1 1 0" "1 1 1 0.8" "500" ;
+		}
+
+		onTime 87800 {
+			transition "Europa::matcolor" "1 1 1 0.8" "1 1 1 0" "500" ;
+			set "UAC::visible" "1" ;
+			transition "Uac::matcolor" "1 1 1 0" "1 1 1 0.8" "500" ;			
+		}
+
+		onTime 88300 {
+			set "Europa::visible" "0" ;
+		}
+
+		onTime 111500 {
+			transition "Uac::matcolor" "1 1 1 0.8" "1 1 1 0" "500" ;
+		}
+
+		onTime 112000 {
+			set "UAC::visible" "0" ;
+		}
+
+		onTime 114500 {
+			set "MixMox::visible" "1" ;
+			transition "MixMox::matcolor" "1 1 1 0" "1 1 1 0.8" "500" ;
+		}
+
+		onTime 132500 {
+			transition "MixMox::matcolor" "1 1 1 0.8" "1 1 1 0" "500" ;
+		}
+
+		onTime 133000 {
+			set "MixMox::visible" "0" ;
+		}
+
+		onTime 133500 {
+			set "Senate::visible" "1" ;
+			transition "Senate::matcolor" "1 1 1 0" "1 1 1 0.8" "500" ;
+		}
+
+		onTime 153500 {
+			transition "Senate::matcolor" "1 1 1 0.8" "1 1 1 0" "500" ;
+		}
+
+		onTime 154000 {
+			set "Senate::visible" "0" ;
+		}
+
+		onTime 155600 {
+			set "Groetre::visible" "1" ;
+			transition "Groetre::matcolor" "1 1 1 0" "1 1 1 0.8" "500" ;
+		}
+
+		onTime 175600 {
+			transition "Groetre::matcolor" "1 1 1 0.8" "1 1 1 0" "500" ;
+		}
+
+		onTime 176100 {
+			set "Groetre::visible" "0" ;
+			transition "Bg3::matcolor" "0.1 0.1 0 0.5" "0.1 0.1 0 0" "500" ;
+		}
+
+		onTime 181000 {
+			if ("desktop::trigcount" != 2) { 
+				transition "Ipn::rect" "395 350 220 126"  "96 119 455 252" "1000" "0" "0.6" ;
+				transition "Bg2::matcolor" "0.2 0.65 1 0" "0.2 0.65 1 1" "1000" ;
+				transition "StockScroll::forecolor" "1 0.6 0 0.7" "1 0.6 0 0" "500" ;
+				transition "NewsScroll::forecolor" "1 1 1 0.7" "1 1 1 0" "500" ;
+				transition "NewsScroll1::forecolor" "1 1 1 0.7" "1 1 1 0" "500" ;
+			}
+		}
+		onTime 182000 {
+			set "Movie::visible" "0" ;
+			set "Movie::rect" "0 0 0 0" ;
+		}
+		
+	}
+	windowDef AnimDown
+	{
+		rect	0,0,100,100
+		visible	0
+		notime	1
+
+		onTime 0 {
+			set "Movie::visible" "0" ;
+			set "Movie::rect" "0 0 0 0" ;
+			transition "Ipn::rect" "96 119 455 252"  "96 119 455 252" "10000" ;
+			transition "Bg2::matcolor" "0.2 0.65 1 1" "0.2 0.65 1 1" "10000" ;
+			transition "StockScroll::forecolor" "1 0.6 0 0" "1 0.6 0 0" "10000" ;
+			transition "NewsScroll::forecolor" "1 1 1 0" "1 1 1 0" "10000" ;
+			transition "NewsScroll1::forecolor" "1 1 1 0" "1 1 1 0" "10000" ;			
+		}
+
+	}
+	windowDef Outershadow1
+	{
+		rect	24,19,-591,440
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,0.6
+		visible	1
+	//debug	text "0"
+	//debug	textscale 2
+	}
+}

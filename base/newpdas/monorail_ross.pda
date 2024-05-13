@@ -1,0 +1,48 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda monorail_Ross 
+{
+	name         "Gary Ross"
+	fullname     "Gary Ross"
+	icon         "guis/assets/pda/ross"
+	id           "3217-4A"
+	post         "Site 2"
+	title        "Lead Engineer"
+	security     "Monorail Security"
+	pda_email    "monorail_ross_email_1"
+	pda_email    "monorail_ross_email_2"
+}
+
+email monorail_ross_email_1
+{
+	date		"10-23-2145"
+	to			"Gary Ross"
+	from		"Delta Security"
+	subject		"ADS operational"
+	text
+	{
+	"Mr. Ross,\n\n"
+	"This is a quick note to remind you that the new Automated Defense System, at the Delta Labs entrance, is fully operational.  Please contact Delta Security with any questions.\n\n"
+	"Thank You,\n"
+	"Delta Security"
+	}
+}
+
+email monorail_ross_email_2 
+{
+	date		"11-04-2145"
+	to			"Gary Ross"
+	from		"Central Security"
+	subject		"RE: Airlock Request"
+	text 
+	{
+	"As you requested, the Junction 5, Site 2 Airlock code has been updated to 826, this will allow you manually override automated rail sensor systems allowing you to open any of the track doors.\n\n"
+	"----Original Message----\n"
+	"Sent:    11-03-2145\n"
+	"To:      Central Security\n"
+	"From:    Gary Ross\n"
+	"Subject: Airlock Request\n\n"
+	"The Site 2 engineering team will be conducting a few tests on the J5 airlock system next week.  We will need to manually override the ARSS for these tests, and request the input code be updated to 826, to conduct the tests.\n\n"
+"Thank You."	
+	}
+}

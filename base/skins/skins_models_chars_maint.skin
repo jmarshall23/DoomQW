@@ -1,0 +1,4 @@
+skin skins/models/chars/maint/djumpsuit {
+	models/characters/male_npc/jumpsuit/jumpsuit  models/characters/male_npc/jumpsuit/djumpsuit
+	models/characters/scientist/head03/head03     models/characters/scientist/head03/dhead03
+}

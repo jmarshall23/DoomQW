@@ -1,0 +1,39 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef glassCrack
+	{
+		rect	5,5,-630,470
+		visible	1
+		background	"guis/assets/common/glasscrack"
+		matcolor	1 ,1,1,0.4
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Dirt
+	{
+		rect	0,0,640,480
+		matcolor	1, 1, 1 ,1
+		visible	1
+		background	"guis/assets/common/dirt3"
+	}
+	windowDef GlassScratch1
+	{
+		rect	0,0,-639,-482
+		background	"guis/assets/common/scratch1d"
+		visible	1
+		matcolor	0,0,0,0.7
+	}
+	windowDef GlassScratch
+	{
+		rect	0,-2,-639,-482
+		background	"gui/common/scratch1d"
+		visible	1
+		matcolor	0.7,0.7,0.7,1
+	}
+}

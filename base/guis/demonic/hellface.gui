@@ -1,0 +1,166 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	backcolor	0 ,0 ,0 ,0
+	nocursor	1
+	windowDef BackgroundH
+	{
+		rect	0 ,0 ,640 ,480
+		backcolor	0 ,0 ,0 ,1
+		visible	1
+	}
+	windowDef BackgroundH1
+	{
+		rect	0 ,-5 ,640 ,-480
+		visible	1
+		background	"guis/assets/common/pentagramfx"
+		matcolor	1, 1, 1, 0.7
+	}
+	windowDef BackgroundH2
+	{
+		rect	0 ,0 ,-640 ,-480
+		visible	1
+		background	"gui/bloodtest1"
+		matcolor	0.2, 0, 0, 0.4
+	}
+	windowDef Faces1
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"gui/faces1"
+		matcolor	0.5, 0.2, 0.2, pdscaleTable[ time * 0.0003 ] /1.5
+	}
+	windowDef Faces2
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"gui/faces2"
+		matcolor	1, 1, 1, pdinout[ time * 0.001 ] /1.5
+	}
+	windowDef Faces3
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"gui/faces3"
+		matcolor	1, 1, 1, pdmgflick[ time * 0.0002 ] /1.5
+	}
+	windowDef BackgroundH3
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"gui/bloodtest1"
+		matcolor	1, 1, 1, 0.4
+	}
+	windowDef BackgroundH4
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"gui/bloodtest2"
+		matcolor	1, 1, 1, 0.6
+	}
+	windowDef BackgroundH22
+	{
+		rect	0 ,0 ,-640 ,480
+		visible	1
+		background	"gui/bloodtest1"
+		matcolor	0.2, 0, 0, 0.3
+	}
+	windowDef Faces1a
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"guis/assets/test/faces"
+		matcolor	1, 1, 1, 0
+	}
+	windowDef BackgroundFlash
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		backcolor	1, 1, 1, 0
+
+		onTime 0 {
+			transition "backcolor" "0.3 0 0 0.3" "0.6 0.2 0 0" "400" ;
+			transition "Faces1a::matcolor" "1 1 1 0" "1 1 1 0.1" "500" ;
+		}
+
+		onTime 500 {
+			transition "backcolor" "0.3 0 0 0.1" "1 0.2 0 0" "350" ;
+			transition "Faces1a::matcolor" "1 1 1 0.1" "1 1 1 0" "200" ;
+			
+		}
+
+		onTime 750 {
+			set "Faces1a::rect" "0 0 -640 480" ;
+		}
+
+		onTime 800 {
+			transition "backcolor" "0.3 0 0 0.2" "1 0.2 0 0" "350" ;
+			transition "Faces1a::matcolor" "1 1 1 0.1" "1 1 1 0" "200" ;
+		}
+
+		onTime 1200 {
+			transition "backcolor" "0.3 0 0 0.3" "1 0.2 0 0" "300" ;
+			set "Faces1a::rect" "0 0 640 480" ;
+		}
+
+		onTime 1500 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Background6
+	{
+		rect	0 ,0 ,-640 ,480
+		visible	1
+		background	"gui/bloodtest2"
+		matcolor	0.5, 0.2, 0.2, 0.5
+
+		onTime 0 {
+			transition "matcolor" "0.6 0.6 0.6 0" "0.4 0.4 0.4 0.9" "500" ;
+		}
+
+		onTime 700 {
+			transition "matcolor" "0.4 0.4 0.4 0.9" "0.6 0.6 0.6 0" "500" ;
+		}
+
+		onTime 10000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Static
+	{
+		rect	-10 ,-10 ,660 ,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 4
+	}
+	windowDef Mask
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.4
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.3 ,0.8 ,0.8 ,1
+		visible	1
+	}
+	windowDef Outershadow
+	{
+		rect	-4,-4,650,490
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,640 ,480
+		matcolor	1, 1, 1 ,0.8
+		visible	1
+		background	"guis/assets/common/dirt2"
+	}
+}

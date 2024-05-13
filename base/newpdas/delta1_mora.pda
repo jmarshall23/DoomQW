@@ -1,0 +1,48 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta1_mora {
+	name         "Brian Mora"
+	fullname     "Brian Karr Mora"
+	icon         "guis/assets/pda/icon_bmora"
+	id           "9966-22"
+	post         "Delta Labs, Level 1"
+	title        "Delta Reactor Engineer"
+	security     "Reactor Engineering"
+	pda_email    "delta1_mora_email_1"
+	pda_email    "delta1_mora_email_2"
+}
+
+email delta1_mora_email_1 {
+	date		"11-14-2145"
+	to		"Brian Mora"
+	from		"Delta Authority"
+	subject	"Reactor Safety"
+	text {
+"Mr. Mora,\n"
+"Your complaint has been filed with Central Authority, they will be handling your case from this point forward.\n\n"
+"----Original Message----\n"
+"Sent: 11-9-2145\n"
+"To: Delta Authority\n"
+"As the engineer responsible for the Reactor Upper Level Maintenance, I feel it necessary to bring the current safety issues to your attention.  If we are going to be required to take readings from the upper level while the reactor is online then there will eventually be accidents.  I recommend remote sensors be used for these readings and that the upper level be closed while the Reactor is online.\n\n"
+	"Sincerely,\n"
+	"Brian Mora"
+	}
+}
+
+email delta1_mora_email_2 {
+	date		"11-12-2145"
+	to			"Brian Mora"
+	from		"martianbuddy.com"
+	subject	"BECOME A BETTER PERSON NOW!"
+	text {
+	"LOWEST PRICE!\n"
+	"FREE SHIPPING\n"
+	"DISCREET PACKAGING\n\n"
+	"Are you Sad?  We'll make you happy!\n"
+	"Are you Lethargic?  We'll perk you up!\n"
+	"Do you lack Concentration?  We'll help you focus!\n\n"
+	"We carry all brands of the latest Bioengineered Neurological Drugs.\n"
+	"Contact our salespersons this week and save 15% off of our already low advertised prices.\n\n"
+	"Thanks from Martian Buddy"
+	}
+}

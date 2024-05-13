@@ -1,0 +1,137 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 1
+	windowDef Spikes
+	{
+		rect	50 ,108 ,540 ,100
+		matcolor	1 ,1 ,1 ,0.3
+		visible	1
+		background	"gui/spike5"
+		matscalex	5
+		matscaley	1
+	}
+	windowDef Bars
+	{
+		rect	50 ,300 ,270 ,100
+		matcolor	1 ,1 ,1 ,0.2
+		visible	1
+		background	"gui/bars1"
+		matscalex	1.4
+		matscaley	1
+	}
+	windowDef spikes2
+	{
+		visible	1
+		rect	330, 300, 260, 100
+		background	"gui/spike3"
+		matcolor	1 ,1 ,1 ,0.3
+		matscalex	0.5
+		matscaley	1
+	}
+	windowDef Over
+	{
+		rect	0 ,0 ,640 ,480
+		matcolor	1 ,1 ,1 ,0.8
+		visible	1
+		background	"guis/assets/epd/test5.tga"
+	}
+	windowDef Title
+	{
+		rect	59,30,529,50
+		visible	1
+		forecolor	1,1,1,0.8
+		text	"#str_04834"
+		textscale	0.8
+		font	"fonts/micro"
+	}
+	windowDef Text1
+	{
+		rect	362,409,236,50
+		visible	1
+		forecolor	0.8,0.9,1,0.6
+		text	"#str_04830"
+		textscale	0.7
+		font	"fonts/micro"
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef GlowLine
+	{
+		rect	0 ,0 ,640 ,480
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+		background	"gui/blueborder"
+	}
+	windowDef Warning
+	{
+		rect	0 ,0 ,640 ,480
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+		background	"guis/assets/epd/warning"
+
+		onTime 0 {
+			transition "Warning::matcolor" "1 1 1 0.8" "1 1 1 0.2" "500" ;
+		}
+
+		onTime 500 {
+			transition "Warning::matcolor" "1 1 1 0.2" "1 1 1 0.8" "500" ;
+		}
+
+		onTime 1200 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Bglow1
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef Reflect1
+	{
+		rect	10,0,620,470
+		matcolor	1 ,1 ,1 ,0.2
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Dirt
+	{
+		rect	0,0,-640,480
+		matcolor	1, 1, 1 ,0.1
+		visible	1
+		background	"guis/assets/common/dirt2"
+		noevents	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,-640,480
+		matcolor	0.15,0.15,0.15,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	2
+	}
+	windowDef Outerglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outerglow"
+		matcolor	0.4,1 ,1 , pdflick [ time * .0025 ] / 5
+		visible	1
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+}

@@ -1,0 +1,349 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef BgBlack0
+	{
+		rect	-13,-9,668,497
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+	windowDef BackgroundParent
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef Bg11
+		{
+			rect	0,0,320,240
+			visible	1
+			background	"guis/assets/common/framebgfill"
+			matcolor	0.07,0.09,0.11,1
+		}
+		windowDef Bg21
+		{
+			rect	320,0,-320,240
+			visible	1
+			background	"guis/assets/common/framebgfill"
+			matcolor	0.07,0.09,0.11,1
+		}
+		windowDef Bg31
+		{
+			rect	0,240,320,-240
+			visible	1
+			background	"guis/assets/common/framebgfill"
+			matcolor	0.07,0.09,0.11,1
+		}
+		windowDef Bg41
+		{
+			rect	320,240,-320,-240
+			visible	1
+			background	"guis/assets/common/framebgfill"
+			matcolor	0.07,0.09,0.11,1
+		}
+		windowDef CornerTL
+		{
+			rect	9,10,63,-61
+			visible	1
+			background	"guis/assets/lightswitch/corner"
+			matcolor	0.8, 1, 1, 0.2
+		}
+		windowDef CornerTR
+		{
+			rect	567,10,-63,-61
+			visible	1
+			background	"guis/assets/lightswitch/corner"
+			matcolor	0.8, 1, 1, 0.2
+		}
+		windowDef CornerBL
+		{
+			rect	9,409,63,61
+			visible	1
+			background	"guis/assets/lightswitch/corner"
+			matcolor	0.8, 1, 1, 0.2
+		}
+		windowDef CornerBR
+		{
+			rect	567,409,-63,61
+			visible	1
+			background	"guis/assets/lightswitch/corner"
+			matcolor	0.8, 1, 1, 0.2
+		}
+	}
+	windowDef MapParent
+	{
+		rect	-15,24,675,432
+		visible	1
+		windowDef Bg121
+		{
+			rect	73,75,524,324
+			visible	0
+			background	"guis/assets/mmap/bluemap"
+			matcolor	1,1,1,1
+		}
+		windowDef BgMap
+		{
+			rect	73,75,524,324
+			visible	1
+			background	"guis/assets/cpuserver/map"
+			matcolor	1,1,1,0.8
+		}
+		windowDef ScrollTextHClip
+		{
+			rect	73,50,526,22
+			visible	1
+			windowDef ScrollTextH
+			{
+				rect	0,0,1210,22
+				visible	1
+				forecolor	1,1,1,0.2
+				text	"0          128          256          512          1024          512          256          128          0          128          256          512          1024          512          256          128          0"
+				textscale	0.25
+			}
+		}
+		windowDef ScrollTextVClip
+		{
+			rect	601,69,39,330
+			visible	1
+			windowDef ScrollTextV
+			{
+				rect	0,0,39,1171
+				visible	1
+				forecolor	1,1,1,0.2
+				text	"0\n\n\n\n128\n\n\n\n256\n\n\n\n 512\n\n\n\n1024\n\n\n\n512\n\n\n\n256\n\n\n\n128\n\n\n\n0\n\n\n\n128\n\n\n\n256\n\n\n\n 512\n\n\n\n1024\n\n\n\n512\n\n\n\n256\n\n\n\n128\n\n\n\n0"
+				textscale	0.25
+			}
+		}
+		windowDef ScrollTextHClip1
+		{
+			rect	73,400,526,22
+			visible	1
+			windowDef ScrollTextH1
+			{
+				rect	0,0,1210,22
+				visible	1
+				forecolor	1,1,1,0.2
+				text	"0          128          256          512          1024          512          256          128          0          128          256          512          1024          512          256          128          0"
+				textscale	0.25
+			}
+		}
+		windowDef ScrollTextVClip1
+		{
+			rect	30,69,39,330
+			visible	1
+			windowDef ScrollTextV1
+			{
+				rect	0,0,39,1171
+				visible	1
+				forecolor	1,1,1,0.2
+				text	"0\n\n\n\n128\n\n\n\n256\n\n\n\n 512\n\n\n\n1024\n\n\n\n512\n\n\n\n256\n\n\n\n128\n\n\n\n0\n\n\n\n128\n\n\n\n256\n\n\n\n 512\n\n\n\n1024\n\n\n\n512\n\n\n\n256\n\n\n\n128\n\n\n\n0"
+				textscale	0.25
+				textalign	2
+			}
+		}
+		windowDef MapGrid1
+		{
+			rect	73,75,525,322
+			visible	1
+			background	"gui/grid2"
+			matcolor	1,1,1,0.15
+			matscalex	3
+			matscaley	2.25
+		}
+		windowDef MapBg1
+		{
+			rect	67,71,536,25
+			visible	1
+			background	"guis/assets/teleporter/grid3"
+			matcolor	1,1,1,0.4
+		}
+		windowDef MapBG2
+		{
+			rect	67,96,536,-281
+			visible	1
+			background	"guis/assets/teleporter/grid4"
+			matcolor	1,1,1,0.4
+		}
+		windowDef MapBG3
+		{
+			rect	67,377,536,-25
+			visible	1
+			background	"guis/assets/teleporter/grid3"
+			matcolor	1,1,1,0.4
+		}
+	}
+	windowDef TextHem
+	{
+		rect	52,26,531,33
+		text	"#str_03847"
+		textscale	0.44
+		textalign	1
+		forecolor	0.8,1,1,0.3
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef TextHem1
+	{
+		rect	29,50,581,33
+		text	"#str_03848"
+		textscale	0.34
+		textalign	1
+		forecolor	1,1,1,0.498
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef Outerglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 6
+		visible	1
+	}
+	windowDef Reflect
+	{
+		rect	5,0,630,470
+		matcolor	1 ,1 ,1 ,0.15
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Static
+	{
+		rect	-9,-9,660,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 8
+	}
+	windowDef Addhighlight
+	{
+		rect	10,10,-620,440
+		background	"gui/addhighlight"
+		matcolor	0.4 ,0.4 ,0.1 ,1
+		visible	1
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	1, 0.7, 0, 0.1
+	}
+	windowDef Invasion
+	{
+		rect	0,0,640,480
+		visible	0
+		windowDef BgBlack
+		{
+			rect	10,10,620,465
+			visible	1
+			background	"guis/assets/common/bg"
+			matcolor	0,0,0,1
+		}
+		windowDef Roq1
+		{
+			rect	8,8,623,463
+			visible	1
+			background	"gui/mc_underground/inv5sm"
+			matcolor	1,1,1,1
+
+			onTrigger {
+				resetCinematics ;
+				resetTime "Anim" "0" ;		
+			}
+
+		}
+		windowDef Static3
+		{
+			rect	5,5,629,475
+			visible	1
+			background	"gui/static"
+			matcolor	1, 1, 1, 0
+		}
+		windowDef BackgroundH3
+		{
+			rect	0,0,640,480
+			visible	1
+			background	"gui/bloodtest1"
+			matcolor	0.7, 0.5, 0.5, 0
+		}
+		windowDef BgBlack2
+		{
+			rect	10,10,620,465
+			visible	1
+			background	"guis/assets/common/bg"
+			matcolor	0,0,0,0
+		}
+		windowDef Bglow1
+		{
+			rect	0,0,640,480
+			background	"guis/assets/cpuserver/bglow"
+			visible	1
+			matcolor	1, 0.4, 0, 0.08
+		}
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Mask
+	{
+		rect	0,0,640,480
+		visible	1
+		background	"guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.2
+	}
+	windowDef Outershadow1
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Dirt
+	{
+		rect	5,8,628,472
+		matcolor	1, 1, 1 ,0.8
+		visible	1
+		background	"guis/assets/common/dirt2"
+	}
+	windowDef Dirt1
+	{
+		rect	5,8,628,472
+		matcolor	1, 1, 1 ,0.8
+		visible	0
+		background	"guis/assets/common/dirt2"
+	}
+	windowDef Dirt2
+	{
+		rect	5,2,628,-472
+		matcolor	1, 1, 1 ,0.8
+		visible	1
+		background	"guis/assets/common/dirt2"
+	}
+	windowDef Dirt21
+	{
+		rect	5,2,628,-472
+		matcolor	1, 1, 1 ,0.8
+		visible	0
+		background	"guis/assets/common/dirt2"
+	}
+	windowDef Anim
+	{
+		rect	0,0,0,0
+		visible	0
+		notime	1
+
+		onTime 0 {
+			set "Invasion::visible" "1" ;
+			transition "BGBlack2::matcolor" "1 1 1 0.4" "0 0 0 0" "500" ;
+		}
+
+		onTime 4300 { 
+			transition "BGBlack2::matcolor" "1 1 1 0.3" "0 0 0 0.7" "200" ;
+			transition "Static3::matcolor" "1 1 1 0" "1 1 1 1" "200" ;
+			transition "backgroundH3::matcolor" "0.7 0.5 0.5 0" "0.7 0.5 0.5 0.2" "200" ;
+		}
+
+	}
+}

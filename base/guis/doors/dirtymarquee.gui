@@ -1,0 +1,276 @@
+windowDef Desktop
+{
+	comment	"gui_parm1 is the text to display. If the text is to wide set gui_parm2 to value 1 to make it smaller. If it still doesn't fit set gui_parm2 to value 2. set gui_parm3 value 0 to make the red locked version visible. set gui_parm3 to 0 for the red state, set it to 1 for the unlocked green. Triggering the gui will toggle between red and green."
+	rect	0 ,0 ,640 ,480
+	noTime	1
+	nocursor	1
+	float	"triggered"	0
+	float	"parmed"	0
+
+	onTrigger {
+		if  ("triggered" == 0) {
+			set "triggered" "1" ;
+			transition "bg1::matcolor" "1 0 0 0.6" "0.2 0.8 0.6 0.6" "500" ;
+			transition "bg2::matcolor" "1 0 0 0.6" "0.2 0.8 0.6 0.6" "500" ;
+			transition "logo1::matcolor" "1 0.4 0.3 0.6" "0.3 0.5 0.4 1" "500" ;
+			transition "logo2::matcolor" "1 0.4 0.3 0.6" "0.3 0.5 0.4 1" "500" ;
+			set "text1g::visible" "1" ;
+			set "text2g::visible" "1" ;
+			set "text3g::visible" "1" ;
+			set "text1r::visible" "0" ;
+			set "text2r::visible" "0" ;
+			set "text3r::visible" "0" ;
+			transition "Addhighlight::matcolor" "0.5 0.4 0.15 1" "0.15 0.4 0.5 1" "500" ;
+		} else {
+			set "triggered" "0" ;
+			transition "bg1::matcolor" "0.2 0.8 0.6 0.6" "1 0 0 0.6" "500" ;
+			transition "bg2::matcolor" "0.2 0.8 0.6 0.6" "1 0 0 0.6" "500" ;
+			transition "logo1::matcolor" "0.3 0.5 0.4 1" "1 0.4 0.3 0.6" "500" ;
+			transition "logo2::matcolor" "0.3 0.5 0.4 1" "1 0.4 0.3 0.6" "500" ;
+			set "text1g::visible" "0" ;
+			set "text2g::visible" "0" ;
+			set "text3g::visible" "0" ;
+			set "text1r::visible" "1" ;
+			set "text2r::visible" "1" ;
+			set "text3r::visible" "1" ;
+			transition "Addhighlight::matcolor" "0.15 0.4 0.5 1" "0.5 0.4 0.15 1" "500" ;
+		}
+	}
+
+	onEvent {
+		if ("gui::gui_parm2" == 1) {
+			set "text1::visible" "0" ;
+			set "text2::visible" "1" ;
+			set "text3::visible" "0" ;
+		}
+		if ("gui::gui_parm2" == 2) {
+			set "text1::visible" "0" ;
+			set "text2::visible" "0" ;
+			set "text3::visible" "1" ;
+		}
+
+		if ("gui::gui_parm3" == 1) {
+			if  ("parmed" == 0) {
+				set "triggered" "1" ;
+				set "bg1::matcolor" "0.2 0.8 0.6 0.6" ;
+				set "bg2::matcolor" "0.2 0.8 0.6 0.6" ;
+				set "logo1::matcolor" "0.3 0.5 0.4 1" ;
+				set "logo2::matcolor" "0.3 0.5 0.4 1" ;
+				set "text1g::visible" "1" ;
+				set "text2g::visible" "1" ;
+				set "text3g::visible" "1" ;
+				set "text1r::visible" "0" ;
+				set "text2r::visible" "0" ;
+				set "text3r::visible" "0" ;
+				set "Addhighlight::matcolor" "0.15 0.4 0.5 1" ;
+				set "parmed" "1" ;
+			}
+		} else {
+			if  ("parmed" == 0) {
+				set "bg1::matcolor" "1 0 0 0.6" ;
+				set "bg2::matcolor" "1 0 0 0.6" ;
+				set "logo1::matcolor" "1 0.4 0.3 0.6" ;
+				set "logo2::matcolor" "1 0.4 0.3 0.6" ;
+				set "text1g::visible" "0" ;
+				set "text2g::visible" "0" ;
+				set "text3g::visible" "0" ;
+				set "text1r::visible" "1" ;
+				set "text2r::visible" "1" ;
+				set "text3r::visible" "1" ;
+				set "Addhighlight::matcolor" "0.5 0.4 0.15 1" ;
+				set "parmed" "1" ;
+			}
+		}
+	}
+
+	windowDef bg1
+	{
+		rect	0 ,0 ,320 ,480
+		background	"guis/assets/common/marquee"
+		matcolor	0.2 ,0.8 ,0.6 ,0.6
+	}
+	windowDef bg2
+	{
+		rect	320 ,0 ,-320 ,480
+		background	"guis/assets/common/marquee"
+		matcolor	0.2 ,0.8 ,0.6 ,0.6
+	}
+	windowDef Logo1
+	{
+		rect	30,80 ,50 ,320
+		visible	1
+		background	"guis/assets/common/mlogo"
+		matcolor	0.3, 0.5, 0.4, 1
+	}
+	windowDef Logo2
+	{
+		rect	560,80 ,50 ,320
+		visible	1
+		background	"guis/assets/common/mlogo"
+		matcolor	0.3, 0.5, 0.4, 1
+	}
+	windowDef Text1
+	{
+		rect	0 ,-1,640 ,480
+		visible	1
+		windowDef Text1g
+		{
+			rect	0 ,0,640 ,50
+			text	"gui::gui_parm1"
+			textscale	1
+			textalign	1
+			forecolor	0.8, 1, 0.85, pdflick[ time * 0.002 ] / 1.2
+			visible	0
+			Forceaspectheight	60
+			windowDef Text2gBlank
+			{
+				rect	0, 0, 0, 0
+			}
+		}
+		windowDef Text1r
+		{
+			rect	0 ,0,640 ,50
+			text	"gui::gui_parm1"
+			textscale	1
+			textalign	1
+			forecolor	1, 0.2, 0.1, pdflick[ time * 0.002 ] / 1.2
+			visible	0
+			Forceaspectheight	60
+			windowDef Text2rBlank
+			{
+				rect	0, 0, 0, 0
+			}
+		}
+	}
+	windowDef Text2
+	{
+		rect	0 ,3,640 ,480
+		visible	0
+		windowDef Text2g
+		{
+			rect	0 ,0,640 ,50
+			text	"gui::gui_parm1"
+			textscale	0.9
+			textalign	1
+			forecolor	0.8, 1, 0.85, pdflick[ time * 0.002 ] / 1.2
+			visible	0
+			Forceaspectheight	60
+			windowDef Text2gBlank
+			{
+				rect	0, 0, 0, 0
+			}
+		}
+		windowDef Text2r
+		{
+			rect	0 ,0,640 ,50
+			text	"gui::gui_parm1"
+			textscale	0.9
+			textalign	1
+			forecolor	1, 0.2, 0.1, pdflick[ time * 0.002 ] / 1.2
+			visible	0
+			Forceaspectheight	60
+			windowDef Text2rBlank
+			{
+				rect	0, 0, 0, 0
+			}
+		}
+	}
+	windowDef Text3
+	{
+		rect	0 , 6,640 ,480
+		visible	0
+		windowDef Text3g
+		{
+			rect	0 , 0,640 ,50
+			text	"gui::gui_parm1"
+			textscale	0.8
+			textalign	1
+			forecolor	0.8, 1, 0.85, pdflick[ time * 0.002 ] / 1.2
+			visible	0
+			Forceaspectheight	60
+			windowDef Text2gBlank
+			{
+				rect	0, 0, 0, 0
+			}
+		}
+		windowDef Text3r
+		{
+			rect	0 , 0,640 ,50
+			text	"gui::gui_parm1"
+			textscale	0.8
+			textalign	1
+			forecolor	1, 0.2, 0.1, pdflick[ time * 0.002 ] / 1.2
+			visible	0
+			Forceaspectheight	60
+			windowDef Text2rBlank
+			{
+				rect	0, 0, 0, 0
+			}
+		}
+	}
+	windowDef Static
+	{
+		rect	-5 ,-5 ,-660 ,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 6
+	}
+	windowDef Outerglow
+	{
+		rect	0 ,5 ,-640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .002 ] / 4
+		visible	1
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,0.6
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,7 ,-640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.5 ,1
+		visible	0
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,-640,480
+		matcolor	0.3,0.3,0.3,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	0.8
+
+		onAction {
+
+		}
+
+	}
+	windowDef Dirt11
+	{
+		rect	0,0,-640,480
+		matcolor	1, 1, 1 ,1
+		visible	1
+		background	"guis/assets/common/dirt4"
+		noevents	1
+	}
+	windowDef Dirt1
+	{
+		rect	1,4,638,-470
+		matcolor	1, 1, 1 ,1
+		visible	1
+		background	"guis/assets/common/dirt2"
+		noevents	1
+	}
+	windowDef Dirt
+	{
+		rect	0,0,-640,480
+		matcolor	1, 1, 1 ,0.4
+		visible	1
+		background	"guis/assets/common/dirt3"
+		noevents	1
+	}
+}

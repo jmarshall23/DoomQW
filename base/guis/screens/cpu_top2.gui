@@ -1,0 +1,124 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg"
+	matcolor	0.5, 1, 0.9, 0.8
+
+	windowDef Bglow {
+		rect 0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow"
+		visible 1
+		matcolor 0, 1, 0.8, 0.2
+	}
+
+	windowDef Text1 {
+		rect		30, 350, 600, 100
+		text		"#str_01255"
+		
+		textscale	2
+		textalign	1
+		forecolor	1, 0.2, 0.2, 1
+		visible		1
+		nowrap		1
+	}
+
+	windowDef guiwin {
+		rect 20, 40, 600, 320
+		background	"guis/assets/cpuserver/logo.tga"
+		visible 1
+		matcolor 0, 1, 0.8, 0.7
+	}
+
+	windowDef bgScroll {
+		rect	15 ,20 ,610 ,440 
+		visible	1
+		background	"gui/scroll2"
+		matColor	1, 1,  1, flickertable [ time * 5 ] / 2 
+	}
+
+	windowDef Static {
+		rect		10 ,5 ,620 ,470 
+		matcolor	1 ,1 ,1 ,0.4 
+		visible		1
+		background	"gui/static"
+	}
+
+	windowDef Reflect {
+		rect		10 ,5 ,620 ,470 
+		matcolor	1 ,1 ,1 ,0.2 
+		visible		1
+		background	"gui/reflect1"
+	}
+
+	windowDef Anim {
+
+		onTime 0 {
+			transition	"guiwin::matcolor" "0 1 0.8 0.7" "0 1 0.8 0" "1000" ;
+			transition	"Text1::forecolor" "1 0.2 0.2 1" "1 0.2 0.2 0" "1000" ;
+			set		"guiwin::rect" "30 50 600 320" ;
+			set		"Text1::rect" "40 360 600 100" ;
+		}
+		onTime 100 {
+			set		"guiwin::visible" "0" ;
+			set		"Text1::visible" "0" ;
+		}
+		onTime 200 {
+			set		"guiwin::visible" "1" ;
+			set		"Text1::visible" "1" ;
+			set		"guiwin::rect" "20 40 600 320" ;
+			set		"Text1::rect" "30 350 600 100" ;
+		}
+		onTime 300 {
+			set		"guiwin::rect" "30 50 600 320" ;
+			set		"Text1::rect" "40 360 600 100" ;
+		}
+		onTime 350 {
+			set		"guiwin::rect" "20 40 600 320" ;
+			set		"Text1::rect" "30 350 600 100" ;
+		}
+		onTime 500 {
+			set		"guiwin::rect" "20 120 560 160" ;
+			set		"Text1::rect" "30 375 560 50" ;
+		}
+		onTime 600 {
+			set		"guiwin::rect" "30 50 600 320" ;
+			set		"Text1::rect" "40 360 600 100" ;
+		}
+		onTime 1000 {
+			transition	"guiwin::matcolor" "0 1 0.8 0" "0 1 0.8 0.7" "1000" ;
+			transition	"Text1::forecolor" "1 0.2 0.2 0" "1 0.2 0.2 1" "1000" ;
+			set		"guiwin::rect" "30 50 600 320" ;
+			set		"Text1::rect" "40 360 600 100" ;
+		}
+		onTime 1100 {
+			set		"guiwin::visible" "0" ;
+			set		"Text1::visible" "0" ;
+		}
+		onTime 1200 {
+			set		"guiwin::visible" "1" ;
+			set		"Text1::visible" "1" ;
+			set		"guiwin::rect" "20 40 600 320" ;
+			set		"Text1::rect" "30 350 600 100" ;
+		}
+		onTime 1350 {
+			set		"guiwin::rect" "220 120 400 160" ;
+			set		"Text1::rect" "230 375 400 50" ;
+		}
+		onTime 1400 {
+			set		"guiwin::rect" "30 50 600 320" ;
+			set		"Text1::rect" "40 360 600 100" ;
+
+		}
+		onTime 1500 {
+			set		"guiwin::rect" "20 40 600 320" ;
+			set		"Text1::rect" "30 350 600 100" ;
+		}
+		onTime 1600 {
+			set		"guiwin::rect" "30 50 600 320" ;
+			set		"Text1::rect" "40 360 600 100" ;
+		}
+		onTime 3000 {
+			resetTime "0" ;
+		}
+	}
+}

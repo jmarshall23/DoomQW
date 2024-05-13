@@ -1,0 +1,47 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda enpro_hammer {
+	name         "Steve Hammer"
+	fullname     "Steve L. Hammer"
+	icon         "guis/assets/pda/hammer"
+	id           "2671-93"
+	post         "EnPro"
+	title        "Service Technician"
+	security     ""
+	pda_email    "enpro_hammer_email_1"
+	pda_email    "enpro_hammer_email_2"
+	pda_audio    "enpro_hammer_audio_1"
+}
+
+email enpro_hammer_email_1 {
+	date		"10-25-2145"
+	to		"Steve Hammer"
+	from		"Mathew Morton"
+	subject	"More on Swensen"
+	text {
+"Steve,\n"
+"I'm still shaken from that incident with Swensen.  When I close my eyes I still see that look on his face in the instant between the impact of the plasma, and when his head turned to blue vapor.  I don't think I'll ever be able to sleep again.\n\n"
+
+"I never liked him, I don't know who was crazy enough to give him a plasma gun, but no one should go that way.  The worst of it is I've seen a lot of folks who seem more on edge than Swensen was.  Something needs to be done.\n\n"
+
+"We should lock up the ammo in one of the storage lockers for starters.  You pick the code.  Make sure you file a report too.\n\n"
+	}
+}
+
+email enpro_hammer_email_2 {
+	date		"11-15-2145"
+	to		"Steve Hammer"
+	from		"Eric Grossman"
+	subject	"Lets help this poor girl!"
+	text {
+"guys..... this isn't a chain letter, but a choice for all of us to save a little girl that's going to die of a serious and fatal form of cancer.  Please send this to everyone you know...or don't know at that.  This little girl has 6 months left to live her life, and as her last wish, she wanted to send a chain letter telling everyone to live their life to fullest, since she never will.  She'll never make it to prom, graduate school, or get married and have a family of her own. By you sending this to as many people as possible, you can give her and her family a little hope, because with every name that this is sent to, the UAC will donate 3 credits per name to her treatment and recovery plan.  One guy sent this to 500 people!!!!  So, I know that we can send it to at least 5 or 6.  Come on you guys.... and if you're too selfish to waste 10-15 minutes and scrolling this and forwarding it to EVERYONE, just think it could be you one day....and it's not even your credits, just your time. Please help this little girl out guys, I know you can do it!! I love you guys!"
+	}
+}
+
+audio enpro_hammer_audio_1 {
+	name		"Plasma Ammo Code"
+	info		"Made by: Steve Hammer\nDate: 10-30-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_enpro_hammer_1"
+}
+

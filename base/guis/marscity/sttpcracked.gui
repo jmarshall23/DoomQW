@@ -1,0 +1,150 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 0.8
+	windowDef Text314
+	{
+		rect	0,351,640,29
+		text	"#str_03709"
+		font	"fonts/micro"
+		textscale	0.4
+		forecolor	1,1,1,0.749
+		visible	1
+		textalign	1
+	}
+	windowDef Text3141
+	{
+		rect	0,371,640,29
+		text	"#str_03710"
+		font	"fonts/micro"
+		textscale	0.4
+		forecolor	1,1,1,0.349
+		visible	1
+		textalign	1
+	}
+	windowDef Reflect
+	{
+		rect	-2,-13,648,489
+		matcolor	1 ,0.8 ,0.7 ,0.15
+		visible	1
+		background	"gui/reflect2"
+	}
+	windowDef Bglow11
+	{
+		rect	58,46,532,202
+		background	"guis/assets/sttp/logoline"
+		visible	1
+		matcolor	1,1,1,1
+
+		onTime 0 {
+			transition "matcolor" "1 0 0 1" "1 1 0 1" "250" ;
+		}
+
+		onTime 250 {
+			transition "matcolor" "1 1 0 1" "0 1 0 1" "250" ;
+		}
+
+		onTime 500 {
+			transition "matcolor" "0 1 0 1" "0 0 1 1" "250" ;
+		}
+
+		onTime 750 {
+			transition "matcolor" "0 0 1 1" "1 0 1 1" "250" ;
+		}
+
+		onTime 1000 {
+			transition "matcolor" "1 0 1 1" "1 0 0 1" "250" ;
+		}
+
+		onTime 1250 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Bglow1
+	{
+		rect	58,46,532,202
+		background	"guis/assets/sttp/logo"
+		visible	1
+		matcolor	1,1,1,1
+	}
+	windowDef ButtonPad
+	{
+		rect	65,249,505,96
+		visible	1
+		background	"guis/assets/teleporter/button1"
+		matcolor	0.6,0,0,0.4
+
+		onTime 0 {
+			transition "matcolor" "0.6 0 0 1" "0.6 0 0 0.4" "800" ; 
+		}
+
+		onTime 800 {
+			transition "matcolor" "0.6 0 0 0.4" "0.6 0 0 1" "200" ; 
+		}
+
+		onTime 1000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef TextButton
+	{
+		rect	89,257,465,86
+		text	"#str_03712"
+		font	"fonts/bank"
+		textscale	1
+		forecolor	1,1,1,0.8
+		visible	1
+		textalign	1
+	}
+	windowDef ButtonPadLine
+	{
+		rect	65,248,505,96
+		visible	1
+		background	"guis/assets/teleporter/button2"
+		matcolor	0.7,0,0,0.2
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	1, 0.8, 0.4, 0.1
+	}
+	windowDef Static1
+	{
+		rect	0,0,-640,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 8
+	}
+	windowDef Addhighlight
+	{
+		rect	7,11,-625,461
+		background	"gui/addhighlight"
+		matcolor	0.4 ,0.4 ,0.2,1
+		visible	1
+	}
+	windowDef unnamed
+	{
+		rect	5,5,630,470
+		visible	1
+		windowDef glassCrack11
+		{
+			rect	-122,87,-508,-381
+			visible	1
+			background	"guis/assets/common/glasscrack2a"
+			matcolor	0,0,0,0.5
+		}
+		windowDef glassCrack111
+		{
+			rect	-123,86,-508,-381
+			visible	1
+			background	"guis/assets/common/glasscrack2a"
+			matcolor	1 ,1,1,0.6
+		}
+	}
+}

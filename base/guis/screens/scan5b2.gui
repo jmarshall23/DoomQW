@@ -1,0 +1,1133 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6,0.898,1,1
+	visible	1
+	definevec4	"$flicker"	0.45,0.6,0.6,pdscaleTable[time*0.00025]
+	windowDef BgImage
+	{
+		rect	5,5,630,470
+		visible	1
+		background	"guis/assets/common/infobg1"
+		matcolor	1, 1, 1, 1
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+
+		onTime 0 {
+			transition "matcolor" "0.4 0.8 1 0.1" "0.4 0.8 1 0.09" "75" ;
+		}
+
+		onTime 75 {
+			transition "matcolor" "0.4 0.8 1 0.09" "0.4 0.8 1 0.1" "75" ;
+		}
+
+		onTime 150 {
+			transition "matcolor" "0.4 0.8 1 0.1" "0.4 0.8 1 0.09" "75" ;
+		}
+
+		onTime 220 {
+			transition "matcolor" "0.4 0.8 1 0.09" "0.4 0.8 1 0.1" "75" ;
+		}
+
+		onTime 300 {
+			transition "matcolor" "0.4 0.8 1 0.1" "0.4 0.8 1 0.08" "75" ;
+		}
+
+		onTime 375 {
+			transition "matcolor" "0.4 0.8 1 0.08" "0.4 0.8 1 0.1" "75" ;
+		}
+
+		onTime 450 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef SectionMain
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef TextUser
+		{
+			rect	39,340,214,32
+			visible	1
+			text	"#str_01802"
+			forecolor	1,0.698,0.298,0.749
+			textscale	0.5
+			font	"fonts/micro"
+		}
+		windowDef TextLogout
+		{
+			rect	37,372,203,30
+			visible	1
+			text	"#str_01803"
+			forecolor	pdinout[ time * 0.001 ],pdinout[ time * 0.001 ],pdinout[ time * 0.001 ],0.5
+			textscale	0.4
+			font	"fonts/micro"
+		}
+		windowDef TextTeam
+		{
+			rect	39,29,232,38
+			visible	1
+			text	"#str_01804"
+			forecolor	1,1,1,0.298
+			textscale	0.4
+			font	"fonts/micro"
+		}
+		windowDef TextNum1
+		{
+			rect	100,56,58,309
+			visible	1
+			text	"12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6"
+			forecolor	1,1,1,0.25
+			textscale	0.33
+			font	"fonts/micro"
+			textalign	2
+
+			onTime 0 {
+				set "text" "12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6" ;
+			}
+
+			onTime 50 {
+				set "text" "1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1" ;
+			}
+
+			onTime 100 {
+				set "text" "18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71" ;
+			}
+
+			onTime 150 {
+				set "text" "12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2" ;
+			}
+
+			onTime 200 {
+				set "text" "8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8" ;
+			}
+
+			onTime 250 {
+				set "text" "7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82" ;
+			}
+
+			onTime 300 {
+				set "text" "0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69" ;
+			}
+
+			onTime 350 {
+				set "text" "0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29" ;
+			}
+
+			onTime 400 {
+				set "text" "1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3" ;
+			}
+
+			onTime 450 {
+				set "text" "20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56" ;
+			}
+
+			onTime 500 {
+				set "text" "18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2" ;
+			}
+
+			onTime 550 {
+				set "text" "19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1" ;
+			}
+
+			onTime 600 {
+				set "text" "14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9" ;
+			}
+
+			onTime 650 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef TextNum2
+		{
+			rect	39,56,58,309
+			visible	1
+			text	"14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9"
+			forecolor	1,1,1,0.5
+			textscale	0.33
+			font	"fonts/micro"
+			textalign	2
+
+			onTime 0 {
+				set "text" "19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1" ;
+			}
+
+			onTime 50 {
+				set "text" "14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9" ;
+			}
+
+			onTime 100 {
+				set "text" "12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6" ;
+			}
+
+			onTime 150 {
+				set "text" "1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1" ;
+			}
+
+			onTime 200 {
+				set "text" "18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71" ;
+			}
+
+			onTime 250 {
+				set "text" "12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2" ;
+			}
+
+			onTime 300 {
+				set "text" "8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8" ;
+			}
+
+			onTime 350 {
+				set "text" "7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82" ;
+			}
+
+			onTime 400 {
+				set "text" "0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69" ;
+			}
+
+			onTime 450 {
+				set "text" "0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29" ;
+			}
+
+			onTime 500 {
+				set "text" "1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3" ;
+			}
+
+			onTime 550 {
+				set "text" "20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56" ;
+			}
+
+			onTime 600 {
+				set "text" "18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2" ;
+			}
+
+			onTime 650 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef TextNum3
+		{
+			rect	163,56,58,309
+			visible	1
+			text	"14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9"
+			forecolor	1,1,1,0.125
+			textscale	0.33
+			font	"fonts/micro"
+			textalign	2
+
+			onTime 0 {
+				set "text" "19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1" ;
+			}
+
+			onTime 50 {
+				set "text" "14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9" ;
+			}
+
+			onTime 100 {
+				set "text" "12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6" ;
+			}
+
+			onTime 150 {
+				set "text" "1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1" ;
+			}
+
+			onTime 200 {
+				set "text" "18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71" ;
+			}
+
+			onTime 250 {
+				set "text" "12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2" ;
+			}
+
+			onTime 300 {
+				set "text" "8.82\n7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8" ;
+			}
+
+			onTime 350 {
+				set "text" "7.69\n0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82" ;
+			}
+
+			onTime 400 {
+				set "text" "0.29\n0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69" ;
+			}
+
+			onTime 450 {
+				set "text" "0.3\n1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29" ;
+			}
+
+			onTime 500 {
+				set "text" "1.56\n20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3" ;
+			}
+
+			onTime 550 {
+				set "text" "20.2\n18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56" ;
+			}
+
+			onTime 600 {
+				set "text" "18.1\n19.9\n14.6\n12.1\n1.71\n18.2\n12.8\n8.82\n7.69\n0.29\n0.3\n1.56\n20.2" ;
+			}
+
+			onTime 650 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef TextBase
+		{
+			rect	21,420,485,44
+			visible	1
+			text	"#str_01537"
+			forecolor	0.2,0.27,0.34,0.8
+			textscale	0.53
+			font	"fonts/micro"
+		}
+		windowDef TextUAC
+		{
+			rect	541,416,80,38
+			visible	1
+			text	"#str_00039"
+			forecolor	1, 1, 1, 0.3
+			textscale	0.5
+			font	"fonts/micro"
+		}
+	}
+	windowDef MapBg11
+	{
+		rect	259,34,369,20
+		visible	1
+		background	"guis/assets/teleporter/grid1"
+		matcolor	1,1,1,0.7
+	}
+	windowDef MapBG12
+	{
+		rect	259,54,369,-317
+		visible	1
+		background	"guis/assets/teleporter/grid2"
+		matcolor	1,1,1,0.7
+	}
+	windowDef MapBG13
+	{
+		rect	259,371,369,-20
+		visible	1
+		background	"guis/assets/teleporter/grid1"
+		matcolor	1,1,1,0.7
+	}
+	windowDef BoxAnim
+	{
+		rect	280,45,334,339
+		visible	1
+
+		onTime 0 {
+			transition "Top1::matcolor" "0.4 0.2 0 1" "0.4 0.1 0.1 1" "500" ;
+			transition "Mid1::matcolor" "0.3 0.1 0 1" "0.3 0 0 1" "500" ;
+			transition "Bottom1::matcolor" "0.3 0.1 0 1" "0.3 0 0 1" "500" ;	
+		}
+
+		onTime 250 {
+			transition "Top16::matcolor" "1 0.4 0.4 1" "1 0.8 0 1" "1500" ;
+			transition "Mid16::matcolor" "0.9 0.3 0.3 1" "0.9 0.7 0 1" "1500" ;
+			transition "Bottom16::matcolor" "0.9 0.3 0.3 1" "0.9 0.7 0 1" "1500" ;
+			
+			transition "Top3::matcolor" "0.5 0.3 0 1" "0.5 0.1 0.1 1" "500" ;
+			transition "Mid3::matcolor" "0.4 0.2 0 1" "0.4 0 0 1" "500" ;
+			transition "Bottom3::matcolor" "0.4 0.2 0 1" "0.4 0 0 1" "500" ;	
+			
+			transition "Top2::matcolor" "0.5 0.3 0 1" "0.5 0.1 0.1 1" "500" ;
+			transition "Mid2::matcolor" "0.4 0.2 0 1" "0.4 0 0 1" "500" ;
+			transition "Bottom2::matcolor" "0.4 0.2 0 1" "0.4 0 0 1" "500" ;	
+		}
+
+		onTime 500 {
+			transition "Top1::matcolor" "0.4 0.1 0.1 1" "0.4 0.2 0 1" "1500" ;
+			transition "Mid1::matcolor" "0.3 0 0 1" "0.3 0.1 0 1" "1500" ;
+			transition "Bottom1::matcolor" "0.3 0 0 1" "0.3 0.1 0 1" "1500" ;	
+			
+			transition "Top6::matcolor" "0.6 0.4 0 1" "0.6 0.2 0.2 1" "500" ;
+			transition "Mid6::matcolor" "0.5 0.3 0 1" "0.5 0.1 0.1 1" "500" ;
+			transition "Bottom6::matcolor" "0.5 0.3 0 1" "0.5 0.1 0.1 1" "500" ;		
+			
+			transition "Top5::matcolor" "0.6 0.4 0 1" "0.6 0.2 0.2 1" "500" ;
+			transition "Mid5::matcolor" "0.5 0.3 0 1" "0.5 0.1 0.1 1" "500" ;
+			transition "Bottom5::matcolor" "0.5 0.3 0 1" "0.5 0.1 0.1 1" "500" ;		
+			
+			transition "Top4::matcolor" "0.6 0.4 0 1" "0.6 0.2 0.2 1" "500" ;
+			transition "Mid4::matcolor" "0.5 0.3 0 1" "0.5 0.1 0.1 1" "500" ;
+			transition "Bottom4::matcolor" "0.5 0.3 0 1" "0.5 0.1 0.1 1" "500" ;				
+		}
+
+		onTime 750 {
+			transition "Top3::matcolor" "0.5 0.1 0.1 1" "0.5 0.3 0 1" "1500" ;
+			transition "Mid3::matcolor" "0.4 0 0 1" "0.4 0.2 0 1" "1500" ;
+			transition "Bottom3::matcolor" "0.4 0 0 1" "0.4 0.2 0 1" "1500" ;
+			
+			transition "Top2::matcolor" "0.5 0.1 0.1 1" "0.5 0.3 0 1" "1500" ;
+			transition "Mid2::matcolor" "0.4 0 0 1" "0.4 0.2 0 1" "1500" ;
+			transition "Bottom2::matcolor" "0.4 0 0 1" "0.4 0.2 0 1" "1500" ;	
+			
+			transition "Top10::matcolor" "0.7 0.5 0 1" "0.7 0.3 0.3 1" "500" ;
+			transition "Mid10::matcolor" "0.6 0.4 0 1" "0.6 0.2 0.2 1" "500" ;
+			transition "Bottom10::matcolor" "0.6 0.4 0 1" "0.6 0.2 0.2 1" "500" ;		
+			
+			transition "Top9::matcolor" "0.7 0.5 0 1" "0.7 0.3 0.3 1" "500" ;
+			transition "Mid9::matcolor" "0.6 0.4 0 1" "0.6 0.2 0.2 1" "500" ;
+			transition "Bottom9::matcolor" "0.6 0.4 0 1" "0.6 0.2 0.2 1" "500" ;		
+			
+			transition "Top8::matcolor" "0.7 0.5 0 1" "0.7 0.3 0.3 1" "500" ;
+			transition "Mid8::matcolor" "0.6 0.4 0 1" "0.6 0.2 0.2 1" "500" ;
+			transition "Bottom8::matcolor" "0.6 0.4 0 1" "0.6 0.2 0.2 1" "500" ;	
+			
+			transition "Top7::matcolor" "0.7 0.5 0 1" "0.7 0.3 0.3 1" "500" ;
+			transition "Mid7::matcolor" "0.6 0.4 0 1" "0.6 0.2 0.2 1" "500" ;
+			transition "Bottom7::matcolor" "0.6 0.4 0 1" "0.6 0.2 0.2 1" "500" ;		
+		}
+
+		onTime 1000 {
+			transition "Top6::matcolor" "0.6 0.2 0.2 1" "0.6 0.4 0 1" "1500" ;
+			transition "Mid6::matcolor" "0.5 0.1 0.1 1" "0.5 0.3 0 1" "1500" ;
+			transition "Bottom6::matcolor" "0.5 0.1 0.1 1" "0.5 0.3 0 1" "1500" ;	
+			
+			transition "Top5::matcolor" "0.6 0.2 0.2 1" "0.6 0.4 0 1" "1500" ;
+			transition "Mid5::matcolor" "0.5 0.1 0.1 1" "0.5 0.3 0 1" "1500" ;
+			transition "Bottom5::matcolor" "0.5 0.1 0.1 1" "0.5 0.3 0 1" "1500" ;
+			
+			transition "Top4::matcolor" "0.6 0.2 0.2 1" "0.6 0.4 0 1" "1500" ;
+			transition "Mid4::matcolor" "0.5 0.1 0.1 1" "0.5 0.3 0 1" "1500" ;
+			transition "Bottom4::matcolor" "0.5 0.1 0.1 1" "0.5 0.3 0 1" "1500" ;				
+			
+			transition "Top13::matcolor" "0.8 0.6 0 1" "0.8 0.3 0.3 1" "500" ;
+			transition "Mid13::matcolor" "0.7 0.5 0 1" "0.7 0.2 0.2 1" "500" ;
+			transition "Bottom13::matcolor" "0.7 0.5 0 1" "0.7 0.2 0.2 1" "500" ;		
+			
+			transition "Top12::matcolor" "0.8 0.6 0 1" "0.8 0.3 0.3 1" "500" ;
+			transition "Mid12::matcolor" "0.7 0.5 0 1" "0.7 0.2 0.2 1" "500" ;
+			transition "Bottom12::matcolor" "0.7 0.5 0 1" "0.7 0.2 0.2 1" "500" ;	
+			
+			transition "Top11::matcolor" "0.8 0.6 0 1" "0.8 0.3 0.3 1" "500" ;
+			transition "Mid11::matcolor" "0.7 0.5 0 1" "0.7 0.2 0.2 1" "500" ;
+			transition "Bottom11::matcolor" "0.7 0.5 0 1" "0.7 0.2 0.2 1" "500" ;		
+		}
+
+		onTime 1250 {
+			transition "Top10::matcolor" "0.7 0.3 0.3 1" "0.7 0.5 0 1" "1500" ;
+			transition "Mid10::matcolor" "0.6 0.2 0.2 1" "0.6 0.4 0 1" "1500" ;
+			transition "Bottom10::matcolor" "0.6 0.2 0.2 1" "0.6 0.4 0 1" "1500" ;	
+			
+			transition "Top9::matcolor" "0.7 0.3 0.3 1" "0.7 0.5 0 1" "1500" ;
+			transition "Mid9::matcolor" "0.6 0.2 0.2 1" "0.6 0.4 0 1" "1500" ;
+			transition "Bottom9::matcolor" "0.6 0.2 0.2 1" "0.6 0.4 0 1" "1500" ;	
+			
+			transition "Top8::matcolor" "0.7 0.3 0.3 1" "0.7 0.5 0 1" "1500" ;
+			transition "Mid8::matcolor" "0.6 0.2 0.2 1" "0.6 0.4 0 1" "1500" ;
+			transition "Bottom8::matcolor" "0.6 0.2 0.2 1" "0.6 0.4 0 1" "1500" ;	
+			
+			transition "Top7::matcolor" "0.7 0.3 0.3 1" "0.7 0.5 0 1" "1500" ;
+			transition "Mid7::matcolor" "0.6 0.2 0.2 1" "0.6 0.4 0 1" "1500" ;
+			transition "Bottom7::matcolor" "0.6 0.2 0.2 1" "0.6 0.4 0 1" "1500" ;
+			
+			transition "Top15::matcolor" "0.9 0.7 0 1" "0.9 0.4 0.4 1" "500" ;
+			transition "Mid15::matcolor" "0.8 0.6 0 1" "0.8 0.3 0.3 1" "500" ;
+			transition "Bottom15::matcolor" "0.8 0.6 0 1" "0.8 0.3 0.3 1" "500" ;		
+			
+			transition "Top14::matcolor" "0.9 0.7 0 1" "0.9 0.4 0.4 1" "500" ;
+			transition "Mid14::matcolor" "0.8 0.6 0 1" "0.8 0.3 0.3 1" "500" ;
+			transition "Bottom14::matcolor" "0.8 0.6 0 1" "0.8 0.3 0.3 1" "500" ;	
+		}
+
+		onTime 1500 {
+			transition "Top13::matcolor" "0.8 0.3 0.3 1" "0.8 0.6 0 1" "1500" ;
+			transition "Mid13::matcolor" "0.7 0.2 0.2 1" "0.7 0.5 0 1" "1500" ;
+			transition "Bottom13::matcolor" "0.7 0.2 0.2 1" "0.7 0.5 0 1" "1500" ;
+			
+			transition "Top12::matcolor" "0.8 0.3 0.3 1" "0.8 0.6 0 1" "1500" ;
+			transition "Mid12::matcolor" "0.7 0.2 0.2 1" "0.7 0.5 0 1" "1500" ;
+			transition "Bottom12::matcolor" "0.7 0.2 0.2 1" "0.7 0.5 0 1" "1500" ;		
+			
+			transition "Top11::matcolor" "0.8 0.3 0.3 1" "0.8 0.6 0 1" "1500" ;
+			transition "Mid11::matcolor" "0.7 0.2 0.2 1" "0.7 0.5 0 1" "1500" ;
+			transition "Bottom11::matcolor" "0.7 0.2 0.2 1" "0.7 0.5 0 1" "1500" ;
+			
+			transition "Top16::matcolor" "1 0.8 0 1" "1 0.4 0.4 1" "500" ;
+			transition "Mid16::matcolor" "0.9 0.7 0 1" "0.9 0.3 0.3 1" "500" ;
+			transition "Bottom16::matcolor" "0.9 0.7 0 1" "0.9 0.3 0.3 1" "500" ;
+		}
+
+		onTime 1750 {
+			transition "Top15::matcolor" "0.9 0.4 0.4 1" "0.9 0.7 0 1" "1500" ;
+			transition "Mid15::matcolor" "0.8 0.3 0.3 1" "0.8 0.6 0 1" "1500" ;
+			transition "Bottom15::matcolor" "0.8 0.3 0.3 1" "0.8 0.6 0 1" "1500" ;	
+			
+			transition "Top14::matcolor""0.9 0.4 0.4 1" "0.9 0.7 0 1"  "1500" ;
+			transition "Mid14::matcolor" "0.8 0.3 0.3 1" "0.8 0.6 0 1" "1500" ;
+			transition "Bottom14::matcolor" "0.8 0.3 0.3 1" "0.8 0.6 0 1" "1500" ;			
+			
+			resetTime "0" ;		
+		}
+
+		windowDef Bottom1
+		{
+			rect	120,161,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.3,0.3,0.3,1
+		}
+		windowDef Mid1
+		{
+			rect	120,38,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.3,0.3,0.3,1
+		}
+		windowDef Top1
+		{
+			rect	120,-9,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.4,0.4,0.4,1
+
+			onTime 0 {
+				transition "Top1::rect" "120 -10 91 91" "120 47 91 91" "300" "0.4" "0.6" ;
+				transition "Mid1::rect" "120 38 91 168" "120 95 91 111" "300" "0.4" "0.6" ;
+			}
+
+			onTime 300 {
+				transition "Top1::rect" "120 47 91 91" "120 -10 91 91" "300" "0.4" "0.6" ;
+				transition "Mid1::rect" "120 95 91 111" "120 38 91 168" "300" "0.4" "0.6" ;
+			}
+
+			onTime 600 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom2
+		{
+			rect	80,183,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.4,0.4,0.4,1
+		}
+		windowDef Mid2
+		{
+			rect	80,59,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.4,0.4,0.4,1
+		}
+		windowDef Top2
+		{
+			rect	80,11,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.5,0.5,0.5,1
+
+			onTime 0 {
+				transition "Top2::rect" "80 11 91 91" "80 100 91 91" "550" "0.4" "0.6" ;
+				transition "Mid2::rect" "80 59 91 168" "80 148 91 79" "550" "0.4" "0.6" ;
+			}
+
+			onTime 550 {
+				transition "Top2::rect" "80 100 91 91" "80 11 91 91" "550" "0.4" "0.6" ;
+				transition "Mid2::rect" "80 148 91 79" "80 59 91 168" "550" "0.4" "0.6" ;
+			}
+
+			onTime 1100 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom3
+		{
+			rect	160,183,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.4,0.4,0.4,1
+		}
+		windowDef Mid3
+		{
+			rect	160,59,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.4,0.4,0.4,1
+		}
+		windowDef Top3
+		{
+			rect	160,11,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.5,0.5,0.5,1
+
+			onTime 0 {
+				transition "Top3::rect" "160 11 91 91" "160 84 91 91" "400" "0.4" "0.6" ;
+				transition "Mid3::rect" "160 59 91 168" "160 131 91 96" "400" "0.4" "0.6" ;
+			}
+
+			onTime 400 {
+				transition "Top3::rect" "160 84 91 91" "160 11 91 91" "400" "0.4" "0.6" ;
+				transition "Mid3::rect" "160 131 91 96" "160 59 91 168" "400" "0.4" "0.6" ;
+			}
+
+			onTime 800 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom4
+		{
+			rect	42,203,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.5,0.5,0.5,1
+		}
+		windowDef Mid4
+		{
+			rect	42,80,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.5,0.5,0.5,1
+		}
+		windowDef Top4
+		{
+			rect	42,31,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.6,0.6,0.6,1
+
+			onTime 0 {
+				transition "Top4::rect" "42 31 91 91" "42 161 91 91" "1000" "0.4" "0.6" ;
+				transition "Mid4::rect" "42 80 91 168" "42 206 91 42" "1000" "0.4" "0.6" ;
+			}
+
+			onTime 1000 {
+				transition "Top4::rect" "42 161 91 91" "42 31 91 91" "1000" "0.4" "0.6" ;
+				transition "Mid4::rect" "42 206 91 42" "42 80 91 168" "1000" "0.4" "0.6" ;
+			}
+
+			onTime 2000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom5
+		{
+			rect	120,203,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.5,0.5,0.5,1
+		}
+		windowDef Mid5
+		{
+			rect	120,80,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.5,0.5,0.5,1
+		}
+		windowDef Top5
+		{
+			rect	120,31,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.6,0.6,0.6,1
+
+			onTime 0 {
+				transition "Top5::rect" "120 31 91 91" "120 120 91 91" "600" "0.4" "0.6" ;
+				transition "Mid5::rect" "120 80 91 168" "120 166 91 82" "600" "0.4" "0.6" ;
+			}
+
+			onTime 600 {
+				transition "Top5::rect" "120 120 91 91" "120 31 91 91" "600" "0.4" "0.6" ;
+				transition "Mid5::rect" "120 166 91 82" "120 80 91 168" "600" "0.4" "0.6" ;
+			}
+
+			onTime 1200 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom6
+		{
+			rect	198,203,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.5,0.5,0.5,1
+		}
+		windowDef Mid6
+		{
+			rect	198,80,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.5,0.5,0.5,1
+		}
+		windowDef Top6
+		{
+			rect	198,31,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.6,0.6,0.6,1
+
+			onTime 0 {
+				transition "Top6::rect" "198 31 91 91" "198 86 91 91" "500" "0.4" "0.6" ;
+				transition "Mid6::rect" "198 80 91 168" "198 134 91 114" "500" "0.4" "0.6" ;
+			}
+
+			onTime 500 {
+				transition "Top6::rect" "198 86 91 91" "198 31 91 91" "500" "0.4" "0.6" ;
+				transition "Mid6::rect" "198 134 91 114" "198 80 91 168" "500" "0.4" "0.6" ;
+			}
+
+			onTime 1000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom7
+		{
+			rect	4,223,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.6,0.6,0.6,1
+		}
+		windowDef Mid7
+		{
+			rect	4,101,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.6,0.6,0.6,1
+		}
+		windowDef Top7
+		{
+			rect	4,53,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.7,0.7,0.7,1
+
+			onTime 0 {
+				transition "Top7::rect" "4 53 91 91" "4 113 91 91" "450" "0.4" "0.6" ;
+				transition "Mid7::rect" "4 101 91 168" "4 161 91 108" "450" "0.4" "0.6" ;
+			}
+
+			onTime 450 {
+				transition "Top7::rect" "4 113 91 91" "4 53 91 91" "450" "0.4" "0.6" ;
+				transition "Mid7::rect" "4 161 91 108" "4 101 91 168" "450" "0.4" "0.6" ;
+			}
+
+			onTime 900 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom8
+		{
+			rect	82,223,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.6,0.6,0.6,1
+		}
+		windowDef Mid8
+		{
+			rect	82,101,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.6,0.6,0.6,1
+		}
+		windowDef Top8
+		{
+			rect	82,53,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.7,0.7,0.7,1
+
+			onTime 0 {
+				transition "Top8::rect" "82 53 91 91" "82 139 91 91" "500" "0.4" "0.6" ;
+				transition "Mid8::rect" "82 101 91 168" "82 185 91 84" "500" "0.4" "0.6" ;
+			}
+
+			onTime 500 {
+				transition "Top8::rect" "82 139 91 91" "82 53 91 91" "500" "0.4" "0.6" ;
+				transition "Mid8::rect" "82 185 91 84" "82 101 91 168" "500" "0.4" "0.6" ;
+			}
+
+			onTime 1000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom9
+		{
+			rect	160,223,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.6,0.6,0.6,1
+		}
+		windowDef Mid9
+		{
+			rect	160,101,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.6,0.6,0.6,1
+		}
+		windowDef Top9
+		{
+			rect	160,53,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.7,0.7,0.7,1
+
+			onTime 0 {
+				transition "Top9::rect" "160 53 91 91" "160 117 91 91" "300" "0.4" "0.6" ;
+				transition "Mid9::rect" "160 101 91 168" "160 163 91 106" "300" "0.4" "0.6" ;
+			}
+
+			onTime 300 {
+				transition "Top9::rect" "160 117 91 91" "160 53 91 91" "300" "0.4" "0.6" ;
+				transition "Mid9::rect" "160 163 91 106" "160 101 91 168" "300" "0.4" "0.6" ;
+			}
+
+			onTime 600 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom10
+		{
+			rect	238,223,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.6,0.6,0.6,1
+		}
+		windowDef Mid10
+		{
+			rect	238,101,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.6,0.6,0.6,1
+		}
+		windowDef Top10
+		{
+			rect	238,53,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.7,0.7,0.7,1
+
+			onTime 0 {
+				transition "Top10::rect" "238 53 91 91" "238 195 91 91" "600" "0.4" "0.6" ;
+				transition "Mid10::rect" "238 101 91 168" "238 242 91 27" "600" "0.4" "0.6" ;
+			}
+
+			onTime 600 {
+				transition "Top10::rect" "238 195 91 91" "238 53 91 91" "600" "0.4" "0.6" ;
+				transition "Mid10::rect" "238 242 91 27" "238 101 91 168" "600" "0.4" "0.6" ;
+			}
+
+			onTime 1200 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom11
+		{
+			rect	42,245,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.7,0.7,0.7,1
+		}
+		windowDef Mid11
+		{
+			rect	42,122,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.7,0.7,0.7,1
+		}
+		windowDef Top11
+		{
+			rect	42,75,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.8,0.8,0.8,1
+
+			onTime 0 {
+				transition "Top11::rect" "42 75 91 91" "42 180 91 91" "550" "0.4" "0.6" ;
+				transition "Mid11::rect" "42 122 91 168" "42 225 91 65" "550" "0.4" "0.6" ;			
+			}
+
+			onTime 550 {
+				transition "Top11::rect" "42 180 91 91" "42 75 91 91" "550" "0.4" "0.6" ;
+				transition "Mid11::rect" "42 225 91 65" "42 122 91 168" "550" "0.4" "0.6" ;			
+			}
+
+			onTime 1100 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom12
+		{
+			rect	120,245,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.7,0.7,0.7,1
+		}
+		windowDef Mid12
+		{
+			rect	120,122,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.7,0.7,0.7,1
+		}
+		windowDef Top12
+		{
+			rect	120,75,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.8,0.8,0.8,1
+
+			onTime 0 {
+				transition "Top12::rect" "120 75 91 91" "120 127 91 91" "1000" "0.4" "0.6" ;
+				transition "Mid12::rect" "120 122 91 168" "120 173 91 117" "1000" "0.4" "0.6" ;				
+			}
+
+			onTime 1000 {
+				transition "Top12::rect" "120 127 91 91"  "120 75 91 91" "1000" "0.4" "0.6" ;
+				transition "Mid12::rect" "120 173 91 117" "120 122 91 168" "1000" "0.4" "0.6" ;				
+			}
+
+			onTime 2000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom13
+		{
+			rect	198,245,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.7,0.7,0.7,1
+		}
+		windowDef Mid13
+		{
+			rect	198,122,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.7,0.7,0.7,1
+		}
+		windowDef Top13
+		{
+			rect	198,75,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.8,0.8,0.8,1
+
+			onTime 0 {
+				transition "Top13::rect" "198 75 91 91" "198 129 91 91" "700" "0.4" "0.6" ;
+				transition "Mid13::rect" "198 122 91 168" "198 177 91 113" "700" "0.4" "0.6" ;			
+			}
+
+			onTime 700 {
+				transition "Top13::rect" "198 129 91 91" "198 75 91 91" "700" "0.4" "0.6" ;
+				transition "Mid13::rect" "198 177 91 113" "198 122 91 168" "700" "0.4" "0.6" ;			
+			}
+
+			onTime 1400 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom14
+		{
+			rect	80,267,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.8,0.8,0.8,1
+		}
+		windowDef Mid14
+		{
+			rect	80,144,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.8,0.8,0.8,1
+		}
+		windowDef Top14
+		{
+			rect	80,97,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.9,0.9,0.9,1
+
+			onTime 0 {
+				transition "Top14::rect" "80 97 91 91" "80 135 91 91" "400" "0.4" "0.6" ;
+				transition "Mid14::rect" "80 144 91 168" "80 180 91 132" "400" "0.4" "0.6" ;			
+			}
+
+			onTime 400 {
+				transition "Top14::rect" "80 135 91 91" "80 97 91 91" "400" "0.4" "0.6" ;
+				transition "Mid14::rect" "80 180 91 132" "80 144 91 168" "400" "0.4" "0.6" ;				
+			}
+
+			onTime 800 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom15
+		{
+			rect	160,267,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.8,0.8,0.8,1
+		}
+		windowDef Mid15
+		{
+			rect	160,144,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.8,0.8,0.8,1
+		}
+		windowDef Top15
+		{
+			rect	160,97,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.9,0.9,0.9,1
+
+			onTime 0 {
+				transition "Top15::rect" "160 97 91 91" "160 162 91 91" "600" "0.4" "0.6" ;
+				transition "Mid15::rect" "160 144 91 168" "160 209 91 103" "600" "0.4" "0.6" ;			
+			}
+
+			onTime 600 {
+				transition "Top15::rect" "160 162 91 91" "160 97 91 91" "600" "0.4" "0.6" ;
+				transition "Mid15::rect" "160 209 91 103" "160 144 91 168" "600" "0.4" "0.6" ;			
+			}
+
+			onTime 1200 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bottom16
+		{
+			rect	120,289,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	0.9,0.9,0.9,1
+		}
+		windowDef Mid16
+		{
+			rect	120,166,91,168
+			visible	1
+			background	"guis/assets/common/animbar"
+			matcolor	0.9,0.9,0.9,1
+		}
+		windowDef Top16
+		{
+			rect	120,119,91,91
+			visible	1
+			background	"guis/assets/common/animbartop"
+			matcolor	1,1,1,1
+
+			onTime 0 {
+				transition "Top16::rect" "120 119 91 91" "120 213 91 91" "500" "0.4" "0.6" ;
+				transition "Mid16::rect" "120 166 91 168" "120 260 91 74" "500" "0.4" "0.6" ;				
+			}
+
+			onTime 500 {
+				transition "Top16::rect" "120 213 91 91" "120 119 91 91" "500" "0.4" "0.6" ;
+				transition "Mid16::rect" "120 260 91 74" "120 166 91 168" "500" "0.4" "0.6" ;				
+			}
+
+			onTime 1000 {
+				resetTime "0" ;
+			}
+
+		}
+	}
+	windowDef Grid
+	{
+		rect	266,40,355,344
+		visible	1
+		windowDef bigballglow
+		{
+			rect	-384,-220,1203,644
+			visible	1
+			background	"gui/thermal/glow"
+			matcolor	0.18,0.18,0.2,1
+		}
+		windowDef Grid1
+		{
+			rect	178,88,355,317
+			visible	1
+			background	"gui/grid2"
+			matcolor	1,1,1,0.2
+			matscalex	8
+			matscaley	6
+			shear	0.5,0
+		}
+		windowDef Grid11
+		{
+			rect	-176,89,355,317
+			visible	1
+			background	"gui/grid2"
+			matcolor	1,1,1,0.2
+			matscalex	8
+			matscaley	6
+			shear	-0.5,0
+		}
+	}
+	windowDef Outerglow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdfade [ time * .0025 ] / 4.8
+		visible	1
+	}
+	windowDef Static
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 10
+	}
+	windowDef Mask
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.2
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.1 ,0.4 ,0.4 ,1
+		visible	1
+	}
+	windowDef scanlinesAlt
+	{
+		rect	0,0,640,480
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		matscaley	2
+		visible	1
+	}
+	windowDef Bglow1
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+}

@@ -1,0 +1,392 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	backcolor	0, 0, 0, 0.7
+	comment	"Exit button fires a trigger. Open Entrance Doors fires named trigger open_exit_door"
+	windowDef BgBlack
+	{
+		rect	-2,0,646,481
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+	windowDef DesktopClip
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		windowDef CircleCrop
+		{
+			rect	14,58,612,379
+			visible	1
+			windowDef Circle0
+			{
+				rect	-46,-120,709,645
+				visible	1
+				background	"gui/spin1alt"
+				matcolor	0.5, 0.6, 0.6, 0.5
+			}
+			windowDef Circle1
+			{
+				rect	-11,-89,-640,582
+				visible	1
+				background	"gui/spin2alt"
+				matcolor	0.5, 0.6, 0.6, 0.5
+			}
+			windowDef Circle2
+			{
+				rect	30,-49,553,503
+				visible	1
+				background	"gui/spin3alt"
+				matcolor	0.5, 0.6, 0.6, 0.5
+			}
+			windowDef Circle3
+			{
+				rect	56,-26,-501,456
+				visible	1
+				background	"gui/spin4alt"
+				matcolor	0.5, 0.6, 0.6, 0.5
+			}
+		}
+		windowDef CircCropBlack1
+		{
+			rect	33,-3,595,190
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite4"
+			matcolor	0,0,0,0.9
+		}
+		windowDef CircCropBlack21
+		{
+			rect	31,285,600,186
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite4"
+			matcolor	0,0,0,0.9
+		}
+		windowDef BgClip
+		{
+			rect	14,38,612,422
+			visible	1
+			windowDef Bg1
+			{
+				rect	0,-72,626,276
+				visible	1
+				background	"guis/assets/doors/adminbg"
+				matcolor	0.6, 0.8, 0.8, 1
+			}
+			windowDef Bg3
+			{
+				rect	0,204,626,-276
+				visible	1
+				background	"guis/assets/doors/adminbg"
+				matcolor	0.6, 0.8, 0.8, 1
+			}
+			windowDef Bg11
+			{
+				rect	-8,-71,-626,276
+				visible	1
+				background	"guis/assets/doors/adminbg"
+				matcolor	0.6, 0.8, 0.8, 1
+			}
+			windowDef Bg31
+			{
+				rect	-8,205,-626,-276
+				visible	1
+				background	"guis/assets/doors/adminbg"
+				matcolor	0.6, 0.8, 0.8, 1
+			}
+		}
+		windowDef CircCropBlack2
+		{
+			rect	-11,443,664,32
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite4"
+			matcolor	0,0,0,0.9
+		}
+		windowDef CircCropBlack11
+		{
+			rect	-18,5,680,39
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite4"
+			matcolor	0,0,0,0.9
+		}
+		windowDef StatusArea
+		{
+			rect	1,3,636,87
+			visible	1
+			windowDef SourceText
+			{
+				rect	7,35,625,53
+				visible	1
+				forecolor	1,1,1,0.4
+				text	"#str_04006"
+				textscale	0.68
+				font	"fonts/micro"
+				textalign	1
+			}
+			windowDef bar1Left
+			{
+				rect	7,5,-32,37
+				visible	1
+				background	"guis/assets/common/titlebar_corner"
+				matcolor	0.6,0.8,0.85,0.3
+			}
+			windowDef bar1Mid
+			{
+				rect	39,5,556,37
+				visible	1
+				background	"guis/assets/common/titlebar_mid"
+				matcolor	0.6,0.8,0.85,0.3
+			}
+			windowDef bar1Right
+			{
+				rect	595,5,37,37
+				visible	1
+				background	"guis/assets/common/titlebar_corner"
+				matcolor	0.6,0.8,0.85,0.3
+			}
+		}
+		windowDef StatusBar
+		{
+			rect	0,374,640,120
+			visible	1
+			windowDef Statusbar2Mid
+			{
+				rect	58,66,522,40
+				visible	1
+				background	"guis/assets/common/titlebar_mid"
+				matcolor	0.6,0.8,0.85,0.3
+			}
+			windowDef Statusbar2Right
+			{
+				rect	580,66,57,-40
+				visible	1
+				background	"guis/assets/common/titlebar_corner"
+				matcolor	0.6,0.8,0.85,0.3
+			}
+			windowDef Statusbar2Left
+			{
+				rect	1,66,-57,-40
+				visible	1
+				background	"guis/assets/common/titlebar_corner"
+				matcolor	0.6,0.8,0.85,0.3
+			}
+		}
+		windowDef Text41
+		{
+			rect	60,371,528,63
+			text	"#str_02861"
+			font	"fonts/micro"
+			textscale	0.9
+			forecolor	1,1,1,1
+			visible	1
+			textalign	1
+		}
+		windowDef BtnTop
+		{
+			rect	49,289,548,90
+			background	"guis/assets/airlock/inbtn"
+			matcolor	0.5,1,0.9,0.3
+			visible	1
+		}
+		windowDef BtnBottom
+		{
+			rect	49,92,548,-90
+			background	"guis/assets/airlock/inbtn"
+			matcolor	0.5,1,0.9,0.3
+			visible	1
+		}
+		windowDef Btn2
+		{
+			rect	55,52,536,78
+			visible	1
+			windowDef btn2_Top
+			{
+				rect	-4,34,556,-30
+				visible	1
+				background	"guis/assets/common/btn_2pxborder_horiz"
+				matcolor	0.5,1,0.9,0.2
+			}
+			windowDef btn2_Btm
+			{
+				rect	0,64,556,26
+				visible	1
+				background	"guis/assets/common/btn_2pxborder_horiz"
+				matcolor	0.5,1,0.9,0.2
+			}
+		}
+		windowDef DestEnd2
+		{
+			rect	493,342,38,-30
+			visible	1
+			background	"guis/assets/common/titlebar_edge"
+			matcolor	0.5,1,0.9,0.2
+		}
+		windowDef DestBar2
+		{
+			rect	531,342,60,30
+			visible	1
+			background	"guis/assets/common/titlebar_mid"
+			matcolor	0.5,1,0.9,0.2
+		}
+		windowDef DestEnd1
+		{
+			rect	115,342,-38,-30
+			visible	1
+			background	"guis/assets/common/titlebar_edge"
+			matcolor	0.5,1,0.9,0.2
+		}
+		windowDef DestBar1
+		{
+			rect	55,342,60,30
+			visible	1
+			background	"guis/assets/common/titlebar_mid"
+			matcolor	0.5,1,0.9,0.2
+		}
+		windowDef Text311
+		{
+			rect	56,335,536,37
+			text	"#str_04028"
+			font	"fonts/bank"
+			textscale	0.5
+			forecolor	1,1,1,1
+			visible	1
+			textalign	1
+		}
+		windowDef TextBtn1
+		{
+			rect	55,227,535,65
+			visible	1
+			forecolor	1,1,1,0.698
+			text	"#str_02576"
+			textscale	1
+			textalign	1
+			font	"fonts/micro"
+		}
+		windowDef TextBtn
+		{
+			rect	55,38,535,409
+			visible	1
+			forecolor	1,1,1,0.698
+			text	"#str_04029"
+			textscale	1
+			textalign	1
+			font	"fonts/micro"
+			textaligny	135
+
+			onMouseEnter {
+				transition "TextBtn::forecolor" "1 1 1 0.7" "1 1 1 1" "200" ;
+				transition "TextBtn1::forecolor" "1 1 1 0.7" "1 1 1 1" "200" ;
+				transition "BtnTop::matcolor" "0.5 1 0.9 0.3" "0.6 1 0.95 0.5" "200" ;
+				transition "BtnBottom::matcolor" "0.5 1 0.9 0.3" "0.6 1 0.95 0.5" "200" ;
+			}
+
+			onMouseExit {
+				transition "TextBtn::forecolor" "1 1 1 1" "1 1 1 0.7" "200" ;
+				transition "TextBtn1::forecolor" "1 1 1 1" "1 1 1 0.7" "200" ;
+				transition "BtnTop::matcolor" "0.6 1 0.95 0.5" "0.5 1 0.9 0.3" "200" ;
+				transition "BtnBottom::matcolor" "0.6 1 0.95 0.5" "0.5 1 0.9 0.3" "200" ;
+			}
+
+			onAction {
+				set "cmd" "activate ; play guisounds_click" ;
+			}
+
+		}
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,-480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.5, 0.9, 0.6, 0.1
+	}
+	windowDef Static
+	{
+		rect	-9,-9,-660,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 10
+	}
+	windowDef Outerglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 6
+		visible	1
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0,0,-640,480
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.5 ,1
+		visible	1
+	}
+	windowDef Addhighlight2
+	{
+		rect	0,200,640,-280
+		background	"gui/addhighlight"
+		matcolor	0.4 ,0.5 ,0.5 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,-640,480
+		matcolor	1,1,1,1
+		background	"gui/test/gui_scanlines"
+		visible	1
+		matscaley	1.5
+	}
+	windowDef Dirt
+	{
+		rect	0,0,-640,480
+		matcolor	1, 1, 1 ,0.2
+		visible	1
+		background	"guis/assets/common/dirt4"
+		noevents	1
+	}
+	windowDef Reflect
+	{
+		rect	0,-9,-640,480
+		matcolor	1 ,1 ,1 ,0.1
+		visible	1
+		background	"gui/reflect1"
+		noevents	1
+	}
+	windowDef Dirt2
+	{
+		rect	0,0,-640,480
+		matcolor	1, 1, 1 ,0.8
+		visible	1
+		background	"guis/assets/common/dirt4"
+		noevents	1
+	}
+	windowDef scanlinesAlt
+	{
+		rect	0,0,-640,480
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	2
+	}
+	windowDef Dirt1
+	{
+		rect	0,0,-640,-480
+		matcolor	1, 1, 1 ,0.5
+		visible	1
+		background	"guis/assets/common/dirt2"
+		noevents	1
+	}
+	windowDef Mask1
+	{
+		rect	0,0,-640,480
+		visible	1
+		background	"guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.1
+	}
+}

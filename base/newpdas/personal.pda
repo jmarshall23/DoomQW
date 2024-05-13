@@ -1,0 +1,47 @@
+// NO audio files in the personal pda and subsequently no video files in other pdas
+// all vidoes are downloaded to your personal pda and individual pdas can contain
+// audio logs
+
+pda personal
+{
+	name		"^5Personal^0"
+	fullname	"Unidentified Marine"
+	icon		"gui/pda/bio1"
+	id			"3819x-22"
+	post		"Mars"				// for the personal pda this is ignored
+	title		"Marine Security"	// this is used for title or rank ( for the player )
+	security	"Marine HQ"			// only set this if it contains a new security clearance.. as far as the pda and hud goes this is informational only
+	pda_email	"personal"
+	pda_email	"personal2"
+	pda_video	"marine_sop"
+}
+
+email personal
+{
+	date		"11-15-2145"
+	to			"All Imcoming Personnel"
+	from		"Director W. Banks"
+	subject		"Welcome Message"
+	text 
+	{
+	"Welcome to Mars Marine.\n\n"
+	"I would like to take a brief moment of your time and welcome you to what we call our 'home away from home'. We will make every effort to make your stay here as pleasant as possible, and if you need something, please feel free to contact your supervisor for immediate assistance.  I hope that you can find the time to take advantage of some of our great staff amenities.  As a reminder, we engage in technical, highly secure testing and research here, please refrain from wandering into unauthorized areas.  Any security team member will assist you if help is needed.\n\n"
+	"Sincerely,\n"
+	"Director William Banks\n"
+	}
+}
+
+email personal2 
+{
+	date		"11-15-2145"
+	to			"Marine"
+	from		"Sergeant Kelly"
+	subject		"Report to Marine HQ"
+	text 
+	{
+"Marine,\n"	
+"Report to Marine command as soon as possible.  Don't waste any time getting here.  We're short on troops and I need you out on patrol as soon as possible.\n\n"
+	"Sergeant Kelly\n"
+	}
+}
+

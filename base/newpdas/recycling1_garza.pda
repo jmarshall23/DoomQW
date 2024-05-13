@@ -1,0 +1,58 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda recycling1_garza {
+	name         "Anthony Garza"
+	fullname     "Anthony R. Garza"
+	icon         "guis/assets/pda/garza"
+	id           "4222-18"
+	post         "Recycling Sector 1"
+	title        "HAZMAT Specialist"
+	security     ""
+	pda_email    "recycling1_garza_email_1"
+	pda_email    "recycling1_garza_email_2"
+	pda_email	 "recycling1_garza_email_3"
+	}
+
+email recycling1_garza_email_1 {
+	date		"10-30-2145"
+	to		"Anthony Graza"
+	from		"Michael Abrams"
+	subject	"New Rocket Launcher"
+	text {
+"Tony-\n"
+"I'm sending you one of the new rocket launchers that we've received from the marines. Please take some of the surplus toxic barrels lying around outside and blow them up. Be careful not to hurt yourself - the area damage is much larger than previous rocket launcher models.\n\n"
+"Thank You,\nMichael Abrams"
+	}
+}
+
+email recycling1_garza_email_2 {
+	date		"11-04-2145"
+	to		"Anthony Grza"
+	from		"Michael Abrams"
+	subject	"RE: New Rocket Launcher"
+
+	text {
+"I put in a request for more rocket ammo, I didn't realize how many barrels we needed destroyed.\n\n"
+"----Original Message----\n"
+"Sent: 10-31-2145\n"
+"To: Michael Abrams\n\n"
+"Mr. Abrams,\n"
+"Thank you for the rocket launcher but I will need more than the pre-installed five rockets for it. We have quite a few barrels here that need to be destroyed. I've placed it on my weapons rack for now and will begin destroying the barrels once I have more ammo.\n\n"
+"Thank You,\nTony"
+	}
+}
+
+email recycling1_garza_email_3  {
+	date		"11-06-2145"
+	to		"Tony Graza"
+	from		"martianbuddy.com"
+	subject	"Sleep Away!!"
+	text {
+"Dear Valued Customer,\n\n"
+"Are you tired at work often?\n"
+"Do you feel like you have less energy?\n"
+"Introducing the new and improved Sleep Away Pill. Now better than ever the new Sleep Away Pill will keep you feeling refreshed and going strong all day.\n"
+"For more information visit: www.martianbuddy.com"
+	}
+}
+

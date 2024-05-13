@@ -1,0 +1,28 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda mcunderground_young {
+	name         "Daniel Young"
+	fullname     "Daniel M. Young"
+	icon         "guis/assets/pda/icon_delahue"
+	id           "8946-55"
+	post         "Mars City Underground"
+	title        "Crane Operator"
+	security     ""
+	pda_email    "mcunderground_young_email_1"
+}
+
+email mcunderground_young_email_1 {
+	date		"11-15-2145"
+	to			"Daniel Young"
+	from		"Frank Delahue"
+	subject		"Tired of working the crane?"
+	text {
+	"Daniel,\n\n"
+	"I'm considering a promotion for you if you're interested.  I'm down an engineer in Reclamation and I think you would be the perfect replacement.\n\n"
+	"Give it some thought over the next few days and let me know what you think.\n\n"
+	"Frank Delahue,\n"
+	"Engineering Manager"
+	}
+}
+
+

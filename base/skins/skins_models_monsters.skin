@@ -1,0 +1,156 @@
+skin skins/models/monsters/maledict {
+	//models/monsters/maledict/mtongue textures/common/nodraw
+	models/characters/common/leftbet models/characters/common/leftmaledict
+	models/characters/common/rightbet models/characters/common/rightmaledict
+}
+
+skin skins/models/monsters/maledictnohead {
+	models/monsters/maledict/mtongue textures/common/nodraw
+	models/characters/common/leftbet textures/common/nodraw
+	models/characters/common/rightbet textures/common/nodraw
+}
+
+skin skins/models/monsters/sabdeath {
+	models/monsters/sabaoth/treads models/monsters/sabaoth/treads_stopped
+	models/weapons/bfg/bfg_world textures/common/nodraw
+}
+
+
+skin skins/models/monsters/magnospikes {
+	models/monsters/maggot/magspine textures/common/nodraw
+}
+
+skin skins/models/monsters/trite {
+	//models/monsters/trite/trite textures/common/nodraw
+	//models/monsters/trite/strand textures/common/nodraw
+	models/monsters/ticks/tleg textures/common/nodraw
+	models/monsters/ticks/tick textures/common/nodraw
+}
+
+skin skins/models/monsters/tick {
+	models/monsters/trite/trite textures/common/nodraw
+	models/monsters/trite/strand textures/common/nodraw
+	//models/monsters/ticks/tleg textures/common/nodraw
+	//models/monsters/ticks/tick textures/common/nodraw
+}
+
+skin skins/models/monsters/poppy {
+	//models/characters/female_npc/poppy/poppy textures/common/nodraw
+}
+
+skin skins/models/monsters/popped {
+	models/characters/female_npc/poppy/poppy textures/common/nodraw
+}
+
+skin skins/models/monsters/sentrynobeam {
+	models/items/flashlight/beam1 textures/common/nodraw
+	models/items/flashlight/flare textures/common/nodraw
+	models/items/flashlight/bulb textures/common/nodraw
+}
+
+skin skins/models/monsters/sentrybeam {
+	//models/items/flashlight/beam1 textures/common/nodraw
+	//models/items/flashlight/flare textures/common/nodraw
+	//models/items/flashlight/bulb textures/common/nodraw
+}
+
+skin skins/models/monsters/brownsentry {
+	models/monsters/sentry/sentry models/monsters/sentry/adriansentry
+	models/items/flashlight/beam1 textures/common/nodraw
+	models/items/flashlight/flare textures/common/nodraw
+	models/items/flashlight/bulb textures/common/nodraw
+}
+
+skin skins/models/monsters/fatty {
+	textures/base_trim/bluetex4n_ed textures/common/nodraw
+	models/mapobjects/filler/monkeywrench.tga textures/common/nodraw
+}
+
+skin skins/models/monsters/fattypipe {
+}
+
+skin skins/models/monsters/revnoeyes {
+	models/monsters/revenant/reye textures/common/nodraw
+	models/monsters/revenant/leye textures/common/nodraw
+}
+
+skin skins/models/monsters/sentry1 {
+	models/monsters/sentry/sentry models/monsters/sentry/sentry1
+}
+
+skin skins/models/monsters/sentry2 {
+	models/monsters/sentry/sentry models/monsters/sentry/sentry2
+}
+
+skin skins/models/monsters/sentry3 {
+	models/monsters/sentry/sentry models/monsters/sentry/sentry3
+}
+
+skin skins/models/monsters/zjumpgib {
+	//models/monsters/skeleton/skeleton01 textures/common/nodraw
+	models/weapons/chainsaw/chainsaw textures/common/nodraw
+	models/weapons/chainsaw/chain textures/common/nodraw
+	models/monsters/zsecurity/id_badge textures/common/nodraw
+	models/monsters/zombie/zombie02/zhead02 textures/common/nodraw
+}
+
+skin skins/models/monsters/zjump {
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+	models/weapons/chainsaw/chainsaw textures/common/nodraw
+	models/weapons/chainsaw/chain textures/common/nodraw
+	models/monsters/zsecurity/id_badge textures/common/nodraw
+}
+
+skin skins/models/monsters/zjumpcs {
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+	models/monsters/zsecurity/id_badge textures/common/nodraw
+}
+
+skin skins/models/monsters/zjumpdis {
+	models/monsters/zombie/zombie02/zombie02 models/monsters/spectre/dis
+	models/monsters/zombie/zombie02/zhead02 textures/common/nodraw
+	models/common/leftdead2 textures/common/nodraw
+	models/common/rightdead2 textures/common/nodraw
+	models/monsters/zsecurity/id_badge textures/common/nodraw
+}
+
+skin skins/models/monsters/zsci1 {
+	models/characters/scientist/head04/head04 textures/common/nodraw
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead03 textures/common/nodraw
+}
+
+skin skins/models/monsters/zsci2 {
+	models/characters/scientist/head04/head04 textures/common/nodraw
+	models/characters/common/leftbrown textures/common/nodraw
+	models/characters/common/rightbrown textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead02 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth textures/common/nodraw
+	models/characters/common/leftdead2 textures/common/nodraw
+	models/characters/common/rightdead2 textures/common/nodraw
+}
+
+skin skins/models/monsters/zsci3 {
+	models/monsters/zombie/zombie01/zhead03 textures/common/nodraw
+	models/monsters/zombie/zombie01/zhead02 textures/common/nodraw
+	models/characters/sarge2/teeth/teeth textures/common/nodraw
+	models/characters/common/leftdead2 textures/common/nodraw
+	models/characters/common/rightdead2 textures/common/nodraw
+}
+
+skin skins/models/monsters/a_hk_cutter {
+	models/monsters/hellknight/hellknight models/monsters/hellknight/a_hk_cutter 
+}
+
+skin skins/models/monsters/a_hk_branded {
+	models/monsters/hellknight/hellknight models/monsters/hellknight/a_hk_branded 
+}
+
+skin skins/models/monsters/a_hellimp {
+	models/monsters/imp/imp  models/monsters/imp/a_hellimp 
+}
+
+skin skins/models/monsters/a_hellmaggot {
+	models/monsters/maggot/maggot3  models/monsters/maggot/a_hellmaggot 
+}

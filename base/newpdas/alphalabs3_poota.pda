@@ -1,0 +1,40 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda alphalabs3_poota {
+	name         "George Poota"
+	fullname     "George Poota"
+	icon         "guis/assets/pda/poota"
+	id           "4450-86"
+	post         "Alpha Labs, Sector 3"
+	title        "Waste Managment"
+	security     ""
+	pda_email    "alphalabs3_george_email_1"
+	pda_email    "alphalabs3_george_email_2"
+}
+
+email alphalabs3_george_email_1 {
+	date		"10-28-2145"
+	to		"George Poota"
+	from		"Mark Lamia"
+	subject	"Hours of operation"
+	text {
+"George,\n\n"
+"It has come to my attention yet again, that you did not show up for your shift on Wednesday.  This is the fourth time this month that you have missed a shift.  I am getting tired of your pathetic excuses.  You had two prostate exams last month and I will not fall for that excuse again!  Consider yourself on notice, Mr. Poota.\n\n"
+"Mark Lamia\n"
+"Operations Chief Alpha Labs, Sector 3"
+	}
+}
+
+email alphalabs3_george_email_2 {
+	date		"10-28-2145"
+	to		"George Poota"
+	from		"martianbuddy.com"
+	subject	"++FIRE YOUR BOSS!!++"
+	text {
+"Tired of your boss getting you down?  Do you want to make your own hours?  Looking for the chance to double or even triple your income?!!  Well here's your big opportunity!  It's as easy as logging onto www.martianbuddy.com!  Come find out how easy it is to work from home making the BIG$$$$!\n\n"
+"www.martianbuddy.com"
+
+	}
+}
+
+

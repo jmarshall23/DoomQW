@@ -1,0 +1,90 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	windowDef BgBlack
+	{
+		rect	0,0,640,480
+		visible	1
+		background	"guis/assets/common/bg"
+		matcolor	0,0,0,1
+	}
+	windowDef Static3
+	{
+		rect	5,5,629,475
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, 1
+	}
+	windowDef Addhighlight1
+	{
+		rect	0,0,-640,480
+		background	"gui/addhighlight"
+		matcolor	0.8 ,0.6 ,0.4 ,1
+		visible	1
+	}
+	windowDef Addhighlight2
+	{
+		rect	0,200,640,-280
+		background	"gui/addhighlight"
+		matcolor	0.8 ,0.6 ,0.4 ,1
+		visible	1
+	}
+	windowDef Background6
+	{
+		rect	0,0,-640,480
+		visible	1
+		background	"gui/bloodtest2"
+		matcolor	0.5, 0.4, 0.4, 0.4
+	}
+	windowDef BgBlack2
+	{
+		rect	2,2,636,476
+		visible	1
+		background	"guis/assets/common/bg"
+		matcolor	0,0,0,0.8
+	}
+	windowDef Outershadow1
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Dirt1
+	{
+		rect	0,0,640,480
+		matcolor	1, 1, 1 ,0.8
+		visible	1
+		background	"guis/assets/common/dirt2"
+	}
+	windowDef Dirt21
+	{
+		rect	5,2,628,-472
+		matcolor	1, 1, 1 ,0.8
+		visible	1
+		background	"guis/assets/common/dirt2"
+	}
+	windowDef Bglow1
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.07
+	}
+	windowDef scanlinesAlt11
+	{
+		rect	0,0,-640,480
+		matcolor	0.15,0.15,0.15,1
+		background	"gui/test/gui_scanlines5"
+		matscaley	2
+		visible	1
+	}
+	windowDef Reflect1
+	{
+		rect	0,-18,-640,513
+		matcolor	1 ,0.8 ,0.7 ,0.15
+		visible	1
+		background	"gui/reflect2"
+	}
+}

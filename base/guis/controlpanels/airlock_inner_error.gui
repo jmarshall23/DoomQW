@@ -1,0 +1,717 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	comment	"gui_parm1 value 1 sets the left door as the base side, value 0 or no value set the right door as the base side.\n\ngui_parm2 value 1 sets the starting state (what the user will first see) as full base pressure, value 0 or no value defaults the pressure inside as mars pressure.\n\ngui_parm3 value 1 sets the gui to be clickable only once, value 0 or no value lets the gui be activated as many times as it is clicked.\n\ngui_parm4 is the airlock name.(use all caps, like AIRLOCK STATION 17)\n\ngui_parm6 defines the script.  gui_parm11 value 0 makes the gui unclickable, value 1 makes gui useable."
+	float "ltr" 0
+	float "high" 1
+	float "setparm1" 0
+	float "setparm2" 0
+
+	onEvent {
+	
+		if ("gui::gui_parm11" == 0) {
+			set "ClickCatch::rect" "0 0 640 480" ;
+		} else {
+			set "ClickCatch::rect" "0 0 0 0" ;
+		}	
+	
+		if ("gui::gui_parm1" == 1) {
+			if ("setparm1" == 0) {
+				set "TextExt1Press::text" "14.2" ;
+				set "TextExt2Press::text" "0.13" ;
+			}
+		} else {
+			if ("setparm1" == 0) {
+				set "TextExt1Press::text" "0.13" ;
+				set "TextExt2Press::text" "14.2" ;
+			}
+		}
+
+		if ("gui::gui_parm2" == 1) {
+			if ("setparm2" == 0) {
+				set "TextIntPress::text" "14.2" ;
+				set "high" "1" ;
+				if ("gui::gui_parm1" == 1) {
+					set "circMidLeft::matcolor" "0.7 0.85 1 0.6" ;
+					set "CircLeft::matcolor" "0.7 0.85 1 0.6" ;
+					set "circMidRight::matcolor" "0.5 0.8 1 0.3" ;
+					set "CircRight::matcolor" "0.5 0.8 1 0.3" ;
+					set "TextExt1Press::forecolor" "0.7 0.85 1 0.6" ;
+					set "ltr" "1" ;
+				} else {
+					set "circMidRight::matcolor" "0.7 0.85 1 0.6" ;
+					set "CircRight::matcolor" "0.7 0.85 1 0.6" ;
+					set "circMidLeft::matcolor" "0.5 0.8 1 0.3" ;
+					set "CircLeft::matcolor" "0.5 0.8 1 0.3" ;
+					set "TextExt2Press::forecolor" "0.7 0.85 1 0.6" ;
+					set "ltr" "0" ;
+				}
+			}
+		} else {
+			if ("setparm2" == 0) {
+				set "TextIntPress::text" "0.13" ;
+				set "high" "0" ;
+				if ("gui::gui_parm1" == 1) {
+					set "circMidRight::matcolor" "0.7 0.85 1 0.6" ;
+					set "CircRight::matcolor" "0.7 0.85 1 0.6" ;
+					set "circMidLeft::matcolor" "0.5 0.8 1 0.3" ;
+					set "CircLeft::matcolor" "0.5 0.8 1 0.3" ;
+					set "TextExt2Press::forecolor" "0.7 0.85 1 0.6" ;
+					set "ltr" "0" ;
+				} else {
+					set "circMidLeft::matcolor" "0.7 0.85 1 0.6" ;
+					set "CircLeft::matcolor" "0.7 0.85 1 0.6" ;
+					set "circMidRight::matcolor" "0.5 0.8 1 0.3" ;
+					set "CircRight::matcolor" "0.5 0.8 1 0.3" ;
+					set "TextExt1Press::forecolor" "0.7 0.85 1 0.6" ;
+					set "ltr" "1" ;
+				}
+			}
+		}
+	}
+
+	windowDef BgImage
+	{
+		rect	0,0,640,480
+		nocursor	1
+		background	"guis/assets/cpuserver/bg.tga"
+		matcolor	0,0,0,1
+		visible	1
+	}
+	windowDef Glow
+	{
+		rect	5 ,5 ,-630 ,470
+		matcolor	0.15,0,0,1
+		visible	1
+		background	"gui/glow"
+		noevents	1
+	}
+	windowDef Bgright
+	{
+		rect	318,433,-289,28
+		background	"guis/assets/airlock/inbgfill"
+		matcolor	0.5,0.8,1,0.1
+		visible	1
+	}
+	windowDef Bgleft
+	{
+		rect	33,433,289,28
+		background	"guis/assets/airlock/inbgfill"
+		matcolor	0.5,0.8,1,0.2
+		visible	1
+	}
+	windowDef Bg
+	{
+		rect	5,240,630,235
+		background	"guis/assets/airlock/inbg2"
+		matcolor	0.5,0.8,1,0.6
+		visible	1
+	}
+	windowDef Circles
+	{
+		rect	100,292,440,145
+		visible	1
+		windowDef CircRight
+		{
+			rect	308,12,-118,118
+			visible	1
+			background	"guis/assets/caverns/spincircthin"
+			matcolor	0.5,0.8,1,0.3
+		}
+		windowDef CircMidLeft
+		{
+			rect	160,12,118,118
+			visible	1
+			background	"guis/assets/caverns/spincircthin"
+			matcolor	0.7,0.85,1,0.6
+		}
+		windowDef CircMidRight
+		{
+			rect	160,12,-118,118
+			visible	1
+			background	"guis/assets/caverns/spincircthin"
+			matcolor	0.5,0.8,1,0.3
+		}
+		windowDef CircLeft
+		{
+			rect	12,12,118,118
+			visible	1
+			background	"guis/assets/caverns/spincircthin"
+			matcolor	0.7,0.85,1,0.6
+		}
+		windowDef SpinCircR
+		{
+			rect	161,12,-118,118
+			visible	1
+			background	"gui/caves/cranespinthin"
+			matcolor	0,0,0,0
+		}
+		windowDef SpinCircL
+		{
+			rect	161,12,118,118
+			visible	1
+			background	"gui/caves/cranespinthin"
+			matcolor	0,0,0,0
+		}
+	}
+	windowDef ButtonError
+	{
+		rect	0 ,0 ,640 ,480
+		visible	0
+		noevents	1
+
+		onAction {
+			set	"cmd" "play guisounds_error" ; 
+		}
+
+	}
+	windowDef BtnTop
+	{
+		rect	20,78,600,115
+		background	"guis/assets/airlock/inbtn"
+		matcolor	1,0.7,0.2,0.4
+		visible	1
+	}
+	windowDef BtnBottom
+	{
+		rect	20,159,600,-115
+		background	"guis/assets/airlock/inbtn"
+		matcolor	1,0.7,0.2,0.4
+		visible	1
+	}
+	windowDef TextBtn
+	{
+		rect	19,127,602,100
+		visible	1
+		forecolor	1,1,1,0.7
+		text	"#str_00644"
+		textscale	1.6
+		textalign	1
+	}
+	windowDef TextBtn2
+	{
+		rect	320,135,100,100
+		notime 1
+		windowDef TextBtn2a
+		{
+			rect	0,0,602,100
+			visible	1
+			forecolor	1,1,1,0
+			text	"#str_00558"
+			textscale	1.2
+			textalign	1
+			nowrap	1
+		}
+
+		onTime 0 {
+			transition "TextBtn2a::forecolor" "1 1 1 0" "1 1 1 0.7" "250" ;
+			transition "rect" "200 135 0 100" "19 135 520 100" "400" ;
+		}
+		onTime 4000 {
+			transition "TextBtn2a::forecolor" "1 1 1 0.7" "1 1 1 0" "1000" ;
+		}
+		onTime 5000 {
+			set "rect" "320 135 0 100" ;
+		}
+	}
+	windowDef BackgroundBorder
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef Bottom1
+		{
+			rect	18,34,604,-46
+			visible	1
+			background	"guis/assets/common/scibox/g_horiz"
+			matcolor	0.7,0.9,1,0.2
+		}
+		windowDef Right
+		{
+			rect	576,64,-59,352
+			visible	1
+			background	"guis/assets/common/glowborder_vert"
+			matcolor	0.7,0.9,1,1
+		}
+		windowDef Left
+		{
+			rect	5,64,59,352
+			visible	1
+			background	"guis/assets/common/glowborder_vert"
+			matcolor	0.7,0.9,1,1
+		}
+		windowDef Bottom
+		{
+			rect	64,416,512,59
+			visible	1
+			background	"guis/assets/common/glowborder_horiz"
+			matcolor	0.7,0.9,1,1
+		}
+		windowDef Top
+		{
+			rect	64,5,512,-59
+			visible	1
+			background	"guis/assets/common/glowborder_horiz"
+			matcolor	0.7,0.9,1,1
+		}
+		windowDef BLcorner
+		{
+			rect	5,416,-59,59
+			visible	1
+			background	"guis/assets/common/glowborder_corner4"
+			matcolor	0.7,0.9,1,1
+		}
+		windowDef BRcorner
+		{
+			rect	576,416,59,59
+			visible	1
+			background	"guis/assets/common/glowborder_corner4"
+			matcolor	0.7,0.9,1,1
+		}
+		windowDef Trcorner
+		{
+			rect	576,5,-59,-59
+			visible	1
+			background	"guis/assets/common/glowborder_corner3"
+			matcolor	0.7,0.9,1,1
+		}
+		windowDef TLcorner
+		{
+			rect	5,5,59,-59
+			visible	1
+			background	"guis/assets/common/glowborder_corner3"
+			matcolor	0.7,0.9,1,1
+		}
+	}
+	windowDef Text
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef TextExt1Press
+		{
+			rect	134,340,86,48
+			visible	1
+			forecolor	0.7,0.85,1,0.6
+			text	"0.13"
+			textscale	0.7
+		}
+		windowDef TextIntPress
+		{
+			rect	281,340,86,48
+			visible	1
+			forecolor	0.7,0.85,1,0.6
+			text	"0.13"
+			textscale	0.7
+		}
+		windowDef TextExt2Press
+		{
+			rect	430,340,86,48
+			visible	1
+			forecolor	0.5,0.8,1,0.3
+			text	"14.2"
+			textscale	0.7
+		}
+		windowDef TextExternal
+		{
+			rect	413,275,205,26
+			visible	1
+			forecolor	1,1,1,0.6
+			text	"#str_00645"
+			textscale	0.32
+			font	"fonts/micro"
+		}
+		windowDef TextInternal
+		{
+			rect	30,275,202,25
+			visible	1
+			forecolor	1,1,1,0.6
+			text	"#str_00646"
+			textscale	0.32
+			font	"fonts/micro"
+		}
+		windowDef TextAirlock
+		{
+			rect	268,275,103,26
+			visible	1
+			forecolor	1,1,1,0.6
+			text	"#str_00551"
+			textscale	0.32
+			font	"fonts/micro"
+		}
+		windowDef TextTank
+		{
+			rect	108,435,206,27
+			visible	1
+			forecolor	0.5,0.8,1,0.4
+			text	"#str_00647"
+			textscale	0.32
+			font	"fonts/micro"
+		}
+		windowDef TextTankStatus
+		{
+			rect	334,435,239,29
+			visible	1
+			forecolor	0.5,0.8,1,0.4
+			text	"#str_00648"
+			textscale	0.32
+			font	"fonts/micro"
+		}
+	}
+	windowDef TextTitle
+	{
+		rect	19,13,602,56
+		visible	1
+		forecolor	1,1,1,0.4
+		text	"gui::gui_parm4"
+		textscale	0.83
+		textalign	1
+		font	"fonts/micro"
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	1, 0.8, 0.4, 0.1
+	}
+	windowDef Outerglow
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	0.4 ,1 ,1 , pdflick [ time * .0025 ] / 2.8
+		visible	0
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.8 ,0.8 ,0.8 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,640,480
+		matcolor	0.2,0.2,0.2,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	2
+	}
+	windowDef Dirt
+	{
+		rect	1,0,-640,480
+		matcolor	1, 1, 1 ,1
+		visible	1
+		background	"guis/assets/common/dirt4"
+		noevents	1
+	}
+	windowDef Anim
+	{
+		rect	1 ,1 ,1 ,1
+		notime	1
+		visible	1
+
+		onTime 0 {
+			set	"ButtonActivate::noevents" "1" ; 
+			set	"ButtonError::noevents" "0" ; 
+			set	"ButtonError::visible" "1" ;
+			transition "TextBtn::forecolor" "1 1 1 1" "1 1 1 0" "500" ;
+			transition "BtnTop::matcolor" "1 0.7 0.2 0.4" "1 0.7 0.2 0" "400" ;
+			transition "BtnBottom::matcolor" "1 0.7 0.2 0.4" "1 0.7 0.2 0" "400" ;
+			transition "BtnTop::rect" "20 78 600 115" "20 122 600 115" "300" "0" "0.6" ;
+			transition "BtnBottom::rect" "20 159 600 -115" "20 113 600 -115" "300" "0" "0.6" ;
+		}
+		onTime 500 {
+			resetTime "TextBtn2" "0" ;
+			set "TextBtn2a::visible" "1" ;
+		}
+		onTime 1500 {
+			if ("desktop::ltr" == 1) {
+				transition "circMidLeft::matcolor" "0.7 0.85 1 0.6" "0.5 0.8 1 0.3" "500" ;
+				transition "SpinCircR::matcolor" "0.7 0.85 1 0" "0.7 0.85 1 0.6" "500" ;
+
+				transition "CircLeft::matcolor" "0.7 0.85 1 0.6" "0.5 0.8 1 0.3" "500" ;
+				transition "TextExt1Press::forecolor" "0.7 0.85 1 0.6" "0.5 0.8 1 0.3" "500" ;
+			} else {
+				transition "circMidRight::matcolor" "0.7 0.85 1 0.6" "0.5 0.8 1 0.3" "500" ;
+				transition "SpinCircL::matcolor" "0.7 0.85 1 0" "0.7 0.85 1 0.6" "500" ;
+
+				transition "CircRight::matcolor" "0.7 0.85 1 0.6" "0.5 0.8 1 0.3" "500" ;
+				transition "TextExt2Press::forecolor" "0.7 0.85 1 0.6" "0.5 0.8 1 0.3" "500" ;
+			}
+
+			if ("desktop::high" == 1) {
+				resetTime "AnimTextDown" "0" ;
+				set "desktop::high" "0" ;
+			} else {
+				resetTime "AnimTextUp" "0" ;
+				set "desktop::high" "1" ;
+			}
+		}
+		onTime 3200 {
+			if ("desktop::ltr" == 1) {
+				transition "circMidRight::matcolor" "0.5 0.8 1 0.3" "0.7 0.85 1 0.6" "500" ;
+				transition "SpinCircR::matcolor" "0.7 0.85 1 0.6" "0.7 0.85 1 0" "500" ;
+				transition "CircRight::matcolor" "0.5 0.8 1 0.3" "0.7 0.85 1 0.6" "500" ;
+				transition "TextExt2Press::forecolor" "0.5 0.8 1 0.3" "0.7 0.85 1 0.6" "500" ;
+				set "desktop::ltr" "0" ;
+			} else {
+				transition "circMidLeft::matcolor" "0.5 0.8 1 0.3" "0.7 0.85 1 0.6" "500" ;
+				transition "SpinCircL::matcolor" "0.7 0.85 1 0.6" "0.7 0.85 1 0" "500" ;
+				transition "CircLeft::matcolor" "0.5 0.8 1 0.3" "0.7 0.85 1 0.6" "500" ;
+				transition "TextExt1Press::forecolor" "0.5 0.8 1 0.3" "0.7 0.85 1 0.6" "500" ;
+				set "desktop::ltr" "1" ;
+			}
+		}
+		onTime 5500 {
+			set "TextBtn2a::visible" "0" ;
+		}
+		
+		onTime 6000 {
+		//	set	"ButtonActivate::noevents" "0" ; 
+		//	set	"ButtonError::noevents" "1" ; 
+		//	set	"ButtonError::visible" "0" ;
+			transition "TextBtn::forecolor" "1 1 1 0" "1 1 1 0.7" "500" ;
+			transition "BtnTop::matcolor" "1 0.7 0.2 0" "1 0.7 0.2 0.4" "500" ;
+			transition "BtnBottom::matcolor" "1 0.7 0.2 0" "1 0.7 0.2 0.4" "500" ;
+			transition "BtnTop::rect" "20 122 600 115" "20 78 600 115" "500" "0" "0.7" ;
+			transition "BtnBottom::rect" "20 113 600 -115" "20 159 600 -115" "500" "0" "0.7" ;
+		}
+
+	}
+	windowDef AnimTextDown
+	{
+		rect	1 ,1 ,1 ,1
+		notime	1
+
+		onTime 0 {
+			set "TextIntPress::text" "14.2" ;
+		}
+		onTime 150 {
+			set "TextIntPress::text" "14.1" ;
+		}
+		onTime 250 {
+			set "TextIntPress::text" "14.0" ;
+		}
+		onTime 350 {
+			set "TextIntPress::text" "13.9" ;
+		}
+		onTime 450 {
+			set "TextIntPress::text" "13.2" ;
+		}
+		onTime 550 {
+			set "TextIntPress::text" "12.7" ;
+		}
+		onTime 650 {
+			set "TextIntPress::text" "12.2" ;
+		}
+		onTime 750 {
+			set "TextIntPress::text" "11.91" ;
+		}
+		onTime 850 {
+			set "TextIntPress::text" "11.12" ;
+		}
+		onTime 900 {
+			set "TextIntPress::text" "10.7" ;
+		}
+		onTime 950 {
+			set "TextIntPress::text" "10.2" ;
+		}
+		onTime 1000 {
+			set "TextIntPress::text" "9.91" ;
+		}
+		onTime 1050 {
+			set "TextIntPress::text" "9.12" ;
+		}
+		onTime 1100 {
+			set "TextIntPress::text" "8.71" ;
+		}
+		onTime 1150 {
+			set "TextIntPress::text" "8.13" ;
+		}
+		onTime 1200 {
+			set "TextIntPress::text" "7.14" ;
+		}
+		onTime 1250 {
+			set "TextIntPress::text" "7.31" ;
+		}
+		onTime 1300 {
+			set "TextIntPress::text" "6.91" ;
+		}
+		onTime 1350 {
+			set "TextIntPress::text" "6.14" ;
+		}
+		onTime 1400 {
+			set "TextIntPress::text" "5.71" ;
+		}
+		onTime 1450 {
+			set "TextIntPress::text" "5.12" ;
+		}
+		onTime 1500 {
+			set "TextIntPress::text" "4.91" ;
+		}
+		onTime 1525 {
+			set "TextIntPress::text" "4.16" ;
+		}
+		onTime 1550 {
+			set "TextIntPress::text" "3.81" ;
+		}
+		onTime 1575 {
+			set "TextIntPress::text" "3.12" ;
+		}
+		onTime 1625 {
+			set "TextIntPress::text" "2.13" ;
+		}
+		onTime 1650 {
+			set "TextIntPress::text" "1.92" ;
+		}
+		onTime 1675 {
+			set "TextIntPress::text" "1.23" ;
+		}
+		onTime 1700 {
+			set "TextIntPress::text" "0.71" ;
+		}
+		onTime 1725 {
+			set "TextIntPress::text" "0.13" ;
+		}
+	}
+	windowDef AnimTextUp
+	{
+		rect	1 ,1 ,1 ,1
+		notime	1
+
+		onTime 1725 {
+			set "TextIntPress::text" "14.2" ;
+		}
+		onTime 1700 {
+			set "TextIntPress::text" "14.1" ;
+		}
+		onTime 1675 {
+			set "TextIntPress::text" "14.0" ;
+		}
+		onTime 1650 {
+			set "TextIntPress::text" "13.9" ;
+		}
+		onTime 1625 {
+			set "TextIntPress::text" "13.2" ;
+		}
+		onTime 1575 {
+			set "TextIntPress::text" "12.7" ;
+		}
+		onTime 1550 {
+			set "TextIntPress::text" "12.2" ;
+		}
+		onTime 1525 {
+			set "TextIntPress::text" "11.91" ;
+		}
+		onTime 1500 {
+			set "TextIntPress::text" "11.12" ;
+		}
+		onTime 1450 {
+			set "TextIntPress::text" "10.7" ;
+		}
+		onTime 1400 {
+			set "TextIntPress::text" "10.2" ;
+		}
+		onTime 1350 {
+			set "TextIntPress::text" "9.91" ;
+		}
+		onTime 1300 {
+			set "TextIntPress::text" "9.12" ;
+		}
+		onTime 1250 {
+			set "TextIntPress::text" "8.71" ;
+		}
+		onTime 1200 {
+			set "TextIntPress::text" "8.13" ;
+		}
+		onTime 1150 {
+			set "TextIntPress::text" "7.14" ;
+		}
+		onTime 1100 {
+			set "TextIntPress::text" "7.31" ;
+		}
+		onTime 1050 {
+			set "TextIntPress::text" "6.91" ;
+		}
+		onTime 1000 {
+			set "TextIntPress::text" "6.14" ;
+		}
+		onTime 950 {
+			set "TextIntPress::text" "5.71" ;
+		}
+		onTime 900 {
+			set "TextIntPress::text" "5.12" ;
+		}
+		onTime 850 {
+			set "TextIntPress::text" "4.91" ;
+		}
+		onTime 750 {
+			set "TextIntPress::text" "4.16" ;
+		}
+		onTime 650 {
+			set "TextIntPress::text" "3.81" ;
+		}
+		onTime 550 {
+			set "TextIntPress::text" "3.12" ;
+		}
+		onTime 450 {
+			set "TextIntPress::text" "2.13" ;
+		}
+		onTime 350 {
+			set "TextIntPress::text" "1.92" ;
+		}
+		onTime 250 {
+			set "TextIntPress::text" "1.23" ;
+		}
+		onTime 150 {
+			set "TextIntPress::text" "0.71" ;
+		}
+		onTime 0 {
+			set "TextIntPress::text" "0.13" ;
+		}
+	}
+	windowDef Outershadow1
+	{
+		rect	0,0,640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Static
+	{
+		rect	-9,-9,-660,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 8
+	}
+	windowDef ButtonActivate
+	{
+		rect	0,72,640,202
+		visible	1
+
+		onAction {
+			runScript	"gui::gui_parm6" ; 
+			set	"cmd" "activate ; play guisounds_pressurize" ; 
+			resetTime "Anim" "0" ; 
+			set "desktop::setparm1" "1" ;
+			set "desktop::setparm2" "1" ;
+		}
+
+	}
+	windowDef ClickCatch
+	{
+		rect	0 ,0 ,0 ,0
+		visible	1
+
+		onAction {
+			set	"cmd" "play guisounds_error" ; 
+		}
+
+	}		
+}

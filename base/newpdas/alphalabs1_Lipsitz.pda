@@ -1,0 +1,40 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda alphalabs1_Lipsitz {
+	name         "Bernie Lipsitz"
+	fullname     "Bernie Lipsitz"
+	icon         "guis/assets/pda/Lipsitz"
+	id           "3902-21"
+	post         "Alpha Labs, Sector 1"
+	title        "Research Assistant"
+	security     "Hydrocon Access"
+	pda_email    "alphalabs1_lipsitz_email_1"
+	pda_email    "alphalabs1_lipsitz_email_2"
+}
+
+email alphalabs1_lipsitz_email_2 {
+	date		"11-14-2145"
+	to			"Bernie Lipsitz"
+	from		"Fredric Anubus"
+	subject		"Hydrocon O2 leak"
+	text {
+"Lipsitz,\n\n"
+"A siphon hose in the oxygen displacement valve is forming a leak due to the lowered temperatures required to boost production in the Hydrocon Labs.  If this hose were to rupture, it would cause severe instability in the Hydrocon systems and could result in a very dangerous situation.  It should really be replaced.\n\n"
+"Dr. Anubus\n"
+	}
+}
+
+email alphalabs1_lipsitz_email_1 {
+	date		"10-24-2145"
+	to			"Bernie Lipsitz"
+	from		"John McDermott"
+	subject		"Time off"
+	text {
+	
+"Hey Bern,\n\n"
+"Some of the boys and I are headed over to Mars City tonight after the shift for some beers.  You, as always, are welcome to come along with us, buddy.  I WILL see you there!\n\n"
+"John\n\n"
+
+	}
+}
+

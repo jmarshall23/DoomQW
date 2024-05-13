@@ -1,0 +1,46 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda commoutside_holiday {
+	name         "James Holiday"
+	fullname     "James A. Holiday"
+	icon         "guis/assets/pda/icon_jholiday"
+	id           "7085-64"
+	post         "Communications Transfer"
+	title        "Transport Controller"
+	security     "COMM Transfer Access"
+	pda_email    "commoutside_holiday_email_1"
+	pda_email    "commoutside_holiday_email_2"
+	pda_audio    "commoutside_holiday_audio_1"
+}
+
+email commoutside_holiday_email_2 {
+	date		"11-15-2145"
+	to		"James Holiday"
+	from		"Shipping Authority"
+	subject		"Site 1 needs"
+	text {
+	"The UAC has terminated all research at site 1.  This includes the McNeil Projects.  Arrangements for transportation and storage of useful equipment should be made immediately.\n\n"
+	"-Shipping Authority"
+	}
+}
+
+email commoutside_holiday_email_1 {
+	date		"11-13-2145"
+	to		"James Holiday"
+	from		"Ron Ridge"
+	subject		"Those Damn Chainsaws!"
+	text {
+	"Hey James,\n"
+	"What are we gonna do with all those chainsaws?  We've got two shipments of excess medical equipment coming in very soon and we're gonna need the space.  I can't believe someone mis-shipped those things.  I can't think of a more useless piece of equipment then a chainsaw on Mars!?!  Anyway you gotta help me get rid of these Beavertooths.\n\n"
+	"Thanks,\n"
+	"-RR"
+	}
+}
+
+audio commoutside_holiday_audio_1 {
+	name		"Artifact Transport Concerns"
+	info		"Made by: James Holiday\nDate: 09-24-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_commoutside_holiday_1"
+}
+

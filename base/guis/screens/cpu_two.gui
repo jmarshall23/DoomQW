@@ -1,0 +1,180 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 0.8
+
+	windowDef Bglow {
+		rect 0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible 1
+		matcolor 0.4, 0.8, 1, 0.1
+	}
+
+	windowDef BgParent {
+		rect 20, 10, 600, 300
+
+		windowDef Bg {
+			rect 0, 0, 600, 460
+			background	"guis/assets/cpuserver/bg2.tga"
+			visible 1
+			matcolor 0.4, 0.8, 1, 1
+		}
+	}
+
+	windowDef Pop1 {
+		rect 25, 70, 10, 10
+
+		windowDef Pop1Sub {
+			rect 0, 0, 360, 260
+			background	"guis/assets/cpuserver/pop1.tga"
+			visible 	0
+			matcolor 	0.4, 0.8, 1, 1
+		}
+	}
+
+	windowDef Pop2 {
+		rect 0, 14, 10, 10
+
+		windowDef Pop2Sub {
+			rect 0, 0, 607, 450
+			background	"guis/assets/cpuserver/pop2.tga"
+			visible 	0
+			matcolor 	0.4, 0.8, 1, 1
+		}
+	}
+
+	windowDef Mars {
+		rect 155, 150, 265, 10
+
+		windowDef MarsSub {
+			rect -110, -90, 490, 380
+			background	"gui/spintest2"
+			visible 	0
+			matcolor 	1, 1, 1, 0
+		}
+/*
+		windowDef MarsSub {
+			rect 0, 0, 265, 200
+			background	"guis/assets/cpuserver/mars.tga"
+			visible 	0
+			matcolor 	1, 1, 1, 0
+		}
+
+		windowDef MarsSub {
+			rect -70, -50, 400, 300
+			background	"gui/epd/spin"
+			visible 	0
+			matcolor 	1, 1, 1, 0
+		}
+*/
+	}
+
+	windowDef Pop3 {
+		rect 430, 250, 160, 210
+
+		windowDef Pop3Sub {
+			rect 0, 0, 160, 210
+			background	"guis/assets/cpuserver/pop3.tga"
+			visible 	1
+			matcolor 	0.4, 0.8, 1, 1
+		}
+	}
+
+	windowDef Pop4 {
+		rect 25, 335, 335, 130
+
+		windowDef Pop4Sub {
+			rect 0, 0, 335, 130
+			background	"guis/assets/cpuserver/pop4.tga"
+			visible 	1
+			matcolor 	0.4, 0.8, 1, 1
+		}
+	}
+
+	windowDef spikes {
+		visible		1
+		rect		50, 370, 285, 75
+		background	"gui/spike3"
+		matcolor	1 ,1 ,1 ,1 
+
+	}
+
+	windowDef Grid {
+		rect 10, 10, 620, 460
+		background	"guis/assets/cpuserver/grid.tga"
+		visible 1
+		matcolor 1, 1, 1, 0.4
+	}
+
+	windowDef bgScroll {
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background	"gui/scroll3"
+		matColor	1, 1,  1, flickertable [ time * 5 ] / 6 
+	}
+
+	windowDef Reflect {
+		rect		10 ,5 ,620 ,470 
+		matcolor	1 ,1 ,1 ,0.2 
+		visible		1
+		background	"gui/reflect1"
+	}
+
+	windowDef Anim {
+
+		onTime 0 {
+			set		"Pop1Sub::visible" "1" ;
+			transition	"Pop1::rect" "25 70 10 10" "25 70 360 260" "1000" ;
+		}
+		onTime 1500 {
+			transition	"Pop3::rect" "430 250 160 210" "430 250 10 10" "1000" ;
+		}
+		onTime 2000 {
+			set		"Pop2Sub::visible" "1" ;
+			transition	"Pop2::rect" "0 14 10 10" "0 14 607 450" "1000" ;
+		}
+		onTime 2500 {
+			set		"Pop3Sub::visible" "0" ;
+		}
+		onTime 3000 {
+			set		"MarsSub::visible" "1" ;
+			transition	"Mars::rect" "155 150 265 10" "155 150 265 200" "500" ;
+			transition	"MarsSub::matcolor" "1 1 1 0" "0.8 1 1 0.2" "500" ;
+			transition	"Spikes::matcolor" "1 1 1 1" "1 1 1 0" "500" ;
+		}
+		onTime 3500 {
+			transition	"Pop4::rect" "25 335 335 130" "25 335 10 10" "1000" ;
+		}
+		onTime 4000 {
+			set		"Pop3Sub::visible" "1" ;
+			transition	"Pop3::rect" "430 250 10 10" "430 250 160 210" "1000" ;
+		}
+		onTime 4500 {
+			set		"Pop4Sub::visible" "0" ;
+		}
+		onTime 5500 {
+			transition	"Pop1::rect" "25 70 360 260" "25 70 10 10" "1000" ;
+		}
+		onTime 6000 {
+			set		"Pop4Sub::visible" "1" ;
+			transition	"Pop4::rect" "25 335 10 10" "25 335 335 130" "1000" ;
+		}
+		onTime 6500 {
+			set		"Pop1Sub::visible" "0" ;
+		}
+		onTime 7000 {
+			transition	"Mars::rect" "155 150 265 200" "155 150 265 10" "500" ;
+			transition	"MarsSub::matcolor" "1 1 1 0.2" "1 1 1 0" "500" ;
+			transition	"Spikes::matcolor" "1 1 1 0" "1 1 1 1" "500" ;
+		}
+		onTime 7500 {
+			transition	"Pop2::rect" "0 14 607 450" "0 14 10 10" "1000" ;
+			set		"MarsSub::visible" "0" ;
+		}
+		onTime 8500 {
+			set		"Pop2Sub::visible" "0" ;
+			resetTime	"0" ;
+		}
+	}
+}

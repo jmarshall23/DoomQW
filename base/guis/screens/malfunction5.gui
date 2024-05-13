@@ -1,0 +1,379 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	backcolor	0 ,0 ,0 ,0
+	nocursor	1
+	windowDef Warp2
+	{
+		rect	7,5,626,470
+		matcolor	0.5, 0.5, 0.5, 0.1
+		background	"gui/warp/static"
+		visible	1
+	}
+	windowDef Background3
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"guis/assets/keypad/under_bridge_gray"
+		matcolor	1, 0.5, 0.5, 0.4
+
+		onTime 0 {
+			set "rect" "5 6 625 468" ;
+		}
+
+		onTime 50 {
+			set "rect" "5 15 626 465" ;
+		}
+
+		onTime 100 {
+			set "rect" "5 5 626 470" ;
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Static
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ]
+	}
+	windowDef bgScroll
+	{
+		rect	7 ,5 ,626 ,470
+		visible	1
+		background	"gui/scroll2"
+		matcolor	1, 1, 1, 0.8
+	}
+	windowDef BgRoll21
+	{
+		rect	2,2,640,480
+		visible	1
+
+		onTime 0 {
+			transition "rect" "0 0 640 480" "0 -480 640 480" "400" ;
+		}
+
+		onTime 500 {
+			transition "rect" "0 -480 640 480" "0 480 640 480" "200" ;
+		}
+
+		onTime 800 {
+			transition "rect" "0 480 640 480" "0 0 640 480" "200" ;
+		}
+
+		onTime 1000 {
+			resetTime "0" ;
+		}
+
+		windowDef bgScroll1
+		{
+			rect	15,-459,610,440
+			visible	1
+			background	"gui/scroll2"
+			matcolor	1, 1,  1, flickertable [ time * 5 ] / 2
+		}
+		windowDef Anim
+		{
+			visible	1
+			rect	0,-479,0,0
+
+			onTime 0 {
+				transition	"guiwin::matcolor" "0.6 0.2 0.2 0.5" "0.6 0.2 0.2 0" "1000" ;
+				transition	"Text1::forecolor" "0.6 0.2 0.2 0.6" "0.6 0.2 0.2 0" "1000" ;
+				set		"guiwin::rect" "30 50 600 320" ;
+				set		"Text1::rect" "40 360 600 100" ;
+			}
+
+			onTime 100 {
+				set		"guiwin::visible" "0" ;
+				set		"Text1::visible" "0" ;
+			}
+
+			onTime 200 {
+				set		"guiwin::visible" "1" ;
+				set		"Text1::visible" "1" ;
+				set		"guiwin::rect" "20 40 600 320" ;
+				set		"Text1::rect" "30 350 600 100" ;
+			}
+
+			onTime 300 {
+				set		"guiwin::rect" "30 50 600 320" ;
+				set		"Text1::rect" "40 360 600 100" ;
+			}
+
+			onTime 350 {
+				set		"guiwin::rect" "20 40 600 320" ;
+				set		"Text1::rect" "30 350 600 100" ;
+			}
+
+			onTime 500 {
+				set		"guiwin::rect" "20 120 560 160" ;
+				set		"Text1::rect" "30 375 560 50" ;
+			}
+
+			onTime 600 {
+				set		"guiwin::rect" "30 50 600 320" ;
+				set		"Text1::rect" "40 360 600 100" ;
+			}
+
+			onTime 1000 {
+				transition	"guiwin::matcolor" "0.6 0.2 0.2 0" "0.6 0.2 0.2 0.5" "1000" ;
+				transition	"Text1::forecolor" "0.6 0.2 0.2 0" "0.6 0.2 0.2 0.6" "1000" ;
+				set		"guiwin::rect" "30 50 600 320" ;
+				set		"Text1::rect" "40 360 600 100" ;
+			}
+
+			onTime 1100 {
+				set		"guiwin::visible" "0" ;
+				set		"Text1::visible" "0" ;
+			}
+
+			onTime 1200 {
+				set		"guiwin::visible" "1" ;
+				set		"Text1::visible" "1" ;
+				set		"guiwin::rect" "20 40 600 320" ;
+				set		"Text1::rect" "30 350 600 100" ;
+			}
+
+			onTime 1350 {
+				set		"guiwin::rect" "220 120 400 160" ;
+				set		"Text1::rect" "230 375 400 50" ;
+			}
+
+			onTime 1400 {
+				set		"guiwin::rect" "30 50 600 320" ;
+				set		"Text1::rect" "40 360 600 100" ;
+				
+			}
+
+			onTime 1500 {
+				set		"guiwin::rect" "20 40 600 320" ;
+				set		"Text1::rect" "30 350 600 100" ;
+			}
+
+			onTime 1600 {
+				set		"guiwin::rect" "30 50 600 320" ;
+				set		"Text1::rect" "40 360 600 100" ;
+			}
+
+			onTime 3000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Text1
+		{
+			rect	30,-129,600,100
+			text	"#str_01255"
+			textscale	2
+			textalign	1
+			forecolor	1, 0.2, 0.2, 1
+			visible	1
+			nowrap	1
+		}
+		windowDef guiwin
+		{
+			rect	20,-439,600,320
+			background	"guis/assets/cpuserver/logo.tga"
+			visible	1
+			matcolor	0, 1, 0.8, 0.7
+		}
+	}
+	windowDef Warp
+	{
+		rect	7,5,626,-470
+		matcolor	0.5, 0.5, 0.5, 0.05
+		background	"gui/warp/static"
+		visible	1
+	}
+	windowDef BgRoll1
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		windowDef Background1
+		{
+			rect	5 ,5 ,626 ,470
+			visible	1
+			background	"guis/assets/keypad/under_bridge_gray2"
+			matcolor	1, 0.1, 0.1, 0.4
+
+			onTime 0 {
+				set "rect" "5 5 630 470" ;
+				transition "matcolor" "0.6 0.9 0.9 0.4" "0.6 0.9 0.9 0" "400" ;
+			}
+
+			onTime 1000 {
+				set "rect" "5 30 670 420" ;
+				transition "matcolor" "0.6 0.9 0.9 0" "0.6 0.9 0.9 0.4" "250" ;
+			}
+
+			onTime 1250 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Overlay1
+		{
+			rect	5 ,5 ,626 ,470
+			visible	1
+			background	"guis/assets/keypad/over_bridge"
+			matcolor	0.6, 0.8, 0.9, pdmgflick[ time * 0.0005 ] / 1.5
+
+			onTime 0 {
+				set "background" "guis/assets/keypad/over_bridged" ;
+			}
+
+			onTime 50 {
+				set "background" "guis/assets/keypad/over_bridge" ;
+			}
+
+			onTime 350 {
+				set "background" "guis/assets/keypad/over_bridged" ;
+			}
+
+			onTime 500 {
+				set "background" "guis/assets/keypad/over_bridge" ;
+			}
+
+			onTime 600 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Text11
+		{
+			rect	18,195,600,100
+			text	"#str_01255"
+			textscale	2
+			textalign	1
+			forecolor	0.6, 0.2, 0.2, 0.2
+			visible	1
+			nowrap	1
+		}
+	}
+	windowDef bgScroll2
+	{
+		rect	20,15,600,450
+		visible	1
+		background	"gui/scrollbig"
+		matcolor	1, 1,  1, 0.1
+	}
+	windowDef BgRoll2
+	{
+		rect	0 ,480 ,640 ,480
+		visible	1
+
+		onTime 0 {
+			transition "BgRoll1::rect" "0 0 640 480" "0 -480 640 480" "3000" ;
+			transition "BgRoll2::rect" "0 480 640 480" "0 0 640 480" "3000" ;
+		}
+
+		onTime 3000 {
+			resetTime "0" ;
+		}
+
+		windowDef Background2
+		{
+			rect	5 ,5 ,626 ,470
+			visible	1
+			background	"guis/assets/keypad/under_bridge_gray2"
+			matcolor	1, 0.1, 0.1, 0.4
+
+			onTime 0 {
+				set "rect" "5 5 630 470" ;
+				transition "matcolor" "0.6 0.9 0.9 0.4" "0.6 0.9 0.9 0" "400" ;
+			}
+
+			onTime 1000 {
+				set "rect" "5 30 670 420" ;
+				transition "matcolor" "0.6 0.9 0.9 0" "0.6 0.9 0.9 0.4" "250" ;
+			}
+
+			onTime 1250 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Overlay2
+		{
+			rect	5 ,5 ,626 ,470
+			visible	1
+			background	"guis/assets/keypad/over_bridge"
+			matcolor	0.6, 0.8, 0.9, pdmgflick[ time * 0.0005 ] / 1.5
+
+			onTime 0 {
+				set "background" "guis/assets/keypad/over_bridged" ;
+			}
+
+			onTime 50 {
+				set "background" "guis/assets/keypad/over_bridge" ;
+			}
+
+			onTime 350 {
+				set "background" "guis/assets/keypad/over_bridged" ;
+			}
+
+			onTime 500 {
+				set "background" "guis/assets/keypad/over_bridge" ;
+			}
+
+			onTime 600 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Text111
+		{
+			rect	18,-284,600,100
+			text	"#str_01255"
+			textscale	2
+			textalign	1
+			forecolor	0.6, 0.2, 0.2, 0.2
+			visible	1
+			nowrap	1
+		}
+	}
+	windowDef Bglow1
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow"
+		visible	1
+		matcolor	0.2,0.3,0.3, 0.2
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.3 ,0.8 ,0.8 ,1
+		visible	1
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,-640 ,-480
+		matcolor	1, 1, 1 ,0.5
+		visible	1
+		background	"guis/assets/common/dirt2"
+	}
+	windowDef Dirt2
+	{
+		rect	0 ,0 ,640 ,480
+		matcolor	1, 1, 1 ,0.5
+		visible	1
+		background	"guis/assets/common/dirt2"
+	}
+	windowDef Reflect
+	{
+		rect	10,5,620,470
+		matcolor	1 ,1 ,1 ,0.2
+		visible	1
+		background	"gui/reflect1"
+	}
+}

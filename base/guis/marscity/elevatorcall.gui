@@ -1,0 +1,334 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	windowDef bgTop
+	{
+		rect	5 ,5 ,630 ,235
+		background	"guis/assets/elevator/callfloorbg"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef bgBtm
+	{
+		rect	5 ,240 ,630 ,230
+		windowDef bgBtmClamped
+		{
+			rect	0 ,0 ,630 ,-270
+			background	"guis/assets/elevator/callfloorbg"
+			matcolor	1 ,1 ,1 ,1
+			visible	1
+		}
+	}
+	windowDef arrowup
+	{
+		rect	26 ,120 ,150 ,110
+		background	"guis/assets/elevator/callarrow"
+		matcolor	1 ,1 ,1 ,0.8
+		visible	1
+	}
+	windowDef arrowuph
+	{
+		rect	26 ,120 ,150 ,-110
+		background	"guis/assets/elevator/callarrowh"
+		matcolor	1 ,1 ,1 ,0
+		visible	1
+	}
+	windowDef arrowdown
+	{
+		rect	26 ,260 ,150 ,-110
+		background	"guis/assets/elevator/callarrow"
+		matcolor	1 ,1 ,1 ,0.8
+		visible	1
+	}
+	windowDef arrowdownh
+	{
+		rect	26 ,260 ,150 ,110
+		background	"guis/assets/elevator/callarrowh"
+		matcolor	1 ,1 ,1 ,0
+		visible	1
+	}
+	windowDef TextCall
+	{
+		rect	32, 212, 200, 50
+		text	"#str_01239"
+		textscale	1
+		forecolor	0, 0, 0, 0.5
+	}
+	windowDef TextBigLevel
+	{
+		rect	260, 0, 400, 150
+		text	"#str_01240"
+		textscale	2.6
+		forecolor	0.73, 0.7, 0.53, 0
+	}
+	windowDef TextBigNumber
+	{
+		rect	160, 45, 400, 480
+		text	"1"
+		textscale	7.8
+		textalign	2
+		forecolor	1, 1, 1, 0.5
+		forceaspectheight	700
+		windowDef TextComplex1
+		{
+			rect	0, 0, 0, 0
+			visible	1
+		}
+	}
+	windowDef Logo
+	{
+		rect	227 ,23 ,390 ,265
+		background	"gui/addlogo"
+		matcolor	0.15 ,0.1 ,0.05 ,1
+		visible	1
+		forceaspectheight	480
+		windowDef TextComplex2
+		{
+			rect	0, 0, 0, 0
+			visible	1
+		}
+	}
+	windowDef Level
+	{
+		rect	225 ,16 ,390 ,125
+		background	"guis/assets/elevator/level"
+		matcolor	0.92, 0.86, 0.63 ,0.7
+		visible	1
+	}
+	windowDef bglevelsbg
+	{
+		rect	206 ,294 ,425 ,170
+		visible	1
+		backcolor	0.1, 0.07, 0.04, 0.7
+	}
+	windowDef bglevels
+	{
+		rect	202 ,290 ,430 ,180
+		background	"guis/assets/common/outerglow"
+		matcolor	0.4 ,0.25 ,0.02 ,0.8
+		visible	1
+	}
+	windowDef TextLevel1
+	{
+		rect	222, 286, 400, 250
+		text	"#str_00302"
+		textscale	0.9
+		forecolor	0.8, 0.65, 0.3, 0.8
+	}
+	windowDef TextLevel1Loc
+	{
+		rect	222, 326, 400, 250
+		text	"#str_03050"
+		textscale	0.9
+		forecolor	1, 1, 1, 0.6
+	}
+	windowDef TextLevel2
+	{
+		rect	222, 372, 400, 250
+		text	"#str_03638"
+		textscale	0.9
+		forecolor	0.8, 0.65, 0.3, 0.8
+	}
+	windowDef TextLevel2Loc
+	{
+		rect	222, 412, 400, 250
+		text	"#str_02847"
+		textscale	0.9
+		forecolor	1, 1, 1, 0.6
+	}
+	windowDef bgcallh
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 10
+		visible	1
+	}
+	windowDef bgcalld
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef bgcallo
+	{
+		rect	0 ,0 ,640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.6 ,0.6 ,0.5 ,1
+		visible	1
+	}
+	windowDef Button1
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		notime	1
+
+		onAction {
+			resetTime "0" ;
+			set	"cmd"	"play guisounds_click" ;
+		}
+
+		onTime 0 {
+			set "arrowdownh::matcolor" "1 1 1 1" ;
+			set "arrowuph::matcolor" "1 1 1 1" ;
+			set "Textcall::forecolor" "0.8 0.6 0.2 0.8" ;
+			
+			set "Button2::visible" "1" ;
+			transition "DeniedBG::backcolor" "0 0 0 0" "0 0 0 0.4" "500" ;
+		}
+
+		onTime 100 {			
+			set "DeniedBG3::visible" "1" ;
+		}
+
+		onTime 200 {				
+			transition "AccessD1::forecolor" "1 0 0 0" "1 0 0 0.7" "500" ;
+		}
+
+		onTime 500 {
+			transition "arrowdownh::matcolor" "1 1 1 1" "1 1 1 0" "500" ;
+			transition "arrowuph::matcolor" "1 1 1 1" "1 1 1 0" "500" ;
+			transition "Textcall::forecolor" "0.8 0.6 0.2 0.8" "0 0 0 0.5" "700" ;
+		}
+
+		onTime 3000 {
+			set "DeniedBG3::visible" "0" ;
+		}
+
+		onTime 3100 {
+			transition "AccessD1::forecolor""1 0 0 0.7"  "1 0 0 0" "500" ;
+			transition "DeniedBG::backcolor" "0 0 0 0.4" "0 0 0 0" "500" ;
+		}
+
+		onTime 3600 {
+			set "Button2::visible" "0" ;
+		}
+
+	}
+	windowDef Button2
+	{
+		rect	0 ,0 ,640 ,480
+		visible	0
+
+		onAction {
+			set	"cmd"	"play guisounds_error1" ;
+		}
+
+	}
+	windowDef DeniedBG
+	{
+		rect	0, 0, 640, 480
+		backcolor	0, 0, 0, 0
+		visible	1
+	}
+	windowDef DeniedBG3
+	{
+		rect	4,88,631,338
+		visible	0
+		windowDef btn1_left
+		{
+			rect	15,26,68,254
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_vert"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_Fill
+		{
+			rect	83,26,467,254
+			visible	1
+			backcolor	0.1,0,0,0.42
+		}
+		windowDef btn1_Bottom
+		{
+			rect	83,280,467,26
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_horiz"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_Top
+		{
+			rect	83,0,467,-26
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_horiz"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_corner4
+		{
+			rect	550,280,-68,24
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornersm"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_corner3
+		{
+			rect	15,280,68,24
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornersm"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_corner2
+		{
+			rect	550,2,-68,-24
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornersm"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_corner1
+		{
+			rect	15,2,68,-24
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornersm"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_right
+		{
+			rect	550,26,-68,255
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_vert"
+			matcolor	0.1,0,0,0.9
+		}
+	}
+	windowDef AccessD1
+	{
+		rect	0,146,640,251
+		text	"#str_03639"
+		textscale	0.8
+		textalign	1
+		forecolor	1,0,0,0
+		visible	1
+		font	"fonts/micro"
+	}
+	windowDef scanlines
+	{
+		rect	0,0,640,480
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+	}
+	windowDef scanpulse
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef scanpulseClamped
+		{
+			rect	0,0,-640,3000
+			matcolor	1,1,1,0.02
+			background	"gui/test/gui_scanpulse2"
+			visible	1
+		}
+	}
+	windowDef Reflect
+	{
+		rect	10,-8,-620,473
+		matcolor	1 ,1 ,1 ,0.07
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef dirt
+	{
+		rect	0,0,-640,480
+		matcolor	1,1,1,0.5
+		background	"guis/assets/test/darkedge_noise"
+		visible	1
+	}
+}

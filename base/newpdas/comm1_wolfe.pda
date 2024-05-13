@@ -1,0 +1,52 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda comm1_wolfe {
+	name         "Ben Wolfe"
+	fullname     "Ben B. Wolfe"
+	icon         "guis/assets/pda/icon_bwolfe"
+	id           "9866-53"
+	post         "Communications"
+	title        "Officer"
+	security     ""
+	pda_email    "comm1_wolfe_email_1"
+	pda_email    "comm1_wolfe_email_2"
+	pda_audio    "comm1_wolfe_audio_1"
+}
+
+email comm1_wolfe_email_1 {
+	date		"11-08-2145"
+	to			"Ben Wolfe"
+	from		"martianbuddy.com"
+	subject	"Join Now and Save 20%"
+	text {
+	"Dear Radar Enthusiast,\n\n"
+	"You're being offered a one time exclusive opportunity to become part of the most exciting subject in the Solar System, Radar Technology.  Please take this opportunity to save 20% off of our normal prices.\n\n"
+	"If you feel this is for you, please respond immediately.\n\n"
+	"Martian Buddy - Where you save!!"
+
+	}
+}
+
+email comm1_wolfe_email_2 {
+	date		"11-12-2145"
+	to			"Ben Wolfe"
+	from		"Security Authority"
+	subject		"RE: Request Security Access"
+	text {
+	"Your request for Communications Security Access is granted.  Officers are now allowed access to Level 2 Security areas.  Communication Cabinet Code is 246.\n\n"
+	"----Original Message----\n"
+	"Sent: 11-11-2145\n"
+	"To: Security Authority\n\n"
+	"I hereby formally request access to secure areas in the Communications Facility.  As an officer I feel this is necessary.\n\n"
+	"Sincerely,\n"
+	"Ben Wolfe"
+	}
+}
+
+audio comm1_wolfe_audio_1 {
+	name		"Unauthorized Bandwidth Usage"
+	info		"Made by: Ben Wolfe\nDate: 10-07-2145\nOpen for Amendment: No\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_comm1_wolfe_1"
+}
+

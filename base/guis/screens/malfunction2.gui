@@ -1,0 +1,112 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480 
+	backcolor	0 ,0 ,0 ,0
+	nocursor	1
+
+	windowDef faceTest {
+		rect	7 ,5 ,626 ,470 
+		visible	1
+		background	"gui/faces5"
+		matcolor	1 ,1 ,1 ,1 
+	}
+
+	windowDef Warp {
+		rect	7,5,626,470
+		matcolor	0.1,0.1,0.1,0.1
+		background	"gui/warp/static"
+		visible	1
+
+
+	}
+
+	windowDef Warp {
+		rect	7,5,626,-470
+		matcolor	0.1,0.1,0.1,0.1
+		background	"gui/warp/static"
+		visible	1
+	//	matscalex 2
+		matscaley 2
+
+		onTime 0 {
+			set "Warp::visible" "1" ;
+		}
+		onTime 100 {
+			set "Warp::visible" "0" ;
+		}
+		onTime 200 {
+			set "Warp::visible" "1" ;
+		}
+		onTime 300 {
+			set "Warp::visible" "0" ;
+		}
+		onTime 400 {
+			resetTime "0" ;
+		}
+	}
+
+	windowDef RedFade {
+		rect	7 ,5 ,626 ,470 
+		visible	1
+		backcolor	1, 0, 0, 0.2
+
+		onTime 0 {
+			transition "backcolor" "0.4 0 0 0" "0.4 0 0 0.3" "1000" "0" "1" ;
+		}
+		onTime 1000 {
+			transition "backcolor" "0.4 0 0 0.3" "0.4 0 0 0" "1000" "1" "0" ;
+		}
+		onTime 2000 {
+			resetTime "0" ;
+		}
+	}
+
+	windowDef Static {
+	//static overlay
+		rect	7 ,5 ,626 ,470 
+		visible	1
+		background "gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 2
+	}
+
+	windowDef Mask {
+	//large black edge fade
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background "guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.2
+	}
+
+
+
+	windowDef Outerglow {
+	//pulsing outer edge glow
+		rect	0 ,0 ,-640 ,480 
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 6 //0.25
+		visible	1
+	}
+	windowDef Outershadow {
+	//small black edge fade
+		rect	0 ,0 ,-640 ,480 
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1 
+		visible	1
+	}
+	windowDef Addhighlight {
+	//light to trans overlay
+		rect	0 ,0 ,-640 ,480 
+		background	"gui/addhighlight"
+		matcolor	0.3 ,0.4 ,0.4 ,1 
+		visible	1
+	}
+
+
+	windowDef Dirt {
+	//edge dirt, surface smears
+		rect	0 ,0 ,-640 ,480 
+		matcolor	1, 1, 1 ,0.8
+		visible	1
+		background	"guis/assets/common/dirt2"
+		noevents	1
+	}
+}

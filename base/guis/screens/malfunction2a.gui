@@ -1,0 +1,142 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480 
+	backcolor	0 ,0 ,0 ,0
+	nocursor	1
+
+	windowDef Bg {
+		rect 15, 10, 610, 460
+		background	"guis/assets/cpuserver/bg3.tga"
+		matcolor	0.6, 0.9, 1, 1
+	}
+
+	windowDef faceTest {
+		rect	31, 24, 577, 428
+		visible	1
+		background	"gui/faces5"
+		matcolor	1 ,1 ,1 ,1 
+	}
+
+	windowDef Warp {
+		rect	31, 24, 577, 428
+		matcolor	0.1,0.1,0.1,0.1
+		background	"gui/warp/static"
+		visible	1
+
+
+	}
+
+	windowDef Warp {
+		rect	31, 24, 577, -428
+		matcolor	0.1,0.1,0.1,0.1
+		background	"gui/warp/static"
+		visible	1
+	//	matscalex 2
+		matscaley 2
+
+		onTime 0 {
+			set "Warp::visible" "1" ;
+		}
+		onTime 100 {
+			set "Warp::visible" "0" ;
+		}
+		onTime 200 {
+			set "Warp::visible" "1" ;
+		}
+		onTime 300 {
+			set "Warp::visible" "0" ;
+		}
+		onTime 400 {
+			resetTime "0" ;
+		}
+	}
+
+	windowDef RedFade {
+		rect	31, 24, 577, 428
+		visible	1
+		backcolor	1, 0, 0, 0.2
+
+		onTime 0 {
+			transition "backcolor" "0.4 0 0 0" "0.4 0 0 0.3" "1000" "0" "1" ;
+		}
+		onTime 1000 {
+			transition "backcolor" "0.4 0 0 0.3" "0.4 0 0 0" "1000" "1" "0" ;
+		}
+		onTime 2000 {
+			resetTime "0" ;
+		}
+	}
+
+	windowDef Static {
+	//static overlay
+		rect	-10 ,-10 ,660 ,500 
+		visible	1
+		background "gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 15
+	}
+
+	windowDef Mask {
+	//large black edge fade
+		rect	25 ,20 ,-590 ,440 
+		visible	1
+		background "guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.5
+	}
+
+
+
+	windowDef Outerglow {
+	//pulsing outer edge glow
+		rect	22 ,20 ,-596 ,440  
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 2.8 //0.25
+		visible	1
+	}
+	windowDef Outershadow {
+	//small black edge fade
+		rect	25 ,20 ,-590 ,440  
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1 
+		visible	0
+	}
+	windowDef Addhighlight {
+	//light to trans overlay
+	//	rect	50 ,60 ,-540 ,360 
+		rect	22 ,20 ,-596 ,440 
+		background	"gui/addhighlight"
+		matcolor	0.1 ,0.3 ,0.3 ,1 
+		visible	1
+	}
+	windowDef Scanlines {
+	//scrolling raster lines
+		rect	25 ,20 ,-590 ,440 
+		matcolor	0.5,0.5,0.5,1
+		background	"gui/test/gui_scanlines"
+		visible	1
+		matscaley	2
+
+	}
+	windowDef OuterGlowBar {
+		rect	25 ,20 ,-590 ,440 
+		background	"gui/outerglowbar"
+		matcolor	0.6 ,0.7 ,0.7 ,1 
+		visible	0
+	}
+
+	windowDef Dirt {
+	//edge dirt, surface smears
+		rect	25 ,20 ,-590 ,440 
+		matcolor	1, 1, 1 ,0.4
+		visible	1
+		background	"guis/assets/common/dirt1"
+		noevents	1
+	}
+
+	windowDef Reflect {
+		rect		40 ,60 ,560 ,400 
+		matcolor	1 ,1 ,1 ,0.15
+		visible		1
+		background	"gui/reflect1"
+	}
+
+
+}

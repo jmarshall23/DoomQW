@@ -1,0 +1,47 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda alphalabs1_berger {
+	name         "Kyle Berger"
+	fullname     "Kyle C. Berger"
+	icon         "guis/assets/pda/berger"
+	id           "7861-84"
+	post         "Alpha Labs, Sector 1"
+	title        "Research Supervisor"
+	security     ""
+	pda_email    "alphalabs1_berger_email_1"
+	pda_email    "alphalabs1_berger_email_2"
+	pda_audio    "alphalabs1_berger_audio_1"
+}
+
+email alphalabs1_berger_email_1 {
+	date		"11-04-2145"
+	to			"Kyle Berger"
+	from		"William Landow"
+	subject		"EPD status"
+	text {
+"Dr. Berger,\n\n"
+"Everything is going exceptionaly well as we prepare the EPD for its next round of tests.  Roy Patterson is setting up the baseline now and we should be able to start testing later this afternoon.  If your schedule allows please feel free to join us down here in the lab around 2:00.  Should be exciting!\n\n"
+"Bill Landow\n"
+	}
+}
+
+email alphalabs1_berger_email_2 {
+	date		"11-10-2145"
+	to			"Kyle Berger"
+	from		"UAC Maintenance"
+	subject		"EPD Collection Chamber status"
+	text {
+"Dr. Kyle Berger,\n\n"
+"The maintenance team has just finished cleaning the EPD collection chamber.  All bio matter has been scrubbed from the area.  Deep scan also confirms a clean sector as per your request.  14 collection cones and 5 trays have also been replaced.  Please be sure to stop by Maintenance as we will need your signature for the parts requisition forms.\n\n"
+"Thank You,\n"
+"UAC Maintenance"
+	}
+}
+
+audio alphalabs1_berger_audio_1 {
+	name		"EPD Accident"
+	info		"Made by: Kyle Berger\nDate: 11-12-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_alphalabs1_berger_1"
+}
+

@@ -1,0 +1,66 @@
+
+
+pda mc1_berneche {
+	name		"Adam Berneche"
+	fullname	"Adam E. Berneche"
+	icon		"gui/pda/bio1"
+	id		"8321-14"
+	post		"Mars City"				// for the personal pda this is ignored and current location is used instead
+	title		"Maintenance Tech"					// this is used for title or rank ( for the player )
+	security	""				// only set this if it contains a new security clearance.. as far as the pda and hud goes this is informational only
+	pda_email	"berneche_email_1"
+	pda_email	"berneche_email_2"
+	pda_email	"berneche_email_3"
+	pda_audio	"berneche_audio_1"
+	}
+
+
+email berneche_email_1 {
+	date		"11-08-2145"
+	to		"Adam Berneche"
+	from		"Ethan Peterson"
+	subject	"Lost PDA"
+	text {
+"Adam,\n\n"
+"Please take more caution in securing your personal data assistant. It's turned up in lost and found three times this month. As you know, your base security clearances are stored on that and it becomes a serious security issue any time a PDA is lost. Failure to secure your PDA could eventually result in your termination.\n\n"
+"Mr. Peterson\nMaintenance Supervisor"
+	}
+}
+
+email berneche_email_2 {
+	date		"11-10-2145"
+	to		"Adam Berneche"
+	from		"Ethan Peterson"
+	subject	"Maintenance Report Needed"
+	text {
+"Adam,\n"
+"Your report is long overdue.  Record an audio log for what you've done today on your maintenance shift and send it to me immediately.  I know you recoded the cabinet today, and it is imperative that I update my master list with the new code.\n\n"
+"I do not want to tell you again how important it is to record those codes.\n\n"
+"Mr. Peterson\nMaintenance Supervisor"
+	}
+}
+
+
+email berneche_email_3 {
+	date		"11-13-2145"
+	to		"Adam Berneche"
+	from		"Delta HR"
+	subject	"Volunteer Services"
+	text {
+"Mr. Berneche,\n\n"
+"I have some great news for you, your name came up in our last management meeting as a possible candidate for our Delta Labs outreach program. As you have probably heard, we are conducting some very exciting and important experiments here in Delta.\n"
+"Your supervisor recommended you as a good candidate and in fact he insisted you would be perfect for the job. I've reviewed your file and I agree with his assessment, you will make a perfect test subject.\n"
+"Our work here is very important to the UAC and you should feel privileged that you have a chance to be a part of it.\n\n"
+
+
+"Mr. K. Clearsky\nDelta Future Systems\n\n"
+"p.s. Remember, volunteering is the best choice!  I'd hate to invoke clause 12.A of section 543 of your employment contract; which if you are not familiar with, allows us to appoint volunteers."
+	}
+}
+
+
+audio	berneche_audio_1 {
+	name		"Maintenance Update"
+	info		"Made by: Adam Berneche\nDate: 11-10-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview	"sound/vo/video/novideo"
+	audio		"audiolog_mc1_berneche"

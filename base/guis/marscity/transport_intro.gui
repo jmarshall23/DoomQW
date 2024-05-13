@@ -1,0 +1,2549 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef AnimDelay
+	{
+		rect	0,0,0,0
+		visible	0
+		notime	1
+
+		onTime 500 {
+			//	transition "Stars::rect" "0 -789 1686 1193" "-50 -719 1686 1193" "8400" "0.2" "0" ;
+			//	transition "MapGrid::rect" "0 -789 1686 1193" "-60 -709 1686 1193" "8400" "0.2" "0" ;
+			
+			//	transition "MapGrid1::rect" "0 -789 1686 1193" "-421 -709 1686 1193" "8400" "0.2" "0" ;
+			set "MapBG4::visible" "1" ;
+			set "MapBG5::visible" "1" ;
+			set "MapBG6::visible" "1" ;			
+			transition "MapBG4::rect" "240 245 179 2" "23 233 594 16" "300" "0.2" "0" ;
+			transition "MapBG5::rect" "238 247 179 0" "23 249 594 0" "300" "0.2" "0" ;
+			transition "MapBG6::rect" "238 247 179 -2" "23 249 594 -16" "300" "0.2" "0" ;
+			
+			transition "TextEnd11::forecolor" "1 1 1 0.8" "1 1 1 0" "700" ;
+		}
+
+		onTime 800 {
+			transition "MapBG4::rect" "23 233 594 16" "23 68 594 26" "500" "0" "0.6" ;
+			transition "MapBG5::rect" "23 249 594 0" "23 94 594 297" "500" "0" "0.6" ;
+			transition "MapBG6::rect" "23 249 594 -16" "23 391 594 -26" "500" "0" "0.6" ;
+			
+			transition "MapBG4::matcolor" "1 1 1 0.6" "1 1 1 0" "500" ;
+			transition "MapBG5::matcolor" "1 1 1 0.6" "1 1 1 0" "500" ;
+			transition "MapBG6::matcolor" "1 1 1 0.6" "1 1 1 0" "500" ;			
+		}
+
+		onTime 850 {
+			set "ImageClip::visible" "1" ;
+			set "MapBG1::visible" "1" ;
+			set "MapBG2::visible" "1" ;
+			set "MapBG3::visible" "1" ;
+			transition "ImageClip::rect" "239 242 174 14" "31 73 579 339" "900" "0.2" "0.8" ;
+			transition "MapBG1::rect" "233 215 179 10" "19 44 594 26" "900" "0.2" "0.8" ;
+			transition "MapBG2::rect" "233 225 179 0" "19 70 594 297" "900" "0.2" "0.8" ;
+			transition "MapBG3::rect" "233 225 179 -10" "19 367 594 -26" "900" "0.2" "0.8" ;
+		}
+
+		onTime 1400 {
+			transition "Stars::rect" "0 -789 1686 1193" "-50 -719 1686 1193" "7500" "0.2" "0" ;
+			transition "MapGrid::rect" "0 -789 1686 1193" "-60 -709 1686 1193" "7500" "0.2" "0" ;
+			transition "MapGrid1::rect" "0 -789 1686 1193" "-421 -709 1686 1193" "7500" "0.2" "0" ;			
+		}
+
+		onTime 1700 {
+			transition "MapGrid1::backcolor" "1 1 1 0.3" "1 1 1 0" "500" ;		
+		}
+
+		onTime 2600 {
+			resetTime "MainAnim" "0" ;
+			//	set "cmd" "play guisounds_IntroMC" ;
+		}
+
+	}
+	windowDef MainAnim
+	{
+		rect	0,0,0,0
+		visible	0
+		notime	1
+
+		onTime 0 {
+			transition "TextDetectedClip::rect" "195 275 0 30" "195 275 352 30" "700" ;
+			transition "FlareBox::rect" "-3 0 26 26" "325 0 26 26" "700" ;
+			transition "FlareBox::matcolor" "1 1 1 1" "1 0.8 0.8 1" "10" ;
+			transition "Triangle::matcolor" "1 1 1 0" "1 1 1 1" "1000" ;
+			transition "ShipTargetParentH::rect" "360 1 275 479" "376 1 275 479" "1200" "0" "0.8" ;
+			transition "ShipTargetParentV::rect" "0 340 275 83" "0 300 275 83" "1200" "0" "0.8" ;			
+		}
+
+		onTime 650 {
+			transition "FlareBox::matcolor" "1 0.8 0.8 1" "0 0 0 0" "500" ;
+		}
+
+		onTime 750 {
+			transition "Target::matcolor" "1 1 1 0" "1 1 1 1" "300" ;
+			transition "Target::rect" "56 -30 146 146" "64 -22 130 130" "300" "0" "0.8" ;
+		}
+
+		onTime 1000 {			
+			transition "TextScanning::forecolor" "1 1 1 1" "1 1 1 0" "900" ;
+			resetTime "TextScanning" "0" ;
+		}
+
+		onTime 1900 {
+			transition "TextScanning::forecolor" "1 1 1 1" "1 1 1 0" "700" ;	
+		}
+
+		onTime 2600 {
+			transition "TextScanning::forecolor" "1 1 1 1" "1 1 1 0" "700" ;	
+		}
+
+		onTime 2700 {
+			//	transition "TextScanning::forecolor" "1 1 1 1" "1 1 1 0" "500" ;	
+		}
+
+		onTime 3300 {
+			set "TextScanning::text" "#str_03713" ;
+			transition "TextScanning::forecolor" "1 1 1 0" "1 1 1 1" "10" ;
+			set "TextDetail1::text" "#str_03714" ;
+			transition "TextDetail1::forecolor" "1 1 1 1" "1 1 1 0.65" "400" ;
+		}
+
+		onTime 3350 {
+			set "TextScanning::forecolor" "1 1 1 0" ;
+		}
+
+		onTime 3400 {
+			set "TextScanning::forecolor" "1 1 1 1" ;
+		}
+
+		onTime 3750 {
+			set "ShipScanline1::matcolor" "0.3 0.6 0.6 1" ;
+			set "ShipScanLineBg1::matcolor" "0.4 0.6 0.6 0.5" ;
+			set "ShipScanLineBg2::matcolor" "0.4 0.6 0.6 0.5" ;
+		}
+
+		onTime 3800 {
+			set "ShipScanline1::matcolor" "0.3 0.6 0.6 0" ;
+			set "ShipScanLineBg1::matcolor" "0.4 0.6 0.6 0" ;
+			set "ShipScanLineBg2::matcolor" "0.4 0.6 0.6 0" ;	
+		}
+
+		onTime 3850 {
+			set "ShipScanline1::matcolor" "0.3 0.6 0.6 1" ;
+			set "ShipScanLineBg1::matcolor" "0.4 0.6 0.6 0.5" ;
+			set "ShipScanLineBg2::matcolor" "0.4 0.6 0.6 0.5" ;
+		}
+
+		onTime 3950 {
+			resetTime "ShipScanLine" "0" ;
+		}
+
+		onTime 4000 {
+			
+			transition "textdetected::forecolor" "1 0 0 1" "1 0 0 0" "500" ;
+			transition "ShipScanLineBg1::rect" "474 -15 4 380" "183 -15 4 380" "400" "0.3" "0.7" ;
+			transition "ShipScanLineBg2::rect" "-10 270 600 4" "-10 130 600 4" "400" "0.3" "0.7" ;
+		}
+
+		onTime 4400 {
+			transition "Shipscan::matcolor" "1 1 1 1" "1 1 1 0.8" "250" ;
+			transition "ShipScanline::backcolor" "1 1 1 1" "1 1 1 0" "250" ;
+			transition "ShipScanline::matcolor" "1 1 1 0.6" "0.3 0.6 0.6 1" "250" ;
+			transition "TextScanning::forecolor" "1 1 1 1" "1 1 1 0" "700" ;
+			transition "ShipScanLineBg1::matcolor" "0.4 0.6 0.6 0.5" "0.4 0.6 0.6 0" "800" ;
+			transition "ShipScanLineBg2::matcolor" "0.4 0.6 0.6 0.5" "0.4 0.6 0.6 0" "800" ;
+			transition "targetcall::matcolor" "1 1 1 0" "1 1 1 0.2" "1000" ;
+			transition "TextCallout::forecolor" "1 1 1 0" "1 1 1 1" "1000" ;
+			transition "TextDetail2::forecolor" "1 1 1 0" "1 1 1 1" "400" ;
+		}
+
+		onTime 4650 {
+			transition "TextShipScan1::forecolor" "1 1 1 0" "1 1 1 1" "500" ;
+			resetTime "ButtonBG4" "0" ;
+			transition "TextDetail3::forecolor" "1 1 1 0" "1 1 1 0.65" "400" ;
+			transition "ShipScanline::matcolor" "0.3 0.6 0.6 1" "0.3 0.6 0.6 0" "400" ;
+		}
+
+		onTime 5150 {
+			transition "TextShipScan2::forecolor" "1 1 1 0" "1 1 1 0.6" "500" ;
+			transition "TextDetail4::forecolor" "1 1 1 0" "1 1 1 1" "400" ;
+		}
+
+		onTime 6250 {
+			transition "Shipscan::matcolor" "1 1 1 0.8" "1 1 1 0" "400" ;
+			transition "TextShipScan1::forecolor" "1 1 1 1" "1 1 1 0" "400" ;
+			transition "TextShipScan2::forecolor" "1 1 1 0.6" "1 1 1 0" "400" ;
+		}
+
+		onTime 6300 {
+			set "MapGrid::visible" "1" ;
+			set "MapGrid1::visible" "0" ;
+			transition "Stars::rect" "-50 -719 1686 1193" "-178 -300 972 695" "2000" "0.2" "0.8" ;
+			transition "MapGrid::rect" "-60 -709 1686 1193" "-178 -300 972 695" "2000" "0.2" "0.8" ;
+			transition "ShipTargetParentH::rect" "376 1 275 479" "32 1 275 476" "2000" "0.2" "0.8" ;
+			transition "ShipTargetParentV::rect" "0 300 275 83" "0 298 275 83" "2000" "0.2" "0.8" ;
+			transition "Triangle::rect" "97 10 65 65" "115 28 29 29" "2000" "0.2" "0.8" ;
+			transition "ScrollClip::rect" "400 -696 750 750" "-117 -452 750 750" "2000" "0.2" "0.8" ;
+			transition "Mars::rect" "9 -100 780 780" "109 0 580 580" "2000" "0.2" "0.8" ;
+		}
+
+		onTime 6700 {
+			transition "TrackingCallParent2::rect" "-242 0 349 275" "0 0 349 275" "500" "0.4" "0.6" ;
+		}
+
+		onTime 7700 {
+			transition "Win1::matcolor" "1 0.6 0 1" "1 0.6 0 0.5" "500" ;
+			resetTime "TextSmallWin3" "0" ;
+		}
+
+		onTime 7800 {			
+			transition "StaticRoq::matcolor" "1 1 1 1" "1 1 1 0" "200" ;
+			
+			set "Roq::visible" "1" ;
+			resetTime "Roq" "0" ;
+		}
+
+		onTime 8000 {
+			set "TextSmallWin1a::text" "#str_03715" ;
+			
+		}
+
+		onTime 8000 { //-2600
+			set "TextComIn::forecolor" "0.4 0.8 0.8 1" ;
+		}
+
+		onTime 13250 {
+			set "TextComIn::forecolor" "1 1 1 0.2" ;
+		}
+
+		onTime 15300 {
+			set "TextComOut::forecolor" "0.4 0.8 0.8 1" ;
+		}
+
+		onTime 20300 {
+			set "TextComOut::forecolor" "1 1 1 0.2" ;
+		}
+
+		onTime 21000 {
+			set "TextComIn::forecolor" "0.4 0.8 0.8 1" ;
+		}
+
+		onTime 22200 {
+			set "TextComIn::forecolor" "1 1 1 0.2" ;
+		}
+
+		onTime 8300 {
+			transition "TextInsertion::forecolor" "1 0 0 1" "1 0 0 0.5" "700" ;
+			transition "Stars::rect" "-178 -300 972 695" "-188 -300 972 695" "6000" ;
+			transition "MapGrid::rect" "-178 -300 972 695" "-188 -300 972 695" "6000" ;
+			transition "ScrollClip::rect" "-117 -452 750 750" "-127 -452 750 750" "6000" ;
+			
+			transition "ShipTargetParentH::rect" "32 1 275 476" "145 1 275 476" "6000" ;
+			transition "ShipTargetParentV::rect" "0 298 275 83" "0 275 275 83" "6000" "0.7" "0" ;
+		}
+
+		onTime 8600 {
+			transition "TextCallout1::forecolor" "1 1 1 0" "1 1 1 1" "500" ;
+			set "TextCallout1::text" "#str_03716" ;
+		}
+
+		onTime 9000 {
+			transition "TextInsertion::forecolor" "1 0 0 1" "1 0 0 0.5" "700" ;
+			transition "Win1::matcolor" "1 0.6 0 0.5" "1 0.6 0 0" "500" ;
+		}
+
+		onTime 9700 {
+			transition "TextInsertion::forecolor" "1 0 0 1" "1 0 0 0.5" "700" ;
+			transition "OrbitalLineClip::rect" "-9 41 0 720" "-9 41 720 720" "1000" "0.2" "0.8" ;
+		}
+
+		onTime 10100 {			
+			set "TextCallout1::text" "#str_03717" ;
+		}
+
+		onTime 10500 {
+			transition "TextInsertion::forecolor" "1 0 0 1" "1 0 0 0.5" "700" ;
+			transition "Win1::matcolor" "1 0.6 0 0" "1 0.6 0 0.5" "500" ;
+		}
+
+		onTime 11200 {
+			transition "TextInsertion::forecolor" "1 0 0 1" "1 0 0 0.5" "700" ;
+			transition "OrbitalPathClip::rect" "9 14 0 690" "9 14 690 690" "1000" "0.2" "0.8" ;
+		}
+
+		onTime 11700 {			
+			set "TextCallout1::text" "#str_03718" ;
+		}
+
+		onTime 11900 {
+			transition "TextInsertion::forecolor" "1 0 0 1" "1 0 0 0" "700" ;
+		}
+
+		onTime 12800 {
+			set "TextInsertion::text" "#str_03719" ;
+			transition "TextInsertion::forecolor" "1 0 0 0" "1 0 0 1" "700" ;
+			transition "TextCallout1::forecolor" "1 1 1 1"  "1 1 1 0" "500" ;//set "TextCallout1::text" " \n \nDATA LOADED" ;
+		}
+
+		onTime 13200 {
+			transition "StaticRoq::matcolor" "1 1 1 0" "1 1 1 1" "200" ;
+			set "TextSmallWin1a::text" "#str_03720" ;
+		}
+
+		onTime 13400 {
+			set "Roq::visible" "0" ;
+			transition "StaticRoq::matcolor" "1 1 1 1" "1 1 1 0" "200" ;
+		}
+
+		onTime 13600 {
+			resetTime "ButtonLine1" "0" ;
+		}
+
+		onTime 13700 {
+			//transition "TextCallout1::forecolor" "1 1 1 1"  "1 1 1 0" "500" ;
+
+		}
+
+		onTime 15200 {	
+			transition "TextInsertion::forecolor" "1 0 0 1" "1 0 0 0" "700" ;		
+			transition "BottomTimeParent::rect" "29 373 580 5" "29 373 580 100" "1500" "0" "0.9" ;
+			transition "TimeScroller::rect" "50 12 8 16" "324 12 8 16" "7800" "0" "0.2" ;
+			resetTime "TextTime" "0" ;
+		}
+
+		onTime 14200 {
+			transition "TextCallout1::forecolor" "1 1 1 0" "1 1 1 1" "500" ;
+			set "TextCallout1::text" "#str_03721" ;
+		}
+
+		onTime 14300 {
+			
+			transition "Stars::rect" "-188 -300 972 695" "-230 -150 810 560" "1650" "0.2" "0.7" ;
+			transition "MapGrid::rect" "-188 -300 972 695" "-230 -150 810 560" "1650" "0.2" "0.7" ;
+			transition "Mars::rect" "109 0 580 580" "99 292 347 347" "1500" "0.2" "0.7" ;
+			transition "OrbitalPath::rect" "0 0 690 690" "28 287 413 413" "1500" "0.2" "0.7" ;
+			transition "OrbitalLine::rect" "0 0 720 720" "34 276 431 431" "1500" "0.2" "0.7" ;
+			
+			transition "ShipTargetParentH::rect" "145 1 275 476" "88 1 275 476" "1400" "0.3" "0.6" ;
+			transition "ShipTargetParentV::rect" "0 275 275 83"  "0 258 275 83" "1400" "0.3" "0.6" ;
+			transition "Triangle::rect" "115 28 29 29" "122 35 15 15" "1500" "0.2" "0.7" ;
+			
+			transition "targetcall::matcolor" "1 1 1 0.2" "1 1 1 0" "1000" ;
+			transition "TextCallout::forecolor" "1 1 1 1" "1 1 1 0" "1000" ;
+			
+			resetTime "TextKPS2" "0" ;
+		}
+
+		onTime 15700 {
+			transition "ShipTargetParentH::rect" "88 1 275 476" "212 1 275 476" "7500" "0.22" "0.78" ;
+			transition "ShipTargetParentV::rect" "0 258 275 83"  "0 57 275 83" "7500" "0.27" "0" ;		
+						
+		}
+
+		onTime 16400 {
+			set "TextCallout1::text" "#str_03722" ;
+
+		}
+///
+		onTime 17000 {
+			resetTime "TextSmallWin6c" "0" ;	
+		}
+		
+		onTime 19000 {
+			transition "Roq2Clip::rect" "426 220 170 5" "426 220 170 155" "500" "0" "1" ;
+		}
+		onTime 19200 {
+			transition "TextSmallWin6b::forecolor" "1 1 1 1" "0.6 1 1 1" "400" ;
+		}
+		onTime 19300 {
+			transition "TextSmallWin6::forecolor" "1 1 1 1" "0.6 1 1 1" "400" ;
+		}		
+		onTime 19500 {			
+			transition "StaticRoq2::matcolor" "1 1 1 1" "1 1 1 0.2" "200" ;
+			set "Roq2::visible" "1" ;
+			resetTime "Roq2" "0" ;
+		}
+		onTime 19700 {
+			set "TextSmallWin6a::text" "#str_03715" ;
+			
+		}		
+		onTime 22300 {
+			transition "StaticRoq2::matcolor" "1 1 1 0.2" "1 1 1 1" "200" ;
+			set "TextSmallWin6a::text" "#str_03720" ;
+			transition "Roq2Clip::rect" "426 220 170 155" "426 220 170 5" "500" "0" "1" ;			
+		}
+		onTime 22500 {
+			set "Roq2::visible" "0" ;
+		}
+		
+///
+		onTime 19000 {
+			set "TextCallout1::text" "#str_03723" ;
+		}
+
+		onTime 20000 {
+			transition "TextCallout1::forecolor" "1 1 1 1"  "1 1 1 0" "500" ;
+		}
+
+		onTime 21000 {
+			transition "Target::matcolor" "1 1 1 1" "1 1 1 0" "1000" ;
+		}
+
+		onTime 22000 {			
+			set "LineOut::matcolor" "1 1 1 1" ;
+		}
+
+		onTime 22050 {
+			set "LineOut::matcolor" "1 1 1 0" ;
+		}
+
+		onTime 22100 {
+			set "LineOut::matcolor" "1 1 1 1" ;
+		}
+
+		onTime 22150 {
+			set "LineOut::matcolor" "1 1 1 0" ;
+		}
+
+		onTime 22200 {
+			set "LineOut::matcolor" "1 1 1 1" ;
+			transition "LineOutLine::rect" "383 121 0 4" "383 121 216 4" "250" "0" "0.5" ;
+		}
+
+		onTime 22450 {
+			transition "TextEnd1::forecolor" "1 1 1 1" "1 0.6 0 1" "500" ;
+		}
+
+		onTime 22550 {
+			transition "TextEnd2::forecolor" "1 1 1 1" "1 0.6 0 1" "500" ;
+		}
+
+		onTime 22800 {
+			transition "Triangle::matcolor" "1 1 1 1" "1 1 1 0" "500" ;
+		}
+
+		onTime 23500 {
+			transition "TextEnd3::forecolor" "1 1 1 0" "1 1 1 1" "500" ;
+		}
+
+		onTime 25000 {
+			transition "TextEnd4::forecolor" "1 1 1 0" "1 1 1 0.6" "500" ;
+		}
+
+		onTime 26000 {
+			resetTIme "AnimClose" "0" ;
+		}
+
+	}
+	windowDef AnimClose
+	{
+		rect	0,0,0,0
+		visible	0
+		notime	1
+
+		onTime 0 {
+			transition "LineOut::matcolor" "1 1 1 1" "1 1 1 0" "500" ;
+			transition "ImageClip::rect" "31 73 579 339" "376 73 234 339" "1650" "0.2" "0.7" ;
+			transition "ScrollClip::rect" "-127 -452 750 750" "-472 -452 750 750" "1650" "0.2" "0.7" ;
+			transition "Stars::rect" "-230 -150 810 560" "-575 -150 810 560" "1650" "0.2" "0.7" ;
+			transition "MapGrid::rect" "-230 -150 810 560" "-575 -150 810 560" "1650" "0.2" "0.7" ;
+			
+			transition "MapBG1::rect" "19 44 594 26" "368 44 241 26" "1650" "0.2" "0.7" ;
+			transition "MapBG2::rect" "19 70 594 297" "368 70 241 297" "1650" "0.2" "0.7" ;
+			transition "MapBG3::rect" "19 367 594 -26" "368 367 241 -26" "1650" "0.2" "0.7" ;
+			
+			transition "TrackCamClip::rect" "0 0 22 480" "0 0 375 480" "1650" "0.2" "0.7" ;
+		}
+
+	}
+	windowDef BgBlack1
+	{
+		rect	-13,-9,668,497
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+	windowDef BackgroundParent
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef Bg1
+		{
+			rect	2,3,320,237
+			visible	0
+			background	"guis/assets/common/framebgline"
+			matcolor	1,1,1,0.3
+		}
+		windowDef Bg2
+		{
+			rect	317,3,-320,237
+			visible	0
+			background	"guis/assets/common/framebgline"
+			matcolor	1,1,1,0.3
+		}
+		windowDef Bg3
+		{
+			rect	2,240,320,-237
+			visible	0
+			background	"guis/assets/common/framebgline"
+			matcolor	1,1,1,0.3
+		}
+		windowDef Bg4
+		{
+			rect	317,240,-320,-237
+			visible	0
+			background	"guis/assets/common/framebgline"
+			matcolor	1,1,1,0.3
+		}
+		windowDef Bg11
+		{
+			rect	0,0,320,240
+			visible	1
+			background	"guis/assets/common/framebgfill2"
+			matcolor	0.11,0.13,0.15,1
+		}
+		windowDef Bg21
+		{
+			rect	320,0,-320,240
+			visible	1
+			background	"guis/assets/common/framebgfill2"
+			matcolor	0.11,0.13,0.15,1
+		}
+		windowDef Bg31
+		{
+			rect	0,240,320,-240
+			visible	1
+			background	"guis/assets/common/framebgfill2"
+			matcolor	0.11,0.13,0.15,1
+		}
+		windowDef Bg41
+		{
+			rect	320,240,-320,-240
+			visible	1
+			background	"guis/assets/common/framebgfill2"
+			matcolor	0.11,0.13,0.15,1
+		}
+		windowDef CornerBR
+		{
+			rect	564,405,-60,59
+			visible	1
+			background	"guis/assets/lightswitch/corner"
+			matcolor	0.8, 1, 1, 0.1
+		}
+		windowDef CornerBL
+		{
+			rect	15,404,60,59
+			visible	1
+			background	"guis/assets/lightswitch/corner"
+			matcolor	0.8, 1, 1, 0.1
+		}
+		windowDef CornerTR
+		{
+			rect	565,16,-60,-59
+			visible	1
+			background	"guis/assets/lightswitch/corner"
+			matcolor	0.8, 1, 1, 0.1
+		}
+		windowDef CornerTL
+		{
+			rect	14,17,60,-59
+			visible	1
+			background	"guis/assets/lightswitch/corner"
+			matcolor	0.8, 1, 1, 0.1
+		}
+	}
+	windowDef TextTitle1
+	{
+		rect	48,19,531,24
+		text	"#str_03724"
+		textscale	0.41
+		textalign	2
+		forecolor	1,1,1,0.6
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef TextTitle2
+	{
+		rect	48,43,531,24
+		text	"#str_03725"
+		textscale	0.31
+		textalign	2
+		forecolor	1,0.6,0,0.8
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef ImageClip
+	{
+		rect	239,242,174,14
+		visible	0
+		windowDef BgBlack
+		{
+			rect	-32,-21,642,389
+			visible	1
+			background	"guis/assets/cpuserver/bgWhite4"
+			matcolor	0,0,0,1
+		}
+		windowDef Stars
+		{
+			rect	0, -789, 1686, 1193
+			background	"gui/mainmenu/star"
+			matcolor	1,1,1,1
+			matscalex	5
+			visible	1
+			matscaley	4
+		}
+		windowDef ScrollClip
+		{
+			rect	-116,-596,750,750
+			visible	1
+			windowDef Mars
+			{
+				rect	109,0,580,580
+				background	"guis/assets/marscity/marsline2"
+				visible	1
+				matcolor	1, 1, 1, 1
+			}
+			windowDef OrbitalPathClip
+			{
+				rect	16,14,0,690
+				visible	1
+				windowDef OrbitalPath
+				{
+					rect	0,0,690,690
+					background	"guis/assets/marscity/fullpath"
+					visible	1
+					matcolor	1, 0.6, 0, 1
+				}
+			}
+			windowDef OrbitalLineClip
+			{
+				rect	0,41,0,720
+				visible	1
+				windowDef OrbitalLine
+				{
+					rect	0,0,720,720
+					background	"guis/assets/marscity/fullline"
+					visible	1
+					matcolor	0.4, 1, 1, 0.5
+				}
+			}
+		}
+		windowDef MapGrid
+		{
+			rect	0, -789, 1686, 1193
+			visible	0
+			background	"gui/grid1"
+			matcolor	1,1,1,0.1
+			matscalex	14
+			matscaley	10
+		}
+		windowDef MapGrid1
+		{
+			rect	0, -789, 1686, 1193
+			visible	1
+			background	"gui/grid1"
+			matcolor	1,1,1,0.1
+			matscalex	14
+			matscaley	10
+		}
+		windowDef ShipScanLineBg1
+		{
+			rect	474, -15, 4, 380
+			visible	1
+			matcolor	0.4,0.6,0.6,0
+			background	"guis/assets/marscity/vline"
+		}
+		windowDef ShipScanLineBg2
+		{
+			rect	-10, 270, 600, 4
+			visible	1
+			matcolor	0.4,0.6,0.6,0
+			background	"guis/assets/marscity/hline"
+		}
+		windowDef TextComIn
+		{
+			rect	335,0,115,19
+			text	"#str_03726"
+			textscale	0.2
+			forecolor	1,1,1,0.2
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef TextComOut
+		{
+			rect	457,0,113,27
+			text	"#str_03727"
+			textscale	0.2
+			forecolor	1,1,1,0.2
+			font	"fonts/micro"
+			visible	1
+		}
+	}
+	windowDef ShipTargetParentH
+	{
+		rect	376,1,275,479
+		visible	1
+		windowDef ShipTargetParentV
+		{
+			rect	0,300,275,83
+			visible	1
+			windowDef Target
+			{
+				rect	64,-22,130,130
+				background	"guis/assets/marscity/target"
+				visible	1
+				matcolor	1, 1, 1, 0
+			}
+			windowDef Triangle
+			{
+				rect	97,10,65,65
+				background	"guis/assets/marscity/triangle"
+				visible	1
+				matcolor	1, 1, 1, 0
+			}
+			windowDef TargetCall
+			{
+				rect	-6,-16,130,65
+				background	"guis/assets/marscity/targetcall"
+				visible	1
+				matcolor	1, 1, 1, 0
+			}
+			windowDef TextCallout
+			{
+				rect	3,6,84,37
+				text	"#str_03728"
+				textscale	0.12
+				forecolor	1,1,1,0
+				visible	1
+				textalign	2
+			}
+			windowDef TextCallout1
+			{
+				rect	166,5,109,47
+				text	"#str_03721"
+				textscale	0.15
+				forecolor	1,1,1,0
+				visible	1
+			}
+		}
+	}
+	windowDef BottomTimeParent
+	{
+		rect	29,373,580,5
+		visible	1
+		windowDef Tickline
+		{
+			rect	8,23,324,13
+			background	"gui/marscity/tickline"
+			visible	1
+			matcolor	1, 0.6, 0, 0.45
+		}
+		windowDef TimeScroller
+		{
+			rect	311,12,8,16
+			visible	1
+			backcolor	1,0.6,0,0.25
+			matcolor	1,0.6,0,0.5
+			background	"guis/assets/marscity/boxline"
+		}
+		windowDef CountdownBox
+		{
+			rect	319,4,261,33
+			background	"guis/assets/marscity/countdown"
+			visible	1
+			matcolor	1, 0.6, 0, 0.35
+		}
+		windowDef TextKPS1
+		{
+			rect	342,1,49,21
+			text	"#str_03681"
+			textscale	0.31
+			forecolor	1,0.6,0,0.6
+			font	"fonts/micro"
+			visible	1
+			textalign	2
+		}
+		windowDef TextKPS2
+		{
+			rect	343,14,49,21
+			text	"1.88"
+			textscale	0.31
+			forecolor	1,0.6,0,0.6
+			font	"fonts/micro"
+			visible	1
+			textalign	2
+			notime	1
+
+			onTime 0 {
+				set "text" "1.89" ;
+			}
+
+			onTime 200 {
+				set "text" "1.90" ;
+			}
+
+			onTime 350 {
+				set "text" "1.91" ;
+			}
+
+			onTime 450 {
+				set "text" "1.93" ;
+			}
+
+			onTime 500 {
+				set "text" "1.95" ;
+			}
+
+			onTime 550 {
+				set "text" "1.98" ;
+			}
+
+			onTime 600 {
+				set "text" "2.05" ;
+			}
+
+			onTime 650 {
+				set "text" "2.10" ;
+			}
+
+			onTime 750 {
+				set "text" "2.18" ;
+			}
+
+			onTime 850 {
+				set "text" "2.21" ;
+			}
+
+			onTime 950 {
+				set "text" "2.22" ;
+			}
+
+			onTime 1050 {
+				set "text" "2.23" ;
+			}
+
+			onTime 1150 {
+				set "text" "2.24" ;
+			}
+
+			onTime 1300 {
+				set "text" "2.25" ;
+			}
+
+			onTime 1450 {
+				set "text" "2.26" ;
+			}
+
+			onTime 1650 {
+				set "text" "2.27" ;
+			}
+
+			onTime 18500 {
+				set "text" "2.28" ;
+			}
+
+			onTime 2050 {
+				set "text" "2.29" ;
+			}
+
+			onTime 2300 {
+				set "text" "2.30" ;
+			}
+
+			onTime 2600 {
+				set "text" "2.31" ;
+			}
+
+			onTime 3000 {
+				set "text" "2.32" ;
+			}
+
+			onTime 9100 {
+				set "text" "1.88" ;
+			}
+
+			onTime 9050 {
+				set "text" "1.89" ;
+			}
+
+			onTime 9000 {
+				set "text" "1.90" ;
+			}
+
+			onTime 8950 {
+				set "text" "1.91" ;
+			}
+
+			onTime 8900 {
+				set "text" "1.93" ;
+			}
+
+			onTime 8850 {
+				set "text" "1.95" ;
+			}
+
+			onTime 8800 {
+				set "text" "1.98" ;
+			}
+
+			onTime 8750 {
+				set "text" "2.05" ;
+			}
+
+			onTime 8700 {
+				set "text" "2.10" ;
+			}
+
+			onTime 8650 {
+				set "text" "2.18" ;
+			}
+
+			onTime 8600 {
+				set "text" "2.21" ;
+			}
+
+			onTime 8550 {
+				set "text" "2.22" ;
+			}
+
+			onTime 8500 {
+				set "text" "2.23" ;
+				transition "BottomTimeParent::rect" "29 373 580 100" "29 373 0 0" "1000" "0.5" "0" ;
+			}
+
+			onTime 8450 {
+				set "text" "2.24" ;
+			}
+
+			onTime 8400 {
+				set "text" "2.25" ;
+			}
+
+			onTime 8350 {
+				set "text" "2.26" ;
+			}
+
+			onTime 8300 {
+				set "text" "2.27" ;
+			}
+
+			onTime 8200 {
+				set "text" "2.28" ;
+			}
+
+			onTime 8100 {
+				set "text" "2.29" ;
+			}
+
+			onTime 8000 {
+				set "text" "2.30" ;
+			}
+
+		}
+		windowDef TextTime
+		{
+			rect	416,1,157,34
+			text	"00:26:00"
+			textscale	0.5
+			forecolor	0,0,0,0.8
+			font	"fonts/micro"
+			visible	1
+			notime 1
+			
+			onTime 0 {
+				set "text" "00:11:50" ;
+			}
+			onTime 100 {
+				set "text" "00:11:40" ;
+			}
+			onTime 200 {
+				set "text" "00:11:30" ;
+			}
+			onTime 300 {
+				set "text" "00:11:20" ;
+			}
+			onTime 400 {
+				set "text" "00:11:10" ;
+			}			
+			onTime 500 {
+				set "text" "00:11:00" ;
+			}
+			onTime 600 {
+				set "text" "00:10:50" ;
+			}
+			onTime 700 {
+				set "text" "00:10:40" ;
+			}
+			onTime 800 {
+				set "text" "00:10:30" ;
+			}
+			onTime 900 {
+				set "text" "00:10:20" ;
+			}
+			onTime 1000 {
+				set "text" "00:10:10" ;
+			}
+			onTime 1100 {
+				set "text" "00:10:00" ;
+			}
+			onTime 1200 {
+				set "text" "00:09:50" ;
+			}
+			onTime 1300 {
+				set "text" "00:09:40" ;
+			}
+			onTime 1400 {
+				set "text" "00:09:30" ;
+			}
+			onTime 1500 {
+				set "text" "00:09:20" ;
+			}
+			onTime 1600 {
+				set "text" "00:09:10" ;
+			}
+			onTime 1700 {
+				set "text" "00:09:00" ;
+			}
+			onTime 1800 {
+				set "text" "00:08:50" ;
+			}
+			onTime 1900 {
+				set "text" "00:08:40" ;
+			}
+			onTime 1900 {
+				set "text" "00:08:30" ;
+			}
+			onTime 2000 {
+				set "text" "00:08:20" ;
+			}
+			onTime 2100 {
+				set "text" "00:08:20" ;
+			}
+			onTime 2200 {
+				set "text" "00:08:10" ;
+			}
+			onTime 2300 {
+				set "text" "00:08:00" ;
+			}
+			onTime 2400 {
+				set "text" "00:07:50" ;
+			}
+			onTime 2500 {
+				set "text" "00:07:40" ;
+			}
+			onTime 2600 {
+				set "text" "00:07:30" ;
+			}
+			onTime 2700 {
+				set "text" "00:07:20" ;
+			}
+			onTime 2800 {
+				set "text" "00:07:10" ;
+			}
+			onTime 2900 {
+				set "text" "00:07:00" ;
+			}
+			onTime 3000 {
+				set "text" "00:06:50" ;
+			}
+			onTime 3100 {
+				set "text" "00:06:40" ;
+			}
+			onTime 3200 {
+				set "text" "00:06:30" ;
+			}
+			onTime 3300 {
+				set "text" "00:06:20" ;
+			}
+			onTime 3400 {
+				set "text" "00:06:10" ;
+			}
+			onTime 3500 {
+				set "text" "00:06:00" ;
+			}
+			onTime 3600 {
+				set "text" "00:05:50" ;
+			}
+			onTime 3700 {
+				set "text" "00:05:40" ;
+			}
+			onTime 3800 {
+				set "text" "00:05:30" ;
+			}
+			onTime 3900 {
+				set "text" "00:05:20" ;
+			}
+			onTime 4000 {
+				set "text" "00:05:10" ;
+			}
+			onTime 4100 {
+				set "text" "00:05:00" ;
+			}
+			onTime 4200 {
+				set "text" "00:04:50" ;
+			}
+			onTime 4300 {
+				set "text" "00:04:40" ;
+			}
+			onTime 4400 {
+				set "text" "00:04:30" ;
+			}
+			onTime 4500 {
+				set "text" "00:04:20" ;
+			}
+			onTime 4600 {
+				set "text" "00:04:10" ;
+			}
+			onTime 4700 {
+				set "text" "00:04:00" ;
+			}
+			onTime 4800 {
+				set "text" "00:03:50" ;
+			}
+			onTime 4900 {
+				set "text" "00:03:40" ;
+			}
+			onTime 5000 {
+				set "text" "00:03:30" ;
+			}
+			onTime 5100 {
+				set "text" "00:03:20" ;
+			}
+			onTime 5200 {
+				set "text" "00:03:10" ;
+			}
+			onTime 5300 {
+				set "text" "00:03:00" ;
+			}
+			onTime 5400 {
+				set "text" "00:02:50" ;
+			}
+			onTime 5500 {
+				set "text" "00:02:40" ;
+			}
+			onTime 5600 {
+				set "text" "00:02:30" ;
+			}
+			onTime 5700 {
+				set "text" "00:02:20" ;
+			}
+			onTime 5800 {
+				set "text" "00:02:10" ;
+			}
+			onTime 6000 {
+				set "text" "00:02:00" ;
+			}
+			onTime 6100 {
+				set "text" "00:01:50" ;
+			}
+			onTime 6200 {
+				set "text" "00:01:40" ;
+			}
+			onTime 6300 {
+				set "text" "00:01:30" ;
+			}
+			onTime 6400 {
+				set "text" "00:01:20" ;
+			}
+			onTime 6500 {
+				set "text" "00:01:10" ;
+			}
+			onTime 6600 {
+				set "text" "00:01:00" ;
+			}
+			onTime 6700 {
+				set "text" "00:00:50" ;
+			}
+			onTime 6800 {
+				set "text" "00:00:40" ;
+			}
+			onTime 6900 {
+				set "text" "00:00:30" ;
+			}
+			onTime 7000 {
+				set "text" "00:00:20" ;
+			}
+			onTime 7100 {
+				set "text" "00:00:10" ;
+			}
+			onTime 7200 {
+				set "text" "00:00:00" ;
+			}
+		}
+	}
+	windowDef TrackingCallParent
+	{
+		rect	30,73,326,275
+		visible	1
+		windowDef TrackingCallParent2
+		{
+			rect	-242,0,349,275
+			visible	1
+			windowDef VidScreenBG
+			{
+				rect	3,7,121,100
+				visible	1
+				background	"guis/assets/teleporter/button1"
+				matcolor	0,0,0,0.6
+			}
+			windowDef Roq
+			{
+				rect	7,14,112,86
+				visible	0
+				background	"gui/marscity/dropship"
+				matcolor	1,1,1,1
+				notime 1
+				
+				onTime 0 {
+					resetCinematics ;
+				}
+			}
+			windowDef VidScreenLine
+			{
+				rect	2,6,123,102
+				visible	1
+				background	"guis/assets/teleporter/button2"
+				matcolor	1,1,1,0.4
+			}
+			windowDef ManifestBG
+			{
+				rect	123,7,121,100
+				visible	1
+				background	"guis/assets/teleporter/button1"
+				matcolor	0,0,0,0.6
+			}
+			windowDef ManifestLine
+			{
+				rect	122,6,123,102
+				visible	1
+				background	"guis/assets/teleporter/button2"
+				matcolor	1,1,1,0.4
+			}
+			windowDef StaticRoq
+			{
+				rect	4,12,-118,90
+				visible	1
+				background	"gui/static"
+				matcolor	1, 1, 1, 1
+			}
+			windowDef Win1
+			{
+				rect	8,23,44,24
+				background	"guis/assets/cpuserver/win1.tga"
+				visible	1
+				matcolor	1,0.6,0,0
+			}
+			windowDef TextSmallWin1
+			{
+				rect	3,-2,117,14
+				text	"#str_03729"
+				textscale	0.18
+				forecolor	0.6,1,1,1
+				font	"fonts/micro"
+				visible	1
+			}
+			windowDef TextSmallWin1a
+			{
+				rect	8,10,117,14
+				text	"#str_03730"
+				textscale	0.18
+				forecolor	1,1,1,1
+				font	"fonts/micro"
+				visible	1
+			}
+			windowDef TextSmallWin2
+			{
+				rect	125,-2,131,14
+				text	"#str_03731"
+				textscale	0.18
+				forecolor	0.6,1,1,1
+				font	"fonts/micro"
+				visible	1
+			}
+			windowDef TextSmallWin3
+			{
+				rect	127,14,114,85
+				text	" "
+				textscale	0.205
+				forecolor	0.4,0.8,0.8,1
+				visible	1
+				notime	1
+
+				onTime 0 {
+					set "text" "#str_03732" ;
+				}
+
+				onTime 50 {
+					set "text" "#str_03733" ;
+				}
+
+				onTime 100 {
+					set "text" "#str_03734" ;
+				}
+
+				onTime 150 {
+					set "text" "#str_03735" ;
+				}
+
+				onTime 200 {
+					set "text" "#str_03736" ;
+				}
+
+				onTime 250 {
+					set "text" "#str_03737" ;
+				}
+
+				onTime 300 {
+					set "text" "#str_03738" ;
+				}
+
+				onTime 650 {
+					set "text" "#str_03739" ;
+				}
+
+				onTime 700 {
+					set "text" "#str_03740" ;
+				}
+
+				onTime 750 {
+					set "text" "#str_03741" ;
+				}
+
+				onTime 800 {
+					set "text" "#str_03742" ;
+				}
+
+				onTime 850 {
+					set "text" "#str_03743" ;
+				}
+
+				onTime 900 {
+					set "text" "#str_03744" ;
+				}
+
+				onTime 950 {
+					set "text" "#str_03745" ;
+				}
+
+				onTime 1000 {
+					set "text" "#str_03746" ;
+				}
+
+				onTime 1050 {
+					set "text" "#str_03747" ;
+				}
+
+				onTime 1100 {
+					set "text" "#str_03748" ;
+				}
+
+				onTime 1250 {
+					set "text" "#str_03749" ;
+				}
+
+				onTime 1500 {
+					set "text" "#str_03750" ;
+				}
+
+				onTime 1550 {
+					set "text" "#str_03751" ;
+				}
+
+				onTime 1600 {
+					set "text" "#str_03752" ;
+				}
+
+				onTime 1650 {
+					set "text" "#str_03753" ;
+				}
+
+				onTime 1700 {
+					set "text" "#str_03754" ;
+				}
+
+				onTime 1750 {
+					set "text" "#str_03755" ;
+				}
+
+				onTime 2050 {
+					set "text" "#str_03756" ;
+				}
+
+				onTime 2100 {
+					set "text" "#str_03757" ;
+				}
+
+				onTime 2150 {
+					set "text" "#str_03758" ;
+				}
+
+				onTime 2200 {
+					set "text" "#str_03759" ;
+				}
+
+				onTime 2250 {
+					set "text" "#str_03760" ;
+				}
+
+				onTime 2300 {
+					set "text" "#str_03761" ;
+				}
+
+				onTime 2600 {
+					set "text" "#str_03762" ;
+				}
+
+				onTime 2650 {
+					set "text" "#str_03763" ;
+				}
+
+				onTime 2700 {
+					set "text" "#str_03764" ;
+				}
+
+				onTime 2750 {
+					set "text" "#str_03765" ;
+				}
+
+				onTime 2800 {
+					set "text" "#str_03766" ;
+				}
+
+				onTime 2850 {
+					set "text" "#str_03767" ;
+				}
+
+				onTime 2900 {
+					set "text" "#str_03768" ;
+				}
+
+			}
+			windowDef ButtonBG1
+			{
+				rect	270,252,77,17
+				visible	1
+				background	"guis/assets/teleporter/button1"
+				matcolor	0,0,0,0
+				notime	1
+
+				onTime 0 {
+					transition "ButtonBG1::rect" "270 252 77 17" "245 252 58 17" "200" ;
+					transition "ButtonLine1::rect" "268 251 80 19" "244 251 61 19" "200" ;
+				}
+
+				onTime 200 {
+					transition "ButtonBG1::rect" "245 252 58 17" "245 12 58 17" "500" "0.2" "0.8" ;
+					transition "ButtonLine1::rect" "244 251 61 19" "244 11 61 19" "500" "0.2" "0.8" ;					
+				}
+
+				onTime 500 {
+					transition "ButtonBg3::matcolor" "0 0 0 0" "0 0 0 0.6" "200" ;
+					transition "ButtonLine3::matcolor" "1 1 1 1" "1 1 1 0.6" "200" ;
+				}
+
+				onTime 600 {
+					transition "ButtonBg2::matcolor" "0 0 0 0" "0 0 0 0.6" "200" ;
+					transition "ButtonLine2::matcolor" "1 1 1 1" "1 1 1 0.6" "200" ;
+				}
+
+				onTime 700 {
+					transition "TextButton1::forecolor" "1 1 1 1" "1 1 1 0.5" "500" ;
+					transition "TextButton2::forecolor" "1 1 1 1" "1 1 1 0.5" "500" ;
+					transition "TextButton3::forecolor" "1 1 1 1" "1 1 1 0.5" "500" ;
+				}
+
+			}
+			windowDef ButtonLine1
+			{
+				rect	268,251,80,19
+				visible	1
+				background	"guis/assets/teleporter/button2"
+				matcolor	1,1,1,0
+				notime	1
+
+				onTime 0 {
+					set "ButtonBG1::matcolor" "1 1 1 1" ;
+				}
+
+				onTime 50 {
+					set "ButtonBG1::matcolor" "0 0 0 0.6" ;
+				}
+
+				onTime 100 {
+					transition "ButtonBg1::matcolor" "1 1 1 0.6" "0 0 0 0.6" "200" ;
+				}
+
+				onTime 150 {
+					transition "TrackingCallParent2::rect" "0 0 349 275" "-300 0 349 0" "700" "0" "0.5" ;
+					transition "TrackingCallParent::rect" "30 73 326 275" "330 73 326 275" "700" "0" "0.5" ;
+				}
+
+				onTime 550 {
+					transition "ButtonBg1::matcolor" "0 0 0 0.6" "0 0 0 0" "300" ;
+					transition "ButtonLine1::matcolor" "1 1 1 0.6" "1 1 1 0" "300" ;
+					transition "ButtonBg3::matcolor" "0 0 0 0.6" "0 0 0 0" "300" ;
+					transition "ButtonLine3::matcolor" "1 1 1 0.6" "1 1 1 0" "300" ;
+					transition "ButtonBg2::matcolor" "0 0 0 0.6" "0 0 0 0" "300" ;
+					transition "ButtonLine2::matcolor" "1 1 1 0.6" "1 1 1 0" "300" ;
+					transition "TextButton1::forecolor" "1 1 1 0.5" "1 1 1 0" "300" ;
+					transition "TextButton2::forecolor" "1 1 1 0.5" "1 1 1 0" "300" ;
+					transition "TextButton3::forecolor" "1 1 1 0.5" "1 1 1 0" "300" ;					
+				}
+
+				onTime 850 {
+					set "Vidscreenline::visible" "0" ;
+					set "VidscreenBG::visible" "0" ;
+					set "ManifestLine::visible" "0" ;
+					set "ManifestBG::visible" "0" ;
+					set "Roq::visible" "0" ;
+					set "StaticRoq::visible" "0" ;
+					set "Win1::visible" "0" ;
+					set "TextSmallWin1::visible" "0" ;
+					set "TextSmallWin1a::visible" "0" ;
+					set "TextSmallWin2::visible" "0" ;
+					set "TextSmallWin3::visible" "0" ;
+					set "ButtonBG1::visible" "0" ;
+					set "ButtonLine1::visible" "0" ;
+					set "ButtonBG2::visible" "0" ;
+					set "ButtonLine2::visible" "0" ;
+					set "ButtonBG3::visible" "0" ;
+					set "ButtonLine3::visible" "0" ;
+					set "TextButton1::visible" "0" ;
+					set "TextButton2::visible" "0" ;
+					set "TextButton3::visible" "0" ;
+				}
+
+			}
+			windowDef ButtonBG2
+			{
+				rect	245,33,59,17
+				visible	1
+				background	"guis/assets/teleporter/button1"
+				matcolor	0,0,0,0
+			}
+			windowDef ButtonLine2
+			{
+				rect	244,32,61,19
+				visible	1
+				background	"guis/assets/teleporter/button2"
+				matcolor	1,1,1,0
+			}
+			windowDef ButtonBG3
+			{
+				rect	245,54,59,17
+				visible	1
+				background	"guis/assets/teleporter/button1"
+				matcolor	0,0,0,0
+			}
+			windowDef ButtonLine3
+			{
+				rect	244,53,61,19
+				visible	1
+				background	"guis/assets/teleporter/button2"
+				matcolor	1,1,1,0
+			}
+			windowDef TextButton1
+			{
+				rect	247,9,53,19
+				text	"#str_03769"
+				textscale	0.25
+				forecolor	1,1,1,0
+				visible	1
+				textalign	1
+			}
+			windowDef TextButton2
+			{
+				rect	247,30,53,19
+				text	"#str_03770"
+				textscale	0.25
+				forecolor	1,1,1,0
+				visible	1
+				textalign	1
+			}
+			windowDef TextButton3
+			{
+				rect	247,51,53,19
+				text	"#str_03771"
+				textscale	0.25
+				forecolor	1,1,1,0
+				visible	1
+				textalign	1
+			}
+		}
+	}
+	windowDef TextDetectedClip
+	{
+		rect	195,275,0,30
+		visible	1
+		windowDef TextDetected
+		{
+			rect	0,0,352,29
+			text	"#str_03772"
+			textscale	0.31
+			textalign	1
+			forecolor	1,0,0,1
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef FlareBox
+		{
+			rect	-3,0,26,26
+			background	"gui/mainmenu/textflare"
+			matcolor	1 ,0.5, 0.5, 0.5
+			visible	1
+		}
+	}
+	windowDef TextScanning
+	{
+		rect	264,305,203,24
+		text	" "
+		textscale	0.31
+		textalign	2
+		forecolor	1,1,1,0
+		font	"fonts/micro"
+		visible	1
+		notime	1
+
+		onTime 0 {
+			set "text" "G" ;
+		}
+
+		onTime 20 {
+			set "text" "#str_03773" ;
+		}
+
+		onTime 40 {
+			set "text" "#str_03774" ;
+		}
+
+		onTime 60 {
+			set "text" "#str_03775" ;
+		}
+
+		onTime 80 {
+			set "text" "#str_03776" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_03777" ;
+		}
+
+		onTime 120 {
+			set "text" "#str_03778" ;
+		}
+
+		onTime 140 {
+			set "text" "#str_00073" ;
+		}
+
+	}
+	windowDef TextInsertion
+	{
+		rect	232,360,359,24
+		text	"#str_03779"
+		textscale	0.31
+		forecolor	1,0,0,0
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef ShipIDParent
+	{
+		rect	35,111,508,268
+		visible	1
+		windowDef ShipScan
+		{
+			rect	23,21,-317,143
+			visible	1
+			background	"guis/assets/marscity/shipscan"
+			matcolor	1,1,1,0
+		}
+		windowDef ShipScanLine
+		{
+			rect	454,221,31,24
+			visible	1
+			matcolor	0.3,0.6,0.6,0
+			background	"guis/assets/marscity/boxline"
+			notime	1
+
+			onTime 0 {
+				transition "ShipScanLine1::rect" "449 216 41 34" "454 221 31 24" "100" ;
+				transition "ShipScanLine1::matcolor" "1 1 1 0.7" "0.3 0.6 0.6 0.7" "100" ;
+			}
+
+			onTime 100 {
+				transition "ShipScanLine2::rect" "462 223 17 20" "422 175 17 64" "50" ;
+				transition "ShipScanLine2::matcolor" "1 1 1 0" "1 1 1 0.8" "50" ;
+				transition "ShipScanLine1::matcolor" "0.3 0.6 0.6 0.7" "0.3 0.6 0.6 0" "500" ;
+			}
+
+			onTime 150 {
+				transition "ShipScanLine2::rect" "406 167 30 69" "302 141 134 95" "100" ;
+				transition "ShipScanLine2::matcolor" "1 1 1 0.8" "1 1 1 0.3" "100" ;
+				transition "ShipScanLine3::rect" "386 151 17 64" "366 122 37 95" "50" ;
+				transition "ShipScanLine3::matcolor" "1 1 1 0" "1 1 1 0.8" "50" ;
+			}
+
+			onTime 200 {
+				transition "ShipScanLine3::rect" "366 122 37 95" "214 110 189 105" "100" ;
+				transition "ShipScanLine3::matcolor" "1 1 1 0.8" "1 1 1 0.4" "100" ;
+				
+				transition "ShipScanLine4::rect" "357 132 17 64" "347 97 27 99" "50" ;
+				transition "ShipScanLine4::matcolor" "1 1 1 0" "1 1 1 0.8" "50" ;
+			}
+
+			onTime 250 {
+				transition "ShipScanLine4::rect" "347 97 27 99" "90 66 284 130" "100" ;
+				transition "ShipScanLine4::matcolor" "1 1 1 0.8" "1 1 1 0.5" "100" ;
+				
+				transition "ShipScanLine2::matcolor" "1 1 1 0.3" "1 1 1 0" "500" ;
+			}
+
+			onTime 300 {
+				transition "ShipScanLine::rect" "309 20 32 145" "22 20 319 145" "150" ;
+				transition "ShipScanLine::matcolor" "1 1 1 0.8" "1 1 1 0.6" "150" ;
+				
+				transition "ShipScanLine3::matcolor" "1 1 1 0.4" "1 1 1 0" "500" ;
+			}
+
+			onTime 350 {				
+				transition "ShipScanLine4::matcolor" "1 1 1 0.5" "1 1 1 0" "500" ;
+			}
+
+		}
+		windowDef ShipScanLine1
+		{
+			rect	449,216,41,34
+			visible	1
+			matcolor	0.3,0.6,0.6,0
+			background	"guis/assets/marscity/boxline"
+		}
+		windowDef ShipScanLine2
+		{
+			rect	0,0,0,0
+			visible	1
+			matcolor	0.3,0.6,0.6,0
+			background	"guis/assets/marscity/boxline"
+		}
+		windowDef ShipScanLine3
+		{
+			rect	0,0,0,0
+			visible	1
+			matcolor	0.3,0.6,0.6,0
+			background	"guis/assets/marscity/boxline"
+		}
+		windowDef ShipScanLine4
+		{
+			rect	0,0,0,0
+			visible	1
+			matcolor	0.3,0.6,0.6,0
+			background	"guis/assets/marscity/boxline"
+		}
+		windowDef TextShipScan1
+		{
+			rect	26,126,312,24
+			text	"#str_03780"
+			textscale	0.31
+			forecolor	1,1,1,0
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef TextShipScan2
+		{
+			rect	26,142,312,24
+			text	"#str_03781"
+			textscale	0.31
+			forecolor	1,1,1,0
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef ButtonBG4
+		{
+			rect	22,171,77,17
+			visible	0
+			background	"guis/assets/teleporter/button1"
+			matcolor	0,0,0,0.6
+			notime	1
+
+			onTime 0 {
+				transition "ButtonBg4::matcolor" "1 1 1 0.4" "0 0 0 0.6" "200" ;
+				set "ButtonBG4::visible" "1" ;
+				set "ButtonLine4::visible" "1" ;
+				set "TextButton4::visible" "1" ;
+			}
+
+			onTime 50 {
+				transition "ButtonBg5::matcolor" "1 1 1 0.4" "0 0 0 0.6" "200" ;
+				set "ButtonBG5::visible" "1" ;
+				set "ButtonLine5::visible" "1" ;
+				set "TextButton5::visible" "1" ;
+			}
+
+			onTime 100 {
+				transition "ButtonBg6::matcolor" "1 1 1 0.4" "0 0 0 0.6" "200" ;
+				set "ButtonBG6::visible" "1" ;
+				set "ButtonLine6::visible" "1" ;
+				set "TextButton6::visible" "1" ;
+			}
+
+			onTime 150 {
+				transition "ButtonBg7::matcolor" "1 1 1 0.4" "0 0 0 0.6" "200" ;
+				set "ButtonBG7::visible" "1" ;
+				set "ButtonLine7::visible" "1" ;
+				set "TextButton7::visible" "1" ;
+			}
+
+			onTime 200 {
+				transition "ButtonBg8::matcolor" "1 1 1 0.4" "0 0 0 0.6" "200" ;
+				set "ButtonBG8::visible" "1" ;
+				set "ButtonLine8::visible" "1" ;
+				set "TextButton8::visible" "1" ;
+			}
+
+			onTime 250 {
+				transition "ButtonBg9::matcolor" "1 1 1 0.4" "0 0 0 0.6" "200" ;
+				set "ButtonBG9::visible" "1" ;
+				set "ButtonLine9::visible" "1" ;
+				set "TextButton9::visible" "1" ;
+			}
+
+			onTime 300 {
+				transition "ButtonBg10::matcolor" "1 1 1 0.4" "0 0 0 0.6" "200" ;
+				set "ButtonBG10::visible" "1" ;
+				set "ButtonLine10::visible" "1" ;
+				set "TextButton10::visible" "1" ;
+			}
+
+			onTime 350 {
+				transition "ButtonBg11::matcolor" "1 1 1 0.4" "0 0 0 0.6" "200" ;
+				set "ButtonBG11::visible" "1" ;
+				set "ButtonLine11::visible" "1" ;
+				set "TextButton11::visible" "1" ;
+			}
+
+			onTime 1000 {
+				set "ButtonBG4::matcolor" "1 1 1 1" ;
+			}
+
+			onTime 1050 {
+				set "ButtonBG4::matcolor" "0 0 0 0.6" ;
+				set "ButtonBG8::matcolor" "1 1 1 1" ;
+			}
+
+			onTime 1100 {
+				transition "ButtonBg4::matcolor" "1 1 1 0.6" "0 0 0 0.6" "200" ;
+				set "ButtonBG8::matcolor" "0 0 0 0.6" ;
+				set "ButtonBG9::matcolor" "1 1 1 1" ;
+			}
+
+			onTime 1150 {
+				transition "ButtonBg8::matcolor" "1 1 1 0.6" "0 0 0 0.6" "200" ;
+				set "ButtonBG9::matcolor" "0 0 0 0.6" ;
+			}
+
+			onTime 1200 {
+				set "ButtonBG9::visible" "0" ;
+				set "ButtonLine9::visible" "0" ;			
+				transition "ButtonBg1::matcolor" "1 1 1 0.6" "0 0 0 0.6" "200" ;
+				set "ButtonLine1::matcolor" "1 1 1 0.6" ;
+				transition "TextButton9::forecolor" "1 1 1 0.5" "1 1 1 0" "400" ;
+				resetTime "ButtonBG1" "0" ;
+			}
+
+			onTime 1300 {
+				transition "TextButton6::forecolor" "1 1 1 0.5" "1 1 1 0" "400" ;
+				transition "ButtonBg6::matcolor" "0 0 0 0.6" "0 0 0 0" "400" ;
+				transition "ButtonLine6::matcolor" "1 1 1 0.6" "1 1 1 0" "400" ;
+				transition "TextButton10::forecolor" "1 1 1 0.5" "1 1 1 0" "400" ;
+				transition "ButtonBg10::matcolor" "0 0 0 0.6" "0 0 0 0" "400" ;
+				transition "ButtonLine10::matcolor" "1 1 1 0.6" "1 1 1 0" "400" ;
+			}
+
+			onTime 1400 {
+				transition "TextButton4::forecolor" "1 1 1 0.5" "1 1 1 0" "400" ;
+				transition "ButtonBg4::matcolor" "0 0 0 0.6" "0 0 0 0" "400" ;
+				transition "ButtonLine4::matcolor" "1 1 1 0.6" "1 1 1 0" "400" ;
+				transition "TextButton7::forecolor" "1 1 1 0.5" "1 1 1 0" "400" ;
+				transition "ButtonBg7::matcolor" "0 0 0 0.6" "0 0 0 0" "400" ;
+				transition "ButtonLine7::matcolor" "1 1 1 0.6" "1 1 1 0" "400" ;				
+				transition "TextButton11::forecolor" "1 1 1 0.5" "1 1 1 0" "400" ;
+				transition "ButtonBg11::matcolor" "0 0 0 0.6" "0 0 0 0" "400" ;
+				transition "ButtonLine11::matcolor" "1 1 1 0.6" "1 1 1 0" "400" ;
+			}
+
+			onTime 1500 {
+				transition "TextButton5::forecolor" "1 1 1 0.5" "1 1 1 0" "400" ;
+				transition "ButtonBg5::matcolor" "0 0 0 0.6" "0 0 0 0" "400" ;
+				transition "ButtonLine5::matcolor" "1 1 1 0.6" "1 1 1 0" "400" ;
+				transition "TextButton8::forecolor" "1 1 1 0.5" "1 1 1 0" "400" ;
+				transition "ButtonBg8::matcolor" "0 0 0 0.6" "0 0 0 0" "400" ;
+				transition "ButtonLine8::matcolor" "1 1 1 0.6" "1 1 1 0" "400" ;
+			}
+
+		}
+		windowDef ButtonLine4
+		{
+			rect	20,170,80,19
+			visible	0
+			background	"guis/assets/teleporter/button2"
+			matcolor	1,1,1,0.6
+		}
+		windowDef ButtonBG5
+		{
+			rect	101,171,74,17
+			visible	0
+			background	"guis/assets/teleporter/button1"
+			matcolor	0,0,0,0.6
+		}
+		windowDef ButtonLine5
+		{
+			rect	99,170,77,19
+			visible	0
+			background	"guis/assets/teleporter/button2"
+			matcolor	1,1,1,0.6
+		}
+		windowDef ButtonBG6
+		{
+			rect	22,192,87,17
+			visible	0
+			background	"guis/assets/teleporter/button1"
+			matcolor	0,0,0,0.6
+		}
+		windowDef ButtonLine6
+		{
+			rect	20,191,91,19
+			visible	0
+			background	"guis/assets/teleporter/button2"
+			matcolor	1,1,1,0.6
+		}
+		windowDef ButtonLine7
+		{
+			rect	111,191,52,19
+			visible	0
+			background	"guis/assets/teleporter/button2"
+			matcolor	1,1,1,0.6
+		}
+		windowDef ButtonBG7
+		{
+			rect	112,192,50,17
+			visible	0
+			background	"guis/assets/teleporter/button1"
+			matcolor	0,0,0,0.6
+		}
+		windowDef ButtonBG8
+		{
+			rect	165,192,93,17
+			visible	0
+			background	"guis/assets/teleporter/button1"
+			matcolor	0,0,0,0.6
+		}
+		windowDef ButtonLine8
+		{
+			rect	163,191,96,19
+			visible	0
+			background	"guis/assets/teleporter/button2"
+			matcolor	1,1,1,0.6
+		}
+		windowDef ButtonBG9
+		{
+			rect	22,214,77,17
+			visible	0
+			background	"guis/assets/teleporter/button1"
+			matcolor	0,0,0,0.6
+		}
+		windowDef ButtonLine9
+		{
+			rect	20,213,80,19
+			visible	0
+			background	"guis/assets/teleporter/button2"
+			matcolor	1,1,1,0.6
+		}
+		windowDef ButtonBG10
+		{
+			rect	101,214,50,17
+			visible	0
+			background	"guis/assets/teleporter/button1"
+			matcolor	0,0,0,0.6
+		}
+		windowDef ButtonLine10
+		{
+			rect	100,213,52,19
+			visible	0
+			background	"guis/assets/teleporter/button2"
+			matcolor	1,1,1,0.6
+		}
+		windowDef ButtonBG11
+		{
+			rect	154,214,63,17
+			visible	0
+			background	"guis/assets/teleporter/button1"
+			matcolor	0,0,0,0.6
+		}
+		windowDef ButtonLine11
+		{
+			rect	153,213,65,19
+			visible	0
+			background	"guis/assets/teleporter/button2"
+			matcolor	1,1,1,0.6
+		}
+		windowDef TextButton4
+		{
+			rect	32,168,53,19
+			text	"#str_03782"
+			textscale	0.25
+			forecolor	1,1,1,0.498
+			visible	0
+			textalign	1
+		}
+		windowDef TextButton5
+		{
+			rect	111,168,53,19
+			text	"#str_03783"
+			textscale	0.25
+			forecolor	1,1,1,0.498
+			visible	0
+			textalign	1
+		}
+		windowDef TextButton6
+		{
+			rect	21,189,85,19
+			text	"#str_03784"
+			textscale	0.25
+			forecolor	1,1,1,0.498
+			visible	0
+			textalign	1
+		}
+		windowDef TextButton7
+		{
+			rect	109,189,53,19
+			text	"#str_03769"
+			textscale	0.25
+			forecolor	1,1,1,0.498
+			visible	0
+			textalign	1
+		}
+		windowDef TextButton8
+		{
+			rect	168,189,83,19
+			text	"#str_03785"
+			textscale	0.25
+			forecolor	1,1,1,0.498
+			visible	0
+			textalign	1
+		}
+		windowDef TextButton9
+		{
+			rect	27,211,65,19
+			text	"#str_03786"
+			textscale	0.25
+			forecolor	1,1,1,0.498
+			visible	0
+			textalign	1
+		}
+		windowDef TextButton10
+		{
+			rect	98,211,53,19
+			text	"#str_03770"
+			textscale	0.25
+			forecolor	1,1,1,0.498
+			visible	0
+			textalign	1
+		}
+		windowDef TextButton11
+		{
+			rect	158,211,53,19
+			text	"#str_03771"
+			textscale	0.25
+			forecolor	1,1,1,0.498
+			visible	0
+			textalign	1
+		}
+	}
+	windowDef BottomText
+	{
+		rect	22,415,599,55
+		visible	1
+		windowDef TextDetail1
+		{
+			rect	66,-1,281,24
+			text	"#str_03787"
+			textscale	0.31
+			textalign	2
+			forecolor	1,1,1,0.65
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef TextDetail2
+		{
+			rect	67,15,281,24
+			text	"#str_03788"
+			textscale	0.31
+			textalign	2
+			forecolor	1,1,1,0
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef TextDetail3
+		{
+			rect	406,-1,178,24
+			text	"#str_03789"
+			textscale	0.31
+			forecolor	1,1,1,0
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef TextDetail4
+		{
+			rect	406,15,178,24
+			text	"#str_03790"
+			textscale	0.31
+			forecolor	1,1,1,0
+			font	"fonts/micro"
+			visible	1
+		}
+	}
+	windowDef ContentParent
+	{
+		rect	4,24,631,448
+		visible	1
+		windowDef MapBg1
+		{
+			rect	233,215,179,10
+			visible	0
+			background	"guis/assets/teleporter/grid3"
+			matcolor	1,1,1,0.4
+		}
+		windowDef MapBG2
+		{
+			rect	233,225,179,0
+			visible	0
+			background	"guis/assets/teleporter/grid4"
+			matcolor	1,1,1,0.4
+		}
+		windowDef MapBG3
+		{
+			rect	233,225,179,-10
+			visible	0
+			background	"guis/assets/teleporter/grid3"
+			matcolor	1,1,1,0.4
+		}
+		windowDef btn2_Bottom
+		{
+			rect	135,399,364,39
+			visible	1
+			background	"guis/assets/common/1pxborder_horiz"
+			matcolor	1,1,1,0.4
+		}
+		windowDef btn2_corner3
+		{
+			rect	53,395,82,41
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	1,1,1,0.4
+		}
+		windowDef btn2_corner4
+		{
+			rect	499,395,-82,41
+			visible	1
+			background	"guis/assets/common/1pxborder_cornersm"
+			matcolor	1,1,1,0.4
+		}
+	}
+	windowDef TrackCamClip
+	{
+		rect	0,0,22,480
+		visible	1
+		windowDef Movie1
+		{
+			rect	28,75,338,282
+			background	"gui/marscity/monoflyby"
+			matcolor	1, 1, 1, 1
+			visible	1
+			notime	1
+			float	"triggered"	0
+
+			onTrigger {
+				if ("triggered" == 0) { 
+					resetTime "AnimDelay" "0" ;
+					set "triggered" "1" ;
+				} else {
+					resetCinematics ;
+					resetTime "0" ;
+				}
+			}
+
+			onTime 0 {
+				transition "Movie11::matcolor" "1 1 1 1" "1 1 1 0" "200" ;
+			}
+
+			onTime 10050 {			
+				set "Movie11::matcolor" "1 1 1 1" ;
+			}
+
+		}
+		windowDef Movie11
+		{
+			rect	28,75,338,282
+			background	"guis/assets/marscity/flybystatic"
+			matcolor	1, 1, 1, 1
+			visible	1
+		}
+		windowDef MapBg11
+		{
+			rect	23,68,349,26
+			visible	1
+			background	"guis/assets/teleporter/grid3"
+			matcolor	1,1,1,0.4
+		}
+		windowDef MapBG21
+		{
+			rect	23,94,349,-243
+			visible	1
+			background	"guis/assets/teleporter/grid4"
+			matcolor	1,1,1,0.4
+		}
+		windowDef MapBG31
+		{
+			rect	23,337,349,-26
+			visible	1
+			background	"guis/assets/teleporter/grid3"
+			matcolor	1,1,1,0.4
+		}
+		windowDef TextCam1
+		{
+			rect	28,363,324,37
+			text	"#str_03791"
+			textscale	0.31
+			forecolor	1,1,1,1
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef TextCam2
+		{
+			rect	28,382,324,37
+			text	"#str_03792"
+			textscale	0.31
+			forecolor	1,1,1,0.6
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef Bg22
+		{
+			rect	259,251,107,106
+			background	"guis/assets/cpuserver/mars3a.tga"
+			visible	0
+			matcolor	1, 1, 1, 0.7
+		}
+		windowDef Scan
+		{
+			rect	241,234,144,145
+			background	"gui/marsspin"
+			visible	0
+			matcolor	0.2, 0.8, 0.4, 1
+		}
+	}
+	windowDef Roq2Clip
+	{
+		rect	426,230,170,5
+		visible	1
+		windowDef VidScreenBG2
+		{
+			rect	7,28,161,127
+			visible	1
+			background	"guis/assets/teleporter/button1"
+			matcolor	0,0,0,0.6
+		}
+		windowDef Roq2
+		{
+			rect	12,36,-153,109
+			visible	0
+			background	"gui/marscity/dropship3"
+			matcolor	1,1,1,1
+			notime 1
+
+			onTime 0 {
+				resetCinematics ;
+			}
+		}
+		windowDef StaticRoq2
+		{
+			rect	9,34,-158,114
+			visible	1
+			background	"gui/static"
+			matcolor	1, 1, 1, 1
+		}
+		windowDef VidScreenLine2
+		{
+			rect	6,27,164,127
+			visible	1
+			background	"guis/assets/teleporter/button2"
+			matcolor	1,1,1,0.4
+		}
+		windowDef Win2
+		{
+			rect	14,47,57,29
+			background	"guis/assets/cpuserver/win1.tga"
+			visible	1
+			matcolor	1,0.6,0,0
+		}
+		windowDef TextSmallWin6
+		{
+			rect	7,17,150,17
+			text	"#str_03793"
+			textscale	0.18
+			forecolor	0.6,1,1,0
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef TextSmallWin6a
+		{
+			rect	14,32,150,17
+			text	"#str_03730"
+			textscale	0.18
+			forecolor	1,1,1,1
+			font	"fonts/micro"
+			visible	1
+		}
+		windowDef TextSmallWin6b
+		{
+			rect	7,3,165,17
+			text	"#str_03794"
+			textscale	0.18
+			forecolor	0.6,1,1,0
+			font	"fonts/micro"
+			visible	1
+		}
+	}
+	windowDef TextSmallWin6c
+	{
+		rect	433,191,165,80
+		text	" "
+		textscale	0.18
+		forecolor	1,1,1,0.8
+		font	"fonts/micro"
+		visible	1
+		notime	1
+		
+		onTime 0 {
+			transition "forecolor" "1 1 1 1" "1 1 1 0.8" "500" ;
+			set "text" "#str_03795" ;
+		}
+		onTime 50 {
+			set "text" "#str_03796" ;
+		}
+		onTime 100 {
+			set "text" "#str_03797" ;
+		}
+		onTime 150 {
+			set "text" "#str_03798" ;
+		}
+		onTime 200 {
+			set "text" "#str_03799" ;
+		}
+		onTime 250 {
+			set "text" "#str_03800" ;
+		}
+		onTime 300 {
+			set "text" "#str_03801" ;
+		}
+		onTime 350 {
+			set "text" "#str_03802" ;
+		}
+		onTime 400 {
+			set "text" "#str_03803" ;
+		}
+		onTime 450 {
+			set "text" "#str_03804" ;
+		}
+		onTime 500 {
+			set "text" "#str_03805" ;
+		}
+		onTime 550 {
+			set "text" "#str_03806" ;
+		}
+		onTime 800 {
+			set "text" "#str_03807" ;
+		}
+		onTime 850 {
+			set "text" "#str_03808" ;
+		}
+		onTime 900 {
+			set "text" "#str_03809" ;
+		}
+		onTime 950 {
+			set "text" "#str_03810" ;
+		}
+		onTime 1000 {
+			set "text" "#str_03811" ;
+		}
+		onTime 1050 {
+			set "text" "#str_03812" ;
+		}
+		onTime 1100 {
+			set "text" "#str_03813" ;
+		}
+		onTime 1150 {
+			set "text" "#str_03814" ;
+		}
+		onTime 1200 {
+			set "text" "#str_03815" ;
+		}
+		onTime 1250 {
+			set "text" "#str_03816" ;
+		}
+		onTime 1300 {
+			set "text" "#str_03817" ;
+		}
+		onTime 1350 {
+			set "text" "#str_03818" ;
+		}
+		onTime 1800 {
+			transition "forecolor" "1 1 1 0.8" "1 1 1 0" "500" ;			
+		}
+/*
+		onTime 1700 {
+			set "text" "INCREASE\nCONTACTING REENTRY\nMONITORING STATION" ;
+		}
+		onTime 1800 {
+			set "text" "CONTACTING REENTRY\nMONITORING STATION" ;
+		}
+		onTime 1900 {
+			set "text" "MONITORING STATION" ;
+		}
+		onTime 2000 {
+			set "text" " " ;
+		}	
+*/
+		onTime 2300 {
+			transition "forecolor" "1 1 1 0" "1 1 1 0.8" "500" ;
+			set "text" "#str_03819" ;			
+		}
+		onTime 5100 {
+			transition "forecolor" "1 1 1 1" "1 1 1 0" "1000" ;
+			set "text" "#str_03820" ;			
+		}		
+
+
+	}	
+	windowDef LineOut
+	{
+		rect	331,71,64,64
+		background	"guis/assets/marscity/lineout"
+		visible	1
+		matcolor	1, 1, 1, 0
+	}
+	windowDef LineOutLine
+	{
+		rect	383,123,0,1
+		visible	1
+		matcolor	1,1,1,1
+		background	"guis/assets/marscity/hline"
+	}
+	windowDef TextEnd1
+	{
+		rect	385,104,217,19
+		text	"#str_03821"
+		textscale	0.23
+		forecolor	1,0.6,0,0
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef TextEnd2
+	{
+		rect	385,118,217,19
+		text	"#str_03822"
+		textscale	0.23
+		forecolor	1,0.6,0,0
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef TextEnd3
+	{
+		rect	385,153,217,38
+		text	"#str_03823"
+		textscale	0.23
+		forecolor	1,1,1,0
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef TextEnd4
+	{
+		rect	385,202,217,101
+		text	"#str_03824"
+		textscale	0.23
+		forecolor	1,1,1,0
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow2.tga"
+		visible	1
+		matcolor	0.4, 0.7, 0.8, 0.05
+	}
+	windowDef Addhighlight
+	{
+		rect	10,10,-620,440
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.4 ,1
+		visible	1
+	}
+	windowDef Static
+	{
+		rect	-8,-8,660,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 15
+	}
+	windowDef Reflect
+	{
+		rect	5,0,630,470
+		matcolor	1 ,1 ,1 ,0.15
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Outerglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 6
+		visible	0
+	}
+	windowDef MapBg4
+	{
+		rect	238,245,179,4
+		visible	0
+		background	"guis/assets/teleporter/grid5"
+		matcolor	1,1,1,0.6
+	}
+	windowDef MapBG5
+	{
+		rect	238,249,179,0
+		visible	0
+		background	"guis/assets/teleporter/grid6"
+		matcolor	1,1,1,0.6
+	}
+	windowDef MapBG6
+	{
+		rect	238,249,179,-4
+		visible	0
+		background	"guis/assets/teleporter/grid5"
+		matcolor	1,1,1,0.6
+	}
+	windowDef TextEnd11
+	{
+		rect	0,232,640,35
+		text	"#str_03825"
+		textscale	0.4
+		forecolor	1,1,1,0.8
+		font	"fonts/micro"
+		visible	1
+		textalign	1
+	}
+}

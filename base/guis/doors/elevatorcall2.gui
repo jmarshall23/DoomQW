@@ -1,0 +1,500 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	comment	"parm1 = 2= top floor, 1= bottom floor\nparm2 = 1= level1 up to level2, or 2= level1 down to sublevel1\nparm3 = top floor name\nparm4 = bottom floor name.\n\nparm5 sets malfunction error. value 1 = fire hazard, value 2 = malfunction, value 3 = maintenance, value 4 = low power. These can be set/changed at anytime, or unset by making the value of parm5 = 0."
+
+	onEvent {
+		if ("gui::gui_parm2" == 1) {
+			if ("gui::gui_parm1" == 2) {
+				set "Level::background" "guis/assets/elevator/level" ;
+				set "TextBigNumber::text" "2" ;
+				set "TextLevel1::text" "#str_00301" ;
+				set "TextLevel2::text" "#str_00302" ;
+			//	set "arrowuph::visible" "0" ;
+			//	set "arrowdownh::visible" "1" ;
+			} else {
+				set "Level::background" "guis/assets/elevator/level" ;
+				set "TextBigNumber::text" "1" ;
+				set "TextLevel1::text" "#str_00301" ;
+				set "TextLevel2::text" "#str_00302" ;
+			//	set "arrowuph::visible" "1" ;
+			//	set "arrowdownh::visible" "0" ;
+			}
+		}
+		if ("gui::gui_parm2" == 2) {
+			if ("gui::gui_parm1" == 2) {
+				set "Level::background" "guis/assets/elevator/level" ;
+				set "TextBigNumber::text" "1" ;
+				set "TextLevel1::text" "#str_00302" ;
+				set "TextLevel2::text" "#str_00303" ;
+				set "arrowuph::visible" "0" ;
+				set "arrowdownh::visible" "1" ;
+			} else {
+				set "Level::background" "guis/assets/elevator/sublevel" ;
+				set "TextBigNumber::text" "1" ;
+				set "TextLevel1::text" "#str_00302" ;
+				set "TextLevel2::text" "#str_00303" ;
+				set "arrowuph::visible" "1" ;
+				set "arrowdownh::visible" "0" ;
+			}
+		}
+		
+		if ("gui::gui_parm5" == 0) {
+			set "scanpulse::visible" "1" ;
+			set "Button1::visible" "1" ;
+			set "Button2::visible" "0" ;
+			set "DeniedBG::visible" "0" ;
+			set "DeniedBG2::visible" "0" ;
+			set "DeniedBG3::visible" "0" ;
+			set "AccessD1::visible" "0" ;
+			set "AccessD2::visible" "0" ;
+			set "AccessD3::visible" "0" ;
+			set "AccessD4::visible" "0" ;
+		}
+		if ("gui::gui_parm5" == 1) {
+			set "scanpulse::visible" "0" ;
+			set "Button1::visible" "0" ;
+			set "Button2::visible" "1" ;
+			set "DeniedBG::visible" "1" ;
+			set "DeniedBG2::visible" "0" ;
+			set "DeniedBG3::visible" "1" ;
+			set "AccessD1::visible" "1" ;
+			set "AccessD2::visible" "0" ;
+			set "AccessD3::visible" "0" ;
+			set "AccessD4::visible" "0" ;
+		}
+		if ("gui::gui_parm5" == 2) {
+			set "scanpulse::visible" "0" ;
+			set "Button1::visible" "0" ;
+			set "Button2::visible" "1" ;
+			set "DeniedBG::visible" "1" ;
+			set "DeniedBG2::visible" "0" ;
+			set "DeniedBG3::visible" "1" ;
+			set "AccessD1::visible" "0" ;
+			set "AccessD2::visible" "2" ;
+			set "AccessD3::visible" "0" ;
+			set "AccessD4::visible" "0" ;
+		}
+		if ("gui::gui_parm5" == 3) {
+			set "scanpulse::visible" "0" ;
+			set "Button1::visible" "0" ;
+			set "Button2::visible" "1" ;
+			set "DeniedBG::visible" "1" ;
+			set "DeniedBG2::visible" "0" ;
+			set "DeniedBG3::visible" "1" ;
+			set "AccessD1::visible" "0" ;
+			set "AccessD2::visible" "0" ;
+			set "AccessD3::visible" "3" ;
+			set "AccessD4::visible" "0" ;
+		}
+		if ("gui::gui_parm5" == 4) {
+			set "scanpulse::visible" "0" ;
+			set "Button1::visible" "0" ;
+			set "Button2::visible" "1" ;
+			set "DeniedBG::visible" "0" ;
+			set "DeniedBG2::visible" "1" ;
+			set "DeniedBG3::visible" "1" ;
+			set "AccessD1::visible" "0" ;
+			set "AccessD2::visible" "0" ;
+			set "AccessD3::visible" "0" ;
+			set "AccessD4::visible" "1" ;
+		}
+	}
+
+	windowDef bgTop
+	{
+		rect	5 ,5 ,630 ,235
+		background	"guis/assets/elevator/callfloorbg"
+		matcolor	1 ,1 ,1 ,0.9
+		visible	1
+	}
+	windowDef bgBtm
+	{
+		rect	5 ,240 ,630 ,230
+		windowDef bgBtmClamped
+		{
+			rect	0 ,0 ,630 ,-270
+			background	"guis/assets/elevator/callfloorbg"
+			matcolor	1 ,1 ,1 ,0.9
+			visible	1
+		}
+	}
+	windowDef arrowup
+	{
+		rect	26 ,120 ,150 ,110
+		background	"guis/assets/elevator/callarrow"
+		matcolor	1 ,1 ,1 ,0.8
+		visible	1
+	}
+	windowDef arrowuph
+	{
+		rect	26 ,120 ,150 ,-110
+		background	"guis/assets/elevator/callarrowh"
+		matcolor	1 ,1 ,1 ,0
+		visible	1
+	}
+	windowDef arrowdown
+	{
+		rect	26 ,260 ,150 ,-110
+		background	"guis/assets/elevator/callarrow"
+		matcolor	1 ,1 ,1 ,0.8
+		visible	1
+	}
+	windowDef arrowdownh
+	{
+		rect	26 ,260 ,150 ,110
+		background	"guis/assets/elevator/callarrowh"
+		matcolor	1 ,1 ,1 ,0
+		visible	1
+	}
+	windowDef TextCall
+	{
+		rect	32, 212, 200, 50
+		text	"#str_01239"
+		textscale	1
+		forecolor	0, 0, 0, 0.5
+	}
+	windowDef TextBigLevel
+	{
+		rect	260, 0, 400, 150
+		text	"#str_01240"
+		textscale	2.6
+		forecolor	0.73, 0.7, 0.53, 0
+	}
+	windowDef TextBigNumber
+	{
+		rect	160, 45, 400, 480
+		text	""
+		textscale	7.8
+		textalign	2
+		forecolor	1, 1, 1, 0.5
+		forceaspectheight	700
+		windowDef TextComplex1
+		{
+			rect	0, 0, 0, 0
+			visible	1
+		}
+	}
+	windowDef Logo
+	{
+		rect	227 ,20 ,390 ,265
+		background	"gui/addlogo"
+		matcolor	0.18 ,0.07 ,0.02 ,1
+		visible	1
+		forceaspectheight	480
+		windowDef TextComplex2
+		{
+			rect	0, 0, 0, 0
+			visible	1
+		}
+	}
+	windowDef Level
+	{
+		rect	225 ,16 ,390 ,125
+		background	""
+		matcolor	0.92, 0.86, 0.63 ,0.7
+		visible	1
+	}
+	windowDef bglevelsbg
+	{
+		rect	206 ,294 ,425 ,170
+		visible	1
+		backcolor	0.1, 0.07, 0.04, 0.7
+	}
+	windowDef bglevels
+	{
+		rect	202 ,290 ,430 ,180
+		background	"guis/assets/common/outerglow"
+		matcolor	0.4 ,0.25 ,0.02 ,0.8
+		visible	1
+	}
+	windowDef TextLevel1
+	{
+		rect	222, 286, 400, 250
+		text	""
+		textscale	0.9
+		forecolor	0.8, 0.65, 0.3, 0.8
+	}
+	windowDef TextLevel1Loc
+	{
+		rect	222, 326, 400, 250
+		text	"gui::gui_parm3"
+		textscale	0.9
+		forecolor	1, 1, 1, 0.6
+	}
+	windowDef TextLevel2
+	{
+		rect	222, 372, 400, 250
+		text	""
+		textscale	0.9
+		forecolor	0.8, 0.65, 0.3, 0.8
+	}
+	windowDef TextLevel2Loc
+	{
+		rect	222, 412, 400, 250
+		text	"gui::gui_parm4"
+		textscale	0.9
+		forecolor	1, 1, 1, 0.6
+	}
+	windowDef bgcallh
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 2.8
+		visible	1
+	}
+	windowDef bgcalld
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef bgcallo
+	{
+		rect	0 ,0 ,640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.3 ,0.8 ,0.8 ,1
+		visible	1
+	}
+
+	windowDef Button2
+	{
+		rect	0 ,0 ,640 ,480
+		visible	0
+
+		onAction {
+			set	"cmd"	"play guisounds_error1" ;
+		}
+
+	}
+	windowDef DeniedBG
+	{
+		rect	0, 0, 640, 480
+		backcolor	0, 0, 0, 0.4
+		visible	0
+
+		onTime 0 {
+			transition backcolor "0 0 0 0.4" "0.3 0 0 0.4" "800" ;
+		}
+
+		onTime 800 {
+			transition backcolor "0.3 0 0 0.4" "0 0 0 0.4" "800" ;
+		}
+
+		onTime 1600 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef DeniedBG2
+	{
+		rect	0, 0, 640, 480
+		backcolor	0, 0, 0, 0.7
+		visible	0
+
+		onTime 0 {
+			transition backcolor "0 0 0 0.6" "0.3 0 0 0.7" "800" ;
+		}
+
+		onTime 800 {
+			transition backcolor "0.3 0 0 0.7" "0 0 0 0.6" "800" ;
+		}
+
+		onTime 1600 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef DeniedBG3
+	{
+		rect	4,88,631,338
+		visible	0
+		windowDef btn1_left
+		{
+			rect	5,26,68,282
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_vert"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_Fill
+		{
+			rect	73,26,487,282
+			visible	1
+			backcolor	0.1,0,0,0.42
+		}
+		windowDef btn1_Bottom
+		{
+			rect	73,308,487,26
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_horiz"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_Top
+		{
+			rect	73,0,487,-26
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_horiz"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_corner4
+		{
+			rect	560,308,-68,24
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornersm"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_corner3
+		{
+			rect	5,308,68,24
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornersm"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_corner2
+		{
+			rect	560,2,-68,-24
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornersm"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_corner1
+		{
+			rect	5,2,68,-24
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornersm"
+			matcolor	0.1,0,0,0.9
+		}
+		windowDef btn1_right
+		{
+			rect	560,26,-68,282
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_vert"
+			matcolor	0.1,0,0,0.9
+		}
+	}
+	windowDef AccessD1
+	{
+		rect	0,112,640,310
+		text	"#str_01241"
+		textscale	1.1
+		textalign	1
+		forecolor	1,0,0,1
+		visible	0
+
+		onTime 0 {
+			transition forecolor "1 0 0 1" "1 0 0 0.7" "1000" ;
+		}
+
+		onTime 1000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef AccessD2
+	{
+		rect	0,111,640,310
+		text	"#str_01242"
+		textscale	1.1
+		textalign	1
+		forecolor	1, 0, 0, 1
+		visible	0
+
+		onTime 0 {
+			transition forecolor "1 0 0 1" "1 0 0 0.7" "1000" ;
+		}
+
+		onTime 1000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef AccessD3
+	{
+		rect	0,110,640,310
+		text	"#str_01243"
+		textscale	1.1
+		textalign	1
+		forecolor	1, 0, 0, 1
+		visible	0
+
+		onTime 0 {
+			transition forecolor "1 0 0 1" "1 0 0 0.7" "1000" ;
+		}
+
+		onTime 1000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef AccessD4
+	{
+		rect	0,139,640,260
+		text	"#str_01244"
+		textscale	1.1
+		textalign	1
+		forecolor	1, 0, 0, 0.6
+		visible	0
+
+		onTime 0 {
+			transition forecolor "1 0 0 0.6" "1 0 0 0.3" "1000" ;
+		}
+
+		onTime 1000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef scanlines
+	{
+		rect	0,0,640,480
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+	}
+	windowDef scanpulse
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef scanpulseClamped
+		{
+			rect	0,0,-640,3000
+			matcolor	1,1,1,0.02
+			background	"gui/test/gui_scanpulse2"
+			visible	1
+		}
+	}
+	windowDef dirt
+	{
+		rect	0,0,-640,480
+		matcolor	1,1,1,0.5
+		background	"guis/assets/test/darkedge_noise"
+		visible	1
+	}
+	windowDef Button1
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		notime	1
+
+		onAction {
+			resetTime "0" ; 
+			set	"cmd"	"play guisounds_click ; activate; changefloor" "gui::gui_parm1" ;
+			set "noevents" "1" ;
+		}
+
+		onTime 0 {
+			set "arrowdownh::matcolor" "1 1 1 1" ;
+			set "arrowuph::matcolor" "1 1 1 1" ;
+			set "Textcall::forecolor" "0.8 0.6 0.2 0.8" ;
+		}
+
+		onTime 5000 {
+			transition "arrowdownh::matcolor" "1 1 1 1" "1 1 1 0" "500" ;
+			transition "arrowuph::matcolor" "1 1 1 1" "1 1 1 0" "500" ;
+			transition "Textcall::forecolor" "0.8 0.6 0.2 0.8" "0 0 0 0.5" "700" ;
+			set "noevents" "0" ;
+		}
+
+	}
+}

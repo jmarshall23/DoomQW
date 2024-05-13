@@ -1,0 +1,114 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.5, 1, 0.9, 0.8
+	windowDef BgParent
+	{
+		rect	20, 20, 600, 440
+		visible	1
+		windowDef Bg2
+		{
+			rect	0, 0, 600, 440
+			background	"guis/assets/cpuserver/mars3b.tga"
+			visible	1
+			matcolor	1, 1, 1, 1
+		}
+	}
+	windowDef Pop2Sub
+	{
+		rect	30, 320, 300, 120
+		background	"guis/assets/cpuserver/pop4.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 1
+	}
+	windowDef RedWave
+	{
+		rect	35, 320, 640, 480
+		windowDef testNEW
+		{
+			rect	20, 10, 140, 100
+			background	"gui/bar2"
+			matcolor	1, 0.2, 0.2, 1
+			visible	1
+		}
+		windowDef testNEW0
+		{
+			rect	60, 10, 120, 100
+			background	"gui/bar2"
+			matcolor	1, 0.3, 0.3, 1
+			visible	1
+		}
+		windowDef testNEW1
+		{
+			rect	100, 10, 100, 100
+			background	"gui/bar2"
+			matcolor	1, 0.4, 0.4, 1
+			visible	1
+		}
+		windowDef testNEW2
+		{
+			rect	140, 10, 80, 100
+			background	"gui/bar2"
+			matcolor	1, 0.5, 0.5, 1
+			visible	1
+		}
+		windowDef testNEW3
+		{
+			rect	180, 10, 60, 100
+			background	"gui/bar2"
+			matcolor	1, 0.6, 0.6, 1
+			visible	1
+		}
+		windowDef testNEW4
+		{
+			rect	220, 10, 40, 100
+			background	"gui/bar2"
+			matcolor	1, 0.7, 0.7, 1
+			visible	1
+		}
+		windowDef testNEW5
+		{
+			rect	260, 10, 20, 100
+			background	"gui/bar2"
+			matcolor	1, 0.8, 0.8, 1
+			visible	1
+		}
+	}
+	windowDef Pop3Sub
+	{
+		rect	430, 300, 160, 140
+		background	"guis/assets/cpuserver/pop3.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 1
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef Static
+	{
+		rect	-10 ,-10 ,660 ,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 5
+	}
+	windowDef bgScroll
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"gui/scroll3"
+		matcolor	1, 1,  1, flickertable [ time * 5 ] / 6
+	}
+	windowDef Reflect
+	{
+		rect	5 ,0 ,630 ,470
+		matcolor	1 ,1 ,1 ,0.1
+		visible	1
+		background	"gui/reflect1"
+	}
+}

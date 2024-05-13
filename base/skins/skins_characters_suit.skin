@@ -1,0 +1,300 @@
+skin skins/characters/suit/betruger {
+	models/characters/scientist/head01/scihead01 textures/common/nodraw
+	models/characters/common/lefthead01 textures/common/nodraw
+	models/characters/common/righthead01 textures/common/nodraw
+	models/characters/common/teethhead01 textures/common/nodraw
+	models/characters/scientist/head02/glasses2 textures/common/nodraw
+	models/characters/scientist/head02/glasses2_fx textures/common/nodraw
+
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/characters/scientist/head02/glasses textures/common/nodraw
+	models/characters/scientist/head02/glasses_fx textures/common/nodraw
+	models/characters/common/lefthead02 textures/common/nodraw
+	models/characters/common/righthead02 textures/common/nodraw
+	models/characters/common/teethhead02 textures/common/nodraw
+
+	models/characters/scientist/head03/head03 textures/common/nodraw
+	models/characters/common/lefthead03 textures/common/nodraw
+	models/characters/common/righthead03 textures/common/nodraw
+	models/characters/common/teethhead03 textures/common/nodraw
+
+	models/characters/scientist/head05/head05 textures/common/nodraw
+	models/characters/common/lefthead05 textures/common/nodraw
+	models/characters/common/righthead05 textures/common/nodraw
+	models/characters/common/teethhead05 textures/common/nodraw
+
+	models/characters/scientist/head06/head06 textures/common/nodraw
+	models/characters/common/lefthead06 textures/common/nodraw
+	models/characters/common/righthead06 textures/common/nodraw
+	models/characters/common/teethhead06 textures/common/nodraw
+
+	models/characters/Swann/swann textures/common/nodraw
+	models/characters/Swann/lense textures/common/nodraw
+	models/characters/common/leftswann textures/common/nodraw
+	models/characters/common/rightswann textures/common/nodraw
+	models/characters/common/teethswann textures/common/nodraw
+
+	//models/characters/Betruger/betruger textures/common/nodraw
+	//models/characters/common/leftbet textures/common/nodraw
+	//models/characters/common/rightbet textures/common/nodraw
+	//models/characters/common/teethbet textures/common/nodraw
+}
+
+skin skins/characters/suit/head01 {
+	//models/characters/scientist/head01/scihead01 textures/common/nodraw
+	//models/characters/common/lefthead01 textures/common/nodraw
+	//models/characters/common/righthead01 textures/common/nodraw
+	//models/characters/common/teethhead01 textures/common/nodraw
+	//models/characters/scientist/head02/glasses2 textures/common/nodraw
+	//models/characters/scientist/head02/glasses2_fx textures/common/nodraw
+
+	models/characters/Swann/swann textures/common/nodraw
+	models/characters/Swann/lense textures/common/nodraw
+	models/characters/common/leftswann textures/common/nodraw
+	models/characters/common/rightswann textures/common/nodraw
+	models/characters/common/teethswann textures/common/nodraw
+
+	models/characters/Betruger/betruger textures/common/nodraw
+	models/characters/common/leftbet textures/common/nodraw
+	models/characters/common/rightbet textures/common/nodraw
+	models/characters/common/teethbet textures/common/nodraw
+
+	models/characters/scientist/head05/head05 textures/common/nodraw
+	models/characters/common/lefthead05 textures/common/nodraw
+	models/characters/common/righthead05 textures/common/nodraw
+	models/characters/common/teethhead05 textures/common/nodraw
+
+	models/characters/scientist/head03/head03 textures/common/nodraw
+	models/characters/common/lefthead03 textures/common/nodraw
+	models/characters/common/righthead03 textures/common/nodraw
+	models/characters/common/teethhead03 textures/common/nodraw
+
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/characters/scientist/head02/glasses textures/common/nodraw
+	models/characters/scientist/head02/glasses_fx textures/common/nodraw
+	models/characters/common/lefthead02 textures/common/nodraw
+	models/characters/common/righthead02 textures/common/nodraw
+	models/characters/common/teethhead02 textures/common/nodraw
+
+	models/characters/scientist/head06/head06 textures/common/nodraw
+	models/characters/common/lefthead06 textures/common/nodraw
+	models/characters/common/righthead06 textures/common/nodraw
+	models/characters/common/teethhead06 textures/common/nodraw
+}
+
+skin skins/characters/suit/head02 {
+	models/characters/scientist/head01/scihead01 textures/common/nodraw
+	models/characters/common/lefthead01 textures/common/nodraw
+	models/characters/common/righthead01 textures/common/nodraw
+	models/characters/common/teethhead01 textures/common/nodraw
+	models/characters/scientist/head02/glasses2 textures/common/nodraw
+	models/characters/scientist/head02/glasses2_fx textures/common/nodraw
+
+	//models/characters/scientist/head02/scihead02 textures/common/nodraw
+	//models/characters/scientist/head02/hair textures/common/nodraw
+	//models/characters/scientist/head02/glasses textures/common/nodraw
+	//models/characters/scientist/head02/glasses_fx textures/common/nodraw
+	//models/characters/common/lefthead02 textures/common/nodraw
+	//models/characters/common/righthead02 textures/common/nodraw
+	//models/characters/common/teethhead02 textures/common/nodraw
+
+	models/characters/scientist/head03/head03 textures/common/nodraw
+	models/characters/common/lefthead03 textures/common/nodraw
+	models/characters/common/righthead03 textures/common/nodraw
+	models/characters/common/teethhead03 textures/common/nodraw
+
+	models/characters/scientist/head05/head05 textures/common/nodraw
+	models/characters/common/lefthead05 textures/common/nodraw
+	models/characters/common/righthead05 textures/common/nodraw
+	models/characters/common/teethhead05 textures/common/nodraw
+
+	models/characters/scientist/head06/head06 textures/common/nodraw
+	models/characters/common/lefthead06 textures/common/nodraw
+	models/characters/common/righthead06 textures/common/nodraw
+	models/characters/common/teethhead06 textures/common/nodraw
+
+	models/characters/Swann/swann textures/common/nodraw
+	models/characters/Swann/lense textures/common/nodraw
+	models/characters/common/leftswann textures/common/nodraw
+	models/characters/common/rightswann textures/common/nodraw
+	models/characters/common/teethswann textures/common/nodraw
+
+	models/characters/Betruger/betruger textures/common/nodraw
+	models/characters/common/leftbet textures/common/nodraw
+	models/characters/common/rightbet textures/common/nodraw
+	models/characters/common/teethbet textures/common/nodraw
+}
+
+skin skins/characters/suit/head03 {
+	models/characters/scientist/head01/scihead01 textures/common/nodraw
+	models/characters/common/lefthead01 textures/common/nodraw
+	models/characters/common/righthead01 textures/common/nodraw
+	models/characters/common/teethhead01 textures/common/nodraw
+	models/characters/scientist/head02/glasses2 textures/common/nodraw
+	models/characters/scientist/head02/glasses2_fx textures/common/nodraw
+
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/characters/scientist/head02/glasses textures/common/nodraw
+	models/characters/scientist/head02/glasses_fx textures/common/nodraw
+	models/characters/common/lefthead02 textures/common/nodraw
+	models/characters/common/righthead02 textures/common/nodraw
+	models/characters/common/teethhead02 textures/common/nodraw
+
+	//models/characters/scientist/head03/head03 textures/common/nodraw
+	//models/characters/common/lefthead03 textures/common/nodraw
+	//models/characters/common/righthead03 textures/common/nodraw
+	//models/characters/common/teethhead03 textures/common/nodraw
+
+	models/characters/scientist/head05/head05 textures/common/nodraw
+	models/characters/common/lefthead05 textures/common/nodraw
+	models/characters/common/righthead05 textures/common/nodraw
+	models/characters/common/teethhead05 textures/common/nodraw
+
+	models/characters/scientist/head06/head06 textures/common/nodraw
+	models/characters/common/lefthead06 textures/common/nodraw
+	models/characters/common/righthead06 textures/common/nodraw
+	models/characters/common/teethhead06 textures/common/nodraw
+
+	models/characters/Swann/swann textures/common/nodraw
+	models/characters/Swann/lense textures/common/nodraw
+	models/characters/common/leftswann textures/common/nodraw
+	models/characters/common/rightswann textures/common/nodraw
+	models/characters/common/teethswann textures/common/nodraw
+
+	models/characters/Betruger/betruger textures/common/nodraw
+	models/characters/common/leftbet textures/common/nodraw
+	models/characters/common/rightbet textures/common/nodraw
+	models/characters/common/teethbet textures/common/nodraw
+}
+
+skin skins/characters/suit/head05 {
+	models/characters/scientist/head01/scihead01 textures/common/nodraw
+	models/characters/common/lefthead01 textures/common/nodraw
+	models/characters/common/righthead01 textures/common/nodraw
+	models/characters/common/teethhead01 textures/common/nodraw
+	models/characters/scientist/head02/glasses2 textures/common/nodraw
+	models/characters/scientist/head02/glasses2_fx textures/common/nodraw
+
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/characters/scientist/head02/glasses textures/common/nodraw
+	models/characters/scientist/head02/glasses_fx textures/common/nodraw
+	models/characters/common/lefthead02 textures/common/nodraw
+	models/characters/common/righthead02 textures/common/nodraw
+	models/characters/common/teethhead02 textures/common/nodraw
+
+	models/characters/scientist/head03/head03 textures/common/nodraw
+	models/characters/common/lefthead03 textures/common/nodraw
+	models/characters/common/righthead03 textures/common/nodraw
+	models/characters/common/teethhead03 textures/common/nodraw
+
+	//models/characters/scientist/head05/head05 textures/common/nodraw
+	//models/characters/common/lefthead05 textures/common/nodraw
+	//models/characters/common/righthead05 textures/common/nodraw
+	//models/characters/common/teethhead05 textures/common/nodraw
+
+	models/characters/scientist/head06/head06 textures/common/nodraw
+	models/characters/common/lefthead06 textures/common/nodraw
+	models/characters/common/righthead06 textures/common/nodraw
+	models/characters/common/teethhead06 textures/common/nodraw
+
+	models/characters/Swann/swann textures/common/nodraw
+	models/characters/Swann/lense textures/common/nodraw
+	models/characters/common/leftswann textures/common/nodraw
+	models/characters/common/rightswann textures/common/nodraw
+	models/characters/common/teethswann textures/common/nodraw
+
+	models/characters/Betruger/betruger textures/common/nodraw
+	models/characters/common/leftbet textures/common/nodraw
+	models/characters/common/rightbet textures/common/nodraw
+	models/characters/common/teethbet textures/common/nodraw
+}
+
+skin skins/characters/suit/head06 {
+	models/characters/scientist/head01/scihead01 textures/common/nodraw
+	models/characters/common/lefthead01 textures/common/nodraw
+	models/characters/common/righthead01 textures/common/nodraw
+	models/characters/common/teethhead01 textures/common/nodraw
+	models/characters/scientist/head02/glasses2 textures/common/nodraw
+	models/characters/scientist/head02/glasses2_fx textures/common/nodraw
+
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/characters/scientist/head02/glasses textures/common/nodraw
+	models/characters/scientist/head02/glasses_fx textures/common/nodraw
+	models/characters/common/lefthead02 textures/common/nodraw
+	models/characters/common/righthead02 textures/common/nodraw
+	models/characters/common/teethhead02 textures/common/nodraw
+
+	models/characters/scientist/head03/head03 textures/common/nodraw
+	models/characters/common/lefthead03 textures/common/nodraw
+	models/characters/common/righthead03 textures/common/nodraw
+	models/characters/common/teethhead03 textures/common/nodraw
+
+	models/characters/scientist/head05/head05 textures/common/nodraw
+	models/characters/common/lefthead05 textures/common/nodraw
+	models/characters/common/righthead05 textures/common/nodraw
+	models/characters/common/teethhead05 textures/common/nodraw
+
+	//models/characters/scientist/head06/head06 textures/common/nodraw
+	//models/characters/common/lefthead06 textures/common/nodraw
+	//models/characters/common/righthead06 textures/common/nodraw
+	//models/characters/common/teethhead06 textures/common/nodraw
+
+	models/characters/Swann/swann textures/common/nodraw
+	models/characters/Swann/lense textures/common/nodraw
+	models/characters/common/leftswann textures/common/nodraw
+	models/characters/common/rightswann textures/common/nodraw
+	models/characters/common/teethswann textures/common/nodraw
+
+	models/characters/Betruger/betruger textures/common/nodraw
+	models/characters/common/leftbet textures/common/nodraw
+	models/characters/common/rightbet textures/common/nodraw
+	models/characters/common/teethbet textures/common/nodraw
+}
+
+skin skins/characters/suit/swann {
+	models/characters/scientist/head01/scihead01 textures/common/nodraw
+	models/characters/common/lefthead01 textures/common/nodraw
+	models/characters/common/righthead01 textures/common/nodraw
+	models/characters/common/teethhead01 textures/common/nodraw
+	models/characters/scientist/head02/glasses2 textures/common/nodraw
+	models/characters/scientist/head02/glasses2_fx textures/common/nodraw
+
+	models/characters/scientist/head02/scihead02 textures/common/nodraw
+	models/characters/scientist/head02/hair textures/common/nodraw
+	models/characters/scientist/head02/glasses textures/common/nodraw
+	models/characters/scientist/head02/glasses_fx textures/common/nodraw
+	models/characters/common/lefthead02 textures/common/nodraw
+	models/characters/common/righthead02 textures/common/nodraw
+	models/characters/common/teethhead02 textures/common/nodraw
+
+	models/characters/scientist/head03/head03 textures/common/nodraw
+	models/characters/common/lefthead03 textures/common/nodraw
+	models/characters/common/righthead03 textures/common/nodraw
+	models/characters/common/teethhead03 textures/common/nodraw
+
+	models/characters/scientist/head05/head05 textures/common/nodraw
+	models/characters/common/lefthead05 textures/common/nodraw
+	models/characters/common/righthead05 textures/common/nodraw
+	models/characters/common/teethhead05 textures/common/nodraw
+
+	models/characters/scientist/head06/head06 textures/common/nodraw
+	models/characters/common/lefthead06 textures/common/nodraw
+	models/characters/common/righthead06 textures/common/nodraw
+	models/characters/common/teethhead06 textures/common/nodraw
+
+	//models/characters/Swann/swann textures/common/nodraw
+	//models/characters/Swann/lense textures/common/nodraw
+	//models/characters/common/leftswann textures/common/nodraw
+	//models/characters/common/rightswann textures/common/nodraw
+	//models/characters/common/teethswann textures/common/nodraw
+
+	models/characters/Betruger/betruger textures/common/nodraw
+	models/characters/common/leftbet textures/common/nodraw
+	models/characters/common/rightbet textures/common/nodraw
+	models/characters/common/teethbet textures/common/nodraw
+}

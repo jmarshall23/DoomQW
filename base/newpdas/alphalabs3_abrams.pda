@@ -1,0 +1,63 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda alphalabs3_abrams {
+	name         "Michael Abrams"
+	fullname     "Michael G. Abrams"
+	icon         "guis/assets/pda/abrams"
+	id           "6734-51"
+	post         "Delta Security, Level 2"
+	title        "Security Chief"
+	security     ""
+	pda_email    "alphalabs3_abrams_email_1"
+	pda_email    "alphalabs3_abrams_email_2"
+	pda_email    "alphalabs3_abrams_email_3"
+	pda_audio    "alphalabs3_abrams_audio_1"
+}
+
+email alphalabs3_abrams_email_1 {
+	date		"10-26-2145"
+	to		"Michael Abrams"
+	from		"Henry Nelson"
+	subject	"Security Sweep Request"
+	text {
+"Mr. Abrams,\n\n"
+"We've been getting a lot of reports about strange noises (voices?) down here.  My team is on edge and most are unable to work.  It might help if you could send a security detachment to Alpha Sector 4 to do a sweep of the area.\n\n"
+"I know this sounds crazy but it would make myself and my team feel a lot better.\n\n"
+"Henry Nelson"
+	}
+}
+
+email alphalabs3_abrams_email_2 {
+	date		"11-10-2145"
+	to		"Michael Abrams"
+	from		"Human Resources"
+	subject	"Personnel Request"
+	text {
+"Security Chief Abrams\n\n"
+"As you requested we are sending more security guards to your security unit. The events of Gormen's death were tragic and we hope that any future incidents can be dealt with safely.\n\n"
+"Expect the new rotation of personnel in about 10 working days.\n\n"
+"Director Kellsie Krisch\nHuman Resources....'We make working on Mars feel like home'"
+
+	}
+}
+
+email alphalabs3_abrams_email_3 {
+	date		"11-15-2145"
+	to		"Michael Abrams"
+	from		"I.T. Security"
+	subject	"Invalid Number in code"
+	text {
+"Mr. Abrams,\n\n"
+"We are unable to process your door code request because you included a 0 in the number sequence and as you should have known 0 is not a valid number on door codes. Because of the importance of your request we've decided to take it upon ourselves and replace the 0 with a 3.\nPlease advise if this causes a problem.\n\n"
+"I.T. Security"
+	}
+}
+
+
+audio alphalabs3_abrams_audio_1 {
+	name		"Security Report"
+	info		"Made by: Michael Abrams\nDate: 11-15-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_alphalabs3_abrams_1"
+}
+

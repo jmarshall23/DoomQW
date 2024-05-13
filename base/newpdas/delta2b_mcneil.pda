@@ -1,0 +1,64 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta2b_McNeil 
+{
+	name         "Elizabeth McNeil"
+	fullname     "Elizabeth A. McNeil"
+	icon         "guis/assets/pda/McNeil"
+	id           "5145-84"
+	post         "Delta Labs, Level 2"
+	title        "Research Director"
+	security     ""
+	pda_email    "delta2b_McNeil_email_1"
+	pda_email    "delta2b_McNeil_email_2"
+	pda_email    "delta2b_McNeil_email_3"
+
+}
+
+email delta2b_McNeil_email_1
+{
+	date		"10-02-2145"
+	to		"Liz McNeil"
+	from		"Elliot Swann"
+	subject	"Investigation Report"
+	text 
+	{
+"Ms. McNeil\n\n"
+"I have received your formal request for an inquiry into the activities on Mars. As requested by the Board, I will be departing soon to investigate your claims. Your charges against Dr. Malcolm Betruger are being taken very seriously.  As you may already know, the UAC, as a matter of policy, will not acknowledge or comment on questions or statements advanced by the press based on rumor or heresay. I have been asked to explain that you are not to discuss this situation with anyone outside of our legal department.\n\n"
+"Thank You,\n"
+"Elliot Swann\n"
+"UAC Executive Counsel"
+	}
+}
+
+email delta2b_McNeil_email_2
+{
+	date		"10-08-2145"
+	to		"Liz McNeil"
+	from		"Michael Abrams"
+	subject	"Storage room code changes"
+	text 
+	{
+"All Delta Level 2 Personnel,\n\n"
+"In an effort to minimize supply requirement errors,  I'm having all the access codes to secure storage areas changed.  We must continue to keep tight records for all inventory kept in storage. Please update your records with the new code for Storage area 07, to: 7 2 5.\n\n"
+"Thank You,\n"
+"Mike Abrams\n"
+"Delta Security, Chief"
+	}
+}
+
+email delta2b_McNeil_email_3 
+{
+	date		"10-15-2145"
+	to			"Liz McNeil"
+	from		"Michael Abrams"
+	subject		"Level 3 Access Code Change"
+	text 
+	{
+"All Delta Level 2 Personnel,\n\n"
+"Level 3 access codes have been changed due to the six month rotation.  The new code is 463\n\n"
+"Thank You,\n"
+"Mike Abrams\n"
+"Delta Security, Chief"
+	}
+}

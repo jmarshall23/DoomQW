@@ -1,0 +1,918 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	visible	1
+	comment	"gui_parm2 is reported to the gui from the script to show the current rotation number, ranges from 0 to 90.\n\nThe large left arrow will run the script defined in gui_parm7 (turn left) on the first click, and gui_parm12 (stop turning) on the 2nd, then repeats.\nLarge right arrow runs gui_parm8 (turn right) on first click and gui_parm12 (stop turning) on 2nd, then repeats.\n\nTrigger the gui after the invasion to break it."
+	float	"active"	0
+	float	"mattwantsmanyfeaturesfrompat" 0
+
+	onEvent {	
+		if ("gui::gui_parm2" >= 90) { 
+			if ("TriggerButtonRight::active" == 1) { 
+			//	runScript	"gui::gui_parm12" ;
+				set "ArrowRight::matcolor" "1 1 1 0.1" ;
+			//	set	"cmd"	"play guisounds_click1" ;
+				set "SpinCirc::matcolor" "0 0 0 0.3" ;
+				set "SpinCircR::matcolor" "0 0 0 0" ;
+				set "active" "0" ;
+			}
+			set "TriggerButtonRight::visible" "0" ;
+			set "TriggerButtonRightError::visible" "1" ;
+		} else {
+			set "TriggerButtonRight::visible" "1" ;
+			set "TriggerButtonRightError::visible" "0" ;		
+		}
+		if ("gui::gui_parm2" <= 0) { 
+			if ("TriggerButtonLeft::active" == 1) { 
+			//	runScript	"gui::gui_parm12" ;
+				set "ArrowLeft::matcolor" "1 1 1 0.1" ;
+			//	set	"cmd"	"play guisounds_click1" ;
+				set "SpinCirc::matcolor" "0 0 0 0.3" ;
+				set "SpinCircL::matcolor" "0 0 0 0" ;
+				set "active" "0" ;
+			}
+			set "TriggerButtonLeft::visible" "0" ;	
+			set "TriggerButtonLeftError::visible" "1" ;	
+		} else {
+			set "TriggerButtonLeft::visible" "1" ;
+			set "TriggerButtonLeftError::visible" "0" ;		
+		}
+	}
+
+	onTrigger {
+		set "Broken::visible" "1" ;
+		set "Text21::visible" "0" ;
+		set "TriggerButtonLeft::noevents" "1" ;
+		set "TriggerButtonRight::noevents" "1" ;
+	}
+	
+	windowDef Over
+	{
+		rect	0 ,0 ,640 ,480
+		matcolor	1 ,1 ,1 ,0.8
+		visible	1
+		background	"guis/assets/dataplug/bg3"
+	}
+	windowDef Over2
+	{
+		rect	20,155,640,340
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+		windowDef ABoxTL
+		{
+			rect	-1,70,203,113
+			visible	1
+			background	"guis/assets/caverns/cranebox"
+			matcolor	1,1,1,0.25
+		}
+		windowDef ABoxBL
+		{
+			rect	-1,201,203,-114
+			visible	1
+			background	"guis/assets/caverns/cranebox"
+			matcolor	1,1,1,0.25
+		}
+		windowDef ABoxTR
+		{
+			rect	226,70,-203,113
+			visible	1
+			background	"guis/assets/caverns/cranebox"
+			matcolor	1,1,1,0.25
+		}
+		windowDef ABoxBR
+		{
+			rect	226,201,-203,-114
+			visible	1
+			background	"guis/assets/caverns/cranebox"
+			matcolor	1,1,1,0.25
+		}
+		windowDef ArrowLeft
+		{
+			rect	4,105,131,174
+			visible	1
+			background	"guis/assets/caverns/arrowlr"
+			matcolor	1,1,1,0.1
+		}
+		windowDef ArrowRight
+		{
+			rect	292,105,-131,174
+			visible	1
+			background	"guis/assets/caverns/arrowlr"
+			matcolor	1,1,1,0.1
+		}
+		windowDef Circ
+		{
+			rect	137,96,153,192
+			visible	1
+			background	"guis/assets/caverns/circ"
+			matcolor	1,1,1,0.1
+		}
+		windowDef SpinCirc
+		{
+			rect	137,96,153,192
+			visible	1
+			background	"guis/assets/caverns/spincirc"
+			matcolor	0,0,0,0.3
+		}
+		windowDef SpinCircL
+		{
+			rect	137,96,153,192
+			visible	1
+			background	"gui/caves/cranespinl"
+			matcolor	0,0,0,0
+		}
+		windowDef SpinCircR
+		{
+			rect	137,96,153,192
+			visible	1
+			background	"gui/caves/cranespinr"
+			matcolor	0,0,0,0
+		}
+	}
+	windowDef Bar1
+	{
+		rect	20,74,430,30
+		matcolor	0.02 ,0.45 ,0.43 ,1
+		visible	1
+		background	"guis/assets/dataplug/bar"
+	}
+	windowDef Bar2
+	{
+		rect	20,184,430,-30
+		matcolor	0.02 ,0.45 ,0.43 ,1
+		visible	1
+		background	"guis/assets/dataplug/bar"
+	}
+	windowDef Grid
+	{
+		rect	-4 ,20 ,480 ,564
+		visible	1
+		background	"guis/assets/keypad/bridgegrid"
+		matcolor	1, 1, 1, 0
+	}
+	windowDef Text
+	"{"
+		rect	15,17,606,47
+		forecolor	1,1,1,1
+		text	"#str_03837"
+		textscale	0.7
+		textalign	1
+		visible	1
+		font	"fonts/micro"
+	}
+	windowDef Spin
+	{
+		rect	19,89,52,66
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+		background	"gui/epd/spin"
+	}
+	windowDef Spin1
+	{
+		rect	19,89,52,66
+		background	"gui/spintest2"
+		matcolor	0.5, 0.9, 1, flickerTable[time * 0.2]
+		visible	1
+	}
+	windowDef Text2
+	{
+		rect	63,103,372,33
+		forecolor	1 ,1 ,1 ,1
+		text	"#str_03835"
+		textscale	0.47
+		visible	1
+
+		onTime 0 {
+			transition "forecolor" "0.6 1 1 1" " 0.6 1 1 0" "400" ;
+		}
+
+		onTime 400 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Text11
+	{
+		rect	469,394,150,67
+		forecolor	1,1,1,0.8
+		text	"#str_01517"
+		textscale	0.5
+		visible	1
+		textalign	1
+		font	"fonts/micro"
+
+		onTime 0 {
+			transition "forecolor" "1 1 1 0.5" "1 1 1 0" "1000" ;
+		}
+
+		onTime 1000 {
+			transition "forecolor" "1 1 1 0" "1 1 1 0.5" "1000" ;
+		}
+
+		onTime 2000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Text3
+	{
+		rect	479,314,135,71
+		forecolor	1, 0.8, 0.5, 0.2
+		text	"#str_00055"
+		textscale	0.4
+		visible	1
+
+		onTime 0 {
+			set "text" "#str_00056" ;
+		}
+
+		onTime 50 {
+			set "text" "#str_00057" ;
+		}
+
+		onTime 100 {
+			set "text" "#str_00055" ;
+		}
+
+		onTime 150 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Text21
+	{
+		rect	71,134,233,49
+		forecolor	1,1,1,1
+		text	"#str_01522"
+		textscale	0.4
+		visible	1
+
+		onTime 0 {
+			set "text" "#str_01522" ;
+		}
+
+		onTime 500 {
+			set "text" "#str_01523" ;
+		}
+
+		onTime 1000 {
+			set "text" "#str_01524" ;
+		}
+
+		onTime 1500 {
+			set "text" "#str_01525" ;
+		}
+
+		onTime 2000 {
+			set "text" "#str_01526" ;
+		}
+
+		onTime 2250 {
+			set "text" "#str_01527" ;
+		}
+
+		onTime 2500 {
+			set "text" "#str_01528" ;
+		}
+
+		onTime 2750 {
+			set "text" "#str_01527" ;
+		}
+
+		onTime 3000 {
+			set "text" "#str_01528" ;
+		}
+
+		onTime 3250 {
+			set "text" "#str_01527" ;
+		}
+
+		onTime 3500 {
+			set "text" "#str_01528" ;
+		}
+
+		onTime 4000 {
+			set "text" "#str_01529" ;
+		}
+
+		onTime 4500 {
+			set "text" "#str_01530" ;
+		}
+
+		onTime 5000 {
+			set "text" "#str_01531" ;
+		}
+
+		onTime 5500 {
+			set "text" "#str_01532" ;
+		}
+
+		onTime 6000 {
+			set "text" "#str_01533" ;
+		}
+
+		onTime 6500 {
+			set "text" "#str_01534" ;
+		}
+
+		onTime 8000 {
+			set "text" " " ;
+		}
+
+		onTime 9000 {
+			set "text" "#str_01521" ;
+		}
+
+		onTime 12000 {
+			set "text" " " ;
+		}
+
+		onTime 13000 {
+			set "text" "#str_01522" ;
+		}
+
+		onTime 14000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Buttons
+	{
+		rect	470,94,148,211
+		visible	1
+
+		onTime 0 {
+			transition "BigButton42::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 150 {
+			transition "BigButton11::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 200 {
+			transition "BigButton3::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 400 {
+			transition "BigButton24::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 520 {
+			transition "BigButton32::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 700 {
+			transition "BigButton44::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 750 {
+			transition "BigButton22::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 950 {
+			transition "BigButton14::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 1070 {
+			transition "BigButton1::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 1200 {
+			transition "BigButton23::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 1420 {
+			transition "BigButton21::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 2020 {
+			transition "BigButton43::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 2050 {
+			transition "BigButton34::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 2150 {
+			transition "BigButton2::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 2200 {
+			transition "BigButton13::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 2400 {
+			transition "BigButton42::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 2520 {
+			transition "BigButton12::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 2700 {
+			transition "BigButton32::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 2750 {
+			transition "BigButton33::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 2950 {
+			transition "BigButton4::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 3070 {
+			transition "BigButton31::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 3200 {
+			transition "BigButton41::matcolor" "1 1 1 0.6" "0.6 1 1 0.3" "100" ;
+		}
+
+		onTime 3300 {
+			resetTime "0" ;
+		}
+
+		windowDef BigButton1
+		{
+			rect	5,3,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton2
+		{
+			rect	40,3,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton3
+		{
+			rect	75,3,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton4
+		{
+			rect	110,3,33,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton11
+		{
+			rect	5,44,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton21
+		{
+			rect	40,44,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton31
+		{
+			rect	75,44,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton41
+		{
+			rect	110,44,33,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton12
+		{
+			rect	5,86,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton22
+		{
+			rect	40,86,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton32
+		{
+			rect	75,86,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton42
+		{
+			rect	110,86,33,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton13
+		{
+			rect	5,127,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton23
+		{
+			rect	40,127,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton33
+		{
+			rect	75,127,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton43
+		{
+			rect	110,127,33,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton14
+		{
+			rect	5,169,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton24
+		{
+			rect	40,169,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton34
+		{
+			rect	75,169,32,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+		windowDef BigButton44
+		{
+			rect	110,169,33,37
+			visible	1
+			background	"guis/assets/cpuserver/bgwhitesmall"
+			matcolor	0.6,1,1,0.3
+		}
+	}
+	windowDef RotateText
+	{
+		rect	173,303,124,99
+		text	"gui::gui_parm2"
+		textscale	1.4
+		textalign	1
+		forecolor	0, 0, 0, 0.3
+		visible	1
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.1 ,0.3 ,0.3 ,1
+		visible	1
+	}
+	windowDef Broken
+	{
+		rect	0,0,640,480
+		visible	0
+		windowDef BG11
+		{
+			rect	5,5,630,471
+			visible	1
+			background	"guis/assets/common/bg"
+			matcolor	0.5,0,0,0.1
+		}
+		windowDef Text211
+		{
+			rect	64,134,339,49
+			forecolor	1,0,0,0.8
+			text	"#str_03836"
+			textscale	0.65
+			visible	1
+
+			onTime 0 {
+				transition "forecolor" "1 0 0 0.8" "1 0 0 0.4" "1000" ;
+			}
+
+			onTime 1000 {
+				transition "forecolor" "1 0 0 0.4" "1 0 0 0.8" "1000" ;
+			}
+
+			onTime 2000 {
+				resetTime "0" ;	
+			}
+
+		}
+		windowDef Addhighlight1
+		{
+			rect	0,0,-640,480
+			background	"gui/addhighlight"
+			matcolor	1 ,0 ,0,1
+			visible	1
+		}
+		windowDef Text111
+		{
+			rect	6,225,449,255
+			forecolor	1,0,0,1
+			text	"#str_01535"
+			textscale	1
+			visible	1
+			textalign	1
+			font	"fonts/micro"
+
+			onTime 0 {
+				transition "forecolor" "1 0 0 1" "1 0 0 0" "600" ;
+				transition "Addhighlight2::matcolor" "1 0 0 1" "0 0 0 0" "600" ;
+				transition "Addhighlight1::matcolor" "1 0 0 1" "0 0 0 0" "600" ;
+			}
+
+			onTime 600 {
+				transition "forecolor" "1 0 0 0" "1 0 0 1" "200" ;
+				transition "Addhighlight2::matcolor" "0 0 0 0" "1 0 0 1" "200" ;
+				transition "Addhighlight1::matcolor" "0 0 0 0" "1 0 0 1" "200" ;	
+			}
+
+			onTime 800 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Bglow1
+		{
+			rect	0,0,640,480
+			background	"guis/assets/cpuserver/bglow.tga"
+			visible	1
+			matcolor	1, 0.2, 0, 0.1
+		}
+		windowDef Flicker1
+		{
+			rect	0,0,640,-480
+			background	"guis/assets/cpuserver/bg.tga"
+			matcolor	0.6, 0.9, 1, 0.1
+			visible	1
+
+			onTime 0 {
+				transition "matcolor" "0.6 0.9 1 0.1" "0.6 0.9 1 0" "400" ;
+			}
+
+			onTime 800 {
+				transition "matcolor" "0.6 0.9 1 0" "0.6 0.9 1 0.3" "700" ;
+			}
+
+			onTime 1500 {
+				transition "matcolor" "0.6 0.9 1 0.3" "0.6 0.9 1 0" "300" ;
+			}
+
+			onTime 2000 {
+				transition "matcolor" "0.6 0.9 1 0" "0.6 0.9 1 0.1" "300" ;
+			}
+
+			onTime 3500 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Flicker2
+		{
+			rect	0,0,-640,480
+			visible	1
+			background	"gui/testmat"
+			matcolor	1, 1, 1, 0.1
+		}
+		windowDef Addhighlight2
+		{
+			rect	0,0,640,-480
+			background	"gui/addhighlight"
+			matcolor	1 ,0 ,0 ,1
+			visible	1
+		}
+		windowDef Background6
+		{
+			rect	0,0,-640,480
+			visible	1
+			background	"gui/bloodtest2"
+			matcolor	0.5, 0.2, 0.2, 0.2
+
+			onTime 0 {
+				transition "matcolor" "0.6 0.6 0.6 0.15" "0.4 0.4 0.4 0.2" "500" ;
+			}
+
+			onTime 700 {
+				transition "matcolor" "0.4 0.4 0.4 0.2" "0.6 0.6 0.6 0.15" "500" ;
+			}
+
+			onTime 2000 {
+				resetTime "0" ;
+			}
+
+		}
+	}
+	windowDef Static
+	{
+		rect	-10 ,-10 ,660 ,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 8
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,-640,480
+		matcolor	1,1,1,1
+		background	"gui/test/gui_scanlines"
+		visible	1
+		matscaley	1.5
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,-640 ,480
+		matcolor	1, 1, 1 ,1
+		visible	1
+		background	"guis/assets/common/dirt1"
+		noevents	1
+	}
+	windowDef Dirt1
+	{
+		rect	0,0,-640,480
+		matcolor	1, 1, 1 ,1
+		visible	1
+		background	"guis/assets/common/dirt4"
+		noevents	1
+	}
+
+	windowDef TriggerButtonLeftError
+	{
+		rect	21,227,150,241
+		cursor	1
+		visible	0
+
+		onAction {
+			if ("desktop::mattwantsmanyfeaturesfrompat" == 0) { 
+				set	"cmd"	"activate trigger_stopthat ; play guisounds_click1" ;				
+				set "desktop::mattwantsmanyfeaturesfrompat" "1" ;
+			} else {		
+				set	"cmd"	"play guisounds_error" ;
+			}
+		}
+
+	}
+	windowDef TriggerButtonRightError
+	{
+		rect	296,227,151,240
+		cursor	1
+		visible	0
+
+		onAction {
+			if ("desktop::mattwantsmanyfeaturesfrompat" == 0) { 
+				set	"cmd"	"activate trigger_stopthat ; play guisounds_click1" ;				
+				set "desktop::mattwantsmanyfeaturesfrompat" "1" ;
+			} else {		
+				set	"cmd"	"play guisounds_error" ;
+			}
+		}
+
+	}	
+	
+	windowDef TriggerButtonLeft
+	{
+		rect	21,227,150,241
+		cursor	1
+		visible	1
+		float	"active"	0
+
+		onAction {
+			resetTime "noclick" "0" ;
+			if ("desktop::active" == 1) { 
+				transition "ArrowLeft::matcolor" "1 1 1 0.3" "1 1 1 0.1" "400" ;
+				if ("desktop::mattwantsmanyfeaturesfrompat" == 0) { 
+					set	"cmd"	"activate trigger_stopthat ; play guisounds_click1" ;				
+					set "desktop::mattwantsmanyfeaturesfrompat" "1" ;
+				} else {				
+					set	"cmd"	"play guisounds_click1" ;
+				}
+				transition "SpinCirc::matcolor" "0 0 0 0" "0 0 0 0.3" "400" ;
+				transition "SpinCircL::matcolor" "0 0 0 0.3" "0 0 0 0" "400" ;
+				runScript	"gui::gui_parm12" ;
+				set "desktop::active" 	"0" ;
+				set "active" "0" ;
+				set "ArrowRight::matcolor" "1 1 1 0.1";
+				set "SpinCircR::matcolor" "0 0 0 0" ;				
+			} else {
+				transition "ArrowLeft::matcolor" "1 1 1 0.6" "1 1 1 0.4" "200" ;
+				if ("desktop::mattwantsmanyfeaturesfrompat" == 0) { 
+					set	"cmd"	"activate trigger_stopthat ; play guisounds_click1" ;					
+					set "desktop::mattwantsmanyfeaturesfrompat" "1" ;
+				} else {				
+					set	"cmd"	"play guisounds_beep1" ;
+				}
+				transition "SpinCirc::matcolor" "0 0 0 0.3" "0 0 0 0" "400" ;
+				transition "SpinCircL::matcolor" "0 0 0 0" "0 0 0 0.3" "400" ;
+				runScript	"gui::gui_parm7" ; 
+				set "desktop::active" 	"1" ;
+				set "active" "1" ;
+			}
+//			if ("TriggerButtonRight::active" == 1) { 
+//				transition "ArrowRight::matcolor" "1 1 1 0.3" "1 1 1 0.1" "400" ;
+//				transition "SpinCircR::matcolor" "0 0 0 0.3" "0 0 0 0" "400" ;
+//				set "TriggerButtonRight::active" "0" ;
+//			}
+		}
+
+	}
+	windowDef TriggerButtonRight
+	{
+		rect	296,227,151,240
+		cursor	1
+		visible	1
+		float	"active"	0
+
+		onAction {
+			resetTime "noclick" "0" ;
+			if ("desktop::active" == 1) { 
+				transition "ArrowRight::matcolor" "1 1 1 0.3" "1 1 1 0.1" "400" ;
+				if ("desktop::mattwantsmanyfeaturesfrompat" == 0) { 
+					set	"cmd"	"activate trigger_stopthat ; play guisounds_click1" ;				
+					set "desktop::mattwantsmanyfeaturesfrompat" "1" ;
+				} else {				
+					set	"cmd"	"play guisounds_click1" ;
+				}
+				transition "SpinCirc::matcolor" "0 0 0 0" "0 0 0 0.3" "400" ;
+				transition "SpinCircR::matcolor" "0 0 0 0.3" "0 0 0 0" "400" ;
+				runScript	"gui::gui_parm12" ;
+				set "desktop::active" 	"0" ;
+				set "active" "0" ;
+				set "ArrowLeft::matcolor" "1 1 1 0.1" ;
+				set "SpinCircL::matcolor" "0 0 0 0" ;				
+			} else {
+				transition "ArrowRight::matcolor" "1 1 1 0.6" "1 1 1 0.4" "200" ;
+				if ("desktop::mattwantsmanyfeaturesfrompat" == 0) { 
+					set	"cmd"	"activate trigger_stopthat ; play guisounds_click1" ;					
+					set "desktop::mattwantsmanyfeaturesfrompat" "1" ;
+				} else {				
+					set	"cmd"	"play guisounds_beep1" ;
+				}
+				transition "SpinCirc::matcolor" "0 0 0 0.3" "0 0 0 0" "400" ;
+				transition "SpinCircR::matcolor" "0 0 0 0" "0 0 0 0.3" "400" ;
+				runScript	"gui::gui_parm8" ; 
+				set "desktop::active" 	"1" ;
+				set "active" "1" ;
+			}
+//			if ("TriggerButtonLeft::active" == 1) { 
+//				transition "ArrowLeft::matcolor" "1 1 1 0.3" "1 1 1 0.1" "400" ;
+//				transition "SpinCircL::matcolor" "0 0 0 0.3" "0 0 0 0" "400" ;
+//				set "TriggerButtonLeft::active" "0" ;
+//			}
+		}
+
+	}
+
+	windowDef Noclick
+	{
+		rect	0,0,0,0
+		visible	1
+		notime 1
+		
+		onAction {
+		
+		}
+		
+		onTime 0 {
+			set "rect" "0 0 640 480" ;
+		}
+		onTime 1000 {
+			set "rect" "0 0 0 0" ;
+		}		
+	}
+}

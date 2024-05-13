@@ -1,0 +1,283 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	backcolor	0 ,0 ,0 ,1
+	windowDef Text1
+	{
+		rect	20,120,600,200
+		text	"#str_01747"
+		textscale	2
+		textalign	1
+		forecolor	1, 0.2, 0.2, 1
+		visible	1
+		nowrap	1
+
+		onTime 0 {
+			set		"Text1::visible" "0" ;
+			set		"Text2::visible" "0" ;
+		}
+
+		onTime 50 {
+			set		"Text1::visible" "1" ;
+			set		"Text2::visible" "1" ;
+		}
+
+		onTime 600 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Text2
+	{
+		rect	30,350,600,100
+		text	"#str_01255"
+		textscale	2
+		textalign	1
+		forecolor	1, 0.2, 0.2, 1
+		visible	1
+		nowrap	1
+
+		onTime 0 {
+			transition	"Text1::forecolor" "1 0.2 0.2 0.5" "1 0.2 0.2 1" "600" ;
+			transition	"Text2::forecolor" "1 0.2 0.2 0.5" "1 0.2 0.2 1" "600" ;
+		}
+
+		onTime 900 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Overlay
+	{
+		rect	5 ,5 ,630 ,470
+		visible	1
+		background	"guis/assets/keypad/over_bridge"
+		matcolor	0.6, 0.8, 0.9, pdscaleTable[ time * 0.0005 ] / 2.5
+
+		onTime 0 {
+			set "background" "guis/assets/keypad/over_bridged" ;
+			set "rect" "5 6 625 468" ;
+		}
+
+		onTime 50 {
+			set "background" "guis/assets/keypad/over_bridge" ;
+			set "rect" "5 15 626 465" ;
+		}
+
+		onTime 750 {
+			set "background" "guis/assets/keypad/over_bridged" ;
+			set "rect" "5 6 625 468" ;
+		}
+
+		onTime 800 {
+			set "background" "guis/assets/keypad/over_bridge" ;
+			set "rect" "5 15 626 465" ;
+		}
+
+		onTime 1270 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Bg1
+	{
+		rect	5 ,5 ,630 ,235
+		visible	1
+		background	"guis/assets/doors/adminbg"
+		matcolor	0.6, 0.85, 0.8, 0.2
+
+		onTime 0 {
+			set "rect" "5 5 630 235" ;
+		}
+
+		onTime 100 {
+			set "rect" "7 6 627 234" ;
+		}
+
+		onTime 200 {
+			set "rect" "5 5 630 235" ;
+		}
+
+		onTime 250 {
+			set "rect" "7 6 627 234" ;
+		}
+
+		onTime 300 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Bg3
+	{
+		rect	5 ,240 ,630 ,-235
+		visible	1
+		background	"guis/assets/doors/adminbg"
+		matcolor	0.6, 0.85, 0.8, 0.2
+
+		onTime 0 {
+			set "rect" "5 240 630 -235" ;
+		}
+
+		onTime 100 {
+			set "rect" "7 241 627 -234" ;
+		}
+
+		onTime 200 {
+			set "rect" "5 240 630 -235" ;
+		}
+
+		onTime 250 {
+			set "rect" "7 241 627 -234" ;
+		}
+
+		onTime 300 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef TextA
+	{
+		rect	80, 45, 540, 200
+		text	"#str_00058"
+		font	"fonts/bank"
+		textscale	1
+		forecolor	0.4, 0.6, 0.6, 0.05
+		visible	1
+
+		onTime 0 {
+			set "rect" "80 65 540 200" ;
+		}
+
+		onTime 100 {
+			set "rect" "83 62 540 200" ;
+		}
+
+		onTime 200 {
+			set "rect" "78 61 540 200" ;
+			set "text" "#str_00059" ;
+		}
+
+		onTime 250 {
+			set "rect" "80 65 540 200" ;
+			set "text" "#str_00058" ;
+		}
+
+		onTime 400 {
+			set "rect" "83 62 540 200" ;
+		}
+
+		onTime 450 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Static
+	{
+		rect	-10 ,-10 ,660 ,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 4
+	}
+	windowDef Mask
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"guis/assets/test/mask"
+		matcolor	1, 1, 1, 0
+	}
+	windowDef Addhighlight1
+	{
+		rect	0 ,0 ,640 ,280
+		background	"gui/addhighlight"
+		matcolor	0.8 ,0.4 ,0.4 ,1
+		visible	1
+	}
+	windowDef Addhighlight2
+	{
+		rect	0 ,200 ,640 ,-280
+		background	"gui/addhighlight"
+		matcolor	0.9 ,0 ,0 ,1
+		visible	1
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,640 ,480
+		matcolor	1, 1, 1 ,pdhalffade[ time * 0.001 ]
+		visible	1
+		background	"guis/assets/common/dirt3"
+	}
+	windowDef Static1
+	{
+		rect	10,5,620,470
+		matcolor	1 ,1 ,1 ,0.2
+		visible	1
+		background	"gui/static"
+
+		onTime 0 {
+			transition "matcolor" "1 1 1 0.2" "1 1 1 0.4" "400" ;
+		}
+
+		onTime 400 {
+			transition "matcolor" "1 1 1 0.4" "1 1 1 0.2" "400"
+		}
+
+		onTime 1400 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Anim
+	{
+		visible	1
+		rect	0,0,0,0
+
+		onTime 0 {
+			set		"Text1::rect" "40 100 600 200" ;
+			set		"Text2::rect" "50 330 600 100" ;
+		}
+
+		onTime 100 {
+			set		"Text1::visible" "0" ;
+			set		"Text2::visible" "0" ;
+		}
+
+		onTime 150 {
+			set		"Text1::visible" "1" ;
+			set		"Text2::visible" "1" ;
+		}
+
+		onTime 200 {
+			set		"Text1::rect" "42 95 600 200" ;
+			set		"Text2::rect" "52 325 600 100" ;
+		}
+
+		onTime 400 {
+			set		"Text1::rect" "40 102 600 200" ;
+			set		"Text2::rect" "50 332 600 100" ;
+		}
+
+		onTime 450 {
+			set		"Text1::rect" "42 99 600 200" ;
+			set		"Text2::rect" "52 329 600 100" ;
+		}
+
+		onTime 500 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Reflect
+	{
+		rect	10,5,620,470
+		matcolor	1 ,1 ,1 ,0.1
+		visible	1
+		background	"gui/reflect1"
+	}
+}

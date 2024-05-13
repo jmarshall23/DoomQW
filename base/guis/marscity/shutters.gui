@@ -1,0 +1,456 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	backcolor	0 ,0 ,0 ,0
+	comment	"GUI activates a script command on click, an alternate script on the next click, then resets. Set script 1 as a keyval, KEY gui_Parm5 value script_name, and script 2 as gui_parm6."
+	visible	1
+
+	onActivate {
+		transition "BTNTL::matcolor" "1 1 1 1" "1 1 1 0.6" "300" ;
+		transition "BTNTR::matcolor" "1 1 1 1" "1 1 1 0.6" "300" ;
+		transition "BTNBL::matcolor" "1 1 1 1" "1 1 1 0.6" "300" ;
+		transition "BTNBR::matcolor" "1 1 1 1" "1 1 1 0.6" "300" ;
+		//	transition "BTNMM::matcolor" "1 1 1 1" "1 1 1 0.6" "300" ;
+	}
+
+	onDeactivate {
+		transition "BTNTL::matcolor" "1 1 1 0.6" "1 1 1 0.4" "300" ;
+		transition "BTNTR::matcolor" "1 1 1 0.6" "1 1 1 0.4" "300" ;
+		transition "BTNBL::matcolor" "1 1 1 0.6" "1 1 1 0.4" "300" ;
+		transition "BTNBR::matcolor" "1 1 1 0.6" "1 1 1 0.4" "300" ;
+		//	transition "BTNMM::matcolor" "1 1 1 0.6" "1 1 1 0.4" "300" ;
+	}
+
+	windowDef BG1
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/bg"
+		matcolor	0, 0, 0, 0.7
+	}
+	windowDef BG2
+	{
+		rect	5 ,5 ,630 ,470
+		background	"guis/assets/common/grid128"
+		matcolor	1, 1, 1, 0.07
+	}
+	windowDef Bglow
+	{
+		rect	0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		matcolor	0.4, 0.8, 0.6, 0.25
+	}
+	windowDef BGFill1
+	{
+		rect	10 ,5 ,620 ,90
+		visible	1
+		background	"guis/assets/lightswitch/bgfill"
+		matcolor	0.4, 0.8, 0.6, 0.2
+	}
+	windowDef BGFill2
+	{
+		rect	10 ,25 ,620 ,150
+		visible	1
+		background	"guis/assets/lightswitch/bgfill"
+		matcolor	0.4, 0.8, 0.6, 0.15
+	}
+	windowDef BGFill3
+	{
+		rect	10 ,45 ,620 ,225
+		visible	1
+		background	"guis/assets/lightswitch/bgfill"
+		matcolor	0.4, 0.8, 0.6, 0.1
+	}
+	windowDef CornerTL
+	{
+		rect	10 ,5 ,140 ,-120
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.4, 1, 0.9, 0.3
+	}
+	windowDef CornerTR
+	{
+		rect	490 ,5 ,-140 ,-120
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.4, 1, 0.9, 0.3
+	}
+	windowDef CornerBL
+	{
+		rect	10 ,355 ,140 ,120
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.4, 1, 0.9, 0.3
+	}
+	windowDef CornerBR
+	{
+		rect	490 ,355 ,-140 ,120
+		visible	1
+		background	"guis/assets/lightswitch/corner"
+		matcolor	0.4, 1, 0.9, 0.3
+	}
+	windowDef BtnTL
+	{
+		rect	20 ,70 ,300 ,125
+		visible	1
+		background	"guis/assets/lightswitch/linecorner"
+		matcolor	1, 1, 1, 0.4
+	}
+	windowDef BtnTR
+	{
+		rect	320 ,70 ,-300 ,125
+		visible	1
+		background	"guis/assets/lightswitch/linecorner"
+		matcolor	1, 1, 1, 0.4
+	}
+	windowDef BtnBL
+	{
+		rect	20 ,210 ,300 ,-125
+		visible	1
+		background	"guis/assets/lightswitch/linecorner"
+		matcolor	1, 1, 1, 0.4
+	}
+	windowDef BtnBR
+	{
+		rect	320 ,210 ,-300 ,-125
+		visible	1
+		background	"guis/assets/lightswitch/linecorner"
+		matcolor	1, 1, 1, 0.4
+	}
+	windowDef BtnTM
+	{
+		rect	300 ,79 ,40 ,30
+		visible	1
+		background	"guis/assets/lightswitch/linemiddle"
+		matcolor	1, 1, 1, 0.4
+
+		onTime 0 {
+			transition "matcolor" "1 1 1 0.5" "1 1 1 0.1" "500" ;
+		}
+
+		onTime 500 {
+			transition "matcolor" "1 1 1 0.1" "1 1 1 0.5" "500" ;
+		}
+
+		onTime 1000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef BtnMM
+	{
+		rect	20 ,172 ,600 ,60
+		visible	1
+		background	"guis/assets/lightswitch/linebar"
+		matcolor	1, 1, 1, 0.6
+	}
+	windowDef BtnBM
+	{
+		rect	300 ,301 ,40 ,30
+		visible	1
+		background	"guis/assets/lightswitch/linemiddle"
+		matcolor	1, 1, 1, 0.4
+
+		onTime 0 {
+			transition "matcolor" "1 1 1 0.5" "1 1 1 0.1" "500" ;
+		}
+
+		onTime 500 {
+			transition "matcolor" "1 1 1 0.1" "1 1 1 0.5" "500" ;
+		}
+
+		onTime 1000 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Text1
+	{
+		rect	58,155,540,157
+		text	"#str_03704"
+		font	"fonts/bank"
+		textscale	1.2
+		textalign	1
+		forecolor	0.7, 1, 1, 0
+		cursor	1
+		visible	1
+	}
+	windowDef Text2
+	{
+		rect	58,320,540,74
+		text	"#str_03705"
+		font	"fonts/bank"
+		textscale	1.1
+		textalign	1
+		forecolor	0.7, 1, 1, 0.6
+		cursor	1
+		visible	1
+	}
+	windowDef Text3
+	{
+		rect	52,375,540,79
+		text	"#str_03706"
+		font	"fonts/bank"
+		textscale	1.2
+		textalign	1
+		forecolor	0.6, 1, 1, 0.6
+		cursor	1
+		visible	1
+	}
+	windowDef TriggerButtonBG1
+	{
+		rect	58,43,540,174
+		text	"#str_03707"
+		font	"fonts/bank"
+		textscale	1.7
+		textalign	1
+		forecolor	1, 1, 1, 0.6
+		cursor	1
+		textaligny	30
+		visible	1
+	}
+	windowDef TriggerButtonBG2
+	{
+		rect	58,155,540,185
+		text	"#str_01682"
+		font	"fonts/bank"
+		textscale	2
+		textalign	1
+		forecolor	1, 1, 1, 0.6
+		cursor	1
+		textaligny	30
+		visible	1
+	}
+	windowDef TriggerButtonOff
+	{
+		rect	0, 0, 640, 480
+		visible	1
+		notime	1
+
+		onAction {
+			set	"cmd"	"play guisounds_connect3" ; 
+			runScript	"gui::gui_parm6" ;
+			set "noevents" 	"1" ;
+			set "visible" 	"0" ;
+			ResetTime	"0" ;
+		}
+
+		onTime 0 {
+			transition "Text1::forecolor" "0.7 1 1 0" "0.7 1 1 0.6" "500" ;
+			transition "Text2::forecolor" "0.7 1 1 0.6" "0.7 1 1 0" "500" ;
+			transition "Text3::forecolor" "0.7 1 1 0.6" "0.7 1 1 0" "500" ;
+			
+			transition "BGFill1::matcolor" "0.4 0.8 0.6 0.2" "0.4 0.8 0.6 0" "700" ;
+			transition "BGFill2::matcolor" "0.4 0.8 0.6 0.2" "0.4 0.8 0.6 0" "700" ;
+			transition "BGFill3::matcolor" "0.4 0.8 0.6 0.2" "0.4 0.8 0.6 0" "700" ;
+			
+			transition "TriggerButtonBG1::forecolor" "1 1 1 0.6" "1 1 1 0" "500" ;
+			transition "TriggerButtonBG2::forecolor" "1 1 1 0.6" "1 1 1 0" "500" ;
+			
+			transition "BTNTL::rect" "20 70 300 125" "0 0 320 125" "500" "0" "0.8" ;
+			transition "BTNTR::rect" "320 70 -300 125" "320 0 -320 125" "500" "0" "0.8" ;
+			transition "BTNBL::rect" "20 210 300 -125" "0 355 320 -125" "500" "0" "0.8" ;
+			transition "BTNBR::rect" "320 210 -300 -125" "320 355 -320 -125" "500" "0" "0.8" ;
+			
+			transition "BTNTM::rect" "300 79 40 30" "300 9 40 30" "500" "0" "0.8" ;
+			transition "BTNMM::rect" "20 172 600 60" "320 172 0 60" "500" "0" "0.8" ;
+			transition "BTNBM::rect" "300 301 40 30" "300 446 40 30" "500" "0" "0.8" ;
+			
+			transition "BTNMM::matcolor" "1 1 1 0.6" "1 1 1 0" "500" ;
+			
+			transition "BGFill1::rect" "10 5 620 90" "10 385 620 -90" "1400" "0" "0.8" ;
+			transition "BGFill2::rect" "10 25 620 150" "10 305 620 -150" "1400" "0" "0.8" ;
+			transition "BGFill3::rect" "10 45 620 225" "10 210 620 -220" "1400" "0" "0.8" ;
+		}
+
+		onTime 3900 {
+			transition "Text1::forecolor" "0.6 1 1 0.6" "0.6 1 1 0" "400" ;
+			transition "BGFill1::matcolor" "0.4 0.8 0.6 0" "0.4 0.8 0.6 0.2" "700" ;
+			transition "BGFill2::matcolor" "0.4 0.8 0.6 0" "0.4 0.8 0.6 0.2" "700" ;
+			transition "BGFill3::matcolor" "0.4 0.8 0.6 0" "0.4 0.8 0.6 0.2" "700" ;
+			
+			set "TriggerButtonBG2::text" "#str_00654" ;
+			transition "TriggerButtonBG1::forecolor" "1 1 1 0" "1 1 1 0.6" "500" ;
+			transition "TriggerButtonBG2::forecolor" "1 1 1 0" "1 1 1 0.6" "500" ;
+			
+			transition "BTNTL::rect" "0 0 320 125" "20 70 300 125" "500" "0.8" "0" ;
+			transition "BTNTR::rect" "320 0 -320 125" "320 70 -300 125" "500" "0.8" "0" ;
+			transition "BTNBL::rect" "0 355 320 -125" "20 210 300 -125" "500" "0.8" "0" ;
+			transition "BTNBR::rect" "320 355 -320 -125" "320 210 -300 -125" "500" "0.8" "0" ;
+			
+			transition "BTNTM::rect" "300 9 40 30" "300 79 40 30" "500" "0.8" "0" ;
+			transition "BTNMM::rect" "320 172 0 60" "20 172 600 60" "400" "0.8" "0" ;
+			transition "BTNBM::rect" "300 446 40 30" "300 301 40 30" "500" "0.8" "0" ;
+			
+			transition "BTNMM::matcolor" "1 1 1 0" "1 1 1 0.6" "600" ;
+		}
+
+		onTime 4390 {
+			set "Text2::text" "#str_03708" ;
+			transition "TriggerButtonBG1::forecolor" "1 1 1 1" "1 1 1 0.6" "500" ;
+			transition "TriggerButtonBG2::forecolor" "1 1 1 1" "1 1 1 0.6" "500" ;
+			
+			transition "BGFill1::matcolor" "1 0.45 0.2 0.5" "0.8 0.25 0 0.2" "400" ;
+			transition "BGFill2::matcolor" "1 0.45 0.2 0.5" "0.8 0.25 0 0.2" "400" ;
+			transition "BGFill3::matcolor" "1 0.45 0.2 0.5" "0.8 0.25 0 0.2" "400" ;
+			transition "Bglow::matcolor" "1 0.45 0.2 0.5" "0.8 0.2 0 0.25" "400" ;
+			transition "CornerTL::matcolor"	"1 0.7 0.4 0.5" "1 0.6 0.3 0.3" "400" ;
+			transition "CornerTR::matcolor"	"1 0.7 0.4 0.5" "1 0.6 0.3 0.3" "400" ;
+			transition "CornerBL::matcolor"	"1 0.7 0.4 0.5" "1 0.6 0.3 0.3" "400" ;
+			transition "CornerBR::matcolor"	"1 0.7 0.4 0.5" "1 0.6 0.3 0.3" "400" ;
+			transition "Addhighlight::matcolor" "0.9 0.4 0.1 1" "0.8 0.3 0 1" "400" ;
+		}
+
+		onTime 4700 {
+			transition "Text2::forecolor" "1 0.5 0.2 0" "1 0.4 0.2 0.7" "500" ;
+			transition "Text3::forecolor" "1 0.5 0.2 0" "1 0.4 0.2 0.7" "500" ;
+		}
+
+		onTime 5100 {
+			set "TriggerButtonOn::visible" "1" ;
+			set "TriggerButtonOn::noevents" "0" ;
+		}
+
+	}
+	windowDef TriggerButtonOn
+	{
+		rect	0, 0, 640, 480
+		visible	0
+		noevents	1
+		notime	1
+
+		onAction {
+			set	"cmd"	"play guisounds_connect3" ; 
+			runScript	"gui::gui_parm5" ;
+			set "noevents" 	"1" ;
+			set "visible" 	"0" ;
+			ResetTime	"0" ;
+		}
+
+		onTime 0 {
+			transition "Text1::forecolor" "1 0.4 0.2 0" "1 0.4 0.2 0.7" "500" ;
+			transition "Text2::forecolor" "1 0.4 0.2 0.7" "1 0.4 0.2 0" "500" ;
+			transition "Text3::forecolor" "1 0.4 0.2 0.7" "1 0.4 0.2 0" "500" ;
+			
+			transition "BGFill1::matcolor" "0.8 0.25 0 0.2" "0.8 0.2 0 0" "700" ;
+			transition "BGFill2::matcolor" "0.8 0.25 0 0.2" "0.8 0.2 0 0" "700" ;
+			transition "BGFill3::matcolor" "0.8 0.25 0 0.2" "0.8 0.2 0 0" "700" ;
+			
+			transition "TriggerButtonBG1::forecolor" "1 1 1 0.6" "1 1 1 0" "500" ;
+			transition "TriggerButtonBG2::forecolor" "1 1 1 0.6" "1 1 1 0" "500" ;
+			
+			transition "BTNTL::rect" "20 70 300 125" "0 0 320 125" "500" "0" "0.8" ;
+			transition "BTNTR::rect" "320 70 -300 125" "320 0 -320 125" "500" "0" "0.8" ;
+			transition "BTNBL::rect" "20 210 300 -125" "0 355 320 -125" "500" "0" "0.8" ;
+			transition "BTNBR::rect" "320 210 -300 -125" "320 355 -320 -125" "500" "0" "0.8" ;
+			
+			transition "BTNTM::rect" "300 79 40 30" "300 9 40 30" "500" "0" "0.8" ;
+			transition "BTNMM::rect" "20 172 600 60" "320 172 0 60" "500" "0" "0.8" ;
+			transition "BTNBM::rect" "300 301 40 30" "300 446 40 30" "500" "0" "0.8" ;
+			
+			transition "BTNMM::matcolor" "1 1 1 0.6" "1 1 1 0" "500" ;
+			
+			transition "BGFill1::rect" "10 385 620 -90" "10 5 620 90" "1400" "0" "0.8" ;
+			transition "BGFill2::rect" "10 305 620 -150" "10 25 620 150" "1400" "0" "0.8" ;
+			transition "BGFill3::rect" "10 210 620 -220" "10 45 620 225" "1400" "0" "0.8" ;
+		}
+
+		onTime 3900 {
+			transition "Text1::forecolor" "1 0.4 0.2 0.7" "1 0.4 0.2 0" "400" ;
+			transition "BGFill1::matcolor" "0.8 0.2 0 0" "0.8 0.25 0 0.2" "700" ;
+			transition "BGFill2::matcolor" "0.8 0.2 0 0" "0.8 0.25 0 0.2" "700" ;
+			transition "BGFill3::matcolor" "0.8 0.2 0 0" "0.8 0.25 0 0.2" "700" ;
+			
+			set "TriggerButtonBG2::text" "#str_01682" ;
+			transition "TriggerButtonBG1::forecolor" "1 1 1 0" "1 1 1 0.6" "500" ;
+			transition "TriggerButtonBG2::forecolor" "1 1 1 0" "1 1 1 0.6" "500" ;
+			
+			transition "BTNTL::rect" "0 0 320 125" "20 70 300 125" "500" "0.8" "0" ;
+			transition "BTNTR::rect" "320 0 -320 125" "320 70 -300 125" "500" "0.8" "0" ;
+			transition "BTNBL::rect" "0 355 320 -125" "20 210 300 -125" "500" "0.8" "0" ;
+			transition "BTNBR::rect" "320 355 -320 -125" "320 210 -300 -125" "500" "0.8" "0" ;
+			
+			transition "BTNTM::rect" "300 9 40 30" "300 79 40 30" "500" "0.8" "0" ;
+			transition "BTNMM::rect" "320 172 0 60" "20 172 600 60" "400" "0.8" "0" ;
+			transition "BTNBM::rect" "300 446 40 30" "300 301 40 30" "500" "0.8" "0" ;
+			
+			transition "BTNMM::matcolor" "1 1 1 0" "1 1 1 0.6" "600" ;
+		}
+
+		onTime 4390 {
+			set "Text2::text" "#str_03705" ;
+			transition "TriggerButtonBG1::forecolor" "1 1 1 1" "1 1 1 0.6" "500" ;
+			transition "TriggerButtonBG2::forecolor" "1 1 1 1" "1 1 1 0.6" "500" ;
+			
+			transition "BGFill1::matcolor" "0.6 1 0.8 0.5" "0.4 0.8 0.6 0.2" "400" ;
+			transition "BGFill2::matcolor" "0.6 1 0.8 0.5" "0.4 0.8 0.6 0.15" "400" ;
+			transition "BGFill3::matcolor" "0.6 1 0.8 0.5" "0.4 0.8 0.6 0.1" "400" ;
+			transition "Bglow::matcolor" "0.6 0.8 0.8 0.35" "0.4 0.8 0.6 0.25" "400" ;
+			transition "CornerTL::matcolor" "0.6 1 1 0.5"	"0.4 1 0.9 0.3" "400" ;
+			transition "CornerTR::matcolor" "0.6 1 1 0.5"	"0.4 1 0.9 0.3" "400" ;
+			transition "CornerBL::matcolor" "0.6 1 1 0.5"	"0.4 1 0.9 0.3" "400" ;
+			transition "CornerBR::matcolor" "0.6 1 1 0.5"	"0.4 1 0.9 0.3" "400" ;
+			transition "Addhighlight::matcolor" "0.5 0.8 1 1" "0.3 0.6 0.8 1" "400" ;
+		}
+
+		onTime 4700 {
+			transition "Text2::forecolor" "0.6 1 1 0" "0.7 1 1 0.6" "500" ;
+			transition "Text3::forecolor" "0.6 1 1 0" "0.7 1 1 0.6" "500" ;
+		}
+
+		onTime 5100 {
+			set "TriggerButtonOff::visible" "1" ;
+			set "TriggerButtonOff::noevents" "0" ;
+		}
+
+	}
+	windowDef Static
+	{
+		rect	-10 ,-10 ,-660 ,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 15
+	}
+	windowDef Mask
+	{
+		rect	5 ,5 ,-630 ,470
+		visible	1
+		background	"guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.6
+	}
+	windowDef Outershadow1
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Outershadow2
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.3 ,0.6 ,0.8 ,1
+		visible	1
+	}
+	windowDef scanlinesAlt
+	{
+		rect	0,0,640,480
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,-640 ,480
+		matcolor	1, 1, 1 ,0.5
+		visible	1
+		background	"guis/assets/common/dirt1"
+		noevents	1
+	}
+}

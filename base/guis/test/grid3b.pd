@@ -1,0 +1,446 @@
+	windowDef LineH1o {
+		rect 		12, 0, 5, 480
+		onMouseEnter {
+			transition "LineH1::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineH2o {
+		rect 		27, 0, 5, 480
+		onMouseEnter {
+			transition "LineH2::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH3o {
+		rect 		42, 0, 5, 480
+		onMouseEnter {
+			transition "LineH3::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH4o {
+		rect 		57, 0, 5, 480
+		onMouseEnter {
+			transition "LineH4::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH5o {
+		rect 		72, 0, 5, 480
+		onMouseEnter {
+			transition "LineH5::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH6o {
+		rect 		87, 0, 5, 480
+		onMouseEnter {
+			transition "LineH6::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineH7o {
+		rect 		102, 0, 5, 480
+		onMouseEnter {
+			transition "LineH7::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH8o {
+		rect 		117, 0, 5, 480
+		onMouseEnter {
+			transition "LineH8::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH9o {
+		rect 		132, 0, 5, 480
+		onMouseEnter {
+			transition "LineH9::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH10o {
+		rect 		147, 0, 5, 480
+		onMouseEnter {
+			transition "LineH10::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH11o {
+		rect 		162, 0, 5, 480
+		onMouseEnter {
+			transition "LineH11::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineH12o {
+		rect 		177, 0, 5, 480
+		onMouseEnter {
+			transition "LineH12::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH13o {
+		rect 		192, 0, 5, 480
+		onMouseEnter {
+			transition "LineH13::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH14o {
+		rect 		207, 0, 5, 480
+		onMouseEnter {
+			transition "LineH14::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH15o {
+		rect 		222, 0, 5, 480
+		onMouseEnter {
+			transition "LineH15::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH16o {
+		rect 		237, 0, 5, 480
+		onMouseEnter {
+			transition "LineH16::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineH17o {
+		rect 		252, 0, 5, 480
+		onMouseEnter {
+			transition "LineH17::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH18o {
+		rect 		267, 0, 5, 480
+		onMouseEnter {
+			transition "LineH18::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH19o {
+		rect 		282, 0, 5, 480
+		onMouseEnter {
+			transition "LineH19::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH20o {
+		rect 		297, 0, 5, 480
+		onMouseEnter {
+			transition "LineH20::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH21o {
+		rect 		312, 0, 5, 480
+		onMouseEnter {
+			transition "LineH21::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineH22o {
+		rect 		327, 0, 5, 480
+		onMouseEnter {
+			transition "LineH22::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH23o {
+		rect 		342, 0, 5, 480
+		onMouseEnter {
+			transition "LineH23::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH24o {
+		rect 		357, 0, 5, 480
+		onMouseEnter {
+			transition "LineH24::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH25o {
+		rect 		372, 0, 5, 480
+		onMouseEnter {
+			transition "LineH25::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH26o {
+		rect 		387, 0, 5, 480
+		onMouseEnter {
+			transition "LineH26::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineH27o {
+		rect 		402, 0, 5, 480
+		onMouseEnter {
+			transition "LineH27::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH28o {
+		rect 		417, 0, 5, 480
+		onMouseEnter {
+			transition "LineH28::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH29o {
+		rect 		432, 0, 5, 480
+		onMouseEnter {
+			transition "LineH29::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH30o {
+		rect 		447, 0, 5, 480
+		onMouseEnter {
+			transition "LineH30::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH31o {
+		rect 		462, 0, 5, 480
+		onMouseEnter {
+			transition "LineH31::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineH32o {
+		rect 		477, 0, 5, 480
+		onMouseEnter {
+			transition "LineH32::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH33o {
+		rect 		492, 0, 5, 480
+		onMouseEnter {
+			transition "LineH33::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH34o {
+		rect 		507, 0, 5, 480
+		onMouseEnter {
+			transition "LineH34::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH35o {
+		rect 		522, 0, 5, 480
+		onMouseEnter {
+			transition "LineH35::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH36o {
+		rect 		537, 0, 5, 480
+		onMouseEnter {
+			transition "LineH36::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineH37o {
+		rect 		552, 0, 5, 480
+		onMouseEnter {
+			transition "LineH37::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH38o {
+		rect 		567, 0, 5, 480
+		onMouseEnter {
+			transition "LineH38::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH39o {
+		rect 		582, 0, 5, 480
+		onMouseEnter {
+			transition "LineH39::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH40o {
+		rect 		597, 0, 5, 480
+		onMouseEnter {
+			transition "LineH40::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineH41o {
+		rect 		612, 0, 5, 480
+		onMouseEnter {
+			transition "LineH41::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineH42o {
+		rect 		627, 0, 5, 480
+		onMouseEnter {
+			transition "LineH42::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+
+///////////////////
+
+//////////////////////////
+
+//////////
+
+	windowDef LineV1o {
+		rect 		0, 10, 640, 5
+		onMouseEnter {
+			transition "LineV1::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV2o {
+		rect 		0, 25, 640, 5
+		onMouseEnter {
+			transition "LineV2::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineV3o {
+		rect 		0, 40, 640, 5
+		onMouseEnter {
+			transition "LineV3::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV4o {
+		rect 		0, 55, 640, 5
+		onMouseEnter {
+			transition "LineV4::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV5o {
+		rect 		0, 70, 640, 5
+		onMouseEnter {
+			transition "LineV5::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV6o {
+		rect 		0, 85, 640, 5
+		onMouseEnter {
+			transition "LineV6::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV7o {
+		rect 		0, 100, 640, 5
+		onMouseEnter {
+			transition "LineV7::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineV8o {
+		rect 		0, 115, 640, 5
+		onMouseEnter {
+			transition "LineV8::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV9o {
+		rect 		0, 130, 640, 5
+		onMouseEnter {
+			transition "LineV9::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV10o {
+		rect 		0, 145, 640, 5
+		onMouseEnter {
+			transition "LineV10::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV11o {
+		rect 		0, 160, 640, 5
+		onMouseEnter {
+			transition "LineV11::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV12o {
+		rect 		0, 175, 640, 5
+		onMouseEnter {
+			transition "LineV12::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineV13o {
+		rect 		0, 190, 640, 5
+		onMouseEnter {
+			transition "LineV13::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV14o {
+		rect 		0, 205, 640, 5
+		onMouseEnter {
+			transition "LineV14::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV15o {
+		rect 		0, 220, 640, 5
+		onMouseEnter {
+			transition "LineV15::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV16o {
+		rect 		0, 235, 640, 5
+		onMouseEnter {
+			transition "LineV16::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV17o {
+		rect 		0, 250, 640, 5
+		onMouseEnter {
+			transition "LineV17::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineV18o {
+		rect 		0, 265, 640, 5
+		onMouseEnter {
+			transition "LineV18::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV19o {
+		rect 		0, 280, 640, 5
+		onMouseEnter {
+			transition "LineV19::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV20o {
+		rect 		0, 295, 640, 5
+		onMouseEnter {
+			transition "LineV20::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV21o {
+		rect 		0, 310, 640, 5
+		onMouseEnter {
+			transition "LineV21::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV22o {
+		rect 		0, 325, 640, 5
+		onMouseEnter {
+			transition "LineV22::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineV23o {
+		rect 		0, 340, 640, 5
+		onMouseEnter {
+			transition "LineV23::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV24o {
+		rect 		0, 355, 640, 5
+		onMouseEnter {
+			transition "LineV24::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV25o {
+		rect 		0, 370, 640, 5
+		onMouseEnter {
+			transition "LineV25::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV26o {
+		rect 		0, 385, 640, 5
+		onMouseEnter {
+			transition "LineV26::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV27o {
+		rect 		0, 400, 640, 5
+		onMouseEnter {
+			transition "LineV27::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.05" "300" ;
+		}
+	}
+	windowDef LineV28o {
+		rect 		0, 415, 640, 5
+		onMouseEnter {
+			transition "LineV28::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV29o {
+		rect 		0, 430, 640, 5
+		onMouseEnter {
+			transition "LineV29::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV30o {
+		rect 		0, 445, 640, 5
+		onMouseEnter {
+			transition "LineV30::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+	windowDef LineV31o {
+		rect 		0, 460, 640, 5
+		onMouseEnter {
+			transition "LineV31::backcolor" "0.6 1 1 0.15" "0.6 1 1 0.025" "300" ;
+		}
+	}
+

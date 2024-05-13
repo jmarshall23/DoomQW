@@ -1,0 +1,140 @@
+
+// This video is given to you when you first pick up the PDA
+video marine_sop {
+	name		"Marine Command Briefing"
+	info		"Creator: Marine HQ\nDate: 03/11/45\n\nStandard Operating Procedures on Mars\n"
+	video		"video/video_marine_sops"
+	audio		"video_marine_sops"
+	preview		"guis/assets/cpuserver/uac.tga"
+}
+
+// These videos can be picked up later:
+
+video alphalabs_intro {
+	name		"Alpha Labs Introduction"
+	info		"Creator: UAC PR\nDate: 01/15/41\n\nAlpha Labs: Past, Present and Future"
+	video		"video/video_alphalabs_intro"
+	audio		"video_alphalabs_intro"
+	preview	"guis/assets/marscity/uac.tga"
+}
+
+video ancient_civ {
+	name		"Ancient Civilization"
+	info		"Creator: Pierce Rogers\nLead Archaeologist\nDate: 08/21/45\n\nWhat we know about the ancient civilization and the artifacts found"
+	video		"video/video_ancient_civ"
+	audio		"video_ancient_civ"
+	preview		"guis/assets/site3/uac.tga"
+}
+
+video bfg {
+	name		"BFG 9000 Briefing"
+	info		"Creator: UAC Advanced Weapons\nDate: 10/10/45\n\nInformational video on the BFG 9000"
+	video		"video/video_bfg"
+	audio		"video_bfg"
+	preview		"guis/assets/cpuserver/uac.tga"
+}
+
+video chaingun {
+	name		"Mach-2 Chain Gun Briefing"
+	info		"Creator: UAC Advanced Weapons\nDate: 03/20/42\n\nInformational video on the Mach-2 Chain Gun"
+	video		"video/video_chaingun"
+	audio		"video_chaingun"
+	preview		"guis/assets/cpuserver/uac.tga"
+}
+
+video plasmagun {
+	name		"Series 3 Plasma Gun Briefing"
+	info		"Creator: UAC Advanced Weapons\nDate: 07/28/44\n\nInformational Video on the Series 3 Plasma Gun"
+	video		"video/video_plasmagun"
+	audio		"video_plasmagun"
+	preview		"guis/assets/cpuserver/uac.tga"
+}
+
+video epd {
+	name		"Elemental Phase Deconstructor"
+	info		"Creator: UAC PR\nDate: 04/15/45\n\nInformation on the EPD system"
+	video		"pdas/video/epd"
+	audio		"video_epd"
+	preview		"guis/assets/marscity/uac.tga"
+}
+
+video hydrocon {
+	name		"Hydrocon"
+	info		"Creator: UAC PR\nDate: 04/15/45\n\nInformation on the Hydrocon system"
+	video		"video/hydrocon"
+	audio		"video_hydrocon"
+	preview		"guis/assets/marscity/uac.tga"
+}
+
+video mfs {
+	name		"Molecular Fuel Storage Compactor"
+	info		"Creator: UAC PR\nDate: 04/15/45\n\nInformation on the MFS system"
+	video		"pdas/video/mfs"
+	audio		"video_mfs"
+	preview		"guis/assets/marscity/uac.tga"
+}
+
+video ian_report {
+	name		"Teleportation Experiments"
+	info		"Creator: Ian McCormick\nDate: 11/15/45\n\nResults of the human teleportation experiments"
+	video		"video/video_ian_report"
+	audio		"video_ian_report"
+	preview		"guis/assets/marscity/uac.tga"
+}
+
+video delta2_medical {
+	name		"Medical Report 16-8"
+	info		"Creator: Peter Raleigh\nMedical Supervisor\nDate: 11/02/45\n\nReport on Patient 0432, Pvt. Steve Jenson"
+	video		"video/video_delta2_medical"
+	audio		"video_delta2_medical"
+	preview		"guis/assets/marscity/uac.tga"
+}
+
+video ipn_news {
+	name		"IPN News Network: Your Universe Now!  11/15/2145"
+	info		"Creator: IPN News Network\nDate: 11/15/45\n\nDaily News Report from IPN News Network"
+	video		"video/video_ipn_news"
+	audio		"video_ipn_news"
+	preview		"sound/vo/video/welcome.tga"
+}
+
+video demon_museum {
+	name		"Specimen Stasis Museum"
+	info		"Central Authority\nDate: 10/05/45\n\nCentral Authority 'Demon Museum'"
+	video		"video/video_demon_museum"
+	audio		"video_demon_museum"
+	preview		"guis/assets/marscity/uac.tga"
+}
+
+video recycling {
+	name		"Maintenance Safety Video"
+	info		"Central Authority\nDate: 10/05/45\n\nMaintenance Department Safety Video"
+	video		"video/video_recycling"
+	audio		"video_recycling"
+	preview		"guis/assets/marscity/uac.tga"
+}
+
+video soulcube {
+	name		"Soul Cube"
+	info		"Central Authority\nDate: 10/05/45\n\nCentral Authority Research Archive"
+	video		"video/video_soulcube"
+	audio		"video_soulcube"
+	preview		"guis/assets/delta2/uac.tga"
+}
+
+video tablets {
+	name		"Tablets"
+	info		"Central Authority\nDate: 10/05/45\n\nCentral Authority Research Archive"
+	video		"video/video_tablets"
+	audio		"video_tablets"
+	preview		"guis/assets/site3/uac.tga"
+}
+
+video uacwelcome {
+	name		"Welcome to Mars Research Facility One"
+	info		"Creator: Human Resources\nDate: 03/05/45\n\nFor additional help please see your UAC representative"
+	video		"video/video_uac_welcome"
+	audio		"video_uacwelcome"
+	preview	"guis/assets/marscity/uac.tga"
+}
+

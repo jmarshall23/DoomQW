@@ -1,0 +1,388 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	background	"guis/assets/common/bg_rc.tga"
+	matcolor	0,0,0,1
+	visible	1
+	windowDef Anim
+	{
+		rect	0,0,0,0
+		visible	0
+		notime	1
+
+		onTime 11500 {
+			transition "LineOut::matcolor" "1 1 1 1" "0.8 0.9 1 0.2" "100" ;
+		}
+
+		onTime 11600 {
+			transition "LineOut::matcolor" "1 1 1 1" "0.8 0.9 1 0.5" "500" ;
+			transition "LineOutClip::rect" "359 133 34 98" "296 133 98 98" "300" "0" "0.8"  ;
+			transition "LineOut::rect" "-63 0 -98 -98" "0 0 -98 -98" "300" "0" "0.8" ;
+			transition "TextTitle11::forecolor" "1 1 1 1" "1 1 1 0.4" "500" ;
+		}
+
+		onTime 11800 {
+			transition "PopBox::rect" "18 81 314 0" "18 81 314 253" "800" "0.2" "0.8" ;
+		}
+
+		onTime 12450 {			
+			transition "TextTitle111::forecolor" "1 1 1 1" "1 1 1 0.4" "500" ;
+		}
+
+	}
+	windowDef BG1
+	{
+		rect	5,5,630,470
+		visible	1
+		background	"guis/assets/common/scibox/bg2"
+		matcolor	1,1,1,0.3
+	}
+	windowDef Clip
+	{
+		rect	17,16,605,449
+		visible	1
+		windowDef MapGrid
+		{
+			rect	14,-228,601,733
+			visible	1
+			background	"gui/grid2"
+			matcolor	1,1,1,0.1
+			matscalex	10
+			matscaley	15
+		}
+		windowDef Map
+		{
+			rect	16,-136,601,571
+			visible	1
+			background	"guis/assets/delta2/telemap"
+			matcolor	1,0.2,0.05,subtleflick[ time * 0.002 ] / 1.5
+
+			onTime 0 {
+				transition "rect" "-141 170 980 1056" "-141 -645 980 1056" "15000" "0.5" "0.5" ;
+				transition "MapGrid::rect" "-141 0 980 1356" "-141 -600 980 1356" "15000" "0.5" "0.5" ;
+			}
+
+			onTime 16000 {
+				transition "rect" "-141 -645 980 1056" "-141 170 980 1056" "15000" "0.5" "0.5" ;
+				transition "MapGrid::rect" "-141 -600 980 1356" "-141 0 980 1356" "15000" "0.5" "0.5" ;
+			}
+
+			onTime 32000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef BglowBack
+		{
+			rect	22,62,-586,349
+			background	"guis/assets/cpuserver/bglow.tga"
+			visible	1
+			matcolor	1, 0, 0, 0.15
+		}
+	}
+	windowDef TopMatClip
+	{
+		rect	0,0,639,240
+		visible	1
+		windowDef PlasMask1
+		{
+			rect	0,-35,640,-353
+			matcolor	0,0,0,1
+			background	"guis/assets/delta2/plasmask2"
+			visible	1
+		}
+	}
+	windowDef TopMatClip1
+	{
+		rect	0,240,639,240
+		visible	1
+		windowDef PlasMask2
+		{
+			rect	0,-162,640,400
+			matcolor	0,0,0,1
+			background	"guis/assets/delta2/plasmask2"
+			visible	1
+		}
+	}
+	windowDef PopBox
+	{
+		rect	331,81,0,253
+		visible	1
+		windowDef Spin3d
+		{
+			rect	0,38,293,189
+			visible	1
+			background	"gui/marscity/decom"
+			matcolor	1,1,1,1
+
+			onTrigger {
+				resetCinematics ;
+				resetTime "Anim" "0" ;
+			}
+
+		}
+		windowDef bigballglow
+		{
+			rect	7,39,284,186
+			visible	0
+			background	"gui/thermal/glow"
+			matcolor	0.2,0.4,0.498,1
+
+			onTime 0 {
+				transition "matcolor" "0.2 0.4 0.5 1" "0.05 0.1 0.12 1" "500" ;
+			}
+
+			onTime 500 {
+				transition "matcolor" "0.05 0.1 0.12 1" "0.2 0.4 0.5 1" "500" ;
+			}
+
+			onTime 1000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef PopBg1R
+		{
+			rect	255,33,-45,179
+			matcolor	0.6, 0.6, 1, 0.3
+			background	"guis/assets/pda/ib_s"
+			visible	1
+		}
+		windowDef PopBg1TR
+		{
+			rect	255,-24,45,57
+			matcolor	0.6, 0.6, 1, 0.3
+			background	"guis/assets/pda/ib_c2"
+			visible	1
+		}
+		windowDef PopBg1BM
+		{
+			rect	-114,212,369,-57
+			matcolor	0.6, 0.6, 1, 0.3
+			background	"guis/assets/pda/ib_m"
+			visible	1
+		}
+		windowDef PopBg1MM
+		{
+			rect	-114,33,369,179
+			matcolor	0.6, 0.6, 1, 0.3
+			background	"guis/assets/pda/ib_m2"
+			visible	1
+		}
+		windowDef PopBg1TM
+		{
+			rect	-114,-24,369,57
+			matcolor	0.6, 0.6, 1, 0.3
+			background	"guis/assets/pda/ib_m"
+			visible	1
+		}
+		windowDef PopBg1BR
+		{
+			rect	255,212,45,-57
+			matcolor	0.6, 0.6, 1, 0.3
+			background	"guis/assets/pda/ib_c2"
+			visible	1
+		}
+		windowDef TextCall1
+		{
+			rect	11,8,282,221
+			visible	1
+			text	"#str_03675"
+			forecolor	1,1,1,0.6
+			textscale	0.42
+			font	"fonts/bank"
+		}
+	}
+	windowDef Spin3Top
+	{
+		rect	43,378,51,51
+		visible	1
+		background	"gui/thermal/spin"
+		matcolor	1,0,0,0.5
+
+		onTime 0 {
+			transition "Spin3Top::matcolor" "1 0.2 0.2 0.5" "1 1 1 0.5" "500" ;
+		}
+
+		onTime 1000 {
+			transition "Spin3Top::matcolor" "1 1 1 0.5" "1 0.2 0.2 0.5" "500" ;
+		}
+
+		onTime 1500 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef TextTitle11
+	{
+		rect	108,372,219,56
+		visible	1
+		text	"#str_01388"
+		forecolor	1,1,1,0
+		textscale	0.4
+		font	"fonts/micro"
+	}
+	windowDef TextTitle111
+	{
+		rect	108,399,219,56
+		visible	1
+		text	"#str_03676"
+		forecolor	1,1,1,0
+		textscale	0.4
+		font	"fonts/micro"
+	}
+	windowDef Clip1
+	{
+		rect	17,16,605,449
+		visible	1
+	}
+	windowDef Map2
+	{
+		rect	324,91,279,336
+		visible	1
+		background	"guis/assets/delta2/telemap"
+		matcolor	0.7,1,1,0.6
+	}
+	windowDef TextTitle
+	{
+		rect	21,13,600,44
+		visible	1
+		text	"#str_03677"
+		forecolor	1,1,1,0.7
+		textscale	0.58
+		font	"fonts/micro"
+		textalign	1
+	}
+	windowDef TextBase
+	{
+		rect	25,40,594,44
+		visible	1
+		text	"#str_03678"
+		forecolor	0.35,0.35,0.35,0.8
+		textscale	0.55
+		font	"fonts/micro"
+	}
+	windowDef LineOutClip
+	{
+		rect	359,133,34,98
+		visible	1
+		windowDef LineOut
+		{
+			rect	-63,0,-98,-98
+			background	"guis/assets/marscity/lineout"
+			visible	1
+			matcolor	0.8, 0.9, 1, 0
+		}
+	}
+	windowDef Outershadow11
+	{
+		rect	10,14,-619,455
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,0.7
+		visible	1
+	}
+	windowDef BGFrame
+	{
+		rect	2,3,635,475
+		visible	1
+		windowDef TRCorner
+		{
+			rect	590,1,-44,42
+			visible	1
+			background	"guis/assets/common/scibox/g_cornerRound2"
+			matcolor	0.5,0.8,1,0.2
+		}
+		windowDef Top2
+		{
+			rect	46,1,544,42
+			visible	1
+			background	"guis/assets/common/scibox/g_horiz"
+			matcolor	0.5,0.8,1,0.2
+		}
+		windowDef Bottom2
+		{
+			rect	46,433,544,-42
+			visible	1
+			background	"guis/assets/common/scibox/g_horiz"
+			matcolor	0.5,0.8,1,0.2
+		}
+		windowDef BRCorner
+		{
+			rect	590,433,-44,-42
+			visible	1
+			background	"guis/assets/common/scibox/g_cornerRound2"
+			matcolor	0.5,0.8,1,0.2
+		}
+		windowDef Right2
+		{
+			rect	590,43,44,390
+			visible	1
+			background	"guis/assets/common/scibox/g_vert"
+			matcolor	0.5,0.8,1,0.2
+		}
+		windowDef Left2
+		{
+			rect	2,43,-44,390
+			visible	1
+			background	"guis/assets/common/scibox/g_vert"
+			matcolor	0.5,0.8,1,0.2
+		}
+		windowDef TLCorner
+		{
+			rect	2,1,44,42
+			visible	1
+			background	"guis/assets/common/scibox/g_cornerRound2"
+			matcolor	0.5,0.8,1,0.2
+		}
+		windowDef BLCorner
+		{
+			rect	2,433,44,-42
+			visible	1
+			background	"guis/assets/common/scibox/g_cornerRound2"
+			matcolor	0.5,0.8,1,0.2
+		}
+	}
+	windowDef Bglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef scanlinesAlt1
+	{
+		rect	0,0,-640,480
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		matscaley	2
+		visible	1
+	}
+	windowDef Outershadow1
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,0.8
+		visible	1
+	}
+	windowDef Static1
+	{
+		rect	0,0,-640,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 15
+	}
+	windowDef Reflect
+	{
+		rect	0,-8,-646,470
+		matcolor	1 ,1 ,1 ,0.1
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Addhighlight1
+	{
+		rect	0,7,-640,480
+		background	"gui/addhighlight"
+		matcolor	0.1 ,0.3 ,0.3 ,1
+		visible	1
+	}
+}

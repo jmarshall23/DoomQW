@@ -1,0 +1,247 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.6, 0.9, 1, 0.8
+
+	windowDef Over {
+		rect	0 ,0 ,640 ,480 
+		matcolor	1 ,1 ,1 ,pdflick [ time * 0.005 ] 
+		visible	0
+		background	"guis/assets/small/psibg"
+	}
+
+	windowDef Bglow {
+		rect 0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible 1
+		matcolor 0.4, 0.8, 1, 0.1
+	}
+
+	windowDef BgParent {
+		rect 20, 10, 600, 300
+
+		windowDef Bg {
+			rect 0, 0, 600, 460
+			background	"guis/assets/cpuserver/bg2.tga"
+			visible 1
+			matcolor 0.4, 0.8, 1, 1
+		}
+	}
+
+
+	windowDef Win1 {
+	//	rect 590, 155, 260, 120
+	//	invertrect	1
+		rect 340, 70, 260, 120
+
+		windowDef Win1Sub {
+			rect -35, 0, 640, 120
+			background	"guis/assets/cpuserver/win1.tga"
+			visible 	1
+			matcolor 	0.2, 0.4, 0.5, 1
+		}
+	}
+
+	windowDef Win2 {
+	//	rect 590, 250, 260, 120
+	//	invertrect	1
+		rect 340, 170, 260, 120
+
+		windowDef Win2Sub {
+		//	rect 0, 0, 260, 120
+			rect -35, 0, 640, 120
+			background	"guis/assets/cpuserver/win1.tga"
+			visible 	1
+			matcolor 	0.2, 0.4, 0.5, 1
+		}
+	}
+
+	windowDef Pop1 {
+		rect 25, 80, 320, 210
+		background	"guis/assets/cpuserver/pop1a.tga"
+		visible 	1
+		matcolor 	0.4, 0.8, 1, 1
+	}
+
+	windowDef Scroll1 {
+		rect	50 ,100 ,300 ,103
+		matcolor	0.9 ,0.5 ,1 ,1 
+		visible	1
+		background	"gui/sm2/scroll2"
+	}
+
+	windowDef Scroll2 {
+		rect	180 ,100 ,300 ,103
+		matcolor	1 ,0.2 ,1 ,1 
+		visible	1
+		background	"gui/sm2/scroll2"
+	}
+
+	windowDef Pop4 {
+		rect 25, 320, 320, 150
+		background	"guis/assets/cpuserver/pop4.tga"
+		visible 	1
+		matcolor 	0.4, 0.8, 1, 1
+	}
+
+	windowDef PsiNum {
+		rect		48, 333, 275, 150
+		text		"428\n776"
+		
+		textscale	1
+		textalign	2
+		forecolor	0.7, 0.9, 1, pdflick [ time * 0.005 ] / 1.5
+
+		onTime 0 {
+			set "text" "428\n776" ;
+		}
+		onTime 11000 {
+			set "text" "429\n776" ;
+		}
+		onTime 11500 {
+			set "text" "428\n776" ;
+		}
+		onTime 11700 {
+			set "text" "429\n778" ;
+		}
+		onTime 16000 {
+			resetTime "0" ;
+		}
+	}
+
+//
+	windowDef BlueSpike {
+		rect 50, 340, 160, 100
+
+		windowDef BlueSpike1 {
+			rect	0, 0, 60, 100 
+			background	"gui/spike4"
+			matcolor	1, 1, 1, 0.5
+			visible	1
+		}
+		windowDef BlueSpike2 {
+			rect	0, 0, 80, 100 
+			background	"gui/spike4"
+			matcolor	1, 1, 1, 0.5
+			visible	1
+		}
+		windowDef BlueSpike3 {
+			rect	40, 0, 100, 100 
+			background	"gui/spike4"
+			matcolor	1, 1, 1, 0.5
+			visible	1
+		}
+		windowDef BlueSpike4 {
+			rect	80, 0, 80, 100 
+			background	"gui/spike4"
+			matcolor	1, 1, 1, 0.5
+			visible	1
+		}
+		windowDef BlueSpike5 {
+			rect	100, 0, 60, 100 
+			background	"gui/spike4"
+			matcolor	1, 1, 1, 0.5
+			visible	1
+		}
+	}
+
+windowDef RedWave {
+	rect	35, 175, 640, 480 
+
+	windowDef testNEW {
+		rect	20, 10, 140, 100 
+		background	"gui/bar2"
+		matcolor	1, 0.2, 0.2, 1
+		visible	1
+	}
+	windowDef testNEW0 {
+		rect	60, 10, 120, 100 
+		background	"gui/bar2"
+		matcolor	1, 0.3, 0.3, 1
+		visible	1
+	}
+	windowDef testNEW1 {
+		rect	100, 10, 100, 100 
+		background	"gui/bar2"
+		matcolor	1, 0.4, 0.4, 1
+		visible	1
+	}
+	windowDef testNEW2 {
+		rect	140, 10, 80, 100 
+		background	"gui/bar2"
+		matcolor	1, 0.5, 0.5, 1
+		visible	1
+	}
+	windowDef testNEW3 {
+		rect	180, 10, 60, 100 
+		background	"gui/bar2"
+		matcolor	1, 0.6, 0.6, 1
+		visible	1
+	}
+	windowDef testNEW4 {
+		rect	220, 10, 40, 100 
+		background	"gui/bar2"
+		matcolor	1, 0.7, 0.7, 1
+		visible	1
+	}
+	windowDef testNEW5 {
+		rect	260, 10, 20, 100 
+		background	"gui/bar2"
+		matcolor	1, 0.8, 0.8, 1
+		visible	1
+	}
+}
+//
+
+	windowDef bgScroll {
+		rect	20 ,15 ,600 ,450 
+		visible	1
+		background	"gui/scrollbig"
+		matColor	1, 1,  1, flickertable [ time * 5 ] / 20 
+	}
+
+	windowDef bgScroll2 {
+		rect	20 ,240 ,600 ,150 
+		visible	1
+		background	"gui/scroll2"
+		matColor	1, 1,  1, 0.1
+	}
+
+	windowDef Text "{"
+		rect	350 ,70 ,-240 ,395 
+		matcolor	1 ,1 ,1 ,1 
+		visible	1
+		background	"gui/textscroll"
+	//	matscalex	1
+	//	matscaley	0.5
+	}
+
+	windowDef Reflect {
+		rect		10 ,5 ,620 ,470 
+		matcolor	1 ,1 ,1 ,0.2 
+		visible		1
+		background	"gui/reflect1"
+	}
+
+	windowDef Anim {
+
+		onTime 0 {
+			transition	"Win1::rect" "350 70 260 120" "350 70 0 120" "500" ;
+		}
+		onTime 600 {
+			transition	"Win2::rect" "350 170 260 120" "350 170 0 120" "500" ;
+		}
+		onTime 2000 {
+			transition	"Win2::rect" "350 170 260 0" "350 170 260 120" "500" ;
+
+		}
+		onTime 2600 {
+			transition	"Win1::rect" "350 70 260 0" "350 70 260 120" "500" ;
+		}
+		onTime 8000 {
+			resetTime "0" ;
+		}
+	}
+
+}

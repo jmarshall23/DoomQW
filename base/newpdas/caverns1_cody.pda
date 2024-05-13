@@ -1,0 +1,53 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda caverns1_cody 
+{
+	name         "Robert Cody"
+	fullname     "Robert O. Cody"
+	icon         "guis/assets/pda/cody"
+	id           "1197-82"
+	post         "Caverns"
+	title        "Maintenance"
+	security     ""
+	pda_email    "caverns1_cody_email_1"
+	pda_email    "caverns1_cody_email_2"
+	pda_audio    "caverns1_cody_audio_1"
+}
+
+email caverns1_cody_email_1 
+{
+	date		"10-07-2145"
+	to			"Robert Cody"
+	from		"Maint. Control"
+	subject		"Generator Repairs Needed"
+	text 
+	{
+"Mr Cody,\n\n"
+"Several crews working in the caverns have reports of at least a dozen generator failures after the recent seismic activity.  Please assemble your assigned team and report to Maintenance Supervision for the detailed report.  We need those generators operational as soon as possible.\n\n"
+"Thank You,\n"
+"Maintenance Control"
+	}
+}
+
+email caverns1_cody_email_2 
+{
+	date		"10-08-2145"
+	to			"Robert Cody"
+	from		"Mark Robertson"
+	subject		"Sorry old pal"
+	text 
+	{
+"Hey Bob,\n\n"
+"I see that you've been assigned generator duty again, good luck down there with the 'howlers'.  Remember to try and keep your team focused,  I was assigned down there last month, so I'm very aware of how difficult it can get, especially with all those tremors!  Anyhow, give me a shout when you get some free time, we can hit up one of the common areas and down some suds.\n\n"
+"Talk to ya soon,\n"
+"Mark"
+	}
+}
+
+audio caverns1_cody_audio_1 {
+	name		"Dangerous Conditions in the Caverns"
+	info		"Made by: Robert Cody\nDate: 10-18-2145\nOpen for Amendment: No\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_caverns1_cody_1"
+}
+

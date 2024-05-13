@@ -1,0 +1,162 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef BgRoll1
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef Background1
+		{
+			rect	5,5,626,470
+			visible	1
+			background	"guis/assets/keypad/under_bridge_gray2"
+			matcolor	1, 0.1, 0.1, 0.4
+
+			onTime 0 {
+				set "rect" "5 5 630 470" ;
+				transition "matcolor" "0.6 0.9 0.9 0.7" "0.6 0.9 0.9 0.4" "400" ;
+			}
+
+			onTime 1000 {
+				set "rect" "5 30 670 420" ;
+				transition "matcolor" "0.6 0.9 0.9 0.4" "0.6 0.9 0.9 0.7" "250" ;
+			}
+
+			onTime 1250 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef Overlay1
+		{
+			rect	5,5,626,470
+			visible	1
+			background	"guis/assets/keypad/over_bridge"
+			matcolor	0.6, 0.8, 0.9, pdmgflick[ time * 0.0005 ]
+
+			onTime 0 {
+				set "background" "guis/assets/keypad/over_bridged" ;
+			}
+
+			onTime 50 {
+				set "background" "guis/assets/keypad/over_bridge" ;
+			}
+
+			onTime 350 {
+				set "background" "guis/assets/keypad/over_bridged" ;
+			}
+
+			onTime 500 {
+				set "background" "guis/assets/keypad/over_bridge" ;
+			}
+
+			onTime 600 {
+				resetTime "0" ;
+			}
+
+		}
+	}
+	windowDef Static
+	{
+		rect	0,0,640,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ]
+	}
+	windowDef Reflect
+	{
+		rect	0,-14,639,470
+		matcolor	1 ,1 ,1 ,0.2
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef bloodSmear11
+	{
+		rect	348,-21,-487,-310
+		visible	1
+		background	"guis/assets/common/blood2"
+		matcolor	0.6 ,0.6 ,0.3 ,0.4
+	}
+	windowDef CrackClip
+	{
+		rect	5,5,629,470
+		visible	1
+		windowDef glassCrack1
+		{
+			rect	-19,-267,-1059,777
+			visible	1
+			background	"guis/assets/common/glasscrack4"
+			matcolor	0,0,0,1
+		}
+		windowDef glassCrack1111
+		{
+			rect	-29,-131,-1084,740
+			visible	1
+			background	"guis/assets/common/glasscrack2reflect2"
+			matcolor	1 ,1,1,0.15
+		}
+		windowDef glassCrack
+		{
+			rect	-21,-270,-1059,777
+			visible	1
+			background	"guis/assets/common/glasscrack4"
+			matcolor	0.95,0.98,1,0.6
+		}
+		windowDef GlassScratch1
+		{
+			rect	-4,-133,-704,-611
+			background	"guis/assets/common/scratch1d"
+			visible	1
+			matcolor	0,0,0,1
+		}
+		windowDef GlassScratch
+		{
+			rect	-4,-136,-704,-611
+			background	"gui/common/scratch1d"
+			visible	1
+			matcolor	1,1,1,1
+		}
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Dirt
+	{
+		rect	0,0,640,480
+		matcolor	1, 1, 1 ,1
+		visible	1
+		background	"guis/assets/common/dirt2"
+	}
+	windowDef bloodSmear21
+	{
+		rect	290,-31,449,-325
+		visible	1
+		background	"guis/assets/common/blood2"
+		matcolor	0 ,0 ,0 ,0.3
+	}
+	windowDef bloodSmear1
+	{
+		rect	292,-34,449,-325
+		visible	1
+		background	"guis/assets/common/blood2"
+		matcolor	0.5 ,0.6 ,0.4 ,0.85
+	}
+	windowDef bloodSmear211
+	{
+		rect	467,88,449,-325
+		visible	1
+		background	"guis/assets/common/blood2"
+		matcolor	0 ,0 ,0 ,0.3
+	}
+	windowDef bloodSmear3
+	{
+		rect	467,86,449,-325
+		visible	1
+		background	"guis/assets/common/blood2"
+		matcolor	0.5 ,0.6 ,0.4 ,0.85
+	}
+}

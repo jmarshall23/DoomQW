@@ -1,0 +1,82 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta2b_bullman {
+	name         "Larry Bullman"
+	fullname     "Larry A. Bullman"
+	icon         "guis/assets/pda/bullman"
+	id           "5145-84"
+	post         "Delta Labs, Level 2"
+	title        "Research Director"
+	security     ""
+	pda_email    "delta2b_bullman_email_1"
+	pda_email    "delta2b_bullman_email_2"
+	pda_email    "delta2b_bullman_email_3"
+	pda_email    "delta2b_bullman_email_4"
+	pda_audio    "delta2b_bullman_audio_1"
+}
+
+email delta2b_bullman_email_1 {
+	date		"10-20-2145"
+	to		"Larry Bullman"
+	from		"Malcolm Betruger"
+	subject	"RE: Soul Cube as a Weapon"
+	text {
+"Dr. Bullman,\nI received your report and I find it rather perplexing.  Given how little we know about this object I cannot imagine how you've come to such a bizarre conclusion, let alone any conclusion at all.  Send me all your notes for immediate review.\n\n"
+
+"In the meantime, for your own sake, do not share these findings with anyone else.  I would hate people to think one of my highly regarded scientists is prone to flights of fantasy.\n\n"
+	}
+}
+email delta2b_bullman_email_2 {
+	date		"10-22-2145"
+	to		"Larry Bullman"
+	from		"martianbuddy.com"
+	subject	"You may be a winner!"
+	text {
+"Dr. Bullman,\nI hope you will find this e-mail.  I have hidden my true name and address by disguising this email.  He may be reading your messages.\n\n"
+
+"Your boss (I will not mention his name) is far more dangerous than you can imagine.  I believe he is using you and corrupting your work.\n\n"
+
+"I believe your findings are correct and he knows it.  He wants to hide the findings from the UAC and use the object for himself.  I don't know why yet, but I will find out.\n\n"
+
+"Do what you can to stall him.  Do not let him take possession of the object!\n\n"
+	}
+}
+email delta2b_bullman_email_3 {
+	date		"11-01-2145"
+	to		"Larry Bullman"
+	from		"HR Coordinator"
+	subject	"Volunteer today"
+	text {
+"The UAC Mars facility is looking for volunteers.  We would like to encourage people from your team to help in the following areas:\n\n"
+
+"Safety committee: Work with teams to update and inform UAC staff on the importance of safety on Mars.  Check placement of Health Packs around facilities.  Plan events for safety awareness month.  Commitment here will earn volunteers 5 extra credits per month.\n\n"
+
+"Research assistants:  Delta Labs is looking for individuals to help with our exciting break-through work.  Projects vary, see research coordinator for more information.  Health test and liability waiver will be required.  Commitment here will earn volunteers 25 extra credits per month.\n\n"
+
+"For more information about any of these opportunities or to post an opening in your department, please see Sierra Olson, Volunteer Coordinator, in UAC HR."
+	}
+}
+
+email delta2b_bullman_email_4 {
+	date		"11-14-2145"
+	to		"Larry Bullman"
+	from		"Ian McCormick"
+	subject	"It is a weapon!"
+	text {
+"Larry,\n"
+"You were correct, the Soul Cube is a weapon.  I've translated the glyphs and now I understand how it works!\n\n"
+"The Soul Cube must be charged before it can be used.  The souls within it must sense at least five deaths before the spiritual potentiality matrix reaches positronic astriction.  Based on our interpretation of the glyphs, the Cube has a way of acknowledging its readiness for action, but it's unclear how this happens.  More importantly, we still don't know what will happen when it's released.\n\n"
+"This has gone way beyond the purview of Mars station or even the UAC.  We can't trust Betruger, he's gone mad! I'm preparing a report to send to the highest authorities on Earth.\n\n"
+"Good luck and God help us.\n"
+"Ian"
+	}
+}
+
+
+audio delta2b_bullman_audio_1 {
+	name		"Soul Cube as a Weapon"
+	info		"Made by: Larry Bullman\nDate: 10-19-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta2b_bullman_1"
+}
+

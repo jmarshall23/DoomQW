@@ -1,0 +1,61 @@
+// NO audio files in the personal pda and subsequently no video files in other pdas
+// all vidoes are downloaded to your personal pda and individual pdas can contain
+// audio logs
+
+pda default {
+	name		"First Last"
+	fullname	"First Middle Initial Last"
+	icon		"gui/pda/bio1"
+	id		"1111x-11"
+	post		"Map Location"				// for the personal pda this is ignored and current location is used instead
+	title		"Title"					// this is used for title or rank ( for the player )
+	security	""				// only set this if it contains a new security clearance.. as far as the pda and hud goes this is informational only
+	pda_email	"default_email_1"
+	pda_email	"default_email_2"
+	pda_audio	"audio_log_1"
+	pda_audio   "audio_log_2"
+}
+
+
+email default_email_1 {
+	date		"xx-xx-2145"
+	to		"none"
+	from		"Name1"
+	subject	"Subject1"
+	text {
+"This is the first line.\n\n"
+
+"This is an example of a really long paragraph in the email field. You don't need to enter any returns, just keep typing on and on. You can add in one of those slash n things for a return or paragraph start whatever suits your fancy really.\n\n"
+
+"Thank You,\nSome Name"
+	}
+}
+
+email default_email_2 {
+	date		"xx-xx-2145"
+	to		"none"
+	from		"Name2"
+	subject	"Subject2"
+	text {
+"This is the first line.\n\n"
+
+"This is another example of a really long paragraph in the email field. You don't need to enter any returns, just keep typing on and on. You can add in one of those slash n things for a return or paragraph start whatever suits your fancy really.\n\n"
+
+"Thank You,\nSome Name"
+	}
+}
+
+audio audio_log_1 {
+	name 		"Example 1"
+	info		"Made by: Tim Willits\nDate: xx-xx-2145\nOpen for amendment: Yes\nSet for Archive: No"
+	preview	"sound/vo/video/novideo"
+	audio		"audiolog_audio_log_1"
+}
+
+audio audio_log_2 {
+	name 		"Example 2"
+	info		"Made by: Tim Willits\nDate: xx-xx-2145\nOpen for amendment: Yes\nSet for Archive: No"
+	preview	"sound/vo/video/novideo"
+	audio		"audiolog_audio_log_2"
+}
+

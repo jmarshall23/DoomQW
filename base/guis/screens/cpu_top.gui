@@ -1,0 +1,110 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480
+	nocursor	1
+	background	"guis/assets/cpuserver/bg.tga"
+	matcolor	0.5, 1, 0.9, 0.8
+
+	windowDef Bglow {
+		rect 0, 0, 640, 480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible 1
+		matcolor 0, 1, 0.8, 0.2
+	}
+
+	windowDef Text1 {
+		rect		50, 400, 10, 50
+		text		"#str_01723"
+		textscale	0.52
+		textalign	0
+		forecolor	1, 1, 1, 0
+		visible		1
+		nowrap		1
+	}
+
+	windowDef Text2 {
+		rect		50, 400, 10, 50
+		text		"#str_01724"
+		textscale	0.52
+		textalign	0
+		forecolor	1, 1, 1, 0
+		visible		1
+		nowrap		1
+	}
+
+	windowDef Text3 {
+		rect		50, 360, 10, 50
+		text		"#str_01725"
+		textscale	0.52
+		textalign	0
+		forecolor	1, 1, 1, 0
+		visible		1
+		nowrap		1
+	}
+
+	windowDef guiwin1 {
+		rect 20, 40, 600, 320
+		background	"guis/assets/cpuserver/logo.tga"
+		visible 1
+		matcolor 0, 1, 0.8, pdinout[ time * 0.001 ]/2.5
+	}
+
+	windowDef guiwin2 {
+		rect 20, 40, 600, 320
+		background	"guis/assets/cpuserver/logo2.tga"
+		visible 1
+		matcolor 0, 1, 0.8, 0.6
+	}
+
+	windowDef bgScroll {
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background	"gui/scroll3"
+		matColor	1, 1,  1, flickertable [ time * 5 ] / 6 
+	}
+
+	windowDef Reflect {
+		rect		10 ,5 ,620 ,470 
+		matcolor	1 ,1 ,1 ,0.2 
+		visible		1
+		background	"gui/reflect1"
+	}
+
+	windowDef Anim {
+
+		onTime 0 {
+			set		"Text3::rect""50 360 600 50" ;
+			set		"Text3::forecolor" "0.5 0.9 1 0.5" ;
+			transition	"Text1::rect" "50 400 10 50" "50 400 600 50" "1000" ;
+			set		"Text1::forecolor" "0.5 0.9 1 0.5" ;
+		}
+		onTime 1000 {
+			transition	"Text3::rect" "50 360 600 50" "50 320 600 50" "300" ;
+			transition	"Text3::forecolor" "0.5 0.9 1 0.5" "0.5 0.9 1 0" "300" ;
+			transition	"Text1::rect" "50 400 600 50" "50 360 600 50" "300" ;
+			set		"Text2::rect" "50 400 10 50" ;
+		}
+		onTime 1300 {
+			transition	"Text2::rect" "50 400 10 50" "50 400 600 50" "1000" ;
+			set		"Text2::forecolor" "0.5 0.9 1 0.5" ;
+		}
+		onTime 2300 {
+			transition	"Text1::rect" "50 360 600 50" "50 320 600 50" "300" ;
+			transition	"Text1::forecolor" "0.5 0.9 1 0.5" "0.5 0.9 1 0" "300" ;
+			transition	"Text2::rect" "50 400 600 50" "50 360 600 50" "300" ;
+			set		"Text3::rect" "50 400 10 50" ;
+		}
+		onTime 2600 {
+			transition	"Text3::rect" "50 400 10 50" "50 400 600 50" "1000" ;
+			set		"Text3::forecolor" "0.5 0.9 1 0.5" ;
+		}
+		onTime 3600 {
+			transition	"Text2::rect" "50 360 600 50" "50 320 600 50" "300" ;
+			transition	"Text2::forecolor" "0.5 0.9 1 0.5" "0.5 0.9 1 0" "300" ;
+			transition	"Text3::rect" "50 400 600 50" "50 360 600 50" "300" ;
+			set		"Text1::rect" "50 400 10 50" ;
+		}
+		onTime 3900 {
+			resetTime "0" ;
+		}
+	}
+}

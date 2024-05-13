@@ -1,0 +1,654 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	backcolor	0 ,0 ,0 ,0
+	visible	1
+	comment	"Trigger the gui to make it clickable"
+	notime	1
+
+	onTrigger {
+		resetTime "0" ;
+	}
+
+	onTime 0 {
+		transition "LeftSpacer::rect" "0 166 134 42" "0 282 134 42" "500" "0" "0.8" ;
+		transition "RightSpacer::rect" "501 166 -133 42" "501 282 -133 42" "500" "0" "0.8" ;
+		transition "Left1::rect" "0 39 -34 127" "0 39 -34 243" "500" "0" "0.8" ;
+		transition "Right1::rect" "600 39 34 127" "600 39 34 243" "500" "0" "0.8" ;
+		transition "Left2::rect" "0 208 -34 234" "0 324 -34 118" "500" "0" "0.8" ;
+		transition "Right2::rect" "600 208 34 234" "600 324 34 118" "500" "0" "0.8" ;
+		
+		transition "DataWin::rect" "22 202 598 265" "22 317 598 150" "500" "0" "0.8" ;
+		transition "ButtonBG21::rect" "6 31 584 -201" "6 31 584 -85" "500" "0" "0.8" ;
+		transition "ButtonBG31::rect" "6 232 584 -25" "6 116 584 -25" "500" "0" "0.8" ;
+		
+		transition "SourceText::rect" "47 216 549 233" "45 345 560 120" "500" "0" "0.8" ;
+		set "SourceText1::visible" "0" ;
+		
+		transition "ButtonBG2::rect" "5 29 604 -23" "5 29 604 -138" "500" "0" "0.8" ;
+		transition "ButtonBG3::rect" "5 52 604 -25" "5 167 604 -25" "500" "0" "0.8" ;	
+		
+		transition "TextTitle21::rect" "111 169 423 39" "109 289 423 33" "500" "0" "0.8" ;
+	}
+
+	onTime 500 {
+		set "TextInsert::visible" "0" ;
+		transition "TextTransData1::forecolor" "1 1 1 0.8" "1 1 1 0.6" "500" ;
+		resetTime "BigButton1" "0" ;
+		set "Roq1::noevents" "0" ;
+	}
+
+	windowDef BG1
+	{
+		rect	5,5,630,470
+		visible	1
+		background	"guis/assets/common/scibox/bg2"
+		matcolor	1,0.5,0,0.7
+	}
+	windowDef BGGrid
+	{
+		rect	8,11,623,458
+		visible	1
+		background	"gui/grid2"
+		matcolor	1,1,1,0.07
+		matscalex	7
+		matscaley	5
+	}
+	windowDef BGFrame
+	{
+		rect	5,4,630,472
+		visible	1
+		windowDef TRCorner
+		{
+			rect	564,-1,67,-40
+			visible	1
+			background	"guis/assets/common/scibox/g_cornerSmall"
+			matcolor	1,0.6,0.3,0.7
+		}
+		windowDef Top2
+		{
+			rect	65,-1,499,40
+			visible	1
+			background	"guis/assets/common/scibox/g_horiz"
+			matcolor	1,0.6,0.3,0.7
+		}
+		windowDef Bottom2
+		{
+			rect	31,443,565,-31
+			visible	1
+			background	"guis/assets/common/scibox/g_horiz"
+			matcolor	1,0.6,0.3,0.7
+		}
+		windowDef BRCorner
+		{
+			rect	596,442,-35,-32
+			visible	1
+			background	"guis/assets/common/scibox/g_cornerRound2"
+			matcolor	1,0.6,0.3,0.7
+		}
+		windowDef Left1
+		{
+			rect	-2,39,-34,127
+			visible	1
+			background	"guis/assets/common/scibox/g_vert"
+			matcolor	1,0.6,0.3,0.7
+		}
+		windowDef Left2
+		{
+			rect	-2,208,-34,234
+			visible	1
+			background	"guis/assets/common/scibox/g_vert"
+			matcolor	1,0.6,0.3,0.7
+		}
+		windowDef Right1
+		{
+			rect	597,39,34,127
+			visible	1
+			background	"guis/assets/common/scibox/g_vert"
+			matcolor	1,0.6,0.3,0.7
+		}
+		windowDef RightSpacer
+		{
+			rect	498,166,-133,42
+			visible	1
+			background	"guis/assets/common/scibox/g_spacerLarge"
+			matcolor	1,0.6,0.3,0.7
+		}
+		windowDef Right2
+		{
+			rect	597,208,34,234
+			visible	1
+			background	"guis/assets/common/scibox/g_vert"
+			matcolor	1,0.6,0.3,0.7
+		}
+		windowDef LeftSpacer
+		{
+			rect	-2,166,134,42
+			visible	1
+			background	"guis/assets/common/scibox/g_spacerLarge"
+			matcolor	1,0.6,0.3,0.7
+		}
+		windowDef TLCorner
+		{
+			rect	-2,-1,-67,-40
+			visible	1
+			background	"guis/assets/common/scibox/g_cornerSmall"
+			matcolor	1,0.6,0.3,0.7
+		}
+		windowDef BLCorner
+		{
+			rect	-2,442,34,-32
+			visible	1
+			background	"guis/assets/common/scibox/g_cornerRound2"
+			matcolor	1,0.6,0.3,0.7
+		}
+	}
+	windowDef ButtonArea
+	{
+		rect	13,99,617,200
+		visible	1
+		windowDef ButtonBG3
+		{
+			rect	5,52,604,-25
+			visible	1
+			background	"guis/assets/teleporter/grid1"
+			matcolor	1,1,1,0.7
+		}
+		windowDef ButtonBG2
+		{
+			rect	5,29,604,-23
+			visible	1
+			background	"guis/assets/teleporter/grid2"
+			matcolor	1,1,1,0.7
+		}
+		windowDef ButtonBG1
+		{
+			rect	5,4,604,25
+			visible	1
+			background	"guis/assets/teleporter/grid1"
+			matcolor	1,1,1,0.7
+		}
+		windowDef ButtonBarRight
+		{
+			rect	580,39,17,34
+			visible	0
+			background	"guis/assets/common/scibox/fillRight"
+			matcolor	1, 0, 0, 0.4
+		}
+		windowDef ButtonBarCenter
+		{
+			rect	34,39,546,34
+			visible	0
+			background	"guis/assets/common/scibox/fillCenter"
+			matcolor	1, 0, 0, 0.4
+		}
+		windowDef ButtonBarLeft
+		{
+			rect	17,39,17,34
+			visible	0
+			background	"guis/assets/common/scibox/fillLeft"
+			matcolor	1, 0, 0, 0.4
+		}
+		windowDef TextInsert
+		{
+			rect	17,7,579,60
+			visible	1
+			text	"#str_03849"
+			forecolor	1,0.7,0.2,0.6
+			textscale	0.54
+			font	"fonts/micro"
+			textalign	1
+
+			onTime 0 {
+				transition "forecolor" "1 0 0 0.7" "1 0 0 0.3" "900" ;
+				
+				transition "ButtonBarRightRed::matcolor" "1 0 0 0.4" "1 0 0 0.2" "900" ;
+				transition "ButtonBarCenterRed::matcolor" "1 0 0 0.4" "1 0 0 0.2" "900" ;
+				transition "ButtonBarLeftRed::matcolor" "1 0 0 0.4" "1 0 0 0.2" "900" ;
+			}
+
+			onTime 900 {
+				transition "forecolor" "1 0 0 0.3" "1 0 0 0.7" "100" ;
+				
+				transition "ButtonBarRightRed::matcolor" "1 0 0 0.2" "1 0 0 0.4" "100" ;
+				transition "ButtonBarCenterRed::matcolor" "1 0 0 0.2" "1 0 0 0.4" "100" ;
+				transition "ButtonBarLeftRed::matcolor" "1 0 0 0.2" "1 0 0 0.4" "100" ;
+			}
+
+			onTime 1000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef ButtonBarRightRed
+		{
+			rect	580,39,17,34
+			visible	1
+			background	"guis/assets/common/scibox/fillRight"
+			matcolor	1, 0, 0, 0.4
+		}
+		windowDef ButtonBarCenterRed
+		{
+			rect	34,39,546,34
+			visible	1
+			background	"guis/assets/common/scibox/fillCenter"
+			matcolor	1, 0, 0, 0.4
+		}
+		windowDef ButtonBarLeftRed
+		{
+			rect	17,39,17,34
+			visible	1
+			background	"guis/assets/common/scibox/fillLeft"
+			matcolor	1, 0, 0, 0.4
+		}
+		windowDef TextTransData
+		{
+			rect	163,12,433,69
+			visible	1
+			text	"#str_00409"
+			forecolor	1,1,1,0
+			textscale	0.55
+			font	"fonts/micro"
+		}
+		windowDef TextActivate
+		{
+			rect	163,82,430,77
+			visible	1
+			text	"#str_00410"
+			forecolor	1,0.7,0.2,0
+			textscale	0.55
+			font	"fonts/micro"
+			notime	1
+
+			onTime 0 {
+				transition "forecolor" "1 0 0 1" "1 0 0 0.2" "1000" ;
+			}
+
+			onTime 1000 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef TextDataFragment
+		{
+			rect	163,12,433,42
+			visible	1
+			text	"#str_00396"
+			forecolor	1,1,1,0
+			textscale	0.6
+			font	"fonts/micro"
+		}
+		windowDef TextStatus
+		{
+			rect	162,52,430,43
+			visible	1
+			text	"#str_00397"
+			forecolor	1,0.698,0.2,0
+			textscale	0.55
+			font	"fonts/micro"
+		}
+		windowDef BigButton
+		{
+			rect	156,86,439,70
+			visible	1
+			background	"guis/assets/efc/button"
+			matcolor	1,0.1,0.1,0
+		}
+	}
+	windowDef CircParentClip
+	{
+		rect	27,109,143,176
+		visible	1
+		windowDef CircParent
+		{
+			rect	-135,0,143,176
+			visible	1
+			windowDef Circ1
+			{
+				rect	-131,-43,265,265
+				visible	0
+				background	"gui/spincircfull2"
+				matcolor	1,0,0,0.6
+			}
+			windowDef Circ2
+			{
+				rect	-94,-6,192,-192
+				visible	0
+				background	"gui/spincircfull2"
+				matcolor	1,0.2,0.2,0.6
+			}
+			windowDef Circ3
+			{
+				rect	-68,19,139,-139
+				visible	0
+				background	"gui/spincircfull1"
+				matcolor	1,0.4,0.4,0.6
+			}
+			windowDef Circ4
+			{
+				rect	-48,39,99,99
+				visible	0
+				background	"gui/spincircfull1"
+				matcolor	1,0.6,0.6,0.6
+			}
+			windowDef CircFrameTop
+			{
+				rect	21,-63,-156,137
+				visible	1
+				background	"guis/assets/caverns/cranebox2"
+				matcolor	1,1,1,0.15
+			}
+			windowDef CircFrameBtm
+			{
+				rect	21,104,-156,-137
+				visible	1
+				background	"guis/assets/caverns/cranebox2"
+				matcolor	1,1,1,0.15
+			}
+			windowDef ButtonBarRightRed1
+			{
+				rect	0,51,32,80
+				visible	0
+				background	"guis/assets/common/scibox/fillRight"
+				matcolor	1,0,0,0.2
+			}
+		}
+	}
+	windowDef DataWin
+	{
+		rect	22,202,598,265
+		visible	1
+		windowDef ButtonBG11
+		{
+			rect	6,6,584,25
+			visible	1
+			background	"guis/assets/teleporter/grid1"
+			matcolor	0.1,0.1,0.1,1
+		}
+		windowDef ButtonBG21
+		{
+			rect	6,31,584,-201
+			visible	1
+			background	"guis/assets/teleporter/grid2"
+			matcolor	0.1,0.1,0.1,1
+		}
+		windowDef ButtonBG31
+		{
+			rect	6,232,584,-25
+			visible	1
+			background	"guis/assets/teleporter/grid1"
+			matcolor	0.1,0.1,0.1,1
+		}
+	}
+	windowDef SourceText
+	{
+		rect	47,216,549,233
+		visible	1
+		forecolor	1,1,1,0.6
+		text	"#str_03850"
+		textscale	0.46
+		font	"fonts/an"
+	}
+	windowDef SourceText1
+	{
+		rect	437,397,49,56
+		visible	1
+		forecolor	1,1,1,0.6
+		text	"|"
+		textscale	0.8
+
+		onTime 0 {
+			transition "forecolor" "1 1 1 0" "1 1 1 0.6" "100" ;
+		}
+
+		onTime 200 {
+			transition "forecolor" "1 1 1 0.6" "1 1 1 0" "100" ;
+		}
+
+		onTime 400 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef TextTitle1
+	{
+		rect	18,32,610,33
+		visible	1
+		text	"#str_00460"
+		forecolor	1,0.9,0.7,0.7
+		textscale	0.48
+		font	"fonts/micro"
+	}
+	windowDef TextTitle2
+	{
+		rect	18,62,598,33
+		visible	1
+		text	"#str_00461"
+		forecolor	1,0.9,0.7,0.3
+		textscale	0.48
+		font	"fonts/micro"
+	}
+	windowDef divbarLeft
+	{
+		rect	40,22,-280,8
+		visible	1
+		background	"gui/teleporter/scroller"
+		matcolor	1,1,1,0.2
+	}
+	windowDef divbarRight
+	{
+		rect	320,22,280,8
+		visible	1
+		background	"gui/teleporter/scroller"
+		matcolor	1,1,1,0.2
+	}
+	windowDef TextTitle21
+	{
+		rect	111,169,423,39
+		visible	1
+		text	"#str_03851"
+		forecolor	1,0.6,0.2,0.4
+		textscale	0.58
+		font	"fonts/micro"
+	}
+	windowDef TextTransData1
+	{
+		rect	39,105,572,36
+		visible	1
+		text	"#str_03852"
+		forecolor	1,1,1,0
+		textscale	0.57
+		font	"fonts/micro"
+	}
+	windowDef BigButton1
+	{
+		rect	30,170,580,112
+		visible	1
+		background	"guis/assets/efc/button"
+		matcolor	1,0.1,0.1,0
+		notime	1
+
+		onTime 0 {
+			transition "matcolor" "1 0.1 0.1 0" "1 0.1 0.1 0.7" "500" ;
+			transition "TextActivate1::forecolor" "1 0 0 0" "1 0 0 1" "500" ;
+		}
+
+		onTime 500 {
+			transition "matcolor" "1 0.1 0.1 0.7" "1 0.1 0.1 0.3" "900" ;
+			transition "TextActivate1::forecolor" "1 0 0 1" "1 0 0 0.5" "900" ;
+		}
+
+		onTime 1400 {
+			transition "matcolor" "1 0.1 0.1 0.3" "1 0.1 0.1 0.7" "100" ;
+			transition "TextActivate1::forecolor" "1 0 0 0.5" "1 0 0 1" "100" ;
+		}
+
+		onTime 1500 {
+			resetTime "500" ;
+		}
+
+	}
+	windowDef TextActivate1
+	{
+		rect	35,180,568,110
+		visible	1
+		text	"#str_03853"
+		forecolor	1,0.698,0.2,0
+		textscale	0.68
+		font	"fonts/micro"
+		textalign	1
+		notime	1
+
+		onTime 0 {
+			set "TextActivate1::text" "#str_03854" ;
+			resetTime "BigButton1" "500" ;
+		}
+
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	1,0.6,0.3,0.12
+	}
+	windowDef Invasion
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef BgBlack
+		{
+			rect	-3,0,645,483
+			visible	1
+			background	"guis/assets/common/bg"
+			matcolor	0,0,0,0
+		}
+		windowDef Roq1
+		{
+			rect	8,8,623,463
+			visible	1
+			background	"gui/mc_underground/inv6sm"
+			matcolor	1,1,1,0
+			notime	1
+			noevents	1
+
+			onAction {
+				set "cmd" "activate" ;
+				resetCinematics ;
+				resetTime "0" ;
+				set "noevents" "1" ;
+				resetTime "TextActivate1" "0" ;
+				transition "BGBlack::matcolor" "0 0 0 0" "0 0 0 1" "500" ;
+				transition "Static3::matcolor" "1 1 1 0" "1 1 1 0.2" "500" ;
+			}
+
+			onTime 290 {
+				set "desktop::nocursor" "1" ;
+				set "BGBlack2::matcolor" "0 0 0 1" ;
+			}
+
+			onTime 300 {
+				resetTime "Anim" "0" ;
+				set "matcolor" "1 1 1 1" ;
+				transition "Bglow1::matcolor" "1 0.2 0 0" "1 0.2 0 0.08" "100" ;
+				transition "Static3::matcolor" "1 1 1 0.2" "1 1 1 0" "500" ;
+			}
+
+		}
+		windowDef Static3
+		{
+			rect	5,5,629,475
+			visible	1
+			background	"gui/static"
+			matcolor	1, 1, 1, 0
+		}
+		windowDef BackgroundH3
+		{
+			rect	0,0,640,480
+			visible	1
+			background	"gui/bloodtest1"
+			matcolor	0.7, 0.5, 0.5, 0
+		}
+		windowDef BgBlack2
+		{
+			rect	-3,0,645,483
+			visible	1
+			background	"guis/assets/common/bg"
+			matcolor	0,0,0,0
+		}
+		windowDef Bglow1
+		{
+			rect	0,0,640,480
+			background	"guis/assets/cpuserver/bglow"
+			visible	1
+			matcolor	1, 0.2, 0, 0
+		}
+	}
+	windowDef scanlinesAlt1
+	{
+		rect	0,0,640,480
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		matscaley	2
+		visible	1
+	}
+	windowDef Outershadow1
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,0.8
+		visible	1
+	}
+	windowDef Static1
+	{
+		rect	0,0,640,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 15
+	}
+	windowDef Reflect
+	{
+		rect	0,-9,646,501
+		matcolor	1 ,1 ,1 ,0.1
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Dirt2
+	{
+		rect	0,0,640,-480
+		matcolor	1, 1, 1 ,0.8
+		visible	1
+		background	"guis/assets/common/dirt4"
+	}
+	windowDef Dirt
+	{
+		rect	0,0,640,480
+		matcolor	1, 1, 1 ,0.8
+		visible	1
+		background	"guis/assets/common/dirt4"
+	}
+	windowDef Dirt21
+	{
+		rect	0,0,640,-480
+		matcolor	1, 1, 1 ,0.4
+		visible	1
+		background	"guis/assets/common/dirt2"
+	}
+	windowDef Anim
+	{
+		rect	0,0,0,0
+		visible	0
+		notime	1
+
+		onTime 100 {
+			transition "BGBlack2::matcolor" "0.2 0.2 0.2 1" "0 0 0 0" "500" ;
+		}
+
+		onTime 6800 { 
+			transition "BGBlack2::matcolor" "1 1 1 0.1" "0 0 0 0.7" "200" ;
+			transition "Static3::matcolor" "1 1 1 0" "1 1 1 1" "200" ;
+			transition "backgroundH3::matcolor" "0.7 0.5 0.5 0" "0.7 0.5 0.5 0.2" "200" ;
+		}
+
+	}
+}

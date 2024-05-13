@@ -1,0 +1,41 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda comm1_finch {
+	name         "Rob Finch"
+	fullname     "Robert J. Finch"
+	icon         "guis/assets/pda/icon_rfinch"
+	id           "9848-52"
+	post         "Communications"
+	title        "Maintenance Coordinator"
+	security     "Communications Maintenance"
+	pda_email    "comm1_finch_email_1"
+	pda_email    "comm1_finch_email_2"
+}
+email comm1_finch_email_1 {
+	date		"11-14-2145"
+	to			"Rob Finch"
+	from		"Brent Davis"
+	subject		"Quiz Night"
+	text {
+	"Finchy,\n\n"
+	"Don't forget that Trivia Quiz Night is this Wednesday.  Do yourself a favor and brush up on the Shakespeare, mate.  If we lose to those twits in administration again, we'll never hear the end of it.\n\n"
+	"Brent"
+
+
+	}
+}
+email comm1_finch_email_2 {
+	date		"11-15-2145"
+	to		"Rob Finch"
+	from		"Steven Finch"
+	subject	"On your way home!!"
+	text {
+	"Hey Bro,\n"
+	"Mom told me you were heading home in a week or so... I bet you can't wait for that, can ya?\n\n"
+	"I've been pretty busy down here... Little Annie is almost 9 now.  Can you believe that?  Dianne and I are thinking about another one soon, we're gonna have to move into a double-wide orbiter :)\n\n"
+	"Anyway, I won't keep ya... see ya soon\n"
+	"Flapper"
+	}
+}
+
+

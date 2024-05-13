@@ -1,0 +1,63 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda hell_garlick {
+	name         "Simon Garlick"
+	fullname     "Simon R. Garlick"
+	icon         "guis/assets/pda/garlick"
+	id           "8623-68"
+	post         "Delta Labs, Sector 3"
+	title        "Research Specialist"
+	security     ""
+	pda_email    "hell_garlick_email_1"
+	pda_email	 "hell_garlick_email_2"
+	
+
+	pda_audio    "hell_garlick_audio_1"
+	pda_audio    "hell_garlick_audio_2"
+}
+
+email hell_garlick_email_1 {
+	date		"08-06-2145"
+	to		"Simon Garlick"
+	from	"Heather Elaine"
+	subject	"Expedition Expectations"
+	text {
+"Simon,\n"
+"As you know, you have been assigned to Expedition 14A-2.  There are several goals we hope your team will be able to meet while on expedition.  Since you are familiar with the discovered tablets, we would like you to find cooperative evidence on the other side of the Main Portal - similar writings of any kind should be photographed and collected.\n\n"
+"Primarily, we are looking to capture several more bio-specimens.  Having already collected many of the smaller 'Imp' creatures, we would like to bring back one of the larger ones, described by others as a 'Hell-Knight'.  Previous expeditions have reported seeing them at the Main Portal destination, where you will be arriving.  You will have several weapons with you, but we ask that you attempt to use non-lethal force, we would really like to have a live specimen if possible.\n\n"
+"Finally, traveling through the portal has caused varied reactions.  For our records we would like you to keep an audio log of everything you experience for us to later analyze.\n\n"
+"I hope you have a safe trip.\n"
+"Heather"
+	}
+}
+
+email hell_garlick_email_2 {
+	date		"08-06-2145"
+	to		"Simon Garlick"
+	from	"Earl Besch"
+	subject	"Dimensional Uniqueness"
+	text {
+"Simon,\n"
+"In preparation for your 'jump' next week, I wanted to inform you of another tasklist item we need to cover.  Since the Main Portal has not been operational for a few weeks, we have not had time to follow up on some of the physiological reports.  While on the other side of the portal, pay close attention to your stamina while working and moving around.  Many individuals have reported a lack of being tired, and some work constantly without the need for rest.  One of the teams has called it 'the hercules complex'.  Anyhow, to help us further our study, please record any additional information related to this phenomenon.\n\n"
+"Thank You, and good luck next week!\n\n"
+"Earl Besch\n"
+"Research Scientist"
+
+	}
+}
+
+
+audio hell_garlick_audio_1 {
+	name		"Separated from Team"
+	info		"Made by: Simon Garlick\nDate: 08-08-2145\nOpen for Amendment: No\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_hell_garlick_1"
+}
+
+audio hell_garlick_audio_2 {
+	name		"Still Separated from Team"
+	info		"Made by: Simon Garlick\nDate: 08-10-2145\nOpen for Amendment: Yes\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_hell_garlick_2"
+}
+

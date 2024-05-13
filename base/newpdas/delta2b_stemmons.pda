@@ -1,0 +1,51 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta2b_stemmons 
+{
+	name         "Jacob Stemmons"
+	fullname     "Jacob L. Stemmons"
+	icon         "guis/assets/pda/stemmons"
+	id           "7545-99"
+	post         "Spec. Analysis, Level 2"
+	title        "Analysis Supervisor"
+	security     ""
+	pda_email    "delta2b_stemmons_email_1"
+	pda_email    "delta2b_stemmons_email_2"
+}
+
+email delta2b_stemmons_email_1 
+{
+	date		"11-13-2145"
+	to		"Jacob Stemmons"
+	from		"Thomas Franks"
+	subject	"Storage Locker Update"
+	text 
+	{
+		"Jacob,\n"
+		"We have recently changed the code on the storage locker near the stasis transfer control to: 3 7 1.  Please be sure to annotate this on the Security Report for the local security detail.\n\n"
+		"Thank You,\n"
+		"Thomas Franks\n"
+		"Delta Security, Clerk"
+	}
+}
+
+email delta2b_stemmons_email_2 
+{
+	date		"11-15-2145"
+	to		"Jacob Stemmons"
+	from		"Maintenance"
+	subject	"RE: Power out!!"
+	text 
+	{
+"Mr Stemmons,\n"
+"We are aware of the power problems in your area. Presently, we are dealing with several power issues throughout the entire Delta complex. It would be a great help if you would check some of the circuit breaker boxes in Maint-04 to determine if it is simply a breaker issue. Please file a report with the help desk and we will be out to your department as soon as possible.\n\n"
+"Thank You,\n"
+"Maintenance Division\n\n"	
+"----Original Message----\n"
+"Sent: 11-13-2145\n"
+"The damn power has been fluctuating all week in the Specimen Transfer Area. These conditions make it extremely frustrating to work! Can you please send someone down here to check on the situation.\n\n"
+"Thank You,\n"
+"Jacob Stemmons\n\n"	
+		
+	}
+}

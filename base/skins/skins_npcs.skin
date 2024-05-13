@@ -1,0 +1,4 @@
+
+skin skins\characters\npcs\bloody_marine {
+	models/characters/male_npc/marine/marine models/characters/male_npc/marine/dmarine
+}

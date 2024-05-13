@@ -1,0 +1,140 @@
+windowDef Desktop
+{
+	comment	"Use this gui on the top of a nonfunctioning elevator (level change). This one reports it is on Level 1"
+	rect	0 ,0 ,640 ,480
+	windowDef bg1
+	{
+		rect	0 ,0 ,320 ,480
+		background	"guis/assets/common/marquee"
+		matcolor	0.2 ,0.8 ,0.6 ,0.6
+	}
+	windowDef bg2
+	{
+		rect	320 ,0 ,-320 ,480
+		background	"guis/assets/common/marquee"
+		matcolor	0.2 ,0.8 ,0.6 ,0.6
+	}
+	windowDef bgTop1
+	{
+		rect	0 ,0 ,220 ,240
+		background	"guis/assets/elevator/callfloorbg_g"
+		matcolor	0.9 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef bgTop2
+	{
+		rect	220 ,0 ,200 ,240
+		background	"guis/assets/elevator/callfloorbgmid_g"
+		matcolor	0.9 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef bgTop3
+	{
+		rect	420 ,0 ,-220 ,240
+		background	"guis/assets/elevator/callfloorbg_g"
+		matcolor	0.9 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef bgBTM1
+	{
+		rect	0 ,240 ,220 ,-240
+		background	"guis/assets/elevator/callfloorbg_g"
+		matcolor	0.9 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef bgBTM2
+	{
+		rect	220 ,240 ,200 ,-240
+		background	"guis/assets/elevator/callfloorbgmid_g"
+		matcolor	0.9 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef bgBTM3
+	{
+		rect	420 ,240 ,-220 ,-240
+		background	"guis/assets/elevator/callfloorbg_g"
+		matcolor	0.9 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Logo
+	{
+		rect	100,50 ,120 ,380
+		visible	1
+		background	"guis/assets/common/mlogo"
+		matcolor	0.3, 0.4, 0.4, 1
+	}
+	windowDef Text1
+	{
+		rect	0 ,5,640 ,480
+		visible	1
+		windowDef Text1g
+		{
+			rect	0 ,0,540 ,200
+			text	"#str_00304"
+			textscale	1.5
+			textalign	2
+			forecolor	0.8, 1, 1, pdflick[ time * 0.001 ] / 2
+			visible	1
+			forceaspectheight	100
+			windowDef Text1gBlank
+			{
+				rect	0, 0, 0, 0
+			}
+		}
+	}
+	windowDef Text2
+	{
+		rect	0 ,5,640 ,480
+		visible	0
+		windowDef Text2g
+		{
+			rect	0 ,0,540 ,200
+			text	"#str_00310"
+			textscale	1.5
+			textalign	2
+			forecolor	0.8, 1, 1, pdflick[ time * 0.001 ] / 2
+			visible	1
+			forceaspectheight	100
+			windowDef Text2gBlank
+			{
+				rect	0, 0, 0, 0
+			}
+		}
+	}
+	windowDef Static
+	{
+		rect	-5 ,-5 ,-660 ,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 6
+	}
+	windowDef bgcallh
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 5
+		visible	1
+	}
+	windowDef bgcalld
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef bgcallo
+	{
+		rect	0 ,0 ,640 ,-480
+		background	"gui/addhighlight"
+		matcolor	0.3 ,0.6 ,0.6 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,-640,480
+		matcolor	0.3,0.3,0.3,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	0.8
+	}
+}

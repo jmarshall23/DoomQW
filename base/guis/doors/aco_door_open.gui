@@ -1,0 +1,289 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	backcolor	0, 0, 0, 1
+	matcolor	0, 0, 0, 1
+	background	"guis/assets/common/bg"
+	comment	"gui_parm5 value 1 will set the  gui to the malfunctioning state. "
+
+	onEvent {
+		if ("gui::gui_parm5" == 1) {
+			if ("parm" == 0) {
+				set "parm" "1" ;
+				resetTime "Shizzle" "0" ;
+			}
+		}
+	}
+
+	windowDef BackgroundParent
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		windowDef BgParent
+		{
+			rect	7 ,7 ,626 ,466
+			visible	1
+			windowDef Bg
+			{
+				rect	-50, 30, 740, 480
+				background	"guis/assets/cpuserver/bg3"
+				matcolor	0.8, 1, 1, 0
+			}
+			windowDef Stars
+			{
+				rect	-200, 0, 1024, 1024
+				background	"gui/mainmenu/star"
+				matcolor	0.7 ,0.7 ,0.7 ,0
+				matscaley	1.5
+				matscalex	1.5
+				noevents	1
+			}
+			windowDef Stars1
+			{
+				rect	0, 0, 640, 480
+				matcolor	1,1,1,1
+				background	"gui/mainmenu/star1"
+				visible	1
+				matscaley	1.5
+				matscalex	1.5
+				noevents	1
+			}
+			windowDef Stars2
+			{
+				rect	0, 0, 640, 480
+				matcolor	1,1,1,1
+				background	"gui/mainmenu/star3"
+				visible	1
+				matscaley	1.5
+				matscalex	1.5
+				noevents	1
+			}
+			windowDef Stars3
+			{
+				rect	0, 0, -640, -480
+				matcolor	1,1,1,1
+				background	"gui/mainmenu/star1"
+				visible	1
+				matscaley	1.2
+				matscalex	1.2
+				noevents	1
+			}
+			windowDef Stars4
+			{
+				rect	0, 0, -640, -480
+				matcolor	1,1,1,1
+				background	"gui/mainmenu/star3"
+				visible	1
+				matscaley	1.5
+				matscalex	1.5
+				noevents	1
+			}
+		}
+		windowDef Bglow
+		{
+			rect	0, 0, 640, 480
+			background	"guis/assets/cpuserver/bglow.tga"
+			visible	1
+			matcolor	0.4,0.8,1,0.1
+		}
+		windowDef Addbox
+		{
+			rect	5 ,5 ,630 ,470
+			background	"gui/grid2"
+			matcolor	1 ,1 ,1 ,0.05
+			matscaley	7
+			matscalex	7
+			visible	0
+		}
+		windowDef Addhighlight1
+		{
+			rect	0 ,0 ,-640 ,280
+			background	"gui/addhighlight"
+			matcolor	0.3,0.4,0.4,1
+			visible	1
+		}
+		windowDef Addhighlight2
+		{
+			rect	0 ,200 ,640 ,-280
+			background	"gui/addhighlight"
+			matcolor	0.3,0.4,0.4,1
+			visible	1
+		}
+		windowDef Bg1
+		{
+			rect	5 ,5 ,630 ,235
+			visible	1
+			background	"guis/assets/doors/adminbg"
+			matcolor	0.3,0.8,0.65,1
+		}
+		windowDef Bg3
+		{
+			rect	5 ,240 ,630 ,-235
+			visible	1
+			background	"guis/assets/doors/adminbg"
+			matcolor	0.3,0.8,0.65,1
+		}
+		windowDef Logo1
+		{
+			rect	75,50,520,380
+			visible	1
+			background	"guis/assets/common/mlogo"
+			matcolor	0.1, 0.5, 0.4, 0.3
+		}
+		windowDef Logo2
+		{
+			rect	179,71,311,214
+			visible	1
+			background	"guis/assets/common/mlogo"
+			matcolor	0.6, 1, 0.8, 0.6
+		}
+		windowDef TitleText1
+		{
+			rect	35,-5,601,54
+			text	"#str_03444"
+			font	"fonts/bank"
+			textscale	0.8
+			textalign	1
+			forecolor	1, 1, 1, 0.6
+			visible	1
+		}
+		windowDef TitleText2
+		{
+			rect	35,422,601,50
+			text	"#str_03178"
+			font	"fonts/bank"
+			textscale	0.8
+			textalign	1
+			forecolor	1, 1, 1, 0.6
+			visible	1
+		}
+		windowDef Text4
+		{
+			rect	49,287,579,123
+			text	"#str_03440"
+			font	"fonts/bank"
+			textscale	0.85
+			forecolor	0.8,1,0.9,0.35
+			visible	1
+			textalign	1
+		}
+	}
+	windowDef Static
+	{
+		rect	-10 ,-10 ,-660 ,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 12
+	}
+	windowDef Outerglow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outerglow"
+		matcolor	1 ,1 ,1 , pdflick [ time * .0025 ] / 6
+		visible	1
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0 ,0 ,-640 ,480
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.5 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	0,0,-640,480
+		matcolor	0.1,0.1,0.1,0.1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	1.5
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,-640 ,480
+		matcolor	1, 1, 1 ,0.5
+		visible	1
+		background	"guis/assets/common/dirt1"
+		noevents	1
+	}
+	windowDef Reflect
+	{
+		rect	0 ,-10 ,-640 ,480
+		matcolor	1 ,1 ,1 ,0.1
+		visible	1
+		background	"gui/reflect1"
+		noevents	1
+	}
+	windowDef Blackfade
+	{
+		rect	0 ,0 ,640 ,480
+		visible	0
+		backcolor	0, 0, 0, 0.5
+
+		onTime 0 {
+			transition "backcolor" "0 0 0 0.4" "0 0 0 0.2" "200" ;
+		}
+
+		onTime 200 {
+			transition "backcolor" "0 0 0 0.2" "0 0 0 0.4" "200" ;
+		}
+
+		onTime 400 {
+			transition "backcolor" "0 0 0 0.4" "0 0 0 0.2" "300" ;
+		}
+
+		onTime 700 {
+			transition "backcolor" "0 0 0 0.1" "0 0 0 0.5" "200" ;
+		}
+
+		onTime 900 {
+			transition "backcolor" "0 0 0 0.5" "0 0 0 0.3" "200" ;
+		}
+
+		onTime 1100 {
+			resetTime "0" ;
+		}
+
+	}
+	windowDef Shizzle
+	{
+		noTime	1
+
+		onTime 0 {
+			set	"Static::matcolor" "1 1 1 0.2" ;
+			set	"Blackfade::visible" "1" ;
+			set	"BackgroundParent::rect" "-2 -2 640 480" ; 
+		}
+
+		onTime 50 {
+			set	"BackgroundParent::rect" "0 0 640 480" ; 
+		}
+
+		onTime 350 {
+			set	"BackgroundParent::rect" "4 3 640 480" ; 
+		}
+
+		onTime 500 {
+			set	"BackgroundParent::rect" "0 0 640 480" ; 
+		}
+
+		onTime 750 {
+			set	"BackgroundParent::rect" "-2 -1 640 480" ; 
+		}
+
+		onTime 800 {
+			set	"BackgroundParent::rect" "0 0 640 480" ; 
+		}
+
+		onTime 1000 {
+			resetTime "0" ;
+		}
+
+	}
+}

@@ -1,0 +1,99 @@
+
+
+
+
+
+textures/rock/ice_a
+
+ {
+ qer_editorimage textures/rock/ice_a.tga
+
+ noSelfShadow
+ noShadows
+	
+
+	diffusemap	 	textures/rock/ice_a.tga
+	bumpmap			addnormals( textures/rock/ice_a_local.tga, heightmap (textures/rock/ice_a_h.tga, 10 ) )
+	specularmap	    	textures/rock/ice_a_s.tga
+	{
+	blend	add
+	map	 	textures/rock/ice_add.tga
+
+
+	}
+
+
+}
+textures/base_wall/a_lfwall15_
+{
+	
+	bumpmap			textures/base_wall/lfwall15_local
+	diffusemap		textures/base_wall/lfwall15a_alpha
+	specularmap		textures/base_wall/lfwall15_s
+}
+
+textures/sfx/water
+{
+	
+		
+		
+		
+        {
+                vertexProgram           heatHazeWithMask.vfp
+                vertexParm              0       time * .2 , time * .2 // texture scrolling
+                vertexParm              1       2        // magnitude of the distortion
+                fragmentProgram			heatHazeWithMask.vfp
+                fragmentMap             0       _currentRender
+                fragmentMap             1       textures/sfx/watersplash2_local   // the normal map for distortion
+             
+        }
+
+
+}
+
+textures/rock/lfwall15_lanrock1
+{
+	
+
+    noShadows
+    noselfShadow
+	{
+		blend		bumpmap	 
+		map		textures/base_wall/gotcgate_local
+	}
+	{
+		blend		diffusemap	 
+		map		textures/base_wall/gotcgate_d
+		vertexColor
+	}
+	{
+		blend		specularmap	 
+		map		textures/base_wall/gotcgate_s.tga
+		vertexColor
+	}
+	{
+
+		blend		bumpmap	 
+		map		textures/rock/lanrock1_local.tga
+	}
+	{
+		blend		diffusemap	 
+		map		textures/rock/lanrock1_d.tga
+		inversevertexColor
+
+	}
+	{
+		blend		specularmap	 
+		map		textures/rock/lanrock1_s.tga
+		inversevertexColor
+	}
+
+}
+textures/rock/output
+{
+	
+	bumpmap			addnormals( textures/rock/output_local.tga, heightmap (textures/rock/output_h.tga, 10 ) )
+	diffusemap		textures/rock/output_color
+	specularmap		textures/rock/output_s
+
+}

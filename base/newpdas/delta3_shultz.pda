@@ -1,0 +1,34 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta3_shultz {
+	name         "Marten Shultz"
+	fullname     "Marten R. Shultz, Ph.D"
+	icon         "guis/assets/pda/shultz"
+	id           "9431-52"
+	post         "Delta Labs, Level 3"
+	title        "Doctor"
+	security     "Level 3 Control Station"
+	pda_email    "delta3_shultz_email_1"
+	pda_audio    "delta3_shultz_audio_1"
+}
+
+email delta3_shultz_email_1 {
+	date		"11-10-2145"
+	to		"Marten Shultz"
+	from		"Frank Cerano"
+	subject	"Teleportation Transfers"
+	text {
+"Marten,\n"
+"Our systems can only build enough of a charge to have the portals open for approximately 10 to 15 seconds. Enough time to get a team through, but not enough time to send in some of the heavier equipment. Do you have any idea how we can route supplemental power from the stabilizers into the converters? I think if we can increase the hold field by 13% we could achieve full transfer power and open the field for a longer amount of time.\n\n"
+"Any help you can give will be greatly appreciated.\n\n"
+"Thank You,\nFrank Cerano"
+	}
+}
+
+audio delta3_shultz_audio_1 {
+	name		"Personal Audio Log"
+	info		"Made by: Marten Shultz\nDate: 08-07-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta3_shultz_1"
+}
+

@@ -1,0 +1,383 @@
+	windowDef LineH1 {
+		rect 		15, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+	windowDef LineH2 {
+		rect 		30, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+
+	windowDef LineH3 {
+		rect 		45, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH4 {
+		rect 		60, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH5 {
+		rect 		75, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH6 {
+		rect 		90, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+	windowDef LineH7 {
+		rect 		105, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+
+	windowDef LineH8 {
+		rect 		120, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH9 {
+		rect 		135, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH10 {
+		rect 		150, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH11 {
+		rect 		165, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+	windowDef LineH12 {
+		rect 		180, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+
+	windowDef LineH13 {
+		rect 		195, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH14 {
+		rect 		210, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH15 {
+		rect 		225, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH16 {
+		rect 		240, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+	windowDef LineH17 {
+		rect 		255, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+
+	windowDef LineH18 {
+		rect 		270, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH19 {
+		rect 		285, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH20 {
+		rect 		300, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH21 {
+		rect 		315, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+	windowDef LineH22 {
+		rect 		330, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+
+	windowDef LineH23 {
+		rect 		345, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH24 {
+		rect 		360, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH25 {
+		rect 		375, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH26 {
+		rect 		390, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+	windowDef LineH27 {
+		rect 		405, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+
+	windowDef LineH28 {
+		rect 		420, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH29 {
+		rect 		435, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH30 {
+		rect 		450, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH31 {
+		rect 		465, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+	windowDef LineH32 {
+		rect 		480, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+
+	windowDef LineH33 {
+		rect 		495, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH34 {
+		rect 		510, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH35 {
+		rect 		525, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH36 {
+		rect 		540, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+	windowDef LineH37 {
+		rect 		555, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+
+	windowDef LineH38 {
+		rect 		570, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH39 {
+		rect 		585, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH40 {
+		rect 		600, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineH41 {
+		rect 		615, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+	windowDef LineH42 {
+		rect 		630, 0, 1, 480
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+
+//////////////////////////
+
+	windowDef LineV1 {
+		rect 		0, 15, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV2 {
+		rect 		0, 30, 640, 1
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+
+	windowDef LineV3 {
+		rect 		0, 45, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV4 {
+		rect 		0, 60, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV5 {
+		rect 		0, 75, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV6 {
+		rect 		0, 90, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV7 {
+		rect 		0, 105, 640, 1
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+
+	windowDef LineV8 {
+		rect 		0, 120, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV9 {
+		rect 		0, 135, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV10 {
+		rect 		0, 150, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV11 {
+		rect 		0, 165, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV12 {
+		rect 		0, 180, 640, 1
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+
+	windowDef LineV13 {
+		rect 		0, 195, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV14 {
+		rect 		0, 210, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV15 {
+		rect 		0, 225, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV16 {
+		rect 		0, 240, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV17 {
+		rect 		0, 255, 640, 1
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+
+	windowDef LineV18 {
+		rect 		0, 270, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV19 {
+		rect 		0, 285, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV20 {
+		rect 		0, 300, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV21 {
+		rect 		0, 315, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV22 {
+		rect 		0, 330, 640, 1
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+
+	windowDef LineV23 {
+		rect 		0, 345, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV24 {
+		rect 		0, 360, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV25 {
+		rect 		0, 375, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV26 {
+		rect 		0, 390, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV27 {
+		rect 		0, 405, 640, 1
+		backcolor	0.6, 1, 1, 0.05
+		visible		1
+	}
+
+	windowDef LineV28 {
+		rect 		0, 420, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV29 {
+		rect 		0, 435, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV30 {
+		rect 		0, 450, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+	windowDef LineV31 {
+		rect 		0, 465, 640, 1
+		backcolor	0.6, 1, 1, 0.025
+		visible		1
+	}
+

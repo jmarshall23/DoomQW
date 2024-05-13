@@ -1,0 +1,246 @@
+windowDef Desktop {
+	rect		0 ,0 ,640 ,480
+	nocursor	1
+	comment "triggering the gui runs the animation"
+
+	onTrigger {
+		resetTime "Anim" "0" ;
+	} 
+
+	windowDef Bglow {
+		rect 0, 0, 640, 480
+		background	"gui/commstation"
+		visible 1
+		matcolor 1, 1, 1, 1
+	}
+
+	windowDef Logo {
+		rect 190, 145, 260, 100
+		background	"gui/commSpin"
+		visible 1
+		matcolor 1, 1, 1, 1
+	}
+
+	windowDef Black {
+		rect 20, 15, 600, 373
+		visible 0
+		background	"guis/assets/cpuserver/bg.tga"
+		matcolor 1, 1, 1, 0
+	}
+
+	windowDef Text3 {
+		rect		300, 340, 300, 50
+		text		"#str_00049"
+		
+		textscale	0.8
+		textalign	2
+		forecolor	0.4, 0.9, 0.7, 0.6
+		visible		1
+		nowrap		1
+
+			onTime 0 {
+				transition "forecolor" "0.4 0.9 0.7 0.6" "0.4 0.9 0.7 0.2" "1000" ;
+			}
+			onTime 1000 {
+				transition "forecolor" "0.4 0.9 0.7 0.2" "0.4 0.9 0.7 0.6" "1000" ;
+			}
+			onTime 2000 {
+				resetTime "0" ;
+			}
+	}
+
+	windowDef TextLine1 {
+		rect		50, 400, 10, 50
+		text		"#str_01723"
+		textscale	0.6
+		textalign	0
+		forecolor	1, 1, 1, 0
+		visible		0
+		nowrap		1
+	}
+
+	windowDef TextLine2 {
+		rect		50, 400, 10, 50
+		text		"#str_01724"
+		textscale	0.6
+		textalign	0
+		forecolor	1, 1, 1, 0
+		visible		0
+		nowrap		1
+	}
+
+	windowDef TextLine3 {
+		rect		50, 360, 10, 50
+		text		"#str_01725"
+		textscale	0.6
+		textalign	0
+		forecolor	1, 1, 1, 0
+		visible		0
+		nowrap		1
+	}
+
+	windowDef Big1 {
+		rect		27, 188, 586, 14 
+		visible		0
+		background	"guis/assets/efc/button"
+		matcolor	1, 0.8, 0.4 ,0
+	}
+
+	windowDef Big2 {
+		rect		35, 190, 570, 10
+		visible		0
+		background	"guis/assets/efc/button"
+		matcolor	1, 0.8, 0.4 ,0
+		text		"#str_00026"
+		
+		textscale	1
+		textalign	1
+		textaligny	16
+		forecolor	0.4, 0.95, 1, 0
+	}
+
+	windowDef bgScroll {
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background	"gui/scroll3"
+		matColor	1, 1,  1, flickertable [ time * 5 ] / 6 
+	}
+
+	windowDef bgScroll2 {
+		rect	0 ,0 ,640 ,480 
+		visible	1
+		background	"gui/scrollbig"
+		matColor	1, 1,  1, 0.1 
+	}
+
+	windowDef Reflect {
+		rect		10 ,5 ,620 ,470 
+		matcolor	1 ,1 ,1 ,0.1 
+		visible		1
+		background	"gui/reflect1"
+	}
+
+//
+//Animation
+//
+/*
+	windowDef temp {
+
+		onTime 1000 {
+			resetTime "Anim" "0" ;
+		}
+	}
+*/
+
+	windowDef Anim {
+		notime	1
+
+		onTime 0 {
+			set		"Text3::text" "#str_01726" ;
+			set		"Big1::visible" "1" ;
+			set		"Big2::visible" "1" ;
+			set		"Black::visible" "1" ;
+			transition	"Big1::rect" "270 188 100 14" "27 148 586 98" "300" ;
+			transition	"Big2::rect" "275 190 90 10" "35 155 570 80"  "300" ;
+			transition	"Big1::matcolor" "1 0.8 0.4 0" "0.3 0.8 0.6 0.2" "300" ;
+			transition	"Big2::matcolor" "1 0.8 0.4 0" "0.4 0.9 0.7 0.5" "300" ;
+			transition	"Black::matcolor" "0 0 0 0" "0 0 0 0.8" "200" ;
+		}
+		onTime 50 {
+			set		"Text3::text" "#str_01727" ;
+		}
+		onTime 100 {
+			set		"Text3::text" "#str_01728" ;
+		}
+		onTime 150 {
+			set		"Text3::text" "#str_01729" ;
+		}
+		onTime 200 {
+			set		"Text3::text" "#str_01730" ;
+		}
+		onTime 250 {
+			set		"Text3::text" "#str_01731" ;
+			set		"TextLine1::visible" "1" ;
+			set		"TextLine2::visible" "1" ;
+			set		"TextLine3::visible" "1" ;
+		}
+		onTime 300 {
+			set		"Text3::text" "#str_01732" ;
+			set		"Big1::matcolor" "0.3 0.8 0.6 0.1" ;
+		}
+		onTime 350 {
+			set		"Text3::text" "#str_01733" ;
+			set		"Big2::matcolor" "0.4 0.9 0.7 0.2" ;
+			set		"Big2::forecolor" "0.4 0.9 0.7 1" ;
+		}
+		onTime 400 {
+			set		"Text3::text" "#str_01734" ;
+			set		"Big1::matcolor" "0.3 0.8 0.6 0.2" ;
+		}
+
+		onTime 450 {
+			set		"Big2::matcolor" "0.4 0.9 0.7 0.5" ;
+		}
+		onTime 400 {
+			transition	"Big2::forecolor" "0.4 0.9 0.7 1" "0.4 0.9 0.7 0.2" "500" ;
+		}
+		onTime 900 {
+			transition	"Big2::forecolor" "0.4 0.9 0.7 0.2" "0.4 0.9 0.7 1" "500" ;
+		}
+		onTime 1400 {
+			transition	"Big2::forecolor" "0.4 0.9 0.7 1" "0.4 0.9 0.7 0.2" "500" ;
+		}
+		onTime 1900 {
+			transition	"Big2::forecolor" "0.4 0.9 0.7 0.2" "0.4 0.9 0.7 1" "500" ;
+		}
+		onTime 2400 {
+			transition	"Big2::forecolor" "0.4 0.9 0.7 1" "0.4 0.9 0.7 0.2" "500" ;
+		}
+		onTime 2900 {
+			transition	"Big2::forecolor" "0.4 0.9 0.7 0.2" "0.4 0.9 0.7 1" "500" ;
+		}
+	}
+
+//
+
+	windowDef TextAnim {
+	
+
+		onTime 0 {
+			set		"TextLine3::rect""50 260 600 50" ;
+			set		"TextLine3::forecolor" "0.5 0.9 1 0.3" ;
+			transition	"TextLine1::rect" "50 300 10 50" "50 300 600 50" "1000" ;
+			set		"TextLine1::forecolor" "0.5 0.9 1 0.3" ;
+		}
+		onTime 1000 {
+			transition	"TextLine3::rect" "50 260 600 50" "50 220 600 50" "300" ;
+			transition	"TextLine3::forecolor" "0.5 0.9 1 0.3" "0.5 0.9 1 0" "300" ;
+			transition	"TextLine1::rect" "50 300 600 50" "50 260 600 50" "300" ;
+			set		"TextLine2::rect" "50 300 10 50" ;
+		}
+		onTime 1300 {
+			transition	"TextLine2::rect" "50 300 10 50" "50 300 600 50" "1000" ;
+			set		"TextLine2::forecolor" "0.5 0.9 1 0.3" ;
+		}
+		onTime 2300 {
+			transition	"TextLine1::rect" "50 260 600 50" "50 220 600 50" "300" ;
+			transition	"TextLine1::forecolor" "0.5 0.9 1 0.3" "0.5 0.9 1 0" "300" ;
+			transition	"TextLine2::rect" "50 300 600 50" "50 260 600 50" "300" ;
+			set		"TextLine3::rect" "50 300 10 50" ;
+		}
+		onTime 2600 {
+			transition	"TextLine3::rect" "50 300 10 50" "50 300 600 50" "1000" ;
+			set		"TextLine3::forecolor" "0.5 0.9 1 0.3" ;
+		}
+		onTime 3600 {
+			transition	"TextLine2::rect" "50 260 600 50" "50 220 600 50" "300" ;
+			transition	"TextLine2::forecolor" "0.5 0.9 1 0.3" "0.5 0.9 1 0" "300" ;
+			transition	"TextLine3::rect" "50 300 600 50" "50 260 600 50" "300" ;
+			set		"TextLine1::rect" "50 300 10 50" ;
+		}
+		onTime 3900 {
+			resetTime "0" ;
+		}
+	}
+
+}

@@ -1,0 +1,44 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta3_lee {
+	name         "Han Lee"
+	fullname     "Han M. Lee"
+	icon         "guis/assets/pda/lee"
+	id           "1567-77"
+	post         "Delta Labs, Level 3"
+	title        "Administrative Assistant"
+	security     ""
+	pda_email    "delta3_lee_email_1"
+	pda_audio    "delta3_lee_audio_1"
+	pda_audio    "delta3_lee_audio_2"
+}
+
+email delta3_lee_email_1 {
+	date		"10-23-2145"
+	to		"Han Lee"
+	from		"Delta Security"
+	subject	"Security Team info"
+	text 
+	{
+"Han,\n\n"
+"Due to the incident last week, the Delta Security team will be storing additional supplies in cabinets 386 and 387 near the first teleport chamber.  We will update the access codes to 836 as soon as the equipment arrives.\n\n"
+"Thank You,\n"
+"Thomas Palena\n"
+"Delta Security Clerk"	
+	}
+}
+
+audio delta3_lee_audio_1 {
+	name		"Expedition Team Report"
+	info		"Made by: Han Lee\nDate: 10-16-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta3_lee_1"
+}
+
+audio delta3_lee_audio_2 {
+	name		"Missing BFG Guns"
+	info		"Made by: Han Lee\nDate: 10-20-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_delta3_lee_2"
+}
+

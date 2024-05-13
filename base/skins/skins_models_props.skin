@@ -1,0 +1,11 @@
+skin skins/models/props/bfgcaseon {
+	//models/items/bfg_case/bfg_case textures/common/nodraw
+}
+
+skin skins/models/props/bfgcaseoff {
+	models/items/bfg_case/bfg_case textures/common/nodraw
+}
+
+skin skins/models/props/pdathing {
+	textures/common/entityGui2 textures/common/npc_pda
+}

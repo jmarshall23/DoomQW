@@ -1,0 +1,224 @@
+skin skins/monsters/zombies/morgue {
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/morguegib {
+	//models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/bernie {
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/berniegib {
+	//models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/boney {
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/boneygib {
+	//models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/adrianboney01 {
+	models/monsters/zombie/boney/boney models/monsters/zombie/boney/adrianboney01
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/adrianboney02 {
+	models/monsters/zombie/boney/boney models/monsters/zombie/boney/adrianboney02
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/sawyer {
+	//models/weapons/chainsaw/w_chainsaw textures/common/nodraw
+	//models/weapons/chainsaw/chain textures/common/nodraw
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/sawyernocs {
+	models/weapons/chainsaw/w_chainsaw textures/common/nodraw
+	models/weapons/chainsaw/chain textures/common/nodraw
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/sawyergib {
+	models/weapons/chainsaw/w_chainsaw textures/common/nodraw
+	models/weapons/chainsaw/chain textures/common/nodraw
+	//models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zfat {
+	models/monsters/zombie/fatty/fattydamage textures/common/nodraw
+	models/mapobjects/filler/monkeywrench textures/common/nodraw
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zfat_eating {
+	models/monsters/zombie/fatty/fattydamage textures/common/nodraw
+	models/mapobjects/filler/monkeywrench textures/common/nodraw
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zfatgib {
+	//models/monsters/zombie/fatty/fatty textures/common/nodraw 
+	models/monsters/zombie/fatty/fattydamage textures/common/nodraw
+	models/mapobjects/filler/monkeywrench textures/common/nodraw
+	//models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zfatgib2 {
+	models/monsters/zombie/fatty/fatty textures/common/nodraw 
+	//models/monsters/zombie/fatty/fattydamage textures/common/nodraw
+	models/mapobjects/filler/monkeywrench textures/common/nodraw
+	//models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zfatwrench {
+	models/monsters/zombie/fatty/fatty textures/common/nodraw
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zfat2 {
+	models/monsters/zombie/fatty/fatty textures/common/nodraw
+	models/mapobjects/filler/monkeywrench textures/common/nodraw
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zmaintb {
+	models/monsters/zombie/zombie01/zhead02 models/monsters/zombie/zombie01/zhead02b
+	models/characters/common/teethdead models/characters/common/teethdeadb
+	models/monsters/zombie/zombie01/ztorso01 models/monsters/zombie/zombie01/ztorso01b
+	models/monsters/zombie/zombie01/zarms01 models/monsters/zombie/zombie01/zarms01b
+	models/monsters/zombie/zombie01/zlegs01 models/monsters/zombie/zombie01/zlegs01b
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+	models/monsters/zombie/zombie01/zback01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zmaintb_gib {
+	models/monsters/zombie/zombie01/zhead02 models/monsters/zombie/zombie01/zhead02b
+	models/characters/common/teethdead models/characters/common/teethdeadb
+	models/monsters/zombie/zombie01/ztorso01 models/monsters/zombie/zombie01/ztorso01b
+	models/monsters/zombie/zombie01/zarms01 models/monsters/zombie/zombie01/zarms01b
+	models/monsters/zombie/zombie01/zlegs01 models/monsters/zombie/zombie01/zlegs01b
+	//models/monsters/skeleton/skeleton01 textures/common/nodraw
+	models/monsters/zombie/zombie01/zback01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/jumpsuit {
+	//BODIES
+	models/characters/male_npc/jumpsuit/jumpsuit models/characters/male_npc/jumpsuit/djumpsuit
+}
+
+
+skin skins/monsters/zombies/jumpsuit2 {
+	models/characters/male_npc/jumpsuit/jumpsuit models/monsters/zombie/zombie02/zombie02
+}
+
+skin skins/monsters/zombies/suit {
+	models/characters/male_npc/suit/suit models/characters/male_npc/suit/dsuit
+}
+
+skin skins/monsters/zombies/labcoat {
+	models/characters/male_npc/labcoat/labcoat models/characters/male_npc/labcoat/dlabcoat
+}
+
+skin skins/monsters/zombies/soldier {
+	models/characters/male_npc/soldier/soldier models/characters/male_npc/soldier/dsoldier
+}
+
+skin skins/monsters/zombies/zgogs {
+	//BODIES
+	models/characters/male_npc/security/security models/characters/male_npc/security/dsecurity
+
+	//WEAPONS
+
+	models/weapons/pistol/w_pistol textures/common/nodraw
+	models/weapons/shotgun/w_shotgun2 textures/common/nodraw
+	models/weapons/machinegun/w_machinegun textures/common/nodraw
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zsecurity {
+	//BODIES
+	models/characters/male_npc/security/security models/characters/male_npc/security/dsecurity
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+
+	models/weapons/pistol/w_pistol textures/common/nodraw
+	models/weapons/shotgun/w_shotgun2 textures/common/nodraw
+	models/weapons/machinegun/w_machinegun textures/common/nodraw
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zsecurity_helmet_p90 {
+	models/characters/male_npc/security/security models/characters/male_npc/security/dsecurity
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+	models/weapons/pistol/w_pistol textures/common/nodraw
+	models/weapons/shotgun/w_shotgun2 textures/common/nodraw
+	//models/weapons/machinegun/w_machinegun textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zsecurity_helmet_pistol_shield {
+	models/characters/male_npc/security/security models/characters/male_npc/security/dsecurity
+
+	//models/monsters/zsecurity/zsheild textures/common/nodraw
+	//models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+
+	//models/weapons/pistol/w_pistol textures/common/nodraw
+	models/weapons/shotgun/w_shotgun2 textures/common/nodraw
+	models/weapons/machinegun/w_machinegun textures/common/nodraw
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zsecurity_pistol {
+	models/characters/male_npc/security/security models/characters/male_npc/security/dsecurity
+
+	//models/weapons/pistol/w_pistol textures/common/nodraw
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zsecurity_shotgun {
+	//BODIES
+	models/characters/male_npc/security/security models/characters/male_npc/security/dsecurity
+
+	models/weapons/pistol/w_pistol textures/common/nodraw
+	//models/weapons/shotgun/w_shotgun2 textures/common/nodraw
+	models/weapons/machinegun/w_machinegun textures/common/nodraw
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zsecurity_machinegun {
+	//BODIES
+	models/characters/male_npc/security/security models/characters/male_npc/security/dsecurity
+
+	models/weapons/pistol/w_pistol textures/common/nodraw
+	models/weapons/shotgun/w_shotgun2 textures/common/nodraw
+	//models/weapons/machinegun/w_machinegun textures/common/nodraw
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+	models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/monsters/zombies/securitygib {
+	//models/characters/male_npc/security/dsecurity textures/common/nodraw
+	//models/monsters/skeleton/skeleton01 textures/common/nodraw
+	models/weapons/pistol/w_pistol textures/common/nodraw
+	models/weapons/shotgun/w_shotgun2 textures/common/nodraw
+	models/weapons/machinegun/w_machinegun textures/common/nodraw
+	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
+}
+
+skin skins/monsters/zombies/dsechelmet {
+	models/monsters/zsecurity/zsechead2 models/monsters/zsecurity/dzsechead2
+	models/characters/male_npc/security/gog models/characters/male_npc/security/dgog
+}

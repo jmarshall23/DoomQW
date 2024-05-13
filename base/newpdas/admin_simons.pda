@@ -1,0 +1,50 @@
+// NO audio files in the personal pda and subsequently no video files in other pdas
+// all vidoes are downloaded to your personal pda and individual pdas can contain
+// audio logs
+
+pda admin_simons {
+	name		"Paul Simons"
+	fullname	"Paul M. Simons"
+	icon		"gui/pda/bio1"
+	id		"2463-21"
+	post		"Administration"				// for the personal pda this is ignored and current location is used instead
+	title		"IT Specialist"					// this is used for title or rank ( for the player )
+	security	""				// only set this if it contains a new security clearance.. as far as the pda and hud goes this is informational only
+	pda_email	"admin_simons_email_1"
+	pda_email	"admin_simons_email_2"
+	pda_audio	"admin_simons_audio_1"
+}
+
+
+email admin_simons_email_1 {
+	date		"11-02-2145"
+	to		"Paul Simons"
+	from		"IT Security"
+	subject	"Network Breach"
+	text {
+"Mr. Simons.\n\n"
+
+"We have been unable to find any problems with the network test that we ran on your system. Everything checks out on our end, your firewall seems to be functioning properly. Other IT managers have reported similar intrusions in their networks. Whomever is doing this must be good or someone with very high level security clearance. We will continue to scan the network and if anything odd appears we will inform you immediately.\n\n"
+
+"Central IT Security"
+	}
+}
+
+email admin_simons_email_2 {
+	date		"11-13-2145"
+	to		"Paul Simons"
+	from		"Russell Weilder"
+	subject	"Email Spam"
+	text {
+"Paul-\n"
+"The email spam lately is getting out of control. The worst company is that Martian Buddy place -I can't believe all the things they send me. I don't know how they got my email address. Can't you do anything to stop the spam? I spend all morning deleting junk from my inbox.\n\n"
+"Thank You,\nRuss"
+	}
+}
+
+audio admin_simons_audio_1 {
+	name 		"ADMIN: Network Security Status"
+	info		"Made by: Paul Simons\nDate: 10-30-2145\nOpen for amendment: Yes\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_admin_simons_1"
+}

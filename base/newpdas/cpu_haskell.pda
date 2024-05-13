@@ -1,0 +1,63 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda cpu_haskell {
+	name         "Charlie Haskell"
+	fullname     "Charlie D. Haskell"
+	icon         "guis/assets/pda/haskell"
+	id           "8890-13"
+	post         "Central Processing"
+	title        "Delta Labs Technician"
+	security     ""
+	pda_email    "cpu_haskell_email_1"
+	pda_email    "cpu_haskell_email_2"
+	pda_audio    "cpu_haskell_audio_1"
+}
+
+email cpu_haskell_email_1 {
+	date		"11-13-2145"
+	to			"Charlie Haskell"
+	from		"System Admin"
+	subject		"Mail Delivery Failure"
+	text {
+"Failed to deliver to 'Rbrody@ua-corp.com'.\n"
+"STTP module(domain ua-corp.com)reports:\n"
+"host name is unknown\n\n"
+"Reporting-MTA dns; ua-corp.com\n\n"
+"Original-Recipient rtg374;<Rbrody@ua-corp.com>\n"
+"Final-Recipient rtg374;<Rbrody@ua-corp.com>\n"
+"Action failed\n"
+"Status 5.0.0\n"
+"Received from [192.246.40.132.44543.43.661] (account chaskell HELL chaskell.ua-corp.com)\n"
+"  by ua-corp.com (SpaceGate Pro STTP 5.2.6)\n"
+"  with ESMTP id 8302948-033-4488291 for Rbrody@ua-corp.com; Thu, 13 Nov 2145 173249 -0500\n"
+"Message-Id <4.1.0.123.5.74839298473.84hdjlk83902@mail.ua-corp.com>\n"
+"X-Sender chaskell@mail.ua-corp.com\n"
+"X-Mailer MARSMAILER Xenerix Vartoxi Version 9.3\n"
+"Date Thu, 13 Nov 2145 173249 -0500\n"
+"To Rbrody@ua-corp.com\n"
+"From Charlie Haskell <chaskell@ua-corp.com>\n"
+"Subject MFC Failsafe failure\n"
+"Mite-Version 3.6\n"
+"Content-Type text/plain; charset="us-ascii16"; format=flowed\n"
+
+	}
+}
+
+email cpu_haskell_email_2 {
+	date		"11-15-2145"
+	to		"Charlie Haskell"
+	from		"John Bianga"
+	subject	"How have you been?"
+	text {
+"Charlie,\n\nHow have you been? I hear things are getting pretty busy over there. Rumors are flying that you guys are on to something big. BTW I left you some goodies in locker 669. The combination is 468. Sorry, I had to take back the pr0n video disc! Take care mate!\n\n"
+"J.B."
+	}
+}
+
+audio cpu_haskell_audio_1 {
+	name		"Request for System Time"
+	info		"Made by: Charlie Haskell\nDate: 09-23-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_cpu_haskell_1"
+}
+

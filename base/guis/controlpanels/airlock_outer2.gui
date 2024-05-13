@@ -1,0 +1,827 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	comment	"use this gui on the door inside a base (reports normal interior pressure). gui_parm1 value 0 makes the gui unclickable, value 1 makes gui useable. gui_parm6 runs the script"
+
+	onTrigger {
+		resetTime "Anim" "0" ; 
+	}
+
+	onEvent {
+		if ("gui::gui_parm1" == 1) {
+			set "ClickCatch::rect" "0 0 0 0" ;
+			set "TextCycle::text" "#str_00653" ;
+			set "TextIntPress::text" "0.13" ;
+			set "TextStatus::text" "#str_00654" ;
+			set "TextTitle1::text" "#str_00655" ;
+			set "BigButton::visible" "1" ;
+		} else {
+			set "ClickCatch::rect" "0 0 640 480" ;
+			set "TextCycle::text" "#str_00656" ;
+			set "TextStatus::text" "#str_00657" ;
+			set "TextTitle1::text" "#str_00658" ;
+			set "BigButton::visible" "0" ;			
+		}
+	}
+
+	windowDef BgImage
+	{
+		rect	0,0,640,480
+		nocursor	1
+		background	"guis/assets/cpuserver/bg.tga"
+		matcolor	0,0,0,1
+		visible	1
+	}
+	windowDef spin1a
+	{
+		rect	-170,-144,909,767
+		background	"gui/spintest"
+		matcolor	1, 1, 0.6, 0.1
+		visible	1
+	}
+	windowDef spin1b
+	{
+		rect	-168,-143,-909,-767
+		background	"gui/spintest"
+		matcolor	1, 1, 0.6, 0.08
+		visible	1
+	}
+	windowDef BgCirc51
+	{
+		rect	105,72,220,168
+		matcolor	0,0,0,1
+		visible	1
+		background	"gui/airlock/circle_white3b"
+	}
+	windowDef BgCirc61
+	{
+		rect	325,72,-299,168
+		matcolor	0,0,0,1
+		visible	1
+		background	"guis/assets/airlock/stretch_white3"
+	}
+	windowDef BgCirc71
+	{
+		rect	105,240,220,-168
+		matcolor	0,0,0,1
+		visible	1
+		background	"gui/airlock/circle_white3b"
+	}
+	windowDef BgCirc81
+	{
+		rect	325,240,-299,-168
+		matcolor	0,0,0,1
+		visible	1
+		background	"guis/assets/airlock/stretch_white3"
+	}
+	windowDef SpinCircR1
+	{
+		rect	81,71,448,336
+		visible	1
+		background	"gui/caves/cranespinthin"
+		matcolor	0,0,0,0.5
+	}
+	windowDef BGSet
+	{
+		rect	5,5,630,470
+		visible	1
+		windowDef Bg1
+		{
+			rect	-20 ,-30 ,320 ,260
+			matcolor	0.4 ,0.60 ,0.6 ,0.6
+			visible	1
+			background	"guis/assets/airlock/bg_white"
+		}
+		windowDef Bg3
+		{
+			rect	-20 ,235 ,320 ,-260
+			matcolor	0.4 ,0.60 ,0.6 ,0.6
+			visible	1
+			background	"guis/assets/airlock/bg_white"
+		}
+		windowDef BgCirc5
+		{
+			rect	74,64,220,170
+			matcolor	0.65 ,0.7 ,0.75 ,hud3[ time * 0.002 ]/1.5
+			visible	1
+			background	"gui/airlock/circle_white3b"
+		}
+		windowDef BgCirc6
+		{
+			rect	294,64,-319,170
+			matcolor	0.65 ,0.7 ,0.75 ,hud3[ time * 0.002 ]/1.5
+			visible	1
+			background	"guis/assets/airlock/stretch_white3"
+		}
+		windowDef BgCirc7
+		{
+			rect	74,234,220,-170
+			matcolor	0.65 ,0.7 ,0.75 ,hud3[ time * 0.002 ]/1.5
+			visible	1
+			background	"gui/airlock/circle_white3b"
+		}
+		windowDef BgCirc8
+		{
+			rect	294,234,-319,-170
+			matcolor	0.65 ,0.7 ,0.75 ,hud3[ time * 0.002 ]/1.5
+			visible	1
+			background	"guis/assets/airlock/stretch_white3"
+		}
+	}
+	windowDef Glow
+	{
+		rect	20,86,-601,176
+		matcolor	0.1 ,0.05 ,0.05 ,0.5
+		visible	1
+		background	"gui/glow"
+	}
+	windowDef BGMask
+	{
+		rect	5,5,630,470
+		visible	1
+		windowDef BGMask1
+		{
+			rect	-1,-1,639,85
+			visible	1
+			backcolor	0.36,0.24,0.05, 1
+		}
+		windowDef BGMask2
+		{
+			rect	-1,257,638,227
+			visible	1
+			backcolor	0.36,0.24,0.05, 1
+		}
+		windowDef BorderBtm
+		{
+			rect	0,237,631,22
+			matcolor	0.36,0.24,0.05, 1
+			visible	1
+			background	"gui/line/horizwarn2"
+		}
+		windowDef BorderTop
+		{
+			rect	0,81,631,22
+			matcolor	0.36,0.24,0.05, 1
+			visible	1
+			background	"gui/line/horizwarn2"
+		}
+	}
+	windowDef ImageClip1
+	{
+		rect	1,264,243,211
+		visible	1
+		windowDef BtnTop
+		{
+			rect	25,44,550,92
+			background	"guis/assets/airlock/inbtn"
+			matcolor	1,0.8,0.4,0.2
+			visible	1
+		}
+		windowDef BtnBottom
+		{
+			rect	25,98,550,-92
+			background	"guis/assets/airlock/inbtn"
+			matcolor	1,0.8,0.4,0.2
+			visible	1
+		}
+	}
+	windowDef ImageClip2
+	{
+		rect	22,42,595,42
+		visible	1
+		windowDef BtnTop2
+		{
+			rect	539,-1,300,-40
+			background	"guis/assets/airlock/inbtn"
+			matcolor	1,0.8,0.4,0.2
+			visible	1
+		}
+		windowDef BtnTop1
+		{
+			rect	-51,-2,300,-40
+			background	"guis/assets/airlock/inbtn"
+			matcolor	1,0.8,0.4,0.2
+			visible	1
+		}
+	}
+	windowDef Btn2
+	{
+		rect	239,267,384,212
+		visible	1
+		windowDef btn2_corner1
+		{
+			rect	0,2,82,60
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornerlg"
+			matcolor	1,0.8,0.4,0.7
+		}
+		windowDef btn2_corner2
+		{
+			rect	293,2,-82,-30
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornersm"
+			matcolor	1,0.8,0.4,0.7
+		}
+		windowDef btn2_corner3
+		{
+			rect	0,164,82,30
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornersm"
+			matcolor	1,0.8,0.4,0.7
+		}
+		windowDef btn2_corner4
+		{
+			rect	293,134,-82,-60
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_cornerlg"
+			matcolor	1,0.8,0.4,0.7
+		}
+		windowDef btn2_Fill
+		{
+			rect	82,30,211,136
+			visible	1
+			backcolor	1,0.8,0.4,0.32
+		}
+		windowDef btn2_Bottom
+		{
+			rect	82,166,211,30
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_horiz"
+			matcolor	1,0.8,0.4,0.7
+		}
+		windowDef btn2_Top
+		{
+			rect	82,0,211,-30
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_horiz"
+			matcolor	1,0.8,0.4,0.7
+		}
+		windowDef btn2_Right
+		{
+			rect	293,32,-82,-102
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_vert"
+			matcolor	1,0.8,0.4,0.7
+		}
+		windowDef btn2_Left
+		{
+			rect	0,62,82,-102
+			visible	1
+			background	"guis/assets/common/btn_2pxborder_vert"
+			matcolor	1,0.8,0.4,0.7
+		}
+		windowDef btn2_Mid
+		{
+			rect	9,70,356,-53
+			visible	1
+			background	"guis/assets/mainmenu/button_middle"
+			matcolor	1,0.8,0.4,0.5
+		}
+	}
+	windowDef Text
+	{
+		rect	-2,0,640,480
+		visible	1
+		windowDef TextExtPress
+		{
+			rect	303,367,187,90
+			visible	1
+			forecolor	1,1,1,0.6
+			text	"14.2"
+			textScale	1.6
+		}
+		windowDef TextIntPress
+		{
+			rect	303,264,187,90
+			visible	1
+			forecolor	1,1,1,0.6
+			text	"0.13"
+			textScale	1.6
+		}
+		windowDef TextExternal
+		{
+			rect	472,378,115,40
+			visible	1
+			forecolor	1,1,1,0.298
+			text	"#str_00659"
+			textScale	0.5
+		}
+		windowDef TextInternal
+		{
+			rect	472,314,115,40
+			visible	1
+			forecolor	1,1,1,0.298
+			text	"#str_00660"
+			textScale	0.5
+			textAlign	2
+		}
+		windowDef TextCurrentPressure
+		{
+			rect	238,339,349,41
+			visible	1
+			forecolor	0,0,0,0.6
+			text	"#str_00661"
+			textScale	0.7
+			textAlign	2
+		}
+		windowDef TextCycle
+		{
+			rect	27,97,543,139
+			visible	1
+			forecolor	1,1,1,0.6
+			text	"#str_00653"
+			textScale	1.2
+			textAlign	2
+			font	"fonts/micro"
+			notime	1
+
+			onTime 0 {
+				set "text" "#str_00662" ;
+			}
+
+			onTime 50 {
+				set "text" "#str_00663" ;
+			}
+
+			onTime 100 {
+				set "text" "#str_00664" ;
+			}
+
+			onTime 150 {
+				set "text" "#str_00665" ;
+			}
+
+			onTime 200 {
+				set "text" "#str_06666" ;
+			}
+
+			onTime 250 {
+				set "text" "#str_00656" ;
+			}
+
+		}
+		windowDef TextDecompress
+		{
+			rect	6,115,563,139
+			visible	1
+			forecolor	1,1,1,0
+			text	""
+			textScale	1
+			textAlign	2
+			font	"fonts/micro"
+			notime	1
+
+			onTime 0 {
+				set "text" "#str_00683" ;
+			}
+
+			onTime 50 {
+				set "text" "#str_00684" ;
+			}
+
+			onTime 100 {
+				set "text" "#str_00685" ;
+			}
+
+			onTime 150 {
+				set "text" "#str_00686" ;
+			}
+
+			onTime 200 {
+				set "text" "#str_00687" ;
+			}
+
+			onTime 250 {
+				set "text" "#str_00688" ;
+			}
+
+			onTime 300 {
+				set "text" "#str_00689" ;
+			}
+
+		}
+		windowDef TextEqual
+		{
+			rect	27,103,543,139
+			visible	1
+			forecolor	1,1,1,0
+			text	""
+			textScale	1.2
+			textAlign	2
+			font	"fonts/micro"
+			notime	1
+
+			onTime 0 {
+				set "text" "#str_00674" ;
+			}
+
+			onTime 40 {
+				set "text" "#str_00675" ;
+			}
+
+			onTime 80 {
+				set "text" "#str_00676" ;
+			}
+
+			onTime 120 {
+				set "text" "#str_00677" ;
+			}
+
+			onTime 160 {
+				set "text" "#str_00678" ;
+			}
+
+			onTime 200 {
+				set "text" "#str_00679" ;
+			}
+
+			onTime 240 {
+				set "text" "#str_00680" ;
+			}
+
+			onTime 280 {
+				set "text" "#str_00681" ;
+			}
+
+		}
+		windowDef TextStatus
+		{
+			rect	33,350,216,50
+			visible	1
+			forecolor	1,0.9,0.7,0.25
+			text	"#str_00654"
+			textScale	0.83
+			font	"fonts/micro"
+
+			onTime 0 {
+				transition "forecolor" "1 0.9 0.7 0" "1 0.9 0.7 0.25" "1000" ;
+			}
+
+			onTime 1500 {
+				transition "forecolor" "1 0.9 0.7 0.25" "1 0.9 0.7 0" "1000" ;
+			}
+
+			onTime 2500 {
+				resetTime "0" ;
+			}
+
+		}
+		windowDef TextTitle
+		{
+			rect	19,13,558,41
+			visible	1
+			forecolor	1,1,0.8,0.5
+			text	"#str_00682"
+			textScale	0.57
+			textAlign	1
+			font	"fonts/micro"
+		}
+		windowDef TextTitle1
+		{
+			rect	175,44,389,41
+			visible	1
+			forecolor	1,0.8,0.4,0.2
+			text	"#str_00655"
+			textScale	0.57
+			font	"fonts/micro"
+			textAlign	2
+		}
+	}
+	windowDef Glow1
+	{
+		rect	5,5,630,470
+		matcolor	0.15,0.05,0,0.5
+		visible	1
+		background	"guis/assets/waste/glow.tga"
+	}
+	windowDef BigButton
+	{
+		rect	27,107,586,135
+		visible	1
+		background	"guis/assets/efc/button"
+		matcolor	0.6,0.8,0.9,pdhr[ time * 0.0008]/3.5
+	}
+	windowDef BigButton2
+	{
+		rect	27,107,586,135
+		visible	1
+		background	"guis/assets/efc/button"
+		matcolor	1,1,1,0
+	}
+	windowDef BackgroundBorder
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef Right
+		{
+			rect	553,63,-82,354
+			visible	1
+			background	"guis/assets/common/glowborder_vert"
+			matcolor	1 , 0.75, 0.4, 1
+		}
+		windowDef Left
+		{
+			rect	4,63,82,354
+			visible	1
+			background	"guis/assets/common/glowborder_vert"
+			matcolor	1 , 0.75, 0.4, 1
+		}
+		windowDef Bottom
+		{
+			rect	86,417,467,59
+			visible	1
+			background	"guis/assets/common/glowborder_horiz"
+			matcolor	1 , 0.75, 0.4, 1
+		}
+		windowDef Top
+		{
+			rect	86,4,467,-59
+			visible	1
+			background	"guis/assets/common/glowborder_horiz"
+			matcolor	1 , 0.75, 0.4, 1
+		}
+		windowDef BLcorner
+		{
+			rect	4,417,82,59
+			visible	1
+			background	"guis/assets/common/glowborder_corner3"
+			matcolor	1 , 0.75, 0.4, 1
+		}
+		windowDef BRcorner
+		{
+			rect	553,417,82,59
+			visible	1
+			background	"guis/assets/common/glowborder_corner4"
+			matcolor	1 , 0.75, 0.4, 1
+		}
+		windowDef Trcorner
+		{
+			rect	553,4,82,59
+			visible	1
+			background	"guis/assets/common/glowborder_corner2"
+			matcolor	1 , 0.75, 0.4, 1
+		}
+		windowDef TLcorner
+		{
+			rect	4,4,82,-59
+			visible	1
+			background	"guis/assets/common/glowborder_corner3"
+			matcolor	1 , 0.75, 0.4, 1
+		}
+		windowDef Bottom1
+		{
+			rect	22,30,595,-36
+			visible	0
+			background	"guis/assets/common/scibox/g_horiz"
+			matcolor	1 , 0.75, 0.4, 0.2
+		}
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef ButtonActivate
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+
+		onAction {
+			set	"cmd"	"play guisounds_beep1" ;
+			runScript	"gui::gui_parm6" ; 
+			//set	"cmd" "activate ; play guisounds_pressurize" ; 
+			resetTime "Anim" "0" ; 
+		}
+
+	}
+	windowDef ButtonError
+	{
+		rect	0 ,0 ,640 ,480
+		visible	0
+		noevents	1
+
+		onAction {
+			set	"cmd" "play guisounds_error" ; 
+		}
+
+	}
+	windowDef ClickCatch
+	{
+		rect	0 ,0 ,0 ,0
+		visible	1
+
+		onAction {
+			set	"cmd" "play guisounds_error" ; 
+		}
+
+	}
+	windowDef Mask
+	{
+		rect	0 ,0 ,640 ,480
+		visible	1
+		background	"guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.2
+	}
+	windowDef Outershadow
+	{
+		rect	0 ,0 ,640 ,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Addhighlight
+	{
+		rect	0,0,640,480
+		background	"gui/addhighlight"
+		matcolor	0.5 ,0.4 ,0.3 ,1
+		visible	1
+	}
+	windowDef Scanlines
+	{
+		rect	5,5,-630,470
+		matcolor	0.15,0.15,0.15,1
+		background	"gui/test/gui_scanlines5"
+		visible	1
+		matscaley	2.5
+	}
+	windowDef Dirt
+	{
+		rect	0 ,0 ,-640 ,480
+		matcolor	1, 1, 1 ,0.5
+		visible	1
+		background	"guis/assets/common/dirt4"
+		noevents	1
+	}
+	windowDef Anim
+	{
+		rect	1 ,1 ,1 ,1
+		notime	1
+
+		onTime 5000 {
+			transition "BGMask1::rect" "0 -38 639 85" "0 -1 639 85" "400" "0" "0.8" ;
+			transition "BGMask2::rect" "0 422 638 227" "0 257 638 227" "400" "0" "0.8" ;
+			transition "BorderTop::rect" "0 43 631 22" "0 81 631 22" "400" "0" "0.8" ;
+			transition "BorderBtm::rect" "0 402 631 22" "0 237 631 22" "400" "0" "0.8" ;
+			transition "Glow::rect" "5 37 -629 421" "20 86 -601 176" "400" "0" "0.8" ;
+			
+			transition "BtnTop::matcolor" "1 0.8 0.4 0" "1 0.8 0.4 0.2" "400" ;
+			transition "BtnBottom::matcolor" "1 0.8 0.4 0" "1 0.8 0.4 0.2" "400" ;
+			transition "BtnTop1::matcolor" "1 0.8 0.4 0" "1 0.8 0.4 0.2" "400" ;
+			transition "BtnTop2::matcolor" "1 0.8 0.4 0" "1 0.8 0.4 0.2" "400" ;
+			set "TextStatus::visible" "1" ;
+			transition "TextTitle1::forecolor" "1 0.8 0.4 0" "1 0.8 0.4 0.2" "400" ;	
+			
+			transition "TextEqual::forecolor" "1 1 1 0.6" "1 1 1 0" "200" ;
+			
+		}
+
+		onTime 5400 {
+			transition "TextCycle::forecolor" "1 1 1 0" "1 1 1 0.6" "500" ;
+		}
+
+		onTime 6000 {
+			set	"ButtonActivate::noevents" "0" ; 
+			set	"ButtonError::noevents" "1" ; 
+			set	"ButtonError::visible" "0" ;
+		}
+		
+		onTime 1725 {
+			set "TextIntPress::text" "14.2" ;
+		}
+		onTime 1700 {
+			set "TextIntPress::text" "14.1" ;
+		}
+		onTime 1675 {
+			set "TextIntPress::text" "14.0" ;
+		}
+		onTime 1650 {
+			set "TextIntPress::text" "13.9" ;
+		}
+		onTime 1625 {
+			set "TextIntPress::text" "13.2" ;
+		}
+		onTime 1600 {
+			transition "TextEqual::forecolor" "1 1 1 0" "1 1 1 0.6" "200" ;
+			transition "TextDecompress::forecolor" "1 1 1 0.6" "1 1 1 0" "200" ;
+			resetTime "TextEqual" "0" ;
+		}		
+		onTime 1575 {
+			set "TextIntPress::text" "12.7" ;
+		}
+		onTime 1550 {
+			set "TextIntPress::text" "12.2" ;
+		}
+		onTime 1525 {
+			set "TextIntPress::text" "11.91" ;
+		}
+		onTime 1500 {
+			set "TextIntPress::text" "11.12" ;
+		}
+		onTime 1450 {
+			set "TextIntPress::text" "10.7" ;
+		}
+		onTime 1400 {
+			set "TextIntPress::text" "10.2" ;
+		}
+		onTime 1350 {
+			set "TextIntPress::text" "9.91" ;
+		}
+		onTime 1300 {
+			set "TextIntPress::text" "9.12" ;
+		}
+		onTime 1250 {
+			set "TextIntPress::text" "8.71" ;
+		}
+		onTime 1200 {
+			set "TextIntPress::text" "8.13" ;
+		}
+		onTime 1150 {
+			set "TextIntPress::text" "7.14" ;
+		}
+		onTime 1100 {
+			set "TextIntPress::text" "7.31" ;
+		}
+		onTime 1050 {
+			set "TextIntPress::text" "6.91" ;
+		}
+		onTime 1000 {
+			set "TextIntPress::text" "6.14" ;
+		}
+		onTime 950 {
+			set "TextIntPress::text" "5.71" ;
+		}
+		onTime 900 {
+			set "TextIntPress::text" "5.12" ;
+		}
+		onTime 850 {
+			set "TextIntPress::text" "4.91" ;
+		}
+		onTime 750 {
+			set "TextIntPress::text" "4.16" ;
+		}
+		onTime 650 {
+			set "TextIntPress::text" "3.81" ;
+		}
+		onTime 550 {
+			set "TextIntPress::text" "3.12" ;
+		}
+		onTime 450 {
+			set "TextIntPress::text" "2.13" ;
+		}
+		onTime 350 {
+			set "TextIntPress::text" "1.92" ;
+		}
+		onTime 250 {
+			set "TextIntPress::text" "1.23" ;
+		}
+		onTime 150 {
+			set "TextIntPress::text" "0.71" ;
+		}
+		onTime 0 {
+			set "TextIntPress::text" "0.13" ;
+			set "TextCycle::forecolor" "1 1 1 0" ;
+			transition "TextDecompress::forecolor" "1 1 1 0" "1 1 1 0.6" "500" ;
+			resetTime "TextDecompress" "0" ;
+			set	"ButtonActivate::noevents" "1" ; 
+			set	"ButtonError::noevents" "0" ; 
+			set	"ButtonError::visible" "1" ;
+			transition "BGMask1::rect" "-1 -1 639 85" "0 -38 639 85" "400" "0" "0.8" ;
+			transition "BGMask2::rect" "-1 257 638 227" "0 422 638 227" "400" "0" "0.8" ;
+			transition "BorderTop::rect" "0 81 631 22" "0 43 631 22" "400" "0" "0.8" ;
+			transition "BorderBtm::rect" "0 237 631 22" "0 402 631 22" "400" "0" "0.8" ;
+			transition "Glow::rect" "20 86 -601 176" "5 37 -629 421" "400" "0" "0.8" ;
+			transition "BtnTop::matcolor" "1 0.8 0.4 0.2" "1 0.8 0.4 0" "400" ;
+			transition "BtnBottom::matcolor" "1 0.8 0.4 0.2" "1 0.8 0.4 0" "400" ;
+			transition "BtnTop1::matcolor" "1 0.8 0.4 0.2" "1 0.8 0.4 0" "400" ;
+			transition "BtnTop2::matcolor" "1 0.8 0.4 0.2" "1 0.8 0.4 0" "400" ;
+			set "TextStatus::visible" "0" ;
+			set "TextTitle1::forecolor" "1 0.8 0.4 0" ;			
+		}
+	}
+	windowDef Dirt3
+	{
+		rect	-3,-3,-650,490
+		matcolor	0.2, 0.13, 0.05 ,0.5
+		visible	1
+		background	"guis/assets/common/dirt7"
+		noevents	1
+	}
+	windowDef Dirt1
+	{
+		rect	0,0,640,-480
+		matcolor	1, 1, 1 ,0.5
+		visible	0
+		background	"guis/assets/common/dirt4"
+		noevents	1
+	}
+	windowDef Reflect
+	{
+		rect	0,-9,-640,480
+		matcolor	1 ,1 ,1 ,0.1
+		visible	1
+		background	"gui/reflect1"
+		noevents	1
+	}
+}

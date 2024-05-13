@@ -1,0 +1,54 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda commoutside_ridge {
+	name         "Ron Ridge"
+	fullname     "Ron I. Ridge"
+	icon         "guis/assets/pda/icon_rridge"
+	id           "8735-80"
+	post         "Communications Transfer"
+	title        "Officer"
+	security     ""
+	pda_email    "commoutside_ridge_email_1"
+	pda_email    "commoutside_ridge_email_2"
+	pda_audio    "commoutside_ridge_audio_1"
+}
+
+email commoutside_ridge_email_1 {
+	date		"11-14-2145"
+	to			"Ron Ridge"
+	from		"UAC Authority"
+	subject		"Maintenance Lift Access Restrictions"
+	text {
+	"Ron,\n\n"
+	"We need you to enforce Maintenance Lift Access Restrictions from this point forward.  Several of these lifts can be used to gain entry into areas that are off-limits to the personnel that might only have maintenance access.  Please see to it that this is enforced.\n\n"
+	"Sincerely,\n"
+	"UAC Authority"
+	}
+}
+
+email commoutside_ridge_email_2 {
+	date		"11-14-2145"
+	to			"Ron Ridge"
+	from		"James Holiday"
+	subject		"RE: Those Damn Chainsaws!"
+	text {
+		"Ron,\n"
+		"I don't have any idea what to do with those things.  Why don't you throw them down the chasm near enpro like you did that other shit?\n\n"
+		"-James\n\n"
+		"----Original Message----\n"
+		"Sent: 11-13-2145\n"
+		"To: James Holiday\n\n"
+		"Hey James,\n"
+		"What are we gonna do with all those chainsaws?  We've got two shipments of excess medical equipment coming in very soon and we're gonna need the space.  I can't believe someone mis-shipped those things.  I can't think of a more useless piece of equipment then a chainsaw on Mars!?!  Anyway you gotta help me get rid of these Beavertooths.\n\n"
+		"Thanks,\n"
+		"-RR"
+	}
+}
+
+audio commoutside_ridge_audio_1 {
+	name		"Unsafe Driving"
+	info		"Made by: Ron Ridge\nDate: 10-16-2145\nOpen for Amendment: Yes\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_commoutside_ridge_1"
+}
+

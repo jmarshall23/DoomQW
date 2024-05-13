@@ -1,0 +1,79 @@
+// NO audio files in the personal pda and subsequently no video files in other pdas
+// all vidoes are downloaded to your personal pda and individual pdas can contain
+// audio logs
+
+pda admin_banks {
+	name		"William Banks"
+	fullname	"William L. Banks"
+	icon		"gui/pda/bio1"
+	id		"9134-21"
+	post		"Administration"				// for the personal pda this is ignored and current location is used instead
+	title		"Director"					// this is used for title or rank ( for the player )
+	security	"Alpha Labs"				// only set this if it contains a new security clearance.. as far as the pda and hud goes this is informational only
+	pda_email	"admin_banks_email_1"
+	pda_email	"admin_banks_email_2"
+	pda_email	"admin_banks_email_3"
+	pda_audio	"admin_banks_audio_1"
+	pda_audio	"admin_banks_audio_2"
+}
+
+
+email admin_banks_email_1 
+{
+	date		"10-02-2145"
+	to			"none"
+	from		"Malcolm Betruger"
+	subject		"Religious Artifacts"
+	text 
+	{
+	"Director Banks, I need your urgent attention on this matter.\n\n"
+	"It is very important to my research that all crates containing religious artifacts arriving from earth, with a co-sign for Delta Labs, go directly there with no interruption or delay.  I can't have my precious cargo sitting around the hangar waiting for your personnel to process it.\n"
+	"I expect your immediate attention on this matter.\n\n"
+	"Dr. Malcolm Betruger"
+	}
+}
+
+email admin_banks_email_2 
+{
+	date		"11-08-2145"
+	to			"none"
+	from		"Matthew White"
+	subject		"Missing Person"
+	text 
+	{
+	"Director Banks,\n\n"
+	"Research Assistant Eric Raffel has not reported for work all this week.  I've called his quarters repeatedly without response.  No one has seen him in days and I don't know what to do, he is normally a very reliable individual.  I've contacted Mars Security with hope that they will try and find him.  There aren't a lot of areas to go on this base... man, I hope he's alright.\nIf I hear anything I'll send word.\n\n"
+	"Thank You,\nMatthew White"
+	}
+}
+
+email admin_banks_email_3 
+{
+	date		"11-10-2145"
+	to			"Banks"
+	from		"UA-Corp.com"
+	subject		"New Web Site"
+	text 
+	{
+	"Director Banks,\n\n"
+	"We're happy to report the roll out of the new coporate web page.  Please take a moment of your time to review it.\n\n"
+	"Thank You,\nUA-Corp.com Web Team"
+	}
+}
+
+
+audio admin_banks_audio_1 
+{
+	name 		"Missing Personnel"
+	info		"Made by: William Banks\nDate: 10-20-2145\nOpen for amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_admin_banks_1"
+}
+
+audio admin_banks_audio_2 
+{
+	name 		"Energy Deficiencies"
+	info		"Made by: William Banks\nDate: 10-05-2145\nOpen for amendment: Yes\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_admin_banks_2"
+}

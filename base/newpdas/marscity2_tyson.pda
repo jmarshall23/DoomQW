@@ -1,0 +1,81 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda marscity2_tyson {
+	name         "Bill Tyson"
+	fullname     "Sergeant Bill Tyson"
+	icon         "guis/assets/pda/tyson"
+	id           "7488-89"
+	post         "Mars City"
+	title        "Staff Sergeant"
+	security     ""
+	pda_email    "marscity2_tyson_email_1"
+	pda_email    "marscity2_tyson_email_2"	
+	pda_email    "marscity2_tyson_email_3"
+
+	pda_audio    "marscity2_tyson_audio_1"
+	pda_audio    "marscity2_tyson_audio_2"
+}
+
+email marscity2_tyson_email_1
+{
+	date		"11-02-2145"
+	to			"SSgt Tyson"
+	from		"PFC Hagar"
+	subject	"Sentry Bot Security"
+	text {
+"Staff Sergeant Tyson,\n\n"
+"I have been a major supporter of putting Sentry Bots on routine patrols.  In the past, they have proven to be very reliable.  That changed today.\n\n"
+"I witnessed two of our guys doing maintenance on a bot in Mars City.  While having it only partially assembled, they activated its sensors to test their repairs.  All of the sudden, the Sentry locked onto one of the marines as an enemy and began firing at him.  If the ammo had been loaded, that marine would have been killed.  Thankfully the other marine was able to immobilize it quickly.\n\n"
+"The Sentry Bot is powerful - but maybe too powerful.  Why do we need that much firepower in Mars City?  Except for the odd report of individuals going a little crazy, we don't have many problems.  Do we really expect the Sentry Bots to know the difference between someone having a bad day and someone gone mad?\n\n"
+"I hope you can talk to Sarge about this before something worse happens.\n"
+"-PFC Hagar"
+
+	}
+}
+
+
+email marscity2_tyson_email_2
+{
+	date		"11-10-2145"
+	to		"SSgt Tyson"
+	from		"Sergeant Kelly"
+	subject	"New Arrival"
+	text {
+"SSgt Tyson,\n"
+"We have a new troop inbound to replace Allen. He will be arriving on the next transport.\n\n"
+"Be sure to get the manifest filled out for his first issue.\n"
+"Sergeant Kelly"
+
+	}
+}
+
+email marscity2_tyson_email_3
+{
+	date		"11-11-2145"
+	to			"SSgt Tyson"
+	from		"Central Security"
+	subject		"Security Code Change"
+	text {
+"SSgt Tyson,\n"
+"Due to the upcoming personnel transfer, we will be changing the Weapons Storage code in Marine Command to 584.  The change will take effect on Nov 15, 2145.\n"
+"Thank You,\n\n"
+"Central Security"
+	}
+}
+
+audio marscity2_tyson_audio_1 
+{
+	name		"General Troop Morale"
+	info		"Made by: Bill Tyson\nDate: 10-30-2145\nOpen for Amendment: Yes\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_marscity2_tyson_1"
+}
+
+audio marscity2_tyson_audio_2 
+{
+	name		"Troop Deployments"
+	info		"Made by: Bill Tyson\nDate: 10-30-2145\nOpen for Amendment: No\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_marscity2_tyson_2"
+}
+

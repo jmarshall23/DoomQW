@@ -1,0 +1,71 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda marscity2_stanton {
+	name         "Marcus Stanton"
+	fullname     "Marcus C. Stanton"
+	icon         "guis/assets/pda/icon_stanton"
+	id           "5912-24"
+	post         "Mars City"
+	title        "Manifest Controller"
+	security     ""
+	pda_email    "marscity2_stanton_email_1"
+	pda_email    "marscity2_stanton_email_2"
+	pda_email    "marscity2_stanton_email_3"
+	pda_audio    "marscity2_stanton_audio_1"
+}
+
+email marscity2_stanton_email_2 {
+	date		"11-14-2145"
+	to		"Marcus Stanton"
+	from		"Ray Gerhardt"
+	subject	"Farewell for now"
+	text {
+"If you've received this e-mail, you are someone I worked with while here on Mars and have made an impression on my life.  I want you to know I'm leaving Mars and UAC to pursue other opportunities after one last assignment tomorrow in Delta Labs.\n\n"
+
+"I will miss you terribly and will think of you often.  I'm sure the friendships I've made here will last the rest of my life and I will be sure to keep in touch.  As soon as I have a new address I will forward it along.\n\n"
+
+"I hope you will join me in the Mars City kitchen for a drink tomorrow evening.  My shuttle leaves first thing on 11/16 and I'd hate to miss my last chance to see you... until next time.\n\nRay Gerhardt"
+	}
+}
+email marscity2_stanton_email_3 {
+	date		"11-14-2145"
+	to		"Marcus Stanton"
+	from		"Duncan Mathews"
+	subject	"FW: Farewell for now"
+	text {
+"Any idea who this guy is?  I think he may be the funny looking dweeb from Alpha Labs, but I always thought his name was Alan.\n\n"
+
+"Are you going to go have that drink with him?  I wouldn't normally... but if he's buying and other people will be there, it might be fun.\n\n"
+"----Original Message----\n"
+		"Sent: 11-14-2145\n"
+		"To: Duncan Mathews\n\n"
+"If you've received this e-mail, you are someone I worked with while here on Mars and have made an impression on my life.  I want you to know I'm leaving Mars and UAC to pursue other opportunities after one last assignment tomorrow in Delta Labs.\n\n"
+
+"I will miss you terribly and will think of you often.  I'm sure the friendships I've made here will last the rest of my life and I will be sure to keep in touch.  As soon as I have a new address I will forward it along.\n\n"
+
+"I hope you will join me in the Mars City kitchen for a drink tomorrow evening.  My shuttle leaves first thing on 11/16 and I'd hate to miss my last chance to see you... until next time.\n\nRay Gerhardt"
+	}
+}
+
+email marscity2_stanton_email_1 {
+	date		"11-12-2145"
+	to		"Marcus Stanton"
+	from		"David Robbins"
+	subject	"Would you believe - chainsaws?"
+	text {
+"Marcus,\n"
+"Those morons at Mixom have done it again.  I requisitioned a crate of jackhammers.  What we got were several crates of chainsaws and no jackhammers at all.  What the hell were they thinking?  Chainsaws serve no purpose on Mars!\n\n"
+
+"I'm sending these back as soon as I get the time.  Meanwhile, I would appreciate it if you could lodge another complaint with Mixom and expedite my jackhammers when they do arrive.\n\n"
+
+"David Robbins\nIndustrial Complex"
+	}
+}
+
+audio marscity2_stanton_audio_1 {
+	name		"Undocumented Cargo"
+	info		"Made by: Marcus C. Stanton\nDate: 10-30-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_marscity2_stanton_1"
+}
+

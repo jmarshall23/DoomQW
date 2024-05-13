@@ -1,0 +1,230 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	windowDef BgBlack
+	{
+		rect	-13,-9,668,497
+		visible	1
+		background	"guis/assets/cpuserver/bgWhite4"
+		matcolor	0,0,0,0.9
+	}
+	windowDef MapParent
+	{
+		rect	-14,24,675,432
+		visible	1
+		windowDef BgMap
+		{
+			rect	73,75,524,324
+			visible	1
+			background	"guis/assets/mmap/bluemap"
+			matcolor	0.4,0.4,0.4,1
+		}
+		windowDef Bg121
+		{
+			rect	73,75,524,324
+			visible	0
+			background	"guis/assets/mmap/bluemap"
+			matcolor	1,1,1,1
+		}
+		windowDef Bg
+		{
+			rect	73,75,524,324
+			background	"guis/assets/cpuserver/map.tga"
+			visible	1
+			matcolor	1, 1, 1, 1
+		}
+		windowDef MapParent2
+		{
+			rect	18,0,631,432
+			visible	1
+			windowDef MapHClip
+			{
+				rect	55,75,43,324
+				visible	1
+
+				onTime 0 {
+					transition "MapHClip::rect" "53 76 43 324" "535 76 43 324" "4000" "0.5" "0.5" ;
+					transition "MapH::rect" "0 0 524 324" "-482 0 524 324" "4000" "0.5" "0.5" ;
+					
+					transition "ScrollTextH::rect" "0 0 1210 22" "-684 0 1210 22" "4000" "0.5" "0.5" ;
+					transition "ScrollTextH1::rect" "0 0 1210 22" "-684 0 1210 22" "4000" "0.5" "0.5" ;
+				}
+
+				onTime 4100 {
+					transition "MapHClip::rect" "535 76 43 324" "53 76 43 324" "4000" "0.5" "0.5" ;
+					transition "MapH::rect" "-482 0 524 324" "0 0 524 324" "4000" "0.5" "0.5" ;
+					
+					transition "ScrollTextH::rect" "-684 0 1210 22" "0 0 1210 22" "4000" "0.5" "0.5" ;
+					transition "ScrollTextH1::rect" "-684 0 1210 22" "0 0 1210 22" "4000" "0.5" "0.5" ;
+				}
+
+				onTime 8200 {
+					resetTime "0" ;
+				}
+
+				windowDef MapH
+				{
+					rect	0,0,524,324
+					visible	1
+					background	"guis/assets/mmap/bluemap"
+					matcolor	1,1,1,0.3
+				}
+			}
+			windowDef MapVClip
+			{
+				rect	55,75,524,47
+				visible	1
+
+				onTime 0 {
+					transition "MapVClip::rect" "53 76 524 47" "53 353 524 47" "5000" "0.5" "0.5" ;
+					transition "MapV::rect" "0 0 524 324" "0 -277 524 324" "5000" "0.5" "0.5" ;
+					
+					transition "ScrollTextV::rect" "0 0 39 1171" "0 -838 39 1171" "5000" "0.5" "0.5" ;
+					transition "ScrollTextV1::rect" "0 0 39 1171" "0 -838 39 1171" "5000" "0.5" "0.5" ;
+				}
+
+				onTime 5100 {
+					transition "MapVClip::rect" "53 353 524 47" "53 76 524 47" "5000" "0.5" "0.5" ;
+					transition "MapV::rect" "0 -277 524 324" "0 0 524 324" "5000" "0.5" "0.5" ;
+					
+					transition "ScrollTextV::rect" "0 -838 39 1171" "0 0 39 1171" "5000" "0.5" "0.5" ;
+					transition "ScrollTextV1::rect" "0 -838 39 1171" "0 0 39 1171" "5000" "0.5" "0.5" ;
+				}
+
+				onTime 10200 {
+					resetTime "0" ;
+				}
+
+				windowDef MapV
+				{
+					rect	0,0,524,324
+					visible	1
+					background	"guis/assets/mmap/bluemap"
+					matcolor	1,1,1,0.3
+				}
+			}
+		}
+		windowDef ScrollTextHClip
+		{
+			rect	73,50,526,22
+			visible	1
+			windowDef ScrollTextH
+			{
+				rect	0,0,1210,22
+				visible	1
+				forecolor	1,1,1,0.2
+				text	"0          128          256          512          1024          512          256          128          0          128          256          512          1024          512          256          128          0"
+				textscale	0.25
+			}
+		}
+		windowDef ScrollTextVClip
+		{
+			rect	601,69,39,330
+			visible	1
+			windowDef ScrollTextV
+			{
+				rect	0,0,39,1171
+				visible	1
+				forecolor	1,1,1,0.2
+				text	"0\n\n\n\n128\n\n\n\n256\n\n\n\n 512\n\n\n\n1024\n\n\n\n512\n\n\n\n256\n\n\n\n128\n\n\n\n0\n\n\n\n128\n\n\n\n256\n\n\n\n 512\n\n\n\n1024\n\n\n\n512\n\n\n\n256\n\n\n\n128\n\n\n\n0"
+				textscale	0.25
+			}
+		}
+		windowDef ScrollTextHClip1
+		{
+			rect	73,400,526,22
+			visible	1
+			windowDef ScrollTextH1
+			{
+				rect	0,0,1210,22
+				visible	1
+				forecolor	1,1,1,0.2
+				text	"0          128          256          512          1024          512          256          128          0          128          256          512          1024          512          256          128          0"
+				textscale	0.25
+			}
+		}
+		windowDef ScrollTextVClip1
+		{
+			rect	30,69,39,330
+			visible	1
+			windowDef ScrollTextV1
+			{
+				rect	0,0,39,1171
+				visible	1
+				forecolor	1,1,1,0.2
+				text	"0\n\n\n\n128\n\n\n\n256\n\n\n\n 512\n\n\n\n1024\n\n\n\n512\n\n\n\n256\n\n\n\n128\n\n\n\n0\n\n\n\n128\n\n\n\n256\n\n\n\n 512\n\n\n\n1024\n\n\n\n512\n\n\n\n256\n\n\n\n128\n\n\n\n0"
+				textscale	0.25
+				textalign	2
+			}
+		}
+		windowDef MapBg1
+		{
+			rect	67,71,536,25
+			visible	1
+			background	"guis/assets/teleporter/grid3"
+			matcolor	1,1,1,0.4
+		}
+		windowDef MapBG2
+		{
+			rect	67,96,536,-281
+			visible	1
+			background	"guis/assets/teleporter/grid4"
+			matcolor	1,1,1,0.4
+		}
+		windowDef MapBG3
+		{
+			rect	67,377,536,-25
+			visible	1
+			background	"guis/assets/teleporter/grid3"
+			matcolor	1,1,1,0.4
+		}
+	}
+	windowDef TextHem
+	{
+		rect	52,26,531,33
+		text	"#str_03847"
+		textscale	0.44
+		textalign	1
+		forecolor	0.8,1,1,0.3
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef TextHem1
+	{
+		rect	29,50,581,33
+		text	"#str_03848"
+		textscale	0.34
+		textalign	1
+		forecolor	1,1,1,0.498
+		font	"fonts/micro"
+		visible	1
+	}
+	windowDef Bglow1
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	1, 0.7, 0, 0.2
+	}
+	windowDef Addhighlight1
+	{
+		rect	10,10,-620,440
+		background	"gui/addhighlight"
+		matcolor	0.15 ,0.4 ,0.4 ,1
+		visible	1
+	}
+	windowDef Static1
+	{
+		rect	-9,-9,660,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 5
+	}
+	windowDef Reflect1
+	{
+		rect	5,0,630,470
+		matcolor	1 ,1 ,1 ,0.15
+		visible	1
+		background	"gui/reflect1"
+	}
+}

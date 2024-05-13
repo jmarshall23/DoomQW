@@ -1,0 +1,68 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda site3_rogers {
+	name         "Pierce Rogers"
+	fullname     "Pierce M. Rogers, Ph.D"
+	icon         "guis/assets/pda/rogers"
+	id           "5304-29"
+	post         "Site 3"
+	title        "Archaeologist"
+	security     ""
+	pda_email    "site3_rogers_email_1"
+	pda_email    "site3_rogers_email_2"
+	pda_email    "site3_rogers_email_3"
+	pda_audio    "site3_rogers_audio_1"
+}
+
+email site3_rogers_email_1 {
+	date		"10-17-2145"
+	to		"Pierce Rogers"
+	from		"Richard Davis"
+	subject	"Scanner Results"
+	text {
+"Pierce,\n\n"
+"The scanner results for the ceiling carvings are back and I can say without a doubt that this is a map of our solar system.  There's a very clear indication that Earth may have been a possible teleport destination for the survivors of this race.  If the dates on these artifacts are correct there's a distinct possibility that we could be descendents of this race!\n\n"
+"I can barely comprehend how immense this is.  All the struggles we've had in the past year have suddenly become trivial.\n\n"
+"Richard"
+	}
+}
+
+
+email site3_rogers_email_2 {
+	date		"11-02-2145"
+	to		"Pierce Rogers"
+	from		"Timmy Rogers"
+	subject	"Thanks!"
+	text {
+"Uncle Pierce,\n\n"
+"Mom says we're going to get to see you next month.  I can't wait.  You've been away so long.  I hope your project is still going well.  I know you can't tell me about it, but your work always sounds so exciting and mysterious.  Working on Mars must be really cool.\n\n"
+"Thanks for sending me the video games for my birthday.  Have you tried these?  The new Quake-43 game blows my mind.  It is even better than Super Turbo Turkey Puncher.  I haven't played that since I got these new ones from you.\n\n"
+"I love you, and we miss you lots!!!\nTimmy\n\nP.S. Mom says HI!"
+	}
+}
+
+
+email site3_rogers_email_3 {
+	date		"11-15-2145"
+	to		"Pierce Rogers"
+	from		"Server: Mail Failure"
+	subject	"The Soul Cube is the answer"
+	text {
+"Server: send failure, unable to link to orbital communication satellite. Please contact I.T. system administrator(code 504)\n\n"
+"----Original Message----\n"
+"Sent: 11-15-2145\n"
+"To: Elizabeth McNeil\n\n"
+"I can now only beg your forgiveness.  You were right about everything.  I wish that you had been wrong and that this had somehow been a nightmare that I will soon wake from.  Now I can only pray that this message reaches you.\n"
+"Betruger is mad and things have gone worse than you could have imagined.  Now your banishment from Mars has become a blessing in disguise.  It has likely saved your life.  You must get the word out.  The answer is the Soul Cube object.  It always has been.  Listen to my report.  I will upload my finding to the databank.\n\n"
+"Warn them all. You must not let this spread to Earth.\n\n"
+"God Bless You,\nPierce"
+	}
+}
+
+audio site3_rogers_audio_1 {
+	name		"The Soul Cube is the Answer"
+	info		"Made by: Pierce Rogers\nDate: 11-16-2145\nOpen for Amendment: No\nSet for Archive: No"
+	preview		"sound/vo/video/novideo"
+	audio		"audiolog_site3_rogers_1"
+}
+

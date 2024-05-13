@@ -1,0 +1,22 @@
+skin skins/poppyfx1
+{
+		models/characters/female_npc/poppy/poppy models/characters/female_npc/poppy/poppyfx1
+		models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+skin skins/poppyfx2
+{
+		models/characters/female_npc/poppy/poppy models/characters/female_npc/poppy/poppyfx2
+		models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/poppy
+{
+		models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+skin skins/poppy_gib
+{
+		//models/monsters/skeleton/skeleton01 textures/common/nodraw
+}
+
+

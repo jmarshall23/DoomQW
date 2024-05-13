@@ -1,0 +1,44 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda delta2b_erikson 
+{
+	name         "Francis Erikson"
+	fullname     "Francis R. Erikson"
+	icon         "guis/assets/pda/erikson"
+	id           "7125-64"
+	post         "Delta Labs, Level 2"
+	title        "Maintenance Supervisor"
+	security     "Central Access"
+	pda_email    "delta2b_erikson_email_1"
+	pda_email    "delta2b_erikson_email_2"
+
+}
+
+email delta2b_erikson_email_1 
+{
+	date		"11-02-2145"
+	to		"Francis Erikson"
+	from		"Delta Security"
+	subject	"Locker code change request"
+	text 
+	{
+		"Francis,\n"
+		"A few extra supplies for the Central Security Team will be sent to your area.  Please store them in Locker 103, and change the code to 259.\n\n"
+		"Thank You,\n"
+		"Thomas Sandersen\n"
+		"Delta Security, Clerk"
+	}
+}
+
+email  delta2b_erikson_email_2 {
+	date		"10-30-2145"
+	to		"Francis Erikson"
+	from		"Corbin Hues"
+	subject	"Martian Buddy Cabinet"
+	text {
+"Francis,\n\n"
+"Shipping recieved one of those dumb Martian Buddy storage cabinets again but no one here can figure out how to open it. Can you go on-line and see if you can find the code? I'll have the guys put it in one of the storage rooms upstairs for you.\n\n"
+"Thanks for the help\n"
+"-Corbin"
+	}
+}

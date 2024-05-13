@@ -1,0 +1,44 @@
+MD5Version 10
+commandline "anim models/mapobjects/swinglights/swinglight_long_wbulbs.ma -dest models/md5/environments/swinglight_long_wbulbs.md5anim -game Doom -prefix LIGHT_"
+
+numFrames 4
+numJoints 6
+frameRate 24
+numAnimatedComponents 0
+
+hierarchy {
+	"origin"	-1 0 0	//
+	"bone1"	0 0 0	// origin
+	"bone2"	1 0 0	// bone1
+	"bone3"	2 0 0	// bone2
+	"bone4"	3 0 0	// bone3
+	"bone5"	4 0 0	// bone4
+}
+
+bounds {
+	( -63 -12.0000038147 -77.9999465942 ) ( 63 11.9999952316 0.0000000596 )
+	( -63 -12.0000038147 -77.9999465942 ) ( 63 11.9999952316 0.0000000596 )
+	( -63 -12.0000038147 -77.9999465942 ) ( 63 11.9999952316 0.0000000596 )
+	( -63 -12.0000038147 -77.9999465942 ) ( 63 11.9999952316 0.0000000596 )
+}
+
+baseframe {
+	( 0 0 0 ) ( -0.7071067691 0 0 )
+	( 0 0 0 ) ( 0 0 -1 )
+	( -0 16.2543907166 -0 ) ( 0 0 0 )
+	( -0 16.1946754456 -0 ) ( 0 0 0 )
+	( -0 15.9056549072 -0 ) ( 0 0 0 )
+	( -0 15.6446762085 -0 ) ( 0 0 1 )
+}
+
+frame 0 {
+}
+
+frame 1 {
+}
+
+frame 2 {
+}
+
+frame 3 {
+}

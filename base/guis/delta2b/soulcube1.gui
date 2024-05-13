@@ -1,0 +1,423 @@
+windowDef Desktop
+{
+	rect	0,0,640,480
+	background	"guis/assets/common/bg_rc.tga"
+	matcolor	0,0,0,1
+	visible	1
+	windowDef PhotoFront
+	{
+		rect	51,115,249,256
+		background	"guis/assets/archives/soulcube_front"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef MapGrid
+	{
+		rect	49,115,253,257
+		visible	1
+		background	"gui/grid2"
+		matcolor	1,0.2,0,0.2
+		matscalex	4
+		matscaley	4
+	}
+	windowDef BgParent
+	{
+		rect	0,0,640,480
+		visible	1
+		windowDef TextTitle1
+		{
+			rect	402,2,99,40
+			visible	1
+			text	"#str_03117"
+			forecolor	1,1,1,1
+			textscale	0.6
+			font	"fonts/micro"
+		}
+		windowDef TextTitle2
+		{
+			rect	495,12,139,33
+			visible	1
+			text	"#str_03118"
+			forecolor	1,1,1,0.5
+			textscale	0.4
+			font	"fonts/micro"
+		}
+		windowDef TitleBarBG1
+		{
+			rect	-3,1,31,124
+			visible	1
+			background	"guis/assets/archives/titlecap"
+			matcolor	1,1,1,1
+		}
+		windowDef TitleBarBG2
+		{
+			rect	28,1,15,124
+			visible	1
+			background	"guis/assets/archives/titleBar"
+			matcolor	1,1,1,1
+			matscalex	0.5
+		}
+		windowDef TitleBarBG3
+		{
+			rect	43,1,31,124
+			visible	1
+			background	"guis/assets/archives/titleBox"
+			matcolor	1,1,1,1
+		}
+		windowDef TitleBarBG4
+		{
+			rect	74,1,536,124
+			visible	1
+			background	"guis/assets/archives/titleBar"
+			matcolor	1,1,1,1
+			matscalex	5
+		}
+		windowDef TitleBarBG5
+		{
+			rect	610,1,-31,124
+			visible	1
+			background	"guis/assets/archives/titlecap"
+			matcolor	1,1,1,1
+		}
+		windowDef TickBoxTop2
+		{
+			rect	599,101,31,31
+			visible	1
+			background	"guis/assets/archives/tickbox"
+			matcolor	1,0,0,1
+		}
+		windowDef TickBoxBtm2
+		{
+			rect	599,355,31,31
+			visible	1
+			background	"guis/assets/archives/tickbox"
+			matcolor	1,0,0,1
+		}
+		windowDef TickBoxTop1
+		{
+			rect	13,101,-31,31
+			visible	1
+			background	"guis/assets/archives/tickbox"
+			matcolor	1,0,0,1
+		}
+		windowDef TickBoxBtm1
+		{
+			rect	13,355,-31,31
+			visible	1
+			background	"guis/assets/archives/tickbox"
+			matcolor	1,0,0,1
+		}
+		windowDef TickLines1
+		{
+			rect	8,127,24,235
+			visible	1
+			background	"gui/tickline"
+			matcolor	1,1,1,0.5
+		}
+		windowDef TickLines2
+		{
+			rect	18,127,24,-235
+			visible	1
+			background	"gui/tickline"
+			matcolor	1,1,1,0.5
+		}
+		windowDef TickLinesMask1
+		{
+			rect	10,127,41,-118
+			visible	1
+			background	"guis/assets/archives/tickmask"
+			matcolor	0,0,0,1
+		}
+		windowDef TickLinesMask2
+		{
+			rect	10,245,41,118
+			visible	1
+			background	"guis/assets/archives/tickmask"
+			matcolor	0,0,0,1
+		}
+		windowDef TickLines3
+		{
+			rect	601,127,24,-235
+			visible	1
+			background	"gui/tickline"
+			matcolor	1,1,1,0.5
+		}
+		windowDef TickLines4
+		{
+			rect	611,127,24,235
+			visible	1
+			background	"gui/tickline"
+			matcolor	1,1,1,0.5
+		}
+		windowDef TickLinesMask3
+		{
+			rect	594,127,41,-118
+			visible	1
+			background	"guis/assets/archives/tickmask"
+			matcolor	0,0,0,1
+		}
+		windowDef TickLinesMask4
+		{
+			rect	594,245,41,118
+			visible	1
+			background	"guis/assets/archives/tickmask"
+			matcolor	0,0,0,1
+		}
+		windowDef Logo
+		{
+			rect	7,52,44,39
+			background	"gui/addlogo"
+			matcolor	0.5 ,0.5 ,0.5 ,1
+			visible	1
+		}
+		windowDef PicBG1
+		{
+			rect	44,110,263,26
+			visible	1
+			background	"guis/assets/teleporter/grid3a"
+			matcolor	1,1,1,0.5
+		}
+		windowDef PicBG2
+		{
+			rect	44,136,263,-215
+			visible	1
+			background	"guis/assets/teleporter/grid4a"
+			matcolor	1,1,1,0.5
+		}
+		windowDef PicBG3
+		{
+			rect	44,351,263,-26
+			visible	1
+			background	"guis/assets/teleporter/grid3a"
+			matcolor	1,1,1,0.5
+		}
+	}
+	windowDef BtnParent
+	{
+		rect	0,368,639,105
+		visible	1
+		windowDef TextDownload
+		{
+			rect	322,51,280,45
+			visible	1
+			text	"#str_03119"
+			forecolor	1,1,1,1
+			textscale	0.58
+			font	"fonts/micro"
+		}
+		windowDef BtnLeftEnd
+		{
+			rect	3,-5,-101,110
+			visible	1
+			background	"guis/assets/archives/btnend"
+			matcolor	1,1,1,0.25
+		}
+		windowDef BtnLeftIn1
+		{
+			rect	3,-5,-98,111
+			visible	1
+			background	"guis/assets/archives/btnin"
+			matcolor	1,1,1,0.25
+		}
+		windowDef BtnLeftIn2
+		{
+			rect	173,-5,98,111
+			visible	1
+			background	"guis/assets/archives/btnin"
+			matcolor	1,1,1,0.25
+		}
+		windowDef BtnLeftMid
+		{
+			rect	101,-5,72,111
+			visible	1
+			background	"guis/assets/archives/btnmid"
+			matcolor	1,1,1,0.25
+		}
+		windowDef BtnRightEnd
+		{
+			rect	538,-5,101,110
+			visible	1
+			background	"guis/assets/archives/btnend"
+			matcolor	1,0.6,0,0.5
+		}
+		windowDef BtnRightIn
+		{
+			rect	539,-5,101,110
+			visible	1
+			background	"guis/assets/archives/btnin"
+			matcolor	1,0.6,0,0.5
+		}
+		windowDef BtnRightMid
+		{
+			rect	323,-5,216,110
+			visible	1
+			background	"guis/assets/archives/btnmid"
+			matcolor	1,0.6,0,0.5
+		}
+		windowDef BtnRightOut
+		{
+			rect	272,-5,51,110
+			visible	1
+			background	"guis/assets/archives/btnout"
+			matcolor	1,0.6,0,0.5
+		}
+		windowDef BtnRightSpacer1
+		{
+			rect	199,-5,101,110
+			visible	1
+			background	"guis/assets/archives/btnspacer"
+			matcolor	1,0.6,0,0.5
+		}
+		windowDef BtnRightSpacer2
+		{
+			rect	230,-5,101,110
+			visible	1
+			background	"guis/assets/archives/btnspacer"
+			matcolor	1,0.6,0,0.5
+		}
+		windowDef TextDownload1
+		{
+			rect	323,21,280,53
+			visible	1
+			text	"#str_03113"
+			forecolor	1,1,1,1
+			textscale	0.64
+			font	"fonts/micro"
+		}
+	}
+	windowDef TextImgTitle1
+	{
+		rect	55,342,249,33
+		visible	1
+		text	"#str_03120"
+		forecolor	1,1,1,0.5
+		textscale	0.42
+		font	"fonts/micro"
+	}
+	windowDef TextImgTitle2
+	{
+		rect	55,370,249,33
+		visible	0
+		text	"#str_03121"
+		forecolor	1,1,1,0.75
+		textscale	0.42
+		font	"fonts/micro"
+		notime	1
+	}
+	windowDef TextTitle
+	{
+		rect	79,51,552,40
+		visible	1
+		text	"#str_03122"
+		forecolor	1,1,1,1
+		textscale	0.55
+		font	"fonts/micro"
+	}
+	windowDef ContentText
+	{
+		rect	311,117,295,271
+		visible	1
+		forecolor	1,1,1,0.70588237
+		text	"#str_03419"
+		textscale	0.62
+		font	"fonts/an"
+	}
+	windowDef Bglow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.8, 1, 0.1
+	}
+	windowDef scanlinesAlt1
+	{
+		rect	0,0,-640,480
+		matcolor	0.1,0.1,0.1,1
+		background	"gui/test/gui_scanlines5"
+		matscaley	2
+		visible	1
+	}
+	windowDef Outershadow1
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,0.8
+		visible	1
+	}
+	windowDef Static1
+	{
+		rect	0,0,-640,480
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 15
+	}
+	windowDef Reflect
+	{
+		rect	0,-7,-646,470
+		matcolor	1 ,1 ,1 ,0.15
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Addhighlight1
+	{
+		rect	0,7,-640,480
+		background	"gui/addhighlight"
+		matcolor	0.4 ,0.6 ,0.6 ,1
+		visible	1
+	}
+	windowDef Click
+	{
+		rect	9,377,622,100
+		visible	1
+		notime	1
+
+		onAction {
+			resetTime "0" ;
+			set "noevents" "1" ;
+			set "cmd" "activate" ;
+		}
+
+		onTime 0 {
+			transition "BtnParent::rect" "0 368 639 105" "0 426 639 54" "500" "0" "0.4" ;
+			
+			transition "BtnLeftEnd::rect" "3 -5 -101 110" "8 -5 -59 59" "500" "0" "0.4" ;
+			transition "BtnLeftIn1::rect" "3 -5 -98 111" "8 -5 -59 59" "500" "0" "0.4" ;
+			
+			transition "BtnLeftIn2::rect" "173 -5 98 111" "67 -5 59 59" "500" "0" "0.4" ;
+			transition "BtnLeftMid::rect" "101 -5 72 111" "67 -5 0 59" "500" "0" "0.4" ;
+			
+			transition "BtnRightEnd::rect" "538 -5 101 110" "575 -5 59 59" "500" "0" "0.4" ;
+			transition "BtnRightIn::rect" "539 -5 101 110" "575 -5 59 59" "500" "0" "0.4" ;
+			
+			transition "BtnRightMid::rect" "323 -5 216 110" "74 -5 501 59" "500" "0" "0.4" ;
+			transition "BtnRightOut::rect" "272 -5 51 110" "44 -5 30 59" "500" "0" "0.4" ;
+			transition "BtnRightSpacer1::rect" "199 -5 101 110" "0 -5 59 59" "500" "0" "0.4" ;
+			transition "BtnRightSpacer2::rect" "230 -5 101 110" "19 -5 59 59" "500" "0" "0.4" ;
+			
+			transition "TextDownload::rect" "322 51 280 45" "64 6 547 40" "500" "0" "0.4" ;
+			
+			transition "TextDownload::forecolor" "1 1 1 1" "1 1 1 0" "500" ;
+			transition "TextDownload1::forecolor" "1 1 1 1" "1 1 1 0" "250" ;
+		}
+
+		onTime 300 {
+			transition "BtnLeftEnd::matcolor" "1 1 1 0.25" "1 1 1 0" "200" ;
+			transition "BtnLeftIn1::matcolor" "1 1 1 0.25" "1 1 1 0" "200" ;
+			transition "BtnLeftIn2::matcolor" "1 1 1 0.25" "1 1 1 0" "200" ;
+			transition "BtnLeftMid::matcolor" "1 1 1 0.25" "1 1 1 0" "200" ;
+			
+			transition "BtnRightEnd::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+			transition "BtnRightIn::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+			transition "BtnRightMid::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+			transition "BtnRightOut::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+			transition "BtnRightSpacer1::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+			transition "BtnRightSpacer2::matcolor" "1 0.6 0 0.5" "1 1 1 0.25" "200" ;
+		}
+
+		onTime 500 {
+			set "TextDownload::text" "#str_03116" ;
+			transition "TextDownload::forecolor" "1 1 1 0" "1 1 1 0.5" "500" ;
+		}
+
+	}
+}

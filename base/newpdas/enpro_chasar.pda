@@ -1,0 +1,73 @@
+// No audio files in the personal PDA.  No video in other pdas
+
+pda enpro_chasar {
+	name         "Theresa Chasar"
+	fullname     "Theresa M. Chasar"
+	icon         "guis/assets/pda/chasar"
+	id           "0368-05"
+	post         "EnPro"
+	title        "Weapon Analyst"
+	security     ""
+	pda_email    "enpro_chasar_email_1"
+	pda_email    "enpro_chasar_email_2"
+	pda_email    "enpro_chasar_email_3"
+	pda_audio    "enpro_chasar_audio_1"
+}
+
+email enpro_chasar_email_1 {
+	date		"11-02-2145"
+	to		"Theresa Chasar"
+	from		"Lloyd Renstrom"
+	subject	"Plasma Storage Capacity"
+	text {
+"Theresa,\n"
+"Please take a few minutes in the next day or so to create an audio report based on your plasma storage findings. The board is looking forward to hearing about your accomplishments.\n\n"
+"As you know, security has been tight lately with all the accidents and as a result we can't be too careful. Please make sure you lock up your test weapon and add the cabinet code into your report.\n\n"
+"Great Job,\nLloyd"
+	}
+}
+
+email enpro_chasar_email_2 {
+	date		"11-05-2145"
+	to		"Theresa Chasar"
+	from		"Lloyd Renstrom"
+	subject	"Your Work"
+	text {
+
+"Theresa,\n"
+"Hope you like your new office.  I think you'll find it much easier to concentrate on the plasma gun project without those dweebs in engineering drooling all over you.  How pathetic, right?\n\n"
+"Anyway I'll be down there from time to time if you ever want to talk or get something to eat.  You're probably sick of hearing it, but I think seeing you every day is more valuable to me than any amount of money I've gotten from working here.  Believe me, being a supervisor I make a lot!\n\n"
+"Your pal,\nLloyd"
+	}
+}
+
+email enpro_chasar_email_3 {
+	date		"11-10-2145"
+	to		"Theresa Chasar"
+	from		"Elizabeth McNeil"
+	subject	"RE: Lloyd is driving me nuts!"
+	text {
+"-T.\n"
+"I know what you're talking about, when I was still there I felt like I was the only woman surrounded by a bunch of drooling men. I miss the work but I don't miss that place, I feel like I'm lucky to be out of there.\n\n"
+"Keep your eyes open for trouble; I don't trust some of the executives up there.\n\n"
+"I can't wait to see you back on Earth when your research is completed.\n\n"
+"Your Friend,\nLiz\n\n"
+"----Original Message----\n"
+"Sent: 11-07-2145\n"
+"To: Elizabeth McNeil\n\n"
+"Liz,\n"
+"Lloyd has really outdone himself this time.  He's moved me into the office next to the trench in Enpro.  Does he really think by moving me to the most remote office on this wretched base that I'll be more attracted to him? Wait...it might be working.  Being isolated for this long is getting to me.  I'm a chatter-box whenever I get the chance to talk to a real person.\n\n"
+"Ok, I've got to get back to work.\n"
+"-T."
+
+	}
+}
+
+
+audio enpro_chasar_audio_1 {
+	name		"Weapon Research"
+	info		"Made by: Theresa Chasar\nDate: 10-30-2145\nOpen for Amendment: No\nSet for Archive: Yes"
+	preview	"sound/vo/video/novideo"
+	audio		"audiolog_enpro_chasar_1"
+}
+

@@ -1,0 +1,181 @@
+email highScore
+{
+	date		"12-12-2145"
+	to		"Mail recipient"
+	from		"HR Coordinator"
+	subject	"New High Score!"
+	text 
+	{
+	"Congratulations! You set a new high score in Super Turbo Turkey Puncher 3!!!\n\n"
+
+	"Your parents can rest easier knowing they have raised another shining example of humanity.\n\n"
+
+	"Due to the incredible amount of time you wasted punching poor defenseless turkeys, your vacation time has been docked two days.\n\n Have a nice day.\n\n"
+
+	}
+}
+
+
+email marsCityInfo3
+{
+	date		"11-15-2145"
+	to		"Mail recipient"
+	from		"HR Coordinator"
+	subject	"Volunteer to earn extra credits"
+	text 
+	{
+	"Delta Labs is looking for individuals to fill critical positions.  You can help with our exciting break-through work and earn credits at the same time.\n\n"
+
+	"Volunteers are needed in the following areas:\n\n"
+
+	"Teleportation:  We're looking for test subjects to stress-test the new teleporters.  Experience tomorrow's travel technology, today!\n\n"
+
+	"Medical Research:  Our advanced pharmaceutical team needs volunteers to participate in exciting medical studies.  Help us find cures to everything from the common cold to Ebola 7.\n\n"
+
+	"Specimen Handling: We need volunteers to help handle and track the specimens gathered through Delta Labs experiments.  Health test and liability waiver will be required.\n\n\n"  
+
+	"For more information about any of these opportunities or to post openings in your department, please see an HR Coordinator.\n\n\n"
+	}
+}
+
+email marsCityInfo1
+{
+	date		"11-15-2145"
+	to		"Mail recipient"
+	from		"Safety committee"
+	subject	"Safety Awareness Month"
+	text {
+	"Safety is critical to everything we do on Mars.  We will review all standard safety protocols during the month of November - Safety Awareness month.\n\n"
+
+	"It is mandatory that you schedule time to attend each of these valuable workshops.\n\n"
+
+	"Proper Plasma Handling: Review of the proper storage of plasma, how to handle plasma leaks, and the best ways to treat plasma burns.\n\n"
+
+	"Emergency First Aid:  Learn the location and correct use for all of the Health Packs placed throughout the facility.  Special attention will be given to waste prevention methods. Health resources are squandered if a large pack is used when only a small pack is needed.\n\n"
+
+	"Storage of Weapons and Ammo:  Special lecture on the safe storage of weapons and ammo.  Fred Nilsson will be giving hands-on lessons in proper targeting and strafing.\n\n"
+
+	"Emergency Loss of Environment:  This lecture will focus on what to do if you are faced with an air leak, structural failure, or airlock failure.  Special care will be paid to the locations of emergency air tanks.\n\n\n" 
+
+	"See postings outside UAC HR for times and locations.\n\n"
+	}
+}
+email marsCityInfo2
+{
+	date		"11-15-2145"
+	to		"Mail recipient"
+	from		"UAC Security"
+	subject	"Code-Black: Missing Staff"
+	text {
+"Dr. Jonathan Ishii from the Delta Science Team is missing.  Security is concerned that he may be injured and unable to respond to pages or return to his post.  Please keep an eye out for Dr. Ishii and report to UAC Security if he is located.\n\n"
+
+"He was last seen in Mars City Underground approaching the airlock leading to the old communications array.\n\n\n"
+	}
+}
+email demonicInfo1 {
+	date		"11-16-2145"
+	to		"Mail recipient"
+	from		"Research Archive"
+	subject	"Valuable sacrificial pointers"
+	text {
+"Our time is here!  Soon the humans will suffer eternal torment as spoken of in the prophesy.  We will feast upon their souls!\n\n"
+
+"When opening sacrificial portals, it is important to remember:\n\n"
+
+" - Virgin blood is best\n"
+" - Goat blood must be no older than 3 days\n"
+" - Entrails must be removed and apportioned either before death, or no later than 30min\n"
+" - Candles must be sorted by tallest in back to shortest in front - never the other way around!\n\n\n"
+
+
+"Most important - pentagrams must be drawn from the center to the outside and left to right.\n\n"
+	}
+}
+email soulCubeEmail {
+	date		"11-14-2145"
+	to		"Mail recipient"
+	from		"Research Archive"
+	subject	"The Soul Cube"
+	text {
+"Report filed by Ian McCormick:\n\n"
+
+"I've been working on the Soul Cube for a few weeks now. It is a fascinating artifact and as it turns out, it has some amazing properties. I wrote a new glyph pattern query yesterday and let it run all night. With the new query, the linguistics computer finally cracked the remaining glyphs!\n\n"
+
+"The Soul Cube is by every definition a weapon, and it seems to have been built to repel whatever type of creatures invaded this ancient culture. If I am reading them right, during a battle the cube gains power with each life the wielder takes. When it is fully charged it can be used to slay even the strongest of creatures. Even more impressive is that when it kills a creature it transfers that creature's life force back to who is using the cube!\n\n"
+
+"I know this sounds like magic and I have not been able to activate it to prove the theory but this is what the glpyhs illustrate.\n\n"
+
+"The glyphs specifically point out that you must kill five creatures before it becomes charged and then amazingly it will tell you it is ready. It is almost like a sentient being; this object is a fantastic find.\n\n"
+
+"Ian McCormick\n\n"
+
+"cc: Research Archive Storage"
+
+	}
+}
+
+email imp197Email {
+	date		"11-15-2145"
+	to		"Mail recipient"
+	from		"Research Archive"
+	subject	"Specimen 197 -Imp"
+	text {
+"Specimen 197 -Imp\n\n"
+
+"This humanoid's long and muscular limbs make it extremely agile as a biped or quadruped.  Its long and sharp claws allow for climbing steep surfaces. A configuration of 10 eyes provides this creature with a wide field of vision and the ability to see with clarity in low-light environments.\n\n"
+
+	}
+}
+
+email zombie42Email {
+	date		"11-15-2145"
+	to		"Mail recipient"
+	from		"Research Archive"
+	subject	"Specimen 42 -Living Dead (partial)"
+	text {
+"Specimen 42 -Living Dead (partial)\n\n"
+
+"Able to function without recognizable brain activity, this creature has little regard for self-preservation. Though slow moving, its behavior is aggressive and tenacious.\n\n"
+
+	}
+}
+
+email imp27Email {
+	date		"11-15-2145"
+	to		"Mail recipient"
+	from		"Research Archive"
+	subject	"Specimen 27 - Imp (partial)"
+	text {
+"Specimen 27 - Imp (partial)\n\n"
+
+"-Left forearm amputated for biological study.  \n"
+"Researchers are currently studying how this creature is able to manifest and throw an explosive plasma projectile from its hands.\n"
+	}
+}
+
+email hellknight31Email {
+	date		"11-15-2145"
+	to		"Mail recipient"
+	from		"Research Archive"
+	subject	"Specimen 31 - Hellknight (partial)"
+	text {
+"Specimen 31 - Hellknight (partial)\n\n"
+
+"The cranial mass of this bipedal specimen indicates that it is one of the largest creatures inhabiting the site.  Overpowering its prey with sheer might, the Hellknight is one of the most ferocious predators known to our researchers. Like the imp, this creature is able to defend itself at long-range with thrown plasma projectiles.\n\n"
+
+	}
+}
+
+email rev218Email {
+	date		"11-15-2145"
+	to		"Mail recipient"
+	from		"Research Archive"
+	subject	"Specimen 218 - Revenant"
+	text {
+"Specimen 218 - Revenant\n\n"
+
+"This creature's endoskeleton is visible through a translucent non-solid skin.  Despite the absence of any visible muscles, this creature is able to strike at close-range targets with enormous strength.  Two shoulder-mounted cannons controlled by its nervous system allow this creature to fire guided rocket-propelled missiles.\n\n"
+
+	}
+}
+

@@ -1,0 +1,61 @@
+windowDef Desktop
+{
+	rect	0 ,0 ,640 ,480
+	nocursor	1
+	windowDef Black
+	{
+		rect	40 ,50 ,560 ,380
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+		backcolor	0 ,0 ,0 ,1
+	}
+	windowDef Under
+	{
+		rect	40 ,50 ,560 ,380
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+		background	"gui/sm1/scroll"
+	}
+	windowDef Over
+	{
+		rect	0 ,0 ,640 ,480
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+		background	"gui/sm1/bg"
+	}
+	windowDef Outershadow
+	{
+		rect	0,0,-640,480
+		background	"guis/assets/common/outershadow"
+		matcolor	1 ,1 ,1 ,1
+		visible	1
+	}
+	windowDef Bglow
+	{
+		rect	0,0,640,480
+		background	"guis/assets/cpuserver/bglow.tga"
+		visible	1
+		matcolor	0.4, 0.7, 0.8, 0.2
+	}
+	windowDef Static
+	{
+		rect	-7,-7,660,500
+		visible	1
+		background	"gui/static"
+		matcolor	1, 1, 1, pdhalffade[ time * 0.001 ] / 8
+	}
+	windowDef Reflect1
+	{
+		rect	5,-11,630,498
+		matcolor	1 ,1 ,1 ,0.15
+		visible	1
+		background	"gui/reflect1"
+	}
+	windowDef Mask
+	{
+		rect	0,0,640,480
+		visible	1
+		background	"guis/assets/test/mask"
+		matcolor	1, 1, 1, 0.6
+	}
+}
