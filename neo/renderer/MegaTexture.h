@@ -206,35 +206,22 @@ public:
 
 class idMegaTexture {
 public:
-	// Constructor
-	idMegaTexture();
-
-	// Destructor
-	~idMegaTexture();
-
-	// Member Functions
-	static int __cdecl GetCompressedTotalKiloBytesReadPerSecond();
-	void __thiscall ShowMemoryUsage(idCmdArgs* args);
-	static void __cdecl MegaShowMemoryUsage_f(idCmdArgs* args);
-	void __thiscall GenerateNullTileData();
-	void __thiscall GenerateGridTileData();
-	void __thiscall AllocRecompressionScratch();
-	void __thiscall LoadDetailTexture();
-	void __thiscall Reset();
-	void __thiscall UpdateMapping(idRenderWorldLocal* world);
-	void __stdcall UpdateLevelForViewOrigin(idMegaTextureLevel* level, int idx, int time);
+	void GenerateNullTileData();
+	void GenerateGridTileData();
+	void AllocRecompressionScratch();
+	void LoadDetailTexture();
+	void Reset();
+	void UpdateMapping(idRenderWorldLocal* world);
+	void UpdateLevelForViewOrigin(idMegaTextureLevel* level, int idx, int time);
 	char __thiscall CloseFile();
-	int __thiscall SeekToTile(int tileNum);
-	void __thiscall TestStreamingPerformance(idCmdArgs* args);
-	static void __cdecl MegaTestStreamingPerformance_f(idCmdArgs* args);
+	unsigned int SeekToTile(int tileIndex);
 	int GetPureServerChecksum(unsigned int offset);
 	bool OpenFile();
-	void __thiscall Touch();
+	void Touch();
 	bool InitFromFile(const char* fileBase);
 	bool UploadTiles(int time);
-	void __thiscall ForceUpdate();
+	void ForceUpdate();
 	void UpdateForViewOrigin(const idVec3* viewOrigin, int time);
-	void __thiscall OnUseMegaTextureCompressionChange();
 	static int __cdecl TotalStoredTileCount(const int resolution);
 
 	idStr name;
@@ -302,5 +289,11 @@ public:
 	unsigned int Run(void* parm);
 };
 
+
+
+extern int tileLoadSeek[8192];
+extern int tileLoadData[8192];
+extern int tileLoadTimes[8192];
+extern int lastTileLoadTime;
 extern idMegaTextureTileLoader megaTextureTileLoader;
 extern idMegaTextureTileDecompressor megaTextureTileDecompressor;

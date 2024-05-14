@@ -8,6 +8,10 @@
 
 idCVar r_megaStreamFromDVD("r_megaStreamFromDVD", "0", CVAR_RENDERER | CVAR_INTEGER, "streams the megatexture from the cd drive");
 
+int dataLoadSizes[2048];
+int dataLoadTimes[2048];
+int lastDataLoadTime = 0;
+
 /*
 ===================
 idMegaTextureTile::Purge
@@ -896,6 +900,339 @@ int idMegaTexture::GetPureServerChecksum(unsigned int offset) {
 	fileSystem->CloseFile(file);
 	fileName.FreeData();
 	return checksum;
+}
+
+/*
+====================
+idMegaTexture::UpdateForViewOrigin
+====================
+*/
+void idMegaTexture::ForceUpdate()
+{
+	int lastShaderQuality; // edi
+
+	lastShaderQuality = this->lastShaderQuality;
+	this->lastShaderQuality = 4; // r_shaderQuality.internalVar->integerValue;
+	this->forcedUpdate = 1;
+	while (!UploadTiles(0))
+	{
+		megaTextureTileLoader.signal.Set();
+		megaTextureTileDecompressor.signal.Set();
+	}
+	this->lastShaderQuality = lastShaderQuality;
+	this->forcedUpdate = 0;
+}
+
+/*
+====================
+idMegaTexture::Touch
+====================
+*/
+void idMegaTexture::Touch()
+{
+	if (!purged)
+		idMegaTexture::LoadDetailTexture();
+}
+
+/*
+====================
+idMegaTexture::Reset
+====================
+*/
+void idMegaTexture::Reset()
+{
+	int v1;
+	int v2; 
+	idMegaTextureLevel* upscaleLevel; 
+
+	if (!this->purged)
+	{
+		v1 = 0;
+		if (this->numLevels > 0)
+		{
+			v2 = 0;
+			do
+			{
+				this->levels[v2].fadeTime = 0;
+				++v1;
+				++v2;
+			} while (v1 < this->numLevels);
+		}
+		upscaleLevel = this->upscaleLevel;
+		if (upscaleLevel)
+			upscaleLevel->fadeTime = 0;
+	}
+}
+
+/*
+====================
+idMegaTexture::SeekToTile
+====================
+*/
+unsigned int idMegaTexture::SeekToTile(int tileIndex) {
+	__int64 tileInfo = tileIndexMap[tileIndex];
+	int startBlock = ((tileInfo >> 32) & 0x7FFF) + (int)tileInfo;
+	int dataSize = tileIndexedDataSizes[tileIndex];
+	__int64 endBlock = (dataSize + ((tileInfo >> 32) & 0x7FFF) + 32770LL);
+	int endBlockOffset = ((endBlock >> 32) & 0x7FFF) + (int)endBlock;
+
+	int numStartBlocks = startBlock >> 15;
+	int numEndBlocks = endBlockOffset >> 15;
+
+	if (numStartBlocks < winFileBlockOffset || numStartBlocks + numEndBlocks > winFileBlockOffset + winFileNumBlocks) {
+		// icecoldduke do we need this. 
+		//if (numEndBlocks < idMegaTexture::r_megaStreamBlocks->integerValue) {
+		//	numEndBlocks = idMegaTexture::r_megaStreamBlocks->integerValue;
+		//}
+
+		OVERLAPPED overlapped = { 0 };
+		overlapped.Offset = numStartBlocks << 15;
+		DWORD bytesRead = 0;
+
+		ReadFile(winFile, winFileScratch, numEndBlocks << 15, &bytesRead, &overlapped);
+
+		int blockDiff = numStartBlocks - winFileNumBlocks;
+		winFileNumBlocks = numEndBlocks;
+		int blockOffsetDiff = blockDiff - winFileBlockOffset;
+		winFileBlockOffset = numStartBlocks;
+
+		unsigned int loadDistance = abs(blockOffsetDiff << 15);
+		int loadIndex = lastDataLoadTime & 0x7FF;
+		int currentTime = Sys_Milliseconds();
+		++lastDataLoadTime;
+		dataLoadSizes[loadIndex] = numEndBlocks << 15;
+		dataLoadTimes[loadIndex] = currentTime;
+
+		file->Seek(startBlock & 0x7FFF, FS_SEEK_SET);
+
+		return loadDistance;
+	}
+	else {
+		file->Seek((startBlock & 0x7FFF) + ((numStartBlocks - winFileBlockOffset) << 15), FS_SEEK_SET);
+		return 0;
+	}
+}
+
+/*
+====================
+idMegaTexture::AllocRecompressionScratch
+====================
+*/
+void idMegaTexture::AllocRecompressionScratch() {
+	if (useImageCompression) {
+		int sizeX = 128;
+		int sizeY = 128;
+		int initialSizeX = 128;
+		int initialSizeY = 128;
+		int numLevels = 1;
+
+		while (initialSizeX > 1 || initialSizeY > 1) {
+			++numLevels;
+			initialSizeX >>= 1;
+			initialSizeY >>= 1;
+		}
+
+		unsigned int totalSize = 0;
+		for (int i = 0; i < numLevels; ++i) {
+			totalSize += 4 * (sizeX * sizeY);
+			sizeX >>= 1;
+			sizeY >>= 1;
+		}
+
+		tileRecompressionScratch = static_cast<unsigned char*>(Mem_Alloc16(totalSize));
+	}
+	else {
+		tileRecompressionScratch = nullptr;
+	}
+}
+
+/*
+====================
+idMegaTexture::GenerateGridTileData
+====================
+*/
+void idMegaTexture::GenerateGridTileData() {
+	int width = 128;
+	int height = 128;
+	int levelWidth = 128;
+	int levelHeight = 128;
+	int minSize = 1;
+	int compressionLevels = 1;
+
+	if (imageCompressionFormat == IMAGE_COMPRESSION_NONE) {
+		minSize = 1;
+	}
+	else if (imageCompressionFormat <= 33775 || imageCompressionFormat > IMAGE_COMPRESSION_DXT5) {
+		minSize = 4;
+	}
+	else {
+		minSize = 4;
+	}
+
+	while (levelWidth > minSize || levelHeight > minSize) {
+		++compressionLevels;
+		levelWidth >>= 1;
+		levelHeight >>= 1;
+	}
+
+	unsigned int totalSize = 0;
+	int remainingLevels = compressionLevels;
+	while (remainingLevels > 0) {
+		if (imageCompressionFormat > (IMAGE_COMPRESSION_DXT1 | 0x1)) {
+			if (imageCompressionFormat > IMAGE_COMPRESSION_DXT5) {
+				totalSize = -1;
+				break;
+			}
+			totalSize += 16 * ((width + 3) / 4) * ((height + 3) / 4);
+		}
+		else if (imageCompressionFormat >= IMAGE_COMPRESSION_DXT1) {
+			totalSize += 8 * ((width + 3) / 4) * ((height + 3) / 4);
+		}
+		else if (imageCompressionFormat == IMAGE_COMPRESSION_NONE) {
+			totalSize += 4 * width * height;
+		}
+		else {
+			totalSize = -1;
+			break;
+		}
+		width >>= 1;
+		height >>= 1;
+		--remainingLevels;
+	}
+
+	unsigned char* allocatedMemory = static_cast<unsigned char*>(Mem_Alloc16(totalSize));
+	gridTileData = allocatedMemory;
+
+	unsigned char* recompressionScratch = useImageCompression ? tileRecompressionScratch : gridTileData;
+
+	int rowIndex = 0;
+	unsigned char* currentPixel = recompressionScratch + 2;
+	do {
+		for (int colIndex = 0; colIndex < 128; ++colIndex) {
+			char value = -((colIndex ^ rowIndex) & 0x10);
+			currentPixel[1] = value;
+			currentPixel[0] = value;
+			currentPixel[-1] = value;
+			currentPixel[-2] = value;
+			currentPixel += 4;
+		}
+		++rowIndex;
+	} while (rowIndex < 128);
+
+	megaTextureTileDecompressor.RecompressTile(imageCompressionFormat, (char *)recompressionScratch, (char*)gridTileData);
+}
+
+/*
+====================
+idMegaTexture::GenerateNullTileData
+====================
+*/
+void idMegaTexture::GenerateNullTileData() {
+	int width = 128;
+	int height = 128;
+	int levelWidth = 128;
+	int levelHeight = 128;
+	int minSize = 1;
+	int compressionLevels = 1;
+
+	if (imageCompressionFormat == IMAGE_COMPRESSION_NONE) {
+		minSize = 1;
+	}
+	else if (imageCompressionFormat <= 33775 || imageCompressionFormat > IMAGE_COMPRESSION_DXT5) {
+		minSize = 4;
+	}
+	else {
+		minSize = 4;
+	}
+
+	while (levelWidth > minSize || levelHeight > minSize) {
+		++compressionLevels;
+		levelWidth >>= 1;
+		levelHeight >>= 1;
+	}
+
+	unsigned int totalSize = 0;
+	int remainingLevels = compressionLevels;
+	while (remainingLevels > 0) {
+		if (imageCompressionFormat > (IMAGE_COMPRESSION_DXT1 | 0x1)) {
+			if (imageCompressionFormat > IMAGE_COMPRESSION_DXT5) {
+				totalSize = -1;
+				break;
+			}
+			totalSize += 16 * ((width + 3) / 4) * ((height + 3) / 4);
+		}
+		else if (imageCompressionFormat >= IMAGE_COMPRESSION_DXT1) {
+			totalSize += 8 * ((width + 3) / 4) * ((height + 3) / 4);
+		}
+		else if (imageCompressionFormat == IMAGE_COMPRESSION_NONE) {
+			totalSize += 4 * width * height;
+		}
+		else {
+			totalSize = -1;
+			break;
+		}
+		width >>= 1;
+		height >>= 1;
+		--remainingLevels;
+	}
+
+	unsigned char* allocatedMemory = static_cast<unsigned char*>(Mem_Alloc16(totalSize));
+	nullTileData = allocatedMemory;
+
+	unsigned char* recompressionScratch = useImageCompression ? tileRecompressionScratch : nullTileData;
+	std::memset(recompressionScratch, 0, 0x10000);
+
+	megaTextureTileDecompressor.RecompressTile(imageCompressionFormat, (char *)recompressionScratch, (char*)nullTileData);
+}
+
+/*
+====================
+idMegaTexture::LoadDetailTexture
+====================
+*/
+void idMegaTexture::LoadDetailTexture()
+{
+	// icecoldduke todo
+}
+
+/*
+====================
+idMegaTexture::UpdateForViewOrigin
+====================
+*/
+void idMegaTexture::UpdateMapping(idRenderWorldLocal* world)
+{
+	int megaTextureSTGridWidth; // eax
+	int megaTextureSTGridHeight; // ecx
+	idVec2* megaTextureSTGrid; // edx
+	double y; // st7
+
+	if (world)
+	{
+		if (megaTextureTileLoader.activeMegaTexture != this)
+			megaTextureTileLoader.SetActiveMegaTexture(this);
+		if (megaTextureTileDecompressor.activeMegaTexture != this)
+			megaTextureTileDecompressor.SetActiveMegaTexture(this);
+// icecoldduke	
+		//megaTextureSTGridWidth = world->megaTextureSTGridWidth;
+		//megaTextureSTGridHeight = world->megaTextureSTGridHeight;
+		//megaTextureSTGrid = world->megaTextureSTGrid;
+		//if (world != this->currentWorld
+		//	|| megaTextureSTGrid != this->stGrid
+		//	|| megaTextureSTGridHeight != this->stGridHeight
+		//	|| megaTextureSTGridWidth != this->stGridWidth)
+		//{
+		//	this->currentWorld = world;
+		//	this->stGridBounds.bounds[0].x = world->megaTextureBounds.b[0].x;
+		//	this->stGridBounds.bounds[0].y = world->megaTextureBounds.b[0].y;
+		//	this->stGridBounds.bounds[1].x = world->megaTextureBounds.b[1].x;
+		//	y = world->megaTextureBounds.b[1].y;
+		//	this->stGridWidth = megaTextureSTGridWidth;
+		//	this->stGridBounds.bounds[1].y = y;
+		//	this->stGridHeight = megaTextureSTGridHeight;
+		//	this->stGrid = megaTextureSTGrid;
+		//}
+	}
 }
 
 /*
