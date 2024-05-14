@@ -253,4 +253,6 @@ template<class T> ID_INLINE T	Min( T x, T y ) { return ( x < y ) ? x : y; }
 #include "decoders/DXTDecoder.h"
 #include "encoders/DXTEncoder.h"
 
+#include "images/MipMap.h"
+
 #endif	/* !__LIB_H__ */
