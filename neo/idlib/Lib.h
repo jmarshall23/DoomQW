@@ -158,6 +158,11 @@ public:
 template<class T> ID_INLINE T	Max( T x, T y ) { return ( x > y ) ? x : y; }
 template<class T> ID_INLINE T	Min( T x, T y ) { return ( x < y ) ? x : y; }
 
+#define MAX_TYPE( x )			( ( ( ( 1 << ( ( sizeof( x ) - 1 ) * 8 - 1 ) ) - 1 ) << 8 ) | 255 )
+#define MIN_TYPE( x )			( - MAX_TYPE( x ) - 1 )
+#define MAX_UNSIGNED_TYPE( x )	( ( ( ( 1U << ( ( sizeof( x ) - 1 ) * 8 ) ) - 1 ) << 8 ) | 255U )
+#define MIN_UNSIGNED_TYPE( x )	0
+
 /*
 ===============================================================================
 
@@ -240,5 +245,12 @@ template<class T> ID_INLINE T	Min( T x, T y ) { return ( x < y ) ? x : y; }
 #include "BitMsg.h"
 #include "MapFile.h"
 #include "Timer.h"
+
+// Image Decoders
+#include "containers/Sort.h"
+#include "decoders/BareDCTDecoder.h"
+#include "decoders/ColorSpace.h"
+#include "decoders/DXTDecoder.h"
+#include "encoders/DXTEncoder.h"
 
 #endif	/* !__LIB_H__ */
