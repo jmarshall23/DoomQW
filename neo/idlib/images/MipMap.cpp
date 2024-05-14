@@ -3,10 +3,10 @@
 
 #include "precompiled.h"
 
-void idMipMap::CreateMips(unsigned __int8* data, const unsigned __int8* power) {
+void idMipMap::CreateMips(unsigned __int8* data, const unsigned __int8 power) {
 	unsigned __int8* currentMip = data;
-	int mipSize = 1 << *power;
-	int numMips = *power - 1;
+	int mipSize = 1 << power;
+	int numMips = power - 1;
 	const unsigned __int8* sourceMip = data;
 	unsigned __int8* nextMip = &data[4 * mipSize * mipSize];
 	unsigned __int8* destinationMip = nextMip;

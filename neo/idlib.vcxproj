@@ -192,6 +192,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="idlib\bv\Bounds.cpp" />
+    <ClCompile Include="idlib\bv\Bounds2D.cpp" />
     <ClCompile Include="idlib\bv\Box.cpp" />
     <ClCompile Include="idlib\bv\Frustum.cpp" />
     <ClCompile Include="idlib\bv\Sphere.cpp" />
@@ -213,6 +214,7 @@
     <ClCompile Include="idlib\hashing\CRC32.cpp" />
     <ClCompile Include="idlib\hashing\MD4.cpp" />
     <ClCompile Include="idlib\hashing\MD5.cpp" />
+    <ClCompile Include="idlib\images\Filter.cpp" />
     <ClCompile Include="idlib\images\MipMap.cpp" />
     <ClCompile Include="idlib\math\Angles.cpp" />
     <ClCompile Include="idlib\math\Complex.cpp" />
@@ -274,6 +276,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="idlib\bv\Bounds.h" />
+    <ClInclude Include="idlib\bv\Bounds2D.h" />
     <ClInclude Include="idlib\bv\Box.h" />
     <ClInclude Include="idlib\bv\Frustum.h" />
     <ClInclude Include="idlib\bv\Sphere.h" />
@@ -309,6 +312,7 @@
     <ClInclude Include="idlib\hashing\CRC32.h" />
     <ClInclude Include="idlib\hashing\MD4.h" />
     <ClInclude Include="idlib\hashing\MD5.h" />
+    <ClInclude Include="idlib\images\Filter.h" />
     <ClInclude Include="idlib\images\MipMap.h" />
     <ClInclude Include="idlib\math\Angles.h" />
     <ClInclude Include="idlib\math\Complex.h" />

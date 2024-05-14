@@ -163,6 +163,19 @@ template<class T> ID_INLINE T	Min( T x, T y ) { return ( x < y ) ? x : y; }
 #define MAX_UNSIGNED_TYPE( x )	( ( ( ( 1U << ( ( sizeof( x ) - 1 ) * 8 ) ) - 1 ) << 8 ) | 255U )
 #define MIN_UNSIGNED_TYPE( x )	0
 
+
+#ifndef BIT
+#define BIT( num )				BITT< num >::VALUE
+#endif
+
+template< unsigned int B >
+class BITT {
+public:
+	typedef enum bitValue_e {
+		VALUE = 1 << B,
+	} bitValue_t;
+};
+
 /*
 ===============================================================================
 
@@ -197,6 +210,7 @@ template<class T> ID_INLINE T	Min( T x, T y ) { return ( x < y ) ? x : y; }
 // bounding volumes
 #include "bv/Sphere.h"
 #include "bv/Bounds.h"
+#include "bv/Bounds2D.h"
 #include "bv/Box.h"
 #include "bv/Frustum.h"
 
@@ -253,6 +267,7 @@ template<class T> ID_INLINE T	Min( T x, T y ) { return ( x < y ) ? x : y; }
 #include "decoders/DXTDecoder.h"
 #include "encoders/DXTEncoder.h"
 
+#include "images/Filter.h"
 #include "images/MipMap.h"
 
 // Threading

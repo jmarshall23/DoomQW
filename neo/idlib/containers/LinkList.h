@@ -67,7 +67,6 @@ public:
 	idLinkList *		NextNode( void ) const;
 	idLinkList *		PrevNode( void ) const;
 
-private:
 	idLinkList *		head;
 	idLinkList *		next;
 	idLinkList *		prev;

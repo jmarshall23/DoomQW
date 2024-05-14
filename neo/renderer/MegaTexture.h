@@ -29,6 +29,8 @@ If you have questions concerning this license or the applicable additional terms
 class idMegaTextureLevel;
 class idRenderWorldLocal;
 
+#define FLT_EPSILON 1.19209290E-07F
+
 #include <vector>
 #include <atomic>
 #include <chrono>
@@ -102,19 +104,9 @@ public:
 	virtual ~idMegaTextureTileDecompressor();
 	void DecompressLuminance(char* destination);
 	void DecompressTile(megaCompressionFormat_t format, char* destination);
-	void RecompressTile(imageCompressionFormat_t format, char* source, char* tileData);
-	void DecompressLuminance_MMX(char* destination);
-	void DecompressTile_MMX(megaCompressionFormat_t format, char* destination);
-	void RecompressTile_MMX(imageCompressionFormat_t format, char* source, char* tileData);
-	void DecompressLuminance_SSE2(char* destination);
-	void DecompressTile_SSE2(megaCompressionFormat_t format, char* destination);
-	void RecompressTile_SSE2(imageCompressionFormat_t format, char* source, char* tileData);
-	void DecompressLuminance_Xenon(char* destination);
-	void DecompressTile_Xenon(megaCompressionFormat_t format, char* destination);
-	void RecompressTile_Xenon(imageCompressionFormat_t format, char* source, char* tileData);
+	void RecompressTile(imageCompressionFormat_t format, char* source, char* tileData);	
 	void GetCompressedTileData(idMegaTexture* mega, idMegaTextureLevel* level, idMegaTextureTile* tile);
 	void Stop();
-	static idMegaTextureTileDecompressor* VectorDeletingDestructor(idMegaTextureTileDecompressor* this, unsigned int a2);
 	void StartThread();
 	void SetActiveMegaTexture(idMegaTexture* megaTexture);
 	void Init();
@@ -124,7 +116,7 @@ public:
 	static idCVar r_megaTilesPerSecond;
 	static idCVar r_megaShowGrid;
 	static idCVar r_megaShowTileSize;
-private:
+
 	struct compressedTileData_t
 	{
 		int globalX;
@@ -141,7 +133,7 @@ private:
 		int parentCachedGlobalY;
 		unsigned __int8* parentCachedData;
 	};
-private:
+
 	idBareDctDecoder* dctDecoder;
 	idDxtEncoder* dxtEncoder;
 	sdThread* thread;
@@ -172,6 +164,12 @@ public:
 	void __thiscall RemoveDirtyTile(idMegaTextureTile* tile);
 	void __thiscall UpdateLevelForViewOrigin(int idx, int time);
 	void __thiscall idMegaTextureLevel::UploadTiles(int time);
+
+	unsigned __int8* GetCompressedTileData(int globalX, int globalY)
+	{
+		return (&this->compressedTiles[globalX % this->compressedTilesPerAxis])[this->compressedTilesPerAxis
+			* (globalY % this->compressedTilesPerAxis)];
+	}
 
 	// Data Members
 	idImageGeneratorFunctor<idMegaTextureLevel> emptyLevelImageFunctor;
@@ -235,49 +233,69 @@ public:
 	void __thiscall OnUseMegaTextureCompressionChange();
 	static int __cdecl TotalStoredTileCount(const int resolution);
 
-	// Data Members
 	idStr name;
-	void* winFile;
-	int numLevels;
-	int winFileBlockOffset;
-	int winFileNumBlocks;
 	int version;
 	int resolution;
+	bool levelLoadReferenced;
+	bool referencedOutsideLevelLoad;
 	bool purged;
 	idFile* file;
 	int lastTileOffset;
-	void* winFileScratch;
+	void* winFile;
+	char* winFileScratch;
+	int winFileBlockOffset;
+	int winFileNumBlocks;
 	imageCompressionFormat_t imageCompressionFormat;
 	bool useImageCompression;
 	bool forcedUpdate;
 	idImage* detailTexture;
 	idImage* detailTextureMask;
 	int lastUsedFrame;
-	idRenderWorldLocal* currentWorld;
+	const idRenderWorldLocal* currentWorld;
+	idVec3 currentViewOrigin;
+	int tilesPerAxis;
+	int numLevels;
 	idMegaTextureLevel* levels;
 	idMegaTextureLevel* upscaleLevel;
+	sdBounds2D stGridBounds;
+	int stGridWidth;
+	int stGridHeight;
 	idVec2* stGrid;
-	//sdLock lock;
-	idVec3 currentViewOrigin;
+	int* tileIndexMap;
+	int* tileIndexedDataSizes;
+	unsigned __int8* nullTileData;
+	unsigned __int8* gridTileData;
+	unsigned __int8* tileRecompressionScratch;
 	int lastShaderQuality;
+	sdLock lock;
 };
 
-class idMegaTextureTileLoader {
+class idMegaTextureTileLoader : sdThreadProcess {
 public:
 	idMegaTextureTileLoader();
 	~idMegaTextureTileLoader();
 
-	std::atomic<bool> terminate;
-	std::atomic<int> numProcessedTiles;
+	sdThread* thread;
+	sdSignal signal;
+	sdSignal throttleSignal;
 	idMegaTexture* activeMegaTexture;
-	std::condition_variable signal;
-	std::condition_variable throttleSignal;
-	std::thread* thread;
+	int numProcessedTiles;
 
-	~idMegaTextureTileLoader();
+	struct TileInfo {
+		int y;
+		idMegaTextureLevel* level;
+		int tileNum;
+		uint8_t* compressedData;
+		int x;
+	};
+
+	TileInfo tiles[5];
+
 	void StartThread();
 	void SetActiveMegaTexture(idMegaTexture* megaTexture);
 	void ForceUpdate();
 	void Init();
 	unsigned int Run(void* parm);
 };
+
+extern idMegaTextureTileDecompressor megaTextureTileDecompressor;

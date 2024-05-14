@@ -212,6 +212,12 @@
     <ClCompile Include="idlib\sys\threading\SysThread_win.cpp">
       <Filter>Sys\Threading</Filter>
     </ClCompile>
+    <ClCompile Include="idlib\images\Filter.cpp">
+      <Filter>Images</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\bv\Bounds2D.cpp">
+      <Filter>BV</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="idlib\bv\Bounds.h">
@@ -449,6 +455,12 @@
     </ClInclude>
     <ClInclude Include="idlib\sys\threading\SysThread.h">
       <Filter>Sys\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\images\Filter.h">
+      <Filter>Images</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\bv\Bounds2D.h">
+      <Filter>BV</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
