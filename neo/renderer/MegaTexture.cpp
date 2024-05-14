@@ -1,913 +1,539 @@
-/*
-===========================================================================
+// MegaTexture.cpp
+//
 
-Doom 3 GPL Source Code
-Copyright (C) 1999-2011 id Software LLC, a ZeniMax Media company. 
-
-This file is part of the Doom 3 GPL Source Code (?Doom 3 Source Code?).  
-
-Doom 3 Source Code is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-Doom 3 Source Code is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with Doom 3 Source Code.  If not, see <http://www.gnu.org/licenses/>.
-
-In addition, the Doom 3 Source Code is also subject to certain additional terms. You should have received a copy of these additional terms immediately following the terms and conditions of the GNU General Public License which accompanied the Doom 3 Source Code.  If not, please request a copy in writing from id Software at the address below.
-
-If you have questions concerning this license or the applicable additional terms, you may contact in writing id Software LLC, c/o ZeniMax Media Inc., Suite 120, Rockville, Maryland 20850 USA.
-
-===========================================================================
-*/
 #include "precompiled.h"
 #pragma hdrstop
 
 #include "tr_local.h"
 
-idCVar idMegaTexture::r_megaTextureLevel( "r_megaTextureLevel", "0", CVAR_RENDERER | CVAR_INTEGER, "draw only a specific level" );
-idCVar idMegaTexture::r_showMegaTexture( "r_showMegaTexture", "0", CVAR_RENDERER | CVAR_BOOL, "display all the level images" );
-idCVar idMegaTexture::r_showMegaTextureLabels( "r_showMegaTextureLabels", "0", CVAR_RENDERER | CVAR_BOOL, "draw colored blocks in each tile" );
-idCVar idMegaTexture::r_skipMegaTexture( "r_skipMegaTexture", "0", CVAR_RENDERER | CVAR_INTEGER, "only use the lowest level image" );
-idCVar idMegaTexture::r_terrainScale( "r_terrainScale", "3", CVAR_RENDERER | CVAR_INTEGER, "vertically scale USGS data" );
+idCVar r_megaStreamFromDVD("r_megaStreamFromDVD", "0", CVAR_RENDERER | CVAR_INTEGER, "streams the megatexture from the cd drive");
 
 /*
-
-allow sparse population of the upper detail tiles
-
+===================
+idMegaTextureLevel::Init
+===================
 */
+void idMegaTextureLevel::Init(idMegaTexture* megaTexture, int levelNum, int tileBase, int tilesPerAxis, bool activateImage, megaCompressionFormat_t megaCompressionFormat, int maxCompressedTileSize) {
+	compressedData = nullptr;
+	compressedTiles = nullptr;
+	image = nullptr;
+	imageValid = false;
+	dirty = false;
+	usedMemory = 16540;
 
-int RoundDownToPowerOfTwo( int num ) {
-	int		pot;
-	for (pot = 1 ; (pot*2) <= num ; pot<<=1) {
+	Mem_Free(compressedData);
+	Mem_Free(compressedTiles);
+	ShutdownTileCache();
+
+	this->megaTexture = megaTexture;
+	this->levelNum = levelNum;
+	this->tileBase = tileBase;
+	this->tilesPerAxis = tilesPerAxis;
+	this->maxCompressedTileSize = maxCompressedTileSize;
+	this->megaCompressionFormat = megaCompressionFormat;
+	this->isInterleaved = (levelNum == 0 && megaTexture->numLevels > 4);
+
+	idStr imageName;
+	imageName = "_megaLevel_";
+	imageName += va("%d", levelNum);
+	image = globalImages->GetImage(imageName.c_str());
+
+	if (activateImage) {
+		if (image) {
+			image->generatorFunction = nullptr;
+			image = globalImages->ImageFromFunction(imageName.c_str(), this);
+			image->Reload(image, false, true);
+		}
+		else {
+			image = globalImages->ImageFromFunction(imageName.c_str(), this);
+		}
 	}
-	return pot;
-}
 
-static union {
-	int		intVal;
-	byte	color[4];
-} fillColor;
-
-static byte	colors[8][4] = {
-	{ 0, 0, 0, 255 },
-	{ 255, 0, 0, 255 },
-	{ 0, 255, 0, 255 },
-	{ 255, 255, 0, 255 },
-	{ 0, 0, 255, 255 },
-	{ 255, 0, 255, 255 },
-	{ 0, 255, 255, 255 },
-	{ 255, 255, 255, 255 }
-};
-
-static void R_EmptyLevelImage( idImage *image ) {
-	int	c = MAX_LEVEL_WIDTH * MAX_LEVEL_WIDTH;
-	byte	*data = (byte *)_alloca( c*4 );
-
-	for ( int i = 0 ; i < c ; i++ ) {
-		((int *)data)[i] = fillColor.intVal;
+	if (!image) {
+		common->FatalError("idMegaTextureLevel::Init : NULL level image");
 	}
 
-	// FIXME: this won't live past vid mode changes
-	image->GenerateImage( data, MAX_LEVEL_WIDTH, MAX_LEVEL_WIDTH, 
-		TF_DEFAULT, false, TR_REPEAT, TD_HIGH_QUALITY );
-}
+	parms[0] = -1.0f;
+	parms[1] = 0.0f;
+	parms[2] = 0.0f;
+	parms[3] = static_cast<float>(tilesPerAxis) * 0.0625f;
 
+	compressedTiles = static_cast<unsigned __int8**>(Mem_Alloc(4 * tilesPerAxis * tilesPerAxis));
+	memset(compressedTiles, 0, 4 * tilesPerAxis * tilesPerAxis);
+	usedMemory += 4 * tilesPerAxis * tilesPerAxis;
+
+	if (levelNum >= 2) {
+		unsigned int totalSize = 0;
+		for (int y = 0; y < tilesPerAxis; ++y) {
+			for (int x = 0; x < tilesPerAxis; ++x) {
+				totalSize += megaTexture->tileIndexedDataSizes[tileBase + y * tilesPerAxis + x] + 3;
+			}
+		}
+
+		compressedData = static_cast<unsigned __int8*>(Mem_Alloc(totalSize));
+		usedMemory += totalSize;
+		unsigned __int8* currentDataPtr = compressedData;
+
+		for (int y = 0; y < tilesPerAxis; ++y) {
+			for (int x = 0; x < tilesPerAxis; ++x) {
+				int tileIndex = tileBase + y * tilesPerAxis + x;
+				megaTexture->SeekToTile(tileIndex);
+				megaTexture->file->Read(currentDataPtr, megaTexture->tileIndexedDataSizes[tileIndex] + 3);
+				compressedTiles[y * tilesPerAxis + x] = currentDataPtr;
+				currentDataPtr += megaTexture->tileIndexedDataSizes[tileIndex] + 3;
+			}
+		}
+
+		alwaysCached = true;
+		compressedTilesPerAxis = tilesPerAxis;
+	}
+
+	InitTileCache();
+
+	for (int y = 0; y < 16; ++y) {
+		for (int x = 0; x < 16; ++x) {
+			//int* tile = &tiles[y][x].compressedTileData[0];
+			tiles[y][x].level = this;
+			tiles[y][x].globalX = -99999;
+			tiles[y][x].globalY = -99999;
+			for (int i = 0; i < 4; ++i) {
+				tiles[y][x].childCompressedTileData[i] = nullptr;
+			}
+
+			tiles[y][x].localX = x;
+			tiles[y][x].localY = y;
+
+			if (!alwaysCached && !isInterleaved)
+			{
+				tiles[y][x].compressedTileData = (unsigned __int8* )Mem_Alloc16(this->maxCompressedTileSize + 3);
+			}
+		}
+	}
+
+	imageName.FreeData();
+}
 
 /*
-====================
-InitFromMegaFile
-====================
+===================
+idMegaTexture::InitTileCache
+===================
 */
-bool idMegaTexture::InitFromMegaFile( const char *fileBase ) {
-	idStr	name = "megaTextures/";
-	name += fileBase;
-	name.StripFileExtension();
-	name += ".mega";
+void idMegaTextureLevel::InitTileCache() {
+	int imageCompressionFormat = this->megaTexture->imageCompressionFormat;
+	int tileSize = 128;
+	int compressionMultiplier = 1;
+	int mipLevels = 1;
 
-	int		width, height;
+	if (imageCompressionFormat == IMAGE_COMPRESSION_NONE) {
+		compressionMultiplier = 1;
+	}
+	else if (imageCompressionFormat <= IMAGE_COMPRESSION_DXT5 && imageCompressionFormat >= IMAGE_COMPRESSION_DXT1) {
+		compressionMultiplier = (imageCompressionFormat == IMAGE_COMPRESSION_DXT1) ? 2 : 4;
+	}
+	else {
+		common->FatalError("Unsupported compression format");
+	}
 
-	fileHandle = fileSystem->OpenFileRead( name.c_str() );
-	if ( !fileHandle ) {
-		common->Printf( "idMegaTexture: failed to open %s\n", name.c_str() );
+	while (tileSize > compressionMultiplier) {
+		++mipLevels;
+		tileSize >>= 1;
+	}
+
+	unsigned int totalSize = 0;
+	for (int i = 0; i < mipLevels; ++i) {
+		if (imageCompressionFormat > IMAGE_COMPRESSION_DXT1) {
+			totalSize += 16 * ((tileSize + 3) / 4) * ((tileSize + 3) / 4);
+		}
+		else if (imageCompressionFormat >= IMAGE_COMPRESSION_DXT1) {
+			totalSize += 8 * ((tileSize + 3) / 4) * ((tileSize + 3) / 4);
+		}
+		else if (imageCompressionFormat == IMAGE_COMPRESSION_NONE) {
+			totalSize += 4 * tileSize * tileSize;
+		}
+		else {
+			common->FatalError("Unsupported compression format");
+		}
+		tileSize >>= 1;
+	}
+
+	this->tileCacheSize = 288;
+	this->usedMemory = 32 * this->tileCacheSize;
+
+	tileData_t* tileCache = new tileData_t[this->tileCacheSize];
+	this->tileCache = tileCache;
+
+	for (int i = 0; i < this->tileCacheSize; ++i) {
+		tileCache[i].pic = (char *)static_cast<unsigned __int8*>(Mem_Alloc16(totalSize));
+		this->availableTiles.AddToEnd(tileCache[i].node);
+		this->usedMemory += totalSize;
+	}
+}
+
+/*
+===================
+idMegaTexture::EmptyLevelImage
+===================
+*/
+void idMegaTextureLevel::EmptyLevelImage(idImage* image) {
+	unsigned __int8* buffer = static_cast<unsigned __int8*>(Mem_Alloc(2048 * 2048 * 4));
+	unsigned __int8* ptr = buffer;
+
+	// Initialize buffer with empty tile data
+	for (int i = 0; i < 0x400000; ++i) {
+		*ptr++ = 0xFF;
+		*ptr++ = 0x00;
+		*ptr++ = 0x00;
+		*ptr++ = 0xFF;
+	}
+
+	// Determine the number of mipmap levels
+	imageCompressionFormat_t imageCompressionFormat = this->megaTexture->imageCompressionFormat;
+	int width = 128;
+	int height = 128;
+	int mipLevels = 1;
+	int blockSize = (imageCompressionFormat == IMAGE_COMPRESSION_NONE) ? 1 : 4;
+
+	while (width > blockSize || height > blockSize) {
+		++mipLevels;
+		width >>= 1;
+		height >>= 1;
+	}
+
+	// Generate the empty image with the buffer
+	image->GenerateImage(buffer, 2048, 2048, TF_DEFAULT, 0, TR_REPEAT, TD_DEFAULT, imageCompressionFormat, mipLevels);
+
+	// Free the allocated buffer
+	Mem_Free(buffer);
+
+	// Check if the generated image has the correct internal format
+	if (image->internalFormat != imageCompressionFormat) {
+		common->Error("idMegaTextureLevel::EmptyLevelImage: generated image has an incorrect internal format (0x%x expected 0x%x)",
+			image->internalFormat, imageCompressionFormat);
+	}
+
+	// Mark the level as dirty if the image is valid
+	if (this->imageValid) {
+		this->dirty = 1;
+		bool* tileDirty = &this->tiles[0][0].dirty;
+
+		for (int y = 0; y < 16; ++y) {
+			for (int x = 0; x < 16; ++x) {
+				tileDirty[x * 64] = true;
+			}
+			tileDirty += 16 * 64;
+		}
+
+		megaTexture->ForceUpdate();
+	}
+}
+
+/*
+===================
+idMegaTexture::ShutdownTileCache
+===================
+*/
+bool idMegaTextureLevel::UpdateForCenter(const idVec2* center, bool force) {
+	int globalTileCorner[2];
+	int localTileOffset[2];
+	idMegaTextureTile* dirtyTilesTable[256];
+	float* newParms = &this->newParms[0];
+	int numDirtyTiles = 0;
+
+	if (this->tilesPerAxis > 16) {
+		for (int i = 0; i < 2; ++i) {
+			float offset = (center->ToFloatPtr()[i] * this->parms[3] - 0.5f) * 16.0f;
+			int tileCorner = static_cast<int>(offset + 0.5f);
+			globalTileCorner[i] = tileCorner;
+			localTileOffset[i] = tileCorner & 0xF;
+			newParms[i] = static_cast<float>(-tileCorner) * 0.0625f;
+		}
+	}
+	else {
+		globalTileCorner[0] = globalTileCorner[1] = 0;
+		this->newParms[0] = this->newParms[1] = 0.25f;
+		localTileOffset[0] = localTileOffset[1] = 0;
+	}
+
+	char result = 0;
+	int tileY = globalTileCorner[1];
+	int tileX = globalTileCorner[0];
+	for (int i = 0; i < 16; ++i) {
+		for (int j = 0; j < 16; ++j) {
+			idMegaTextureTile& tile = this->tiles[(tileY + i) & 0xF][(tileX + j) & 0xF];
+			if (tile.globalY != tileY + i || tile.globalX != tileX + j || force) {
+				dirtyTilesTable[numDirtyTiles++] = &tile;
+				tile.globalY = tileY + i;
+				tile.globalX = tileX + j;
+				tile.dirty = true;
+				tile.cached = false;
+				tile.loaded = false;
+
+				// Add the tile to the dirty tiles table
+				dirtyTilesTable[numDirtyTiles++] = &tile;
+
+				// Release any existing cached tile data
+				if (tile.tileData) {					
+					ReleaseTile(tile.tileData);
+					tile.tileData = nullptr;
+				}
+				this->dirty = true;
+			}
+		}
+	}
+
+	if (this->levelNum >= 0) {
+		for (int i = 0; i < numDirtyTiles; ++i) {
+			if (!dirtyTilesTable[i]->SetCachedTileData(this->megaTexture, this->tileBase, this->tilesPerAxis)) {
+				result = 1;
+			}
+		}
+	}
+
+	return result;
+}
+
+/*
+===================
+idMegaTexture::ShutdownTileCache
+===================
+*/
+void idMegaTextureLevel::ShutdownTileCache() {
+	// Clear the available and active tiles lists
+	this->availableTiles.Clear();
+	this->activeTiles.Clear();
+
+	// Free the memory for each tile in the cache
+	for (int i = 0; i < this->tileCacheSize; ++i) {
+		Mem_Free16(this->tileCache[i].pic);
+	}
+
+	// Delete the tile cache if it exists
+	if (this->tileCache) {
+		// Call the destructor for each tileData_t object in the cache
+		for (int i = 0; i < this->tileCacheSize; ++i) {
+			this->tileCache[i].~tileData_t();
+		}
+		// Free the allocated memory for the tile cache
+		operator delete[](this->tileCache);
+		this->tileCache = nullptr;
+	}
+
+	// Reset the tile cache size to 0
+	this->tileCacheSize = 0;
+}
+
+/*
+===================
+idMegaTexture::OpenFile
+===================
+*/
+bool idMegaTexture::OpenFile() {
+	idStr fileName = "megatextures/" + name;
+	fileName.StripFileExtension();
+
+	fileName += ".mega";
+
+	if (r_megaStreamFromDVD.GetInteger()) {
+		fileName = fileSystem->RelativePathToOSPath(fileName.c_str(), "fs_cdpath");
+	}
+	else {
+		file = fileSystem->OpenFileRead(fileName.c_str(), true, false);
+		if (!file) {
+			return false;
+		}
+		fileName = file->GetName();
+		fileSystem->CloseFile(file);
+		file = nullptr;
+	}
+
+	winFile = CreateFileA(fileName.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_FLAG_OVERLAPPED, NULL);
+	if (winFile == INVALID_HANDLE_VALUE) {
+		DWORD lastError = GetLastError();
+		LPVOID errorMsg;
+		FormatMessageA(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+			NULL, lastError, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPSTR)&errorMsg, 0, NULL);
+		common->FatalError("idMegaTexture::OpenFile : failed to open '%s' (%d : %s)", fileName, lastError, (char*)errorMsg);
+		LocalFree(errorMsg);
 		return false;
 	}
 
-	fileHandle->Read( &header, sizeof( header ) );
-	if ( header.tileSize < 64 || header.tilesWide < 1 || header.tilesHigh < 1 ) {
-		common->Printf( "idMegaTexture: bad header on %s\n", name.c_str() );
+	if (!winFileScratch) {
+		winFileScratch = Mem_Alloc16(0x100000);
+		if (file) {
+			delete file;
+		}
+		file = new idFile_Memory("winFileScratch", (const char *)winFileScratch, 0x100000);
+	}
+
+	OVERLAPPED overlapped = { 0 };
+	DWORD bytesRead;
+	if (!ReadFile(winFile, winFileScratch, 0x100000, &bytesRead, &overlapped)) {
+		common->FatalError("idMegaTexture::OpenFile : failed to read '%s'", fileName);
 		return false;
 	}
 
-	currentTriMapping = NULL;
+	winFileBlockOffset = 0;
+	winFileNumBlocks = 32;
 
-	numLevels = 0;
-	width = header.tilesWide;
-	height = header.tilesHigh;
-
-	int	tileOffset = 1;					// just past the header
-
-	memset( levels, 0, sizeof( levels ) );
-	while( 1 ) {
-		idTextureLevel *level = &levels[numLevels];
-
-		level->mega = this;
-		level->tileOffset = tileOffset;
-		level->tilesWide = width;
-		level->tilesHigh = height;
-		level->parms[0] = -1;		// initially mask everything
-		level->parms[1] = 0;
-		level->parms[2] = 0;
-		level->parms[3] = (float)width / TILE_PER_LEVEL;
-		level->Invalidate();
-
-		tileOffset += level->tilesWide * level->tilesHigh;
-
-		char	str[1024];
-		sprintf( str, "MEGA_%s_%i", fileBase, numLevels );
-
-		// give each level a default fill color
-		for (int i = 0 ; i < 4 ; i++ ) {
-			fillColor.color[i] = colors[numLevels+1][i];
-		}
-
-		levels[numLevels].image = globalImages->ImageFromFunction( str, R_EmptyLevelImage );
-		numLevels++;
-		
-		if ( width <= TILE_PER_LEVEL && height <= TILE_PER_LEVEL ) {
-			break;
-		}
-		width = ( width + 1 ) >> 1;
-		height = ( height + 1 ) >> 1;
+	int fileId;
+	file->ReadInt(fileId);
+	if (fileId != 1095189837) {
+		common->FatalError("idMegaTexture::OpenFile : unknown fileid on '%s'", fileName);
+		return false;
 	}
 
-	// force first bind to load everything
-	currentViewOrigin[0] = -99999999.0f;
-	currentViewOrigin[1] = -99999999.0f;
-	currentViewOrigin[2] = -99999999.0f;
+	file->ReadInt(version);
+	if (version != 9 && version != 8) {
+		common->FatalError("idMegaTexture::OpenFile : wrong version on '%s' (%d should be 9)", fileName, version);
+		return false;
+	}
+
+	//cmdSystem->AddCommand("megaTestStreamingPerformance", idMegaTexture::MegaTestStreamingPerformance_f, CMD_FL_SYSTEM, "Tests streaming performance without seeking.", nullptr);
+	//cmdSystem->AddCommand("megaShowMemoryUsage", idMegaTexture::MegaShowMemoryUsage_f, CMD_FL_SYSTEM, "Show memory usage of active mega texture.", nullptr);
 
 	return true;
 }
 
 /*
 ====================
-SetMappingForSurface
-
-analyzes xyz and st to create a mapping
-This is not very robust, but works for rectangular grids
+idMegaTexture::InitFromFile
 ====================
 */
-void	idMegaTexture::SetMappingForSurface( const srfTriangles_t *tri ) {
-	if ( tri == currentTriMapping ) {
-		return;
-	}
-	currentTriMapping = tri;
+bool idMegaTexture::InitFromFile(const char* fileBase)
+{
+	name = fileBase;
 
-	if ( !tri->verts ) {
-		return;
-	}
-
-	idDrawVert	origin, axis[2];
-
-	origin.st[0] = 1.0;
-	origin.st[1] = 1.0;
-
-	axis[0].st[0] = 0;
-	axis[0].st[1] = 1;
-
-	axis[1].st[0] = 1;
-	axis[1].st[1] = 0;
-
-	for ( int i = 0 ; i < tri->numVerts ; i++ ) {
-		idDrawVert	*v = &tri->verts[i];
-
-		if ( v->st[0] <= origin.st[0] && v->st[1] <= origin.st[1] ) {
-			origin = *v;
-		}
-		if ( v->st[0] >= axis[0].st[0] && v->st[1] <= axis[0].st[1] ) {
-			axis[0] = *v;
-		}
-		if ( v->st[0] <= axis[1].st[0] && v->st[1] >= axis[1].st[1] ) {
-			axis[1] = *v;
-		}
+	if (!idMegaTexture::OpenFile())
+	{
+		idMegaTexture::CloseFile();
+		return false;
 	}
 
-	for ( int i = 0 ; i < 2 ; i++ ) {
-		idVec3	dir = axis[i].xyz - origin.xyz;
-		float	texLen = axis[i].st[i] - origin.st[i];
-		float	spaceLen = (axis[i].xyz - origin.xyz).Length();
-
-		float scale = texLen / (spaceLen*spaceLen);
-		dir *= scale;
-
-		float	c = origin.xyz * dir - origin.st[i];
-
-		localViewToTextureCenter[i][0] = dir[0];
-		localViewToTextureCenter[i][1] = dir[1];
-		localViewToTextureCenter[i][2] = dir[2];
-		localViewToTextureCenter[i][3] = -c;
-	}
+	idMegaTexture::CloseFile();
+	return true;
 }
 
 /*
 ====================
-BindForViewOrigin
+idMegaTexture::InitFromFile
 ====================
 */
-void idMegaTexture::BindForViewOrigin( const idVec3 viewOrigin ) {
-
-	SetViewOrigin( viewOrigin );
-
-	// borderClamp image goes in texture 0
-	GL_SelectTexture( 0 );
-	globalImages->borderClampImage->Bind();
-
-	// level images in higher textures, blurriest first
-	for ( int i = 0 ; i < 7 ; i++ ) {
-		GL_SelectTexture( 1+i );
-
-		if ( i >= numLevels ) {
-			globalImages->whiteImage->Bind();
-
-			static float	parms[4] = { -2, -2, 0, 1 };	// no contribution
-			qglProgramLocalParameter4fvARB( GL_VERTEX_PROGRAM_ARB, i, parms );
-		} else {
-			idTextureLevel	*level = &levels[ numLevels-1-i ];
-			
-			if ( r_showMegaTexture.GetBool() ) {
-				if ( i & 1 ) {
-					globalImages->blackImage->Bind();
-				} else {
-					globalImages->whiteImage->Bind();
-				}
-			} else {
-				level->image->Bind();
-			}
-			qglProgramLocalParameter4fvARB( GL_VERTEX_PROGRAM_ARB, i, level->parms );
-		}
+bool idMegaTexture::UploadTiles(int time) {
+	for (int i = 0; i < numLevels; ++i) {
+		levels[i].UploadTiles(time);
 	}
 
-	float	parms[4];
-	parms[0] = 0;
-	parms[1] = 0;
-	parms[2] = 0;
-	parms[3] = 1;
-	qglProgramLocalParameter4fvARB( GL_VERTEX_PROGRAM_ARB, 7, parms );
-
-	parms[0] = 1;
-	parms[1] = 1;
-	parms[2] = r_terrainScale.GetFloat();
-	parms[3] = 1;
-	qglProgramLocalParameter4fvARB( GL_VERTEX_PROGRAM_ARB, 8, parms );
+	return true;
 }
 
 /*
 ====================
-Unbind
-
-This can go away once everything uses fragment programs so the enable states don't
-need tracking
+idMegaTexture::GetPureServerChecksum
 ====================
 */
-void idMegaTexture::Unbind( void ) {
-	for ( int i = 0 ; i < numLevels ; i++ ) {
-		GL_SelectTexture( 1+i );
-		globalImages->BindNull();
+int idMegaTexture::GetPureServerChecksum(unsigned int offset) {
+	idStr fileName;
+
+	fileName = "megatextures/";
+	fileName += name;
+	fileName += ".mega";
+
+	if (r_megaStreamFromDVD.GetInteger()) {
+		const char* osPath = fileSystem->RelativePathToOSPath(fileName.c_str(), "fs_cdpath");
+		fileName = osPath;
 	}
-}
-
-
-/*
-====================
-SetViewOrigin
-====================
-*/
-void idMegaTexture::SetViewOrigin( const idVec3 viewOrigin ) {
-	if ( r_showMegaTextureLabels.IsModified() ) {
-		r_showMegaTextureLabels.ClearModified();
-		currentViewOrigin[0] = viewOrigin[0] + 0.1;	// force a change
-		for ( int i = 0 ; i < numLevels ; i++ ) {
-			levels[i].Invalidate();
+	else {
+		idFile* file = fileSystem->OpenFileRead(fileName.c_str(), true, 0);
+		if (!file) {
+			fileName.FreeData();
+			return 0;
 		}
+		fileName = file->GetFullPath();
+		fileSystem->CloseFile(file);
 	}
 
-	if ( viewOrigin == currentViewOrigin ) {
-		return;
-	}
-	if ( r_skipMegaTexture.GetBool() ) {
-		return;
-	}
-
-	currentViewOrigin = viewOrigin;
-
-	float	texCenter[2];
-
-	// convert the viewOrigin to a texture center, which will
-	// be a different conversion for each megaTexture
-	for ( int i = 0 ; i < 2 ; i++ ) {
-		texCenter[i] = 
-			viewOrigin[0] * localViewToTextureCenter[i][0] +
-			viewOrigin[1] * localViewToTextureCenter[i][1] +
-			viewOrigin[2] * localViewToTextureCenter[i][2] +
-			localViewToTextureCenter[i][3];
+	idFile* file = fileSystem->OpenExplicitFileRead(fileName.c_str());
+	if (!file) {
+		fileName.FreeData();
+		return 0;
 	}
 
-	for ( int i = 0 ; i < numLevels ; i++ ) {
-		levels[i].UpdateForCenter( texCenter );
-	}
-}
-
-
-/*
-====================
-UpdateTile
-
-A local tile will only be mapped to globalTile[ localTile + X * TILE_PER_LEVEL ] for some x
-====================
-*/
-void idTextureLevel::UpdateTile( int localX, int localY, int globalX, int globalY ) {
-	idTextureTile	*tile = &tileMap[localX][localY];
-
-	if ( tile->x == globalX && tile->y == globalY ) {
-		return;
-	}
-	if ( (globalX & (TILE_PER_LEVEL-1)) != localX || (globalY & (TILE_PER_LEVEL-1)) != localY ) {
-		common->Error( "idTextureLevel::UpdateTile: bad coordinate mod" );
-	}
-
-	tile->x = globalX;
-	tile->y = globalY;
-
-	byte	data[ TILE_SIZE * TILE_SIZE * 4 ];
-
-	if ( globalX >= tilesWide || globalX < 0 || globalY >= tilesHigh || globalY < 0 ) {
-		// off the map
-		memset( data, 0, sizeof( data ) );
-	} else {
-		// extract the data from the full image (FIXME: background load from disk)
-		int		tileNum = tileOffset + tile->y * tilesWide + tile->x;
-
-		int		tileSize = TILE_SIZE * TILE_SIZE * 4;
-
-		mega->fileHandle->Seek( tileNum * tileSize, FS_SEEK_SET );
-		memset( data, 128, sizeof( data ) );
-		mega->fileHandle->Read( data, tileSize );
-	}
-
-	if ( idMegaTexture::r_showMegaTextureLabels.GetBool() ) {
-		// put a color marker in it
-		byte	color[4] = { 255 * localX / TILE_PER_LEVEL, 255 * localY / TILE_PER_LEVEL, 0, 0 };
-		for ( int x = 0 ; x < 8 ; x++ ) {
-			for ( int y = 0 ; y < 8 ; y++ ) {
-				*(int *)&data[ ( ( y + TILE_SIZE/2 - 4 ) * TILE_SIZE + x + TILE_SIZE/2 - 4 ) * 4 ] = *(int *)color;
-			}
+	int checksum = 0;
+	for (int i = 0; i < 16; ++i) {
+		int tempChecksum = 0;
+		for (int j = 0; j < 32; j += 8) {
+			int fileLength = file->Length();
+			int seekOffset = (fileLength > 1) ? ((69069 * offset + 1) & 0x7FFF) % (fileLength - 1) : 0;
+			file->Seek(seekOffset, FS_SEEK_SET);
+			tempChecksum |= static_cast<unsigned int>(file->ReadUnsignedChar()) << j;
 		}
+		checksum ^= tempChecksum;
 	}
 
-	// upload all the mip-map levels
-	int	level = 0;
-	int size = TILE_SIZE;
-	while ( 1 ) {
-		qglTexSubImage2D( GL_TEXTURE_2D, level, localX * size, localY * size, size, size, GL_RGBA, GL_UNSIGNED_BYTE, data );
-		size >>= 1;
-		level++;
-
-		if ( size == 0 ) {
-			break;
-		}
-
-		int	byteSize = size * 4;
-		// mip-map in place
-		for ( int y = 0 ; y < size ; y++ ) {
-			byte	*in, *in2, *out;
-			in = data + y * size * 16;
-			in2 = in + size * 8;
-			out = data + y * size * 4;
-			for ( int x = 0 ; x < size ; x++ ) {
-				out[x*4+0] = ( in[x*8+0] + in[x*8+4+0] + in2[x*8+0] + in2[x*8+4+0] ) >> 2;
-				out[x*4+1] = ( in[x*8+1] + in[x*8+4+1] + in2[x*8+1] + in2[x*8+4+1] ) >> 2;
-				out[x*4+2] = ( in[x*8+2] + in[x*8+4+2] + in2[x*8+2] + in2[x*8+4+2] ) >> 2;
-				out[x*4+3] = ( in[x*8+3] + in[x*8+4+3] + in2[x*8+3] + in2[x*8+4+3] ) >> 2;
-			}
-		}
-	}
+	fileSystem->CloseFile(file);
+	fileName.FreeData();
+	return checksum;
 }
 
 /*
 ====================
-UpdateForCenter
-
-Center is in the 0.0 to 1.0 range
+idMegaTexture::UpdateForViewOrigin
 ====================
 */
-void idTextureLevel::UpdateForCenter( float center[2] ) {
-	int		globalTileCorner[2];
-	int		localTileOffset[2];
-
-	if ( tilesWide <= TILE_PER_LEVEL && tilesHigh <= TILE_PER_LEVEL ) {
-		globalTileCorner[0] = 0;
-		globalTileCorner[1] = 0;
-		localTileOffset[0] = 0;
-		localTileOffset[1] = 0;
-		// orient the mask so that it doesn't mask anything at all
-		parms[0] = 0.25;
-		parms[1] = 0.25;
-		parms[3] = 0.25;
-	} else {
-		for ( int i = 0 ; i < 2 ; i++ ) {
-			float	global[2];
-
-			// this value will be outside the 0.0 to 1.0 range unless
-			// we are in the corner of the megaTexture
-			global[i] = ( center[i] * parms[3] - 0.5 ) * TILE_PER_LEVEL;
-
-			globalTileCorner[i] = (int)( global[i] + 0.5 );
-
-			localTileOffset[i] = globalTileCorner[i] & (TILE_PER_LEVEL-1);
-
-			// scaling for the mask texture to only allow the proper window
-			// of tiles to show through
-			parms[i] = -globalTileCorner[i] / (float)TILE_PER_LEVEL;
-		}
-	}
-
-	image->Bind();
-
-	for ( int x = 0 ; x < TILE_PER_LEVEL ; x++ ) {
-		for ( int y = 0 ; y < TILE_PER_LEVEL ; y++ ) {
-			int		globalTile[2];
-
-			globalTile[0] = globalTileCorner[0] + ( ( x - localTileOffset[0] ) & (TILE_PER_LEVEL-1) );
-			globalTile[1] = globalTileCorner[1] + ( ( y - localTileOffset[1] ) & (TILE_PER_LEVEL-1) );
-
-			UpdateTile( x, y, globalTile[0], globalTile[1] );
-		}
-	}
-}
-
-/*
-=====================
-Invalidate
-
-Forces all tiles to be regenerated
-=====================
-*/
-void idTextureLevel::Invalidate() {
-	for ( int x = 0 ; x < TILE_PER_LEVEL ; x++ ) {
-		for ( int y = 0 ; y < TILE_PER_LEVEL ; y++ ) {
-			tileMap[x][y].x =
-			tileMap[x][y].y = -99999;
-		}
-	}
-}
-
-//===================================================================================================
-
-
-typedef struct _TargaHeader {
-	unsigned char 	id_length, colormap_type, image_type;
-	unsigned short	colormap_index, colormap_length;
-	unsigned char	colormap_size;
-	unsigned short	x_origin, y_origin, width, height;
-	unsigned char	pixel_size, attributes;
-} TargaHeader;
-
-
-static byte ReadByte( idFile *f ) {
-	byte	b;
-
-	f->Read( &b, 1 );
-	return b;
-}
-
-static short ReadShort( idFile *f ) {
-	byte	b[2];
-
-	f->Read( &b, 2 );
-
-	return b[0] + ( b[1] << 8 );
-}
-
-
-/*
-====================
-GenerateMegaMipMaps
-====================
-*/
-void	idMegaTexture::GenerateMegaMipMaps( megaTextureHeader_t *header, idFile *outFile ) {
-	outFile->Flush();
-
-	// out fileSystem doesn't allow read / write access...
-	idFile	*inFile = fileSystem->OpenFileRead( outFile->GetName() );
-
-	int	tileOffset = 1;
-	int	width = header->tilesWide;
-	int	height = header->tilesHigh;
-
-	int		tileSize = header->tileSize * header->tileSize * 4;
-	byte	*oldBlock = (byte *)_alloca( tileSize );
-	byte	*newBlock = (byte *)_alloca( tileSize );
-
-	while ( width > 1 || height > 1 ) {
-		int	newHeight = (height+1) >> 1;
-		if ( newHeight < 1 ) {
-			newHeight = 1;
-		}
-		int	newWidth = (width+1) >> 1;
-		if ( width < 1 ) {
-			width = 1;
-		}
-		common->Printf( "generating %i x %i block mip level\n", newWidth, newHeight );
-
-		int		tileNum;
-
-		for ( int y = 0 ; y < newHeight ; y++ ) {
-			common->Printf( "row %i\n", y );
-			session->UpdateScreen();
-
-			for ( int x = 0 ; x < newWidth ; x++ ) {
-				// mip map four original blocks down into a single new block
-				for ( int yy = 0 ; yy < 2 ; yy++ ) {
-					for ( int xx = 0 ; xx< 2 ; xx++ ) {
-						int	tx = x*2 + xx;
-						int ty = y*2 + yy;
-
-						if ( tx > width || ty > height ) {
-							// off edge, zero fill
-							memset( newBlock, 0, sizeof( newBlock ) );
-						} else {
-							tileNum = tileOffset + ty * width + tx;
-							inFile->Seek( tileNum * tileSize, FS_SEEK_SET );
-							inFile->Read( oldBlock, tileSize );
-						}
-						// mip map the new pixels
-						for ( int yyy = 0 ; yyy < TILE_SIZE / 2 ; yyy++ ) {
-							for ( int xxx = 0 ; xxx < TILE_SIZE / 2 ; xxx++ ) {
-								byte *in = &oldBlock[ ( yyy * 2 * TILE_SIZE + xxx * 2 ) * 4 ];
-								byte *out = &newBlock[ ( ( ( TILE_SIZE/2 * yy ) + yyy ) * TILE_SIZE + ( TILE_SIZE/2 * xx ) + xxx ) * 4 ];
-								out[0] = ( in[0] + in[4] + in[0+TILE_SIZE*4] + in[4+TILE_SIZE*4] ) >> 2;
-								out[1] = ( in[1] + in[5] + in[1+TILE_SIZE*4] + in[5+TILE_SIZE*4] ) >> 2;
-								out[2] = ( in[2] + in[6] + in[2+TILE_SIZE*4] + in[6+TILE_SIZE*4] ) >> 2;
-								out[3] = ( in[3] + in[7] + in[3+TILE_SIZE*4] + in[7+TILE_SIZE*4] ) >> 2;
-							}
-						}
-
-						// write the block out
-						tileNum = tileOffset + width * height + y * newWidth + x;
-						outFile->Seek( tileNum * tileSize, FS_SEEK_SET );
-						outFile->Write( newBlock, tileSize );
-
-					}
-				}
-			}
-		}
-		tileOffset += width * height;
-		width = newWidth;
-		height = newHeight;
-	}
-
-	delete inFile;
-}
-
-/*
-====================
-GenerateMegaPreview
-
-Make a 2k x 2k preview image for a mega texture that can be used in modeling programs
-====================
-*/
-void	idMegaTexture::GenerateMegaPreview( const char *fileName ) {
-	idFile	*fileHandle = fileSystem->OpenFileRead( fileName );
-	if ( !fileHandle ) {
-		common->Printf( "idMegaTexture: failed to open %s\n", fileName );
-		return;
-	}
-
-	idStr	outName = fileName;
-	outName.StripFileExtension();
-	outName += "_preview.tga";
-
-	common->Printf( "Creating %s.\n", outName.c_str() );
-
-	megaTextureHeader_t header;
-
-	fileHandle->Read( &header, sizeof( header ) );
-	if ( header.tileSize < 64 || header.tilesWide < 1 || header.tilesHigh < 1 ) {
-		common->Printf( "idMegaTexture: bad header on %s\n", fileName );
-		return;
-	}
-
-	int	tileSize = header.tileSize;
-	int	width = header.tilesWide;
-	int	height = header.tilesHigh;
-	int	tileOffset = 1;
-	int	tileBytes = tileSize * tileSize * 4;
-	// find the level that fits
-	while ( width * tileSize > 2048 || height * tileSize > 2048 ) {
-		tileOffset += width * height;
-		width >>= 1;
-		if ( width < 1 ) {
-			width = 1;
-		}
-		height >>= 1;
-		if ( height < 1 ) {
-			height = 1;
-		}
-	}
-
-	byte *pic = (byte *)R_StaticAlloc( width * height * tileBytes );
-	byte	*oldBlock = (byte *)_alloca( tileBytes );
-	for ( int y = 0 ; y < height ; y++ ) {
-		for ( int x = 0 ; x < width ; x++ ) {
-			int tileNum = tileOffset + y * width + x;
-			fileHandle->Seek( tileNum * tileBytes, FS_SEEK_SET );
-			fileHandle->Read( oldBlock, tileBytes );
-
-			for ( int yy = 0 ; yy < tileSize ; yy++ ) {
-				memcpy( pic + ( ( y * tileSize + yy ) * width * tileSize + x * tileSize  ) * 4,
-					oldBlock + yy * tileSize * 4, tileSize * 4 );
-			}
-		}
-	}
-
-	R_WriteTGA( outName.c_str(), pic, width * tileSize, height * tileSize, false );
-
-	R_StaticFree( pic );
-
-	delete fileHandle;
-}
-
-
-/*
-====================
-MakeMegaTexture_f
-
-Incrementally load a giant tga file and process into the mega texture block format
-====================
-*/
-void idMegaTexture::MakeMegaTexture_f( const idCmdArgs &args ) {
-	int		columns, rows, fileSize, numBytes;
-	byte	*pixbuf;
-	int		row, column;
-	TargaHeader	targa_header;
-
-	if ( args.Argc() != 2 ) {
-		common->Printf( "USAGE: makeMegaTexture <filebase>\n" );
-		return;
-	}
-
-	idStr	name_s = "megaTextures/";
-	name_s += args.Argv(1);
-	name_s.StripFileExtension();
-	name_s += ".tga";
-
-	const char	*name = name_s.c_str();
-
+void idMegaTexture::UpdateForViewOrigin(const idVec3* viewOrigin, int time) {
+	//if (lastUsedFrame < backEnd.frameCount) {
+	//	UploadTiles(time);
+	//	SetViewOrigin(viewOrigin);
+	//	lastUsedFrame = backEnd.frameCount;
+	//}
 	//
-	// open the file
+	//for (int i = 0; i < numLevels; ++i) {
+	//	UpdateLevelForViewOrigin(&levels[numLevels - i - 1], i, time);
+	//}
 	//
-	common->Printf( "Opening %s.\n", name );
-	fileSize = fileSystem->ReadFile( name, NULL, NULL );
-	idFile	*file = fileSystem->OpenFileRead( name );
-
-	if ( !file ) {
-		common->Printf( "Couldn't open %s\n", name );
-		return;
-	}
-
-	targa_header.id_length = ReadByte( file );
-	targa_header.colormap_type = ReadByte( file );
-	targa_header.image_type = ReadByte( file );
-	
-	targa_header.colormap_index = ReadShort( file );
-	targa_header.colormap_length = ReadShort( file );
-	targa_header.colormap_size = ReadByte( file );
-	targa_header.x_origin = ReadShort( file );
-	targa_header.y_origin = ReadShort( file );
-	targa_header.width = ReadShort( file );
-	targa_header.height = ReadShort( file );
-	targa_header.pixel_size = ReadByte( file );
-	targa_header.attributes = ReadByte( file );
-
-	if ( targa_header.image_type != 2 && targa_header.image_type != 10 && targa_header.image_type != 3 ) {
-		common->Error( "LoadTGA( %s ): Only type 2 (RGB), 3 (gray), and 10 (RGB) TGA images supported\n", name );
-	}
-
-	if ( targa_header.colormap_type != 0 ) {
-		common->Error( "LoadTGA( %s ): colormaps not supported\n", name );
-	}
-
-	if ( ( targa_header.pixel_size != 32 && targa_header.pixel_size != 24 ) && targa_header.image_type != 3 ) {
-		common->Error( "LoadTGA( %s ): Only 32 or 24 bit images supported (no colormaps)\n", name );
-	}
-
-	if ( targa_header.image_type == 2 || targa_header.image_type == 3 ) {
-		numBytes = targa_header.width * targa_header.height * ( targa_header.pixel_size >> 3 );
-		if ( numBytes > fileSize - 18 - targa_header.id_length ) {
-			common->Error( "LoadTGA( %s ): incomplete file\n", name );
-		}
-	}
-
-	columns = targa_header.width;
-	rows = targa_header.height;
-
-	// skip TARGA image comment
-	if ( targa_header.id_length != 0 ) {
-		file->Seek( targa_header.id_length, FS_SEEK_CUR );
-	}
-	
-	megaTextureHeader_t		mtHeader;
-
-	mtHeader.tileSize = TILE_SIZE;
-	mtHeader.tilesWide = RoundDownToPowerOfTwo( targa_header.width ) / TILE_SIZE;
-	mtHeader.tilesHigh = RoundDownToPowerOfTwo( targa_header.height ) / TILE_SIZE;
-
-	idStr	outName = name;
-	outName.StripFileExtension();
-	outName += ".mega";
-
-	common->Printf( "Writing %i x %i size %i tiles to %s.\n", 
-		mtHeader.tilesWide, mtHeader.tilesHigh, mtHeader.tileSize, outName.c_str() );
-
-	// open the output megatexture file
-	idFile	*out = fileSystem->OpenFileWrite( outName.c_str() );
-
-	out->Write( &mtHeader, sizeof( mtHeader ) );
-	out->Seek( TILE_SIZE * TILE_SIZE * 4, FS_SEEK_SET );
-
-	// we will process this one row of tiles at a time, since the entire thing
-	// won't fit in memory
-	byte	*targa_rgba = (byte *)R_StaticAlloc( TILE_SIZE * targa_header.width * 4 );
-
-	int blockRowsRemaining = mtHeader.tilesHigh;
-	while ( blockRowsRemaining-- ) {
-		common->Printf( "%i blockRowsRemaining\n", blockRowsRemaining );
-		session->UpdateScreen();
-
-		if ( targa_header.image_type == 2 || targa_header.image_type == 3 ) 	{ 
-			// Uncompressed RGB or gray scale image
-			for( row = 0 ; row < TILE_SIZE ; row++ ) {
-				pixbuf = targa_rgba + row*columns*4;
-				for( column = 0; column < columns; column++) {
-					unsigned char red,green,blue,alphabyte;
-					switch( targa_header.pixel_size ) {
-					case 8:
-						blue = ReadByte( file );
-						green = blue;
-						red = blue;
-						*pixbuf++ = red;
-						*pixbuf++ = green;
-						*pixbuf++ = blue;
-						*pixbuf++ = 255;
-						break;
-
-					case 24:
-						blue = ReadByte( file );
-						green = ReadByte( file );
-						red = ReadByte( file );
-						*pixbuf++ = red;
-						*pixbuf++ = green;
-						*pixbuf++ = blue;
-						*pixbuf++ = 255;
-						break;
-					case 32:
-						blue = ReadByte( file );
-						green = ReadByte( file );
-						red = ReadByte( file );
-						alphabyte = ReadByte( file );
-						*pixbuf++ = red;
-						*pixbuf++ = green;
-						*pixbuf++ = blue;
-						*pixbuf++ = alphabyte;
-						break;
-					default:
-						common->Error( "LoadTGA( %s ): illegal pixel_size '%d'\n", name, targa_header.pixel_size );
-						break;
-					}
-				}
-			}
-		} else if ( targa_header.image_type == 10 ) {   // Runlength encoded RGB images
-			unsigned char red,green,blue,alphabyte,packetHeader,packetSize,j;
-
-			red = 0;
-			green = 0;
-			blue = 0;
-			alphabyte = 0xff;
-
-			for( row = 0 ; row < TILE_SIZE ; row++ ) {
-				pixbuf = targa_rgba + row*columns*4;
-				for( column = 0; column < columns; ) {
-					packetHeader= ReadByte( file );
-					packetSize = 1 + (packetHeader & 0x7f);
-					if ( packetHeader & 0x80 ) {        // run-length packet
-						switch( targa_header.pixel_size ) {
-							case 24:
-									blue = ReadByte( file );
-									green = ReadByte( file );
-									red = ReadByte( file );
-									alphabyte = 255;
-									break;
-							case 32:
-									blue = ReadByte( file );
-									green = ReadByte( file );
-									red = ReadByte( file );
-									alphabyte = ReadByte( file );
-									break;
-							default:
-								common->Error( "LoadTGA( %s ): illegal pixel_size '%d'\n", name, targa_header.pixel_size );
-								break;
-						}
-		
-						for( j = 0; j < packetSize; j++ ) {
-							*pixbuf++=red;
-							*pixbuf++=green;
-							*pixbuf++=blue;
-							*pixbuf++=alphabyte;
-							column++;
-							if ( column == columns ) { // run spans across rows
-								common->Error( "TGA had RLE across columns, probably breaks block" );
-								column = 0;
-								if ( row > 0) {
-									row--;
-								}
-								else {
-									goto breakOut;
-								}
-								pixbuf = targa_rgba + row*columns*4;
-							}
-						}
-					} else {                            // non run-length packet
-						for( j = 0; j < packetSize; j++ ) {
-							switch( targa_header.pixel_size ) {
-								case 24:
-										blue = ReadByte( file );
-										green = ReadByte( file );
-										red = ReadByte( file );
-										*pixbuf++ = red;
-										*pixbuf++ = green;
-										*pixbuf++ = blue;
-										*pixbuf++ = 255;
-										break;
-								case 32:
-										blue = ReadByte( file );
-										green = ReadByte( file );
-										red = ReadByte( file );
-										alphabyte = ReadByte( file );
-										*pixbuf++ = red;
-										*pixbuf++ = green;
-										*pixbuf++ = blue;
-										*pixbuf++ = alphabyte;
-										break;
-								default:
-									common->Error( "LoadTGA( %s ): illegal pixel_size '%d'\n", name, targa_header.pixel_size );
-									break;
-							}
-							column++;
-							if ( column == columns ) { // pixel packet run spans across rows
-								column = 0;
-								if ( row > 0 ) {
-									row--;
-								}
-								else {
-									goto breakOut;
-								}
-								pixbuf = targa_rgba + row*columns*4;
-							}						
-						}
-					}
-				}
-				breakOut: ;
-			}
-		}
-
-		//
-		// write out individual blocks from the full row block buffer
-		//
-		for ( int rowBlock = 0 ; rowBlock < mtHeader.tilesWide ; rowBlock++ ) {
-			for ( int y = 0 ; y < TILE_SIZE ; y++ ) {
-				out->Write( targa_rgba + ( y * targa_header.width + rowBlock * TILE_SIZE ) * 4, TILE_SIZE * 4 );
-			}
-		}
-	}
-
-	R_StaticFree( targa_rgba );
-
-	GenerateMegaMipMaps( &mtHeader, out );
-
-	delete out;
-	delete file;
-
-	GenerateMegaPreview( outName.c_str() );
-#if 0
-	if ( (targa_header.attributes & (1<<5)) ) {			// image flp bit
-		R_VerticalFlip( *pic, *width, *height );
-	}
-#endif
+	//if (r_megaUpscale.internalVar->integerValue) {
+	//	if (upscaleLevel) {
+	//		UpdateLevelForViewOrigin(upscaleLevel, numLevels, time);
+	//	}
+	//}
+	//else {
+	//	if (upscaleLevel) {
+	//		float timea = upscaleLevel->parms[3];
+	//		auto* maskParams = rbinds->megaMaskParams[numLevels];
+	//		maskParams->data.vector[0] = -1.0f;
+	//		maskParams->data.vector[1] = 0.0f;
+	//		maskParams->data.vector[2] = 0.0f;
+	//		maskParams->data.vector[3] = timea;
+	//
+	//		int numLevelsShifted = 1 << (numLevels + 1);
+	//		auto* textureParams = rbinds->megaTextureParams[numLevels];
+	//		float halfShifted = static_cast<float>(numLevelsShifted) * 0.5f;
+	//		textureParams->data.vector[0] = halfShifted;
+	//		textureParams->data.vector[1] = halfShifted;
+	//		textureParams->data.vector[2] = halfShifted;
+	//		textureParams->data.vector[3] = halfShifted;
+	//	}
+	//
+	//	unsigned int levelIndex = numLevels - 1;
+	//	if (levelIndex <= 3) {
+	//		rbinds->megaTextureOpacity15->data.vector[levelIndex] = 0.0f;
+	//	}
+	//	rbinds->megaTextureLevel[numLevels]->data.attrib = reinterpret_cast<int>(idImage::blackImage);
+	//}
+	//
+	//idImage* grayImage = detailTexture->defaulted || !detailTexture->IsLoaded(detailTexture)
+	//	? idImage::grayImage : detailTexture;
+	//idImage* detailMaskImage = detailTextureMask->defaulted || !detailTextureMask->IsLoaded(detailTextureMask)
+	//	? idImage::defaultDetailMaskImage : detailTextureMask;
+	//
+	//rbinds->megaDetailTexture->data.attrib = reinterpret_cast<int>(grayImage);
+	//rbinds->megaDetailTextureMask->data.attrib = reinterpret_cast<int>(detailMaskImage);
+	//
+	//auto* detailParams = rbinds->megaDetailTextureParams;
+	//float ratio = (static_cast<float>(tilesPerAxis) * 128.0f) / grayImage->uploadWidth;
+	//ratio *= r_detailRatio.internalVar->floatValue;
+	//detailParams->data.vector[0] = ratio;
+	//detailParams->data.vector[1] = 1.0f;
+	//detailParams->data.vector[2] = 1.0f;
+	//detailParams->data.vector[3] = 1.0f;
 }
-
-

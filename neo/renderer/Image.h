@@ -295,6 +295,45 @@ void	R_WriteTGA( const char *filename, const byte *data, int width, int height, 
 void	R_WritePalTGA( const char *filename, const byte *data, const byte *palette, int width, int height, bool flipVertical = false );
 // data is in top-to-bottom raster order unless flipVertical is set
 
+class idImageGeneratorFunctorBase {
+public:
+	virtual ~idImageGeneratorFunctorBase(void) { }
+	virtual void	operator()(class idImage* image) const = 0;
+};
+
+template <class T> class idImageGeneratorFunctor : public idImageGeneratorFunctorBase {
+public:
+	typedef void(T::* func_t)(class idImage* image);
+
+	void			Init(T* generatorClass, func_t imageGenerator) {
+		this->generatorClass = generatorClass;
+		this->imageGenerator = imageGenerator;
+	}
+
+	virtual void	operator()(class idImage* image) const {
+		(*generatorClass.*imageGenerator)(image);
+	}
+
+private:
+	T* generatorClass;
+	func_t			imageGenerator;
+};
+
+class idImageGeneratorFunctorGlobal : public idImageGeneratorFunctorBase {
+public:
+	typedef void(*func_t)(class idImage* image);
+
+	idImageGeneratorFunctorGlobal(func_t imageGenerator) {
+		this->imageGenerator = imageGenerator;
+	}
+
+	virtual void	operator()(class idImage* image) const {
+		imageGenerator(image);
+	}
+
+protected:
+	func_t			imageGenerator;
+};
 
 class idImageManager {
 public:

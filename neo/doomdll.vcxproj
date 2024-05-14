@@ -1321,6 +1321,8 @@
     <ClCompile Include="renderer\Interaction.cpp" />
     <ClCompile Include="renderer\Material.cpp" />
     <ClCompile Include="renderer\MegaTexture.cpp" />
+    <ClCompile Include="renderer\MegaTextureTileDecompressor.cpp" />
+    <ClCompile Include="renderer\MegaTextureTileLoader.cpp" />
     <ClCompile Include="renderer\Model.cpp" />
     <ClCompile Include="renderer\Model_ase.cpp" />
     <ClCompile Include="renderer\Model_beam.cpp" />

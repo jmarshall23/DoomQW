@@ -19,6 +19,24 @@
     <Filter Include="Text">
       <UniqueIdentifier>{767fafaf-96d2-4d2b-b4d8-479344d8537c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Decoders">
+      <UniqueIdentifier>{6126b06d-edb1-4204-9e62-7c8199759c84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encoders">
+      <UniqueIdentifier>{6a16f46a-a1e1-46d5-b448-6c689bf2ea9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Images">
+      <UniqueIdentifier>{47f87f75-cc15-4b66-a987-d6640cbe0b8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Threading">
+      <UniqueIdentifier>{fbd4fb92-ae2a-4a4f-996d-a1d800dcf2df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sys">
+      <UniqueIdentifier>{25ab2e4e-3aa1-4472-a54d-438d93f7357b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sys\Threading">
+      <UniqueIdentifier>{f8c60024-c2c6-465b-95b6-2cd36ef125cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="idlib\bv\Bounds.cpp">
@@ -158,6 +176,42 @@
     <ClCompile Include="idlib\MapFile.cpp" />
     <ClCompile Include="idlib\precompiled.cpp" />
     <ClCompile Include="idlib\Timer.cpp" />
+    <ClCompile Include="idlib\decoders\BareDCTDecoder.cpp">
+      <Filter>Decoders</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\decoders\IDCT_AP922.cpp">
+      <Filter>Decoders</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\decoders\ColorSpace.cpp">
+      <Filter>Decoders</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\decoders\DXTDecoder.cpp">
+      <Filter>Decoders</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\encoders\DXTEncoder.cpp">
+      <Filter>Encoders</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\images\MipMap.cpp">
+      <Filter>Images</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\threading\Lock.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\threading\Signal.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\threading\Thread.cpp">
+      <Filter>Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\sys\threading\SysLock_win.cpp">
+      <Filter>Sys\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\sys\threading\SysSignal_win.cpp">
+      <Filter>Sys\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="idlib\sys\threading\SysThread_win.cpp">
+      <Filter>Sys\Threading</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="idlib\bv\Bounds.h">
@@ -348,5 +402,53 @@
     <ClInclude Include="idlib\MapFile.h" />
     <ClInclude Include="idlib\precompiled.h" />
     <ClInclude Include="idlib\Timer.h" />
+    <ClInclude Include="idlib\decoders\BareDCTDecoder.h">
+      <Filter>Decoders</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\decoders\Decoder_local.h">
+      <Filter>Decoders</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\decoders\ColorSpace.h">
+      <Filter>Decoders</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\decoders\DXTDecoder.h">
+      <Filter>Decoders</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\encoders\DXTEncoder.h">
+      <Filter>Encoders</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\containers\Sort.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\images\MipMap.h">
+      <Filter>Images</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\threading\Atomic.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\threading\Lock.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\threading\Signal.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\threading\Thread.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\threading\ThreadingDefs.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\threading\ThreadProcess.h">
+      <Filter>Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\sys\threading\SysLock.h">
+      <Filter>Sys\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\sys\threading\SysSignal.h">
+      <Filter>Sys\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="idlib\sys\threading\SysThread.h">
+      <Filter>Sys\Threading</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

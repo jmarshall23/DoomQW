@@ -26,74 +26,258 @@ If you have questions concerning this license or the applicable additional terms
 ===========================================================================
 */
 
-class idTextureTile {
+class idMegaTextureLevel;
+class idRenderWorldLocal;
+
+#include <vector>
+#include <atomic>
+#include <chrono>
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+
+// tileData_t Class Definition
+class tileData_t {
 public:
-	int		x, y;
+	// Constructor
+	tileData_t();
+
+	// Destructor
+	~tileData_t();
+
+	// Data Members
+	int x;
+	int y;
+	int tileBase;
+	char* pic;
+	idLinkList<tileData_t> node;
 };
 
-static const int TILE_PER_LEVEL = 4;
-static const int MAX_MEGA_CHANNELS = 3;		// normal, diffuse, specular
-static const int MAX_LEVELS = 12;
-static const int MAX_LEVEL_WIDTH = 512;
-static const int TILE_SIZE = MAX_LEVEL_WIDTH / TILE_PER_LEVEL;
 
-class	idMegaTexture;
-
-class idTextureLevel {
-public:
-	idMegaTexture	*mega;
-
-	int				tileOffset;
-	int				tilesWide;
-	int				tilesHigh;
-
-	idImage			*image;
-	idTextureTile	tileMap[TILE_PER_LEVEL][TILE_PER_LEVEL];
-
-	float			parms[4];
-
-	void			UpdateForCenter( float center[2] );
-	void			UpdateTile( int localX, int localY, int globalX, int globalY );
-	void			Invalidate();
+enum imageCompressionFormat_t : __int32
+{
+	IMAGE_COMPRESSION_NONE = 0x8058,
+	IMAGE_COMPRESSION_DXT1 = 0x83F0,
+	IMAGE_COMPRESSION_DXT5 = 0x83F3,
 };
 
-typedef struct {
-	int		tileSize;
-	int		tilesWide;
-	int		tilesHigh;
-} megaTextureHeader_t;
+enum megaCompressionFormat_t : __int32
+{
+	MEGA_COMPRESSION_NONE = 0x0,
+	MEGA_COMPRESSION_RGB = 0x1,
+	MEGA_COMPRESSION_RGBA = 0x2,
+	MEGA_COMPRESSION_LUM = 0x3,
+};
+
+// idMegaTextureTile Class Definition
+class idMegaTextureTile {
+public:
+	// Member Functions
+	void __thiscall Purge();
+	void __thiscall Upload(idMegaTexture* megaTexture);
+	char __thiscall IsLoaded();
+	char* __thiscall GetCompressedTileData();
+	char* __thiscall GetChildCompressedTileData(const int index);
+	void __thiscall PostInit();
+	bool __thiscall SetCachedTileData(idMegaTexture* megaTexture, const int tileBase, const int tilesPerAxis);
+	void __thiscall ReleaseTileData();
+
+	// Data Members
+	idMegaTextureLevel* level;
+	idLinkList<idMegaTextureTile> dirtyNode;
+	int localX;
+	int localY;
+	int globalX;
+	int globalY;
+	unsigned __int8* compressedTileData;
+	unsigned __int8* childCompressedTileData[4];
+	tileData_t* tileData;
+	bool dirty;
+	bool loaded;
+	bool cached;
+};
+
+class idMegaTextureTileDecompressor : public sdThreadProcess {
+public:
+	virtual ~idMegaTextureTileDecompressor();
+	void DecompressLuminance(char* destination);
+	void DecompressTile(megaCompressionFormat_t format, char* destination);
+	void RecompressTile(imageCompressionFormat_t format, char* source, char* tileData);
+	void DecompressLuminance_MMX(char* destination);
+	void DecompressTile_MMX(megaCompressionFormat_t format, char* destination);
+	void RecompressTile_MMX(imageCompressionFormat_t format, char* source, char* tileData);
+	void DecompressLuminance_SSE2(char* destination);
+	void DecompressTile_SSE2(megaCompressionFormat_t format, char* destination);
+	void RecompressTile_SSE2(imageCompressionFormat_t format, char* source, char* tileData);
+	void DecompressLuminance_Xenon(char* destination);
+	void DecompressTile_Xenon(megaCompressionFormat_t format, char* destination);
+	void RecompressTile_Xenon(imageCompressionFormat_t format, char* source, char* tileData);
+	void GetCompressedTileData(idMegaTexture* mega, idMegaTextureLevel* level, idMegaTextureTile* tile);
+	void Stop();
+	static idMegaTextureTileDecompressor* VectorDeletingDestructor(idMegaTextureTileDecompressor* this, unsigned int a2);
+	void StartThread();
+	void SetActiveMegaTexture(idMegaTexture* megaTexture);
+	void Init();
+	void Shutdown();
+	unsigned int Run(void* parm);
+
+	static idCVar r_megaTilesPerSecond;
+	static idCVar r_megaShowGrid;
+	static idCVar r_megaShowTileSize;
+private:
+	struct compressedTileData_t
+	{
+		int globalX;
+		int globalY;
+		unsigned __int8* data;
+		int size;
+		int parentLevelNum;
+		int parentGlobalX;
+		int parentGlobalY;
+		unsigned __int8* parentData;
+		int parentSize;
+		int parentCachedLevelNum;
+		int parentCachedGlobalX;
+		int parentCachedGlobalY;
+		unsigned __int8* parentCachedData;
+	};
+private:
+	idBareDctDecoder* dctDecoder;
+	idDxtEncoder* dxtEncoder;
+	sdThread* thread;
+	idMegaTexture* activeMegaTexture;
+	cpuid_t cpuid;
+	int terminate;
+	sdSignal signal;
+	sdSignal throttleSignal;
+	compressedTileData_t compressedData;
+	int numProcessedTiles;
+	int numTilesThisMsec;
+	int lastProcessedTime;
+};
+
+// idMegaTextureLevel Class Definition
+class idMegaTextureLevel {
+public:
+	// Member Functions
+	void Init(idMegaTexture* megaTexture, int levelNum, int tileBase, int tilesPerAxis, bool activateImage, megaCompressionFormat_t megaCompressionFormat, int maxCompressedTileSize);
+	void InitTileCache();
+	void ShutdownTileCache();
+	bool UpdateForCenter(const idVec2* center, bool force);
+	void EmptyLevelImage(idImage* image);
+	tileData_t* __thiscall FindCachedTile(const int tileBase, const int globalX, const int globalY);
+	tileData_t* __thiscall GetAvailableTile();
+	void __thiscall ReleaseTile(tileData_t* tileData);
+	void __thiscall AddDirtyTile(idMegaTextureTile* tile);
+	void __thiscall RemoveDirtyTile(idMegaTextureTile* tile);
+	void __thiscall UpdateLevelForViewOrigin(int idx, int time);
+	void __thiscall idMegaTextureLevel::UploadTiles(int time);
+
+	// Data Members
+	idImageGeneratorFunctor<idMegaTextureLevel> emptyLevelImageFunctor;
+	idMegaTexture* megaTexture;
+	int levelNum;
+	int usedMemory;
+	idImage* image;
+	bool imageValid;
+	int tileBase;
+	int tilesPerAxis;
+	megaCompressionFormat_t megaCompressionFormat;
+	bool isInterleaved;
+	int fadeTime;
+	idMegaTextureTile tiles[16][16];
+	bool alwaysCached;
+	char* compressedData;
+	unsigned char** compressedTiles;
+	int compressedTilesPerAxis;
+	tileData_t* tileCache;
+	int tileCacheSize;
+	int maxCompressedTileSize;
+	float parms[4];
+	float newParms[2];
+	idLinkList<tileData_t> availableTiles;
+	idLinkList<idMegaTextureTile> activeTiles;
+	bool dirty;
+	idLinkList<idMegaTextureTile> dirtyTiles;
+};
 
 
 class idMegaTexture {
 public:
-	bool	InitFromMegaFile( const char *fileBase );
-	void	SetMappingForSurface( const srfTriangles_t *tri );	// analyzes xyz and st to create a mapping
-	void	BindForViewOrigin( const idVec3 origin );	// binds images and sets program parameters
-	void	Unbind();								// removes texture bindings
+	// Constructor
+	idMegaTexture();
 
-	static	void MakeMegaTexture_f( const idCmdArgs &args );
-private:
-friend class idTextureLevel;
-	void	SetViewOrigin( const idVec3 origin );
-	static void	GenerateMegaMipMaps( megaTextureHeader_t *header, idFile *file );
-	static void	GenerateMegaPreview( const char *fileName );
+	// Destructor
+	~idMegaTexture();
 
-	idFile			*fileHandle;
+	// Member Functions
+	static int __cdecl GetCompressedTotalKiloBytesReadPerSecond();
+	void __thiscall ShowMemoryUsage(idCmdArgs* args);
+	static void __cdecl MegaShowMemoryUsage_f(idCmdArgs* args);
+	void __thiscall GenerateNullTileData();
+	void __thiscall GenerateGridTileData();
+	void __thiscall AllocRecompressionScratch();
+	void __thiscall LoadDetailTexture();
+	void __thiscall Reset();
+	void __thiscall UpdateMapping(idRenderWorldLocal* world);
+	void __stdcall UpdateLevelForViewOrigin(idMegaTextureLevel* level, int idx, int time);
+	char __thiscall CloseFile();
+	int __thiscall SeekToTile(int tileNum);
+	void __thiscall TestStreamingPerformance(idCmdArgs* args);
+	static void __cdecl MegaTestStreamingPerformance_f(idCmdArgs* args);
+	int GetPureServerChecksum(unsigned int offset);
+	bool OpenFile();
+	void __thiscall Touch();
+	bool InitFromFile(const char* fileBase);
+	bool UploadTiles(int time);
+	void __thiscall ForceUpdate();
+	void UpdateForViewOrigin(const idVec3* viewOrigin, int time);
+	void __thiscall OnUseMegaTextureCompressionChange();
+	static int __cdecl TotalStoredTileCount(const int resolution);
 
-	const srfTriangles_t *currentTriMapping;
-
-	idVec3			currentViewOrigin;
-
-	float			localViewToTextureCenter[2][4];
-
-	int				numLevels;
-	idTextureLevel	levels[MAX_LEVELS];				// 0 is the highest resolution
-	megaTextureHeader_t	header;
-
-	static idCVar	r_megaTextureLevel;
-	static idCVar	r_showMegaTexture;
-	static idCVar	r_showMegaTextureLabels;
-	static idCVar	r_skipMegaTexture;
-	static idCVar	r_terrainScale;
+	// Data Members
+	idStr name;
+	void* winFile;
+	int numLevels;
+	int winFileBlockOffset;
+	int winFileNumBlocks;
+	int version;
+	int resolution;
+	bool purged;
+	idFile* file;
+	int lastTileOffset;
+	void* winFileScratch;
+	imageCompressionFormat_t imageCompressionFormat;
+	bool useImageCompression;
+	bool forcedUpdate;
+	idImage* detailTexture;
+	idImage* detailTextureMask;
+	int lastUsedFrame;
+	idRenderWorldLocal* currentWorld;
+	idMegaTextureLevel* levels;
+	idMegaTextureLevel* upscaleLevel;
+	idVec2* stGrid;
+	//sdLock lock;
+	idVec3 currentViewOrigin;
+	int lastShaderQuality;
 };
 
+class idMegaTextureTileLoader {
+public:
+	idMegaTextureTileLoader();
+	~idMegaTextureTileLoader();
+
+	std::atomic<bool> terminate;
+	std::atomic<int> numProcessedTiles;
+	idMegaTexture* activeMegaTexture;
+	std::condition_variable signal;
+	std::condition_variable throttleSignal;
+	std::thread* thread;
+
+	~idMegaTextureTileLoader();
+	void StartThread();
+	void SetActiveMegaTexture(idMegaTexture* megaTexture);
+	void ForceUpdate();
+	void Init();
+	unsigned int Run(void* parm);
+};

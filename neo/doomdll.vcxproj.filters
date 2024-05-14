@@ -1829,6 +1829,12 @@
     <ClCompile Include="cm\CollisionModel.cpp">
       <Filter>CM</Filter>
     </ClCompile>
+    <ClCompile Include="renderer\MegaTextureTileLoader.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer\MegaTextureTileDecompressor.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="openal\idal.py">

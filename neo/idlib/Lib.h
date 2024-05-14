@@ -255,4 +255,19 @@ template<class T> ID_INLINE T	Min( T x, T y ) { return ( x < y ) ? x : y; }
 
 #include "images/MipMap.h"
 
+// Threading
+#define threadPriority_e xthreadPriority
+#include "threading/ThreadingDefs.h"
+
+#include "sys/threading/SysThread.h"
+#include "sys/threading/SysSignal.h"
+#include "sys/threading/SysLock.h"
+
+#include "threading/Atomic.h"
+#include "threading/Lock.h"
+#include "threading/Signal.h"
+#include "threading/Thread.h"
+#include "threading/ThreadProcess.h"
+
+
 #endif	/* !__LIB_H__ */

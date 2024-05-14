@@ -86,6 +86,12 @@ public:
 	virtual int				ReadUnsignedShort( unsigned short &value );
 	virtual int				ReadChar( char &value );
 	virtual int				ReadUnsignedChar( unsigned char &value );
+	unsigned char			ReadUnsignedChar() {
+		unsigned char value;
+		ReadUnsignedChar(value);
+		return value;
+	}
+
 	virtual int				ReadFloat( float &value );
 	virtual int				ReadBool( bool &value );
 	virtual int				ReadString( idStr &string );
