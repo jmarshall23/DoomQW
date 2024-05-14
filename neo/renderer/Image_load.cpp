@@ -478,6 +478,110 @@ void idImage::GetDownsize( int &scaled_width, int &scaled_height ) const {
 }
 
 /*
+===================
+idImage::GenerateImageEx
+===================
+*/
+void idImage::GenerateImageEx(const unsigned char* pic,int width, int height,textureFilter_t filterParm, bool allowDownSizeParm,  textureRepeat_t repeatParm, textureDepth_t depthParm, int internalFormatParm, int numMipLevels)
+{
+	PurgeImage();
+
+	filter = filterParm;
+	allowDownSize = allowDownSizeParm;
+	repeat = repeatParm;
+	depth = depthParm;
+
+	if (!glConfig.isInitialized) 
+		return;
+
+	// make sure it is a power of 2
+	int scaled_width = MakePowerOfTwo(width);
+	int scaled_height = MakePowerOfTwo(height);
+
+	//this->sourceWidth = scaledWidth;
+	//this->sourceHeight = scaledHeight;
+
+	if (scaled_width != width || scaled_height != height) {
+		common->Warning("R_CreateImageEx: not a power of 2 image");
+	}
+
+	GetDownsize(scaled_width, scaled_height);
+
+	qglGenTextures(1, &texnum);
+
+	int internalFormat = internalFormatParm ? internalFormatParm : SelectInternalFormat( & pic, 1, width, height, this->depth, nullptr);
+
+	internalFormat = internalFormat;
+	uploadWidth = scaled_width;
+	uploadHeight = scaled_height;
+	type = TT_2D;
+
+	union Color {
+		uint32_t color;
+		byte bytes[4];
+	} borderColor;
+
+	if (repeat == TR_CLAMP_TO_ZERO) {
+		borderColor.color = 0xFF000000;
+		R_SetBorderTexels((byte*)pic, width, height, borderColor.bytes);
+	}
+	else if (repeat == TR_CLAMP_TO_ZERO_ALPHA) {
+		borderColor.color = 0x00FFFFFF;
+		R_SetBorderTexels((byte*)pic, width, height, borderColor.bytes);
+	}
+
+	//if (!this->generatorFunction && !this->fromParams && this->depth == TD_BUMP) {
+	//	if (!idImageManager::image_writeNormalTGA.GetInteger() && !idImageManager::image_useOffLineCompression.GetInteger()) {
+	//		return;
+	//	}
+	//}
+	//else if (!idImageManager::image_writeTGA.GetInteger()) {
+	//	return;
+	//}
+
+	char filename[MAX_OSPATH];
+	idStr::snPrintf(filename, sizeof(filename), "%s.tga", this->imgName.c_str());
+	//idStr::BackSlashesToSlashes(filename);
+	//
+	//if (idImageManager::image_skipUpload.GetInteger()) {
+	//	return;
+	//}
+
+	this->BindFragment();
+
+	if (internalFormat == GL_SHARED_TEXTURE_PALETTE_EXT) {
+		UploadCompressedNormalMap(scaled_width, scaled_height, pic, 0);
+	}
+	else {
+		qglTexImage2D(GL_TEXTURE_2D, 0, internalFormat, scaled_width, scaled_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, pic);
+	}
+
+	for (int level = 1; scaled_width > 1 || scaled_height > 1; ++level) {
+		if (scaled_width > 1) scaled_width >>= 1;
+		if (scaled_height > 1) scaled_height >>= 1;
+
+		unsigned char* mip = R_MipMap(pic, scaled_width, scaled_height, false);
+		if (this->depth == TD_DIFFUSE && idImageManager::image_colorMipLevels.GetInteger()) {
+			R_BlendOverTexture(mip, scaled_width * scaled_height, mipBlendColors[level]);
+		}
+
+		if (internalFormat == GL_SHARED_TEXTURE_PALETTE_EXT) {
+			UploadCompressedNormalMap(scaled_width, scaled_height, mip, level);
+		}
+		else {
+			qglTexImage2D(GL_TEXTURE_2D, level, internalFormat, scaled_width, scaled_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, mip);
+		}
+
+		if (numMipLevels >= 0 && level >= numMipLevels - 1) break;
+	}
+
+	SetImageFilterAndRepeat();
+	if (numMipLevels >= 0) {
+		qglTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, numMipLevels - 1);
+	}
+}
+
+/*
 ================
 GenerateImage
 
@@ -1579,7 +1683,7 @@ void	idImage::ActuallyLoadImage( bool checkForPrecompressed, bool fromBackEnd ) 
 
 	// this is the ONLY place generatorFunction will ever be called
 	if ( generatorFunction ) {
-		generatorFunction( this );
+		(*generatorFunction)(this);
 		return;
 	}
 

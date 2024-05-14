@@ -4,7 +4,7 @@
 #include "precompiled.h"
 #include "tr_local.h"
 
-idMegaTextureTileDecompressor megaTileDecompressor;
+idMegaTextureTileDecompressor megaTextureTileDecompressor;
 
 // Destructor
 idMegaTextureTileDecompressor::~idMegaTextureTileDecompressor() {

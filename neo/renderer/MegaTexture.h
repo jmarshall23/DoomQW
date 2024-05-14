@@ -41,12 +41,6 @@ class idRenderWorldLocal;
 // tileData_t Class Definition
 class tileData_t {
 public:
-	// Constructor
-	tileData_t();
-
-	// Destructor
-	~tileData_t();
-
 	// Data Members
 	int x;
 	int y;
@@ -213,7 +207,7 @@ public:
 	void Reset();
 	void UpdateMapping(idRenderWorldLocal* world);
 	void UpdateLevelForViewOrigin(idMegaTextureLevel* level, int idx, int time);
-	char __thiscall CloseFile();
+	bool CloseFile();
 	unsigned int SeekToTile(int tileIndex);
 	int GetPureServerChecksum(unsigned int offset);
 	bool OpenFile();
@@ -263,7 +257,6 @@ public:
 
 class idMegaTextureTileLoader : sdThreadProcess {
 public:
-	idMegaTextureTileLoader();
 	~idMegaTextureTileLoader();
 
 	sdThread* thread;

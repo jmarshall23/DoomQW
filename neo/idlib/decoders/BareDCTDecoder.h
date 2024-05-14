@@ -44,9 +44,6 @@ public:
 	void SetQuality_MMX(int luminance, int chrominance, int alpha);
 	void SetQuality_SSE2(int luminance, int chrominance, int alpha);
 	void SetQuality_Xenon(int luminance, int chrominance, int alpha);
-
-	idBareDctBase(void);
-	~idBareDctBase(void);
 };
 
 class idBareDctDecoder : public idBareDctBase {
@@ -62,9 +59,6 @@ public:
 	int dataBytes;
 	const unsigned __int8* data;
 	unsigned __int8 rangeLimitTable[1408];
-
-	idBareDctDecoder(void);
-	~idBareDctDecoder(void);
 
 	void HuffmanDecode(__int16* coef, const idBareDCTHuffmanTable* dctbl, const idBareDCTHuffmanTable* actbl, int* lastDC);
 

@@ -225,6 +225,8 @@ void idMegaTextureLevel::Init(idMegaTexture* megaTexture, int levelNum, int tile
 	this->megaCompressionFormat = megaCompressionFormat;
 	this->isInterleaved = (levelNum == 0 && megaTexture->numLevels > 4);
 
+	emptyLevelImageFunctor.Init(this, &idMegaTextureLevel::EmptyLevelImage);
+
 	idStr imageName;
 	imageName = "_megaLevel_";
 	imageName += va("%d", levelNum);
@@ -233,11 +235,11 @@ void idMegaTextureLevel::Init(idMegaTexture* megaTexture, int levelNum, int tile
 	if (activateImage) {
 		if (image) {
 			image->generatorFunction = nullptr;
-			image = globalImages->ImageFromFunction(imageName.c_str(), this);
-			image->Reload(image, false, true);
+			image = globalImages->ImageFromFunction(imageName.c_str(), &emptyLevelImageFunctor);
+			image->Reload(false, true);
 		}
 		else {
-			image = globalImages->ImageFromFunction(imageName.c_str(), this);
+			image = globalImages->ImageFromFunction(imageName.c_str(), &emptyLevelImageFunctor);
 		}
 	}
 
@@ -262,9 +264,9 @@ void idMegaTextureLevel::Init(idMegaTexture* megaTexture, int levelNum, int tile
 			}
 		}
 
-		compressedData = static_cast<unsigned __int8*>(Mem_Alloc(totalSize));
+		compressedData = static_cast<char *>(Mem_Alloc(totalSize));
 		usedMemory += totalSize;
-		unsigned __int8* currentDataPtr = compressedData;
+		unsigned __int8* currentDataPtr = (unsigned __int8* )compressedData;
 
 		for (int y = 0; y < tilesPerAxis; ++y) {
 			for (int x = 0; x < tilesPerAxis; ++x) {
@@ -392,7 +394,7 @@ void idMegaTextureLevel::EmptyLevelImage(idImage* image) {
 	}
 
 	// Generate the empty image with the buffer
-	image->GenerateImage(buffer, 2048, 2048, TF_DEFAULT, 0, TR_REPEAT, TD_DEFAULT, imageCompressionFormat, mipLevels);
+	image->GenerateImageEx(buffer, 2048, 2048, TF_DEFAULT, 0, TR_REPEAT, TD_DEFAULT, imageCompressionFormat, mipLevels);
 
 	// Free the allocated buffer
 	Mem_Free(buffer);
@@ -785,7 +787,7 @@ bool idMegaTexture::OpenFile() {
 	}
 
 	if (!winFileScratch) {
-		winFileScratch = Mem_Alloc16(0x100000);
+		winFileScratch = (char *)Mem_Alloc16(0x100000);
 		if (file) {
 			delete file;
 		}
@@ -1120,6 +1122,31 @@ void idMegaTexture::GenerateGridTileData() {
 	} while (rowIndex < 128);
 
 	megaTextureTileDecompressor.RecompressTile(imageCompressionFormat, (char *)recompressionScratch, (char*)gridTileData);
+}
+
+/*
+====================
+idMegaTexture::CloseFile
+====================
+*/
+bool idMegaTexture::CloseFile()
+{
+	if (winFile != INVALID_HANDLE_VALUE) {
+		CloseHandle(winFile);
+		winFile = INVALID_HANDLE_VALUE;
+	}
+
+	if (winFileScratch) {
+		Mem_Free16(winFileScratch);
+		winFileScratch = nullptr;
+	}
+
+	if (file) {
+		delete file;
+		file = nullptr;
+	}
+
+	return 1;
 }
 
 /*

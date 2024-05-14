@@ -922,4 +922,38 @@ private:
 };
 
 
+/*
+========================
+idTempArray::idTempArray
+========================
+*/
+template < class T >
+ID_INLINE idTempArray<T>::idTempArray(idTempArray<T>& other) {
+	this->num = other.num;
+	this->buffer = other.buffer;
+	other.num = 0;
+	other.buffer = NULL;
+}
+
+/*
+========================
+idTempArray::idTempArray
+========================
+*/
+template < class T >
+ID_INLINE idTempArray<T>::idTempArray(unsigned int num) {
+	this->num = num;
+	buffer = (T*)Mem_Alloc(num * sizeof(T));
+}
+
+/*
+========================
+idTempArray::~idTempArray
+========================
+*/
+template < class T >
+ID_INLINE idTempArray<T>::~idTempArray() {
+	Mem_Free(buffer);
+}
+
 #endif /* !__HEAP_H__ */

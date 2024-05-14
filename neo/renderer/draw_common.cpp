@@ -809,10 +809,10 @@ void RB_STD_T_RenderShaderPasses( const drawSurf_t *surf ) {
 
 			// megaTextures bind a lot of images and set a lot of parameters
 			if ( newStage->megaTexture ) {
-				newStage->megaTexture->SetMappingForSurface( tri );
+				newStage->megaTexture->UpdateMapping(backEnd.viewDef->renderWorld);
 				idVec3	localViewer;
 				R_GlobalPointToLocal( surf->space->modelMatrix, backEnd.viewDef->renderView.vieworg, localViewer );
-				newStage->megaTexture->BindForViewOrigin( localViewer );
+				newStage->megaTexture->UpdateForViewOrigin(&backEnd.viewDef->renderView.vieworg, backEnd.viewDef->renderView.time); // was localviewer in doom 3
 			}
 
 			for ( int i = 0 ; i < newStage->numVertexParms ; i++ ) {
@@ -842,9 +842,9 @@ void RB_STD_T_RenderShaderPasses( const drawSurf_t *surf ) {
 					globalImages->BindNull();
 				}
 			}
-			if ( newStage->megaTexture ) {
-				newStage->megaTexture->Unbind();
-			}
+			//if ( newStage->megaTexture ) {
+			//	newStage->megaTexture->Unbind();
+			//}
 
 			GL_SelectTexture( 0 );
 
