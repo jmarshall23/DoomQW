@@ -10,6 +10,194 @@ idCVar r_megaStreamFromDVD("r_megaStreamFromDVD", "0", CVAR_RENDERER | CVAR_INTE
 
 /*
 ===================
+idMegaTextureTile::Purge
+===================
+*/
+void idMegaTextureTile::Purge()
+{
+	globalX = -99999;
+	globalY = -99999;
+	tileData = 0;
+	dirty = 0;
+	loaded = 0;
+	Mem_Free16(compressedTileData);
+	compressedTileData = 0;
+
+	for (int i = 0; i < 4; i++)
+	{
+		Mem_Free16(childCompressedTileData[i]);
+		childCompressedTileData[i] = nullptr;
+	}
+}
+
+/*
+===================
+idMegaTextureTile::Upload
+===================
+*/
+void idMegaTextureTile::Upload(idMegaTexture* megaTexture) {
+	if (!dirty) return;
+
+	//if (megaTexture->r_skipMegaTextureUpload.internalVar->integerValue) {
+	//	dirty = false;
+	//	return;
+	//}
+
+	unsigned char* data = (unsigned char* )(tileData ? (unsigned char*)tileData->pic : megaTexture->nullTileData);
+	int size = 128;
+	int level = 0;
+	int offset = 0;
+
+	if (megaTexture->imageCompressionFormat == IMAGE_COMPRESSION_NONE) {
+		while (size >= 4) {
+			qglTexSubImage2D(0xDE1, level, size * localX, size * localY, size, size, 0x1908, 0x1401, &data[offset]);
+			offset += 4 * size * size;
+			size >>= 1;
+			++level;
+		}
+	}
+	else if (megaTexture->imageCompressionFormat == IMAGE_COMPRESSION_DXT1) {
+		while (size >= 4) {
+			qglCompressedTexSubImage2DARB(0xDE1, level, size * localX, size * localY, size, size, 0x83F0, 8 * ((size + 3) / 4) * ((size + 3) / 4), &data[offset]);
+			offset += 8 * ((size + 3) / 4) * ((size + 3) / 4);
+			size >>= 1;
+			++level;
+		}
+	}
+	else if (megaTexture->imageCompressionFormat == IMAGE_COMPRESSION_DXT5) {
+		while (size >= 4) {
+			qglCompressedTexSubImage2DARB(0xDE1, level, size * localX, size * localY, size, size, 0x83F3, 16 * ((size + 3) / 4) * ((size + 3) / 4), &data[offset]);
+			offset += 16 * ((size + 3) / 4) * ((size + 3) / 4);
+			size >>= 1;
+			++level;
+		}
+	}
+
+	dirty = false;
+}
+
+/*
+===================
+idMegaTextureTile::IsLoaded
+===================
+*/
+bool idMegaTextureTile::IsLoaded()
+{
+	if (level->alwaysCached)
+		return 1;
+	if (level->isInterleaved)
+		return level->megaTexture->levels[level->levelNum + 1].tiles[(this->globalX >> 1) & 0xF][(this->globalY >> 1) & 0xF].IsLoaded();
+	return loaded;
+}
+
+/*
+===================
+idMegaTextureTile::GetCompressedTileData
+===================
+*/
+unsigned __int8* idMegaTextureTile::GetCompressedTileData()
+{
+	idMegaTextureLevel* level;
+	unsigned __int8* result; 
+
+	level = this->level;
+	if (this->level->isInterleaved)
+		return (&level->megaTexture->levels[level->levelNum + 1].tiles[(this->globalX >> 1) & 0xF][(this->globalY >> 1) & 0xF].childCompressedTileData[2 * (this->globalY & 1)])[this->globalX & 1];
+	result = this->compressedTileData;
+	if (!result)
+		return (&level->compressedTiles[this->globalX % level->compressedTilesPerAxis])[level->compressedTilesPerAxis
+		* (this->globalY
+			% level->compressedTilesPerAxis)];
+	return result;
+}
+
+/*
+===================
+idMegaTextureTile::PostInit
+===================
+*/
+void idMegaTextureTile::PostInit() {
+	int memoryUsed = 0;
+	int previousLevelIndex = level->levelNum - 1;
+
+	if (previousLevelIndex >= 0) {
+		idMegaTextureLevel& previousLevel = level->megaTexture->levels[previousLevelIndex];
+
+		if (previousLevel.isInterleaved) {
+			size_t maxCompressedTileSize = previousLevel.maxCompressedTileSize;
+			int numChildren = 4;
+
+			for (int i = 0; i < numChildren; ++i) {
+				childCompressedTileData[i] = reinterpret_cast<unsigned char*>(Mem_Alloc16(maxCompressedTileSize + 3));
+				memoryUsed += maxCompressedTileSize + 3;
+			}
+		}
+	}
+
+	level->usedMemory += memoryUsed;
+}
+
+/*
+===================
+idMegaTextureTile::PostInit
+===================
+*/
+bool idMegaTextureTile::SetCachedTileData(idMegaTexture* megaTexture, int tileBase, int tilesPerAxis) {
+	if (!dirty) {
+		return 1;
+	}
+
+	if (globalX >= tilesPerAxis || globalX < 0 || globalY >= tilesPerAxis || globalY < 0) {
+		tileData = nullptr;
+		return 0;
+	}
+
+	tileData = level->FindCachedTile(tileBase, globalX, globalY);
+	if (tileData) {
+		return 1;
+	}
+
+	if (level->isInterleaved) {
+		idMegaTextureLevel* nextLevel = &level->megaTexture->levels[level->levelNum + 1];
+		idMegaTextureTile* neighborTile = &nextLevel->tiles[(globalX >> 1) & 0xF][(globalY >> 1) & 0xF];
+
+		if (!neighborTile->IsLoaded()) {
+			neighborTile->ReleaseTileData();
+
+			if (neighborTile->dirtyNode.head == &neighborTile->dirtyNode) {
+				nextLevel->AddDirtyTile(neighborTile);
+			}
+		}
+	}
+
+	level->AddDirtyTile(this);
+	return 0;
+}
+
+/*
+===================
+idMegaTextureTile::ReleaseTileData
+===================
+*/
+void idMegaTextureTile::ReleaseTileData()
+{
+	tileData_t* tileData;
+
+	tileData = tileData;
+	if (tileData)
+	{
+		level->ReleaseTile(tileData);
+		tileData = 0;
+	}
+	dirtyNode.prev->next = dirtyNode.next;
+	dirtyNode.next->prev = dirtyNode.prev;
+	dirtyNode.next = &dirtyNode;
+	dirtyNode.prev = &dirtyNode;
+	dirtyNode.head = &dirtyNode;
+}
+
+/*
+===================
 idMegaTextureLevel::Init
 ===================
 */
