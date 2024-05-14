@@ -6,6 +6,8 @@
 
 #include "tr_local.h"
 
+idMegaTextureTileLoader megaTextureTileLoader;
+
 int tileLoadSeek[8192] = {};
 int tileLoadData[8192] = {};
 int tileLoadTimes[8192] = {};

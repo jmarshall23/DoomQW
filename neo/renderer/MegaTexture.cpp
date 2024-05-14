@@ -482,7 +482,7 @@ bool idMegaTextureLevel::UpdateForCenter(const idVec2* center, bool force) {
 
 /*
 ===================
-idMegaTexture::ShutdownTileCache
+idMegaTextureLevel::ShutdownTileCache
 ===================
 */
 void idMegaTextureLevel::ShutdownTileCache() {
@@ -508,6 +508,241 @@ void idMegaTextureLevel::ShutdownTileCache() {
 
 	// Reset the tile cache size to 0
 	this->tileCacheSize = 0;
+}
+
+/*
+===================
+idMegaTextureLevel::FindCachedTile
+===================
+*/
+tileData_t* idMegaTextureLevel::FindCachedTile(int tileBase, int globalX, int globalY)
+{
+	idLinkList<tileData_t>* next;
+	tileData_t* result; 
+	idLinkList<tileData_t>* v6;
+	idLinkList<tileData_t>* head; 
+
+	next = this->availableTiles.next;
+	if (!next || next == this->availableTiles.head)
+		return 0;
+	result = next->owner;
+	if (result)
+	{
+		while (result->tileBase != tileBase || result->x != globalX || result->y != globalY)
+		{
+			v6 = result->node.next;
+			if (!v6 || v6 == result->node.head)
+				return 0;
+			result = v6->owner;
+			if (!result)
+				return result;
+		}
+		head = activeTiles.head;
+		result->node.prev->next = result->node.next;
+		result->node.next->prev = result->node.prev;
+		result->node.prev = &result->node;
+		result->node.head = &result->node;
+		result->node.next = head;
+		result->node.prev = head->prev;
+		head->prev = &result->node;
+		result->node.prev->next = &result->node;
+		result->node.head = head->head;
+	}
+	return result;
+}
+
+/*
+===================
+idMegaTextureLevel::GetAvailableTile
+===================
+*/
+tileData_t* idMegaTextureLevel::GetAvailableTile() {
+	idLinkList<tileData_t> * next = availableTiles.next;
+	tileData_t* owner;
+
+	if (!next || next == availableTiles.head) {
+		owner = nullptr;
+		common->FatalError("idMegaTexture::GetFreeTile : no available cache tiles");
+		return nullptr;
+	}
+
+	owner = next->owner;
+	if (!owner) {
+		common->FatalError("idMegaTexture::GetFreeTile : no available cache tiles");
+		return nullptr;
+	}
+
+	owner->tileBase = -1;
+	owner->x = -1;
+	owner->y = -1;
+
+	idLinkList<tileData_t>* head = activeTiles.head;
+	owner->node.prev->next = owner->node.next;
+	owner->node.next->prev = owner->node.prev;
+
+	owner->node.prev = &owner->node;
+	owner->node.head = &owner->node;
+	owner->node.next = head;
+	owner->node.prev = head->prev;
+	head->prev = &owner->node;
+	owner->node.prev->next = &owner->node;
+	owner->node.head = head->head;
+
+	return owner;
+}
+
+/*
+===================
+idMegaTexture::ReleaseTile
+===================
+*/
+void idMegaTextureLevel::ReleaseTile(tileData_t* tileData)
+{
+	idLinkList<tileData_t>* v2; 
+	idLinkList<tileData_t>* head; 
+
+	if (tileData->x == -1 || tileData->y == -1 || tileData->tileBase == -1)
+	{
+		head = this->availableTiles.head;
+		tileData->node.prev->next = tileData->node.next;
+		tileData->node.next->prev = tileData->node.prev;
+		tileData->node.next = &tileData->node;
+		tileData->node.head = &tileData->node;
+		tileData->node.prev = head;
+		tileData->node.next = head->next;
+		head->next = &tileData->node;
+		tileData->node.next->prev = &tileData->node;
+		tileData->node.head = head->head;
+	}
+	else
+	{
+		v2 = this->availableTiles.head;
+		tileData->node.prev->next = tileData->node.next;
+		tileData->node.next->prev = tileData->node.prev;
+		tileData->node.prev = &tileData->node;
+		tileData->node.head = &tileData->node;
+		tileData->node.next = v2;
+		tileData->node.prev = v2->prev;
+		v2->prev = &tileData->node;
+		tileData->node.prev->next = &tileData->node;
+		tileData->node.head = v2->head;
+	}
+}
+
+/*
+===================
+idMegaTexture::OpenFile
+===================
+*/
+void idMegaTextureLevel::AddDirtyTile(idMegaTextureTile* tile)
+{
+	int* tileIndexMap;
+	idLinkList<idMegaTextureTile>* head;
+	idLinkList<idMegaTextureTile>* next;
+	idMegaTextureTile* owner;
+	idLinkList<idMegaTextureTile>* v6;
+
+	tileIndexMap = this->megaTexture->tileIndexMap;
+	head = this->dirtyTiles.head;
+	next = head->next;
+	if (next && next != head->head && (owner = next->owner) != 0)
+	{
+		while (tileIndexMap[tile->globalY + tile->level->tileBase + tile->globalX * tile->level->tilesPerAxis] >= tileIndexMap[owner->globalY + owner->level->tileBase + owner->globalX * owner->level->tilesPerAxis])
+		{
+			v6 = owner->dirtyNode.next;
+			if (v6)
+			{
+				if (v6 != owner->dirtyNode.head)
+				{
+					owner = v6->owner;
+					if (owner)
+						continue;
+				}
+			}
+			goto LABEL_8;
+		}
+		tile->dirtyNode.prev->next = tile->dirtyNode.next;
+		tile->dirtyNode.next->prev = tile->dirtyNode.prev;
+		tile->dirtyNode.prev = &tile->dirtyNode;
+		tile->dirtyNode.head = &tile->dirtyNode;
+		tile->dirtyNode.next = &owner->dirtyNode;
+		tile->dirtyNode.prev = owner->dirtyNode.prev;
+		owner->dirtyNode.prev = &tile->dirtyNode;
+		tile->dirtyNode.prev->next = &tile->dirtyNode;
+		tile->dirtyNode.head = owner->dirtyNode.head;
+	}
+	else
+	{
+	LABEL_8:
+		tile->dirtyNode.prev->next = tile->dirtyNode.next;
+		tile->dirtyNode.next->prev = tile->dirtyNode.prev;
+		tile->dirtyNode.prev = &tile->dirtyNode;
+		tile->dirtyNode.head = &tile->dirtyNode;
+		tile->dirtyNode.next = head;
+		tile->dirtyNode.prev = head->prev;
+		head->prev = &tile->dirtyNode;
+		tile->dirtyNode.prev->next = &tile->dirtyNode;
+		tile->dirtyNode.head = head->head;
+	}
+	megaTextureTileLoader.signal.Set();
+}
+
+/*
+===================
+idMegaTexture::RemoveDirtyTile
+===================
+*/
+void idMegaTextureLevel::RemoveDirtyTile(idMegaTextureTile* tile)
+{
+	tile->dirtyNode.prev->next = tile->dirtyNode.next;
+	tile->dirtyNode.next->prev = tile->dirtyNode.prev;
+	tile->dirtyNode.next = &tile->dirtyNode;
+	tile->dirtyNode.prev = &tile->dirtyNode;
+	tile->dirtyNode.head = &tile->dirtyNode;
+}
+
+/*
+===================
+idMegaTexture::UploadTiles
+===================
+*/
+void idMegaTextureLevel::UploadTiles(int time) {
+	if (dirty) {
+		idLinkList<idMegaTextureTile> * next = dirtyTiles.next;
+		if (next && next != dirtyTiles.head && next->owner) {
+			return;
+		}
+
+		int cleanCount = 256;
+		bool* p_dirty = &tiles[0][1].dirty;
+
+		for (int i = 0; i < 16; ++i) {
+			for (int j = 0; j < 4; ++j) {
+				if (*(p_dirty - 64)) --cleanCount;
+				if (*p_dirty) --cleanCount;
+				if (p_dirty[64]) --cleanCount;
+				if (p_dirty[128]) --cleanCount;
+				p_dirty += 256;
+			}
+		}
+
+		if (cleanCount < 128) {
+			fadeTime = time;
+		}
+
+		//image->BindFragment(image); // jmarshall <-- fix
+		parms[0] = newParms[0];
+		parms[1] = newParms[1];
+
+		for (int i = 0; i < 16; ++i) {
+			for (int j = 0; j < 16; ++j) {
+				tiles[i][j].Upload(megaTexture);
+			}
+		}
+
+		imageValid = true;
+		dirty = false;
+	}
 }
 
 /*
@@ -661,6 +896,52 @@ int idMegaTexture::GetPureServerChecksum(unsigned int offset) {
 	fileSystem->CloseFile(file);
 	fileName.FreeData();
 	return checksum;
+}
+
+/*
+====================
+idMegaTexture::UpdateForViewOrigin
+====================
+*/
+void idMegaTexture::UpdateLevelForViewOrigin(idMegaTextureLevel* level, int idx, int time)
+{
+	//const sdDeclRenderBinding* v5; // ecx
+	//const sdDeclRenderBinding* v6; // ecx
+	//int fadeTime; // ecx
+	//float opacitya; // [esp+8h] [ebp+4h]
+	//float opacity; // [esp+8h] [ebp+4h]
+	//
+	//if (level->imageValid)
+	//{
+	//	v5 = rbinds->megaMaskParams[idx];
+	//	v5->data.vector[0] = level->parms[0];
+	//	v5->data.vector[1] = level->parms[1];
+	//	v5->data.vector[2] = level->parms[2];
+	//	v5->data.vector[3] = level->parms[3];
+	//	v6 = rbinds->megaTextureParams[idx];
+	//	opacitya = (double)(1 << (idx + 1)) * 0.5;
+	//	v6->data.vector[3] = opacitya;
+	//	v6->data.vector[2] = opacitya;
+	//	v6->data.vector[1] = opacitya;
+	//	v6->data.vector[0] = opacitya;
+	//}
+	//opacity = 1.0;
+	//fadeTime = level->fadeTime;
+	//if (fadeTime > time - idMegaTexture::r_megaFadeTime.internalVar->integerValue)
+	//	opacity = (double)(time - fadeTime) / (double)idMegaTexture::r_megaFadeTime.internalVar->integerValue;
+	//if ((unsigned int)(idx - 1) <= 3)
+	//	*((float*)&rbinds->megaTextureOpacity15->infrequent + idx) = opacity;
+	//if (idMegaTexture::r_showMegaTextureLevels.internalVar->integerValue)
+	//{
+	//	if ((idx & 1) != 0)
+	//		rbinds->megaTextureLevel[idx]->data.attrib = (int)globalImages->blackImage;
+	//	else
+	//		rbinds->megaTextureLevel[idx]->data.attrib = (int)globalImages->whiteImage;
+	//}
+	//else
+	//{
+	//	rbinds->megaTextureLevel[idx]->data.attrib = (int)level->image;
+	//}
 }
 
 /*

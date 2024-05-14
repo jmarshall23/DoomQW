@@ -75,14 +75,18 @@ enum megaCompressionFormat_t : __int32
 class idMegaTextureTile {
 public:
 	// Member Functions
-	void __thiscall Purge();
-	void __thiscall Upload(idMegaTexture* megaTexture);
-	char __thiscall IsLoaded();
-	char* __thiscall GetCompressedTileData();
-	char* __thiscall GetChildCompressedTileData(const int index);
-	void __thiscall PostInit();
-	bool __thiscall SetCachedTileData(idMegaTexture* megaTexture, const int tileBase, const int tilesPerAxis);
-	void __thiscall ReleaseTileData();
+	void Purge();
+	void Upload(idMegaTexture* megaTexture);
+	bool IsLoaded();
+	unsigned __int8* GetCompressedTileData();
+	unsigned __int8* GetChildCompressedTileData(int index)
+	{
+		return childCompressedTileData[index];
+	}
+
+	void PostInit();
+	bool idMegaTextureTile::SetCachedTileData(idMegaTexture* megaTexture, int tileBase, int tilesPerAxis);
+	void ReleaseTileData();
 
 	// Data Members
 	idMegaTextureLevel* level;
@@ -157,13 +161,13 @@ public:
 	void ShutdownTileCache();
 	bool UpdateForCenter(const idVec2* center, bool force);
 	void EmptyLevelImage(idImage* image);
-	tileData_t* __thiscall FindCachedTile(const int tileBase, const int globalX, const int globalY);
-	tileData_t* __thiscall GetAvailableTile();
-	void __thiscall ReleaseTile(tileData_t* tileData);
-	void __thiscall AddDirtyTile(idMegaTextureTile* tile);
-	void __thiscall RemoveDirtyTile(idMegaTextureTile* tile);
-	void __thiscall UpdateLevelForViewOrigin(int idx, int time);
-	void __thiscall idMegaTextureLevel::UploadTiles(int time);
+	tileData_t* FindCachedTile(const int tileBase, const int globalX, const int globalY);
+	tileData_t* GetAvailableTile();
+	void ReleaseTile(tileData_t* tileData);
+	void AddDirtyTile(idMegaTextureTile* tile);
+	void RemoveDirtyTile(idMegaTextureTile* tile);
+	void UpdateLevelForViewOrigin(int idx, int time);
+	void UploadTiles(int time);
 
 	unsigned __int8* GetCompressedTileData(int globalX, int globalY)
 	{
@@ -194,7 +198,7 @@ public:
 	float parms[4];
 	float newParms[2];
 	idLinkList<tileData_t> availableTiles;
-	idLinkList<idMegaTextureTile> activeTiles;
+	idLinkList<tileData_t> activeTiles;
 	bool dirty;
 	idLinkList<idMegaTextureTile> dirtyTiles;
 };
@@ -298,4 +302,5 @@ public:
 	unsigned int Run(void* parm);
 };
 
+extern idMegaTextureTileLoader megaTextureTileLoader;
 extern idMegaTextureTileDecompressor megaTextureTileDecompressor;
